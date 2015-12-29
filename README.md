@@ -16,4 +16,4 @@ Set environment:
 
 Screenshots:
 
-![Alt text](/blob/master/screenshot/screenshot1.png?raw=true)
+![Alt text](/screenshot/screenshot1.png?raw=true)
