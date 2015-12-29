@@ -14,3 +14,6 @@ Set environment:
 - SDL_IMAGE_ROOT to <SDL_image directory>
 - SDL_TTF_ROOT to <SDL_ttf directory>
 
+Screenshots:
+
+![Alt text](/blob/master/screenshot/screenshot1.png?raw=true)
