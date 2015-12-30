@@ -101,13 +101,13 @@ main(int argc, char *argv[])
     int landscape = 0;
     int modes = SDL_GetNumDisplayModes(0);
     int sx = 0, sy = 0;
-    logOut( "Modes available: %i\n", modes );
+    GUI_log( "Modes available: %i\n", modes );
     
     for (int i = 0; i < modes; i++)
     {
         SDL_DisplayMode mode;
         SDL_GetDisplayMode(0, i, &mode);
-        logOut( "Mode #%i: %i, %i\n", i+1, mode.w, mode.h );
+        GUI_log( "Mode #%i: %i, %i\n", i+1, mode.w, mode.h );
         if (landscape ? mode.w > sx : mode.h > sy)
         {
             sx = mode.w;
