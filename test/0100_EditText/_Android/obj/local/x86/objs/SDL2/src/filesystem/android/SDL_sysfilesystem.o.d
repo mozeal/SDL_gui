@@ -1,13 +1,13 @@
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/obj/local/x86/objs/SDL2/src/filesystem/android/SDL_sysfilesystem.o: \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/filesystem/android/SDL_sysfilesystem.c \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/filesystem/android/../../SDL_internal.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/filesystem/android/../../dynapi/SDL_dynapi.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/filesystem/android/../../dynapi/SDL_dynapi_overrides.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_platform.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/begin_code.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/close_code.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config_android.h \
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/obj/local/x86/objs/SDL2/src/filesystem/android/SDL_sysfilesystem.o: \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/filesystem/android/SDL_sysfilesystem.c \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/filesystem/android/../../SDL_internal.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/filesystem/android/../../dynapi/SDL_dynapi.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/filesystem/android/../../dynapi/SDL_dynapi_overrides.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_config.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_platform.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/begin_code.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/close_code.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_config_android.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/unistd.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/cdefs.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/cdefs_elf.h \
@@ -55,9 +55,9 @@
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/asm/errno.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/asm-generic/errno.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/asm-generic/errno-base.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_error.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_stdinc.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_error.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_stdinc.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_config.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/stdio.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/stdlib.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/alloca.h \
@@ -66,35 +66,35 @@
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/inttypes.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/ctype.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/math.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_filesystem.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_system.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_keyboard.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_error.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_keycode.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_scancode.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_video.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_pixels.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rect.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rwops.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_surface.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_blendmode.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_render.h
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_filesystem.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_system.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_keyboard.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_error.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_keycode.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_scancode.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_video.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_pixels.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_rect.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_rwops.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_surface.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_blendmode.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_render.h
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/filesystem/android/../../SDL_internal.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/filesystem/android/../../SDL_internal.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/filesystem/android/../../dynapi/SDL_dynapi.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/filesystem/android/../../dynapi/SDL_dynapi.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/filesystem/android/../../dynapi/SDL_dynapi_overrides.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/filesystem/android/../../dynapi/SDL_dynapi_overrides.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_config.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_platform.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_platform.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/begin_code.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/begin_code.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/close_code.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/close_code.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config_android.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_config_android.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/unistd.h:
 
@@ -190,11 +190,11 @@
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/asm-generic/errno-base.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_error.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_error.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_stdinc.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_stdinc.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_config.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/stdio.h:
 
@@ -212,28 +212,28 @@
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/math.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_filesystem.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_filesystem.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_system.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_system.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_keyboard.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_keyboard.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_error.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_error.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_keycode.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_keycode.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_scancode.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_scancode.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_video.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_video.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_pixels.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_pixels.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rect.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_rect.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rwops.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_rwops.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_surface.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_surface.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_blendmode.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_blendmode.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_render.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_render.h:

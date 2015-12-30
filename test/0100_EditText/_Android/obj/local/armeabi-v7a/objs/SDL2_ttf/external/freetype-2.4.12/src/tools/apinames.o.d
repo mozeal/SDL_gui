@@ -1,5 +1,5 @@
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/obj/local/armeabi-v7a/objs/SDL2_ttf/external/freetype-2.4.12/src/tools/apinames.o: \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/tools/apinames.c \
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/obj/local/armeabi-v7a/objs/SDL2_ttf/external/freetype-2.4.12/src/tools/apinames.o: \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/tools/apinames.c \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/stdio.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \

@@ -1,5 +1,5 @@
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/obj/local/x86/objs/main/main.o: \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/src/main.cpp \
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/obj/local/x86/objs/main/main.o: \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/src/main.cpp \
  /Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/iostream \
  /Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/stl/_prolog.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/stl/_cprolog.h \
@@ -151,69 +151,74 @@
  /Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/stl/_hash_fun.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/stl/_string_io.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/stl/_string_io.c \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_main.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_stdinc.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_platform.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/begin_code.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/close_code.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config_android.h \
+ /Users/Jim/___SDL/SDL/include/SDL.h \
+ /Users/Jim/___SDL/SDL/include/SDL_main.h \
+ /Users/Jim/___SDL/SDL/include/SDL_stdinc.h \
+ /Users/Jim/___SDL/SDL/include/SDL_config.h \
+ /Users/Jim/___SDL/SDL/include/SDL_platform.h \
+ /Users/Jim/___SDL/SDL/include/begin_code.h \
+ /Users/Jim/___SDL/SDL/include/close_code.h \
+ /Users/Jim/___SDL/SDL/include/SDL_config_android.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/inttypes.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/ctype.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/../include/ctype.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_assert.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_atomic.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_audio.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_error.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_endian.h \
+ /Users/Jim/___SDL/SDL/include/SDL_assert.h \
+ /Users/Jim/___SDL/SDL/include/SDL_atomic.h \
+ /Users/Jim/___SDL/SDL/include/SDL_audio.h \
+ /Users/Jim/___SDL/SDL/include/SDL_error.h \
+ /Users/Jim/___SDL/SDL/include/SDL_endian.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/endian.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/endian.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/machine/endian.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_mutex.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_thread.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rwops.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_clipboard.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_cpuinfo.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_events.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_video.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_pixels.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rect.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_surface.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_blendmode.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_keyboard.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_keycode.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_scancode.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_mouse.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_joystick.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_gamecontroller.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_quit.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_gesture.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_touch.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_filesystem.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_haptic.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_hints.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_loadso.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_log.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_messagebox.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_power.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_render.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_system.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_timer.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_version.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_image/SDL_image.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_version.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/begin_code.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/close_code.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/SDL_ttf.h \
- /users/Jim/___Phoenix/sdl/MyExperiment/_SDL_gui/SDL_gui.h \
- /users/Jim/___Phoenix/sdl/MyExperiment/_SDL_gui/GUI_RenderText.h \
- /users/Jim/___Phoenix/sdl/MyExperiment/_SDL_gui/GUI_TopWin.h \
- /users/Jim/___Phoenix/sdl/MyExperiment/_SDL_gui/SDL_gui.h \
- /users/Jim/___Phoenix/sdl/MyExperiment/_SDL_gui/GUI_WinBase.h \
- /users/Jim/___Phoenix/sdl/MyExperiment/_SDL_gui/GUI_MainWin.h \
- /users/Jim/___Phoenix/sdl/MyExperiment/_SDL_gui/GUI_BasicWidgets.h \
- /users/Jim/___Phoenix/sdl/MyExperiment/_common/common.h
+ /Users/Jim/___SDL/SDL/include/SDL_mutex.h \
+ /Users/Jim/___SDL/SDL/include/SDL_thread.h \
+ /Users/Jim/___SDL/SDL/include/SDL_rwops.h \
+ /Users/Jim/___SDL/SDL/include/SDL_clipboard.h \
+ /Users/Jim/___SDL/SDL/include/SDL_cpuinfo.h \
+ /Users/Jim/___SDL/SDL/include/SDL_events.h \
+ /Users/Jim/___SDL/SDL/include/SDL_video.h \
+ /Users/Jim/___SDL/SDL/include/SDL_pixels.h \
+ /Users/Jim/___SDL/SDL/include/SDL_rect.h \
+ /Users/Jim/___SDL/SDL/include/SDL_surface.h \
+ /Users/Jim/___SDL/SDL/include/SDL_blendmode.h \
+ /Users/Jim/___SDL/SDL/include/SDL_keyboard.h \
+ /Users/Jim/___SDL/SDL/include/SDL_keycode.h \
+ /Users/Jim/___SDL/SDL/include/SDL_scancode.h \
+ /Users/Jim/___SDL/SDL/include/SDL_mouse.h \
+ /Users/Jim/___SDL/SDL/include/SDL_joystick.h \
+ /Users/Jim/___SDL/SDL/include/SDL_gamecontroller.h \
+ /Users/Jim/___SDL/SDL/include/SDL_quit.h \
+ /Users/Jim/___SDL/SDL/include/SDL_gesture.h \
+ /Users/Jim/___SDL/SDL/include/SDL_touch.h \
+ /Users/Jim/___SDL/SDL/include/SDL_filesystem.h \
+ /Users/Jim/___SDL/SDL/include/SDL_haptic.h \
+ /Users/Jim/___SDL/SDL/include/SDL_hints.h \
+ /Users/Jim/___SDL/SDL/include/SDL_loadso.h \
+ /Users/Jim/___SDL/SDL/include/SDL_log.h \
+ /Users/Jim/___SDL/SDL/include/SDL_messagebox.h \
+ /Users/Jim/___SDL/SDL/include/SDL_power.h \
+ /Users/Jim/___SDL/SDL/include/SDL_render.h \
+ /Users/Jim/___SDL/SDL/include/SDL_system.h \
+ /Users/Jim/___SDL/SDL/include/SDL_timer.h \
+ /Users/Jim/___SDL/SDL/include/SDL_version.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_image/SDL_image.h \
+ /Users/Jim/___SDL/SDL/include/SDL_version.h \
+ /Users/Jim/___SDL/SDL/include/begin_code.h \
+ /Users/Jim/___SDL/SDL/include/close_code.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/SDL_ttf.h \
+ /Users/Jim/___SDL/SDL_gui/SDL_gui/SDL_gui.h \
+ /Users/Jim/___SDL/SDL_gui/SDL_gui/GUI_TopWin.h \
+ /Users/Jim/___SDL/SDL_gui/SDL_gui/SDL_gui.h \
+ /Users/Jim/___SDL/SDL_gui/SDL_gui/GUI_WinBase.h \
+ /Users/Jim/___SDL/SDL_gui/SDL_gui/GUI_MainWin.h \
+ /Users/Jim/___SDL/SDL_gui/SDL_gui/GUI_BasicWidgets.h \
+ /Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/vector \
+ /Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/stl/_vector.h \
+ /Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/stl/_vector.c \
+ /Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/stl/_bvector.h \
+ /Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/stl/_relops_cont.h \
+ /Users/Jim/___SDL/SDL_gui/SDL_gui/GUI_BasicWidgets.h \
+ /Users/Jim/___SDL/SDL_gui/SDL_gui/GUI_utils.h
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/iostream:
 
@@ -517,21 +522,21 @@
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/stl/_string_io.c:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL.h:
+/Users/Jim/___SDL/SDL/include/SDL.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_main.h:
+/Users/Jim/___SDL/SDL/include/SDL_main.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_stdinc.h:
+/Users/Jim/___SDL/SDL/include/SDL_stdinc.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config.h:
+/Users/Jim/___SDL/SDL/include/SDL_config.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_platform.h:
+/Users/Jim/___SDL/SDL/include/SDL_platform.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/begin_code.h:
+/Users/Jim/___SDL/SDL/include/begin_code.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/close_code.h:
+/Users/Jim/___SDL/SDL/include/close_code.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config_android.h:
+/Users/Jim/___SDL/SDL/include/SDL_config_android.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/inttypes.h:
 
@@ -539,15 +544,15 @@
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/../include/ctype.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_assert.h:
+/Users/Jim/___SDL/SDL/include/SDL_assert.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_atomic.h:
+/Users/Jim/___SDL/SDL/include/SDL_atomic.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_audio.h:
+/Users/Jim/___SDL/SDL/include/SDL_audio.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_error.h:
+/Users/Jim/___SDL/SDL/include/SDL_error.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_endian.h:
+/Users/Jim/___SDL/SDL/include/SDL_endian.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/endian.h:
 
@@ -555,90 +560,100 @@
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/machine/endian.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_mutex.h:
+/Users/Jim/___SDL/SDL/include/SDL_mutex.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_thread.h:
+/Users/Jim/___SDL/SDL/include/SDL_thread.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rwops.h:
+/Users/Jim/___SDL/SDL/include/SDL_rwops.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_clipboard.h:
+/Users/Jim/___SDL/SDL/include/SDL_clipboard.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_cpuinfo.h:
+/Users/Jim/___SDL/SDL/include/SDL_cpuinfo.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_events.h:
+/Users/Jim/___SDL/SDL/include/SDL_events.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_video.h:
+/Users/Jim/___SDL/SDL/include/SDL_video.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_pixels.h:
+/Users/Jim/___SDL/SDL/include/SDL_pixels.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rect.h:
+/Users/Jim/___SDL/SDL/include/SDL_rect.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_surface.h:
+/Users/Jim/___SDL/SDL/include/SDL_surface.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_blendmode.h:
+/Users/Jim/___SDL/SDL/include/SDL_blendmode.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_keyboard.h:
+/Users/Jim/___SDL/SDL/include/SDL_keyboard.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_keycode.h:
+/Users/Jim/___SDL/SDL/include/SDL_keycode.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_scancode.h:
+/Users/Jim/___SDL/SDL/include/SDL_scancode.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_mouse.h:
+/Users/Jim/___SDL/SDL/include/SDL_mouse.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_joystick.h:
+/Users/Jim/___SDL/SDL/include/SDL_joystick.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_gamecontroller.h:
+/Users/Jim/___SDL/SDL/include/SDL_gamecontroller.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_quit.h:
+/Users/Jim/___SDL/SDL/include/SDL_quit.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_gesture.h:
+/Users/Jim/___SDL/SDL/include/SDL_gesture.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_touch.h:
+/Users/Jim/___SDL/SDL/include/SDL_touch.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_filesystem.h:
+/Users/Jim/___SDL/SDL/include/SDL_filesystem.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_haptic.h:
+/Users/Jim/___SDL/SDL/include/SDL_haptic.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_hints.h:
+/Users/Jim/___SDL/SDL/include/SDL_hints.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_loadso.h:
+/Users/Jim/___SDL/SDL/include/SDL_loadso.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_log.h:
+/Users/Jim/___SDL/SDL/include/SDL_log.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_messagebox.h:
+/Users/Jim/___SDL/SDL/include/SDL_messagebox.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_power.h:
+/Users/Jim/___SDL/SDL/include/SDL_power.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_render.h:
+/Users/Jim/___SDL/SDL/include/SDL_render.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_system.h:
+/Users/Jim/___SDL/SDL/include/SDL_system.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_timer.h:
+/Users/Jim/___SDL/SDL/include/SDL_timer.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_version.h:
+/Users/Jim/___SDL/SDL/include/SDL_version.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_image/SDL_image.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_image/SDL_image.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_version.h:
+/Users/Jim/___SDL/SDL/include/SDL_version.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/begin_code.h:
+/Users/Jim/___SDL/SDL/include/begin_code.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/close_code.h:
+/Users/Jim/___SDL/SDL/include/close_code.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/SDL_ttf.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/SDL_ttf.h:
 
-/users/Jim/___Phoenix/sdl/MyExperiment/_SDL_gui/SDL_gui.h:
+/Users/Jim/___SDL/SDL_gui/SDL_gui/SDL_gui.h:
 
-/users/Jim/___Phoenix/sdl/MyExperiment/_SDL_gui/GUI_RenderText.h:
+/Users/Jim/___SDL/SDL_gui/SDL_gui/GUI_TopWin.h:
 
-/users/Jim/___Phoenix/sdl/MyExperiment/_SDL_gui/GUI_TopWin.h:
+/Users/Jim/___SDL/SDL_gui/SDL_gui/SDL_gui.h:
 
-/users/Jim/___Phoenix/sdl/MyExperiment/_SDL_gui/SDL_gui.h:
+/Users/Jim/___SDL/SDL_gui/SDL_gui/GUI_WinBase.h:
 
-/users/Jim/___Phoenix/sdl/MyExperiment/_SDL_gui/GUI_WinBase.h:
+/Users/Jim/___SDL/SDL_gui/SDL_gui/GUI_MainWin.h:
 
-/users/Jim/___Phoenix/sdl/MyExperiment/_SDL_gui/GUI_MainWin.h:
+/Users/Jim/___SDL/SDL_gui/SDL_gui/GUI_BasicWidgets.h:
 
-/users/Jim/___Phoenix/sdl/MyExperiment/_SDL_gui/GUI_BasicWidgets.h:
+/Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/vector:
 
-/users/Jim/___Phoenix/sdl/MyExperiment/_common/common.h:
+/Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/stl/_vector.h:
+
+/Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/stl/_vector.c:
+
+/Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/stl/_bvector.h:
+
+/Users/Jim/Library/Android/sdk/ndk-bundle/sources/cxx-stl/stlport/stlport/stl/_relops_cont.h:
+
+/Users/Jim/___SDL/SDL_gui/SDL_gui/GUI_BasicWidgets.h:
+
+/Users/Jim/___SDL/SDL_gui/SDL_gui/GUI_utils.h:

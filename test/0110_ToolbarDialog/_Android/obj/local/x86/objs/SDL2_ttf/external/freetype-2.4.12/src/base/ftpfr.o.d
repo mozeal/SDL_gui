@@ -1,12 +1,12 @@
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/obj/local/x86/objs/SDL2_ttf/external/freetype-2.4.12/src/base/ftpfr.o: \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/base/ftpfr.c \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/ft2build.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftheader.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/internal.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftdebug.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftconfig.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftoption.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftstdlib.h \
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/obj/local/x86/objs/SDL2_ttf/external/freetype-2.4.12/src/base/ftpfr.o: \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/base/ftpfr.c \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/ft2build.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftheader.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/internal.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftdebug.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftconfig.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftoption.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftstdlib.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/limits.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/cdefs.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/cdefs_elf.h \
@@ -41,42 +41,42 @@
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/memory.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/setjmp.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/machine/setjmp.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/freetype.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fttypes.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftsystem.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftimage.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fterrors.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmoderr.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fterrdef.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftobjs.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftrender.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmodapi.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftglyph.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftsizes.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftlcdfil.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftmemory.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftgloadr.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftdriver.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/autohint.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftserv.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftpic.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftincrem.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpfr.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftpfr.h
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/freetype.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/fttypes.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftsystem.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftimage.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/fterrors.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftmoderr.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/fterrdef.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftobjs.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftrender.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftmodapi.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftglyph.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftsizes.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftlcdfil.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftmemory.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftgloadr.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftdriver.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/autohint.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftserv.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftpic.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftincrem.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpfr.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftpfr.h
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/ft2build.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/ft2build.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftheader.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftheader.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/internal.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/internal.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftdebug.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftdebug.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftconfig.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftconfig.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftoption.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftoption.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftstdlib.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftstdlib.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/limits.h:
 
@@ -146,46 +146,46 @@
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/machine/setjmp.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/freetype.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/freetype.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fttypes.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/fttypes.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftsystem.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftsystem.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftimage.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftimage.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fterrors.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/fterrors.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmoderr.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftmoderr.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fterrdef.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/fterrdef.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftobjs.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftobjs.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftrender.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftrender.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmodapi.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftmodapi.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftglyph.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftglyph.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftsizes.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftsizes.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftlcdfil.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftlcdfil.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftmemory.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftmemory.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftgloadr.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftgloadr.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftdriver.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftdriver.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/autohint.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/autohint.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftserv.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftserv.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftpic.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftpic.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftincrem.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftincrem.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpfr.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpfr.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftpfr.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftpfr.h:

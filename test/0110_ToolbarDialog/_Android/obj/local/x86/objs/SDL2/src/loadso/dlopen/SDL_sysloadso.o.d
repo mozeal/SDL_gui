@@ -1,13 +1,13 @@
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/obj/local/x86/objs/SDL2/src/loadso/dlopen/SDL_sysloadso.o: \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/loadso/dlopen/SDL_sysloadso.c \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/loadso/dlopen/../../SDL_internal.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/loadso/dlopen/../../dynapi/SDL_dynapi.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/loadso/dlopen/../../dynapi/SDL_dynapi_overrides.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_platform.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/begin_code.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/close_code.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_config_android.h \
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/obj/local/x86/objs/SDL2/src/loadso/dlopen/SDL_sysloadso.o: \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/loadso/dlopen/SDL_sysloadso.c \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/loadso/dlopen/../../SDL_internal.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/loadso/dlopen/../../dynapi/SDL_dynapi.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/loadso/dlopen/../../dynapi/SDL_dynapi_overrides.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_platform.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/begin_code.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/close_code.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_config_android.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/stdio.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/cdefs.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/cdefs_elf.h \
@@ -27,9 +27,9 @@
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/machine/kernel.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/sysmacros.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/dlfcn.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_loadso.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_stdinc.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_loadso.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_stdinc.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/stdlib.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/string.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/malloc.h \
@@ -47,23 +47,23 @@
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/syslimits.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/asm/page.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/asm/page_32.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_error.h
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_error.h
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/loadso/dlopen/../../SDL_internal.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/loadso/dlopen/../../SDL_internal.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/loadso/dlopen/../../dynapi/SDL_dynapi.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/loadso/dlopen/../../dynapi/SDL_dynapi.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/loadso/dlopen/../../dynapi/SDL_dynapi_overrides.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/loadso/dlopen/../../dynapi/SDL_dynapi_overrides.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_platform.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_platform.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/begin_code.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/begin_code.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/close_code.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/close_code.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_config_android.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_config_android.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/stdio.h:
 
@@ -103,11 +103,11 @@
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/dlfcn.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_loadso.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_loadso.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_stdinc.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_stdinc.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/stdlib.h:
 
@@ -143,4 +143,4 @@
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/asm/page_32.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_error.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_error.h:

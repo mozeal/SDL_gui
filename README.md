@@ -16,7 +16,7 @@ Set environment:
 - SDL_GUI_ROOT to <SDL_gui directory>
 
 Compile Android Examples:
-- run "jni_build.sh" or "jni_rebuild.sh"
+- run "jni_rebuild.sh" to rebuild all jni (or run "jni_build.sh" to build only changed files)
 - run "android_build.sh" while connect your android device to your PC.
 
 Screenshots:

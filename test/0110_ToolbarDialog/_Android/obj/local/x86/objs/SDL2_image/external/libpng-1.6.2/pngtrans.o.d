@@ -1,6 +1,6 @@
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/obj/local/x86/objs/SDL2_image/external/libpng-1.6.2/pngtrans.o: \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/pngtrans.c \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/pngpriv.h \
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/obj/local/x86/objs/SDL2_image/external/libpng-1.6.2/pngtrans.o: \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/pngtrans.c \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/pngpriv.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/stdlib.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/cdefs.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/cdefs_elf.h \
@@ -24,9 +24,9 @@
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/machine/kernel.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/sysmacros.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/memory.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/pnglibconf.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/png.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/pngconf.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/pnglibconf.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/png.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/pngconf.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/limits.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/limits.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/linux/limits.h \
@@ -44,13 +44,13 @@
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/asm/siginfo.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/asm-generic/siginfo.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/math.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/pngstruct.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/pngstruct.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/zlib.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/zconf.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/pnginfo.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/pngdebug.h
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/pnginfo.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/pngdebug.h
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/pngpriv.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/pngpriv.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/stdlib.h:
 
@@ -98,11 +98,11 @@
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/memory.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/pnglibconf.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/pnglibconf.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/png.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/png.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/pngconf.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/pngconf.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/limits.h:
 
@@ -138,12 +138,12 @@
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/math.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/pngstruct.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/pngstruct.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/zlib.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/zconf.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/pnginfo.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/pnginfo.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL2_image/external/libpng-1.6.2/pngdebug.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL_image/external/libpng-1.6.2/pngdebug.h:

@@ -1,15 +1,15 @@
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/obj/local/armeabi-v7a/objs/SDL2/src/core/android/SDL_android.o: \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/SDL_android.c \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../SDL_internal.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../dynapi/SDL_dynapi.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../dynapi/SDL_dynapi_overrides.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_platform.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/begin_code.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/close_code.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config_android.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_stdinc.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config.h \
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/obj/local/armeabi-v7a/objs/SDL2/src/core/android/SDL_android.o: \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/SDL_android.c \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../SDL_internal.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../dynapi/SDL_dynapi.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../dynapi/SDL_dynapi_overrides.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_config.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_platform.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/begin_code.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/close_code.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_config_android.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_stdinc.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_config.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/sys/types.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/stdint.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/sys/_types.h \
@@ -43,78 +43,78 @@
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/machine/limits.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/asm/page.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_assert.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_hints.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_stdinc.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_log.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_system.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_keyboard.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_error.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_keycode.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_scancode.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_video.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_pixels.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rect.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rwops.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_surface.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_blendmode.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_render.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/SDL_android.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_assert.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_hints.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_stdinc.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_log.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_system.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_keyboard.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_error.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_keycode.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_scancode.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_video.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_pixels.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_rect.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_rwops.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_surface.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_blendmode.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_render.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/SDL_android.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/EGL/eglplatform.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/android/native_window.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/android/rect.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/android/native_window_jni.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/jni.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rect.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rwops.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_rect.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_rwops.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/EGL/egl.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_events_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/../SDL_internal.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_events.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_mouse.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_joystick.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_gamecontroller.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_quit.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_gesture.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_touch.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_thread.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_atomic.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_mutex.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_clipboardevents_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_dropevents_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_gesture_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_keyboard_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_keycode.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_mouse_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_mouse.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_touch_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/../../include/SDL_touch.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_windowevents_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidkeyboard.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/../../SDL_internal.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidvideo.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_mutex.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/../SDL_sysvideo.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/../../SDL_internal.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_messagebox.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_shape.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidmouse.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidtouch.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidvideo.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidwindow.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/../../core/android/SDL_android.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/../../core/android/../../SDL_internal.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/../SDL_egl_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_egl.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_events_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/../SDL_internal.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_events.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_mouse.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_joystick.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_gamecontroller.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_quit.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_gesture.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_touch.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_thread.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_atomic.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_mutex.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_clipboardevents_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_dropevents_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_gesture_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_keyboard_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_keycode.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_mouse_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_mouse.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_touch_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/../../include/SDL_touch.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_windowevents_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidkeyboard.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/../../SDL_internal.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidvideo.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_mutex.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/../SDL_sysvideo.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/../../SDL_internal.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_messagebox.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_shape.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidmouse.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidtouch.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidvideo.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidwindow.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/../../core/android/SDL_android.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/../../core/android/../../SDL_internal.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/../SDL_egl_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_egl.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/EGL/eglext.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/../SDL_sysvideo.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../joystick/android/SDL_sysjoystick_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../joystick/android/../../SDL_internal.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../joystick/android/../SDL_sysjoystick.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../joystick/android/../../SDL_internal.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_joystick.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../joystick/android/../SDL_joystick_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/../SDL_sysvideo.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../joystick/android/SDL_sysjoystick_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../joystick/android/../../SDL_internal.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../joystick/android/../SDL_sysjoystick.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../joystick/android/../../SDL_internal.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_joystick.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../joystick/android/../SDL_joystick_c.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/android/log.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/pthread.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/time.h \
@@ -135,25 +135,25 @@
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/linux/capability.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/pathconf.h
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../SDL_internal.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../SDL_internal.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../dynapi/SDL_dynapi.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../dynapi/SDL_dynapi.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../dynapi/SDL_dynapi_overrides.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../dynapi/SDL_dynapi_overrides.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_config.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_platform.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_platform.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/begin_code.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/begin_code.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/close_code.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/close_code.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config_android.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_config_android.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_stdinc.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_stdinc.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_config.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_config.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/sys/types.h:
 
@@ -221,39 +221,39 @@
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/asm/page.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_assert.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_assert.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_hints.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_hints.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_stdinc.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_stdinc.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_log.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_log.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_system.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_system.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_keyboard.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_keyboard.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_error.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_error.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_keycode.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_keycode.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_scancode.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_scancode.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_video.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_video.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_pixels.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_pixels.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rect.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_rect.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rwops.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_rwops.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_surface.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_surface.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_blendmode.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_blendmode.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_render.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_render.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/SDL_android.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/SDL_android.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/EGL/eglplatform.h:
 
@@ -267,103 +267,103 @@
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/jni.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rect.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_rect.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_rwops.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_rwops.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/EGL/egl.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_events_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_events_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/../SDL_internal.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/../SDL_internal.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_events.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_events.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_mouse.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_mouse.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_joystick.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_joystick.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_gamecontroller.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_gamecontroller.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_quit.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_quit.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_gesture.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_gesture.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_touch.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_touch.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_thread.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_thread.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_atomic.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_atomic.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_mutex.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_mutex.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_clipboardevents_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_clipboardevents_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_dropevents_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_dropevents_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_gesture_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_gesture_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_keyboard_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_keyboard_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_keycode.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_keycode.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_mouse_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_mouse_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_mouse.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_mouse.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_touch_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_touch_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/../../include/SDL_touch.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/../../include/SDL_touch.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../events/SDL_windowevents_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../events/SDL_windowevents_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidkeyboard.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidkeyboard.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/../../SDL_internal.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/../../SDL_internal.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidvideo.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidvideo.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_mutex.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_mutex.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/../SDL_sysvideo.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/../SDL_sysvideo.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/../../SDL_internal.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/../../SDL_internal.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_messagebox.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_messagebox.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_shape.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_shape.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidmouse.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidmouse.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidtouch.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidtouch.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidvideo.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidvideo.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidwindow.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/SDL_androidwindow.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/../../core/android/SDL_android.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/../../core/android/SDL_android.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/../../core/android/../../SDL_internal.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/../../core/android/../../SDL_internal.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/../SDL_egl_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/../SDL_egl_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_egl.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_egl.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/EGL/eglext.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../video/android/../SDL_sysvideo.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../video/android/../SDL_sysvideo.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../joystick/android/SDL_sysjoystick_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../joystick/android/SDL_sysjoystick_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../joystick/android/../../SDL_internal.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../joystick/android/../../SDL_internal.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../joystick/android/../SDL_sysjoystick.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../joystick/android/../SDL_sysjoystick.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../joystick/android/../../SDL_internal.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../joystick/android/../../SDL_internal.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/include/SDL_joystick.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/include/SDL_joystick.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL/src/core/android/../../joystick/android/../SDL_joystick_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL/src/core/android/../../joystick/android/../SDL_joystick_c.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/android/log.h:
 

@@ -1,13 +1,13 @@
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/obj/local/armeabi-v7a/objs/SDL2_ttf/external/freetype-2.4.12/src/cid/type1cid.o: \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/type1cid.c \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/ft2build.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftheader.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/internal.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidparse.c \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftdebug.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftconfig.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftoption.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftstdlib.h \
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/obj/local/armeabi-v7a/objs/SDL2_ttf/external/freetype-2.4.12/src/cid/type1cid.o: \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/type1cid.c \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/ft2build.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftheader.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/internal.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidparse.c \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftdebug.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftconfig.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftoption.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftstdlib.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/limits.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -40,66 +40,66 @@
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/memory.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/setjmp.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/machine/setjmp.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/freetype.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fttypes.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftsystem.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftimage.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fterrors.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmoderr.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fterrdef.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftobjs.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftrender.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmodapi.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftglyph.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftsizes.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftlcdfil.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftmemory.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftgloadr.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftdriver.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/autohint.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftserv.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftpic.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftincrem.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftstream.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidparse.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/t1types.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/t1tables.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/pshints.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpscmap.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/psaux.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/ciderrs.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidload.c \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmm.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidload.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidtoken.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidobjs.c \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidgload.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidobjs.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidriver.c \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidriver.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpostnm.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svxf86nm.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpsinfo.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svcid.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidgload.c \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftoutln.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftcalc.h
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/freetype.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/fttypes.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftsystem.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftimage.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/fterrors.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftmoderr.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/fterrdef.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftobjs.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftrender.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftmodapi.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftglyph.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftsizes.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftlcdfil.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftmemory.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftgloadr.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftdriver.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/autohint.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftserv.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftpic.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftincrem.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftstream.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidparse.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/t1types.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/t1tables.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/pshints.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpscmap.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/psaux.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/ciderrs.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidload.c \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftmm.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidload.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidtoken.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidobjs.c \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidgload.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidobjs.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidriver.c \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidriver.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpostnm.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/services/svxf86nm.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpsinfo.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/services/svcid.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidgload.c \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftoutln.h \
+ /Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftcalc.h
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/ft2build.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/ft2build.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftheader.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftheader.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/internal.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/internal.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidparse.c:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidparse.c:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftdebug.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftdebug.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftconfig.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftconfig.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftoption.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftoption.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftstdlib.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/config/ftstdlib.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/limits.h:
 
@@ -165,90 +165,90 @@
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-arm/usr/include/machine/setjmp.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/freetype.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/freetype.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fttypes.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/fttypes.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftsystem.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftsystem.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftimage.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftimage.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fterrors.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/fterrors.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmoderr.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftmoderr.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fterrdef.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/fterrdef.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftobjs.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftobjs.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftrender.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftrender.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmodapi.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftmodapi.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftglyph.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftglyph.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftsizes.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftsizes.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftlcdfil.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftlcdfil.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftmemory.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftmemory.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftgloadr.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftgloadr.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftdriver.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftdriver.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/autohint.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/autohint.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftserv.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftserv.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftpic.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftpic.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftincrem.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftincrem.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftstream.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftstream.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidparse.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidparse.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/t1types.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/t1types.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/t1tables.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/t1tables.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/pshints.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/pshints.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpscmap.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpscmap.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/psaux.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/psaux.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/ciderrs.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/ciderrs.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidload.c:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidload.c:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmm.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftmm.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidload.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidload.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidtoken.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidtoken.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidobjs.c:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidobjs.c:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidgload.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidgload.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidobjs.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidobjs.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidriver.c:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidriver.c:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidriver.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidriver.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpostnm.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpostnm.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svxf86nm.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/services/svxf86nm.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpsinfo.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpsinfo.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svcid.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/services/svcid.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/src/cid/cidgload.c:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/src/cid/cidgload.c:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftoutln.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/ftoutln.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftcalc.h:
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/jni/SDL_ttf/external/freetype-2.4.12/include/freetype/internal/ftcalc.h:

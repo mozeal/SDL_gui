@@ -1,2 +1,2 @@
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/bin/AndroidManifest.xml : \
-/Users/Jim/___Phoenix/sdl/MyExperiment/0100_GUI_Test/_Android/AndroidManifest.xml \
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/bin/AndroidManifest.xml : \
+/Users/Jim/___SDL/SDL_gui/test/0100_EditText/_Android/AndroidManifest.xml \

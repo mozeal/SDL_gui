@@ -1,16 +1,16 @@
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/obj/local/x86/objs/SDL2/src/joystick/SDL_gamecontroller.o: \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/SDL_gamecontroller.c \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../SDL_internal.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../dynapi/SDL_dynapi.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../dynapi/SDL_dynapi_overrides.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_platform.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/begin_code.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/close_code.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_config_android.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_events.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_stdinc.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h \
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/obj/local/x86/objs/SDL2/src/joystick/SDL_gamecontroller.o: \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/SDL_gamecontroller.c \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../SDL_internal.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../dynapi/SDL_dynapi.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../dynapi/SDL_dynapi_overrides.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_platform.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/begin_code.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/close_code.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_config_android.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_events.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_stdinc.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/types.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/stdint.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/_types.h \
@@ -46,65 +46,65 @@
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/syslimits.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/asm/page.h \
  /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/asm/page_32.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_error.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_video.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_pixels.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_rect.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_rwops.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_surface.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_blendmode.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_keyboard.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_keycode.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_scancode.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_mouse.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_joystick.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_gamecontroller.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_quit.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_gesture.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_touch.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_assert.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/SDL_sysjoystick.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_joystick.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/SDL_joystick_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_hints.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/SDL_gamecontrollerdb.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_events_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/../SDL_internal.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_thread.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_atomic.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_mutex.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_clipboardevents_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_dropevents_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_gesture_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_keyboard_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_keycode.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_mouse_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_mouse.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_touch_c.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/../../include/SDL_touch.h \
- /Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_windowevents_c.h
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_error.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_video.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_pixels.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_rect.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_rwops.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_surface.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_blendmode.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_keyboard.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_keycode.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_scancode.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_mouse.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_joystick.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_gamecontroller.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_quit.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_gesture.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_touch.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_assert.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/SDL_sysjoystick.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_joystick.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/SDL_joystick_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_hints.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/SDL_gamecontrollerdb.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_events_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/../SDL_internal.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_thread.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_atomic.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_mutex.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_clipboardevents_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_dropevents_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_gesture_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_keyboard_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_keycode.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_mouse_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_mouse.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_touch_c.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/../../include/SDL_touch.h \
+ /Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_windowevents_c.h
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../SDL_internal.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../SDL_internal.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../dynapi/SDL_dynapi.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../dynapi/SDL_dynapi.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../dynapi/SDL_dynapi_overrides.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../dynapi/SDL_dynapi_overrides.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_platform.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_platform.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/begin_code.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/begin_code.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/close_code.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/close_code.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_config_android.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_config_android.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_events.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_events.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_stdinc.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_stdinc.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_config.h:
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/sys/types.h:
 
@@ -176,76 +176,76 @@
 
 /Users/Jim/Library/Android/sdk/ndk-bundle/platforms/android-19/arch-x86/usr/include/asm/page_32.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_error.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_error.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_video.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_video.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_pixels.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_pixels.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_rect.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_rect.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_rwops.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_rwops.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_surface.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_surface.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_blendmode.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_blendmode.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_keyboard.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_keyboard.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_keycode.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_keycode.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_scancode.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_scancode.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_mouse.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_mouse.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_joystick.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_joystick.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_gamecontroller.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_gamecontroller.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_quit.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_quit.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_gesture.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_gesture.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_touch.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_touch.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_assert.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_assert.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/SDL_sysjoystick.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/SDL_sysjoystick.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_joystick.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_joystick.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/SDL_joystick_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/SDL_joystick_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_hints.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_hints.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/SDL_gamecontrollerdb.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/SDL_gamecontrollerdb.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_events_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_events_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/../SDL_internal.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/../SDL_internal.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_thread.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_thread.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_atomic.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_atomic.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_mutex.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_mutex.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_clipboardevents_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_clipboardevents_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_dropevents_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_dropevents_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_gesture_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_gesture_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_keyboard_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_keyboard_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_keycode.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_keycode.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_mouse_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_mouse_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/include/SDL_mouse.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/include/SDL_mouse.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_touch_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_touch_c.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/../../include/SDL_touch.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/../../include/SDL_touch.h:
 
-/Users/Jim/___Phoenix/sdl/MyExperiment/0091_GUI_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_windowevents_c.h:
+/Users/Jim/___SDL/SDL_gui/test/0110_ToolbarDialog/_Android/jni/SDL/src/joystick/../events/SDL_windowevents_c.h:
