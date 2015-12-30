@@ -1,1 +1,1 @@
-adb logcat -s "__Jimmy__"
+adb logcat -s "__GUI__"

@@ -4,14 +4,13 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := main
 
-SDL_PATH := /Users/Jim/___Phoenix/sdl/SDL
-COMMON_PATH := /users/Jim/___Phoenix/sdl/MyExperiment/_common
-
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include $(COMMON_PATH)
+SDL_PATH := $(SDL_ROOT)
+GUI_PATH := $(SDL_GUI_ROOT)/SDL_gui
+LOCAL_C_INCLUDES :=$(SDL_PATH)/include $(GUI_PATH)
 
 # Add your application source files here...
 LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
-	$(COMMON_PATH)/common.cpp main.cpp
+	$(GUI_PATH)/GUI_utils.cpp main.cpp
 
 LOCAL_SHARED_LIBRARIES := SDL2
 LOCAL_CFLAGS += -D__ANDROID__ 

@@ -13,6 +13,11 @@ Set environment:
 - SDL_ROOT to <SDL directory>
 - SDL_IMAGE_ROOT to <SDL_image directory>
 - SDL_TTF_ROOT to <SDL_ttf directory>
+- SDL_GUI_ROOT to <SDL_gui directory>
+
+Compile Android Examples:
+- run "jni_build.sh" or "jni_rebuild.sh"
+- run "android_build.sh" while connect your android device to your PC.
 
 Screenshots:
 
