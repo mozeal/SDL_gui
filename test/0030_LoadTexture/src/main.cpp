@@ -11,8 +11,13 @@
 #include <SDL.h>
 
 #include "GUI_utils.h"
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+#endif
 
 static SDL_Texture *texture = 0;
+SDL_Renderer *renderer = NULL;
+int done = 0;
 
 void
 render(SDL_Renderer *renderer)
@@ -26,8 +31,17 @@ render(SDL_Renderer *renderer)
     
     /* update screen */
     SDL_RenderPresent(renderer);
-    
+}
 
+void doLoop()
+{
+	SDL_Event event;
+	while (SDL_PollEvent(&event)) {
+		if (event.type == SDL_QUIT) {
+			done = 1;
+		}
+	}
+	render(renderer);
 }
 
 int
@@ -57,7 +71,7 @@ main(int argc, char *argv[])
         }
     }
 #else
-    int sx = 800, sy = 600;
+    int sx = 640, sy = 480;
 #endif
     printf("picked: %d %d\n", sx, sy);
     
@@ -75,14 +89,18 @@ main(int argc, char *argv[])
     //Flags: SDL_RENDERER_ACCELERATED: We want to use hardware accelerated rendering
     //SDL_RENDERER_PRESENTVSYNC: We want the renderer's present function (update screen) to be
     //synchornized with the monitor's refresh rate
-    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
+    renderer = SDL_CreateRenderer(window, -1, 0);
     if (renderer == NULL){
         fatalError("SDL_CreateRenderer Error");
     }
     
     /* load the bmp */
     SDL_Surface *bmp_surface;
+#ifdef __EMSCRIPTEN__
+    std::string imagePath = "data/icon.bmp";
+#else
     std::string imagePath = GUI_getResourcePath() + "icon.bmp";
+#endif
     //imagePath = "data/icon.bmp";
     bmp_surface = SDL_LoadBMP(imagePath.c_str());
     if (bmp_surface == NULL) {
@@ -102,21 +120,24 @@ main(int argc, char *argv[])
     /* free up allocated memory */
     SDL_FreeSurface(bmp_surface);
     
+
+    
+#ifdef __EMSCRIPTEN__
+  // void emscripten_set_main_loop(em_callback_func func, int fps, int simulate_infinite_loop);
+  emscripten_set_main_loop(doLoop, 60, 1);
+#else    
     /* main loop */
     Uint32 startFrame;
     Uint32 endFrame;
     int delay;
-    int done = 0;
+    done = 0;
+    
     
     while (!done) {
         startFrame = SDL_GetTicks();
-        SDL_Event event;
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) {
-                done = 1;
-            }
-        }
-        render(renderer);
+        
+        done = doLoop();
+        
         endFrame = SDL_GetTicks();
         
         /* figure out how much time we have left, and then sleep */
@@ -128,6 +149,7 @@ main(int argc, char *argv[])
         }
         SDL_Delay(delay);
     }
+#endif    
     
     //Clean up our objects and quit
     SDL_DestroyTexture(texture);

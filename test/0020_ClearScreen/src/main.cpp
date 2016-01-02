@@ -12,6 +12,13 @@
 
 #include "GUI_utils.h"
 
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+#endif
+
+SDL_Renderer *renderer = NULL;
+int done = 0;
+
 void
 render(SDL_Renderer *renderer)
 {
@@ -22,6 +29,17 @@ render(SDL_Renderer *renderer)
     
     /* update screen */
     SDL_RenderPresent(renderer);
+}
+
+void doLoop()
+{
+	SDL_Event event;
+	while (SDL_PollEvent(&event)) {
+		if (event.type == SDL_QUIT) {
+			done = 1;
+		}
+	}
+	render(renderer);
 }
 
 int
@@ -51,7 +69,7 @@ main(int argc, char *argv[])
         }
     }
 #else
-    int sx = 800, sy = 600;
+    int sx = 640, sy = 480;
 #endif
     GUI_log("picked: %d %d\n", sx, sy);
     
@@ -69,26 +87,27 @@ main(int argc, char *argv[])
     //Flags: SDL_RENDERER_ACCELERATED: We want to use hardware accelerated rendering
     //SDL_RENDERER_PRESENTVSYNC: We want the renderer's present function (update screen) to be
     //synchornized with the monitor's refresh rate
-    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
+    renderer = SDL_CreateRenderer(window, -1, 0);
     if (renderer == NULL){
         fatalError("SDL_CreateRenderer Error");
     }
-    
+ 
+#ifdef __EMSCRIPTEN__
+  // void emscripten_set_main_loop(em_callback_func func, int fps, int simulate_infinite_loop);
+  emscripten_set_main_loop(doLoop, 60, 1);
+#else    
     /* main loop */
     Uint32 startFrame;
     Uint32 endFrame;
     int delay;
-    int done = 0;
+    done = 0;
+    
     
     while (!done) {
         startFrame = SDL_GetTicks();
-        SDL_Event event;
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) {
-                done = 1;
-            }
-        }
-        render(renderer);
+        
+        done = doLoop();
+        
         endFrame = SDL_GetTicks();
         
         /* figure out how much time we have left, and then sleep */
@@ -100,6 +119,7 @@ main(int argc, char *argv[])
         }
         SDL_Delay(delay);
     }
+#endif
     
     //Clean up our objects and quit
     SDL_DestroyRenderer(renderer);
