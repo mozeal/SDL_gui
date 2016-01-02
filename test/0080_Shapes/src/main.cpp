@@ -15,6 +15,9 @@
 #include "GUI_TopWin.h"
 #include "GUI_MainWin.h"
 #include "GUI_utils.h"
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+#endif
 
 static GUI_TopWin *topWin = NULL;
 
@@ -38,7 +41,7 @@ main(int argc, char *argv[])
         return 1;
     }
     
-    int sx = 720, sy = 405;
+    int sx = 720, sy = 480;
     SDL_Window *window = GUI_CreateWindow( "GUI", sx, sy );
     if (window == NULL){
         fatalError("GUI_CreateWindow Error");
@@ -52,6 +55,8 @@ main(int argc, char *argv[])
         fatalError("SDL_CreateRenderer Error");
         return 1;
     }
+    
+    
     topWin=new GUI_TopWin("Hello",GUI_Rect(0,0,GUI_windowWidth,GUI_windowHeight),0,
         []( GUI_WinBase *tw ) {
         }

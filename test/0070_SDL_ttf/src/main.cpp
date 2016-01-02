@@ -12,9 +12,15 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 #include "GUI_utils.h"
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+#endif
+
 
 static SDL_Texture *background = 0;
 static SDL_Texture *texture = 0;
+SDL_Renderer *renderer = NULL;
+int done = 0;
 
 /*
  * Render the message we want to display to a texture for drawing
@@ -97,6 +103,18 @@ render(SDL_Renderer *renderer)
     SDL_RenderPresent(renderer);
 }
 
+void doLoop()
+{
+	SDL_Event event;
+	while (SDL_PollEvent(&event)) {
+		if (event.type == SDL_QUIT) {
+			done = 1;
+		}
+	}
+	render(renderer);
+}
+
+
 /*
  * Loads an image into a texture on the rendering device
  * @param file The image file to load
@@ -165,7 +183,7 @@ main(int argc, char *argv[])
     //Flags: SDL_RENDERER_ACCELERATED: We want to use hardware accelerated rendering
     //SDL_RENDERER_PRESENTVSYNC: We want the renderer's present function (update screen) to be
     //synchornized with the monitor's refresh rate
-    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
+    renderer = SDL_CreateRenderer(window, -1, 0);
     if (renderer == NULL){
         fatalError("SDL_CreateRenderer Error");
     }
@@ -195,58 +213,23 @@ main(int argc, char *argv[])
         SDL_Quit();
         return 1;
     }
-    
+
+#ifdef __EMSCRIPTEN__
+  // void emscripten_set_main_loop(em_callback_func func, int fps, int simulate_infinite_loop);
+  emscripten_set_main_loop(doLoop, 60, 1);
+#else    
     /* main loop */
     Uint32 startFrame;
     Uint32 endFrame;
     int delay;
-    bool done = false;
+    done = 0;
+    
     
     while (!done) {
         startFrame = SDL_GetTicks();
-        SDL_Event event;
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) {
-                done = true;
-            }
-            //If user presses any key
-            if (event.type == SDL_KEYDOWN){
-                done = true;
-            }
-
-            if (event.type == SDL_FINGERDOWN){
-                SDL_TouchFingerEvent e = event.tfinger;
-                //logOut( "Touch #%i Down: %li %i %ui\n", (long)e.fingerId, (int)(e.x*100), (int)(e.y * 100), e.timestamp );
-            }
-            if (event.type == SDL_FINGERUP){
-                SDL_TouchFingerEvent e = event.tfinger;
-                //logOut( "Touch #%i Up: %i %i %ui\n", (int)e.fingerId, (int)(e.x*100), (int)(e.y * 100), e.timestamp );
-            }
-            if (event.type == SDL_FINGERMOTION){
-                SDL_TouchFingerEvent e = event.tfinger;
-                //logOut( "Touch #%i Motion: %i %i %ui\n", (int)e.fingerId, (int)(e.x*100), (int)(e.y * 100), e.timestamp );
-            }
-
-            //If user clicks the mouse
-            if (event.type == SDL_MOUSEBUTTONDOWN){
-                SDL_MouseButtonEvent e = event.button;
-                GUI_log( "Mouse #%i Down: %i %i %ui\n", e.which, e.x, e.y, e.timestamp );
-            }
-            if (event.type == SDL_MOUSEBUTTONUP){
-                SDL_MouseButtonEvent e = event.button;
-                //logOut( "Mouse #%i Up: %i %i %ui\n", e.which, e.x, e.y, e.timestamp );
-            }
-            if (event.type == SDL_MOUSEMOTION){
-                SDL_MouseMotionEvent e = event.motion;
-                //logOut( "Mouse #%i move: %i %i %ui\n", e.which, e.x, e.y, e.timestamp );
-            }
-            if (event.type == SDL_MOUSEWHEEL){
-                SDL_MouseWheelEvent e = event.wheel;
-                //logOut( "Mouse #%i wheel: %i %i %ui\n", e.which, e.x, e.y, e.timestamp );
-            }
-
-        }
-        render(renderer);
+        
+        done = doLoop();
+        
         endFrame = SDL_GetTicks();
         
         /* figure out how much time we have left, and then sleep */
@@ -258,6 +241,8 @@ main(int argc, char *argv[])
         }
         SDL_Delay(delay);
     }
+#endif 
+    
     
     //Clean up our objects and quit
     SDL_DestroyTexture(texture);

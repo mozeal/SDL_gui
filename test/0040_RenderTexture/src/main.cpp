@@ -90,7 +90,7 @@ SDL_Texture* loadTexture(const std::string &filename, SDL_Renderer *ren)
     GUI_log("Load:%s\n", imagePath.c_str() );
     bmp_surface = SDL_LoadBMP(imagePath.c_str());
     if (bmp_surface == NULL) {
-        GUI_log("could not load bmp");
+        GUI_log("could not load bmp\n");
     }
     /* set white to transparent on the happyface */
     //SDL_SetColorKey(bmp_surface, 1, SDL_MapRGB(bmp_surface->format, 255, 255, 255));

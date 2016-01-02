@@ -19,6 +19,9 @@
 #include <dirent.h> // for DIR, dirent, opendir()
 #include <stdlib.h> // for abs(), exit()
 #include <pwd.h>
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+#endif
 
 extern "C" char __iOS_DOCUMENTS_FOLDER[];
 
@@ -339,12 +342,44 @@ static void handle_events(SDL_Event *ev) {
     
 }
 
+void doLoop()
+{
+    SDL_Event ev;
+
+	while (SDL_PollEvent(&ev)) {
+		if (ev.type==SDL_QUIT) {
+			quit=true;
+			break;
+		}
+		if (ev.type == SDL_KEYDOWN) {
+			if (ev.key.keysym.sym == SDLK_AC_BACK ) {
+				quit=true;
+				break;
+			}
+		}
+
+		handle_events(&ev);
+	}
+
+	SDL_RenderSetScale( GUI_renderer, GUI_scale, GUI_scale );
+	SDL_RenderSetViewport( GUI_renderer, NULL );
+	SDL_RenderSetClipRect( GUI_renderer, NULL );
+	SDL_SetRenderDrawColor(GUI_renderer, 0x64, 0x95, 0xed, 0xff);
+	SDL_RenderClear( GUI_renderer );
+	
+	if( GUI_topWin ) {
+		GUI_topWin->draw();
+	}
+	
+	SDL_RenderPresent(GUI_renderer);
+
+}
+
 void GUI_Run(bool (*user_handle_ev)(SDL_Event *)) {
     user_handle_events = user_handle_ev;
     
     GUI_running=true;
     
-    SDL_Event ev;
     
     Uint32 startFrame;
     Uint32 endFrame;
@@ -352,35 +387,14 @@ void GUI_Run(bool (*user_handle_ev)(SDL_Event *)) {
 
     startFrame = SDL_GetTicks();
 
+#ifdef __EMSCRIPTEN__
+  // void emscripten_set_main_loop(em_callback_func func, int fps, int simulate_infinite_loop);
+  emscripten_set_main_loop(doLoop, 60, 1);
+#else    
+
     quit=false;
     while (!quit) {
-        while (SDL_PollEvent(&ev)) {
-            if (ev.type==SDL_QUIT) {
-                quit=true;
-                break;
-            }
-            if (ev.type == SDL_KEYDOWN) {
-                if (ev.key.keysym.sym == SDLK_AC_BACK ) {
-                    quit=true;
-                    break;
-                }
-            }
-
-            handle_events(&ev);
-        }
- 
-        SDL_RenderSetScale( GUI_renderer, GUI_scale, GUI_scale );
-        SDL_RenderSetViewport( GUI_renderer, NULL );
-        SDL_RenderSetClipRect( GUI_renderer, NULL );
-        SDL_SetRenderDrawColor(GUI_renderer, 0x64, 0x95, 0xed, 0xff);
-        SDL_RenderClear( GUI_renderer );
-        
-        if( GUI_topWin ) {
-            GUI_topWin->draw();
-        }
-        
-        SDL_RenderPresent(GUI_renderer);
-
+		doLoop();
         endFrame = SDL_GetTicks();
         
         /* figure out how much time we have left, and then sleep */
@@ -395,6 +409,7 @@ void GUI_Run(bool (*user_handle_ev)(SDL_Event *)) {
         }
         startFrame = endFrame;
     }
+#endif
     GUI_running = false;
     GUI_Log( "GUI stop.\n" );
 }
