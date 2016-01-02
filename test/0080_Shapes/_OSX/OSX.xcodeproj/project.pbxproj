@@ -546,9 +546,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ENABLE_TESTABILITY = NO;
 				HEADER_SEARCH_PATHS = (
+					"$(SDL_TTF_ROOT)",
 					"$(SDL_ROOT)/include",
 					"$(SDL_IMAGE_ROOT)",
-					"$(SDL_TTF_ROOT)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -559,9 +559,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				HEADER_SEARCH_PATHS = (
+					"$(SDL_TTF_ROOT)",
 					"$(SDL_ROOT)/include",
 					"$(SDL_IMAGE_ROOT)",
-					"$(SDL_TTF_ROOT)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

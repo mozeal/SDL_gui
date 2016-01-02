@@ -48,6 +48,7 @@ disable(false)
     if (parent) { // parent = 0 if this = topw, or if keep_on_top() will be called
         tw_area.x = topleft.x+parent->tw_area.x;
         tw_area.y = topleft.y+parent->tw_area.y;
+        GUI_Log( "%i: %i - %i: %i\n", parent->tw_area.x, parent->tw_area.y, topleft.x, topleft.y );
         parent->add_child(this);
     }
 };
@@ -140,7 +141,11 @@ void GUI_WinBase::predraw()
     if( hidden )
         return;
     //GUI_Log( "Viewport %s: %i, %i, %i, %i\n", title_str, tw_area.x, tw_area.y, tw_area.w, tw_area.h );
+#ifdef __EMSCRIPTEN__
+    SDL_RenderSetViewport( GUI_renderer, GUI_MakeRect( tw_area.x, GUI_windowHeight-tw_area.y-tw_area.h, tw_area.w, tw_area.h) );
+#else
     SDL_RenderSetViewport( GUI_renderer, &tw_area );
+#endif
 
     if( parent ) {
         GUI_Rect parent_clip = GUI_Rect( parent->clip_area );
@@ -151,7 +156,12 @@ void GUI_WinBase::predraw()
     else {
         clip_area = GUI_Rect( 0, 0, tw_area.w, tw_area.h );
     }
+#ifdef __EMSCRIPTEN__
+    //SDL_RenderSetClipRect( GUI_renderer, GUI_MakeRect( clip_area.x, clip_area.y, clip_area.w, clip_area.h ) );
+    GUI_Log( "%s: %i, %i, %i, %i\n", title_str, clip_area.x, clip_area.y, clip_area.w, clip_area.h );
+#else
     SDL_RenderSetClipRect( GUI_renderer, GUI_MakeRect( clip_area.x, clip_area.y, clip_area.w, clip_area.h ) );
+#endif
 
     clear();
 }
@@ -168,7 +178,12 @@ void GUI_WinBase::draw()
         GUI_DrawRect2( GUI_MakeRect(0, 0, tw_area.w, tw_area.h), cBlack );
         SDL_IntersectRect( &r, &clip_area, &clip_area );
         
+#ifdef __EMSCRIPTEN__
+        //SDL_RenderSetClipRect( GUI_renderer, GUI_MakeRect( clip_area.x, clip_area.y, clip_area.w, clip_area.h ) );
+        GUI_Log( ">%s: %i, %i, %i, %i\n", title_str, clip_area.x, clip_area.y, clip_area.w, clip_area.h );
+#else
         SDL_RenderSetClipRect( GUI_renderer, GUI_MakeRect( clip_area.x, clip_area.y, clip_area.w, clip_area.h ) );
+#endif
     }
 }
 

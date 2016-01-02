@@ -26,9 +26,10 @@ void createTestWindows( int x, int y, const char *title, SDL_Color bgcol ) {
     greenWin->border = 1;
     greenWin->canMove = true;
 
-    GUI_WinBase *whiteWin = new GUI_WinBase(redWin, "Green", 10, 10, 120, 90, cWhite);
+    GUI_WinBase *whiteWin = new GUI_WinBase(redWin, "White", 10, 10, 120, 90, cWhite);
     whiteWin->border = 1;
     whiteWin->canMove = true;
+    
     
     GUI_WinBase *blueWin = new GUI_WinBase(greenWin, "Blue", 20, 20, 240, 160, cBlue);
     blueWin->border = 1;
@@ -45,7 +46,7 @@ void createTestWindows( int x, int y, const char *title, SDL_Color bgcol ) {
     GUI_WinBase *cyanWin = new GUI_WinBase(blueWin, "Cyan", 20, 20, 120, 90, cCyan);
     cyanWin->border = 1;
     cyanWin->canMove = true;
-
+   
 }
 
 int
@@ -84,8 +85,8 @@ main(int argc, char *argv[])
     );
     
     createTestWindows( 20, 20, "Red", cRed );
-    createTestWindows( 420, 60, "Dark", cDarkGrey );
-    createTestWindows( 220, 225, "Magenta", cMagenta );
+    //createTestWindows( 420, 60, "Dark", cDarkGrey );
+    //createTestWindows( 220, 225, "Magenta", cMagenta );
     
     GUI_Run();
     

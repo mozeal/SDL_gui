@@ -62,6 +62,7 @@ main(int argc, char *argv[])
         }
     );
     
+    GUI_Log( "Create MainWin\n" );
     GUI_MainWin *mainWin = new GUI_MainWin(topWin, "Shapes", 20, 20, GUI_windowWidth-40, GUI_windowHeight-40, cRed, 1,
         []( GUI_WinBase *w ) {
             int cx = w->getWidth()/2, cy = w->getHeight()/2;
