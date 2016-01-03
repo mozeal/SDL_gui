@@ -228,7 +228,7 @@ main(int argc, char *argv[])
     while (!done) {
         startFrame = SDL_GetTicks();
         
-        done = doLoop();
+        doLoop();
         
         endFrame = SDL_GetTicks();
         

@@ -4,21 +4,17 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "5AB8450EAEBC0A6E915D6B5A4DEA78A934EF56A3" : 0,
-    "249981F0C789DC385CDF3F853AC36C8A151E6B9B" : 0,
     "00DBB133329479203466F6811A60C710EC6C6A29" : 0,
-    "094CFD1B0400EC2CC2B9D5E358AE1C22BCD94EA8" : 0
+    "249981F0C789DC385CDF3F853AC36C8A151E6B9B" : 0
   },
-  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "070030AA-185B-4D0A-BC4F-5C6EAB7C00FD",
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C9A5DB1C-A8C0-48D4-97F2-3000125C6850",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "5AB8450EAEBC0A6E915D6B5A4DEA78A934EF56A3" : "SDL_image\/",
-    "249981F0C789DC385CDF3F853AC36C8A151E6B9B" : "SDL_gui\/",
     "00DBB133329479203466F6811A60C710EC6C6A29" : "SDL\/",
-    "094CFD1B0400EC2CC2B9D5E358AE1C22BCD94EA8" : "SDL_ttf\/"
+    "249981F0C789DC385CDF3F853AC36C8A151E6B9B" : "SDL_gui\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "OSX",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "test\/0100_EditText\/_OSX\/OSX.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "test\/0040_RenderTexture\/_OSX\/OSX.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mozeal\/SDL-mirror.git",
@@ -26,19 +22,9 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "00DBB133329479203466F6811A60C710EC6C6A29"
     },
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mozeal\/SDL_ttf-mirror.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "094CFD1B0400EC2CC2B9D5E358AE1C22BCD94EA8"
-    },
-    {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mozeal\/SDL_gui.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "249981F0C789DC385CDF3F853AC36C8A151E6B9B"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mozeal\/SDL_image-mirror.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5AB8450EAEBC0A6E915D6B5A4DEA78A934EF56A3"
     }
   ]
 }

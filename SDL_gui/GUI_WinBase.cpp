@@ -152,13 +152,7 @@ void GUI_WinBase::predraw()
 {
     if( hidden )
         return;
-    //GUI_Log( "Viewport %s: %i, %i, %i, %i\n", title_str, tw_area.x, tw_area.y, tw_area.w, tw_area.h );
-#ifdef __EMSCRIPTEN__
-    SDL_RenderSetViewport( GUI_renderer, GUI_MakeRect( tw_area.x, GUI_windowHeight-tw_area.y-tw_area.h, tw_area.w, tw_area.h) );
-#else
-    SDL_RenderSetViewport( GUI_renderer, &tw_area );
-#endif
-
+    
     if( parent ) {
         GUI_Rect parent_clip = GUI_Rect( parent->clip_area );
         parent_clip.x -= topleft.x;
@@ -168,6 +162,15 @@ void GUI_WinBase::predraw()
     else {
         clip_area = GUI_Rect( 0, 0, tw_area.w, tw_area.h );
     }
+    
+    //GUI_Log( "Viewport %s: %i, %i, %i, %i\n", title_str, tw_area.x, tw_area.y, tw_area.w, tw_area.h );
+#ifdef __EMSCRIPTEN__
+    SDL_RenderSetViewport( GUI_renderer, GUI_MakeRect( tw_area.x, GUI_windowHeight-tw_area.y-tw_area.h, tw_area.w, tw_area.h) );
+#else
+    SDL_RenderSetViewport( GUI_renderer, GUI_MakeRect(tw_area.x, tw_area.y, tw_area.w, tw_area.h) );
+#endif
+
+
 #ifdef __EMSCRIPTEN__
     float magic_y = GUI_windowHeight-tw_area.y-tw_area.h;
     
@@ -179,8 +182,9 @@ void GUI_WinBase::predraw()
                                                       clip_area.h) );
 #else
     //GUI_Log( "%s: %i, %i, %i, %i\n", title_str, clip_area.x, clip_area.y, clip_area.w, clip_area.h );
+
     SDL_RenderSetClipRect( GUI_renderer, GUI_MakeRect( clip_area.x,
-                                                      tw_area.h-clip_area.y-clip_area.h,
+                                                      clip_area.y,
                                                       clip_area.w,
                                                       clip_area.h ) );
 #endif
@@ -211,8 +215,9 @@ void GUI_WinBase::draw()
                                                           clip_area.h) );
 #else
     //GUI_Log( ">%s: %i, %i, %i, %i\n", title_str, clip_area.x, clip_area.y, clip_area.w, clip_area.h );
+
     SDL_RenderSetClipRect( GUI_renderer, GUI_MakeRect( clip_area.x,
-                                                      tw_area.h-clip_area.y-clip_area.h,
+                                                      clip_area.y,
                                                       clip_area.w,
                                                       clip_area.h ) );
 #endif

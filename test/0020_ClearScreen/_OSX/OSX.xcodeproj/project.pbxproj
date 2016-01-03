@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		381BE2711BCE26E1004F12EF /* data in CopyFiles */ = {isa = PBXBuildFile; fileRef = 381BE2701BCE26DA004F12EF /* data */; };
 		381BE2761BCE2788004F12EF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 381BE2751BCE2788004F12EF /* main.cpp */; };
 		38E1D2251BCCA94900C25A25 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E1D2241BCCA94900C25A25 /* AudioToolbox.framework */; };
 		38E1D2271BCCA95000C25A25 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E1D2261BCCA95000C25A25 /* AudioUnit.framework */; };
@@ -66,14 +65,12 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				381BE2711BCE26E1004F12EF /* data in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		381BE2701BCE26DA004F12EF /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../data; sourceTree = "<group>"; };
 		381BE2751BCE2788004F12EF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		38E1D2091BCCA90800C25A25 /* OSX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OSX; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E1D2241BCCA94900C25A25 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -121,7 +118,6 @@
 		38E1D2001BCCA90700C25A25 = {
 			isa = PBXGroup;
 			children = (
-				381BE2701BCE26DA004F12EF /* data */,
 				38CA5D011BCCD1D00099BC3B /* src */,
 				BF16D23C1C30B65700F6E294 /* SDL_gui */,
 				38E1D2341BCCA9A900C25A25 /* Frameworks */,
