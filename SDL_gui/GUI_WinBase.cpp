@@ -179,7 +179,10 @@ void GUI_WinBase::predraw()
                                                       clip_area.h) );
 #else
     //GUI_Log( "%s: %i, %i, %i, %i\n", title_str, clip_area.x, clip_area.y, clip_area.w, clip_area.h );
-    SDL_RenderSetClipRect( GUI_renderer, GUI_MakeRect( clip_area.x, clip_area.y, clip_area.w, clip_area.h ) );
+    SDL_RenderSetClipRect( GUI_renderer, GUI_MakeRect( clip_area.x,
+                                                      tw_area.h-clip_area.y-clip_area.h,
+                                                      clip_area.w,
+                                                      clip_area.h ) );
 #endif
 
     clear();
@@ -208,7 +211,10 @@ void GUI_WinBase::draw()
                                                           clip_area.h) );
 #else
     //GUI_Log( ">%s: %i, %i, %i, %i\n", title_str, clip_area.x, clip_area.y, clip_area.w, clip_area.h );
-    SDL_RenderSetClipRect( GUI_renderer, GUI_MakeRect( clip_area.x, clip_area.y, clip_area.w, clip_area.h ) );
+    SDL_RenderSetClipRect( GUI_renderer, GUI_MakeRect( clip_area.x,
+                                                      tw_area.h-clip_area.y-clip_area.h,
+                                                      clip_area.w,
+                                                      clip_area.h ) );
 #endif
     }
 }
