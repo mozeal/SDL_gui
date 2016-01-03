@@ -24,7 +24,7 @@
 #endif
 
 extern "C" char __iOS_DOCUMENTS_FOLDER[];
-
+extern "C" void GUI_iOS_Init();
 
 static const int MILLESECONDS_PER_FRAME = 1000.0/15.0;       /* about 60 frames per second */
 
@@ -77,6 +77,7 @@ Uint32 GUI_EventID = SDL_USEREVENT;
 int GUI_Init( void )
 {
     int status = 0;
+    GUI_iOS_Init();
     
     if( !GUI_initialized ) {
         GUI_EventID = SDL_RegisterEvents( 1024 );

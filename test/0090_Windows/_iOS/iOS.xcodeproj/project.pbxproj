@@ -34,6 +34,7 @@
 		38CA5CD31BCCAFEB0099BC3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CA5CCA1BCCAFEB0099BC3B /* UIKit.framework */; };
 		38CA5D111BCCD2210099BC3B /* Android.mk in Resources */ = {isa = PBXBuildFile; fileRef = 38CA5D0C1BCCD2210099BC3B /* Android.mk */; };
 		38CA5D121BCCD2210099BC3B /* Android_static.mk in Resources */ = {isa = PBXBuildFile; fileRef = 38CA5D0D1BCCD2210099BC3B /* Android_static.mk */; };
+		BF0578DC1C39BB0F00D6F4E9 /* GUI_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF0578DB1C39BB0F00D6F4E9 /* GUI_iOS.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,8 @@
 		38CA5CCA1BCCAFEB0099BC3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		38CA5D0C1BCCD2210099BC3B /* Android.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Android.mk; sourceTree = "<group>"; };
 		38CA5D0D1BCCD2210099BC3B /* Android_static.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Android_static.mk; sourceTree = "<group>"; };
+		BF0578DA1C39BB0F00D6F4E9 /* GUI_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_iOS.h; sourceTree = "<group>"; };
+		BF0578DB1C39BB0F00D6F4E9 /* GUI_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GUI_iOS.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +191,8 @@
 				386D38F51C33AEA200769F0E /* SDL_gui.cpp */,
 				386D38F61C33AEA200769F0E /* SDL_gui.h */,
 				386D38F71C33AEA200769F0E /* xpm.h */,
+				BF0578DA1C39BB0F00D6F4E9 /* GUI_iOS.h */,
+				BF0578DB1C39BB0F00D6F4E9 /* GUI_iOS.mm */,
 			);
 			name = SDL_gui;
 			path = ../../../SDL_gui;
@@ -380,6 +385,7 @@
 				386D38FA1C33AEA200769F0E /* GUI_TopWin.cpp in Sources */,
 				386D38F81C33AEA200769F0E /* GUI_BasicWidgets.cpp in Sources */,
 				386D38FB1C33AEA200769F0E /* GUI_utils.cpp in Sources */,
+				BF0578DC1C39BB0F00D6F4E9 /* GUI_iOS.mm in Sources */,
 				386D38FC1C33AEA200769F0E /* GUI_WinBase.cpp in Sources */,
 				386D38F91C33AEA200769F0E /* GUI_MainWin.cpp in Sources */,
 				386D38FD1C33AEA200769F0E /* SDL_gui.cpp in Sources */,
