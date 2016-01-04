@@ -77,7 +77,9 @@ Uint32 GUI_EventID = SDL_USEREVENT;
 int GUI_Init( void )
 {
     int status = 0;
+#if __IPHONEOS__
     GUI_iOS_Init();
+#endif
     
     if( !GUI_initialized ) {
         GUI_EventID = SDL_RegisterEvents( 1024 );
