@@ -1,5 +1,0 @@
-#!/bin/bash
-
-rm sdl2.*
-./build.sh
-
