@@ -1,14 +1,5 @@
-mkdir -p assets
-cd assets
+rm app/jni/SDL2
+ln -s ../../../../../SDL2 app/jni/
 
-rm data
-ln -s ../../data data
-
-cd ..
-cd app/jni
-
-rm src
-ln -s ../../../src src
-ln -s ../../../../../../SDL SDL
-
-cd ../..
+rm app/jni/src
+ln -s ../../../src app/jni/

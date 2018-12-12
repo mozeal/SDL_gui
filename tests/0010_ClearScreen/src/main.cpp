@@ -1,6 +1,5 @@
-#include <iostream>
 #include <SDL.h>
-
+#include <iostream>
 #if defined(WIN32)
 #include "..\_VisualC\WinApp\WinApp\resource.h"
 #include <SDL_syswm.h>
