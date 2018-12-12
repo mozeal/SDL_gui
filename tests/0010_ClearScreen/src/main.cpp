@@ -134,6 +134,7 @@ int main(int argc, char *argv[]) {
     float frameCount = 0.0f;
     
     while (!done) {
+         SDL_Log("loop\n" );
         startFrame = SDL_GetTicks();
 
         doLoop();
