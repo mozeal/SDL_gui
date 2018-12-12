@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380C58C521C101CF0005A03F /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C58C021C101AD0005A03F /* libSDL2.a */; };
+		380C58C721C108330005A03F /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C58C621C108330005A03F /* Metal.framework */; };
 		384BBBB41BCE301900D0B592 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 384BBBB31BCE301900D0B592 /* main.cpp */; };
-		386D26E71C33A9B900769F0E /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 386D26CF1C33A98500769F0E /* libSDL2.a */; };
 		38C6AF781C882C9700388748 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 38C6AF771C882C9700388748 /* data */; };
 		38CA5CAC1BCCAF2B0099BC3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38CA5CAB1BCCAF2B0099BC3B /* Assets.xcassets */; };
 		38CA5CAF1BCCAF2B0099BC3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38CA5CAD1BCCAF2B0099BC3B /* LaunchScreen.storyboard */; };
@@ -28,32 +29,33 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		386D26CE1C33A98500769F0E /* PBXContainerItemProxy */ = {
+		380C58BF21C101AD0005A03F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 386D26C91C33A98500769F0E /* SDL.xcodeproj */;
+			containerPortal = 380C58B721C101AD0005A03F /* SDL.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = FD6526630DE8FCCB002AD96B;
-			remoteInfo = libSDL;
+			remoteInfo = "libSDL-iOS";
 		};
-		386D26E51C33A9B400769F0E /* PBXContainerItemProxy */ = {
+		380C58C121C101AD0005A03F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 386D26C91C33A98500769F0E /* SDL.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = FD6526620DE8FCCB002AD96B;
-			remoteInfo = libSDL;
-		};
-		6921FFA81E25EC65007790C9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 386D26C91C33A98500769F0E /* SDL.xcodeproj */;
+			containerPortal = 380C58B721C101AD0005A03F /* SDL.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = FAB598141BB5C1B100BE72C5;
-			remoteInfo = "libSDL-tv";
+			remoteInfo = "libSDL-tvOS";
+		};
+		380C58C321C101C70005A03F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 380C58B721C101AD0005A03F /* SDL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FD6526620DE8FCCB002AD96B;
+			remoteInfo = "libSDL-iOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		380C58B721C101AD0005A03F /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = "../../../SDL2/Xcode-iOS/SDL/SDL.xcodeproj"; sourceTree = "<group>"; };
+		380C58C621C108330005A03F /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		384BBBB31BCE301900D0B592 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		386D26C91C33A98500769F0E /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = "../../../../SDL/Xcode-iOS/SDL/SDL.xcodeproj"; sourceTree = "<group>"; };
 		38C6AF771C882C9700388748 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../data; sourceTree = "<group>"; };
 		38CA5C9C1BCCAF2B0099BC3B /* ClearScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38CA5CAB1BCCAF2B0099BC3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,11 +81,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				380C58C521C101CF0005A03F /* libSDL2.a in Frameworks */,
+				380C58C721C108330005A03F /* Metal.framework in Frameworks */,
 				38DBC09D1CCDFC650016B1F4 /* MobileCoreServices.framework in Frameworks */,
 				38DBC09B1CCDFC420016B1F4 /* ImageIO.framework in Frameworks */,
 				38DBC0991CCDFC320016B1F4 /* CoreImage.framework in Frameworks */,
 				6921FFC01E25ED7D007790C9 /* AVFoundation.framework in Frameworks */,
-				386D26E71C33A9B900769F0E /* libSDL2.a in Frameworks */,
 				38CA5CCB1BCCAFEB0099BC3B /* AudioToolbox.framework in Frameworks */,
 				38CA5CCC1BCCAFEB0099BC3B /* CoreAudio.framework in Frameworks */,
 				38CA5CCD1BCCAFEB0099BC3B /* CoreGraphics.framework in Frameworks */,
@@ -99,11 +102,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		386D26CA1C33A98500769F0E /* Products */ = {
+		380C58B821C101AD0005A03F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				386D26CF1C33A98500769F0E /* libSDL2.a */,
-				6921FFA91E25EC65007790C9 /* libSDL2.a */,
+				380C58C021C101AD0005A03F /* libSDL2.a */,
+				380C58C221C101AD0005A03F /* libSDL2.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,7 +151,8 @@
 		38CA5CD41BCCAFF00099BC3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				386D26C91C33A98500769F0E /* SDL.xcodeproj */,
+				380C58C621C108330005A03F /* Metal.framework */,
+				380C58B721C101AD0005A03F /* SDL.xcodeproj */,
 				38CA5CC21BCCAFEB0099BC3B /* AudioToolbox.framework */,
 				6921FFBF1E25ED7D007790C9 /* AVFoundation.framework */,
 				38CA5CC31BCCAFEB0099BC3B /* CoreAudio.framework */,
@@ -189,7 +193,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				386D26E61C33A9B400769F0E /* PBXTargetDependency */,
+				380C58C421C101C70005A03F /* PBXTargetDependency */,
 			);
 			name = iOS;
 			productName = iOS;
@@ -208,7 +212,7 @@
 					38CA5C9B1BCCAF2B0099BC3B = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 3M3W4L293S;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -225,8 +229,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 386D26CA1C33A98500769F0E /* Products */;
-					ProjectRef = 386D26C91C33A98500769F0E /* SDL.xcodeproj */;
+					ProductGroup = 380C58B821C101AD0005A03F /* Products */;
+					ProjectRef = 380C58B721C101AD0005A03F /* SDL.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -237,18 +241,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		386D26CF1C33A98500769F0E /* libSDL2.a */ = {
+		380C58C021C101AD0005A03F /* libSDL2.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libSDL2.a;
-			remoteRef = 386D26CE1C33A98500769F0E /* PBXContainerItemProxy */;
+			remoteRef = 380C58BF21C101AD0005A03F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6921FFA91E25EC65007790C9 /* libSDL2.a */ = {
+		380C58C221C101AD0005A03F /* libSDL2.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libSDL2.a;
-			remoteRef = 6921FFA81E25EC65007790C9 /* PBXContainerItemProxy */;
+			remoteRef = 380C58C121C101AD0005A03F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -278,10 +282,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		386D26E61C33A9B400769F0E /* PBXTargetDependency */ = {
+		380C58C421C101C70005A03F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = libSDL;
-			targetProxy = 386D26E51C33A9B400769F0E /* PBXContainerItemProxy */;
+			name = "libSDL-iOS";
+			targetProxy = 380C58C321C101C70005A03F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -335,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -375,7 +379,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -390,23 +394,25 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3M3W4L293S;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_TESTABILITY = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 					"__IPHONEOS__=1",
 				);
-				HEADER_SEARCH_PATHS = "$(SDL_ROOT)/include";
+				GUI_CORE_INCLUDES = $SDL_ROOT/include;
+				HEADER_SEARCH_PATHS = $GUI_CORE_INCLUDES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jimmysoftware.$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = ClearScreen;
-				PROVISIONING_PROFILE = "a7f04cf5-bd34-421c-ba00-fc080f17be75";
-				PROVISIONING_PROFILE_SPECIFIER = JimmyDev2017;
-				SDL_ROOT = ../../../../SDL;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDL_ROOT = ../../../SDL2;
 			};
 			name = Debug;
 		};
@@ -417,18 +423,20 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 3M3W4L293S;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "__IPHONEOS__=1";
 				"GCC_PREPROCESSOR_DEFINITIONS[sdk=iphoneos*]" = "__IPHONEOS__=1";
-				HEADER_SEARCH_PATHS = "$(SDL_ROOT)/include";
+				GUI_CORE_INCLUDES = $SDL_ROOT/include;
+				HEADER_SEARCH_PATHS = $GUI_CORE_INCLUDES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jimmysoftware.$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = ClearScreen;
-				PROVISIONING_PROFILE = "b67d1f05-f23f-4734-b52d-a5634c7be7a7";
-				PROVISIONING_PROFILE_SPECIFIER = JimmyDist2016;
-				SDL_ROOT = ../../../../SDL;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDL_ROOT = ../../../SDL2;
 			};
 			name = Release;
 		};
