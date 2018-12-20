@@ -1,0 +1,17 @@
+﻿  Copying libfreetype-6.dll
+          1 file(s) copied.
+  Copying LICENSE.freetype.txt
+          1 file(s) copied.
+  Copying LICENSE.zlib.txt
+          1 file(s) copied.
+  Copying zlib1.dll
+          1 file(s) copied.
+  SDL_ttf.cpp
+..\SDL_ttf.cpp(1269): warning C4018: '<': signed/unsigned mismatch
+..\SDL_ttf.cpp(1476): warning C4018: '<': signed/unsigned mismatch
+..\SDL_ttf.cpp(1691): warning C4018: '<': signed/unsigned mismatch
+..\SDL_ttf.cpp(1894): warning C4018: '<': signed/unsigned mismatch
+..\SDL_ttf.cpp(2198): warning C4018: '<': signed/unsigned mismatch
+..\SDL_ttf.cpp(2047): warning C4101: 'textlen': unreferenced local variable
+LINK : warning LNK4068: /MACHINE not specified; defaulting to X86
+  SDL_ttf.vcxproj -> Y:\__Projects\SDL_gui3\apps\1050_PES3\_VisualC\WinApp\\Win32\Release\SDL2_ttf.lib

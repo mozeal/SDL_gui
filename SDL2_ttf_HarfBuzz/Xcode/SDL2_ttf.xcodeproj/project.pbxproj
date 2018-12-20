@@ -1,0 +1,1340 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		385B99F321CBDE4E000E5F90 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385B99EA21CBDE37000E5F90 /* SDL2.framework */; };
+		AA9EE79914B2C589008773C0 /* FreeType.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9EE79814B2C589008773C0 /* FreeType.framework */; };
+		AA9EE79A14B2C593008773C0 /* FreeType.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AA9EE79814B2C589008773C0 /* FreeType.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		BE48FD5F07AFA17000BB41DA /* SDL_ttf.h in Headers */ = {isa = PBXBuildFile; fileRef = 1014BAEA010A4B677F000001 /* SDL_ttf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE48FD6207AFA17000BB41DA /* SDL_ttf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F567D67A01CD962A01F3E8B9 /* SDL_ttf.cpp */; };
+		BF4940022069198E007D02B1 /* SDL2_ttf.h in Headers */ = {isa = PBXBuildFile; fileRef = BF4940012069198E007D02B1 /* SDL2_ttf.h */; };
+		BF4940042069198E007D02B1 /* SDL2_ttf.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4940032069198E007D02B1 /* SDL2_ttf.m */; };
+		FEB095521EDD36A500D263C0 /* hb-atomic-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094CD1EDD36A400D263C0 /* hb-atomic-private.hh */; };
+		FEB095531EDD36A500D263C0 /* hb-blob.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB094CE1EDD36A400D263C0 /* hb-blob.cc */; };
+		FEB095541EDD36A500D263C0 /* hb-blob.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094CF1EDD36A400D263C0 /* hb-blob.h */; };
+		FEB095551EDD36A500D263C0 /* hb-buffer-deserialize-json.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094D01EDD36A400D263C0 /* hb-buffer-deserialize-json.hh */; };
+		FEB095561EDD36A500D263C0 /* hb-buffer-deserialize-json.rl in Resources */ = {isa = PBXBuildFile; fileRef = FEB094D11EDD36A400D263C0 /* hb-buffer-deserialize-json.rl */; };
+		FEB095571EDD36A500D263C0 /* hb-buffer-deserialize-text.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094D21EDD36A400D263C0 /* hb-buffer-deserialize-text.hh */; };
+		FEB095581EDD36A500D263C0 /* hb-buffer-deserialize-text.rl in Resources */ = {isa = PBXBuildFile; fileRef = FEB094D31EDD36A400D263C0 /* hb-buffer-deserialize-text.rl */; };
+		FEB095591EDD36A500D263C0 /* hb-buffer-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094D41EDD36A400D263C0 /* hb-buffer-private.hh */; };
+		FEB0955A1EDD36A500D263C0 /* hb-buffer-serialize.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB094D51EDD36A400D263C0 /* hb-buffer-serialize.cc */; };
+		FEB0955B1EDD36A500D263C0 /* hb-buffer.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB094D61EDD36A400D263C0 /* hb-buffer.cc */; };
+		FEB0955C1EDD36A500D263C0 /* hb-buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094D71EDD36A400D263C0 /* hb-buffer.h */; };
+		FEB0955D1EDD36A500D263C0 /* hb-cache-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094D81EDD36A400D263C0 /* hb-cache-private.hh */; };
+		FEB0955E1EDD36A500D263C0 /* hb-common.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB094D91EDD36A400D263C0 /* hb-common.cc */; };
+		FEB0955F1EDD36A500D263C0 /* hb-common.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094DA1EDD36A400D263C0 /* hb-common.h */; };
+		FEB095611EDD36A500D263C0 /* hb-coretext.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094DC1EDD36A400D263C0 /* hb-coretext.h */; };
+		FEB095621EDD36A500D263C0 /* hb-deprecated.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094DD1EDD36A400D263C0 /* hb-deprecated.h */; };
+		FEB095641EDD36A500D263C0 /* hb-directwrite.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094DF1EDD36A400D263C0 /* hb-directwrite.h */; };
+		FEB095651EDD36A500D263C0 /* hb-face-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094E01EDD36A400D263C0 /* hb-face-private.hh */; };
+		FEB095661EDD36A500D263C0 /* hb-face.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB094E11EDD36A400D263C0 /* hb-face.cc */; };
+		FEB095671EDD36A500D263C0 /* hb-face.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094E21EDD36A400D263C0 /* hb-face.h */; };
+		FEB095691EDD36A500D263C0 /* hb-font-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094E41EDD36A400D263C0 /* hb-font-private.hh */; };
+		FEB0956A1EDD36A500D263C0 /* hb-font.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB094E51EDD36A400D263C0 /* hb-font.cc */; };
+		FEB0956B1EDD36A500D263C0 /* hb-font.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094E61EDD36A400D263C0 /* hb-font.h */; };
+		FEB0956C1EDD36A500D263C0 /* hb-ft.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB094E71EDD36A400D263C0 /* hb-ft.cc */; };
+		FEB0956D1EDD36A500D263C0 /* hb-ft.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094E81EDD36A400D263C0 /* hb-ft.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEB0956F1EDD36A500D263C0 /* hb-glib.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094EA1EDD36A400D263C0 /* hb-glib.h */; };
+		FEB095701EDD36A500D263C0 /* hb-gobject-enums.cc.tmpl in Resources */ = {isa = PBXBuildFile; fileRef = FEB094EB1EDD36A400D263C0 /* hb-gobject-enums.cc.tmpl */; };
+		FEB095711EDD36A500D263C0 /* hb-gobject-enums.h.tmpl in Resources */ = {isa = PBXBuildFile; fileRef = FEB094EC1EDD36A400D263C0 /* hb-gobject-enums.h.tmpl */; };
+		FEB095731EDD36A500D263C0 /* hb-gobject-structs.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094EE1EDD36A500D263C0 /* hb-gobject-structs.h */; };
+		FEB095741EDD36A500D263C0 /* hb-gobject.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094EF1EDD36A500D263C0 /* hb-gobject.h */; };
+		FEB095761EDD36A500D263C0 /* hb-graphite2.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094F11EDD36A500D263C0 /* hb-graphite2.h */; };
+		FEB095781EDD36A500D263C0 /* hb-icu.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094F31EDD36A500D263C0 /* hb-icu.h */; };
+		FEB095791EDD36A500D263C0 /* hb-mutex-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094F41EDD36A500D263C0 /* hb-mutex-private.hh */; };
+		FEB0957A1EDD36A500D263C0 /* hb-object-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094F51EDD36A500D263C0 /* hb-object-private.hh */; };
+		FEB0957B1EDD36A500D263C0 /* hb-open-file-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094F61EDD36A500D263C0 /* hb-open-file-private.hh */; };
+		FEB0957C1EDD36A500D263C0 /* hb-open-type-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094F71EDD36A500D263C0 /* hb-open-type-private.hh */; };
+		FEB0957D1EDD36A500D263C0 /* hb-ot-cbdt-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094F81EDD36A500D263C0 /* hb-ot-cbdt-table.hh */; };
+		FEB0957E1EDD36A500D263C0 /* hb-ot-cmap-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094F91EDD36A500D263C0 /* hb-ot-cmap-table.hh */; };
+		FEB0957F1EDD36A500D263C0 /* hb-ot-font.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB094FA1EDD36A500D263C0 /* hb-ot-font.cc */; };
+		FEB095801EDD36A500D263C0 /* hb-ot-font.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB094FB1EDD36A500D263C0 /* hb-ot-font.h */; };
+		FEB095811EDD36A500D263C0 /* hb-ot-glyf-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094FC1EDD36A500D263C0 /* hb-ot-glyf-table.hh */; };
+		FEB095821EDD36A500D263C0 /* hb-ot-head-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094FD1EDD36A500D263C0 /* hb-ot-head-table.hh */; };
+		FEB095831EDD36A500D263C0 /* hb-ot-hhea-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094FE1EDD36A500D263C0 /* hb-ot-hhea-table.hh */; };
+		FEB095841EDD36A500D263C0 /* hb-ot-hmtx-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB094FF1EDD36A500D263C0 /* hb-ot-hmtx-table.hh */; };
+		FEB095851EDD36A500D263C0 /* hb-ot-layout-common-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095001EDD36A500D263C0 /* hb-ot-layout-common-private.hh */; };
+		FEB095861EDD36A500D263C0 /* hb-ot-layout-gdef-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095011EDD36A500D263C0 /* hb-ot-layout-gdef-table.hh */; };
+		FEB095871EDD36A500D263C0 /* hb-ot-layout-gpos-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095021EDD36A500D263C0 /* hb-ot-layout-gpos-table.hh */; };
+		FEB095881EDD36A500D263C0 /* hb-ot-layout-gsub-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095031EDD36A500D263C0 /* hb-ot-layout-gsub-table.hh */; };
+		FEB095891EDD36A500D263C0 /* hb-ot-layout-gsubgpos-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095041EDD36A500D263C0 /* hb-ot-layout-gsubgpos-private.hh */; };
+		FEB0958A1EDD36A500D263C0 /* hb-ot-layout-jstf-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095051EDD36A500D263C0 /* hb-ot-layout-jstf-table.hh */; };
+		FEB0958B1EDD36A500D263C0 /* hb-ot-layout-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095061EDD36A500D263C0 /* hb-ot-layout-private.hh */; };
+		FEB0958C1EDD36A500D263C0 /* hb-ot-layout.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095071EDD36A500D263C0 /* hb-ot-layout.cc */; };
+		FEB0958D1EDD36A500D263C0 /* hb-ot-layout.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB095081EDD36A500D263C0 /* hb-ot-layout.h */; };
+		FEB0958E1EDD36A500D263C0 /* hb-ot-map-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095091EDD36A500D263C0 /* hb-ot-map-private.hh */; };
+		FEB0958F1EDD36A500D263C0 /* hb-ot-map.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB0950A1EDD36A500D263C0 /* hb-ot-map.cc */; };
+		FEB095901EDD36A500D263C0 /* hb-ot-math-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB0950B1EDD36A500D263C0 /* hb-ot-math-table.hh */; };
+		FEB095911EDD36A500D263C0 /* hb-ot-math.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB0950C1EDD36A500D263C0 /* hb-ot-math.cc */; };
+		FEB095921EDD36A500D263C0 /* hb-ot-math.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB0950D1EDD36A500D263C0 /* hb-ot-math.h */; };
+		FEB095931EDD36A500D263C0 /* hb-ot-maxp-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB0950E1EDD36A500D263C0 /* hb-ot-maxp-table.hh */; };
+		FEB095941EDD36A500D263C0 /* hb-ot-name-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB0950F1EDD36A500D263C0 /* hb-ot-name-table.hh */; };
+		FEB095951EDD36A500D263C0 /* hb-ot-os2-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095101EDD36A500D263C0 /* hb-ot-os2-table.hh */; };
+		FEB095961EDD36A500D263C0 /* hb-ot-post-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095111EDD36A500D263C0 /* hb-ot-post-table.hh */; };
+		FEB095971EDD36A500D263C0 /* hb-ot-shape-complex-arabic-fallback.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095121EDD36A500D263C0 /* hb-ot-shape-complex-arabic-fallback.hh */; };
+		FEB095981EDD36A500D263C0 /* hb-ot-shape-complex-arabic-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095131EDD36A500D263C0 /* hb-ot-shape-complex-arabic-private.hh */; };
+		FEB095991EDD36A500D263C0 /* hb-ot-shape-complex-arabic-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095141EDD36A500D263C0 /* hb-ot-shape-complex-arabic-table.hh */; };
+		FEB0959A1EDD36A500D263C0 /* hb-ot-shape-complex-arabic-win1256.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095151EDD36A500D263C0 /* hb-ot-shape-complex-arabic-win1256.hh */; };
+		FEB0959B1EDD36A500D263C0 /* hb-ot-shape-complex-arabic.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095161EDD36A500D263C0 /* hb-ot-shape-complex-arabic.cc */; };
+		FEB0959C1EDD36A500D263C0 /* hb-ot-shape-complex-default.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095171EDD36A500D263C0 /* hb-ot-shape-complex-default.cc */; };
+		FEB0959D1EDD36A500D263C0 /* hb-ot-shape-complex-hangul.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095181EDD36A500D263C0 /* hb-ot-shape-complex-hangul.cc */; };
+		FEB0959E1EDD36A500D263C0 /* hb-ot-shape-complex-hebrew.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095191EDD36A500D263C0 /* hb-ot-shape-complex-hebrew.cc */; };
+		FEB0959F1EDD36A500D263C0 /* hb-ot-shape-complex-indic-machine.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB0951A1EDD36A500D263C0 /* hb-ot-shape-complex-indic-machine.hh */; };
+		FEB095A01EDD36A500D263C0 /* hb-ot-shape-complex-indic-machine.rl in Resources */ = {isa = PBXBuildFile; fileRef = FEB0951B1EDD36A500D263C0 /* hb-ot-shape-complex-indic-machine.rl */; };
+		FEB095A11EDD36A500D263C0 /* hb-ot-shape-complex-indic-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB0951C1EDD36A500D263C0 /* hb-ot-shape-complex-indic-private.hh */; };
+		FEB095A21EDD36A500D263C0 /* hb-ot-shape-complex-indic-table.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB0951D1EDD36A500D263C0 /* hb-ot-shape-complex-indic-table.cc */; };
+		FEB095A31EDD36A500D263C0 /* hb-ot-shape-complex-indic.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB0951E1EDD36A500D263C0 /* hb-ot-shape-complex-indic.cc */; };
+		FEB095A41EDD36A500D263C0 /* hb-ot-shape-complex-myanmar-machine.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB0951F1EDD36A500D263C0 /* hb-ot-shape-complex-myanmar-machine.hh */; };
+		FEB095A51EDD36A500D263C0 /* hb-ot-shape-complex-myanmar-machine.rl in Resources */ = {isa = PBXBuildFile; fileRef = FEB095201EDD36A500D263C0 /* hb-ot-shape-complex-myanmar-machine.rl */; };
+		FEB095A61EDD36A500D263C0 /* hb-ot-shape-complex-myanmar.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095211EDD36A500D263C0 /* hb-ot-shape-complex-myanmar.cc */; };
+		FEB095A71EDD36A500D263C0 /* hb-ot-shape-complex-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095221EDD36A500D263C0 /* hb-ot-shape-complex-private.hh */; };
+		FEB095A81EDD36A500D263C0 /* hb-ot-shape-complex-thai.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095231EDD36A500D263C0 /* hb-ot-shape-complex-thai.cc */; };
+		FEB095A91EDD36A500D263C0 /* hb-ot-shape-complex-tibetan.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095241EDD36A500D263C0 /* hb-ot-shape-complex-tibetan.cc */; };
+		FEB095AA1EDD36A500D263C0 /* hb-ot-shape-complex-use-machine.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095251EDD36A500D263C0 /* hb-ot-shape-complex-use-machine.hh */; };
+		FEB095AB1EDD36A500D263C0 /* hb-ot-shape-complex-use-machine.rl in Resources */ = {isa = PBXBuildFile; fileRef = FEB095261EDD36A500D263C0 /* hb-ot-shape-complex-use-machine.rl */; };
+		FEB095AC1EDD36A500D263C0 /* hb-ot-shape-complex-use-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095271EDD36A500D263C0 /* hb-ot-shape-complex-use-private.hh */; };
+		FEB095AD1EDD36A500D263C0 /* hb-ot-shape-complex-use-table.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095281EDD36A500D263C0 /* hb-ot-shape-complex-use-table.cc */; };
+		FEB095AE1EDD36A500D263C0 /* hb-ot-shape-complex-use.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095291EDD36A500D263C0 /* hb-ot-shape-complex-use.cc */; };
+		FEB095AF1EDD36A500D263C0 /* hb-ot-shape-fallback-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB0952A1EDD36A500D263C0 /* hb-ot-shape-fallback-private.hh */; };
+		FEB095B11EDD36A500D263C0 /* hb-ot-shape-normalize-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB0952C1EDD36A500D263C0 /* hb-ot-shape-normalize-private.hh */; };
+		FEB095B21EDD36A500D263C0 /* hb-ot-shape-normalize.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB0952D1EDD36A500D263C0 /* hb-ot-shape-normalize.cc */; };
+		FEB095B31EDD36A500D263C0 /* hb-ot-shape-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB0952E1EDD36A500D263C0 /* hb-ot-shape-private.hh */; };
+		FEB095B41EDD36A500D263C0 /* hb-ot-shape.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB0952F1EDD36A500D263C0 /* hb-ot-shape.cc */; };
+		FEB095B51EDD36A500D263C0 /* hb-ot-shape.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB095301EDD36A500D263C0 /* hb-ot-shape.h */; };
+		FEB095B61EDD36A500D263C0 /* hb-ot-tag.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095311EDD36A500D263C0 /* hb-ot-tag.cc */; };
+		FEB095B71EDD36A500D263C0 /* hb-ot-tag.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB095321EDD36A500D263C0 /* hb-ot-tag.h */; };
+		FEB095B81EDD36A500D263C0 /* hb-ot-var-avar-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095331EDD36A500D263C0 /* hb-ot-var-avar-table.hh */; };
+		FEB095B91EDD36A500D263C0 /* hb-ot-var-fvar-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095341EDD36A500D263C0 /* hb-ot-var-fvar-table.hh */; };
+		FEB095BA1EDD36A500D263C0 /* hb-ot-var-hvar-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095351EDD36A500D263C0 /* hb-ot-var-hvar-table.hh */; };
+		FEB095BB1EDD36A500D263C0 /* hb-ot-var-mvar-table.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095361EDD36A500D263C0 /* hb-ot-var-mvar-table.hh */; };
+		FEB095BC1EDD36A500D263C0 /* hb-ot-var.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095371EDD36A500D263C0 /* hb-ot-var.cc */; };
+		FEB095BD1EDD36A500D263C0 /* hb-ot-var.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB095381EDD36A500D263C0 /* hb-ot-var.h */; };
+		FEB095BE1EDD36A500D263C0 /* hb-ot.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB095391EDD36A500D263C0 /* hb-ot.h */; };
+		FEB095BF1EDD36A500D263C0 /* hb-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB0953A1EDD36A500D263C0 /* hb-private.hh */; };
+		FEB095C01EDD36A500D263C0 /* hb-set-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB0953B1EDD36A500D263C0 /* hb-set-private.hh */; };
+		FEB095C11EDD36A500D263C0 /* hb-set.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB0953C1EDD36A500D263C0 /* hb-set.cc */; };
+		FEB095C21EDD36A500D263C0 /* hb-set.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB0953D1EDD36A500D263C0 /* hb-set.h */; };
+		FEB095C31EDD36A500D263C0 /* hb-shape-plan-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB0953E1EDD36A500D263C0 /* hb-shape-plan-private.hh */; };
+		FEB095C41EDD36A500D263C0 /* hb-shape-plan.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB0953F1EDD36A500D263C0 /* hb-shape-plan.cc */; };
+		FEB095C51EDD36A500D263C0 /* hb-shape-plan.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB095401EDD36A500D263C0 /* hb-shape-plan.h */; };
+		FEB095C61EDD36A500D263C0 /* hb-shape.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095411EDD36A500D263C0 /* hb-shape.cc */; };
+		FEB095C71EDD36A500D263C0 /* hb-shape.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB095421EDD36A500D263C0 /* hb-shape.h */; };
+		FEB095C81EDD36A500D263C0 /* hb-shaper-impl-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095431EDD36A500D263C0 /* hb-shaper-impl-private.hh */; };
+		FEB095C91EDD36A500D263C0 /* hb-shaper-list.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095441EDD36A500D263C0 /* hb-shaper-list.hh */; };
+		FEB095CA1EDD36A500D263C0 /* hb-shaper-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095451EDD36A500D263C0 /* hb-shaper-private.hh */; };
+		FEB095CB1EDD36A500D263C0 /* hb-shaper.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095461EDD36A500D263C0 /* hb-shaper.cc */; };
+		FEB095CC1EDD36A500D263C0 /* hb-ucdn.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095471EDD36A500D263C0 /* hb-ucdn.cc */; };
+		FEB095CD1EDD36A500D263C0 /* hb-unicode-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB095481EDD36A500D263C0 /* hb-unicode-private.hh */; };
+		FEB095CE1EDD36A500D263C0 /* hb-unicode.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095491EDD36A500D263C0 /* hb-unicode.cc */; };
+		FEB095CF1EDD36A500D263C0 /* hb-unicode.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB0954A1EDD36A500D263C0 /* hb-unicode.h */; };
+		FEB095D11EDD36A500D263C0 /* hb-uniscribe.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB0954C1EDD36A500D263C0 /* hb-uniscribe.h */; };
+		FEB095D21EDD36A500D263C0 /* hb-utf-private.hh in Headers */ = {isa = PBXBuildFile; fileRef = FEB0954D1EDD36A500D263C0 /* hb-utf-private.hh */; };
+		FEB095D31EDD36A500D263C0 /* hb-version.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB0954E1EDD36A500D263C0 /* hb-version.h */; };
+		FEB095D41EDD36A500D263C0 /* hb-version.h.in in Resources */ = {isa = PBXBuildFile; fileRef = FEB0954F1EDD36A500D263C0 /* hb-version.h.in */; };
+		FEB095D51EDD36A500D263C0 /* hb-warning.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB095501EDD36A500D263C0 /* hb-warning.cc */; };
+		FEB095D61EDD36A500D263C0 /* hb.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB095511EDD36A500D263C0 /* hb.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEB095DB1EDD36D000D263C0 /* ucdn.c in Sources */ = {isa = PBXBuildFile; fileRef = FEB095D81EDD36D000D263C0 /* ucdn.c */; };
+		FEB095DC1EDD36D000D263C0 /* ucdn.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB095D91EDD36D000D263C0 /* ucdn.h */; };
+		FEB095DD1EDD36D000D263C0 /* unicodedata_db.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB095DA1EDD36D000D263C0 /* unicodedata_db.h */; };
+		FEB095DE1EDD38D400D263C0 /* hb-ot-shape-fallback.cc in Sources */ = {isa = PBXBuildFile; fileRef = FEB0952B1EDD36A500D263C0 /* hb-ot-shape-fallback.cc */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		385B99E921CBDE37000E5F90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 385B99E221CBDE37000E5F90 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF66C0761BA81005FE872;
+			remoteInfo = Framework;
+		};
+		385B99EB21CBDE37000E5F90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 385B99E221CBDE37000E5F90 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF6B30761BA81005FE872;
+			remoteInfo = "Static Library";
+		};
+		385B99ED21CBDE37000E5F90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 385B99E221CBDE37000E5F90 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB31407717554B71006C0E22;
+			remoteInfo = "Shared Library";
+		};
+		385B99EF21CBDE37000E5F90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 385B99E221CBDE37000E5F90 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF6BE0761BA81005FE872;
+			remoteInfo = "Standard DMG";
+		};
+		385B99F121CBDE45000E5F90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 385B99E221CBDE37000E5F90 /* SDL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BECDF5FE0761BA81005FE872;
+			remoteInfo = Framework;
+		};
+		BE48FD7907AFA17100BB41DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE48FD5D07AFA17000BB41DA;
+			remoteInfo = Framework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AA9EE79714B2C55E008773C0 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AA9EE79A14B2C593008773C0 /* FreeType.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1014BAEA010A4B677F000001 /* SDL_ttf.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = SDL_ttf.h; path = ../SDL_ttf.h; sourceTree = SOURCE_ROOT; };
+		385B99E221CBDE37000E5F90 /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../../SDL2/Xcode/SDL/SDL.xcodeproj; sourceTree = "<group>"; };
+		AA9EE79814B2C589008773C0 /* FreeType.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FreeType.framework; path = Frameworks/FreeType.framework; sourceTree = "<group>"; };
+		BE48FD6607AFA17000BB41DA /* Info-Framework.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Framework.plist"; sourceTree = "<group>"; };
+		BE48FD6707AFA17000BB41DA /* SDL2_ttf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDL2_ttf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE48FD7207AFA17000BB41DA /* Create DMG */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Create DMG"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF493FFF2069198E007D02B1 /* libSDL2_ttf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSDL2_ttf.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF4940012069198E007D02B1 /* SDL2_ttf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL2_ttf.h; sourceTree = "<group>"; };
+		BF4940032069198E007D02B1 /* SDL2_ttf.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDL2_ttf.m; sourceTree = "<group>"; };
+		F567D67A01CD962A01F3E8B9 /* SDL_ttf.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = SDL_ttf.cpp; path = ../SDL_ttf.cpp; sourceTree = SOURCE_ROOT; };
+		F59C710300D5CB5801000001 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		F59C710400D5CB5801000001 /* Welcome.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Welcome.txt; sourceTree = "<group>"; };
+		F59C710600D5CB5801000001 /* SDL_ttf.info */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = SDL_ttf.info; sourceTree = "<group>"; };
+		FEB094CD1EDD36A400D263C0 /* hb-atomic-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-atomic-private.hh"; path = "../external/harfbuzz-1.4.6/hb-atomic-private.hh"; sourceTree = "<group>"; };
+		FEB094CE1EDD36A400D263C0 /* hb-blob.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-blob.cc"; path = "../external/harfbuzz-1.4.6/hb-blob.cc"; sourceTree = "<group>"; };
+		FEB094CF1EDD36A400D263C0 /* hb-blob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-blob.h"; path = "../external/harfbuzz-1.4.6/hb-blob.h"; sourceTree = "<group>"; };
+		FEB094D01EDD36A400D263C0 /* hb-buffer-deserialize-json.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-buffer-deserialize-json.hh"; path = "../external/harfbuzz-1.4.6/hb-buffer-deserialize-json.hh"; sourceTree = "<group>"; };
+		FEB094D11EDD36A400D263C0 /* hb-buffer-deserialize-json.rl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "hb-buffer-deserialize-json.rl"; path = "../external/harfbuzz-1.4.6/hb-buffer-deserialize-json.rl"; sourceTree = "<group>"; };
+		FEB094D21EDD36A400D263C0 /* hb-buffer-deserialize-text.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-buffer-deserialize-text.hh"; path = "../external/harfbuzz-1.4.6/hb-buffer-deserialize-text.hh"; sourceTree = "<group>"; };
+		FEB094D31EDD36A400D263C0 /* hb-buffer-deserialize-text.rl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "hb-buffer-deserialize-text.rl"; path = "../external/harfbuzz-1.4.6/hb-buffer-deserialize-text.rl"; sourceTree = "<group>"; };
+		FEB094D41EDD36A400D263C0 /* hb-buffer-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-buffer-private.hh"; path = "../external/harfbuzz-1.4.6/hb-buffer-private.hh"; sourceTree = "<group>"; };
+		FEB094D51EDD36A400D263C0 /* hb-buffer-serialize.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-buffer-serialize.cc"; path = "../external/harfbuzz-1.4.6/hb-buffer-serialize.cc"; sourceTree = "<group>"; };
+		FEB094D61EDD36A400D263C0 /* hb-buffer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-buffer.cc"; path = "../external/harfbuzz-1.4.6/hb-buffer.cc"; sourceTree = "<group>"; };
+		FEB094D71EDD36A400D263C0 /* hb-buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-buffer.h"; path = "../external/harfbuzz-1.4.6/hb-buffer.h"; sourceTree = "<group>"; };
+		FEB094D81EDD36A400D263C0 /* hb-cache-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-cache-private.hh"; path = "../external/harfbuzz-1.4.6/hb-cache-private.hh"; sourceTree = "<group>"; };
+		FEB094D91EDD36A400D263C0 /* hb-common.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-common.cc"; path = "../external/harfbuzz-1.4.6/hb-common.cc"; sourceTree = "<group>"; };
+		FEB094DA1EDD36A400D263C0 /* hb-common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-common.h"; path = "../external/harfbuzz-1.4.6/hb-common.h"; sourceTree = "<group>"; };
+		FEB094DB1EDD36A400D263C0 /* hb-coretext.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-coretext.cc"; path = "../external/harfbuzz-1.4.6/hb-coretext.cc"; sourceTree = "<group>"; };
+		FEB094DC1EDD36A400D263C0 /* hb-coretext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-coretext.h"; path = "../external/harfbuzz-1.4.6/hb-coretext.h"; sourceTree = "<group>"; };
+		FEB094DD1EDD36A400D263C0 /* hb-deprecated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-deprecated.h"; path = "../external/harfbuzz-1.4.6/hb-deprecated.h"; sourceTree = "<group>"; };
+		FEB094DE1EDD36A400D263C0 /* hb-directwrite.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-directwrite.cc"; path = "../external/harfbuzz-1.4.6/hb-directwrite.cc"; sourceTree = "<group>"; };
+		FEB094DF1EDD36A400D263C0 /* hb-directwrite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-directwrite.h"; path = "../external/harfbuzz-1.4.6/hb-directwrite.h"; sourceTree = "<group>"; };
+		FEB094E01EDD36A400D263C0 /* hb-face-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-face-private.hh"; path = "../external/harfbuzz-1.4.6/hb-face-private.hh"; sourceTree = "<group>"; };
+		FEB094E11EDD36A400D263C0 /* hb-face.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-face.cc"; path = "../external/harfbuzz-1.4.6/hb-face.cc"; sourceTree = "<group>"; };
+		FEB094E21EDD36A400D263C0 /* hb-face.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-face.h"; path = "../external/harfbuzz-1.4.6/hb-face.h"; sourceTree = "<group>"; };
+		FEB094E31EDD36A400D263C0 /* hb-fallback-shape.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-fallback-shape.cc"; path = "../external/harfbuzz-1.4.6/hb-fallback-shape.cc"; sourceTree = "<group>"; };
+		FEB094E41EDD36A400D263C0 /* hb-font-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-font-private.hh"; path = "../external/harfbuzz-1.4.6/hb-font-private.hh"; sourceTree = "<group>"; };
+		FEB094E51EDD36A400D263C0 /* hb-font.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-font.cc"; path = "../external/harfbuzz-1.4.6/hb-font.cc"; sourceTree = "<group>"; };
+		FEB094E61EDD36A400D263C0 /* hb-font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-font.h"; path = "../external/harfbuzz-1.4.6/hb-font.h"; sourceTree = "<group>"; };
+		FEB094E71EDD36A400D263C0 /* hb-ft.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ft.cc"; path = "../external/harfbuzz-1.4.6/hb-ft.cc"; sourceTree = "<group>"; };
+		FEB094E81EDD36A400D263C0 /* hb-ft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-ft.h"; path = "../external/harfbuzz-1.4.6/hb-ft.h"; sourceTree = "<group>"; };
+		FEB094E91EDD36A400D263C0 /* hb-glib.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-glib.cc"; path = "../external/harfbuzz-1.4.6/hb-glib.cc"; sourceTree = "<group>"; };
+		FEB094EA1EDD36A400D263C0 /* hb-glib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-glib.h"; path = "../external/harfbuzz-1.4.6/hb-glib.h"; sourceTree = "<group>"; };
+		FEB094EB1EDD36A400D263C0 /* hb-gobject-enums.cc.tmpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "hb-gobject-enums.cc.tmpl"; path = "../external/harfbuzz-1.4.6/hb-gobject-enums.cc.tmpl"; sourceTree = "<group>"; };
+		FEB094EC1EDD36A400D263C0 /* hb-gobject-enums.h.tmpl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "hb-gobject-enums.h.tmpl"; path = "../external/harfbuzz-1.4.6/hb-gobject-enums.h.tmpl"; sourceTree = "<group>"; };
+		FEB094ED1EDD36A400D263C0 /* hb-gobject-structs.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-gobject-structs.cc"; path = "../external/harfbuzz-1.4.6/hb-gobject-structs.cc"; sourceTree = "<group>"; };
+		FEB094EE1EDD36A500D263C0 /* hb-gobject-structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-gobject-structs.h"; path = "../external/harfbuzz-1.4.6/hb-gobject-structs.h"; sourceTree = "<group>"; };
+		FEB094EF1EDD36A500D263C0 /* hb-gobject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-gobject.h"; path = "../external/harfbuzz-1.4.6/hb-gobject.h"; sourceTree = "<group>"; };
+		FEB094F01EDD36A500D263C0 /* hb-graphite2.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-graphite2.cc"; path = "../external/harfbuzz-1.4.6/hb-graphite2.cc"; sourceTree = "<group>"; };
+		FEB094F11EDD36A500D263C0 /* hb-graphite2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-graphite2.h"; path = "../external/harfbuzz-1.4.6/hb-graphite2.h"; sourceTree = "<group>"; };
+		FEB094F21EDD36A500D263C0 /* hb-icu.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-icu.cc"; path = "../external/harfbuzz-1.4.6/hb-icu.cc"; sourceTree = "<group>"; };
+		FEB094F31EDD36A500D263C0 /* hb-icu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-icu.h"; path = "../external/harfbuzz-1.4.6/hb-icu.h"; sourceTree = "<group>"; };
+		FEB094F41EDD36A500D263C0 /* hb-mutex-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-mutex-private.hh"; path = "../external/harfbuzz-1.4.6/hb-mutex-private.hh"; sourceTree = "<group>"; };
+		FEB094F51EDD36A500D263C0 /* hb-object-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-object-private.hh"; path = "../external/harfbuzz-1.4.6/hb-object-private.hh"; sourceTree = "<group>"; };
+		FEB094F61EDD36A500D263C0 /* hb-open-file-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-open-file-private.hh"; path = "../external/harfbuzz-1.4.6/hb-open-file-private.hh"; sourceTree = "<group>"; };
+		FEB094F71EDD36A500D263C0 /* hb-open-type-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-open-type-private.hh"; path = "../external/harfbuzz-1.4.6/hb-open-type-private.hh"; sourceTree = "<group>"; };
+		FEB094F81EDD36A500D263C0 /* hb-ot-cbdt-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-cbdt-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-cbdt-table.hh"; sourceTree = "<group>"; };
+		FEB094F91EDD36A500D263C0 /* hb-ot-cmap-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-cmap-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-cmap-table.hh"; sourceTree = "<group>"; };
+		FEB094FA1EDD36A500D263C0 /* hb-ot-font.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-font.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-font.cc"; sourceTree = "<group>"; };
+		FEB094FB1EDD36A500D263C0 /* hb-ot-font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-ot-font.h"; path = "../external/harfbuzz-1.4.6/hb-ot-font.h"; sourceTree = "<group>"; };
+		FEB094FC1EDD36A500D263C0 /* hb-ot-glyf-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-glyf-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-glyf-table.hh"; sourceTree = "<group>"; };
+		FEB094FD1EDD36A500D263C0 /* hb-ot-head-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-head-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-head-table.hh"; sourceTree = "<group>"; };
+		FEB094FE1EDD36A500D263C0 /* hb-ot-hhea-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-hhea-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-hhea-table.hh"; sourceTree = "<group>"; };
+		FEB094FF1EDD36A500D263C0 /* hb-ot-hmtx-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-hmtx-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-hmtx-table.hh"; sourceTree = "<group>"; };
+		FEB095001EDD36A500D263C0 /* hb-ot-layout-common-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-layout-common-private.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-layout-common-private.hh"; sourceTree = "<group>"; };
+		FEB095011EDD36A500D263C0 /* hb-ot-layout-gdef-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-layout-gdef-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-layout-gdef-table.hh"; sourceTree = "<group>"; };
+		FEB095021EDD36A500D263C0 /* hb-ot-layout-gpos-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-layout-gpos-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-layout-gpos-table.hh"; sourceTree = "<group>"; };
+		FEB095031EDD36A500D263C0 /* hb-ot-layout-gsub-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-layout-gsub-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-layout-gsub-table.hh"; sourceTree = "<group>"; };
+		FEB095041EDD36A500D263C0 /* hb-ot-layout-gsubgpos-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-layout-gsubgpos-private.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-layout-gsubgpos-private.hh"; sourceTree = "<group>"; };
+		FEB095051EDD36A500D263C0 /* hb-ot-layout-jstf-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-layout-jstf-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-layout-jstf-table.hh"; sourceTree = "<group>"; };
+		FEB095061EDD36A500D263C0 /* hb-ot-layout-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-layout-private.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-layout-private.hh"; sourceTree = "<group>"; };
+		FEB095071EDD36A500D263C0 /* hb-ot-layout.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-layout.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-layout.cc"; sourceTree = "<group>"; };
+		FEB095081EDD36A500D263C0 /* hb-ot-layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-ot-layout.h"; path = "../external/harfbuzz-1.4.6/hb-ot-layout.h"; sourceTree = "<group>"; };
+		FEB095091EDD36A500D263C0 /* hb-ot-map-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-map-private.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-map-private.hh"; sourceTree = "<group>"; };
+		FEB0950A1EDD36A500D263C0 /* hb-ot-map.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-map.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-map.cc"; sourceTree = "<group>"; };
+		FEB0950B1EDD36A500D263C0 /* hb-ot-math-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-math-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-math-table.hh"; sourceTree = "<group>"; };
+		FEB0950C1EDD36A500D263C0 /* hb-ot-math.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-math.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-math.cc"; sourceTree = "<group>"; };
+		FEB0950D1EDD36A500D263C0 /* hb-ot-math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-ot-math.h"; path = "../external/harfbuzz-1.4.6/hb-ot-math.h"; sourceTree = "<group>"; };
+		FEB0950E1EDD36A500D263C0 /* hb-ot-maxp-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-maxp-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-maxp-table.hh"; sourceTree = "<group>"; };
+		FEB0950F1EDD36A500D263C0 /* hb-ot-name-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-name-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-name-table.hh"; sourceTree = "<group>"; };
+		FEB095101EDD36A500D263C0 /* hb-ot-os2-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-os2-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-os2-table.hh"; sourceTree = "<group>"; };
+		FEB095111EDD36A500D263C0 /* hb-ot-post-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-post-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-post-table.hh"; sourceTree = "<group>"; };
+		FEB095121EDD36A500D263C0 /* hb-ot-shape-complex-arabic-fallback.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-shape-complex-arabic-fallback.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-arabic-fallback.hh"; sourceTree = "<group>"; };
+		FEB095131EDD36A500D263C0 /* hb-ot-shape-complex-arabic-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-shape-complex-arabic-private.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-arabic-private.hh"; sourceTree = "<group>"; };
+		FEB095141EDD36A500D263C0 /* hb-ot-shape-complex-arabic-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-shape-complex-arabic-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-arabic-table.hh"; sourceTree = "<group>"; };
+		FEB095151EDD36A500D263C0 /* hb-ot-shape-complex-arabic-win1256.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-shape-complex-arabic-win1256.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-arabic-win1256.hh"; sourceTree = "<group>"; };
+		FEB095161EDD36A500D263C0 /* hb-ot-shape-complex-arabic.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-shape-complex-arabic.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-arabic.cc"; sourceTree = "<group>"; };
+		FEB095171EDD36A500D263C0 /* hb-ot-shape-complex-default.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-shape-complex-default.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-default.cc"; sourceTree = "<group>"; };
+		FEB095181EDD36A500D263C0 /* hb-ot-shape-complex-hangul.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-shape-complex-hangul.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-hangul.cc"; sourceTree = "<group>"; };
+		FEB095191EDD36A500D263C0 /* hb-ot-shape-complex-hebrew.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-shape-complex-hebrew.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-hebrew.cc"; sourceTree = "<group>"; };
+		FEB0951A1EDD36A500D263C0 /* hb-ot-shape-complex-indic-machine.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-shape-complex-indic-machine.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-indic-machine.hh"; sourceTree = "<group>"; };
+		FEB0951B1EDD36A500D263C0 /* hb-ot-shape-complex-indic-machine.rl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "hb-ot-shape-complex-indic-machine.rl"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-indic-machine.rl"; sourceTree = "<group>"; };
+		FEB0951C1EDD36A500D263C0 /* hb-ot-shape-complex-indic-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-shape-complex-indic-private.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-indic-private.hh"; sourceTree = "<group>"; };
+		FEB0951D1EDD36A500D263C0 /* hb-ot-shape-complex-indic-table.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-shape-complex-indic-table.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-indic-table.cc"; sourceTree = "<group>"; };
+		FEB0951E1EDD36A500D263C0 /* hb-ot-shape-complex-indic.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-shape-complex-indic.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-indic.cc"; sourceTree = "<group>"; };
+		FEB0951F1EDD36A500D263C0 /* hb-ot-shape-complex-myanmar-machine.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-shape-complex-myanmar-machine.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-myanmar-machine.hh"; sourceTree = "<group>"; };
+		FEB095201EDD36A500D263C0 /* hb-ot-shape-complex-myanmar-machine.rl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "hb-ot-shape-complex-myanmar-machine.rl"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-myanmar-machine.rl"; sourceTree = "<group>"; };
+		FEB095211EDD36A500D263C0 /* hb-ot-shape-complex-myanmar.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-shape-complex-myanmar.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-myanmar.cc"; sourceTree = "<group>"; };
+		FEB095221EDD36A500D263C0 /* hb-ot-shape-complex-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-shape-complex-private.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-private.hh"; sourceTree = "<group>"; };
+		FEB095231EDD36A500D263C0 /* hb-ot-shape-complex-thai.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-shape-complex-thai.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-thai.cc"; sourceTree = "<group>"; };
+		FEB095241EDD36A500D263C0 /* hb-ot-shape-complex-tibetan.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-shape-complex-tibetan.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-tibetan.cc"; sourceTree = "<group>"; };
+		FEB095251EDD36A500D263C0 /* hb-ot-shape-complex-use-machine.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-shape-complex-use-machine.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-use-machine.hh"; sourceTree = "<group>"; };
+		FEB095261EDD36A500D263C0 /* hb-ot-shape-complex-use-machine.rl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "hb-ot-shape-complex-use-machine.rl"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-use-machine.rl"; sourceTree = "<group>"; };
+		FEB095271EDD36A500D263C0 /* hb-ot-shape-complex-use-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-shape-complex-use-private.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-use-private.hh"; sourceTree = "<group>"; };
+		FEB095281EDD36A500D263C0 /* hb-ot-shape-complex-use-table.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-shape-complex-use-table.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-use-table.cc"; sourceTree = "<group>"; };
+		FEB095291EDD36A500D263C0 /* hb-ot-shape-complex-use.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-shape-complex-use.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-complex-use.cc"; sourceTree = "<group>"; };
+		FEB0952A1EDD36A500D263C0 /* hb-ot-shape-fallback-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-shape-fallback-private.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-fallback-private.hh"; sourceTree = "<group>"; };
+		FEB0952B1EDD36A500D263C0 /* hb-ot-shape-fallback.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-shape-fallback.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-fallback.cc"; sourceTree = "<group>"; };
+		FEB0952C1EDD36A500D263C0 /* hb-ot-shape-normalize-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-shape-normalize-private.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-normalize-private.hh"; sourceTree = "<group>"; };
+		FEB0952D1EDD36A500D263C0 /* hb-ot-shape-normalize.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-shape-normalize.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-normalize.cc"; sourceTree = "<group>"; };
+		FEB0952E1EDD36A500D263C0 /* hb-ot-shape-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-shape-private.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-shape-private.hh"; sourceTree = "<group>"; };
+		FEB0952F1EDD36A500D263C0 /* hb-ot-shape.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-shape.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-shape.cc"; sourceTree = "<group>"; };
+		FEB095301EDD36A500D263C0 /* hb-ot-shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-ot-shape.h"; path = "../external/harfbuzz-1.4.6/hb-ot-shape.h"; sourceTree = "<group>"; };
+		FEB095311EDD36A500D263C0 /* hb-ot-tag.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-tag.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-tag.cc"; sourceTree = "<group>"; };
+		FEB095321EDD36A500D263C0 /* hb-ot-tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-ot-tag.h"; path = "../external/harfbuzz-1.4.6/hb-ot-tag.h"; sourceTree = "<group>"; };
+		FEB095331EDD36A500D263C0 /* hb-ot-var-avar-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-var-avar-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-var-avar-table.hh"; sourceTree = "<group>"; };
+		FEB095341EDD36A500D263C0 /* hb-ot-var-fvar-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-var-fvar-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-var-fvar-table.hh"; sourceTree = "<group>"; };
+		FEB095351EDD36A500D263C0 /* hb-ot-var-hvar-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-var-hvar-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-var-hvar-table.hh"; sourceTree = "<group>"; };
+		FEB095361EDD36A500D263C0 /* hb-ot-var-mvar-table.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-ot-var-mvar-table.hh"; path = "../external/harfbuzz-1.4.6/hb-ot-var-mvar-table.hh"; sourceTree = "<group>"; };
+		FEB095371EDD36A500D263C0 /* hb-ot-var.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ot-var.cc"; path = "../external/harfbuzz-1.4.6/hb-ot-var.cc"; sourceTree = "<group>"; };
+		FEB095381EDD36A500D263C0 /* hb-ot-var.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-ot-var.h"; path = "../external/harfbuzz-1.4.6/hb-ot-var.h"; sourceTree = "<group>"; };
+		FEB095391EDD36A500D263C0 /* hb-ot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-ot.h"; path = "../external/harfbuzz-1.4.6/hb-ot.h"; sourceTree = "<group>"; };
+		FEB0953A1EDD36A500D263C0 /* hb-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-private.hh"; path = "../external/harfbuzz-1.4.6/hb-private.hh"; sourceTree = "<group>"; };
+		FEB0953B1EDD36A500D263C0 /* hb-set-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-set-private.hh"; path = "../external/harfbuzz-1.4.6/hb-set-private.hh"; sourceTree = "<group>"; };
+		FEB0953C1EDD36A500D263C0 /* hb-set.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-set.cc"; path = "../external/harfbuzz-1.4.6/hb-set.cc"; sourceTree = "<group>"; };
+		FEB0953D1EDD36A500D263C0 /* hb-set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-set.h"; path = "../external/harfbuzz-1.4.6/hb-set.h"; sourceTree = "<group>"; };
+		FEB0953E1EDD36A500D263C0 /* hb-shape-plan-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-shape-plan-private.hh"; path = "../external/harfbuzz-1.4.6/hb-shape-plan-private.hh"; sourceTree = "<group>"; };
+		FEB0953F1EDD36A500D263C0 /* hb-shape-plan.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-shape-plan.cc"; path = "../external/harfbuzz-1.4.6/hb-shape-plan.cc"; sourceTree = "<group>"; };
+		FEB095401EDD36A500D263C0 /* hb-shape-plan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-shape-plan.h"; path = "../external/harfbuzz-1.4.6/hb-shape-plan.h"; sourceTree = "<group>"; };
+		FEB095411EDD36A500D263C0 /* hb-shape.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-shape.cc"; path = "../external/harfbuzz-1.4.6/hb-shape.cc"; sourceTree = "<group>"; };
+		FEB095421EDD36A500D263C0 /* hb-shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-shape.h"; path = "../external/harfbuzz-1.4.6/hb-shape.h"; sourceTree = "<group>"; };
+		FEB095431EDD36A500D263C0 /* hb-shaper-impl-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-shaper-impl-private.hh"; path = "../external/harfbuzz-1.4.6/hb-shaper-impl-private.hh"; sourceTree = "<group>"; };
+		FEB095441EDD36A500D263C0 /* hb-shaper-list.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-shaper-list.hh"; path = "../external/harfbuzz-1.4.6/hb-shaper-list.hh"; sourceTree = "<group>"; };
+		FEB095451EDD36A500D263C0 /* hb-shaper-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-shaper-private.hh"; path = "../external/harfbuzz-1.4.6/hb-shaper-private.hh"; sourceTree = "<group>"; };
+		FEB095461EDD36A500D263C0 /* hb-shaper.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-shaper.cc"; path = "../external/harfbuzz-1.4.6/hb-shaper.cc"; sourceTree = "<group>"; };
+		FEB095471EDD36A500D263C0 /* hb-ucdn.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-ucdn.cc"; path = "../external/harfbuzz-1.4.6/hb-ucdn.cc"; sourceTree = "<group>"; };
+		FEB095481EDD36A500D263C0 /* hb-unicode-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-unicode-private.hh"; path = "../external/harfbuzz-1.4.6/hb-unicode-private.hh"; sourceTree = "<group>"; };
+		FEB095491EDD36A500D263C0 /* hb-unicode.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-unicode.cc"; path = "../external/harfbuzz-1.4.6/hb-unicode.cc"; sourceTree = "<group>"; };
+		FEB0954A1EDD36A500D263C0 /* hb-unicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-unicode.h"; path = "../external/harfbuzz-1.4.6/hb-unicode.h"; sourceTree = "<group>"; };
+		FEB0954B1EDD36A500D263C0 /* hb-uniscribe.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-uniscribe.cc"; path = "../external/harfbuzz-1.4.6/hb-uniscribe.cc"; sourceTree = "<group>"; };
+		FEB0954C1EDD36A500D263C0 /* hb-uniscribe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-uniscribe.h"; path = "../external/harfbuzz-1.4.6/hb-uniscribe.h"; sourceTree = "<group>"; };
+		FEB0954D1EDD36A500D263C0 /* hb-utf-private.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "hb-utf-private.hh"; path = "../external/harfbuzz-1.4.6/hb-utf-private.hh"; sourceTree = "<group>"; };
+		FEB0954E1EDD36A500D263C0 /* hb-version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hb-version.h"; path = "../external/harfbuzz-1.4.6/hb-version.h"; sourceTree = "<group>"; };
+		FEB0954F1EDD36A500D263C0 /* hb-version.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "hb-version.h.in"; path = "../external/harfbuzz-1.4.6/hb-version.h.in"; sourceTree = "<group>"; };
+		FEB095501EDD36A500D263C0 /* hb-warning.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "hb-warning.cc"; path = "../external/harfbuzz-1.4.6/hb-warning.cc"; sourceTree = "<group>"; };
+		FEB095511EDD36A500D263C0 /* hb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb.h; path = "../external/harfbuzz-1.4.6/hb.h"; sourceTree = "<group>"; };
+		FEB095D81EDD36D000D263C0 /* ucdn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ucdn.c; path = "../external/harfbuzz-1.4.6/hb-ucdn/ucdn.c"; sourceTree = "<group>"; };
+		FEB095D91EDD36D000D263C0 /* ucdn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ucdn.h; path = "../external/harfbuzz-1.4.6/hb-ucdn/ucdn.h"; sourceTree = "<group>"; };
+		FEB095DA1EDD36D000D263C0 /* unicodedata_db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = unicodedata_db.h; path = "../external/harfbuzz-1.4.6/hb-ucdn/unicodedata_db.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE48FD6307AFA17000BB41DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				385B99F321CBDE4E000E5F90 /* SDL2.framework in Frameworks */,
+				AA9EE79914B2C589008773C0 /* FreeType.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF493FFC2069198E007D02B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0153844A006D81B07F000001 /* Public Headers */ = {
+			isa = PBXGroup;
+			children = (
+				1014BAEA010A4B677F000001 /* SDL_ttf.h */,
+			);
+			name = "Public Headers";
+			sourceTree = "<group>";
+		};
+		034768DDFF38A45A11DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				089C1665FE841158C02AAC07 /* Resources */,
+				BE48FD6707AFA17000BB41DA /* SDL2_ttf.framework */,
+				BE48FD7207AFA17000BB41DA /* Create DMG */,
+				BF493FFF2069198E007D02B1 /* libSDL2_ttf.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* SDL_ttfFramework */ = {
+			isa = PBXGroup;
+			children = (
+				F59C70FC00D5CB5801000001 /* pkg-support */,
+				0153844A006D81B07F000001 /* Public Headers */,
+				08FB77ACFE841707C02AAC07 /* Library Source */,
+				BF4940002069198E007D02B1 /* SDL2_ttf */,
+				BE48FD8107AFA26B00BB41DA /* Frameworks */,
+				034768DDFF38A45A11DB9C8B /* Products */,
+				BE48FD6607AFA17000BB41DA /* Info-Framework.plist */,
+			);
+			name = SDL_ttfFramework;
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77ACFE841707C02AAC07 /* Library Source */ = {
+			isa = PBXGroup;
+			children = (
+				FEB094CC1EDD364100D263C0 /* harfbuzz */,
+				F567D67A01CD962A01F3E8B9 /* SDL_ttf.cpp */,
+			);
+			name = "Library Source";
+			sourceTree = "<group>";
+		};
+		385B99E321CBDE37000E5F90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				385B99EA21CBDE37000E5F90 /* SDL2.framework */,
+				385B99EC21CBDE37000E5F90 /* libSDL2.a */,
+				385B99EE21CBDE37000E5F90 /* libSDL2.dylib */,
+				385B99F021CBDE37000E5F90 /* Standard DMG */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE48FD8107AFA26B00BB41DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				385B99E221CBDE37000E5F90 /* SDL.xcodeproj */,
+				BE48FD8207AFA27300BB41DA /* Linked Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE48FD8207AFA27300BB41DA /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA9EE79814B2C589008773C0 /* FreeType.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		BF4940002069198E007D02B1 /* SDL2_ttf */ = {
+			isa = PBXGroup;
+			children = (
+				BF4940012069198E007D02B1 /* SDL2_ttf.h */,
+				BF4940032069198E007D02B1 /* SDL2_ttf.m */,
+			);
+			path = SDL2_ttf;
+			sourceTree = "<group>";
+		};
+		F59C70FC00D5CB5801000001 /* pkg-support */ = {
+			isa = PBXGroup;
+			children = (
+				F59C710100D5CB5801000001 /* resources */,
+				F59C710600D5CB5801000001 /* SDL_ttf.info */,
+			);
+			path = "pkg-support";
+			sourceTree = SOURCE_ROOT;
+		};
+		F59C710100D5CB5801000001 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				F59C710300D5CB5801000001 /* ReadMe.txt */,
+				F59C710400D5CB5801000001 /* Welcome.txt */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		FEB094CC1EDD364100D263C0 /* harfbuzz */ = {
+			isa = PBXGroup;
+			children = (
+				FEB095D71EDD36AA00D263C0 /* hb-ucdn */,
+				FEB094E81EDD36A400D263C0 /* hb-ft.h */,
+				FEB095511EDD36A500D263C0 /* hb.h */,
+				FEB094CD1EDD36A400D263C0 /* hb-atomic-private.hh */,
+				FEB094CE1EDD36A400D263C0 /* hb-blob.cc */,
+				FEB094CF1EDD36A400D263C0 /* hb-blob.h */,
+				FEB094D01EDD36A400D263C0 /* hb-buffer-deserialize-json.hh */,
+				FEB094D11EDD36A400D263C0 /* hb-buffer-deserialize-json.rl */,
+				FEB094D21EDD36A400D263C0 /* hb-buffer-deserialize-text.hh */,
+				FEB094D31EDD36A400D263C0 /* hb-buffer-deserialize-text.rl */,
+				FEB094D41EDD36A400D263C0 /* hb-buffer-private.hh */,
+				FEB094D51EDD36A400D263C0 /* hb-buffer-serialize.cc */,
+				FEB094D61EDD36A400D263C0 /* hb-buffer.cc */,
+				FEB094D71EDD36A400D263C0 /* hb-buffer.h */,
+				FEB094D81EDD36A400D263C0 /* hb-cache-private.hh */,
+				FEB094D91EDD36A400D263C0 /* hb-common.cc */,
+				FEB094DA1EDD36A400D263C0 /* hb-common.h */,
+				FEB094DB1EDD36A400D263C0 /* hb-coretext.cc */,
+				FEB094DC1EDD36A400D263C0 /* hb-coretext.h */,
+				FEB094DD1EDD36A400D263C0 /* hb-deprecated.h */,
+				FEB094DE1EDD36A400D263C0 /* hb-directwrite.cc */,
+				FEB094DF1EDD36A400D263C0 /* hb-directwrite.h */,
+				FEB094E01EDD36A400D263C0 /* hb-face-private.hh */,
+				FEB094E11EDD36A400D263C0 /* hb-face.cc */,
+				FEB094E21EDD36A400D263C0 /* hb-face.h */,
+				FEB094E31EDD36A400D263C0 /* hb-fallback-shape.cc */,
+				FEB094E41EDD36A400D263C0 /* hb-font-private.hh */,
+				FEB094E51EDD36A400D263C0 /* hb-font.cc */,
+				FEB094E61EDD36A400D263C0 /* hb-font.h */,
+				FEB094E71EDD36A400D263C0 /* hb-ft.cc */,
+				FEB094E91EDD36A400D263C0 /* hb-glib.cc */,
+				FEB094EA1EDD36A400D263C0 /* hb-glib.h */,
+				FEB094EB1EDD36A400D263C0 /* hb-gobject-enums.cc.tmpl */,
+				FEB094EC1EDD36A400D263C0 /* hb-gobject-enums.h.tmpl */,
+				FEB094ED1EDD36A400D263C0 /* hb-gobject-structs.cc */,
+				FEB094EE1EDD36A500D263C0 /* hb-gobject-structs.h */,
+				FEB094EF1EDD36A500D263C0 /* hb-gobject.h */,
+				FEB094F01EDD36A500D263C0 /* hb-graphite2.cc */,
+				FEB094F11EDD36A500D263C0 /* hb-graphite2.h */,
+				FEB094F21EDD36A500D263C0 /* hb-icu.cc */,
+				FEB094F31EDD36A500D263C0 /* hb-icu.h */,
+				FEB094F41EDD36A500D263C0 /* hb-mutex-private.hh */,
+				FEB094F51EDD36A500D263C0 /* hb-object-private.hh */,
+				FEB094F61EDD36A500D263C0 /* hb-open-file-private.hh */,
+				FEB094F71EDD36A500D263C0 /* hb-open-type-private.hh */,
+				FEB094F81EDD36A500D263C0 /* hb-ot-cbdt-table.hh */,
+				FEB094F91EDD36A500D263C0 /* hb-ot-cmap-table.hh */,
+				FEB094FA1EDD36A500D263C0 /* hb-ot-font.cc */,
+				FEB094FB1EDD36A500D263C0 /* hb-ot-font.h */,
+				FEB094FC1EDD36A500D263C0 /* hb-ot-glyf-table.hh */,
+				FEB094FD1EDD36A500D263C0 /* hb-ot-head-table.hh */,
+				FEB094FE1EDD36A500D263C0 /* hb-ot-hhea-table.hh */,
+				FEB094FF1EDD36A500D263C0 /* hb-ot-hmtx-table.hh */,
+				FEB095001EDD36A500D263C0 /* hb-ot-layout-common-private.hh */,
+				FEB095011EDD36A500D263C0 /* hb-ot-layout-gdef-table.hh */,
+				FEB095021EDD36A500D263C0 /* hb-ot-layout-gpos-table.hh */,
+				FEB095031EDD36A500D263C0 /* hb-ot-layout-gsub-table.hh */,
+				FEB095041EDD36A500D263C0 /* hb-ot-layout-gsubgpos-private.hh */,
+				FEB095051EDD36A500D263C0 /* hb-ot-layout-jstf-table.hh */,
+				FEB095061EDD36A500D263C0 /* hb-ot-layout-private.hh */,
+				FEB095071EDD36A500D263C0 /* hb-ot-layout.cc */,
+				FEB095081EDD36A500D263C0 /* hb-ot-layout.h */,
+				FEB095091EDD36A500D263C0 /* hb-ot-map-private.hh */,
+				FEB0950A1EDD36A500D263C0 /* hb-ot-map.cc */,
+				FEB0950B1EDD36A500D263C0 /* hb-ot-math-table.hh */,
+				FEB0950C1EDD36A500D263C0 /* hb-ot-math.cc */,
+				FEB0950D1EDD36A500D263C0 /* hb-ot-math.h */,
+				FEB0950E1EDD36A500D263C0 /* hb-ot-maxp-table.hh */,
+				FEB0950F1EDD36A500D263C0 /* hb-ot-name-table.hh */,
+				FEB095101EDD36A500D263C0 /* hb-ot-os2-table.hh */,
+				FEB095111EDD36A500D263C0 /* hb-ot-post-table.hh */,
+				FEB095121EDD36A500D263C0 /* hb-ot-shape-complex-arabic-fallback.hh */,
+				FEB095131EDD36A500D263C0 /* hb-ot-shape-complex-arabic-private.hh */,
+				FEB095141EDD36A500D263C0 /* hb-ot-shape-complex-arabic-table.hh */,
+				FEB095151EDD36A500D263C0 /* hb-ot-shape-complex-arabic-win1256.hh */,
+				FEB095161EDD36A500D263C0 /* hb-ot-shape-complex-arabic.cc */,
+				FEB095171EDD36A500D263C0 /* hb-ot-shape-complex-default.cc */,
+				FEB095181EDD36A500D263C0 /* hb-ot-shape-complex-hangul.cc */,
+				FEB095191EDD36A500D263C0 /* hb-ot-shape-complex-hebrew.cc */,
+				FEB0951A1EDD36A500D263C0 /* hb-ot-shape-complex-indic-machine.hh */,
+				FEB0951B1EDD36A500D263C0 /* hb-ot-shape-complex-indic-machine.rl */,
+				FEB0951C1EDD36A500D263C0 /* hb-ot-shape-complex-indic-private.hh */,
+				FEB0951D1EDD36A500D263C0 /* hb-ot-shape-complex-indic-table.cc */,
+				FEB0951E1EDD36A500D263C0 /* hb-ot-shape-complex-indic.cc */,
+				FEB0951F1EDD36A500D263C0 /* hb-ot-shape-complex-myanmar-machine.hh */,
+				FEB095201EDD36A500D263C0 /* hb-ot-shape-complex-myanmar-machine.rl */,
+				FEB095211EDD36A500D263C0 /* hb-ot-shape-complex-myanmar.cc */,
+				FEB095221EDD36A500D263C0 /* hb-ot-shape-complex-private.hh */,
+				FEB095231EDD36A500D263C0 /* hb-ot-shape-complex-thai.cc */,
+				FEB095241EDD36A500D263C0 /* hb-ot-shape-complex-tibetan.cc */,
+				FEB095251EDD36A500D263C0 /* hb-ot-shape-complex-use-machine.hh */,
+				FEB095261EDD36A500D263C0 /* hb-ot-shape-complex-use-machine.rl */,
+				FEB095271EDD36A500D263C0 /* hb-ot-shape-complex-use-private.hh */,
+				FEB095281EDD36A500D263C0 /* hb-ot-shape-complex-use-table.cc */,
+				FEB095291EDD36A500D263C0 /* hb-ot-shape-complex-use.cc */,
+				FEB0952A1EDD36A500D263C0 /* hb-ot-shape-fallback-private.hh */,
+				FEB0952B1EDD36A500D263C0 /* hb-ot-shape-fallback.cc */,
+				FEB0952C1EDD36A500D263C0 /* hb-ot-shape-normalize-private.hh */,
+				FEB0952D1EDD36A500D263C0 /* hb-ot-shape-normalize.cc */,
+				FEB0952E1EDD36A500D263C0 /* hb-ot-shape-private.hh */,
+				FEB0952F1EDD36A500D263C0 /* hb-ot-shape.cc */,
+				FEB095301EDD36A500D263C0 /* hb-ot-shape.h */,
+				FEB095311EDD36A500D263C0 /* hb-ot-tag.cc */,
+				FEB095321EDD36A500D263C0 /* hb-ot-tag.h */,
+				FEB095331EDD36A500D263C0 /* hb-ot-var-avar-table.hh */,
+				FEB095341EDD36A500D263C0 /* hb-ot-var-fvar-table.hh */,
+				FEB095351EDD36A500D263C0 /* hb-ot-var-hvar-table.hh */,
+				FEB095361EDD36A500D263C0 /* hb-ot-var-mvar-table.hh */,
+				FEB095371EDD36A500D263C0 /* hb-ot-var.cc */,
+				FEB095381EDD36A500D263C0 /* hb-ot-var.h */,
+				FEB095391EDD36A500D263C0 /* hb-ot.h */,
+				FEB0953A1EDD36A500D263C0 /* hb-private.hh */,
+				FEB0953B1EDD36A500D263C0 /* hb-set-private.hh */,
+				FEB0953C1EDD36A500D263C0 /* hb-set.cc */,
+				FEB0953D1EDD36A500D263C0 /* hb-set.h */,
+				FEB0953E1EDD36A500D263C0 /* hb-shape-plan-private.hh */,
+				FEB0953F1EDD36A500D263C0 /* hb-shape-plan.cc */,
+				FEB095401EDD36A500D263C0 /* hb-shape-plan.h */,
+				FEB095411EDD36A500D263C0 /* hb-shape.cc */,
+				FEB095421EDD36A500D263C0 /* hb-shape.h */,
+				FEB095431EDD36A500D263C0 /* hb-shaper-impl-private.hh */,
+				FEB095441EDD36A500D263C0 /* hb-shaper-list.hh */,
+				FEB095451EDD36A500D263C0 /* hb-shaper-private.hh */,
+				FEB095461EDD36A500D263C0 /* hb-shaper.cc */,
+				FEB095471EDD36A500D263C0 /* hb-ucdn.cc */,
+				FEB095481EDD36A500D263C0 /* hb-unicode-private.hh */,
+				FEB095491EDD36A500D263C0 /* hb-unicode.cc */,
+				FEB0954A1EDD36A500D263C0 /* hb-unicode.h */,
+				FEB0954B1EDD36A500D263C0 /* hb-uniscribe.cc */,
+				FEB0954C1EDD36A500D263C0 /* hb-uniscribe.h */,
+				FEB0954D1EDD36A500D263C0 /* hb-utf-private.hh */,
+				FEB0954E1EDD36A500D263C0 /* hb-version.h */,
+				FEB0954F1EDD36A500D263C0 /* hb-version.h.in */,
+				FEB095501EDD36A500D263C0 /* hb-warning.cc */,
+			);
+			name = harfbuzz;
+			sourceTree = "<group>";
+		};
+		FEB095D71EDD36AA00D263C0 /* hb-ucdn */ = {
+			isa = PBXGroup;
+			children = (
+				FEB095D81EDD36D000D263C0 /* ucdn.c */,
+				FEB095D91EDD36D000D263C0 /* ucdn.h */,
+				FEB095DA1EDD36D000D263C0 /* unicodedata_db.h */,
+			);
+			name = "hb-ucdn";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BE48FD5E07AFA17000BB41DA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEB095B31EDD36A500D263C0 /* hb-ot-shape-private.hh in Headers */,
+				FEB095D61EDD36A500D263C0 /* hb.h in Headers */,
+				FEB0956D1EDD36A500D263C0 /* hb-ft.h in Headers */,
+				FEB0957D1EDD36A500D263C0 /* hb-ot-cbdt-table.hh in Headers */,
+				FEB095D11EDD36A500D263C0 /* hb-uniscribe.h in Headers */,
+				FEB0957B1EDD36A500D263C0 /* hb-open-file-private.hh in Headers */,
+				FEB095DD1EDD36D000D263C0 /* unicodedata_db.h in Headers */,
+				FEB0958B1EDD36A500D263C0 /* hb-ot-layout-private.hh in Headers */,
+				FEB095D21EDD36A500D263C0 /* hb-utf-private.hh in Headers */,
+				FEB095BB1EDD36A500D263C0 /* hb-ot-var-mvar-table.hh in Headers */,
+				FEB0955F1EDD36A500D263C0 /* hb-common.h in Headers */,
+				FEB095B71EDD36A500D263C0 /* hb-ot-tag.h in Headers */,
+				FEB095AF1EDD36A500D263C0 /* hb-ot-shape-fallback-private.hh in Headers */,
+				FEB095831EDD36A500D263C0 /* hb-ot-hhea-table.hh in Headers */,
+				FEB095C21EDD36A500D263C0 /* hb-set.h in Headers */,
+				FEB095BD1EDD36A500D263C0 /* hb-ot-var.h in Headers */,
+				FEB095971EDD36A500D263C0 /* hb-ot-shape-complex-arabic-fallback.hh in Headers */,
+				FEB095811EDD36A500D263C0 /* hb-ot-glyf-table.hh in Headers */,
+				FEB095761EDD36A500D263C0 /* hb-graphite2.h in Headers */,
+				FEB095951EDD36A500D263C0 /* hb-ot-os2-table.hh in Headers */,
+				FEB095C71EDD36A500D263C0 /* hb-shape.h in Headers */,
+				FEB095921EDD36A500D263C0 /* hb-ot-math.h in Headers */,
+				FEB095571EDD36A500D263C0 /* hb-buffer-deserialize-text.hh in Headers */,
+				FEB095521EDD36A500D263C0 /* hb-atomic-private.hh in Headers */,
+				FEB095871EDD36A500D263C0 /* hb-ot-layout-gpos-table.hh in Headers */,
+				FEB095CD1EDD36A500D263C0 /* hb-unicode-private.hh in Headers */,
+				FEB0957E1EDD36A500D263C0 /* hb-ot-cmap-table.hh in Headers */,
+				FEB095AA1EDD36A500D263C0 /* hb-ot-shape-complex-use-machine.hh in Headers */,
+				FEB095641EDD36A500D263C0 /* hb-directwrite.h in Headers */,
+				FEB095621EDD36A500D263C0 /* hb-deprecated.h in Headers */,
+				FEB095551EDD36A500D263C0 /* hb-buffer-deserialize-json.hh in Headers */,
+				FEB095C91EDD36A500D263C0 /* hb-shaper-list.hh in Headers */,
+				FEB095591EDD36A500D263C0 /* hb-buffer-private.hh in Headers */,
+				FEB095881EDD36A500D263C0 /* hb-ot-layout-gsub-table.hh in Headers */,
+				FEB0955D1EDD36A500D263C0 /* hb-cache-private.hh in Headers */,
+				FEB0956F1EDD36A500D263C0 /* hb-glib.h in Headers */,
+				FEB095851EDD36A500D263C0 /* hb-ot-layout-common-private.hh in Headers */,
+				FEB0958A1EDD36A500D263C0 /* hb-ot-layout-jstf-table.hh in Headers */,
+				FEB095691EDD36A500D263C0 /* hb-font-private.hh in Headers */,
+				FEB095651EDD36A500D263C0 /* hb-face-private.hh in Headers */,
+				FEB095A71EDD36A500D263C0 /* hb-ot-shape-complex-private.hh in Headers */,
+				FEB095981EDD36A500D263C0 /* hb-ot-shape-complex-arabic-private.hh in Headers */,
+				FEB095891EDD36A500D263C0 /* hb-ot-layout-gsubgpos-private.hh in Headers */,
+				FEB095741EDD36A500D263C0 /* hb-gobject.h in Headers */,
+				BE48FD5F07AFA17000BB41DA /* SDL_ttf.h in Headers */,
+				FEB095BE1EDD36A500D263C0 /* hb-ot.h in Headers */,
+				FEB0958E1EDD36A500D263C0 /* hb-ot-map-private.hh in Headers */,
+				FEB095901EDD36A500D263C0 /* hb-ot-math-table.hh in Headers */,
+				FEB0957C1EDD36A500D263C0 /* hb-open-type-private.hh in Headers */,
+				FEB095C51EDD36A500D263C0 /* hb-shape-plan.h in Headers */,
+				FEB095781EDD36A500D263C0 /* hb-icu.h in Headers */,
+				FEB095BA1EDD36A500D263C0 /* hb-ot-var-hvar-table.hh in Headers */,
+				FEB095B11EDD36A500D263C0 /* hb-ot-shape-normalize-private.hh in Headers */,
+				FEB095CF1EDD36A500D263C0 /* hb-unicode.h in Headers */,
+				FEB095541EDD36A500D263C0 /* hb-blob.h in Headers */,
+				FEB095841EDD36A500D263C0 /* hb-ot-hmtx-table.hh in Headers */,
+				FEB0957A1EDD36A500D263C0 /* hb-object-private.hh in Headers */,
+				FEB095671EDD36A500D263C0 /* hb-face.h in Headers */,
+				FEB0959F1EDD36A500D263C0 /* hb-ot-shape-complex-indic-machine.hh in Headers */,
+				FEB095CA1EDD36A500D263C0 /* hb-shaper-private.hh in Headers */,
+				FEB095961EDD36A500D263C0 /* hb-ot-post-table.hh in Headers */,
+				FEB0956B1EDD36A500D263C0 /* hb-font.h in Headers */,
+				FEB095C31EDD36A500D263C0 /* hb-shape-plan-private.hh in Headers */,
+				FEB095931EDD36A500D263C0 /* hb-ot-maxp-table.hh in Headers */,
+				FEB095BF1EDD36A500D263C0 /* hb-private.hh in Headers */,
+				FEB095941EDD36A500D263C0 /* hb-ot-name-table.hh in Headers */,
+				FEB095991EDD36A500D263C0 /* hb-ot-shape-complex-arabic-table.hh in Headers */,
+				FEB095DC1EDD36D000D263C0 /* ucdn.h in Headers */,
+				FEB095B81EDD36A500D263C0 /* hb-ot-var-avar-table.hh in Headers */,
+				FEB095AC1EDD36A500D263C0 /* hb-ot-shape-complex-use-private.hh in Headers */,
+				FEB095791EDD36A500D263C0 /* hb-mutex-private.hh in Headers */,
+				FEB095C01EDD36A500D263C0 /* hb-set-private.hh in Headers */,
+				FEB095821EDD36A500D263C0 /* hb-ot-head-table.hh in Headers */,
+				FEB095A11EDD36A500D263C0 /* hb-ot-shape-complex-indic-private.hh in Headers */,
+				FEB095C81EDD36A500D263C0 /* hb-shaper-impl-private.hh in Headers */,
+				FEB095611EDD36A500D263C0 /* hb-coretext.h in Headers */,
+				FEB095801EDD36A500D263C0 /* hb-ot-font.h in Headers */,
+				FEB095B91EDD36A500D263C0 /* hb-ot-var-fvar-table.hh in Headers */,
+				FEB095D31EDD36A500D263C0 /* hb-version.h in Headers */,
+				FEB095A41EDD36A500D263C0 /* hb-ot-shape-complex-myanmar-machine.hh in Headers */,
+				FEB0955C1EDD36A500D263C0 /* hb-buffer.h in Headers */,
+				FEB0959A1EDD36A500D263C0 /* hb-ot-shape-complex-arabic-win1256.hh in Headers */,
+				FEB095861EDD36A500D263C0 /* hb-ot-layout-gdef-table.hh in Headers */,
+				FEB0958D1EDD36A500D263C0 /* hb-ot-layout.h in Headers */,
+				FEB095731EDD36A500D263C0 /* hb-gobject-structs.h in Headers */,
+				FEB095B51EDD36A500D263C0 /* hb-ot-shape.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF493FFD2069198E007D02B1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF4940022069198E007D02B1 /* SDL2_ttf.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BE48FD5D07AFA17000BB41DA /* Framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00B7E1E9097E26C600826121 /* Build configuration list for PBXNativeTarget "Framework" */;
+			buildPhases = (
+				BE48FD5E07AFA17000BB41DA /* Headers */,
+				BE48FD6007AFA17000BB41DA /* Resources */,
+				BE48FD6107AFA17000BB41DA /* Sources */,
+				BE48FD6307AFA17000BB41DA /* Frameworks */,
+				BE48FD6407AFA17000BB41DA /* Rez */,
+				AA9EE79714B2C55E008773C0 /* Copy Frameworks */,
+				AA9EE79B14B2C59B008773C0 /* Create Frameworks symlink */,
+				AA9EE79C14B2C5D0008773C0 /* Convert SDL includes to SDL Framework includes */,
+			);
+			buildRules = (
+			);
+			comments = "Installed into ~/Library/Frameworks/SDL_ttf.framework\n\nAdd -framework SDL_ttf to your linker flags\nAdd ~/Library/Frameworks/SDL_ttf.framework/Headers to your header search path\nAdd ~/Library/Frameworks to your library search path";
+			dependencies = (
+				385B99F221CBDE45000E5F90 /* PBXTargetDependency */,
+			);
+			name = Framework;
+			productInstallPath = "@executable_path/../Frameworks";
+			productName = SDL_ttf;
+			productReference = BE48FD6707AFA17000BB41DA /* SDL2_ttf.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BE48FD6F07AFA17000BB41DA /* Create DMG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00B7E1F1097E26C600826121 /* Build configuration list for PBXNativeTarget "Create DMG" */;
+			buildPhases = (
+				BE48FD7107AFA17000BB41DA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE48FD7A07AFA17100BB41DA /* PBXTargetDependency */,
+			);
+			name = "Create DMG";
+			productInstallPath = /usr/local/bin;
+			productName = "Standard Package";
+			productReference = BE48FD7207AFA17000BB41DA /* Create DMG */;
+			productType = "com.apple.product-type.tool";
+		};
+		BF493FFE2069198E007D02B1 /* SDL2_ttf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF4940052069198E007D02B1 /* Build configuration list for PBXNativeTarget "SDL2_ttf" */;
+			buildPhases = (
+				BF493FFB2069198E007D02B1 /* Sources */,
+				BF493FFC2069198E007D02B1 /* Frameworks */,
+				BF493FFD2069198E007D02B1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SDL2_ttf;
+			productName = SDL2_ttf;
+			productReference = BF493FFF2069198E007D02B1 /* libSDL2_ttf.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				TargetAttributes = {
+					BF493FFE2069198E007D02B1 = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = 3M3W4L293S;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 00B7E1F5097E26C600826121 /* Build configuration list for PBXProject "SDL2_ttf" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* SDL_ttfFramework */;
+			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 385B99E321CBDE37000E5F90 /* Products */;
+					ProjectRef = 385B99E221CBDE37000E5F90 /* SDL.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				BE48FD5D07AFA17000BB41DA /* Framework */,
+				BE48FD6F07AFA17000BB41DA /* Create DMG */,
+				BF493FFE2069198E007D02B1 /* SDL2_ttf */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		385B99EA21CBDE37000E5F90 /* SDL2.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SDL2.framework;
+			remoteRef = 385B99E921CBDE37000E5F90 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		385B99EC21CBDE37000E5F90 /* libSDL2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2.a;
+			remoteRef = 385B99EB21CBDE37000E5F90 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		385B99EE21CBDE37000E5F90 /* libSDL2.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libSDL2.dylib;
+			remoteRef = 385B99ED21CBDE37000E5F90 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		385B99F021CBDE37000E5F90 /* Standard DMG */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "Standard DMG";
+			remoteRef = 385B99EF21CBDE37000E5F90 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE48FD6007AFA17000BB41DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEB095A01EDD36A500D263C0 /* hb-ot-shape-complex-indic-machine.rl in Resources */,
+				FEB095581EDD36A500D263C0 /* hb-buffer-deserialize-text.rl in Resources */,
+				FEB095AB1EDD36A500D263C0 /* hb-ot-shape-complex-use-machine.rl in Resources */,
+				FEB095561EDD36A500D263C0 /* hb-buffer-deserialize-json.rl in Resources */,
+				FEB095A51EDD36A500D263C0 /* hb-ot-shape-complex-myanmar-machine.rl in Resources */,
+				FEB095711EDD36A500D263C0 /* hb-gobject-enums.h.tmpl in Resources */,
+				FEB095701EDD36A500D263C0 /* hb-gobject-enums.cc.tmpl in Resources */,
+				FEB095D41EDD36A500D263C0 /* hb-version.h.in in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		BE48FD6407AFA17000BB41DA /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AA9EE79B14B2C59B008773C0 /* Create Frameworks symlink */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create Frameworks symlink";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd $SYMROOT/$CONFIGURATION/$FULL_PRODUCT_NAME\nif ! [ -L Frameworks ]; then\n    rm -f Frameworks\n    ln -s Versions/Current/Frameworks Frameworks\nfi";
+		};
+		AA9EE79C14B2C5D0008773C0 /* Convert SDL includes to SDL Framework includes */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Convert SDL includes to SDL Framework includes";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd $SYMROOT/$CONFIGURATION/$PUBLIC_HEADERS_FOLDER_PATH\nHEADER=SDL_ttf.h\nsed 's,#include \"\\(.*\\)\",#include <SDL2/\\1>,' <$HEADER >$HEADER.new\nmv $HEADER.new $HEADER";
+		};
+		BE48FD7107AFA17000BB41DA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PRODUCT_NAME=SDL2_ttf\n\n# Sign framework\nif [ \"$SDL_CODESIGN_IDENTITY\" != \"\" ]; then\n    codesign --force --deep --sign \"$SDL_CODESIGN_IDENTITY\" $TARGET_BUILD_DIR/$PRODUCT_NAME.framework/Versions/A\nfi\n\n# clean up the framework, remove headers, extra files\nmkdir -p build/dmg-tmp\nxcrun CpMac -r $TARGET_BUILD_DIR/$PRODUCT_NAME.framework build/dmg-tmp/\ncp pkg-support/resources/ReadMe.txt build/dmg-tmp\n\n# remove the .DS_Store files if any (we may want to provide one in the future for fancy .dmgs)\nrm -rf build/dmg-tmp/.DS_Store\n\n# create the dmg\nhdiutil create -ov -fs HFS+ -volname $PRODUCT_NAME -srcfolder build/dmg-tmp build/$PRODUCT_NAME.dmg\n\n# clean up\nrm -rf build/dmg-tmp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE48FD6107AFA17000BB41DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEB095CB1EDD36A500D263C0 /* hb-shaper.cc in Sources */,
+				FEB0956A1EDD36A500D263C0 /* hb-font.cc in Sources */,
+				FEB0959B1EDD36A500D263C0 /* hb-ot-shape-complex-arabic.cc in Sources */,
+				FEB095B21EDD36A500D263C0 /* hb-ot-shape-normalize.cc in Sources */,
+				FEB0959D1EDD36A500D263C0 /* hb-ot-shape-complex-hangul.cc in Sources */,
+				FEB095BC1EDD36A500D263C0 /* hb-ot-var.cc in Sources */,
+				FEB095531EDD36A500D263C0 /* hb-blob.cc in Sources */,
+				FEB0956C1EDD36A500D263C0 /* hb-ft.cc in Sources */,
+				FEB095C41EDD36A500D263C0 /* hb-shape-plan.cc in Sources */,
+				FEB095C11EDD36A500D263C0 /* hb-set.cc in Sources */,
+				FEB095A81EDD36A500D263C0 /* hb-ot-shape-complex-thai.cc in Sources */,
+				FEB095A91EDD36A500D263C0 /* hb-ot-shape-complex-tibetan.cc in Sources */,
+				FEB095911EDD36A500D263C0 /* hb-ot-math.cc in Sources */,
+				FEB0955B1EDD36A500D263C0 /* hb-buffer.cc in Sources */,
+				FEB095CC1EDD36A500D263C0 /* hb-ucdn.cc in Sources */,
+				FEB0958F1EDD36A500D263C0 /* hb-ot-map.cc in Sources */,
+				FEB095DB1EDD36D000D263C0 /* ucdn.c in Sources */,
+				FEB095AE1EDD36A500D263C0 /* hb-ot-shape-complex-use.cc in Sources */,
+				BE48FD6207AFA17000BB41DA /* SDL_ttf.cpp in Sources */,
+				FEB095D51EDD36A500D263C0 /* hb-warning.cc in Sources */,
+				FEB095661EDD36A500D263C0 /* hb-face.cc in Sources */,
+				FEB095A61EDD36A500D263C0 /* hb-ot-shape-complex-myanmar.cc in Sources */,
+				FEB095B41EDD36A500D263C0 /* hb-ot-shape.cc in Sources */,
+				FEB095B61EDD36A500D263C0 /* hb-ot-tag.cc in Sources */,
+				FEB095CE1EDD36A500D263C0 /* hb-unicode.cc in Sources */,
+				FEB0955E1EDD36A500D263C0 /* hb-common.cc in Sources */,
+				FEB095DE1EDD38D400D263C0 /* hb-ot-shape-fallback.cc in Sources */,
+				FEB0959C1EDD36A500D263C0 /* hb-ot-shape-complex-default.cc in Sources */,
+				FEB095A31EDD36A500D263C0 /* hb-ot-shape-complex-indic.cc in Sources */,
+				FEB095C61EDD36A500D263C0 /* hb-shape.cc in Sources */,
+				FEB095AD1EDD36A500D263C0 /* hb-ot-shape-complex-use-table.cc in Sources */,
+				FEB0958C1EDD36A500D263C0 /* hb-ot-layout.cc in Sources */,
+				FEB0955A1EDD36A500D263C0 /* hb-buffer-serialize.cc in Sources */,
+				FEB095A21EDD36A500D263C0 /* hb-ot-shape-complex-indic-table.cc in Sources */,
+				FEB0959E1EDD36A500D263C0 /* hb-ot-shape-complex-hebrew.cc in Sources */,
+				FEB0957F1EDD36A500D263C0 /* hb-ot-font.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF493FFB2069198E007D02B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF4940042069198E007D02B1 /* SDL2_ttf.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		385B99F221CBDE45000E5F90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Framework;
+			targetProxy = 385B99F121CBDE45000E5F90 /* PBXContainerItemProxy */;
+		};
+		BE48FD7A07AFA17100BB41DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE48FD5D07AFA17000BB41DA /* Framework */;
+			targetProxy = BE48FD7907AFA17100BB41DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00B7E1EA097E26C600826121 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 15;
+				DYLIB_CURRENT_VERSION = 15.0.0;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED)",
+					"$(HOME)/Library/Frameworks",
+					/Library/Frameworks,
+				);
+				FRAMEWORK_VERSION = A;
+				HEADER_SEARCH_PATHS = (
+					"$(HEADER_SEARCH_PATHS_QUOTED)",
+					"$(HOME)/Library/Frameworks/SDL2.framework/Headers",
+					/Library/Frameworks/SDL2.framework/Headers,
+					"$(SDL_ROOT)/include",
+				);
+				INFOPLIST_FILE = "Info-Framework.plist";
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
+				OTHER_CFLAGS = (
+					"-DHB_NO_MT",
+					"-DHAVE_OT",
+					"-DHAVE_UCDN",
+					"-fPIC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.libsdl.SDL2-ttf";
+				PRODUCT_NAME = SDL2_ttf;
+				SDL_ROOT = ../../SDL;
+				VALID_ARCHS = x86_64;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		00B7E1EB097E26C600826121 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 15;
+				DYLIB_CURRENT_VERSION = 15.0.0;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED)",
+					"$(HOME)/Library/Frameworks",
+					/Library/Frameworks,
+				);
+				FRAMEWORK_VERSION = A;
+				HEADER_SEARCH_PATHS = (
+					"$(HEADER_SEARCH_PATHS_QUOTED)",
+					"$(HOME)/Library/Frameworks/SDL2.framework/Headers",
+					/Library/Frameworks/SDL2.framework/Headers,
+					"$(SDL_ROOT)/include",
+				);
+				INFOPLIST_FILE = "Info-Framework.plist";
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
+				OTHER_CFLAGS = (
+					"-DHB_NO_MT",
+					"-DHAVE_OT",
+					"-DHAVE_UCDN",
+					"-fPIC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.libsdl.SDL2-ttf";
+				PRODUCT_NAME = SDL2_ttf;
+				SDL_ROOT = ../../SDL;
+				VALID_ARCHS = x86_64;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		00B7E1F2097E26C600826121 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "Create DMG";
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		00B7E1F3097E26C600826121 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "Create DMG";
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		00B7E1F6097E26C600826121 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED)",
+					"$(HOME)/Library/Frameworks",
+					/Library/Frameworks,
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED = "\"$(SRCROOT)/Frameworks\"";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(HEADER_SEARCH_PATHS_QUOTED)",
+					"$(HOME)/Library/Frameworks/SDL2.framework/Headers",
+					/Library/Frameworks/SDL2.framework/Headers,
+				);
+				HEADER_SEARCH_PATHS_QUOTED = "\"$(SRCROOT)/Frameworks/FreeType.framework/Headers\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = SDL2_ttf;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		00B7E1F7097E26C600826121 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED)",
+					"$(HOME)/Library/Frameworks",
+					/Library/Frameworks,
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED = "\"$(SRCROOT)/Frameworks\"";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(HEADER_SEARCH_PATHS_QUOTED)",
+					"$(HOME)/Library/Frameworks/SDL2.framework/Headers",
+					/Library/Frameworks/SDL2.framework/Headers,
+				);
+				HEADER_SEARCH_PATHS_QUOTED = "\"$(SRCROOT)/Frameworks/FreeType.framework/Headers\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = SDL2_ttf;
+				SDKROOT = macosx;
+				SEPARATE_STRIP = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		BF4940062069198E007D02B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3M3W4L293S;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = (
+					"$(HEADER_SEARCH_PATHS_QUOTED)",
+					"$(HOME)/Library/Frameworks/SDL2.framework/Headers",
+					/Library/Frameworks/SDL2.framework/Headers,
+					"$(SDL_ROOT)/include",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDL_ROOT = ../../SDL;
+			};
+			name = Debug;
+		};
+		BF4940072069198E007D02B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3M3W4L293S;
+				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = (
+					"$(HEADER_SEARCH_PATHS_QUOTED)",
+					"$(HOME)/Library/Frameworks/SDL2.framework/Headers",
+					/Library/Frameworks/SDL2.framework/Headers,
+					"$(SDL_ROOT)/include",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDL_ROOT = ../../SDL;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00B7E1E9097E26C600826121 /* Build configuration list for PBXNativeTarget "Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B7E1EA097E26C600826121 /* Debug */,
+				00B7E1EB097E26C600826121 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		00B7E1F1097E26C600826121 /* Build configuration list for PBXNativeTarget "Create DMG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B7E1F2097E26C600826121 /* Debug */,
+				00B7E1F3097E26C600826121 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		00B7E1F5097E26C600826121 /* Build configuration list for PBXProject "SDL2_ttf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B7E1F6097E26C600826121 /* Debug */,
+				00B7E1F7097E26C600826121 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BF4940052069198E007D02B1 /* Build configuration list for PBXNativeTarget "SDL2_ttf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF4940062069198E007D02B1 /* Debug */,
+				BF4940072069198E007D02B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
