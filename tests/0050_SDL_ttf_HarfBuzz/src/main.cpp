@@ -184,7 +184,7 @@ int main(int argc, char *argv[]) {
     //Color is in RGB format
     SDL_Color color = { 255, 255, 255, 255 };
     //texture = renderText("Truetype fonts \xCA\xC7\xD1\xCA\xB4\xD5", "data/TS-kaewpet-NP.ttf", color, 32, renderer);
-    texture = renderText("Hello World ไก่ที่เป่าปี่ดีสุด", "data/Kanit-Regular.otf", color, 48, renderer);
+    texture = renderText("Hello World ไก่ที่เป่าปี่ดีสุด", "data/Kanit-Light.ttf", color, 48, renderer);
     if (texture == NULL){
         SDL_DestroyTexture(background);
         SDL_DestroyRenderer(renderer);

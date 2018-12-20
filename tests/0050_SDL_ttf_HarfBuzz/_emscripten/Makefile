@@ -2,7 +2,8 @@ PROJECT = TestSDLimage
 EMSCRIPTEN_HOME = ~/emsdk
 
 SOURCES = \
-src/main.cpp
+src/main.cpp \
+../../../SDL2_ttf_HarfBuzz/SDL_ttf.cpp
 
 HTML = \
 index.html
@@ -12,7 +13,8 @@ OBJECTS = $(patsubst %.cpp,%.bc,$(patsubst %.c,%.bc,$(SOURCES)))
 EMFLAGS := \
 -s USE_SDL=2 \
 -s USE_SDL_IMAGE=2 \
--s USE_SDL_TTF=2 \
+-s USE_FREETYPE=1 \
+-s USE_HARFBUZZ=1 \
 -s SDL2_IMAGE_FORMATS='["png","bmp"]' \
 -s WASM=1 \
 -s MODULARIZE=1
@@ -21,7 +23,9 @@ CFLAGS := \
 -Os
 
 CPPFLAGS := \
--Os
+-Os \
+-I../../../SDL2_ttf_HarfBuzz \
+-I../../../SDL2_ttf_HarfBuzz/external/harfbuzz-1.4.6 \
 
 LFLAGS := \
 --preload-file ../data
