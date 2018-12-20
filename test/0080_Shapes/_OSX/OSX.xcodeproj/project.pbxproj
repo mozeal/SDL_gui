@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		381BE2711BCE26E1004F12EF /* data in CopyFiles */ = {isa = PBXBuildFile; fileRef = 381BE2701BCE26DA004F12EF /* data */; };
 		381BE2761BCE2788004F12EF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 381BE2751BCE2788004F12EF /* main.cpp */; };
+		385B9A7521CC0173000E5F90 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385B9A5E21CC0157000E5F90 /* SDL2_image.framework */; };
+		385B9A7621CC0173000E5F90 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385B9A6A21CC0161000E5F90 /* SDL2_ttf.framework */; };
+		385B9A7721CC0173000E5F90 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385B9A5021CC014D000E5F90 /* SDL2.framework */; };
 		38E1D2251BCCA94900C25A25 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E1D2241BCCA94900C25A25 /* AudioToolbox.framework */; };
 		38E1D2271BCCA95000C25A25 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E1D2261BCCA95000C25A25 /* AudioUnit.framework */; };
 		38E1D22A1BCCA95B00C25A25 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E1D2281BCCA95B00C25A25 /* Carbon.framework */; };
@@ -17,107 +20,104 @@
 		38E1D2301BCCA97700C25A25 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E1D22E1BCCA97700C25A25 /* CoreAudio.framework */; };
 		38E1D2311BCCA97700C25A25 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E1D22F1BCCA97700C25A25 /* CoreFoundation.framework */; };
 		38E1D2331BCCA98900C25A25 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E1D2321BCCA98900C25A25 /* IOKit.framework */; };
-		38FC07AA1C32585F00FFC1A1 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FC07A11C32584400FFC1A1 /* SDL2.framework */; };
 		BF75427C1C312F9F005AB54A /* GUI_BasicWidgets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF75426F1C312F9F005AB54A /* GUI_BasicWidgets.cpp */; };
 		BF75427D1C312F9F005AB54A /* GUI_MainWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF7542711C312F9F005AB54A /* GUI_MainWin.cpp */; };
 		BF75427E1C312F9F005AB54A /* GUI_TopWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF7542731C312F9F005AB54A /* GUI_TopWin.cpp */; };
 		BF75427F1C312F9F005AB54A /* GUI_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF7542751C312F9F005AB54A /* GUI_utils.cpp */; };
 		BF7542801C312F9F005AB54A /* GUI_WinBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF7542771C312F9F005AB54A /* GUI_WinBase.cpp */; };
 		BF7542811C312F9F005AB54A /* SDL_gui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF7542791C312F9F005AB54A /* SDL_gui.cpp */; };
-		BF7542B01C312FFB005AB54A /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7542981C312FC7005AB54A /* SDL2_image.framework */; };
-		BF7542B11C312FFF005AB54A /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7542A41C312FD6005AB54A /* SDL2_ttf.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		38FC07A01C32584400FFC1A1 /* PBXContainerItemProxy */ = {
+		385B9A4F21CC014D000E5F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 38FC07991C32584400FFC1A1 /* SDL.xcodeproj */;
+			containerPortal = 385B9A4821CC014D000E5F90 /* SDL.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BECDF66C0761BA81005FE872;
 			remoteInfo = Framework;
 		};
-		38FC07A21C32584400FFC1A1 /* PBXContainerItemProxy */ = {
+		385B9A5121CC014D000E5F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 38FC07991C32584400FFC1A1 /* SDL.xcodeproj */;
+			containerPortal = 385B9A4821CC014D000E5F90 /* SDL.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BECDF6B30761BA81005FE872;
 			remoteInfo = "Static Library";
 		};
-		38FC07A41C32584400FFC1A1 /* PBXContainerItemProxy */ = {
+		385B9A5321CC014D000E5F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 38FC07991C32584400FFC1A1 /* SDL.xcodeproj */;
+			containerPortal = 385B9A4821CC014D000E5F90 /* SDL.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = DB31407717554B71006C0E22;
 			remoteInfo = "Shared Library";
 		};
-		38FC07A61C32584400FFC1A1 /* PBXContainerItemProxy */ = {
+		385B9A5521CC014D000E5F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 38FC07991C32584400FFC1A1 /* SDL.xcodeproj */;
+			containerPortal = 385B9A4821CC014D000E5F90 /* SDL.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BECDF6BE0761BA81005FE872;
 			remoteInfo = "Standard DMG";
 		};
-		38FC07A81C32585500FFC1A1 /* PBXContainerItemProxy */ = {
+		385B9A5D21CC0157000E5F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 38FC07991C32584400FFC1A1 /* SDL.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BECDF5FE0761BA81005FE872;
-			remoteInfo = Framework;
-		};
-		BF7542971C312FC7005AB54A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF7542911C312FC7005AB54A /* SDL_image.xcodeproj */;
+			containerPortal = 385B9A5721CC0157000E5F90 /* SDL_image.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BE1FA72E07AF4C45004B6283;
 			remoteInfo = Framework;
 		};
-		BF7542991C312FC7005AB54A /* PBXContainerItemProxy */ = {
+		385B9A5F21CC0157000E5F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BF7542911C312FC7005AB54A /* SDL_image.xcodeproj */;
+			containerPortal = 385B9A5721CC0157000E5F90 /* SDL_image.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BE1FA74107AF4C45004B6283;
 			remoteInfo = "Static Library";
 		};
-		BF75429B1C312FC7005AB54A /* PBXContainerItemProxy */ = {
+		385B9A6121CC0157000E5F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BF7542911C312FC7005AB54A /* SDL_image.xcodeproj */;
+			containerPortal = 385B9A5721CC0157000E5F90 /* SDL_image.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BE1FA74507AF4C45004B6283;
 			remoteInfo = "Create DMG";
 		};
-		BF7542A31C312FD6005AB54A /* PBXContainerItemProxy */ = {
+		385B9A6921CC0161000E5F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BF75429D1C312FD6005AB54A /* SDL_ttf.xcodeproj */;
+			containerPortal = 385B9A6321CC0161000E5F90 /* SDL_ttf.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BE48FD6707AFA17000BB41DA;
 			remoteInfo = Framework;
 		};
-		BF7542A51C312FD6005AB54A /* PBXContainerItemProxy */ = {
+		385B9A6B21CC0161000E5F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BF75429D1C312FD6005AB54A /* SDL_ttf.xcodeproj */;
+			containerPortal = 385B9A6321CC0161000E5F90 /* SDL_ttf.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BE48FD6E07AFA17000BB41DA;
 			remoteInfo = "Static Library";
 		};
-		BF7542A71C312FD6005AB54A /* PBXContainerItemProxy */ = {
+		385B9A6D21CC0161000E5F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BF75429D1C312FD6005AB54A /* SDL_ttf.xcodeproj */;
+			containerPortal = 385B9A6321CC0161000E5F90 /* SDL_ttf.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BE48FD7207AFA17000BB41DA;
 			remoteInfo = "Create DMG";
 		};
-		BF7542A91C312FE5005AB54A /* PBXContainerItemProxy */ = {
+		385B9A6F21CC016D000E5F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BF75429D1C312FD6005AB54A /* SDL_ttf.xcodeproj */;
+			containerPortal = 385B9A6321CC0161000E5F90 /* SDL_ttf.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BE48FD5D07AFA17000BB41DA;
 			remoteInfo = Framework;
 		};
-		BF7542AB1C312FE9005AB54A /* PBXContainerItemProxy */ = {
+		385B9A7121CC016D000E5F90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BF7542911C312FC7005AB54A /* SDL_image.xcodeproj */;
+			containerPortal = 385B9A5721CC0157000E5F90 /* SDL_image.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BE1FA71807AF4C44004B6283;
+			remoteInfo = Framework;
+		};
+		385B9A7321CC016D000E5F90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 385B9A4821CC014D000E5F90 /* SDL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BECDF5FE0761BA81005FE872;
 			remoteInfo = Framework;
 		};
 /* End PBXContainerItemProxy section */
@@ -138,6 +138,9 @@
 /* Begin PBXFileReference section */
 		381BE2701BCE26DA004F12EF /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../data; sourceTree = "<group>"; };
 		381BE2751BCE2788004F12EF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		385B9A4821CC014D000E5F90 /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../../../SDL2/Xcode/SDL/SDL.xcodeproj; sourceTree = "<group>"; };
+		385B9A5721CC0157000E5F90 /* SDL_image.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_image.xcodeproj; path = ../../../SDL2_image/Xcode/SDL_image.xcodeproj; sourceTree = "<group>"; };
+		385B9A6321CC0161000E5F90 /* SDL_ttf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_ttf.xcodeproj; path = ../../../SDL2_ttf/Xcode/SDL_ttf.xcodeproj; sourceTree = "<group>"; };
 		38E1D2091BCCA90800C25A25 /* OSX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OSX; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E1D2241BCCA94900C25A25 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		38E1D2261BCCA95000C25A25 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
@@ -147,7 +150,6 @@
 		38E1D22E1BCCA97700C25A25 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		38E1D22F1BCCA97700C25A25 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		38E1D2321BCCA98900C25A25 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		38FC07991C32584400FFC1A1 /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../../../../SDL/Xcode/SDL/SDL.xcodeproj; sourceTree = "<group>"; };
 		BF75426F1C312F9F005AB54A /* GUI_BasicWidgets.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_BasicWidgets.cpp; sourceTree = "<group>"; };
 		BF7542701C312F9F005AB54A /* GUI_BasicWidgets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_BasicWidgets.h; sourceTree = "<group>"; };
 		BF7542711C312F9F005AB54A /* GUI_MainWin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_MainWin.cpp; sourceTree = "<group>"; };
@@ -161,8 +163,6 @@
 		BF7542791C312F9F005AB54A /* SDL_gui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SDL_gui.cpp; sourceTree = "<group>"; };
 		BF75427A1C312F9F005AB54A /* SDL_gui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL_gui.h; sourceTree = "<group>"; };
 		BF75427B1C312F9F005AB54A /* xpm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xpm.h; sourceTree = "<group>"; };
-		BF7542911C312FC7005AB54A /* SDL_image.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_image.xcodeproj; path = ../../../../SDL_image/Xcode/SDL_image.xcodeproj; sourceTree = "<group>"; };
-		BF75429D1C312FD6005AB54A /* SDL_ttf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_ttf.xcodeproj; path = ../../../../SDL_ttf/Xcode/SDL_ttf.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,9 +170,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38FC07AA1C32585F00FFC1A1 /* SDL2.framework in Frameworks */,
-				BF7542B11C312FFF005AB54A /* SDL2_ttf.framework in Frameworks */,
-				BF7542B01C312FFB005AB54A /* SDL2_image.framework in Frameworks */,
+				385B9A7521CC0173000E5F90 /* SDL2_image.framework in Frameworks */,
+				385B9A7621CC0173000E5F90 /* SDL2_ttf.framework in Frameworks */,
+				385B9A7721CC0173000E5F90 /* SDL2.framework in Frameworks */,
 				38E1D2331BCCA98900C25A25 /* IOKit.framework in Frameworks */,
 				38E1D2301BCCA97700C25A25 /* CoreAudio.framework in Frameworks */,
 				38E1D2311BCCA97700C25A25 /* CoreFoundation.framework in Frameworks */,
@@ -187,6 +187,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		385B9A4921CC014D000E5F90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				385B9A5021CC014D000E5F90 /* SDL2.framework */,
+				385B9A5221CC014D000E5F90 /* libSDL2.a */,
+				385B9A5421CC014D000E5F90 /* libSDL2.dylib */,
+				385B9A5621CC014D000E5F90 /* Standard DMG */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		385B9A5821CC0157000E5F90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				385B9A5E21CC0157000E5F90 /* SDL2_image.framework */,
+				385B9A6021CC0157000E5F90 /* libSDL2_image.a */,
+				385B9A6221CC0157000E5F90 /* Create DMG */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		385B9A6421CC0161000E5F90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				385B9A6A21CC0161000E5F90 /* SDL2_ttf.framework */,
+				385B9A6C21CC0161000E5F90 /* libSDL2_ttf.a */,
+				385B9A6E21CC0161000E5F90 /* Create DMG */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		38CA5D011BCCD1D00099BC3B /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,9 +249,9 @@
 		38E1D2341BCCA9A900C25A25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				38FC07991C32584400FFC1A1 /* SDL.xcodeproj */,
-				BF75429D1C312FD6005AB54A /* SDL_ttf.xcodeproj */,
-				BF7542911C312FC7005AB54A /* SDL_image.xcodeproj */,
+				385B9A6321CC0161000E5F90 /* SDL_ttf.xcodeproj */,
+				385B9A5721CC0157000E5F90 /* SDL_image.xcodeproj */,
+				385B9A4821CC014D000E5F90 /* SDL.xcodeproj */,
 				38E1D22E1BCCA97700C25A25 /* CoreAudio.framework */,
 				38E1D22F1BCCA97700C25A25 /* CoreFoundation.framework */,
 				38E1D22C1BCCA96700C25A25 /* CoreVideo.framework */,
@@ -231,17 +262,6 @@
 				38E1D2321BCCA98900C25A25 /* IOKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		38FC079A1C32584400FFC1A1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				38FC07A11C32584400FFC1A1 /* SDL2.framework */,
-				38FC07A31C32584400FFC1A1 /* libSDL2.a */,
-				38FC07A51C32584400FFC1A1 /* libSDL2.dylib */,
-				38FC07A71C32584400FFC1A1 /* Standard DMG */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		BF75426E1C312F9F005AB54A /* SDL_gui */ = {
@@ -265,26 +285,6 @@
 			path = ../../../SDL_gui;
 			sourceTree = "<group>";
 		};
-		BF7542921C312FC7005AB54A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BF7542981C312FC7005AB54A /* SDL2_image.framework */,
-				BF75429A1C312FC7005AB54A /* libSDL2_image.a */,
-				BF75429C1C312FC7005AB54A /* Create DMG */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		BF75429E1C312FD6005AB54A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BF7542A41C312FD6005AB54A /* SDL2_ttf.framework */,
-				BF7542A61C312FD6005AB54A /* libSDL2_ttf.a */,
-				BF7542A81C312FD6005AB54A /* Create DMG */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,9 +299,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				38FC07A91C32585500FFC1A1 /* PBXTargetDependency */,
-				BF7542AC1C312FE9005AB54A /* PBXTargetDependency */,
-				BF7542AA1C312FE5005AB54A /* PBXTargetDependency */,
+				385B9A7021CC016D000E5F90 /* PBXTargetDependency */,
+				385B9A7221CC016D000E5F90 /* PBXTargetDependency */,
+				385B9A7421CC016D000E5F90 /* PBXTargetDependency */,
 			);
 			name = OSX;
 			productName = OSX;
@@ -335,16 +335,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 38FC079A1C32584400FFC1A1 /* Products */;
-					ProjectRef = 38FC07991C32584400FFC1A1 /* SDL.xcodeproj */;
+					ProductGroup = 385B9A4921CC014D000E5F90 /* Products */;
+					ProjectRef = 385B9A4821CC014D000E5F90 /* SDL.xcodeproj */;
 				},
 				{
-					ProductGroup = BF7542921C312FC7005AB54A /* Products */;
-					ProjectRef = BF7542911C312FC7005AB54A /* SDL_image.xcodeproj */;
+					ProductGroup = 385B9A5821CC0157000E5F90 /* Products */;
+					ProjectRef = 385B9A5721CC0157000E5F90 /* SDL_image.xcodeproj */;
 				},
 				{
-					ProductGroup = BF75429E1C312FD6005AB54A /* Products */;
-					ProjectRef = BF75429D1C312FD6005AB54A /* SDL_ttf.xcodeproj */;
+					ProductGroup = 385B9A6421CC0161000E5F90 /* Products */;
+					ProjectRef = 385B9A6321CC0161000E5F90 /* SDL_ttf.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -355,74 +355,74 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		38FC07A11C32584400FFC1A1 /* SDL2.framework */ = {
+		385B9A5021CC014D000E5F90 /* SDL2.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SDL2.framework;
-			remoteRef = 38FC07A01C32584400FFC1A1 /* PBXContainerItemProxy */;
+			remoteRef = 385B9A4F21CC014D000E5F90 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		38FC07A31C32584400FFC1A1 /* libSDL2.a */ = {
+		385B9A5221CC014D000E5F90 /* libSDL2.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libSDL2.a;
-			remoteRef = 38FC07A21C32584400FFC1A1 /* PBXContainerItemProxy */;
+			remoteRef = 385B9A5121CC014D000E5F90 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		38FC07A51C32584400FFC1A1 /* libSDL2.dylib */ = {
+		385B9A5421CC014D000E5F90 /* libSDL2.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libSDL2.dylib;
-			remoteRef = 38FC07A41C32584400FFC1A1 /* PBXContainerItemProxy */;
+			remoteRef = 385B9A5321CC014D000E5F90 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		38FC07A71C32584400FFC1A1 /* Standard DMG */ = {
+		385B9A5621CC014D000E5F90 /* Standard DMG */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "Standard DMG";
-			remoteRef = 38FC07A61C32584400FFC1A1 /* PBXContainerItemProxy */;
+			remoteRef = 385B9A5521CC014D000E5F90 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BF7542981C312FC7005AB54A /* SDL2_image.framework */ = {
+		385B9A5E21CC0157000E5F90 /* SDL2_image.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SDL2_image.framework;
-			remoteRef = BF7542971C312FC7005AB54A /* PBXContainerItemProxy */;
+			remoteRef = 385B9A5D21CC0157000E5F90 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BF75429A1C312FC7005AB54A /* libSDL2_image.a */ = {
+		385B9A6021CC0157000E5F90 /* libSDL2_image.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libSDL2_image.a;
-			remoteRef = BF7542991C312FC7005AB54A /* PBXContainerItemProxy */;
+			remoteRef = 385B9A5F21CC0157000E5F90 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BF75429C1C312FC7005AB54A /* Create DMG */ = {
+		385B9A6221CC0157000E5F90 /* Create DMG */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "Create DMG";
-			remoteRef = BF75429B1C312FC7005AB54A /* PBXContainerItemProxy */;
+			remoteRef = 385B9A6121CC0157000E5F90 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BF7542A41C312FD6005AB54A /* SDL2_ttf.framework */ = {
+		385B9A6A21CC0161000E5F90 /* SDL2_ttf.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SDL2_ttf.framework;
-			remoteRef = BF7542A31C312FD6005AB54A /* PBXContainerItemProxy */;
+			remoteRef = 385B9A6921CC0161000E5F90 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BF7542A61C312FD6005AB54A /* libSDL2_ttf.a */ = {
+		385B9A6C21CC0161000E5F90 /* libSDL2_ttf.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libSDL2_ttf.a;
-			remoteRef = BF7542A51C312FD6005AB54A /* PBXContainerItemProxy */;
+			remoteRef = 385B9A6B21CC0161000E5F90 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BF7542A81C312FD6005AB54A /* Create DMG */ = {
+		385B9A6E21CC0161000E5F90 /* Create DMG */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = "Create DMG";
-			remoteRef = BF7542A71C312FD6005AB54A /* PBXContainerItemProxy */;
+			remoteRef = 385B9A6D21CC0161000E5F90 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -445,20 +445,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		38FC07A91C32585500FFC1A1 /* PBXTargetDependency */ = {
+		385B9A7021CC016D000E5F90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Framework;
-			targetProxy = 38FC07A81C32585500FFC1A1 /* PBXContainerItemProxy */;
+			targetProxy = 385B9A6F21CC016D000E5F90 /* PBXContainerItemProxy */;
 		};
-		BF7542AA1C312FE5005AB54A /* PBXTargetDependency */ = {
+		385B9A7221CC016D000E5F90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Framework;
-			targetProxy = BF7542A91C312FE5005AB54A /* PBXContainerItemProxy */;
+			targetProxy = 385B9A7121CC016D000E5F90 /* PBXContainerItemProxy */;
 		};
-		BF7542AC1C312FE9005AB54A /* PBXTargetDependency */ = {
+		385B9A7421CC016D000E5F90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Framework;
-			targetProxy = BF7542AB1C312FE9005AB54A /* PBXContainerItemProxy */;
+			targetProxy = 385B9A7321CC016D000E5F90 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
