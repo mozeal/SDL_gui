@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		380C58B121C100D90005A03F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C58A821C100C30005A03F /* SDL2.framework */; };
+		385B98E821CBAF1D000E5F90 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69EF235B1D13DFC7009B1FD6 /* Info.plist */; };
 		69CD9A151D15AED3004D8ED1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69EF23731D13E239009B1FD6 /* main.cpp */; };
 		69CD9A161D15B20E004D8ED1 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 69EF26601D13EAFB009B1FD6 /* data */; };
 		69EF23571D13DFC7009B1FD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69EF23561D13DFC7009B1FD6 /* Assets.xcassets */; };
@@ -271,6 +272,7 @@
 			files = (
 				69CD9A161D15B20E004D8ED1 /* data in Resources */,
 				69EF23571D13DFC7009B1FD6 /* Assets.xcassets in Resources */,
+				385B98E821CBAF1D000E5F90 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
