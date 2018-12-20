@@ -433,6 +433,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1.1.0;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../SDL2/include";
 				LIBRARY_STYLE = STATIC;
 				PRODUCT_NAME = SDL2_image;
 				SECTORDER_FLAGS = "";
@@ -497,6 +498,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1.1.0;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../SDL2/include";
 				LIBRARY_STYLE = STATIC;
 				PRODUCT_NAME = SDL2_image;
 				SECTORDER_FLAGS = "";
@@ -510,6 +512,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1.1.0;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../SDL2/include";
 				LIBRARY_STYLE = STATIC;
 				PRODUCT_NAME = SDL2_image;
 				SDKROOT = appletvos;
@@ -525,6 +528,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1.1.0;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../SDL2/include";
 				LIBRARY_STYLE = STATIC;
 				PRODUCT_NAME = SDL2_image;
 				SDKROOT = appletvos;
@@ -538,6 +542,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../SDL2/include";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -546,6 +551,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../SDL2/include";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -554,6 +560,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../SDL2/include";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -562,6 +569,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../SDL2/include";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

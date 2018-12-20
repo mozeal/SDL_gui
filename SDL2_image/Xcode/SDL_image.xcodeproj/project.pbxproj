@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		007288A80F0DA79800C302A9 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007288A60F0DA79800C302A9 /* ApplicationServices.framework */; };
+		385B991021CBBE16000E5F90 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1FA76207AF7335004B6283 /* SDL2.framework */; };
 		AA23FC7D20A2A1B90017DFB9 /* IMG_svg.c in Sources */ = {isa = PBXBuildFile; fileRef = AA50AA461F9C7C50003B9C0C /* IMG_svg.c */; };
 		AA50AA471F9C7C50003B9C0C /* IMG_svg.c in Sources */ = {isa = PBXBuildFile; fileRef = AA50AA461F9C7C50003B9C0C /* IMG_svg.c */; };
 		AA579DF2161C07E6005F809B /* IMG_bmp.c in Sources */ = {isa = PBXBuildFile; fileRef = AA579DE2161C07E6005F809B /* IMG_bmp.c */; };
@@ -46,7 +47,6 @@
 		AADBAC89175C6B4C004F8ED2 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007288A60F0DA79800C302A9 /* ApplicationServices.framework */; };
 		AADBAC8A175C6B4F004F8ED2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F85449145A19BC002CA294 /* Foundation.framework */; };
 		BE1FA71A07AF4C44004B6283 /* SDL_image.h in Headers */ = {isa = PBXBuildFile; fileRef = 1014BAEA010A4B677F000001 /* SDL_image.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BE1FA76307AF7335004B6283 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1FA76207AF7335004B6283 /* SDL2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,9 +110,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				385B991021CBBE16000E5F90 /* SDL2.framework in Frameworks */,
 				AADBAC89175C6B4C004F8ED2 /* ApplicationServices.framework in Frameworks */,
 				AADBAC8A175C6B4F004F8ED2 /* Foundation.framework in Frameworks */,
-				BE1FA76307AF7335004B6283 /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +514,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "Info-Framework.plist";
@@ -639,6 +640,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "Info-Framework.plist";
