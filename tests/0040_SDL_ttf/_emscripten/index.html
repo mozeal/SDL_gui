@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>SDL_gui (Emscripten)</title>
+    </head>
+    <body>
+        <h1>SDL_gui (Emscripten)</h1>
+        <p>SDL_image test</p>
+        <canvas id="canvas"></canvas>
+        <script type="application/javascript" src="TestSDLimage.js"></script>
+        <script type="application/javascript">
+            Module({
+                canvas: document.getElementById('canvas'),
+            })
+            .then( () => {
+                console.log('Loaded!');
+            })
+        </script>
+    </body>
+</html>
