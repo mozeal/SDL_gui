@@ -4,6 +4,8 @@ EMSCRIPTEN_HOME = ~/emsdk
 SOURCES = \
 src/main.cpp \
 src/SDL2_gui/SDL_gui.cpp \
+src/SDL2_gui/GUI_shapes.cpp \
+src/SDL2_gfx/SDL2_gfxPrimitives.c \
 ../../../SDL2_ttf_HarfBuzz/SDL_ttf.cpp
 
 HTML = \
@@ -20,18 +22,21 @@ EMFLAGS := \
 -s MODULARIZE=1
 
 CFLAGS := \
--Os
+-Os \
+-Isrc/SDL2_gui \
+-Isrc/SDL2_gfx 
 
 CPPFLAGS := \
 -Os \
 -std=c++14 \
 -I../../../SDL2_ttf_HarfBuzz \
 -I../../../SDL2_ttf_HarfBuzz/external/harfbuzz-1.4.6 \
--Isrc/SDL2_gui 
+-Isrc/SDL2_gui \
+-Isrc/SDL2_gfx 
 
 LFLAGS := \
 -s USE_HARFBUZZ=1 \
---preload-file ../data
+--preload-file ../data 
 
 OUTFILES := \
 build/$(PROJECT).js \

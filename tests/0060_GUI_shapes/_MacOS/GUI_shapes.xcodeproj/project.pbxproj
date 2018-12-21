@@ -11,6 +11,11 @@
 		385B990421CBB97A000E5F90 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385B98FD21CBB95B000E5F90 /* SDL2_image.framework */; };
 		385B9A0B21CBE0B1000E5F90 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385B9A0421CBDF02000E5F90 /* SDL2_ttf.framework */; };
 		385B9A9421CC13A8000E5F90 /* SDL_gui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */; };
+		385B9AB621CCBC4C000E5F90 /* GUI_shapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 385B9AB421CCBC4C000E5F90 /* GUI_shapes.cpp */; };
+		385B9AC121CCD379000E5F90 /* SDL2_imageFilter.c in Sources */ = {isa = PBXBuildFile; fileRef = 385B9AB821CCD379000E5F90 /* SDL2_imageFilter.c */; };
+		385B9AC221CCD379000E5F90 /* SDL2_gfxPrimitives.c in Sources */ = {isa = PBXBuildFile; fileRef = 385B9AB921CCD379000E5F90 /* SDL2_gfxPrimitives.c */; };
+		385B9AC321CCD379000E5F90 /* SDL2_rotozoom.c in Sources */ = {isa = PBXBuildFile; fileRef = 385B9ABC21CCD379000E5F90 /* SDL2_rotozoom.c */; };
+		385B9AC421CCD379000E5F90 /* SDL2_framerate.c in Sources */ = {isa = PBXBuildFile; fileRef = 385B9ABF21CCD379000E5F90 /* SDL2_framerate.c */; };
 		69CD9A151D15AED3004D8ED1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69EF23731D13E239009B1FD6 /* main.cpp */; };
 		69CD9A161D15B20E004D8ED1 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 69EF26601D13EAFB009B1FD6 /* data */; };
 		69EF23571D13DFC7009B1FD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69EF23561D13DFC7009B1FD6 /* Assets.xcassets */; };
@@ -125,7 +130,18 @@
 		385B99FC21CBDF02000E5F90 /* SDL2_ttf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL2_ttf.xcodeproj; path = ../../../SDL2_ttf_HarfBuzz/Xcode/SDL2_ttf.xcodeproj; sourceTree = "<group>"; };
 		385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SDL_gui.cpp; sourceTree = "<group>"; };
 		385B9A9321CC13A8000E5F90 /* SDL_gui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDL_gui.h; sourceTree = "<group>"; };
-		69EF234D1D13DFC7009B1FD6 /* Test_SDL_ttf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_SDL_ttf.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		385B9AB421CCBC4C000E5F90 /* GUI_shapes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_shapes.cpp; sourceTree = "<group>"; };
+		385B9AB521CCBC4C000E5F90 /* GUI_shapes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_shapes.h; sourceTree = "<group>"; };
+		385B9AB821CCD379000E5F90 /* SDL2_imageFilter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SDL2_imageFilter.c; sourceTree = "<group>"; };
+		385B9AB921CCD379000E5F90 /* SDL2_gfxPrimitives.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SDL2_gfxPrimitives.c; sourceTree = "<group>"; };
+		385B9ABA21CCD379000E5F90 /* SDL2_framerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL2_framerate.h; sourceTree = "<group>"; };
+		385B9ABB21CCD379000E5F90 /* SDL2_gfxPrimitives_font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL2_gfxPrimitives_font.h; sourceTree = "<group>"; };
+		385B9ABC21CCD379000E5F90 /* SDL2_rotozoom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SDL2_rotozoom.c; sourceTree = "<group>"; };
+		385B9ABD21CCD379000E5F90 /* SDL2_gfxPrimitives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL2_gfxPrimitives.h; sourceTree = "<group>"; };
+		385B9ABE21CCD379000E5F90 /* SDL2_imageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL2_imageFilter.h; sourceTree = "<group>"; };
+		385B9ABF21CCD379000E5F90 /* SDL2_framerate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SDL2_framerate.c; sourceTree = "<group>"; };
+		385B9AC021CCD379000E5F90 /* SDL2_rotozoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL2_rotozoom.h; sourceTree = "<group>"; };
+		69EF234D1D13DFC7009B1FD6 /* GUI_shapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GUI_shapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69EF23561D13DFC7009B1FD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69EF235B1D13DFC7009B1FD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69EF23731D13E239009B1FD6 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -200,16 +216,35 @@
 			children = (
 				385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */,
 				385B9A9321CC13A8000E5F90 /* SDL_gui.h */,
+				385B9AB421CCBC4C000E5F90 /* GUI_shapes.cpp */,
+				385B9AB521CCBC4C000E5F90 /* GUI_shapes.h */,
 			);
 			name = SDL2_gui;
 			path = ../../../SDL2_gui;
+			sourceTree = "<group>";
+		};
+		385B9AB721CCD379000E5F90 /* SDL2_gfx */ = {
+			isa = PBXGroup;
+			children = (
+				385B9AB821CCD379000E5F90 /* SDL2_imageFilter.c */,
+				385B9AB921CCD379000E5F90 /* SDL2_gfxPrimitives.c */,
+				385B9ABA21CCD379000E5F90 /* SDL2_framerate.h */,
+				385B9ABB21CCD379000E5F90 /* SDL2_gfxPrimitives_font.h */,
+				385B9ABC21CCD379000E5F90 /* SDL2_rotozoom.c */,
+				385B9ABD21CCD379000E5F90 /* SDL2_gfxPrimitives.h */,
+				385B9ABE21CCD379000E5F90 /* SDL2_imageFilter.h */,
+				385B9ABF21CCD379000E5F90 /* SDL2_framerate.c */,
+				385B9AC021CCD379000E5F90 /* SDL2_rotozoom.h */,
+			);
+			name = SDL2_gfx;
+			path = ../../../SDL2_gfx;
 			sourceTree = "<group>";
 		};
 		69EF23441D13DFC7009B1FD6 = {
 			isa = PBXGroup;
 			children = (
 				69EF26601D13EAFB009B1FD6 /* data */,
-				69EF234F1D13DFC7009B1FD6 /* Test_SDL_ttf */,
+				69EF234F1D13DFC7009B1FD6 /* GUI_shapes */,
 				69EF23791D13E26A009B1FD6 /* Frameworks */,
 				69EF234E1D13DFC7009B1FD6 /* Products */,
 				69EF236B1D13E239009B1FD6 /* src */,
@@ -219,19 +254,19 @@
 		69EF234E1D13DFC7009B1FD6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				69EF234D1D13DFC7009B1FD6 /* Test_SDL_ttf.app */,
+				69EF234D1D13DFC7009B1FD6 /* GUI_shapes.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		69EF234F1D13DFC7009B1FD6 /* Test_SDL_ttf */ = {
+		69EF234F1D13DFC7009B1FD6 /* GUI_shapes */ = {
 			isa = PBXGroup;
 			children = (
 				69EF23561D13DFC7009B1FD6 /* Assets.xcassets */,
 				69EF235B1D13DFC7009B1FD6 /* Info.plist */,
 				69EF23531D13DFC7009B1FD6 /* Supporting Files */,
 			);
-			path = Test_SDL_ttf;
+			path = GUI_shapes;
 			sourceTree = "<group>";
 		};
 		69EF23531D13DFC7009B1FD6 /* Supporting Files */ = {
@@ -244,6 +279,7 @@
 		69EF236B1D13E239009B1FD6 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				385B9AB721CCD379000E5F90 /* SDL2_gfx */,
 				385B9A8A21CC1380000E5F90 /* SDL2_gui */,
 				69EF23731D13E239009B1FD6 /* main.cpp */,
 			);
@@ -273,9 +309,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		69EF234C1D13DFC7009B1FD6 /* TestSDLimage */ = {
+		69EF234C1D13DFC7009B1FD6 /* GUI_shapes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "TestSDLimage" */;
+			buildConfigurationList = 69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "GUI_shapes" */;
 			buildPhases = (
 				69EF23491D13DFC7009B1FD6 /* Sources */,
 				69EF234A1D13DFC7009B1FD6 /* Frameworks */,
@@ -289,9 +325,9 @@
 				385B990321CBB970000E5F90 /* PBXTargetDependency */,
 				380C58B021C100CA0005A03F /* PBXTargetDependency */,
 			);
-			name = TestSDLimage;
+			name = GUI_shapes;
 			productName = ClearScreen;
-			productReference = 69EF234D1D13DFC7009B1FD6 /* Test_SDL_ttf.app */;
+			productReference = 69EF234D1D13DFC7009B1FD6 /* GUI_shapes.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -309,7 +345,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 69EF23481D13DFC7009B1FD6 /* Build configuration list for PBXProject "Test_SDL_ttf" */;
+			buildConfigurationList = 69EF23481D13DFC7009B1FD6 /* Build configuration list for PBXProject "GUI_shapes" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -336,7 +372,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				69EF234C1D13DFC7009B1FD6 /* TestSDLimage */,
+				69EF234C1D13DFC7009B1FD6 /* GUI_shapes */,
 			);
 		};
 /* End PBXProject section */
@@ -447,8 +483,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				385B9AC121CCD379000E5F90 /* SDL2_imageFilter.c in Sources */,
 				69CD9A151D15AED3004D8ED1 /* main.cpp in Sources */,
+				385B9AB621CCBC4C000E5F90 /* GUI_shapes.cpp in Sources */,
+				385B9AC221CCD379000E5F90 /* SDL2_gfxPrimitives.c in Sources */,
 				385B9A9421CC13A8000E5F90 /* SDL_gui.cpp in Sources */,
+				385B9AC321CCD379000E5F90 /* SDL2_rotozoom.c in Sources */,
+				385B9AC421CCD379000E5F90 /* SDL2_framerate.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +627,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
-				GUI_CORE_INCLUDES = "$(SDL_ROOT)/include $(SDL_IMAGE_ROOT) $(SDL_TTF_ROOT) $(LIB_HARFBUZZ_ROOT) $(LIB_FREETYPE_ROOT)/include";
+				GUI_CORE_INCLUDES = "$(SDL_ROOT)/include $(SDL_IMAGE_ROOT) $(SDL_TTF_ROOT) $(SDL_GFX_ROOT) $(LIB_HARFBUZZ_ROOT) $(LIB_FREETYPE_ROOT)/include";
 				HEADER_SEARCH_PATHS = $GUI_CORE_INCLUDES;
 				INFOPLIST_FILE = "$(PROJECT_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
@@ -596,6 +637,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDL_GFX_ROOT = ../../../SDL2_gfx;
 				SDL_IMAGE_ROOT = ../../../SDL2_image;
 				SDL_ROOT = ../../../SDL2;
 				SDL_TTF_ROOT = ../../../SDL2_ttf_HarfBuzz;
@@ -613,7 +655,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
-				GUI_CORE_INCLUDES = "$(SDL_ROOT)/include $(SDL_IMAGE_ROOT) $(SDL_TTF_ROOT) $(LIB_HARFBUZZ_ROOT) $(LIB_FREETYPE_ROOT)/include";
+				GUI_CORE_INCLUDES = "$(SDL_ROOT)/include $(SDL_IMAGE_ROOT) $(SDL_TTF_ROOT) $(SDL_GFX_ROOT) $(LIB_HARFBUZZ_ROOT) $(LIB_FREETYPE_ROOT)/include";
 				HEADER_SEARCH_PATHS = $GUI_CORE_INCLUDES;
 				INFOPLIST_FILE = "$(PROJECT_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
@@ -622,6 +664,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDL_GFX_ROOT = ../../../SDL2_gfx;
 				SDL_IMAGE_ROOT = ../../../SDL2_image;
 				SDL_ROOT = ../../../SDL2;
 				SDL_TTF_ROOT = ../../../SDL2_ttf_HarfBuzz;
@@ -632,7 +675,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		69EF23481D13DFC7009B1FD6 /* Build configuration list for PBXProject "Test_SDL_ttf" */ = {
+		69EF23481D13DFC7009B1FD6 /* Build configuration list for PBXProject "GUI_shapes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69EF235C1D13DFC7009B1FD6 /* Debug */,
@@ -641,7 +684,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "TestSDLimage" */ = {
+		69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "GUI_shapes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69EF235F1D13DFC7009B1FD6 /* Debug */,
