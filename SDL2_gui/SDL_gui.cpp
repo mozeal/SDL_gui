@@ -19,6 +19,7 @@ float GUI_scale = 1;
 static bool done = false;
 SDL_Renderer *GUI_renderer = NULL;
 SDL_Window *GUI_window = NULL;
+GUI_View *GUI_topView = NULL;
 
 static std::function<bool(SDL_Event* ev)> user_handle_events = NULL;
 
@@ -26,7 +27,6 @@ const long MILLESECONDS_PER_FRAME = 1000/60;
 static Uint32 timer_start = 0;
 static float frameCount = 0;
 
-static GUI_LogLevel currentLogLevel = GUI_LOG_NOTICE;
 
 static void GUI_Loop();
 static void handle_events(SDL_Event *ev);
@@ -101,34 +101,7 @@ void GUI_Destroy() {
 
 
 
-void GUI_Log(const char * format, ...) {
-#ifdef __ANDROID__
-    char buffer[512];
-    va_list args;
-    va_start(args, format);
-    vsprintf(buffer, format, args);
-    va_end(args);
-    
-    __android_log_print(ANDROID_LOG_VERBOSE, LOGNAME, buffer, 1);
-#else
-    if (GUI_GetLogLevel() <= GUI_LOG_NOTICE) {
-        va_list args;
-        va_start(args, format);
-        vprintf(format, args);
-        va_end(args);
-    }
-#endif
-}
 
-//--------------------------------------------------
-void GUI_SetLogLevel(GUI_LogLevel level) {
-    currentLogLevel = level;
-}
-
-//--------------------------------------------------
-GUI_LogLevel GUI_GetLogLevel() {
-    return currentLogLevel;
-}
 
 void GUI_Error(const char* fn, int result) {
     GUI_Log("SDL_gui ERROR: \"%s\" error: %x (%d).\n", fn, result, result);
@@ -173,33 +146,33 @@ static void GUI_Loop() {
                 {
                     case SDL_WINDOWEVENT_RESIZED:
                         
-                         SDL_Log( "Event: Window Resized: %i, %i\n", event.window.data1, event.window.data2 );
-                         GUI_windowWidth = event.window.data1;
-                         GUI_windowHeight = event.window.data2;
-                        
-                         int drawableWidth = 0;
-                         int drawableHeight = 0;
-                         SDL_GL_GetDrawableSize(GUI_window, &drawableWidth, &drawableHeight);
-                         SDL_Log( "Drawable: %i %i\n", drawableWidth, drawableHeight );
-                        
-                         #ifdef __ANDROID__
-                         // Android always get fullscreen with no retina
-                         int scalex = drawableWidth / expectedWidth;
-                         int scaley = drawableHeight / expectedHeight;
-                         #else
-                         int scalex = drawableWidth / GUI_windowWidth;
-                         int scaley = drawableHeight / GUI_windowHeight;
-                         #endif
-                         GUI_scale = (float)((scalex < scaley) ? scaley : scalex);
-                         if (GUI_scale < 1.0f) {
-                             GUI_scale = 1.0f;
-                         }
-                         SDL_Log( "Scale: %0.2f\n", GUI_scale );
-                         #ifdef __ANDROID__
-                         SCREEN_WIDTH = drawableWidth / scale;
-                         SCREEN_HEIGHT = drawableHeight / scale;
-                         #endif
-                         SDL_Log("virtual: %d %d\n", GUI_windowWidth, GUI_windowHeight);
+                        SDL_Log( "Event: Window Resized: %i, %i\n", event.window.data1, event.window.data2 );
+                        GUI_windowWidth = event.window.data1;
+                        GUI_windowHeight = event.window.data2;
+
+                        int drawableWidth = 0;
+                        int drawableHeight = 0;
+                        SDL_GL_GetDrawableSize(GUI_window, &drawableWidth, &drawableHeight);
+                        SDL_Log( "Drawable: %i %i\n", drawableWidth, drawableHeight );
+
+                        #ifdef __ANDROID__
+                        // Android always get fullscreen with no retina
+                        int scalex = drawableWidth / expectedWidth;
+                        int scaley = drawableHeight / expectedHeight;
+                        #else
+                        int scalex = drawableWidth / GUI_windowWidth;
+                        int scaley = drawableHeight / GUI_windowHeight;
+                        #endif
+                        GUI_scale = (float)((scalex < scaley) ? scaley : scalex);
+                        if (GUI_scale < 1.0f) {
+                         GUI_scale = 1.0f;
+                        }
+                        SDL_Log( "Scale: %0.2f\n", GUI_scale );
+                        #ifdef __ANDROID__
+                        SCREEN_WIDTH = drawableWidth / scale;
+                        SCREEN_HEIGHT = drawableHeight / scale;
+                        #endif
+                        SDL_Log("virtual: %d %d\n", GUI_windowWidth, GUI_windowHeight);
                         
                         
                         break;
@@ -224,31 +197,37 @@ static void handle_events(SDL_Event *ev) {
         if (user_handle_events(ev))
             return;
     }
+    if( GUI_topView ) {
+        if( GUI_topView->eventHandler(ev) )
+            return;
+    }
 }
 
-SDL_Color sdl_color(Uint32 c) {
-    SDL_Color sdl_c;
-    sdl_c.r = c >> 24 & 0xff;
-    sdl_c.g = c >> 16 & 0xff;
-    sdl_c.b = c >> 8 & 0xff;
-    sdl_c.a = c & 0xff;
-    return sdl_c;
+GUI_View *GUI_createTopView(const char* t, int x, int y, int w, int h,
+                             std::function<bool(SDL_Event* ev)>userEventHandler) {
+    if (GUI_topView) {
+        GUI_Log("GUI_TopView existed");
+        printf("ERROR: GUI_TopView existed.");
+        exit(1);
+    }
+    
+    GUI_topView = GUI_View::createView(NULL,  t, x, y, w, h, userEventHandler);
+    
+    if (w == -1) {
+        w = GUI_windowWidth - x;
+    }
+    
+    if (h == -1) {
+        h = GUI_windowHeight - y;
+    }
+    
+    //GUI_topView->resize(w, h);
+    //GUI_topView->setMargin(0, 0, 0, 0);
+    //GUI_topView->setPadding(0, 0, 0, 0);
+    //GUI_topView->setBorder(0);
+    //GUI_topView->bgcol = cWhite;
+    
+    return GUI_topView;
 }
 
-SDL_Color
-cClear = {0, 0, 0, 0},
-cNop = {0, 0, 0, 1},
-cWhite = sdl_color(0xffffffff),
-cBlack = sdl_color(0xff),
-cGrey = sdl_color(0xc0c0c0ff),
-cRed = sdl_color(0xff0000ff),
-cGreen = sdl_color(0x00ff00ff),
-cBlue = sdl_color(0xffff),
-cCyan = sdl_color(0xffffff),
-cMagenta = sdl_color(0xff00ffff),
-cYellow = sdl_color(0xffff00ff),
-cDarkGrey = sdl_color(0x707070ff),
-cLightGrey = sdl_color(0xe0e0e0ff),
-cCornFlower = sdl_color(0x6495edff),
-cHightLightSelected = sdl_color(0x338dfbff),
-cTextSelected = sdl_color(0x9cc7e6ff); // Tooh - text selection
+
