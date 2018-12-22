@@ -41,7 +41,9 @@ extern int GUI_windowWidth;
 extern int GUI_windowHeight;
 
 extern float GUI_scale;
+extern float GUI_mouseScale;
 
+extern void GUI_updateScaleParameters();
 
 GUI_View *GUI_createTopView(const char* t, int x, int y, int w, int h,
                             std::function<bool(SDL_Event* ev)>userEventHandler = NULL);

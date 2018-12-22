@@ -15,6 +15,7 @@ int GUI_windowWidth = 0;
 int GUI_windowHeight = 0;
 
 float GUI_scale = 1;
+float GUI_mouseScale = 1;
 
 static bool done = false;
 SDL_Renderer *GUI_renderer = NULL;
@@ -38,13 +39,19 @@ int GUI_Init( SDL_Window *in_window, SDL_Renderer *in_renderer ) {
     SDL_GetWindowSize(GUI_window, &GUI_windowWidth, &GUI_windowHeight);
     SDL_Log("given: %d %d\n", GUI_windowWidth, GUI_windowHeight);
     
+    GUI_updateScaleParameters();
+    
+    return 0;
+}
+
+extern void GUI_updateScaleParameters() {
     SDL_GL_GetDrawableSize(GUI_window, &GUI_physicalWindowWidth, &GUI_physicalWindowHeight);
     SDL_Log( "Drawable: %i %i\n", GUI_physicalWindowWidth, GUI_physicalWindowHeight );
     
 #ifdef __ANDROID__
     // Android always get fullscreen with no retina
-    int scalex = drawableWidth / expectedWidth;
-    int scaley = drawableHeight / expectedHeight;
+    int scalex = GUI_physicalWindowWidth / expectedWidth;
+    int scaley = GUI_physicalWindowHeight / expectedHeight;
 #else
     int scalex = GUI_physicalWindowWidth / GUI_windowWidth;
     int scaley = GUI_physicalWindowHeight / GUI_windowHeight;
@@ -54,14 +61,13 @@ int GUI_Init( SDL_Window *in_window, SDL_Renderer *in_renderer ) {
     if (GUI_scale < 1.0f) {
         GUI_scale = 1.0f;
     }
+    GUI_mouseScale = GUI_scale;
     SDL_Log( "Scale: %0.2f\n", GUI_scale );
 #ifdef __ANDROID__
     SCREEN_WIDTH = drawableWidth / scale;
     SCREEN_HEIGHT = drawableHeight / scale;
 #endif
     SDL_Log("virtual: %d %d\n", GUI_windowWidth, GUI_windowHeight);
-    
-    return 0;
 }
 
 void GUI_Run(std::function<bool(SDL_Event* ev)> user_handle_ev) {
@@ -145,36 +151,15 @@ static void GUI_Loop() {
                 switch (event.window.event)
                 {
                     case SDL_WINDOWEVENT_RESIZED:
-                        
+                    case SDL_WINDOWEVENT_SIZE_CHANGED:
                         SDL_Log( "Event: Window Resized: %i, %i\n", event.window.data1, event.window.data2 );
                         GUI_windowWidth = event.window.data1;
                         GUI_windowHeight = event.window.data2;
 
-                        int drawableWidth = 0;
-                        int drawableHeight = 0;
-                        SDL_GL_GetDrawableSize(GUI_window, &drawableWidth, &drawableHeight);
-                        SDL_Log( "Drawable: %i %i\n", drawableWidth, drawableHeight );
-
-                        #ifdef __ANDROID__
-                        // Android always get fullscreen with no retina
-                        int scalex = drawableWidth / expectedWidth;
-                        int scaley = drawableHeight / expectedHeight;
-                        #else
-                        int scalex = drawableWidth / GUI_windowWidth;
-                        int scaley = drawableHeight / GUI_windowHeight;
-                        #endif
-                        GUI_scale = (float)((scalex < scaley) ? scaley : scalex);
-                        if (GUI_scale < 1.0f) {
-                         GUI_scale = 1.0f;
+                        GUI_updateScaleParameters();
+                        if( GUI_topView ) {
+                            GUI_topView->updateLayout();
                         }
-                        SDL_Log( "Scale: %0.2f\n", GUI_scale );
-                        #ifdef __ANDROID__
-                        SCREEN_WIDTH = drawableWidth / scale;
-                        SCREEN_HEIGHT = drawableHeight / scale;
-                        #endif
-                        SDL_Log("virtual: %d %d\n", GUI_windowWidth, GUI_windowHeight);
-                        
-                        
                         break;
                 }
                 break;

@@ -90,13 +90,14 @@ int main(int argc, char *argv[]) {
 
     GUI_Init(window, renderer);
     
-    topView = GUI_createTopView("TopView", 10, 10, GUI_windowWidth-20, GUI_windowHeight-20);
+    topView = GUI_createTopView("TopView", 0, 0, -1, -1);
+    topView->setMargin(10, 10, 10, 10);
     
     GUI_View *vRed = GUI_View::createView( topView, "Red", 10, 10, 320, 240 );
     vRed->backgroundColor = cRed;
     GUI_View *vRedC1 = GUI_View::createView( vRed, "Green", 40, 40, 320, 240 );
     vRedC1->backgroundColor = cGreen;
-    GUI_View *vRedC2 = GUI_View::createView( vRed, "Yellow", 60, 60, 160, 120 );
+    GUI_View *vRedC2 = GUI_View::createView( vRed, "Yellow", 30, 60, 160, 120 );
     vRedC2->backgroundColor = cYellow;
 
     GUI_View *vBlue = GUI_View::createView( topView, "Blue", 90, 90, 320, 240 );

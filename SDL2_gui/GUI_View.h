@@ -37,12 +37,11 @@ protected:
     virtual void draw();
     virtual void postdraw();
     
-    void updateLayout();
-    
     bool    _hidden;
     bool    _disable;
     bool    _uiready;
     bool    _focus;
+    bool    _dragging;
     
     int     ox, oy, ow, oh;
 public:
@@ -67,6 +66,9 @@ public:
     SDL_Color borderColor;
     int corner;
     int border;
+    bool dragable;
+    bool click_through;
+    bool click_to_top;
     
     int layout;
     int align;
@@ -74,11 +76,21 @@ public:
     int padding[4];
     int margin[4];
     
+    virtual void setPadding(int p0, int p1, int p2, int p3);
+    virtual void setMargin(int p0, int p1, int p2, int p3);
+    
+    void updateLayout();
+    
     virtual void add_child(GUI_View* child);
     virtual void remove_child(GUI_View* child);
     virtual void remove_all_children();
+    
+    virtual void toTop();
+    virtual void toBack();
 
     virtual void clear(GUI_Rect *rect = 0);
+    
+    virtual GUI_View *hitTest(int x, int y, bool bRecursive = true);
     
     virtual void show() {
         _hidden = false; _uiready = false;
