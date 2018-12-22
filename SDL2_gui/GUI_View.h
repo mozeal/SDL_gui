@@ -12,9 +12,22 @@
 #include <string>
 #include <stdio.h>
 #include <functional>
+#include <vector>
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include "GUI_Utils.h"
+
+#define GUI_ALIGN_LEFT        0
+#define GUI_ALIGN_CENTER      2
+#define GUI_ALIGN_RIGHT       4
+#define GUI_ALIGN_TOP         0
+#define GUI_ALIGN_VCENTER     16
+#define GUI_ALIGN_BOTTOM      32
+#define GUI_ALIGN_ABSOLUTE    64
+
+#define GUI_LAYOUT_ABSOLUTE   0
+#define GUI_LAYOUT_HORIZONTAL 2
+#define GUI_LAYOUT_VERTICAL   4
 
 class GUI_View {
 protected:
@@ -23,20 +36,91 @@ protected:
     virtual void predraw();
     virtual void draw();
     virtual void postdraw();
+    
+    void updateLayout();
+    
+    bool    _hidden;
+    bool    _disable;
+    bool    _uiready;
+    bool    _focus;
+    
+    int     ox, oy, ow, oh;
 public:
     static GUI_View *createView( GUI_View *parent, const char *title, int x, int y, int width, int height,
                                 std::function<bool(SDL_Event* ev)>userEventHandler = NULL );
     
     GUI_View( GUI_View *parent, const char *title, int x, int y, int width, int height,
              std::function<bool(SDL_Event* ev)>userEventHandler = NULL );
+    virtual ~GUI_View();
+    
     virtual bool eventHandler(SDL_Event*ev);
 
     std::string title;
-    GUI_Rect rectView;   // relative to top window
-    GUI_Point topLeft;  // relative to parent window
+    GUI_Point topLeft;      // relative to parent window
+    GUI_Rect rectView;      // relative to top window
+    GUI_Rect rectClip;      // clip rec
     
-    GUI_View **children;
+    std::vector<GUI_View *>children;
     GUI_View *parent;
+    
+    SDL_Color backgroundColor;
+    SDL_Color borderColor;
+    int corner;
+    int border;
+    
+    int layout;
+    int align;
+    
+    int padding[4];
+    int margin[4];
+    
+    virtual void add_child(GUI_View* child);
+    virtual void remove_child(GUI_View* child);
+    virtual void remove_all_children();
+
+    virtual void clear(GUI_Rect *rect = 0);
+    
+    virtual void show() {
+        _hidden = false; _uiready = false;
+    };
+    
+    virtual void hide() {
+        _hidden = true; _uiready = false;
+    };
+    
+    virtual void enable() {
+        _disable = false;
+    };
+    
+    virtual void disable() {
+        _disable = true;
+        _focus = false;
+        //textSelectionCancel(); 
+    };
+    
+    virtual void setFocus() {
+        _focus = true;
+    };
+
+    virtual void killFocus() {
+        _focus = false;
+    };
+
+    virtual bool isEnable() {
+        return !_disable;
+    };
+    
+    virtual bool isVisible() {
+        return !_hidden;
+    };
+    
+    virtual bool isFocus() {
+        return _focus;
+    };
+    
+    virtual bool isUIReady() {
+        return _uiready;
+    };
 };
 
 #endif /* GUI_View_hpp */
