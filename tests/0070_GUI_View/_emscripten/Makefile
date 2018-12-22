@@ -5,6 +5,8 @@ SOURCES = \
 src/main.cpp \
 src/SDL2_gui/SDL_gui.cpp \
 src/SDL2_gui/GUI_shapes.cpp \
+src/SDL2_gui/GUI_Utils.cpp \
+src/SDL2_gui/GUI_View.cpp \
 src/SDL2_gfx/SDL2_gfxPrimitives.c \
 ../../../SDL2_ttf_HarfBuzz/SDL_ttf.cpp
 
