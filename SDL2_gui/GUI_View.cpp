@@ -19,7 +19,9 @@ extern int GUI_windowHeight;
 extern SDL_Renderer *GUI_renderer;
 extern float GUI_scale;
 extern float GUI_mouseScale;
+
 extern GUI_View *GUI_topView;
+extern GUI_View * GUI_mouseCapturedView;
 
 GUI_View *GUI_View::createView( GUI_View *parent, const char *title, int x, int y, int width, int height,
                                std::function<bool(SDL_Event* ev)>userEventHandler) {
@@ -45,6 +47,7 @@ padding{0,0,0,0},
 margin{0,0,0,0},
 layout(GUI_LAYOUT_ABSOLUTE),
 align(GUI_ALIGN_LEFT | GUI_ALIGN_TOP),
+lastMousePoint(0, 0),
 _hidden(false),
 _disable(false),
 _uiready(true),
@@ -73,6 +76,8 @@ bool GUI_View::eventHandler(SDL_Event*event) {
         if (user_events_handler(event))
             return true;;
     }
+    bool ReverseRecursive = false;
+    bool BreakSiblingPropagate = false;
     switch( event->type ) {
         case GUI_EventPaint:
             predraw();
@@ -81,50 +86,109 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             break;
         case SDL_MOUSEBUTTONDOWN:
         {
+            ReverseRecursive = true;
             SDL_MouseButtonEvent e = event->button;
             
             int x = (int)(e.x*GUI_mouseScale);
             int y = (int)(e.y*GUI_mouseScale);
-            if( children.size() > 0 ) {
-                for (std::vector<GUI_View *>::iterator it = children.end()-1; it >= children.begin(); --it) {
-                    GUI_View *child = *it;
-                    GUI_Log( "Hit1 %s\n", title.c_str() );
-                    GUI_View *wb = child->hitTest(x, y, false);
-                    if (wb) {
-                        if (wb->click_to_top) {
-                            wb->toTop();
-                            break;
-                        }
+            GUI_Log( "To HitTest %s\n", title.c_str() );
+            if( hitTest(x, y, false) ) {
+                GUI_Log( "Hitted %s\n", title.c_str() );
+                if( click_to_top ) {
+                    if( toTop() ) {
+                        BreakSiblingPropagate = true;
                     }
                 }
-                /*
-                 
-                 
-                 if (!wb->handleEvents(ev)) {
-                 if (wb->dragable) {
-                 wb->dragging = true;
-                 wb->lastMousePoint.set(x, y);
-                 GUI_Log("%s Start draging\n", wb->title.c_str());
-                 GUI_mouseCapturedWindow = wb;
-                 return true;
-                 }
-                 } else
-                 return true;
-                 }
-                 }
-                 */
+                if( dragable ) {
+                    _dragging = true;
+                    lastMousePoint.set(x, y);
+                    GUI_mouseCapturedView = this;
+                    BreakSiblingPropagate = true;
+                }
+            }
+            else {
+                return false;
             }
             break;
+        }
+        case SDL_MOUSEMOTION:
+        {
+            SDL_MouseMotionEvent e = event->motion;
+            int x = (int)(e.x*GUI_mouseScale);
+            int y = (int)(e.y*GUI_mouseScale);
+            
+            if (_dragging) {
+                if (parent) {
+                    if (!parent->hitTest(x, y, false)) {
+                        return true;
+                    }
+                }
+                int dx = x - lastMousePoint.x;
+                int dy = y - lastMousePoint.y;
+                lastMousePoint.set(x, y);
+                move(dx, dy);
+                return true;
+            }
+            return false;
+        }
+        case SDL_MOUSEBUTTONUP:
+        {
+            //SDL_MouseButtonEvent e = event->button;
+            //int x = (int)(e.x*GUI_mouseScale);
+            //int y = (int)(e.y*GUI_mouseScale);
+            
+            if (_dragging) {
+                _dragging = false;
+                GUI_mouseCapturedView = NULL;
+                return true;
+            }
+            return false;
         }
         default:
             break;
     }
-    for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
-        GUI_View *child = *it;
-        child->eventHandler(event);
+    if( ReverseRecursive ) {
+        GUI_Log( "Reverse traverse\n" );
+        if( children.size() > 0 ) {
+            for (std::vector<GUI_View *>::iterator it = children.end()-1; it >= children.begin(); --it) {
+                GUI_View *child = *it;
+                if( child->eventHandler(event) )
+                    return true;
+            }
+        }
+    }
+    else {
+        for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
+            GUI_View *child = *it;
+            if( child->eventHandler(event) )
+                return true;
+        }
     }
 
-    return false;
+    return BreakSiblingPropagate;
+}
+
+void GUI_View::move(int dx, int dy) {
+    topLeft.x += dx;
+    topLeft.y += dy;
+    
+    rectView.x += dx;
+    rectView.y += dy;
+    
+    for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
+        GUI_View *child = *it;
+        child->move_rectView(dx, dy);
+    }
+}
+
+void GUI_View::move_rectView(int dx, int dy) {
+    rectView.x += dx;
+    rectView.y += dy;
+    
+    for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
+        GUI_View *child = *it;
+        child->move_rectView(dx, dy);
+    }
 }
 
 void GUI_View::add_child(GUI_View *child) {
@@ -235,21 +299,22 @@ void GUI_View::clear(GUI_Rect *rect) {
     }
 }
 
-void GUI_View::toTop() {
+bool GUI_View::toTop() {
     if( !parent )
-        return;
+        return false;
     
-    for (std::vector<GUI_View *>::iterator it = parent->children.begin() ; it != parent->children.end(); ++it) {
+    for (std::vector<GUI_View *>::iterator it = parent->children.begin() ; it < parent->children.end(); ++it) {
         if( this == *it ) {
             parent->children.erase( it );
             parent->children.push_back(this);
-            break;
+            return true;
         }
     }
+    return false;
 }
 
-void GUI_View::toBack() {
-    
+bool GUI_View::toBack() {
+    return false;
 }
 
 void GUI_View::setPadding(int p0, int p1, int p2, int p3) {
@@ -288,7 +353,7 @@ GUI_View *GUI_View::hitTest(int x, int y, bool bRecursive) {
     pt.y = y;
     
     if (SDL_PointInRect(&pt, &rectView)) {
-        GUI_Log( "Hitx %s\n", title.c_str() );
+        GUI_Log( "Hit in %s\n", title.c_str() );
         if (bRecursive) {
             if( children.size() > 0 ) {
                 for (std::vector<GUI_View *>::iterator it = children.end()-1 ; it >= children.begin(); --it) {

@@ -95,20 +95,30 @@ int main(int argc, char *argv[]) {
     
     GUI_View *vRed = GUI_View::createView( topView, "Red", 10, 10, 320, 240 );
     vRed->backgroundColor = cRed;
+    vRed->dragable = true;
     GUI_View *vRedC1 = GUI_View::createView( vRed, "Green", 40, 40, 320, 240 );
     vRedC1->backgroundColor = cGreen;
+    vRedC1->dragable = true;
     GUI_View *vRedC2 = GUI_View::createView( vRed, "Yellow", 30, 60, 160, 120 );
     vRedC2->backgroundColor = cYellow;
+    vRedC2->dragable = true;
 
     GUI_View *vBlue = GUI_View::createView( topView, "Blue", 90, 90, 320, 240 );
     vBlue->backgroundColor = cBlue;
+    vBlue->dragable = true;
     GUI_View *vBlueC1 = GUI_View::createView( vBlue, "Magenta", 100, 100, 320, 240 );
     vBlueC1->backgroundColor = cMagenta;
+    vBlueC1->dragable = true;
+    GUI_View *vBlueC2 = GUI_View::createView( vBlue, "Green2", 10, 10, 120, 120 );
+    vBlueC2->backgroundColor = cGreen;
+    vBlueC2->dragable = true;
 
     GUI_View *vCyan = GUI_View::createView( topView, "Cyan", 270, 270, 320, 240 );
     vCyan->backgroundColor = cCyan;
+    vCyan->dragable = true;
     GUI_View *vCyanC1 = GUI_View::createView( vCyan, "Grey", -70, -70, 320, 240 );
     vCyanC1->backgroundColor = cGrey;
+    vCyanC1->dragable = true;
     
     GUI_Run();
     GUI_Destroy();

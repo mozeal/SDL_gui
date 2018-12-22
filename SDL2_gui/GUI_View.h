@@ -43,6 +43,8 @@ protected:
     bool    _focus;
     bool    _dragging;
     
+    GUI_Point lastMousePoint;
+    
     int     ox, oy, ow, oh;
 public:
     static GUI_View *createView( GUI_View *parent, const char *title, int x, int y, int width, int height,
@@ -85,8 +87,11 @@ public:
     virtual void remove_child(GUI_View* child);
     virtual void remove_all_children();
     
-    virtual void toTop();
-    virtual void toBack();
+    virtual bool toTop();
+    virtual bool toBack();
+    
+    void move(int dx, int dy);
+    void move_rectView(int dx, int dy);  // move win
 
     virtual void clear(GUI_Rect *rect = 0);
     
