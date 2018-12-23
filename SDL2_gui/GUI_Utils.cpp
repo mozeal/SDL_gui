@@ -6,6 +6,18 @@
 //  Copyright © 2561 Jimmy Software Co., Ltd. All rights reserved.
 //
 
+#include <SDL_image.h>
+#include <stdio.h>  /* defines FILENAME_MAX */
+#ifdef _WIN32
+    #include <direct.h>  // for _chdir(), _getcwd()
+    #define GetCurrentDir _getcwd
+    #define    chdir _chdir // pom
+#else
+    #include <unistd.h>
+    #include <dirent.h> // for DIR, dirent, opendir()
+    #include <pwd.h>
+    #define GetCurrentDir getcwd
+#endif
 #include "GUI_Utils.h"
 
 GUI_Rect::GUI_Rect() {
@@ -101,4 +113,65 @@ void GUI_SetLogLevel(GUI_LogLevel level) {
 //--------------------------------------------------
 GUI_LogLevel GUI_GetLogLevel() {
     return currentLogLevel;
+}
+
+std::string GUI_GetCurrentPath() {
+    char cCurrentPath[FILENAME_MAX];
+    
+    if (!GetCurrentDir(cCurrentPath, sizeof(cCurrentPath))) {
+        return NULL;
+    }
+    
+    return std::string(cCurrentPath);
+}
+
+std::string GUI_GetResourcePath(const std::string &subDir) {
+#ifdef _WIN32
+    const char PATH_SEP = '\\';
+#else
+    const char PATH_SEP = '/';
+#endif
+    static std::string baseRes;
+    
+    baseRes = "";
+#if defined (__ANDROID__) || (__MACOSX__)
+    baseRes = baseRes + "data" + PATH_SEP;
+#else
+    
+    if (baseRes.empty()) {
+        char *basePath = SDL_GetBasePath();
+        
+        if (basePath) {
+            baseRes = basePath;
+            SDL_free(basePath);
+        } else {
+            std::cerr << "Error getting resource path: " << SDL_GetError() << std::endl;
+            return "";
+        }
+        
+        //We replace the last bin/ with res/ to get the the resource path
+        size_t pos = baseRes.rfind("bin");
+        baseRes = baseRes.substr(0, pos) + "data" + PATH_SEP;
+    }
+#endif
+    return subDir.empty() ? baseRes : baseRes + subDir + PATH_SEP;
+}
+
+SDL_Texture* GUI_LoadTexture(const std::string &filename, SDL_Renderer *ren) {
+    std::string imagePath;
+    
+    if (filename[0] != '/')
+        imagePath = GUI_GetResourcePath() + filename;
+    else
+        imagePath = "" + filename;
+    
+    SDL_Texture *tex = IMG_LoadTexture(ren, imagePath.c_str());
+    
+    if (tex == NULL) {
+        GUI_Log("Load image %s failed.", filename.c_str());
+        imagePath = GUI_GetCurrentPath() + "\\data\\" + filename;
+        tex = IMG_LoadTexture(ren, imagePath.c_str());
+    }
+    
+    return tex;
 }

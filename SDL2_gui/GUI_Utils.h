@@ -18,6 +18,8 @@ const Uint32 GUI_EventID = SDL_USEREVENT;
 const Uint32 GUI_EventPaint = GUI_EventID + 1;
 const Uint32 GUI_EventUser = GUI_EventID + 300;
 
+extern SDL_Renderer *GUI_renderer;
+
 struct GUI_Rect :SDL_Rect {
     GUI_Rect();
     GUI_Rect(Sint16 x, Sint16 y, Uint16 dx, Uint16 dy);
@@ -66,5 +68,9 @@ void GUI_SetLogLevel(GUI_LogLevel level);
 GUI_LogLevel GUI_GetLogLevel();
 void GUI_Log(const char * format, ...);
 void GUI_Error(const char* fn, int result);
+
+std::string GUI_GetCurrentPath();
+std::string GUI_GetResourcePath(const std::string &subDir = "");
+SDL_Texture* GUI_LoadTexture(const std::string &filename, SDL_Renderer *ren);
 
 #endif /* GUI_Utils_hpp */
