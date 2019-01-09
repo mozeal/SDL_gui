@@ -23,7 +23,7 @@ extern float GUI_mouseScale;
 extern GUI_View *GUI_topView;
 extern GUI_View * GUI_mouseCapturedView;
 
-GUI_View *GUI_View::createView( GUI_View *parent, const char *title, int x, int y, int width, int height,
+GUI_View *GUI_View::create( GUI_View *parent, const char *title, int x, int y, int width, int height,
                                std::function<bool(SDL_Event* ev)>userEventHandler) {
     GUI_View *view = new GUI_View( parent, title, x, y, width, height, userEventHandler );
     return view;

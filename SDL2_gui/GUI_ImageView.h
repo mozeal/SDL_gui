@@ -22,12 +22,16 @@
 class GUI_ImageView : public GUI_View {
 protected:
     GUI_image image;
+    
+    virtual void draw();
 public:
-    static GUI_ImageView *createImageView( GUI_View *parent, const char *title, int x=0, int y=0, int width=0, int height=0, const char *filename=NULL,
+    static GUI_ImageView *create( GUI_View *parent, const char *title, const char *filename=NULL, int x=0, int y=0, int width=0, int height=0,
                                 std::function<bool(SDL_Event* ev)>userEventHandler = NULL );
-    GUI_ImageView(GUI_View *parent, const char *title, int x=0, int y=0, int width=0, int height=0, const char *filename=NULL,
+    GUI_ImageView(GUI_View *parent, const char *title, const char *filename=NULL, int x=0, int y=0, int width=0, int height=0,
                   std::function<bool(SDL_Event* ev)>userEventHandler = NULL);
     virtual ~GUI_ImageView();
+    
+    SDL_Color colorMod;
 };
 
 #endif /* GUI_ImageView_hpp */

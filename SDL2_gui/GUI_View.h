@@ -17,6 +17,7 @@
 #include <SDL_ttf.h>
 #include "GUI_Utils.h"
 
+
 #define GUI_ALIGN_LEFT        0
 #define GUI_ALIGN_CENTER      2
 #define GUI_ALIGN_RIGHT       4
@@ -47,7 +48,7 @@ protected:
     
     int     ox, oy, ow, oh;
 public:
-    static GUI_View *createView( GUI_View *parent, const char *title, int x, int y, int width, int height,
+    static GUI_View *create( GUI_View *parent, const char *title, int x, int y, int width, int height,
                                 std::function<bool(SDL_Event* ev)>userEventHandler = NULL );
     
     GUI_View( GUI_View *parent, const char *title, int x, int y, int width, int height,

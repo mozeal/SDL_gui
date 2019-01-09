@@ -46,6 +46,6 @@ void GUI_image::setTexture(SDL_Texture *tex, bool shared) {
 }
 
 void GUI_image::loadTexture(const std::string &filename, SDL_Renderer *renderer) {
-    SDL_Texture *tex = GUI_LoadTexture( "icon.png", renderer );
+    SDL_Texture *tex = GUI_LoadTexture( filename, renderer );
     setTexture( tex );
 }

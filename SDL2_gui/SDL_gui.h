@@ -24,6 +24,8 @@
 #include "GUI_shapes.h"
 #include "GUI_Utils.h"
 #include "GUI_View.h"
+#include "GUI_image.h"
+#include "GUI_ImageView.h"
 #include "SDL2_gfxPrimitives.h"
 
 int GUI_Init( SDL_Window *window, SDL_Renderer *renderer );
