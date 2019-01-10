@@ -25,6 +25,8 @@
 #include <unistd.h>
 #include <dlfcn.h>
 #endif
+#include <fstream>
+#include <iostream>
 #include "GUI_Utils.h"
 
 #define LOGNAME "SDL_gui"

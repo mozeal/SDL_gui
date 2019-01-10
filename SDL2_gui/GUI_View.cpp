@@ -91,7 +91,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             
             int x = (int)(e.x*GUI_mouseScale);
             int y = (int)(e.y*GUI_mouseScale);
-            GUI_Log( "To HitTest %s\n", title.c_str() );
+            SDL_Log( "To HitTest %s %i %i\n", title.c_str(), x, y );
             if( hitTest(x, y, false) ) {
                 GUI_Log( "Hitted %s\n", title.c_str() );
                 if( click_to_top ) {

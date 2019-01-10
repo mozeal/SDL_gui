@@ -36,9 +36,60 @@ static float frameCount = 0;
 static void GUI_Loop();
 static void handle_events(SDL_Event *ev);
 
-int GUI_Init( SDL_Window *in_window, SDL_Renderer *in_renderer, int expectedWidth, int expectedHeight ) {
-    GUI_window = in_window;
-    GUI_renderer = in_renderer;
+int GUI_Init( const char* title, int expectedWidth, int expectedHeight ) {
+    // Get Sccreen size
+    SDL_DisplayMode dm;
+    if (SDL_GetDesktopDisplayMode(0, &dm) != 0)
+    {
+        SDL_Log("SDL_GetDesktopDisplayMode failed: %s", SDL_GetError());
+        exit(1);
+    }
+    SDL_Log("Display: %d %d\n", dm.w, dm.h);
+    
+    //Now create a window with title "SDL" at 0, 0 on the screen with w:800 h:600 and show it
+    // ::SDL_WINDOW_FULLSCREEN,    ::SDL_WINDOW_OPENGL,
+    // ::SDL_WINDOW_HIDDEN,        ::SDL_WINDOW_BORDERLESS,
+    // ::SDL_WINDOW_RESIZABLE,     ::SDL_WINDOW_MAXIMIZED,
+    // ::SDL_WINDOW_MINIMIZED,     ::SDL_WINDOW_INPUT_GRABBED,
+    // ::SDL_WINDOW_ALLOW_HIGHDPI.
+#if defined(__IPHONEOS__) || defined(__ANDROID__) || defined(__EMSCRIPTEN__)
+    int style = SDL_WINDOW_OPENGL|SDL_WINDOW_ALLOW_HIGHDPI|SDL_WINDOW_BORDERLESS;
+    int cx = 0;
+    int cy = 0;
+#else
+    int style = SDL_WINDOW_OPENGL|SDL_WINDOW_ALLOW_HIGHDPI|SDL_WINDOW_RESIZABLE;
+    int cx = (dm.w - expectedWidth) / 2;
+    int cy = (dm.h - expectedHeight) / 2;
+#endif
+    GUI_window = SDL_CreateWindow(title, cx, cy, expectedWidth, expectedHeight, style);
+
+    if (GUI_window == NULL) {
+        printf("SDL_CreateRenderer Error\n");
+        exit(1);
+    }
+
+#if defined(WIN32)
+    HICON hicon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON1));
+	SDL_SysWMinfo info = {0};
+	SDL_VERSION(&info.version);
+	SDL_GetWindowWMInfo(window, &info);
+	HWND hwnd = info.info.win.window;
+	SendMessage(hwnd, WM_SETICON, ICON_SMALL, (LPARAM)hicon);
+	SendMessage(hwnd, WM_SETICON, ICON_BIG, (LPARAM)hicon);
+#endif
+
+    //Create a renderer that will draw to the window, -1 specifies that we want to load whichever
+    //video driver supports the flags we're passing
+    //Flags: SDL_RENDERER_ACCELERATED: We want to use hardware accelerated rendering
+    //SDL_RENDERER_PRESENTVSYNC: We want the renderer's present function (update screen) to be
+    //synchornized with the monitor's refresh rate
+    GUI_renderer = SDL_CreateRenderer(GUI_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    if (GUI_renderer == NULL) {
+        SDL_Log("SDL_CreateRenderer Error\n");
+        exit(1);
+    }
+
+
     
     SDL_GetWindowSize(GUI_window, &GUI_windowWidth, &GUI_windowHeight);
     SDL_Log("given: %d %d\n", GUI_windowWidth, GUI_windowHeight);
@@ -78,11 +129,14 @@ extern void GUI_updateScaleParameters() {
     if (GUI_scale < 1.0f) {
         GUI_scale = 1.0f;
     }
-    GUI_mouseScale = GUI_scale;
     SDL_Log( "Scale: %0.2f\n", GUI_scale );
+    SDL_Log( "Mouse Scale: %0.2f\n", GUI_mouseScale );
 #ifdef __ANDROID__
     GUI_windowWidth = GUI_physicalWindowWidth / GUI_scale;
     GUI_windowHeight = GUI_physicalWindowHeight / GUI_scale;
+    GUI_mouseScale = 1.0;
+#else
+    GUI_mouseScale = GUI_scale;
 #endif
     SDL_Log("virtual: %d %d\n", GUI_windowWidth, GUI_windowHeight);
 }
