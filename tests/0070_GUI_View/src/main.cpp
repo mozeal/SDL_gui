@@ -16,8 +16,6 @@ char title[] = "SDL_gui App";
 int expectedWidth = 960;
 int expectedHeight = 540;
 
-static SDL_Renderer *renderer = NULL;
-static SDL_Window *window;
 static GUI_View *topView;
 
 int main(int argc, char *argv[]) {
@@ -30,8 +28,6 @@ int main(int argc, char *argv[]) {
         SDL_LogError( SDL_LOG_CATEGORY_ERROR, "Hello, World!\n" );
         exit(1);
     }
-
-
 
     // Create Window
     SDL_Log("request: %d %d\n", expectedWidth, expectedHeight);
@@ -70,10 +66,6 @@ int main(int argc, char *argv[]) {
     
     GUI_Run();
     GUI_Destroy();
-    
-    //Clean up our objects and quit
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
 
     /* shutdown SDL */
     SDL_Quit();

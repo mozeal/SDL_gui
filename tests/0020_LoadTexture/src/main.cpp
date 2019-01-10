@@ -15,10 +15,15 @@ using namespace std;
 int SCREEN_WIDTH = 0;
 int SCREEN_HEIGHT = 0;
 
+int expectedWidth = 960;
+int expectedHeight = 540;
+
+
 float scale = 1;
 
 const long MILLESECONDS_PER_FRAME = 1000/60;
 
+static SDL_Window *window;
 SDL_Renderer *renderer = NULL;
 
 bool done = false;
@@ -74,9 +79,7 @@ int main(int argc, char *argv[]) {
     }
     SDL_Log("Display: %d %d\n", dm.w, dm.h);
 
-    // Create Window
-    int sx = 640, sy = 480;
-    SDL_Log("picked: %d %d\n", sx, sy);
+    SDL_Log("request: %d %d\n", expectedWidth, expectedHeight);
 
     //Now create a window with title "SDL" at 0, 0 on the screen with w:800 h:600 and show it
     // ::SDL_WINDOW_FULLSCREEN,    ::SDL_WINDOW_OPENGL,
@@ -89,9 +92,9 @@ int main(int argc, char *argv[]) {
 #else
     int style = SDL_WINDOW_OPENGL|SDL_WINDOW_ALLOW_HIGHDPI|SDL_WINDOW_RESIZABLE;
 #endif
-    int expectedWidth = (dm.w - sx) / 2;
-    int expectedHeight = (dm.h - sy) / 2;
-    SDL_Window *window = SDL_CreateWindow("0020_LoadTexture", expectedWidth, expectedHeight, sx, sy, style);
+    int cx = (dm.w - expectedWidth) / 2;
+    int cy = (dm.h - expectedHeight) / 2;
+    window = SDL_CreateWindow("0010_ClearScreen", cx, cy, expectedWidth, expectedHeight, style);
 
     if (window == NULL) {
         SDL_Log("SDL_CreateRenderer Error\n");

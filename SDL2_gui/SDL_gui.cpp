@@ -173,7 +173,8 @@ void GUI_Run(std::function<bool(SDL_Event* ev)> user_handle_ev) {
 }
 
 void GUI_Destroy() {
-    
+    SDL_DestroyRenderer(GUI_renderer);
+    SDL_DestroyWindow(GUI_window);
 }
 
 

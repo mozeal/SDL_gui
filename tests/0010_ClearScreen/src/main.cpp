@@ -16,8 +16,8 @@ int SCREEN_HEIGHT = 0;
 
 float scale = 1;
 
-int expectedWidth = 640;
-int expectedHeight = 480;
+int expectedWidth = 960;
+int expectedHeight = 540;
 
 const long MILLESECONDS_PER_FRAME = 1000/60;
 
