@@ -18,7 +18,16 @@
     #include <pwd.h>
     #define GetCurrentDir getcwd
 #endif
+#ifdef __ANDROID__
+#include <android/log.h>
+#include <pthread.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <dlfcn.h>
+#endif
 #include "GUI_Utils.h"
+
+#define LOGNAME "SDL_gui"
 
 GUI_Rect::GUI_Rect() {
     x = y = w = h = 0;

@@ -13,8 +13,8 @@
 using namespace std;
 
 char title[] = "SDL_gui App";
-int expectedWidth = 1024;
-int expectedHeight = 768;
+int expectedWidth = 960;
+int expectedHeight = 540;
 
 static SDL_Renderer *renderer = NULL;
 static SDL_Window *window;
@@ -88,7 +88,7 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 
-    GUI_Init(window, renderer);
+    GUI_Init(window, renderer, expectedWidth, expectedHeight);
     GUI_Run(
         [](SDL_Event *ev)  -> bool {
             switch( ev->type ) {

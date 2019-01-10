@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		380C58B121C100D90005A03F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C58A821C100C30005A03F /* SDL2.framework */; };
+		3817475B21E7127C00AA0910 /* GUI_Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3817475221E7127C00AA0910 /* GUI_Utils.cpp */; };
+		3817475E21E712ED00AA0910 /* GUI_View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3817475D21E712ED00AA0910 /* GUI_View.cpp */; };
 		385B990421CBB97A000E5F90 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385B98FD21CBB95B000E5F90 /* SDL2_image.framework */; };
 		385B9A0B21CBE0B1000E5F90 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385B9A0421CBDF02000E5F90 /* SDL2_ttf.framework */; };
 		385B9A9421CC13A8000E5F90 /* SDL_gui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */; };
@@ -126,6 +128,10 @@
 
 /* Begin PBXFileReference section */
 		380C58A021C100C30005A03F /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../../../SDL2/Xcode/SDL/SDL.xcodeproj; sourceTree = "<group>"; };
+		3817475221E7127C00AA0910 /* GUI_Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Utils.cpp; sourceTree = "<group>"; };
+		3817475A21E7127C00AA0910 /* GUI_Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_Utils.h; sourceTree = "<group>"; };
+		3817475C21E712ED00AA0910 /* GUI_View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_View.h; sourceTree = "<group>"; };
+		3817475D21E712ED00AA0910 /* GUI_View.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_View.cpp; sourceTree = "<group>"; };
 		385B98F621CBB95B000E5F90 /* SDL_image.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_image.xcodeproj; path = ../../../SDL2_image/Xcode/SDL_image.xcodeproj; sourceTree = "<group>"; };
 		385B99FC21CBDF02000E5F90 /* SDL2_ttf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL2_ttf.xcodeproj; path = ../../../SDL2_ttf_HarfBuzz/Xcode/SDL2_ttf.xcodeproj; sourceTree = "<group>"; };
 		385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SDL_gui.cpp; sourceTree = "<group>"; };
@@ -214,6 +220,10 @@
 		385B9A8A21CC1380000E5F90 /* SDL2_gui */ = {
 			isa = PBXGroup;
 			children = (
+				3817475D21E712ED00AA0910 /* GUI_View.cpp */,
+				3817475C21E712ED00AA0910 /* GUI_View.h */,
+				3817475221E7127C00AA0910 /* GUI_Utils.cpp */,
+				3817475A21E7127C00AA0910 /* GUI_Utils.h */,
 				385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */,
 				385B9A9321CC13A8000E5F90 /* SDL_gui.h */,
 				385B9AB421CCBC4C000E5F90 /* GUI_shapes.cpp */,
@@ -484,8 +494,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				385B9AC121CCD379000E5F90 /* SDL2_imageFilter.c in Sources */,
+				3817475E21E712ED00AA0910 /* GUI_View.cpp in Sources */,
 				69CD9A151D15AED3004D8ED1 /* main.cpp in Sources */,
 				385B9AB621CCBC4C000E5F90 /* GUI_shapes.cpp in Sources */,
+				3817475B21E7127C00AA0910 /* GUI_Utils.cpp in Sources */,
 				385B9AC221CCD379000E5F90 /* SDL2_gfxPrimitives.c in Sources */,
 				385B9A9421CC13A8000E5F90 /* SDL_gui.cpp in Sources */,
 				385B9AC321CCD379000E5F90 /* SDL2_rotozoom.c in Sources */,

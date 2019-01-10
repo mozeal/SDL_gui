@@ -14,6 +14,9 @@ int GUI_physicalWindowHeight = 0;
 int GUI_windowWidth = 0;
 int GUI_windowHeight = 0;
 
+int GUI_expectedWidth = 0;
+int GUI_expectedHeight = 0;
+
 float GUI_scale = 1;
 float GUI_mouseScale = 1;
 
@@ -33,13 +36,24 @@ static float frameCount = 0;
 static void GUI_Loop();
 static void handle_events(SDL_Event *ev);
 
-int GUI_Init( SDL_Window *in_window, SDL_Renderer *in_renderer ) {
+int GUI_Init( SDL_Window *in_window, SDL_Renderer *in_renderer, int expectedWidth, int expectedHeight ) {
     GUI_window = in_window;
     GUI_renderer = in_renderer;
     
     SDL_GetWindowSize(GUI_window, &GUI_windowWidth, &GUI_windowHeight);
     SDL_Log("given: %d %d\n", GUI_windowWidth, GUI_windowHeight);
-    
+
+    if( expectedWidth )
+        GUI_expectedWidth = expectedWidth;
+    else
+        GUI_expectedWidth = GUI_windowWidth;
+
+    if( expectedHeight )
+        GUI_expectedHeight = expectedHeight;
+    else
+        GUI_expectedHeight = GUI_windowHeight;
+
+    SDL_Log( "!!! Expected: %i %i\n", GUI_expectedWidth, GUI_expectedHeight );
     GUI_updateScaleParameters();
     
     return 0;
@@ -50,9 +64,11 @@ extern void GUI_updateScaleParameters() {
     SDL_Log( "Drawable: %i %i\n", GUI_physicalWindowWidth, GUI_physicalWindowHeight );
     
 #ifdef __ANDROID__
+    SDL_Log( "Expected: %i %i\n", GUI_expectedWidth, GUI_expectedHeight );
     // Android always get fullscreen with no retina
-    int scalex = GUI_physicalWindowWidth / expectedWidth;
-    int scaley = GUI_physicalWindowHeight / expectedHeight;
+    int scalex = GUI_physicalWindowWidth / GUI_expectedWidth;
+    int scaley = GUI_physicalWindowHeight / GUI_expectedHeight;
+    SDL_Log( "Calc scale: %i %i\n", scalex, scaley );
 #else
     int scalex = GUI_physicalWindowWidth / GUI_windowWidth;
     int scaley = GUI_physicalWindowHeight / GUI_windowHeight;
@@ -65,8 +81,8 @@ extern void GUI_updateScaleParameters() {
     GUI_mouseScale = GUI_scale;
     SDL_Log( "Scale: %0.2f\n", GUI_scale );
 #ifdef __ANDROID__
-    SCREEN_WIDTH = drawableWidth / scale;
-    SCREEN_HEIGHT = drawableHeight / scale;
+    GUI_windowWidth = GUI_physicalWindowWidth / GUI_scale;
+    GUI_windowHeight = GUI_physicalWindowHeight / GUI_scale;
 #endif
     SDL_Log("virtual: %d %d\n", GUI_windowWidth, GUI_windowHeight);
 }

@@ -28,7 +28,7 @@
 #include "GUI_ImageView.h"
 #include "SDL2_gfxPrimitives.h"
 
-int GUI_Init( SDL_Window *window, SDL_Renderer *renderer );
+int GUI_Init( SDL_Window *window, SDL_Renderer *renderer, int expectedWidth=0, int expectedHeight=0 );
 void GUI_Run(std::function<bool(SDL_Event *ev)>handle_ev = NULL);
 void GUI_Destroy();
 
