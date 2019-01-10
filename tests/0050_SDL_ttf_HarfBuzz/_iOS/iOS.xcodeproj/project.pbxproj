@@ -274,7 +274,7 @@
 					38CA5C9B1BCCAF2B0099BC3B = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 3M3W4L293S;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -511,8 +511,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3M3W4L293S;
 				ENABLE_TESTABILITY = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -530,7 +530,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jimmysoftware.$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = SDL_ttf;
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = JimmyDev2019;
 				SDL_IMAGE_ROOT = ../../../SDL2_image;
 				SDL_ROOT = ../../../SDL2;
 				SDL_TTF_ROOT = ../../../SDL2_ttf_HarfBuzz;
@@ -544,8 +544,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3M3W4L293S;
 				GCC_PREPROCESSOR_DEFINITIONS = "__IPHONEOS__=1";
 				"GCC_PREPROCESSOR_DEFINITIONS[sdk=iphoneos*]" = "__IPHONEOS__=1";
 				GUI_CORE_INCLUDES = "$(SDL_ROOT)/include $(SDL_IMAGE_ROOT) $(SDL_TTF_ROOT) $(LIB_HARFBUZZ_ROOT) $(LIB_FREETYPE_ROOT)/include";
@@ -558,7 +558,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jimmysoftware.$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = SDL_ttf;
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = JimmyDist2019;
 				SDL_IMAGE_ROOT = ../../../SDL2_image;
 				SDL_ROOT = ../../../SDL2;
 				SDL_TTF_ROOT = ../../../SDL2_ttf_HarfBuzz;
