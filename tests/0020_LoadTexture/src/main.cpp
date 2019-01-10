@@ -130,8 +130,8 @@ int main(int argc, char *argv[]) {
     SDL_GL_GetDrawableSize(window, &drawableWidth, &drawableHeight);
 
 #ifdef __ANDROID__
-    int scalex = drawableWidth / sx;
-    int scaley = drawableHeight / sy;
+    int scalex = drawableWidth / expectedWidth;
+    int scaley = drawableHeight / expectedHeight;
 #else
     int scalex = drawableWidth / SCREEN_WIDTH;
     int scaley = drawableHeight / SCREEN_HEIGHT;
