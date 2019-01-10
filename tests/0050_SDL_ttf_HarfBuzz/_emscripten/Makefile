@@ -1,4 +1,4 @@
-PROJECT = TestSDLimage
+PROJECT = MyProgram
 EMSCRIPTEN_HOME = ~/emsdk
 
 SOURCES = \
