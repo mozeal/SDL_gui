@@ -16,8 +16,6 @@ char title[] = "SDL_gui App";
 int expectedWidth = 960;
 int expectedHeight = 540;
 
-static SDL_Renderer *renderer = NULL;
-static SDL_Window *window;
 static GUI_View *topView;
 
 int main(int argc, char *argv[]) {
