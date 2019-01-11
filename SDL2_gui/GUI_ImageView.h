@@ -32,6 +32,8 @@ public:
     virtual ~GUI_ImageView();
     
     SDL_Color colorMod;
+    
+    virtual void updateSize();
 };
 
 #endif /* GUI_ImageView_hpp */

@@ -73,4 +73,7 @@ std::string GUI_GetCurrentPath();
 std::string GUI_GetResourcePath(const std::string &subDir = "");
 SDL_Texture* GUI_LoadTexture(const std::string &filename, SDL_Renderer *ren);
 
+extern float GUI_scale;
+extern float GUI_mouseScale;
+
 #endif /* GUI_Utils_hpp */

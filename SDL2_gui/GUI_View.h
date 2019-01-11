@@ -75,14 +75,16 @@ public:
     
     int layout;
     int align;
-    
+    int contentAlign;
+
     int padding[4];
     int margin[4];
     
     virtual void setPadding(int p0, int p1, int p2, int p3);
     virtual void setMargin(int p0, int p1, int p2, int p3);
     
-    void updateLayout();
+    virtual void updateSize();
+    virtual void updateLayout();
     
     virtual void add_child(GUI_View* child);
     virtual void remove_child(GUI_View* child);

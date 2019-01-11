@@ -136,6 +136,12 @@ extern void GUI_updateScaleParameters() {
     GUI_windowHeight = GUI_physicalWindowHeight / GUI_scale;
     GUI_mouseScale = 1.0;
 #else
+    if( GUI_windowWidth * GUI_scale != GUI_physicalWindowWidth ||
+        GUI_windowHeight * GUI_scale != GUI_physicalWindowHeight ) {
+        
+        GUI_windowWidth = GUI_physicalWindowWidth / GUI_scale;
+        GUI_windowHeight = GUI_physicalWindowHeight / GUI_scale;
+    }
     GUI_mouseScale = GUI_scale;
 #endif
     SDL_Log("virtual: %d %d\n", GUI_windowWidth, GUI_windowHeight);
@@ -183,15 +189,6 @@ void GUI_Destroy() {
 
 void GUI_Error(const char* fn, int result) {
     GUI_Log("SDL_gui ERROR: \"%s\" error: %x (%d).\n", fn, result, result);
-}
-
-static void GUI_Render() {
-    /* fill background in with red */
-    SDL_SetRenderDrawColor(GUI_renderer, 0x64, 0x95, 0xED, 255); // Corn flower blue
-    SDL_RenderClear(GUI_renderer);
-    
-    /* update screen */
-    SDL_RenderPresent(GUI_renderer);
 }
 
 static void GUI_Loop() {
