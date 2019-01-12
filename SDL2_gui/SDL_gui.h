@@ -10,6 +10,8 @@
 #define SDL_gui_hpp
 
 #include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
 #include <stdio.h>
 #include <iostream>
 #if defined(WIN32)
@@ -23,9 +25,11 @@
 
 #include "GUI_shapes.h"
 #include "GUI_Utils.h"
+#include "GUI_Fonts.h"
 #include "GUI_View.h"
 #include "GUI_image.h"
 #include "GUI_ImageView.h"
+#include "GUI_TextView.h"
 #include "SDL2_gfxPrimitives.h"
 
 int GUI_Init( const char* title, int expectedWidth, int expectedHeight );

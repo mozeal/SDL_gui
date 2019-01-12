@@ -19,8 +19,10 @@ GUI_ImageView::GUI_ImageView( GUI_View *parent, const char *title, const char *f
 GUI_View( parent, title, x, y, width, height, userEventHandler),
 colorMod(cWhite)
 {
-    image.loadTexture(filename);
-    updateLayout();
+    if( filename ) {
+        image.loadTexture(filename);
+        updateLayout();
+    }
 }
 
 GUI_ImageView::~GUI_ImageView() {
