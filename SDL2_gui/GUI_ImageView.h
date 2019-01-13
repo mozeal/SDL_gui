@@ -22,7 +22,8 @@
 class GUI_ImageView : public GUI_View {
 protected:
     GUI_image image;
-    
+    SDL_Color colorMod;
+
     virtual void draw();
 public:
     static GUI_ImageView *create( GUI_View *parent, const char *title, const char *filename=NULL, int x=0, int y=0, int width=0, int height=0,
@@ -31,8 +32,7 @@ public:
                   std::function<bool(SDL_Event* ev)>userEventHandler = NULL);
     virtual ~GUI_ImageView();
     
-    SDL_Color colorMod;
-    
+    void setColor( SDL_Color color );
     virtual void updateSize();
 };
 

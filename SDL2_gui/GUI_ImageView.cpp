@@ -29,6 +29,10 @@ GUI_ImageView::~GUI_ImageView() {
     
 }
 
+void GUI_ImageView::setColor( SDL_Color color ) {
+    colorMod = color;
+}
+
 void GUI_ImageView::draw() {
     if (image._texture) {
         GUI_Rect bounds = image.bounds;

@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <functional>
 #include <SDL.h>
+#include "GUI_Config.h"
 
 const Uint32 GUI_EventID = SDL_USEREVENT;
 const Uint32 GUI_EventPaint = GUI_EventID + 1;

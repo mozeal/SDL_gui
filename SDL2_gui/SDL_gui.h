@@ -23,6 +23,7 @@
 #include <emscripten.h>
 #endif
 
+#include "GUI_Config.h"
 #include "GUI_shapes.h"
 #include "GUI_Utils.h"
 #include "GUI_Fonts.h"
@@ -31,6 +32,7 @@
 #include "GUI_ImageView.h"
 #include "GUI_TextView.h"
 #include "GUI_IconView.h"
+#include "GUI_Label.h"
 #include "SDL2_gfxPrimitives.h"
 
 int GUI_Init( const char* title, int expectedWidth, int expectedHeight );
@@ -55,5 +57,7 @@ extern void GUI_updateScaleParameters();
 
 GUI_View *GUI_createTopView(const char* t, int x, int y, int w, int h,
                             std::function<bool(SDL_Event* ev)>userEventHandler = NULL);
+
+
 
 #endif /* SDL_gui_hpp */
