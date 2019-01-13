@@ -50,10 +50,10 @@ _layout(GUI_LAYOUT_ABSOLUTE),
 _align(GUI_ALIGN_LEFT | GUI_ALIGN_TOP),
 _contentAlign(GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER),
 lastMousePoint(0, 0),
-_hidden(false),
-_disable(false),
-_uiready(true),
+_visible(true),
+_enable(true),
 _focus(false),
+_interact(false),
 _dragging(false)
 {
     ox = x;
@@ -131,7 +131,8 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 move(dx, dy);
                 return true;
             }
-            return false;
+            //return false;
+            break;
         }
         case SDL_MOUSEBUTTONUP:
         {
@@ -325,13 +326,8 @@ void GUI_View::setPadding(int p0, int p1, int p2, int p3) {
     _padding[2] = p2;
     _padding[3] = p3;
     
-    if (parent) {
-        updateSize();
-        parent->updateLayout();
-    }
-    else {
-        this->updateLayout();
-    }
+    updateSize();
+    this->updateLayout();
 }
 
 void GUI_View::setMargin(int p0, int p1, int p2, int p3) {
@@ -349,9 +345,6 @@ void GUI_View::setMargin(int p0, int p1, int p2, int p3) {
 
 GUI_View *GUI_View::hitTest(int x, int y, bool bRecursive) {
     if (!isVisible())
-        return 0;
-    
-    if (!isUIReady())
         return 0;
     
     if (click_through)
@@ -435,7 +428,7 @@ void GUI_View::updateLayout() {
             }
             
             if (ow == 0) {
-                int wwx = (child->rectView.w + (_padding[1] + _padding[3] + child->_margin[1] + child->_margin[3])*GUI_scale);
+                int wwx = (child->rectView.w + (_padding[1] + _padding[3] + child->_margin[1] + child->_margin[3])*GUI_scale); // + (border * 2);
                 
                 if (wwx != rectView.w) {
                     rectView.w = wwx;
@@ -469,7 +462,7 @@ void GUI_View::updateLayout() {
             }
             
             if (oh == 0) {
-                int hhx = (child->rectView.h + (_padding[0] + _padding[2] + child->_margin[0] + child->_margin[2])*GUI_scale);
+                int hhx = (child->rectView.h + (_padding[0] + _padding[2] + child->_margin[0] + child->_margin[2])*GUI_scale); // + (border * 2);
                 
                 if (hhx != rectView.h) {
                     rectView.h = hhx;
@@ -590,8 +583,8 @@ void GUI_View::updateLayout() {
                 }
             }
         }
-        w += (_padding[1] + _padding[3]) * GUI_scale;
-        h += (_padding[0] + _padding[2]) * GUI_scale;
+        w += (_padding[1] + _padding[3]) * GUI_scale; // + (border * 2);
+        h += (_padding[0] + _padding[2]) * GUI_scale; // + (border * 2);
         if( ow == 0 ) {
             if( rectView.w != w ) {
                 rectView.w = w;
@@ -697,8 +690,8 @@ void GUI_View::updateLayout() {
                 }
             }
         }
-        w += (_padding[1] + _padding[3]) * GUI_scale;
-        h += (_padding[0] + _padding[2]) * GUI_scale;
+        w += (_padding[1] + _padding[3]) * GUI_scale; // + (border * 2);
+        h += (_padding[0] + _padding[2]) * GUI_scale; // + (border * 2);
         if( ow == 0 ) {
             if( rectView.w != w ) {
                 rectView.w = w;

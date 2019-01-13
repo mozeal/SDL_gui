@@ -38,10 +38,12 @@ protected:
     virtual void draw();
     virtual void postdraw();
     
-    bool    _hidden;
-    bool    _disable;
-    bool    _uiready;
+    bool    _visible;
+    bool    _enable;
     bool    _focus;
+    bool    _interact;
+    bool    _selected;
+
     bool    _dragging;
 
     int     _layout;
@@ -121,21 +123,23 @@ public:
     virtual GUI_View *hitTest(int x, int y, bool bRecursive = true);
     
     virtual void show() {
-        _hidden = false; _uiready = false;
+        _visible = true;
     };
     
     virtual void hide() {
-        _hidden = true; _uiready = false;
+        _visible = false;
+        if( _focus )
+            killFocus();
     };
     
     virtual void enable() {
-        _disable = false;
+        _enable = true;
     };
     
     virtual void disable() {
-        _disable = true;
-        _focus = false;
-        //textSelectionCancel(); 
+        _enable = false;
+        if( _focus )
+            killFocus();
     };
     
     virtual void setFocus() {
@@ -147,19 +151,35 @@ public:
     };
 
     virtual bool isEnable() {
-        return !_disable;
+        return _enable;
     };
     
     virtual bool isVisible() {
-        return !_hidden;
+        return _visible;
     };
+    
+    virtual void setVisible(bool v) {
+        _visible = v;
+    };
+    
+    virtual void setSelected(bool s) {
+        _selected = s;
+    };
+    
+    virtual bool isSelected() {
+        return _selected;
+    }
+    
+    virtual void setInteract(bool i) {
+        _interact = i;
+    }
+    
+    virtual int getInteract() {
+        return _interact;
+    }
     
     virtual bool isFocus() {
         return _focus;
-    };
-    
-    virtual bool isUIReady() {
-        return _uiready;
     };
 };
 

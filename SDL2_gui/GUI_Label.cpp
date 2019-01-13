@@ -24,23 +24,26 @@ textView( NULL )
     dragable = false;
     setLayout( GUI_LAYOUT_HORIZONTAL );
     setMargin( 0, 0, 0, 0 );
-    setPadding( 5, 5, 5, 5 );
+    setPadding( 0, 0, 0, 0 );
     
-    iconView = GUI_IconView::create(this, unicode, GUI_UIIconFontName.c_str(), GUI_UIIconFontSize);
-    iconView->setAlign( GUI_ALIGN_CENTER | GUI_ALIGN_VCENTER );
-    iconView->border = 0;
-    iconView->setBackgroundColor( cClear );
-    iconView->setColor( cBlack );
-    iconView->setMargin( 0, 3, 0, 0 );
+    if( unicode != 0 ) {
+        iconView = GUI_IconView::create(this, unicode, GUI_UIIconFontName.c_str(), GUI_UIIconFontSize);
+        iconView->setAlign( (width == 0 ? GUI_ALIGN_LEFT : GUI_ALIGN_CENTER) | (height == 0 ? GUI_ALIGN_TOP : GUI_ALIGN_VCENTER) );
+        iconView->border = 0;
+        iconView->setBackgroundColor( cClear );
+        iconView->setColor( cBlack );
+        iconView->setMargin( 0, 3, 0, 0 );
+    }
 
     textView = GUI_TextView::create(this, title, GUI_UITextFontName.c_str(), GUI_UITextFontSize);
-    textView->setAlign( GUI_ALIGN_CENTER | GUI_ALIGN_VCENTER );
+    textView->setAlign( (width == 0 ? GUI_ALIGN_LEFT : GUI_ALIGN_CENTER) | (height == 0 ? GUI_ALIGN_TOP : GUI_ALIGN_VCENTER) );
     textView->border = 0;
     textView->setBackgroundColor( cClear );
     textView->setColor( cBlack );
     textView->setMargin( 0, 0, 0, 3 );
 
     setLayout( GUI_LAYOUT_HORIZONTAL );
+    updateLayout();
 }
 
 GUI_Label::~GUI_Label() {
@@ -63,18 +66,18 @@ void GUI_Label::setLayout( int l ) {
         }
         
         if( iconView ) {
-            iconView->setMargin( icm, 3, icm, 0 );
+            iconView->setMargin( icm, textView ? 3 : 0, icm, 0 );
         }
         if( textView ) {
-            textView->setMargin( txm, 0, txm, 3 );
+            textView->setMargin( txm, 0, txm, iconView ? 3 : 0 );
         }
     }
     else if( _layout == GUI_LAYOUT_VERTICAL ) {
         if( iconView ) {
-            iconView->setMargin( 0, 0, 3, 0 );
+            iconView->setMargin( 0, 0, textView ? 3 : 0, 0 );
         }
         if( textView ) {
-            textView->setMargin( 3, 0, 0, 0 );
+            textView->setMargin( iconView ? 3 : 0, 0, 0, 0 );
         }
     }
 }

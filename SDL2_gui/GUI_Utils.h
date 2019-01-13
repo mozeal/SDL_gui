@@ -54,6 +54,7 @@ extern SDL_Color cDarkGrey;
 extern SDL_Color cLightGrey;
 extern SDL_Color cCornFlower;
 extern SDL_Color cHightLightSelected;
+extern SDL_Color cHightLightInteract;
 extern SDL_Color cTextSelected;
 
 typedef enum GUI_LOGLEVEL_ {
