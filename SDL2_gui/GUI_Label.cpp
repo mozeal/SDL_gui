@@ -15,30 +15,76 @@ GUI_Label *GUI_Label::create( GUI_View *parent, const char *title, uint16_t unic
 
 GUI_Label::GUI_Label(GUI_View *parent, const char *title, uint16_t unicode, int x, int y, int width, int height,
                      std::function<bool(SDL_Event* ev)>userEventHandler) :
-GUI_View( parent, title, x, y, width, height, userEventHandler)
+GUI_View( parent, title, x, y, width, height, userEventHandler),
+iconView( NULL ),
+textView( NULL )
 {
-    backgroundColor = cWhite;
+    _backgroundColor = cWhite;
     border = 0;
     dragable = false;
-    layout = GUI_LAYOUT_HORIZONTAL;
+    setLayout( GUI_LAYOUT_HORIZONTAL );
     setMargin( 0, 0, 0, 0 );
     setPadding( 5, 5, 5, 5 );
     
     iconView = GUI_IconView::create(this, unicode, GUI_UIIconFontName.c_str(), GUI_UIIconFontSize);
-    iconView->align = GUI_ALIGN_CENTER | GUI_ALIGN_VCENTER;
+    iconView->setAlign( GUI_ALIGN_CENTER | GUI_ALIGN_VCENTER );
     iconView->border = 0;
-    iconView->backgroundColor = cClear;
+    iconView->setBackgroundColor( cClear );
     iconView->setColor( cBlack );
     iconView->setMargin( 0, 3, 0, 0 );
 
     textView = GUI_TextView::create(this, title, GUI_UITextFontName.c_str(), GUI_UITextFontSize);
-    textView->align = GUI_ALIGN_CENTER | GUI_ALIGN_VCENTER;
+    textView->setAlign( GUI_ALIGN_CENTER | GUI_ALIGN_VCENTER );
     textView->border = 0;
-    textView->backgroundColor = cClear;
+    textView->setBackgroundColor( cClear );
     textView->setColor( cBlack );
     textView->setMargin( 0, 0, 0, 3 );
+
+    setLayout( GUI_LAYOUT_HORIZONTAL );
 }
 
 GUI_Label::~GUI_Label() {
     
+}
+
+void GUI_Label::setLayout( int l ) {
+    GUI_View::setLayout(l);
+    if( _layout == GUI_LAYOUT_HORIZONTAL ) {
+        int icm = 0;
+        int txm = 0;
+        
+        if( iconView && textView ) {
+            if( iconView->rectView.h > textView->rectView.h ) {
+                txm = (iconView->rectView.h - textView->rectView.h) / (2 * GUI_scale);
+            }
+            else {
+                icm = (textView->rectView.h - iconView->rectView.h) / (2 * GUI_scale);
+            }
+        }
+        
+        if( iconView ) {
+            iconView->setMargin( icm, 3, icm, 0 );
+        }
+        if( textView ) {
+            textView->setMargin( txm, 0, txm, 3 );
+        }
+    }
+    else if( _layout == GUI_LAYOUT_VERTICAL ) {
+        if( iconView ) {
+            iconView->setMargin( 0, 0, 3, 0 );
+        }
+        if( textView ) {
+            textView->setMargin( 3, 0, 0, 0 );
+        }
+    }
+}
+
+void GUI_Label::setContentAlign( int a ) {
+    GUI_View::setContentAlign(a);
+    if( iconView ) {
+        iconView->setAlign( a );
+    }
+    if( textView ) {
+        textView->setAlign( a );
+    }
 }

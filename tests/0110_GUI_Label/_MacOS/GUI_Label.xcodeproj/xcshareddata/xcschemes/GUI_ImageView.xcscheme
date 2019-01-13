@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "69EF234C1D13DFC7009B1FD6"
-               BuildableName = "GUI_TextView.app"
+               BuildableName = "GUI_Label.app"
                BlueprintName = "GUI_Label"
                ReferencedContainer = "container:GUI_Label.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "69EF234C1D13DFC7009B1FD6"
-            BuildableName = "GUI_TextView.app"
+            BuildableName = "GUI_Label.app"
             BlueprintName = "GUI_Label"
             ReferencedContainer = "container:GUI_Label.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "69EF234C1D13DFC7009B1FD6"
-            BuildableName = "GUI_TextView.app"
+            BuildableName = "GUI_Label.app"
             BlueprintName = "GUI_Label"
             ReferencedContainer = "container:GUI_Label.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "69EF234C1D13DFC7009B1FD6"
-            BuildableName = "GUI_TextView.app"
+            BuildableName = "GUI_Label.app"
             BlueprintName = "GUI_Label"
             ReferencedContainer = "container:GUI_Label.xcodeproj">
          </BuildableReference>

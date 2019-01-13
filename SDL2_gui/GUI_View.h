@@ -43,7 +43,18 @@ protected:
     bool    _uiready;
     bool    _focus;
     bool    _dragging;
+
+    int     _layout;
+    int     _align;
+    int     _contentAlign;
+
+    int     _padding[4];
+    int     _margin[4];
     
+    SDL_Color _backgroundColor;
+    SDL_Color _textColor;
+    SDL_Color _borderColor;
+
     GUI_Point lastMousePoint;
     
     int     ox, oy, ow, oh;
@@ -64,24 +75,33 @@ public:
     
     std::vector<GUI_View *>children;
     GUI_View *parent;
-    
-    SDL_Color backgroundColor;
-    SDL_Color borderColor;
+
     int corner;
     int border;
     bool dragable;
     bool click_through;
     bool click_to_top;
     
-    int layout;
-    int align;
-    int contentAlign;
+    virtual void setBackgroundColor( SDL_Color c ) { _backgroundColor = c; };
+    virtual SDL_Color getBackgroundColor() { return _backgroundColor; };
 
-    int padding[4];
-    int margin[4];
+    virtual void setTextColor( SDL_Color c ) { _textColor = c; };
+    virtual SDL_Color getTextColor() { return _textColor; };
+
+    virtual void setBorderColor( SDL_Color c ) { _borderColor = c; };
+    virtual SDL_Color getBorderColor() { return _borderColor; };
     
     virtual void setPadding(int p0, int p1, int p2, int p3);
     virtual void setMargin(int p0, int p1, int p2, int p3);
+
+    virtual void setContentAlign( int a ) { _contentAlign = a; };
+    virtual int  getContentAlign() { return _contentAlign; };
+
+    virtual void setAlign( int a ) { _align = a; };
+    virtual int  getAlign() { return _align; };
+    
+    virtual void setLayout( int l ) { _layout = l; };
+    virtual int  getLayout() { return _layout; };
     
     virtual void updateSize();
     virtual void updateLayout();

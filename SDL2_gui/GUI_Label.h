@@ -24,6 +24,9 @@ public:
     GUI_Label(GUI_View *parent, const char *title, uint16_t unicode=0, int x=0, int y=0, int width=0, int height=0,
                  std::function<bool(SDL_Event* ev)>userEventHandler = NULL);
     virtual ~GUI_Label();
+    
+    virtual void setLayout( int l );
+    virtual void setContentAlign( int a );
 };
 
 #endif /* GUI_Label_hpp */

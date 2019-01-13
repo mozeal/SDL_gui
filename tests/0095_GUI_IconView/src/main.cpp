@@ -44,171 +44,171 @@ int main(int argc, char *argv[]) {
     topView->setPadding(5, 5, 5, 5);
     
     GUI_View *vMain = GUI_View::create( topView, "Main1", 0, 0, 500, 270 );
-    vMain->backgroundColor = cDarkGrey;
+    vMain->setBackgroundColor( cDarkGrey );
     vMain->setMargin( 5, 5, 5, 5 );
     vMain->setPadding( 5, 5, 5, 5 );
     vMain->dragable = true;
     
     GUI_IconView *vRed = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
-    vRed->backgroundColor = cRed;
+    vRed->setBackgroundColor( cRed );
     vRed->dragable = true;
-    vRed->contentAlign = GUI_ALIGN_TOP | GUI_ALIGN_LEFT;
+    vRed->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_LEFT );
     vRed->setMargin( 5, 5, 5, 5 );
     vRed->setPadding( 5, 5, 5, 5 );
     
     GUI_IconView *vGreen = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
-    vGreen->backgroundColor = cGreen;
+    vGreen->setBackgroundColor( cGreen );
     vGreen->dragable = true;
-    vGreen->align = GUI_ALIGN_TOP | GUI_ALIGN_CENTER;
-    vGreen->contentAlign = GUI_ALIGN_TOP | GUI_ALIGN_CENTER;
+    vGreen->setAlign( GUI_ALIGN_TOP | GUI_ALIGN_CENTER );
+    vGreen->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_CENTER );
     vGreen->setMargin( 5, 5, 5, 5 );
     vGreen->setPadding( 5, 5, 5, 5 );
 
     GUI_IconView *vBlue = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
-    vBlue->backgroundColor = cBlue;
+    vBlue->setBackgroundColor( cBlue );
     vBlue->dragable = true;
-    vBlue->align = GUI_ALIGN_TOP | GUI_ALIGN_RIGHT;
-    vBlue->contentAlign = GUI_ALIGN_TOP | GUI_ALIGN_RIGHT;
+    vBlue->setAlign( GUI_ALIGN_TOP | GUI_ALIGN_RIGHT );
+    vBlue->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_RIGHT );
     vBlue->setMargin( 5, 5, 5, 5 );
     vBlue->setPadding( 5, 5, 5, 5 );
 
     GUI_IconView *vRed2 = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
-    vRed2->backgroundColor = cRed;
+    vRed2->setBackgroundColor( cRed );
     vRed2->dragable = true;
-    vRed2->align = GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT;
-    vRed2->contentAlign = GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT;
+    vRed2->setAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT );
+    vRed2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT );
     vRed2->setMargin( 5, 5, 5, 5 );
     vRed2->setPadding( 5, 5, 5, 5 );
 
     GUI_IconView *vGreen2 = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
-    vGreen2->backgroundColor = cGreen;
+    vGreen2->setBackgroundColor( cGreen );
     vGreen2->dragable = true;
-    vGreen2->align = GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER;
-    vGreen2->contentAlign = GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER;
+    vGreen2->setAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER );
+    vGreen2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER );
     vGreen2->setMargin( 5, 5, 5, 5 );
     vGreen2->setPadding( 5, 5, 5, 5 );
 
     GUI_IconView *vBlue2 = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
-    vBlue2->backgroundColor = cBlue;
+    vBlue2->setBackgroundColor( cBlue );
     vBlue2->dragable = true;
-    vBlue2->align = GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT;
-    vBlue2->contentAlign = GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT;
+    vBlue2->setAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT );
+    vBlue2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT );
     vBlue2->setMargin( 5, 5, 5, 5 );
     vBlue2->setPadding( 5, 5, 5, 5 );
 
     GUI_IconView *vRed3 = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
-    vRed3->backgroundColor = cRed;
+    vRed3->setBackgroundColor( cRed );
     vRed3->dragable = true;
-    vRed3->align = GUI_ALIGN_BOTTOM | GUI_ALIGN_LEFT;
-    vRed3->contentAlign = GUI_ALIGN_BOTTOM | GUI_ALIGN_LEFT;
+    vRed3->setAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_LEFT );
+    vRed3->setContentAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_LEFT );
     vRed3->setMargin( 5, 5, 5, 5 );
     vRed3->setPadding( 5, 5, 5, 5 );
 
     GUI_IconView *vGreen3 = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
-    vGreen3->backgroundColor = cGreen;
+    vGreen3->setBackgroundColor( cGreen );
     vGreen3->dragable = true;
-    vGreen3->align = GUI_ALIGN_BOTTOM | GUI_ALIGN_CENTER;
-    vGreen3->contentAlign = GUI_ALIGN_BOTTOM | GUI_ALIGN_CENTER;
+    vGreen3->setAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_CENTER );
+    vGreen3->setContentAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_CENTER );
     vGreen3->setMargin( 5, 5, 5, 5 );
     vGreen3->setPadding( 5, 5, 5, 5 );
 
     GUI_IconView *vBlue3 = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
-    vBlue3->backgroundColor = cBlue;
+    vBlue3->setBackgroundColor( cBlue );
     vBlue3->dragable = true;
-    vBlue3->align = GUI_ALIGN_BOTTOM | GUI_ALIGN_RIGHT;
-    vBlue3->contentAlign = GUI_ALIGN_BOTTOM | GUI_ALIGN_RIGHT;
+    vBlue3->setAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_RIGHT );
+    vBlue3->setContentAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_RIGHT );
     vBlue3->setMargin( 5, 5, 5, 5 );
     vBlue3->setPadding( 5, 5, 5, 5 );
 
     GUI_View *vGrey = GUI_View::create( topView, "Gray", 520, 0, -1, -1 );
-    vGrey->backgroundColor = cGrey;
+    vGrey->setBackgroundColor( cGrey );
     vGrey->setMargin( 5, 5, 5, 5 );
     vGrey->setPadding( 5, 5, 5, 5 );
     vGrey->dragable = true;
   
     GUI_IconView *vRedX = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
-    vRedX->backgroundColor = cRed;
+    vRedX->setBackgroundColor( cRed );
     vRedX->dragable = true;
-    vRedX->contentAlign = GUI_ALIGN_TOP | GUI_ALIGN_LEFT;
+    vRedX->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_LEFT );
     vRedX->setMargin( 5, 5, 5, 5 );
     vRedX->setPadding( 5, 5, 5, 5 );
     
     GUI_IconView *vGreenX = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
-    vGreenX->backgroundColor = cGreen;
+    vGreenX->setBackgroundColor( cGreen );
     vGreenX->dragable = true;
-    vGreenX->align = GUI_ALIGN_TOP | GUI_ALIGN_CENTER;
-    vGreenX->contentAlign = GUI_ALIGN_TOP | GUI_ALIGN_CENTER;
+    vGreenX->setAlign( GUI_ALIGN_TOP | GUI_ALIGN_CENTER );
+    vGreenX->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_CENTER );
     vGreenX->setMargin( 5, 5, 5, 5 );
     vGreenX->setPadding( 5, 5, 5, 5 );
     
     GUI_IconView *vBlueX = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
-    vBlueX->backgroundColor = cBlue;
+    vBlueX->setBackgroundColor( cBlue );
     vBlueX->dragable = true;
-    vBlueX->align = GUI_ALIGN_TOP | GUI_ALIGN_RIGHT;
-    vBlueX->contentAlign = GUI_ALIGN_TOP | GUI_ALIGN_RIGHT;
+    vBlueX->setAlign( GUI_ALIGN_TOP | GUI_ALIGN_RIGHT );
+    vBlueX->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_RIGHT );
     vBlueX->setMargin( 5, 5, 5, 5 );
     vBlueX->setPadding( 5, 5, 5, 5 );
     
     GUI_IconView *vRedX2 = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
-    vRedX2->backgroundColor = cRed;
+    vRedX2->setBackgroundColor( cRed );
     vRedX2->dragable = true;
-    vRedX2->align = GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT;
-    vRedX2->contentAlign = GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT;
+    vRedX2->setAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT );
+    vRedX2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT );
     vRedX2->setMargin( 5, 5, 5, 5 );
     vRedX2->setPadding( 5, 5, 5, 5 );
     
     GUI_IconView *vGreenX2 = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
-    vGreenX2->backgroundColor = cGreen;
+    vGreenX2->setBackgroundColor( cGreen );
     vGreenX2->dragable = true;
-    vGreenX2->align = GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER;
-    vGreenX2->contentAlign = GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER;
+    vGreenX2->setAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER );
+    vGreenX2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER );
     vGreenX2->setMargin( 5, 5, 5, 5 );
     vGreenX2->setPadding( 5, 5, 5, 5 );
     
     GUI_IconView *vBlueX2 = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
-    vBlueX2->backgroundColor = cBlue;
+    vBlueX2->setBackgroundColor( cBlue );
     vBlueX2->dragable = true;
-    vBlueX2->align = GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT;
-    vBlueX2->contentAlign = GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT;
+    vBlueX2->setAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT );
+    vBlueX2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT );
     vBlueX2->setMargin( 5, 5, 5, 5 );
     vBlueX2->setPadding( 5, 5, 5, 5 );
     
     GUI_IconView *vRedX3 = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
-    vRedX3->backgroundColor = cRed;
+    vRedX3->setBackgroundColor( cRed );
     vRedX3->dragable = true;
-    vRedX3->align = GUI_ALIGN_BOTTOM | GUI_ALIGN_LEFT;
-    vRedX3->contentAlign = GUI_ALIGN_BOTTOM | GUI_ALIGN_LEFT;
+    vRedX3->setAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_LEFT );
+    vRedX3->setContentAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_LEFT );
     vRedX3->setMargin( 5, 5, 5, 5 );
     vRedX3->setPadding( 5, 5, 5, 5 );
     
     GUI_IconView *vGreenX3 = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
-    vGreenX3->backgroundColor = cGreen;
+    vGreenX3->setBackgroundColor( cGreen );
     vGreenX3->dragable = true;
-    vGreenX3->align = GUI_ALIGN_BOTTOM | GUI_ALIGN_CENTER;
-    vGreenX3->contentAlign = GUI_ALIGN_BOTTOM | GUI_ALIGN_CENTER;
+    vGreenX3->setAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_CENTER );
+    vGreenX3->setContentAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_CENTER );
     vGreenX3->setMargin( 5, 5, 5, 5 );
     vGreenX3->setPadding( 5, 5, 5, 5 );
     
     GUI_IconView *vBlueX3 = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
-    vBlueX3->backgroundColor = cBlue;
+    vBlueX3->setBackgroundColor( cBlue );
     vBlueX3->dragable = true;
-    vBlueX3->align = GUI_ALIGN_BOTTOM | GUI_ALIGN_RIGHT;
-    vBlueX3->contentAlign = GUI_ALIGN_BOTTOM | GUI_ALIGN_RIGHT;
+    vBlueX3->setAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_RIGHT );
+    vBlueX3->setContentAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_RIGHT );
     vBlueX3->setMargin( 5, 5, 5, 5 );
     vBlueX3->setPadding( 5, 5, 5, 5 );
     
     
     GUI_View *vGrey2 = GUI_View::create( topView, "Gray", 0, 290, 500, -1 );
-    vGrey2->backgroundColor = cGrey;
+    vGrey2->setBackgroundColor( cGrey );
     vGrey2->setMargin( 5, 5, 5, 5 );
     vGrey2->setPadding( 5, 5, 5, 5 );
     vGrey2->dragable = true;
     
     GUI_IconView *vGreenXX2 = GUI_IconView::create( vGrey2, kIcon_sun, "fa-regular-400.ttf", 100, 0, 0, -1, -1 );
-    vGreenXX2->backgroundColor = cGreen;
+    vGreenXX2->setBackgroundColor( cGreen );
     vGreenXX2->dragable = true;
-    vGreenXX2->align = GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER;
-    vGreenXX2->contentAlign = GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER;
+    vGreenXX2->setAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER );
+    vGreenXX2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER );
     vGreenXX2->setMargin( 5, 5, 5, 5 );
     vGreenXX2->setPadding( 5, 5, 5, 5 );
     
