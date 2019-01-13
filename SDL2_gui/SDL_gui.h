@@ -30,6 +30,7 @@
 #include "GUI_image.h"
 #include "GUI_ImageView.h"
 #include "GUI_TextView.h"
+#include "GUI_IconView.h"
 #include "SDL2_gfxPrimitives.h"
 
 int GUI_Init( const char* title, int expectedWidth, int expectedHeight );

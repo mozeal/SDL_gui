@@ -49,14 +49,14 @@ int main(int argc, char *argv[]) {
     vMain->setPadding( 5, 5, 5, 5 );
     vMain->dragable = true;
     
-    GUI_TextView *vRed = GUI_TextView::create( vMain, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 150, 70 );
+    GUI_IconView *vRed = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
     vRed->backgroundColor = cRed;
     vRed->dragable = true;
     vRed->contentAlign = GUI_ALIGN_TOP | GUI_ALIGN_LEFT;
     vRed->setMargin( 5, 5, 5, 5 );
     vRed->setPadding( 5, 5, 5, 5 );
     
-    GUI_TextView *vGreen = GUI_TextView::create( vMain, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 150, 70 );
+    GUI_IconView *vGreen = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
     vGreen->backgroundColor = cGreen;
     vGreen->dragable = true;
     vGreen->align = GUI_ALIGN_TOP | GUI_ALIGN_CENTER;
@@ -64,7 +64,7 @@ int main(int argc, char *argv[]) {
     vGreen->setMargin( 5, 5, 5, 5 );
     vGreen->setPadding( 5, 5, 5, 5 );
 
-    GUI_TextView *vBlue = GUI_TextView::create( vMain, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 150, 70 );
+    GUI_IconView *vBlue = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
     vBlue->backgroundColor = cBlue;
     vBlue->dragable = true;
     vBlue->align = GUI_ALIGN_TOP | GUI_ALIGN_RIGHT;
@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
     vBlue->setMargin( 5, 5, 5, 5 );
     vBlue->setPadding( 5, 5, 5, 5 );
 
-    GUI_TextView *vRed2 = GUI_TextView::create( vMain, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 150, 70 );
+    GUI_IconView *vRed2 = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
     vRed2->backgroundColor = cRed;
     vRed2->dragable = true;
     vRed2->align = GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT;
@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
     vRed2->setMargin( 5, 5, 5, 5 );
     vRed2->setPadding( 5, 5, 5, 5 );
 
-    GUI_TextView *vGreen2 = GUI_TextView::create( vMain, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 150, 70 );
+    GUI_IconView *vGreen2 = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
     vGreen2->backgroundColor = cGreen;
     vGreen2->dragable = true;
     vGreen2->align = GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER;
@@ -88,7 +88,7 @@ int main(int argc, char *argv[]) {
     vGreen2->setMargin( 5, 5, 5, 5 );
     vGreen2->setPadding( 5, 5, 5, 5 );
 
-    GUI_TextView *vBlue2 = GUI_TextView::create( vMain, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 150, 70 );
+    GUI_IconView *vBlue2 = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
     vBlue2->backgroundColor = cBlue;
     vBlue2->dragable = true;
     vBlue2->align = GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT;
@@ -96,7 +96,7 @@ int main(int argc, char *argv[]) {
     vBlue2->setMargin( 5, 5, 5, 5 );
     vBlue2->setPadding( 5, 5, 5, 5 );
 
-    GUI_TextView *vRed3 = GUI_TextView::create( vMain, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 150, 70 );
+    GUI_IconView *vRed3 = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
     vRed3->backgroundColor = cRed;
     vRed3->dragable = true;
     vRed3->align = GUI_ALIGN_BOTTOM | GUI_ALIGN_LEFT;
@@ -104,7 +104,7 @@ int main(int argc, char *argv[]) {
     vRed3->setMargin( 5, 5, 5, 5 );
     vRed3->setPadding( 5, 5, 5, 5 );
 
-    GUI_TextView *vGreen3 = GUI_TextView::create( vMain, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 150, 70 );
+    GUI_IconView *vGreen3 = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
     vGreen3->backgroundColor = cGreen;
     vGreen3->dragable = true;
     vGreen3->align = GUI_ALIGN_BOTTOM | GUI_ALIGN_CENTER;
@@ -112,7 +112,7 @@ int main(int argc, char *argv[]) {
     vGreen3->setMargin( 5, 5, 5, 5 );
     vGreen3->setPadding( 5, 5, 5, 5 );
 
-    GUI_TextView *vBlue3 = GUI_TextView::create( vMain, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 150, 70 );
+    GUI_IconView *vBlue3 = GUI_IconView::create( vMain, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 150, 70 );
     vBlue3->backgroundColor = cBlue;
     vBlue3->dragable = true;
     vBlue3->align = GUI_ALIGN_BOTTOM | GUI_ALIGN_RIGHT;
@@ -126,14 +126,14 @@ int main(int argc, char *argv[]) {
     vGrey->setPadding( 5, 5, 5, 5 );
     vGrey->dragable = true;
   
-    GUI_TextView *vRedX = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
+    GUI_IconView *vRedX = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
     vRedX->backgroundColor = cRed;
     vRedX->dragable = true;
     vRedX->contentAlign = GUI_ALIGN_TOP | GUI_ALIGN_LEFT;
     vRedX->setMargin( 5, 5, 5, 5 );
     vRedX->setPadding( 5, 5, 5, 5 );
     
-    GUI_TextView *vGreenX = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
+    GUI_IconView *vGreenX = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
     vGreenX->backgroundColor = cGreen;
     vGreenX->dragable = true;
     vGreenX->align = GUI_ALIGN_TOP | GUI_ALIGN_CENTER;
@@ -141,7 +141,7 @@ int main(int argc, char *argv[]) {
     vGreenX->setMargin( 5, 5, 5, 5 );
     vGreenX->setPadding( 5, 5, 5, 5 );
     
-    GUI_TextView *vBlueX = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
+    GUI_IconView *vBlueX = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
     vBlueX->backgroundColor = cBlue;
     vBlueX->dragable = true;
     vBlueX->align = GUI_ALIGN_TOP | GUI_ALIGN_RIGHT;
@@ -149,7 +149,7 @@ int main(int argc, char *argv[]) {
     vBlueX->setMargin( 5, 5, 5, 5 );
     vBlueX->setPadding( 5, 5, 5, 5 );
     
-    GUI_TextView *vRedX2 = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
+    GUI_IconView *vRedX2 = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
     vRedX2->backgroundColor = cRed;
     vRedX2->dragable = true;
     vRedX2->align = GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT;
@@ -157,7 +157,7 @@ int main(int argc, char *argv[]) {
     vRedX2->setMargin( 5, 5, 5, 5 );
     vRedX2->setPadding( 5, 5, 5, 5 );
     
-    GUI_TextView *vGreenX2 = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
+    GUI_IconView *vGreenX2 = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
     vGreenX2->backgroundColor = cGreen;
     vGreenX2->dragable = true;
     vGreenX2->align = GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER;
@@ -165,7 +165,7 @@ int main(int argc, char *argv[]) {
     vGreenX2->setMargin( 5, 5, 5, 5 );
     vGreenX2->setPadding( 5, 5, 5, 5 );
     
-    GUI_TextView *vBlueX2 = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
+    GUI_IconView *vBlueX2 = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
     vBlueX2->backgroundColor = cBlue;
     vBlueX2->dragable = true;
     vBlueX2->align = GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT;
@@ -173,7 +173,7 @@ int main(int argc, char *argv[]) {
     vBlueX2->setMargin( 5, 5, 5, 5 );
     vBlueX2->setPadding( 5, 5, 5, 5 );
     
-    GUI_TextView *vRedX3 = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
+    GUI_IconView *vRedX3 = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
     vRedX3->backgroundColor = cRed;
     vRedX3->dragable = true;
     vRedX3->align = GUI_ALIGN_BOTTOM | GUI_ALIGN_LEFT;
@@ -181,7 +181,7 @@ int main(int argc, char *argv[]) {
     vRedX3->setMargin( 5, 5, 5, 5 );
     vRedX3->setPadding( 5, 5, 5, 5 );
     
-    GUI_TextView *vGreenX3 = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
+    GUI_IconView *vGreenX3 = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
     vGreenX3->backgroundColor = cGreen;
     vGreenX3->dragable = true;
     vGreenX3->align = GUI_ALIGN_BOTTOM | GUI_ALIGN_CENTER;
@@ -189,7 +189,7 @@ int main(int argc, char *argv[]) {
     vGreenX3->setMargin( 5, 5, 5, 5 );
     vGreenX3->setPadding( 5, 5, 5, 5 );
     
-    GUI_TextView *vBlueX3 = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
+    GUI_IconView *vBlueX3 = GUI_IconView::create( vGrey, kIcon_sun, "fa-regular-400.ttf", 16, 0, 0, 0, 0 );
     vBlueX3->backgroundColor = cBlue;
     vBlueX3->dragable = true;
     vBlueX3->align = GUI_ALIGN_BOTTOM | GUI_ALIGN_RIGHT;
@@ -204,7 +204,7 @@ int main(int argc, char *argv[]) {
     vGrey2->setPadding( 5, 5, 5, 5 );
     vGrey2->dragable = true;
     
-    GUI_TextView *vGreenXX2 = GUI_TextView::create( vGrey2, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, -1, -1 );
+    GUI_IconView *vGreenXX2 = GUI_IconView::create( vGrey2, kIcon_sun, "fa-regular-400.ttf", 100, 0, 0, -1, -1 );
     vGreenXX2->backgroundColor = cGreen;
     vGreenXX2->dragable = true;
     vGreenXX2->align = GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER;

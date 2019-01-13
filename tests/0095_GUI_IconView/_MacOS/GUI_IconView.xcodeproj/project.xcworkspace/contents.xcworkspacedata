@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/Jim/__Projects/SDL_gui/tests/0090_GUI_TextView/_MacOS/GUI_TextView.xcodeproj">
+      location = "self:/Users/Jim/__Projects/SDL_gui/tests/0095_GUI_IconView/_MacOS/GUI_IconView.xcodeproj">
    </FileRef>
 </Workspace>

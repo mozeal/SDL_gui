@@ -162,7 +162,7 @@
 		38EC051421E9E4E8005F3A3A /* GUI_Fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_Fonts.h; sourceTree = "<group>"; };
 		38EC057D21EA3E10005F3A3A /* GUI_IconView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_IconView.cpp; sourceTree = "<group>"; };
 		38EC057E21EA3E10005F3A3A /* GUI_IconView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_IconView.h; sourceTree = "<group>"; };
-		69EF234D1D13DFC7009B1FD6 /* GUI_TextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GUI_TextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69EF234D1D13DFC7009B1FD6 /* GUI_IconView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GUI_IconView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69EF23561D13DFC7009B1FD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69EF235B1D13DFC7009B1FD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69EF23731D13E239009B1FD6 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -279,7 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				69EF26601D13EAFB009B1FD6 /* data */,
-				69EF234F1D13DFC7009B1FD6 /* GUI_TextView */,
+				69EF234F1D13DFC7009B1FD6 /* GUI_IconView */,
 				69EF23791D13E26A009B1FD6 /* Frameworks */,
 				69EF234E1D13DFC7009B1FD6 /* Products */,
 				69EF236B1D13E239009B1FD6 /* src */,
@@ -289,19 +289,19 @@
 		69EF234E1D13DFC7009B1FD6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				69EF234D1D13DFC7009B1FD6 /* GUI_TextView.app */,
+				69EF234D1D13DFC7009B1FD6 /* GUI_IconView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		69EF234F1D13DFC7009B1FD6 /* GUI_TextView */ = {
+		69EF234F1D13DFC7009B1FD6 /* GUI_IconView */ = {
 			isa = PBXGroup;
 			children = (
 				69EF23561D13DFC7009B1FD6 /* Assets.xcassets */,
 				69EF235B1D13DFC7009B1FD6 /* Info.plist */,
 				69EF23531D13DFC7009B1FD6 /* Supporting Files */,
 			);
-			path = GUI_TextView;
+			path = GUI_IconView;
 			sourceTree = "<group>";
 		};
 		69EF23531D13DFC7009B1FD6 /* Supporting Files */ = {
@@ -344,9 +344,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		69EF234C1D13DFC7009B1FD6 /* GUI_TextView */ = {
+		69EF234C1D13DFC7009B1FD6 /* GUI_IconView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "GUI_TextView" */;
+			buildConfigurationList = 69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "GUI_IconView" */;
 			buildPhases = (
 				69EF23491D13DFC7009B1FD6 /* Sources */,
 				69EF234A1D13DFC7009B1FD6 /* Frameworks */,
@@ -360,9 +360,9 @@
 				385B990321CBB970000E5F90 /* PBXTargetDependency */,
 				380C58B021C100CA0005A03F /* PBXTargetDependency */,
 			);
-			name = GUI_TextView;
+			name = GUI_IconView;
 			productName = ClearScreen;
-			productReference = 69EF234D1D13DFC7009B1FD6 /* GUI_TextView.app */;
+			productReference = 69EF234D1D13DFC7009B1FD6 /* GUI_IconView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -380,7 +380,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 69EF23481D13DFC7009B1FD6 /* Build configuration list for PBXProject "GUI_TextView" */;
+			buildConfigurationList = 69EF23481D13DFC7009B1FD6 /* Build configuration list for PBXProject "GUI_IconView" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -407,7 +407,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				69EF234C1D13DFC7009B1FD6 /* GUI_TextView */,
+				69EF234C1D13DFC7009B1FD6 /* GUI_IconView */,
 			);
 		};
 /* End PBXProject section */
@@ -677,7 +677,7 @@
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
-				PRODUCT_NAME = GUI_TextView;
+				PRODUCT_NAME = GUI_IconView;
 				PROVISIONING_PROFILE = "";
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
 				SDL_IMAGE_ROOT = ../../../SDL2_image;
@@ -704,7 +704,7 @@
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
-				PRODUCT_NAME = GUI_TextView;
+				PRODUCT_NAME = GUI_IconView;
 				PROVISIONING_PROFILE = "";
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
 				SDL_IMAGE_ROOT = ../../../SDL2_image;
@@ -717,7 +717,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		69EF23481D13DFC7009B1FD6 /* Build configuration list for PBXProject "GUI_TextView" */ = {
+		69EF23481D13DFC7009B1FD6 /* Build configuration list for PBXProject "GUI_IconView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69EF235C1D13DFC7009B1FD6 /* Debug */,
@@ -726,7 +726,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "GUI_TextView" */ = {
+		69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "GUI_IconView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69EF235F1D13DFC7009B1FD6 /* Debug */,

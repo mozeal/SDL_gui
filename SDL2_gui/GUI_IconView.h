@@ -10,6 +10,18 @@
 #define GUI_IconView_hpp
 
 #include <stdio.h>
+#include "GUI_TextView.h"
+
+class GUI_IconView : public GUI_TextView {
+public:
+    static GUI_IconView *create( GUI_View *parent, uint16_t unicode, const char *fontname, int fontsize, int x=0, int y=0, int width=0, int height=0,
+                                std::function<bool(SDL_Event* ev)>userEventHandler = NULL );
+    GUI_IconView(GUI_View *parent, uint16_t unicode, const char *fontname, int fontsize, int x=0, int y=0, int width=0, int height=0,
+                 std::function<bool(SDL_Event* ev)>userEventHandler = NULL);
+    virtual ~GUI_IconView();
+    
+    SDL_Texture* createTextureFormUnicode(Uint16 unicode, SDL_Rect* rect=NULL);
+};
 
 #define kIcon_address_book              0xf2b9u
 #define kIcon_address_card              0xf2bbu

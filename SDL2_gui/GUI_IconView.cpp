@@ -7,3 +7,46 @@
 //
 
 #include "GUI_IconView.h"
+
+
+GUI_IconView *GUI_IconView::create( GUI_View *parent, uint16_t unicode, const char *fontname, int fontsize, int x, int y, int width, int height,
+                                   std::function<bool(SDL_Event* ev)>userEventHandler ) {
+    return new GUI_IconView(parent, unicode, fontname, fontsize, x, y, width, height, userEventHandler );
+}
+
+GUI_IconView::GUI_IconView(GUI_View *parent, uint16_t unicode, const char *fontname, int fontsize, int x, int y, int width, int height,
+                           std::function<bool(SDL_Event* ev)>userEventHandler) :
+GUI_TextView(parent, NULL, fontname, fontsize, x, y, width, height, userEventHandler )
+{
+    SDL_Texture *texture = createTextureFormUnicode( unicode );
+    if (texture == NULL){
+        GUI_Log("Could not create icon texture\n");
+        return;
+    }
+    image.setTexture(texture);
+    
+    updateSize();
+    updateLayout();
+}
+
+GUI_IconView::~GUI_IconView() {
+    
+}
+
+SDL_Texture* GUI_IconView::createTextureFormUnicode(Uint16 unicode, SDL_Rect* rect) {
+    if (font) {
+        SDL_Surface* surf = TTF_RenderGlyph_Blended(font, unicode, cWhite);
+        SDL_Texture *tex = SDL_CreateTextureFromSurface(GUI_renderer, surf);
+        
+        if (rect != NULL) {
+            rect->x = rect->y = 0;
+            rect->w = surf->w;
+            rect->h = surf->h;
+        }
+        
+        SDL_FreeSurface(surf);
+        return tex;
+    }
+    
+    return NULL;
+}
