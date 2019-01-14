@@ -56,6 +56,8 @@ bool GUI_Button::eventHandler(SDL_Event*event) {
                     GUI_mouseCapturedView = (GUI_View *)this;
                     touchTime = SDL_GetTicks(); // time in millis
                     touchHoldTime = touchTime;
+                    
+                    return true;
                 }
             }
             break;
@@ -88,6 +90,8 @@ bool GUI_Button::eventHandler(SDL_Event*event) {
                 int y = (int)(e.y*GUI_mouseScale);
                 if( hitTest(x, y, false) ) {
                     GUI_Log( "Button UP %s\n", title.c_str() );
+                    
+                    return true;
                 }
             }
             break;
