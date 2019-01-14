@@ -37,7 +37,11 @@ protected:
     virtual void predraw();
     virtual void draw();
     virtual void postdraw();
+    virtual void drawFocus();
     
+    static GUI_View *lastInteractView;
+    static GUI_View *lastFocusView;
+
     bool    _visible;
     bool    _enable;
     bool    _focus;
@@ -80,7 +84,10 @@ public:
 
     int corner;
     int border;
+    int focusBorder;
     bool dragable;
+    bool showInteract;
+    bool mouseReceive;
     bool click_through;
     bool click_to_top;
     
@@ -142,9 +149,7 @@ public:
             killFocus();
     };
     
-    virtual void setFocus() {
-        _focus = true;
-    };
+    virtual void setFocus();
 
     virtual void killFocus() {
         _focus = false;
@@ -170,9 +175,7 @@ public:
         return _selected;
     }
     
-    virtual void setInteract(bool i) {
-        _interact = i;
-    }
+    virtual void setInteract(bool i);
     
     virtual int getInteract() {
         return _interact;

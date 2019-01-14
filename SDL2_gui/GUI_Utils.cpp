@@ -92,7 +92,7 @@ cDarkGrey = sdl_color(0x707070ff),
 cLightGrey = sdl_color(0xe0e0e0ff),
 cCornFlower = sdl_color(0x6495edff),
 cHightLightSelected = sdl_color(0x338dfbff),
-cHightLightInteract = sdl_color(0x80808040),
+cHightLightInteract = sdl_color(0x40404050),
 cTextSelected = sdl_color(0x9cc7e6ff); // Tooh - text selection
 
 

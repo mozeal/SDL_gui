@@ -19,6 +19,8 @@ GUI_TextView::GUI_TextView( GUI_View *parent, const char *title, const char *fon
 GUI_ImageView( parent, title, NULL, x, y, width, height, userEventHandler),
 font(NULL)
 {
+    mouseReceive = false;
+
     std::string fontPath = std::string("data/")+fontname;
     font = GUI_Fonts::getFont(fontname, fontsize);
     
@@ -30,7 +32,7 @@ font(NULL)
     if( title ) {
         //We need to first render to a surface as that's what TTF_RenderText returns, then
         //load that surface into a texture
-        SDL_Surface *surf = TTF_RenderUTF8_Blended(font, title, cBlack);
+        SDL_Surface *surf = TTF_RenderUTF8_Blended(font, title, cWhite);
         if (surf == NULL){
             GUI_Log("Could not create text surface\n");
             return;
@@ -53,4 +55,7 @@ GUI_TextView::~GUI_TextView() {
     
 }
 
-
+void GUI_TextView::setTextColor( SDL_Color c ) {
+    _textColor = c;
+    colorMod = c;
+}

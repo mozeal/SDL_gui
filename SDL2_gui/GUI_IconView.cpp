@@ -18,6 +18,8 @@ GUI_IconView::GUI_IconView(GUI_View *parent, uint16_t unicode, const char *fontn
                            std::function<bool(SDL_Event* ev)>userEventHandler) :
 GUI_TextView(parent, NULL, fontname, fontsize, x, y, width, height, userEventHandler )
 {
+    mouseReceive = false;
+
     SDL_Texture *texture = createTextureFormUnicode( unicode );
     if (texture == NULL){
         GUI_Log("Could not create icon texture\n");

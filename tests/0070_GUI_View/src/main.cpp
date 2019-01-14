@@ -40,30 +40,39 @@ int main(int argc, char *argv[]) {
     GUI_View *vRed = GUI_View::create( topView, "Red", 10, 10, 320, 240 );
     vRed->setBackgroundColor( cRed );
     vRed->dragable = true;
+    vRed->showInteract = true;
     GUI_View *vRedC1 = GUI_View::create( vRed, "Green", 40, 40, 320, 240 );
     vRedC1->setBackgroundColor( cGreen );
     vRedC1->dragable = true;
+    vRedC1->showInteract = true;
     GUI_View *vRedC2 = GUI_View::create( vRed, "Yellow", 30, 60, 160, 120 );
     vRedC2->setBackgroundColor( cYellow );
     vRedC2->dragable = true;
+    vRedC2->showInteract = true;
 
     GUI_View *vBlue = GUI_View::create( topView, "Blue", 90, 90, 320, 240 );
     vBlue->setBackgroundColor( cBlue );
     vBlue->dragable = true;
+    vBlue->showInteract = true;
     GUI_View *vBlueC1 = GUI_View::create( vBlue, "Magenta", 100, 100, 320, 240 );
     vBlueC1->setBackgroundColor( cMagenta );
     vBlueC1->dragable = true;
+    vBlueC1->showInteract = true;
     GUI_View *vBlueC2 = GUI_View::create( vBlue, "Green2", 10, 10, 120, 120 );
     vBlueC2->setBackgroundColor( cGreen );
     vBlueC2->dragable = true;
+    vBlueC2->showInteract = true;
+    vBlueC2->mouseReceive = false;
 
     GUI_View *vCyan = GUI_View::create( topView, "Cyan", 270, 270, 320, 240 );
     vCyan->setBackgroundColor( cCyan );
     vCyan->dragable = true;
+    vCyan->showInteract = true;
     GUI_View *vCyanC1 = GUI_View::create( vCyan, "Grey", -70, -70, 320, 240 );
     vCyanC1->setBackgroundColor( cGrey );
     vCyanC1->dragable = true;
-    
+    vCyanC1->showInteract = true;
+
     GUI_Run();
     GUI_Destroy();
 

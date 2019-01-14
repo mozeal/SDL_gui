@@ -22,6 +22,7 @@ textView( NULL )
     _backgroundColor = cWhite;
     border = 0;
     dragable = false;
+    mouseReceive = false;
     setLayout( GUI_LAYOUT_HORIZONTAL );
     setMargin( 0, 0, 0, 0 );
     setPadding( 0, 0, 0, 0 );
@@ -48,6 +49,16 @@ textView( NULL )
 
 GUI_Label::~GUI_Label() {
     
+}
+
+void GUI_Label::setTextColor( SDL_Color c ) {
+    _textColor = c;
+    if( textView ) {
+        textView->setTextColor(c);
+    }
+    if( iconView ) {
+        iconView->setTextColor(c);
+    }
 }
 
 void GUI_Label::setLayout( int l ) {

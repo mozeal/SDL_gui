@@ -21,7 +21,7 @@ public:
     GUI_TextView(GUI_View *parent, const char *title, const char *fontname, int fontsize, int x=0, int y=0, int width=0, int height=0,
                   std::function<bool(SDL_Event* ev)>userEventHandler = NULL);
     virtual ~GUI_TextView();
-
+    virtual void setTextColor( SDL_Color c );
 };
 
 #endif /* GUI_TextView_hpp */

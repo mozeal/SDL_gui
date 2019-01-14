@@ -23,6 +23,9 @@ extern float GUI_mouseScale;
 extern GUI_View *GUI_topView;
 extern GUI_View * GUI_mouseCapturedView;
 
+GUI_View *GUI_View::lastInteractView = NULL;
+GUI_View *GUI_View::lastFocusView = NULL;
+
 GUI_View *GUI_View::create( GUI_View *parent, const char *title, int x, int y, int width, int height,
                                std::function<bool(SDL_Event* ev)>userEventHandler) {
     GUI_View *view = new GUI_View( parent, title, x, y, width, height, userEventHandler );
@@ -40,6 +43,7 @@ _backgroundColor(cWhite),
 _borderColor(cBlack),
 _textColor(cBlack),
 border(1),
+focusBorder(0),
 corner(0),
 dragable(false),
 click_through(false),
@@ -54,7 +58,9 @@ _visible(true),
 _enable(true),
 _focus(false),
 _interact(false),
-_dragging(false)
+_dragging(false),
+showInteract(false),
+mouseReceive(true)
 {
     ox = x;
     oy = y;
@@ -80,6 +86,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
     }
     bool ReverseRecursive = false;
     bool BreakSiblingPropagate = false;
+    bool BreakRecursive = false;
     switch( event->type ) {
         case GUI_EventPaint:
             predraw();
@@ -88,6 +95,11 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             break;
         case SDL_MOUSEBUTTONDOWN:
         {
+            if( !mouseReceive ) {
+                BreakRecursive = true;
+                BreakSiblingPropagate = false;
+                break;
+            }
             ReverseRecursive = true;
             SDL_MouseButtonEvent e = event->button;
             
@@ -103,6 +115,11 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 }
                 if( dragable ) {
                     _dragging = true;
+                    SDL_Log( "Dragging %s\n", title.c_str() );
+                    if( parent ) {
+                        parent->_dragging = false;
+                        SDL_Log( "Undragging %s\n", parent->title.c_str() );
+                    }
                     lastMousePoint.set(x, y);
                     GUI_mouseCapturedView = this;
                     BreakSiblingPropagate = true;
@@ -115,33 +132,60 @@ bool GUI_View::eventHandler(SDL_Event*event) {
         }
         case SDL_MOUSEMOTION:
         {
+            if( !mouseReceive ) {
+                BreakRecursive = true;
+                BreakSiblingPropagate = false;
+                break;
+            }
+
+            ReverseRecursive = true;
             SDL_MouseMotionEvent e = event->motion;
             int x = (int)(e.x*GUI_mouseScale);
             int y = (int)(e.y*GUI_mouseScale);
+            //SDL_Log( "Mouse Move %s\n", title.c_str() );
             
             if (_dragging) {
                 if (parent) {
                     if (!parent->hitTest(x, y, false)) {
+                        setInteract( false );
                         return true;
                     }
                 }
+                setInteract( true );
                 int dx = x - lastMousePoint.x;
                 int dy = y - lastMousePoint.y;
                 lastMousePoint.set(x, y);
                 move(dx, dy);
                 return true;
             }
-            //return false;
+            if( hitTest(x, y, false) ) {
+                BreakSiblingPropagate = true;
+                setInteract( true );
+                if( parent ) {
+                    parent->setInteract( false );
+                }
+            }
+            else {
+                setInteract( false );
+                BreakRecursive = true;
+            }
             break;
         }
         case SDL_MOUSEBUTTONUP:
         {
+            if( !mouseReceive ) {
+                BreakRecursive = true;
+                BreakSiblingPropagate = false;
+                break;
+            }
+
             //SDL_MouseButtonEvent e = event->button;
             //int x = (int)(e.x*GUI_mouseScale);
             //int y = (int)(e.y*GUI_mouseScale);
             
             if (_dragging) {
                 _dragging = false;
+                SDL_Log( "Undragging %s\n", title.c_str() );
                 GUI_mouseCapturedView = NULL;
                 return true;
             }
@@ -150,21 +194,23 @@ bool GUI_View::eventHandler(SDL_Event*event) {
         default:
             break;
     }
-    if( ReverseRecursive ) {
-        GUI_Log( "Reverse traverse\n" );
-        if( children.size() > 0 ) {
-            for (std::vector<GUI_View *>::iterator it = children.end()-1; it >= children.begin(); --it) {
+    if( !BreakRecursive ) {
+        if( ReverseRecursive ) {
+            //GUI_Log( "Reverse traverse\n" );
+            if( children.size() > 0 ) {
+                for (std::vector<GUI_View *>::iterator it = children.end()-1; it >= children.begin(); --it) {
+                    GUI_View *child = *it;
+                    if( child->eventHandler(event) )
+                        return true;
+                }
+            }
+        }
+        else {
+            for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
                 GUI_View *child = *it;
                 if( child->eventHandler(event) )
                     return true;
             }
-        }
-    }
-    else {
-        for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
-            GUI_View *child = *it;
-            if( child->eventHandler(event) )
-                return true;
         }
     }
 
@@ -219,6 +265,47 @@ void GUI_View::remove_all_children() {
 void GUI_View::predraw() {
     if (isVisible() == false)
         return;
+
+    int f = 0;
+    if( isFocus() && focusBorder > 0 ) {
+        f = focusBorder;
+        
+        if (parent) {
+            GUI_Rect parent_clip = GUI_Rect(parent->rectClip);
+            parent_clip.x -= topLeft.x;
+            parent_clip.y -= topLeft.y;
+            SDL_IntersectRect(GUI_MakeRect(0, 0, rectView.w+(f*2), rectView.h+(f*2)), &parent_clip, &rectClip);
+            
+            // Bug of SDL
+            if (rectClip.w < 0)
+                rectClip.w = 0;
+            if (rectClip.h < 0)
+                rectClip.h = 0;
+        } else {
+            rectClip = GUI_Rect(0, 0, rectView.w, rectView.h);
+        }
+        
+#ifdef __EMSCRIPTENx__
+        SDL_RenderSetViewport(GUI_renderer, GUI_MakeRect(rectView.x, GUI_windowHeight*GUI_scale - rectView.y - rectView.h, rectView.w, rectView.h));
+#else
+        SDL_RenderSetViewport(GUI_renderer, GUI_MakeRect(rectView.x-f, rectView.y-f, rectView.w+(f*2), rectView.h+(f*2)));
+#endif
+        
+#ifdef __EMSCRIPTENx__
+        float magic_y = GUI_windowHeight*GUI_scale - rectView.y - rectView.h;
+        
+        SDL_RenderSetClipRect(GUI_renderer, GUI_MakeRect(rectView.x + rectClip.x,
+                                                         0 - magic_y + rectClip.y,
+                                                         rectClip.w,
+                                                         rectClip.h));
+#else
+        SDL_RenderSetClipRect(GUI_renderer, GUI_MakeRect(rectClip.x,
+                                                         rectClip.y,
+                                                         rectClip.w,
+                                                         rectClip.h));
+#endif
+        drawFocus();
+    }
     
     if (parent) {
         GUI_Rect parent_clip = GUI_Rect(parent->rectClip);
@@ -234,13 +321,13 @@ void GUI_View::predraw() {
     } else {
         rectClip = GUI_Rect(0, 0, rectView.w, rectView.h);
     }
-    
+
 #ifdef __EMSCRIPTENx__
     SDL_RenderSetViewport(GUI_renderer, GUI_MakeRect(rectView.x, GUI_windowHeight*GUI_scale - rectView.y - rectView.h, rectView.w, rectView.h));
 #else
     SDL_RenderSetViewport(GUI_renderer, GUI_MakeRect(rectView.x, rectView.y, rectView.w, rectView.h));
 #endif
-    
+
 #ifdef __EMSCRIPTENx__
     float magic_y = GUI_windowHeight*GUI_scale - rectView.y - rectView.h;
     
@@ -287,6 +374,15 @@ void GUI_View::postdraw() {
                                                          rectClip.h));
 #endif
     }
+    if( showInteract && getInteract() ) {
+        GUI_Rect *rect = GUI_MakeRect(0, 0, rectView.w, rectView.h);
+        
+        if (corner != 0) {
+            GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, corner * GUI_scale, cHightLightInteract);
+        } else {
+            GUI_FillRect(rect->x, rect->y, rect->w, rect->h, cHightLightInteract);
+        }
+    }
 }
 
 void GUI_View::clear(GUI_Rect *rect) {
@@ -298,6 +394,25 @@ void GUI_View::clear(GUI_Rect *rect) {
             GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, corner * GUI_scale, _backgroundColor);
         } else {
             GUI_FillRect(rect->x, rect->y, rect->w, rect->h, _backgroundColor);
+        }
+    }
+}
+
+void GUI_View::drawFocus() {
+    if (!isFocus())
+        return;
+    if (focusBorder <= 0 )
+        return;
+    
+    GUI_Rect *rect = GUI_MakeRect(0, 0, rectView.w+(focusBorder*2), rectView.h+(focusBorder*2));
+    
+    if (_backgroundColor.a != 0) {
+        SDL_Color color = _backgroundColor;
+        color.a = 96;
+        if (corner != 0) {
+            GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, ((corner) * GUI_scale)+focusBorder, color);
+        } else {
+            GUI_FillRect(rect->x, rect->y, rect->w, rect->h, color);
         }
     }
 }
@@ -320,6 +435,34 @@ bool GUI_View::toBack() {
     return false;
 }
 
+
+void GUI_View::setInteract(bool i) {
+    _interact = i;
+    if( i ) {
+        //GUI_Log( "Interact %s\n", title.c_str() );
+    }
+    else {
+        //GUI_Log( "DE-Interact %s\n", title.c_str() );
+    }
+    if( i ) {
+        if( lastInteractView != NULL && lastInteractView != this ) {
+            lastInteractView->setInteract(false);
+            //GUI_Log( "UN-Interact %s\n", lastInteractView->title.c_str() );
+        }
+        
+        lastInteractView = this;
+        //GUI_Log( "LastInteract %s\n", title.c_str() );
+    }
+}
+
+void GUI_View::setFocus() {
+    if( lastFocusView != NULL && lastFocusView != this ) {
+        lastFocusView->killFocus();
+    }
+    lastFocusView = this;
+    _focus = true;
+};
+
 void GUI_View::setPadding(int p0, int p1, int p2, int p3) {
     _padding[0] = p0;
     _padding[1] = p1;
@@ -336,11 +479,11 @@ void GUI_View::setMargin(int p0, int p1, int p2, int p3) {
     _margin[2] = p2;
     _margin[3] = p3;
     
-    if (parent)
+    if (parent) {
         parent->updateLayout();
-    else {
-        this->updateLayout();
+        updateLayout();
     }
+    this->updateLayout();
 }
 
 GUI_View *GUI_View::hitTest(int x, int y, bool bRecursive) {

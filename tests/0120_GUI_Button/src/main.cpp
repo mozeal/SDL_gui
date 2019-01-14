@@ -46,8 +46,14 @@ int main(int argc, char *argv[]) {
     
     auto label = GUI_Label::create(topView, "This label for visible testing");
     
-    auto button1 = GUI_Button::create(topView, "Visible");
+    auto button1 = GUI_Button::create(topView, "Visible", kIcon_eye, 0, 0, 120, 0 );
     button1->setBackgroundColor(cCyan);
+    button1->setMargin( 10, 10, 10, 10 );
+    
+    auto button2 = GUI_Button::create(topView, "Hidden", kIcon_eye_slash, 0, 0, 120, 0 );
+    button2->setBackgroundColor(cBlue);
+    button2->setTextColor(cWhite);
+    button2->setMargin( 0, 10, 10, 10 );
 
     GUI_Run();
     GUI_Destroy();
