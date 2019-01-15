@@ -46,6 +46,7 @@ border(1),
 focusBorder(0),
 corner(0),
 dragable(false),
+focusable(false),
 click_through(false),
 click_to_top(true),
 _padding{0,0,0,0},
@@ -89,9 +90,14 @@ bool GUI_View::eventHandler(SDL_Event*event) {
     bool BreakRecursive = false;
     switch( event->type ) {
         case GUI_EventPaint:
-            predraw();
-            draw();
-            postdraw();
+            if( isVisible() ) {
+                predraw();
+                draw();
+                postdraw();
+            }
+            else {
+                BreakRecursive = true;
+            }
             break;
         case SDL_MOUSEBUTTONDOWN:
         {
@@ -107,6 +113,9 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             int y = (int)(e.y*GUI_mouseScale);
             SDL_Log( "To HitTest %s %i %i\n", title.c_str(), x, y );
             if( hitTest(x, y, false) ) {
+                if( focusable ) {
+                    setFocus();
+                }
                 GUI_Log( "Hitted %s\n", title.c_str() );
                 if( click_to_top ) {
                     if( toTop() ) {
@@ -409,6 +418,9 @@ void GUI_View::drawFocus() {
     if (_backgroundColor.a != 0) {
         SDL_Color color = _backgroundColor;
         color.a = 96;
+        color.r &= 0x7F;
+        color.g &= 0x7F;
+        color.b &= 0x7F;
         if (corner != 0) {
             GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, ((corner) * GUI_scale)+focusBorder, color);
         } else {
@@ -522,6 +534,7 @@ void GUI_View::updateSize() {
 }
 
 void GUI_View::updateLayout() {
+    GUI_Log( "UpdateLayout %s\n", title.c_str() );
     updateSize();
     
     if( this == GUI_topView ) {
@@ -725,6 +738,7 @@ void GUI_View::updateLayout() {
                     child->rectView.h = rectView.h - (_padding[0] + child->_margin[0] + _padding[2] + child->_margin[2]) * GUI_scale;
                 }
             }
+            child->updateLayout();
         }
         w += (_padding[1] + _padding[3]) * GUI_scale; // + (border * 2);
         h += (_padding[0] + _padding[2]) * GUI_scale; // + (border * 2);
@@ -832,6 +846,7 @@ void GUI_View::updateLayout() {
                     child->rectView.w = rectView.w - (_padding[1] + child->_margin[1] + _padding[3] + child->_margin[3]) * GUI_scale;
                 }
             }
+            child->updateLayout();
         }
         w += (_padding[1] + _padding[3]) * GUI_scale; // + (border * 2);
         h += (_padding[0] + _padding[2]) * GUI_scale; // + (border * 2);

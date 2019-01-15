@@ -77,18 +77,18 @@ void GUI_Label::setLayout( int l ) {
         }
         
         if( iconView ) {
-            iconView->setMargin( icm, textView ? 3 : 0, icm, 0 );
+            iconView->setMargin( icm, textView ? 4 : 0, icm, 0 );
         }
         if( textView ) {
-            textView->setMargin( txm, 0, txm, iconView ? 3 : 0 );
+            textView->setMargin( txm, 0, txm, iconView ? 4 : 0 );
         }
     }
     else if( _layout == GUI_LAYOUT_VERTICAL ) {
         if( iconView ) {
-            iconView->setMargin( 0, 0, textView ? 3 : 0, 0 );
+            iconView->setMargin( 0, 0, textView ? 4 : 0, 0 );
         }
         if( textView ) {
-            textView->setMargin( iconView ? 3 : 0, 0, 0, 0 );
+            textView->setMargin( iconView ? 4 : 0, 0, 0, 0 );
         }
     }
 }

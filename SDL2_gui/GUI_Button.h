@@ -14,7 +14,6 @@
 
 class GUI_Button : public GUI_Label {
 protected:
-    bool isDown;
     Uint32 touchTime, touchHoldTime;
 public:
     static GUI_Button *create( GUI_View *parent, const char *title, uint16_t unicode=0, int x=0, int y=0, int width=0, int height=0,

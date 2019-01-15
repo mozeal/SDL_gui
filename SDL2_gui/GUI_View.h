@@ -47,6 +47,7 @@ protected:
     bool    _focus;
     bool    _interact;
     bool    _selected;
+    
 
     bool    _dragging;
 
@@ -86,6 +87,7 @@ public:
     int border;
     int focusBorder;
     bool dragable;
+    bool focusable;
     bool showInteract;
     bool mouseReceive;
     bool click_through;

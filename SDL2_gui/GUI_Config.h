@@ -12,7 +12,7 @@
 #include <string>
 
 const std::string GUI_UITextFontName = "Kanit-Light.ttf";
-const std::string GUI_UIIconFontName = "fa-regular-400.ttf";
+const std::string GUI_UIIconFontName = "fa-solid-900.ttf";
 const int GUI_UITextFontSize = 16;
 const int GUI_UIIconFontSize = 16;
 

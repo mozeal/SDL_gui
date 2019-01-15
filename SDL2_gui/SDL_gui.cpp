@@ -286,6 +286,8 @@ GUI_View *GUI_createTopView(const char* t, int x, int y, int w, int h,
     
     GUI_topView = GUI_View::create(NULL,  t, x, y, w, h, userEventHandler);
     
+    GUI_topView->focusable = true;
+    
     if (w == -1) {
         w = GUI_windowWidth - x;
     }

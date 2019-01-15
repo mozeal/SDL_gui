@@ -18,8 +18,7 @@ GUI_Button *GUI_Button::create( GUI_View *parent, const char *title, uint16_t un
 
 GUI_Button::GUI_Button(GUI_View *parent, const char *title, uint16_t unicode, int x, int y, int width, int height,
                        std::function<void(GUI_Button*)>callbackFunction) :
-GUI_Label(parent, title, unicode, x, y, width, height, NULL ),
-isDown(false)
+GUI_Label(parent, title, unicode, x, y, width, height, NULL )
 {
     dragable = false;
     showInteract = true;
@@ -51,7 +50,6 @@ bool GUI_Button::eventHandler(SDL_Event*event) {
                 int y = (int)(e.y*GUI_mouseScale);
                 if( hitTest(x, y, false) ) {
                     GUI_Log( "Button hit %s\n", title.c_str() );
-                    isDown = true;
                     setFocus();
                     GUI_mouseCapturedView = (GUI_View *)this;
                     touchTime = SDL_GetTicks(); // time in millis
@@ -90,6 +88,11 @@ bool GUI_Button::eventHandler(SDL_Event*event) {
                 int y = (int)(e.y*GUI_mouseScale);
                 if( hitTest(x, y, false) ) {
                     GUI_Log( "Button UP %s\n", title.c_str() );
+                    
+                    if (callback) {
+                        callback(this);
+                        return true;
+                    }
                     
                     return true;
                 }

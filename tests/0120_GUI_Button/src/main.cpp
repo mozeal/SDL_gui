@@ -18,6 +18,8 @@ int expectedHeight = 540;
 
 static GUI_View *topView;
 
+GUI_Label *label;
+
 int main(int argc, char *argv[]) {
     SDL_Log( "Hello, World!\n" );
     SDL_SetHint(SDL_HINT_ORIENTATIONS, "LandscapeLeft LandscapeRight");
@@ -44,16 +46,30 @@ int main(int argc, char *argv[]) {
     topView->setPadding(5, 5, 5, 5);
     topView->setLayout( GUI_LAYOUT_VERTICAL );
     
-    auto label = GUI_Label::create(topView, "This label for visible testing");
+    label = GUI_Label::create(topView, "This label for visible testing");
     
-    auto button1 = GUI_Button::create(topView, "Visible", kIcon_eye, 0, 0, 120, 0 );
+    auto button1 = GUI_Button::create(topView, "Visible", kIcon_solid_eye, 0, 0, 120, 0, [=](GUI_Button *bt) {
+        label->setVisible(true);
+        topView->updateLayout();
+    } );
     button1->setBackgroundColor(cCyan);
     button1->setMargin( 10, 10, 10, 10 );
     
-    auto button2 = GUI_Button::create(topView, "Hidden", kIcon_eye_slash, 0, 0, 120, 0 );
+    auto button2 = GUI_Button::create(topView, "Hidden", kIcon_solid_eye_slash, 0, 0, 120, 0, [=](GUI_Button *bt) {
+        label->setVisible(false);
+        topView->updateLayout();
+    } );
     button2->setBackgroundColor(cBlue);
     button2->setTextColor(cWhite);
     button2->setMargin( 0, 10, 10, 10 );
+    
+    auto button3 = GUI_Button::create(topView, "Toggle", kIcon_solid_exchange_alt, 0, 0, 120, 0, [=](GUI_Button *bt) {
+        label->setVisible(!label->isVisible());
+        topView->updateLayout();
+    } );
+    button3->setBackgroundColor(cWhite);
+    button3->setTextColor(cBlack);
+    button3->setMargin( 0, 10, 10, 10 );
 
     GUI_Run();
     GUI_Destroy();
