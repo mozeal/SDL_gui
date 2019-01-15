@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <functional>
 #include <vector>
+#include <list>
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include "GUI_Utils.h"
@@ -33,10 +34,12 @@
 class GUI_View {
 protected:
     std::function<bool(SDL_Event* ev)>user_events_handler;
+    std::function<void(GUI_View*)>callback;
     
     virtual void predraw();
     virtual void draw();
     virtual void postdraw();
+    virtual void drawInteract();
     virtual void drawFocus();
     
     static GUI_View *lastInteractView;
@@ -197,6 +200,10 @@ public:
     
     virtual void setTitle( std::string t ) {
         title = std::string(t);
+    }
+    
+    virtual void setCallback( std::function<void(GUI_View*)>cb ) {
+        callback = cb;
     }
 };
 

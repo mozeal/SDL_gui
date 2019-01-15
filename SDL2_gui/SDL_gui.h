@@ -34,6 +34,7 @@
 #include "GUI_IconView.h"
 #include "GUI_Label.h"
 #include "GUI_Button.h"
+#include "GUI_CheckBox.h"
 #include "SDL2_gfxPrimitives.h"
 
 int GUI_Init( const char* title, int expectedWidth, int expectedHeight );

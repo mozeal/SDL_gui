@@ -12,12 +12,12 @@
 extern GUI_View * GUI_mouseCapturedView;
 
 GUI_Button *GUI_Button::create( GUI_View *parent, const char *title, uint16_t unicode, int x, int y, int width, int height,
-                          std::function<void(GUI_Button*)>callbackFunction ) {
+                          std::function<void(GUI_View*)>callbackFunction ) {
     return new GUI_Button( parent, title, unicode, x, y, width, height, callbackFunction );
 }
 
 GUI_Button::GUI_Button(GUI_View *parent, const char *title, uint16_t unicode, int x, int y, int width, int height,
-                       std::function<void(GUI_Button*)>callbackFunction) :
+                       std::function<void(GUI_View*)>callbackFunction) :
 GUI_Label(parent, title, unicode, x, y, width, height, NULL )
 {
     dragable = false;

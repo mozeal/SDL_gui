@@ -9,6 +9,7 @@
 #include "GUI_View.h"
 #include "GUI_Utils.h"
 #include "GUI_shapes.h"
+#include <list>
 
 extern int GUI_physicalWindowWidth;
 extern int GUI_physicalWindowHeight;
@@ -61,7 +62,8 @@ _focus(false),
 _interact(false),
 _dragging(false),
 showInteract(false),
-mouseReceive(true)
+mouseReceive(true),
+callback(nullptr)
 {
     ox = x;
     oy = y;
@@ -357,7 +359,21 @@ void GUI_View::draw() {
 
 }
 
+void GUI_View::drawInteract() {
+    if( showInteract && getInteract() ) {
+        GUI_Rect *rect = GUI_MakeRect(0, 0, rectView.w, rectView.h);
+        
+        if (corner != 0) {
+            GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, corner * GUI_scale, cHightLightInteract);
+        } else {
+            GUI_FillRect(rect->x, rect->y, rect->w, rect->h, cHightLightInteract);
+        }
+    }
+}
+
 void GUI_View::postdraw() {
+    drawInteract();
+    
     if (border > 0) {
         GUI_Rect r = GUI_Rect(border, border, rectView.w - (2 * border), rectView.h - (2 * border));
         
@@ -383,15 +399,7 @@ void GUI_View::postdraw() {
                                                          rectClip.h));
 #endif
     }
-    if( showInteract && getInteract() ) {
-        GUI_Rect *rect = GUI_MakeRect(0, 0, rectView.w, rectView.h);
-        
-        if (corner != 0) {
-            GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, corner * GUI_scale, cHightLightInteract);
-        } else {
-            GUI_FillRect(rect->x, rect->y, rect->w, rect->h, cHightLightInteract);
-        }
-    }
+
 }
 
 void GUI_View::clear(GUI_Rect *rect) {
@@ -444,6 +452,16 @@ bool GUI_View::toTop() {
 }
 
 bool GUI_View::toBack() {
+    if( !parent )
+        return false;
+    
+    for (std::vector<GUI_View *>::iterator it = parent->children.begin() ; it < parent->children.end(); ++it) {
+        if( this == *it ) {
+            parent->children.erase( it );
+            parent->children.insert(parent->children.begin(), this);
+            return true;
+        }
+    }
     return false;
 }
 
@@ -668,7 +686,7 @@ void GUI_View::updateLayout() {
                 child->topLeft.x = (rectView.w - child->rectView.w) / 2;
                 child->rectView.x = rectView.x + child->topLeft.x;
                 
-                for (std::vector<GUI_View *>::iterator iit = it-1; iit >= children.begin(); --iit) {                
+                for (std::vector<GUI_View *>::iterator iit = it-1; iit >= children.begin(); --iit) {
                     GUI_View *cc = *iit;
                     
                     if (cc->isVisible() == false)
