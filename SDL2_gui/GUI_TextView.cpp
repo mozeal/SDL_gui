@@ -29,10 +29,14 @@ font(NULL)
         return;
     }
     
-    if( title ) {
+    updateContent();
+}
+
+void GUI_TextView::updateContent() {
+    if( title.length() ) {
         //We need to first render to a surface as that's what TTF_RenderText returns, then
         //load that surface into a texture
-        SDL_Surface *surf = TTF_RenderUTF8_Blended(font, title, cWhite);
+        SDL_Surface *surf = TTF_RenderUTF8_Blended(font, title.c_str(), cWhite);
         if (surf == NULL){
             GUI_Log("Could not create text surface\n");
             return;
@@ -45,10 +49,10 @@ font(NULL)
         image.setTexture(texture);
         //Clean up the surface and font
         SDL_FreeSurface(surf);
-
+        
         updateSize();
         updateLayout();
-    }    
+    }
 }
 
 GUI_TextView::~GUI_TextView() {
@@ -59,3 +63,5 @@ void GUI_TextView::setTextColor( SDL_Color c ) {
     _textColor = c;
     colorMod = c;
 }
+
+

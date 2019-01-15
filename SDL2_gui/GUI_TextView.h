@@ -22,6 +22,11 @@ public:
                   std::function<bool(SDL_Event* ev)>userEventHandler = NULL);
     virtual ~GUI_TextView();
     virtual void setTextColor( SDL_Color c );
+    virtual void setTitle( std::string t ) {
+        title = std::string(t);
+        updateContent();
+    }
+    virtual void updateContent();
 };
 
 #endif /* GUI_TextView_hpp */

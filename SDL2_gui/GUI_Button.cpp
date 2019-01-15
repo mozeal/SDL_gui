@@ -37,7 +37,18 @@ GUI_Button::~GUI_Button() {
     
 }
 
-
+void GUI_Button::setEnable(bool e) {
+    _enable = e;
+    if( _enable ) {
+        textView->setTextColor(cBlack);
+        iconView->setTextColor(cBlack);
+        setBorderColor(cBlack);
+    } else {
+        textView->setTextColor(cGrey);
+        iconView->setTextColor(cGrey);
+        setBorderColor(cGrey);
+    }
+};
 
 bool GUI_Button::eventHandler(SDL_Event*event) {
     switch (event->type) {

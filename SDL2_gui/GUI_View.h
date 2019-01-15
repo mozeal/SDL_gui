@@ -124,6 +124,10 @@ public:
     virtual bool toTop();
     virtual bool toBack();
     
+    virtual void updateContent() {
+        
+    }
+    
     void move(int dx, int dy);
     void move_rectView(int dx, int dy);  // move win
 
@@ -161,6 +165,10 @@ public:
         return _enable;
     };
     
+    virtual void setEnable(bool e) {
+        _enable = e;
+    };
+    
     virtual bool isVisible() {
         return _visible;
     };
@@ -186,6 +194,10 @@ public:
     virtual bool isFocus() {
         return _focus;
     };
+    
+    virtual void setTitle( std::string t ) {
+        title = std::string(t);
+    }
 };
 
 #endif /* GUI_View_hpp */

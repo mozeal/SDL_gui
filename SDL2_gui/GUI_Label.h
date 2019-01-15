@@ -26,6 +26,8 @@ public:
     virtual ~GUI_Label();
     virtual void setTextColor( SDL_Color c );
 
+    virtual void setTitle( std::string t );
+    virtual void setIcon( uint16_t unicode );
     
     virtual void setLayout( int l );
     virtual void setContentAlign( int a );

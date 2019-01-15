@@ -20,6 +20,15 @@ GUI_TextView(parent, NULL, fontname, fontsize, x, y, width, height, userEventHan
 {
     mouseReceive = false;
 
+    setIcon(unicode);
+}
+
+GUI_IconView::~GUI_IconView() {
+    
+}
+
+void GUI_IconView::setIcon( uint16_t unicode ) {
+    icon = unicode;
     SDL_Texture *texture = createTextureFormUnicode( unicode );
     if (texture == NULL){
         GUI_Log("Could not create icon texture\n");
@@ -29,10 +38,6 @@ GUI_TextView(parent, NULL, fontname, fontsize, x, y, width, height, userEventHan
     
     updateSize();
     updateLayout();
-}
-
-GUI_IconView::~GUI_IconView() {
-    
 }
 
 SDL_Texture* GUI_IconView::createTextureFormUnicode(Uint16 unicode, SDL_Rect* rect) {

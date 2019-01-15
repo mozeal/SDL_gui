@@ -21,6 +21,7 @@ public:
     GUI_Button(GUI_View *parent, const char *title, uint16_t unicode=0, int x=0, int y=0, int width=0, int height=0,
                std::function<void(GUI_Button*)>callbackFunction = NULL);
     virtual ~GUI_Button();
+    virtual void setEnable(bool e);
     
     std::function<void(GUI_Button*)>callback;
     

@@ -51,6 +51,21 @@ GUI_Label::~GUI_Label() {
     
 }
 
+void GUI_Label::setTitle( std::string t ) {
+    title = std::string(t);
+    if( textView ) {
+        textView->setTitle(t);
+    }
+    updateLayout();
+}
+
+void GUI_Label::setIcon( uint16_t unicode ) {
+    if( iconView ) {
+        iconView->setIcon( unicode );
+    }
+    updateLayout();
+}
+
 void GUI_Label::setTextColor( SDL_Color c ) {
     _textColor = c;
     if( textView ) {

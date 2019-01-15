@@ -13,12 +13,15 @@
 #include "GUI_TextView.h"
 
 class GUI_IconView : public GUI_TextView {
+    uint16_t icon;
 public:
     static GUI_IconView *create( GUI_View *parent, uint16_t unicode, const char *fontname, int fontsize, int x=0, int y=0, int width=0, int height=0,
                                 std::function<bool(SDL_Event* ev)>userEventHandler = NULL );
     GUI_IconView(GUI_View *parent, uint16_t unicode, const char *fontname, int fontsize, int x=0, int y=0, int width=0, int height=0,
                  std::function<bool(SDL_Event* ev)>userEventHandler = NULL);
     virtual ~GUI_IconView();
+    
+    virtual void setIcon( uint16_t unicode );
     
     SDL_Texture* createTextureFormUnicode(Uint16 unicode, SDL_Rect* rect=NULL);
 };

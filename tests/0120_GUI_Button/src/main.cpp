@@ -71,6 +71,30 @@ int main(int argc, char *argv[]) {
     button3->setTextColor(cBlack);
     button3->setMargin( 0, 10, 10, 10 );
 
+    
+    auto button4 = GUI_Button::create(topView, "Enable", kIcon_solid_thumbs_up, 0, 0, 120, 0, [=](GUI_Button *bt) {
+    } );
+    button4->setBackgroundColor(cWhite);
+    button4->setTextColor(cBlack);
+    button4->setMargin( 10, 10, 10, 10 );
+
+    auto button5 = GUI_Button::create(topView, "Toggle", kIcon_solid_exchange_alt, 0, 0, 120, 0, [=](GUI_Button *bt) {
+        button4->setEnable(!button4->isEnable());
+        if( button4->isEnable() ) {
+            button4->setTitle("Enable");
+            button4->setIcon( kIcon_solid_thumbs_up );
+        }
+        else {
+            button4->setTitle("Disabled");
+            button4->setIcon( kIcon_solid_thumbs_down );
+        }
+    } );
+    button5->setBackgroundColor(cRed);
+    button5->setTextColor(cWhite);
+    button5->setMargin( 0, 10, 10, 10 );
+
+    
+    
     GUI_Run();
     GUI_Destroy();
 
