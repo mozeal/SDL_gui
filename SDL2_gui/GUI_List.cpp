@@ -20,9 +20,14 @@ GUI_View( parent, title, x, y, width, height )
 {
     setCallback( callbackFunction );
     setBackgroundColor(cClear);
+    showInteract = true;
     
     setLayout(GUI_LAYOUT_HORIZONTAL);
     border = 0;
+    
+    this->setCallback([](GUI_View *v) {
+        GUI_Log( v->title.c_str() );
+    });
 }
 
 GUI_ListItem::~GUI_ListItem() {
@@ -58,6 +63,7 @@ GUI_View( parent, title, x, y, width, height )
 {
     setCallback( callbackFunction );
  
+    
     setBackgroundColor(cWhite);
     setLayout(GUI_LAYOUT_VERTICAL);
     border = 1;

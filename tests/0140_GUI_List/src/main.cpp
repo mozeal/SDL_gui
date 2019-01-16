@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
     
     auto column1 = GUI_View::create(topView, "COL1", 0, 0, 250, -1);
     column1->setLayout(GUI_LAYOUT_VERTICAL);
-    column1->corner = 4;
+    column1->corner = 3;
     column1->setPadding( 5, 0, 5, 0 );
     column1->click_to_top = false;
     
@@ -154,7 +154,7 @@ int main(int argc, char *argv[]) {
 
     auto subcolumn2 = GUI_View::create(column2, "COL2", 0, 0, 220, 0);
     subcolumn2->setLayout(GUI_LAYOUT_VERTICAL);
-    subcolumn2->corner = 4;
+    subcolumn2->corner = 3;
     subcolumn2->setPadding( 5, 0, 0, 0 );
 
     
@@ -186,7 +186,7 @@ int main(int argc, char *argv[]) {
     auto list = GUI_List::create( column2, "List", 0, 0, -1, 0 );
     list->setMargin( 10, 0, 0, 0 );
     list->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
-    list->setBackgroundColor(cCyan);
+    list->setBackgroundColor(cWhite);
     
     list->addSimpleItem( "Simle List Item 1" );
     list->addSimpleItem( "Simle List Item 2" );
