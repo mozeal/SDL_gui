@@ -48,6 +48,7 @@ focusBorder(0),
 corner(0),
 dragable(false),
 focusable(false),
+clickable(false),
 click_through(false),
 click_to_top(false),
 _padding{0,0,0,0},
@@ -95,7 +96,19 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             if( isVisible() ) {
                 predraw();
                 draw();
+                SDL_Rect rClip;
+                SDL_Rect rView;
+                SDL_RenderGetViewport(GUI_renderer, &rView);
+                SDL_RenderGetClipRect(GUI_renderer, &rClip);
+                for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
+                    GUI_View *child = *it;
+                    if( child->eventHandler(event) )
+                        return true;
+                }
+                SDL_RenderSetViewport(GUI_renderer, &rView);
+                SDL_RenderSetClipRect(GUI_renderer, &rClip);
                 postdraw();
+                BreakRecursive = true;
             }
             else {
                 BreakRecursive = true;
@@ -123,6 +136,11 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                     if( toTop() ) {
                         BreakSiblingPropagate = true;
                     }
+                }
+                if( clickable ) {
+                    GUI_mouseCapturedView = this;
+                    touchTime = SDL_GetTicks(); // time in millis
+                    touchHoldTime = touchTime;
                 }
                 if( dragable ) {
                     _dragging = true;
@@ -199,6 +217,13 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 SDL_Log( "Undragging %s\n", title.c_str() );
                 GUI_mouseCapturedView = NULL;
                 return true;
+            }
+            if( clickable ) {
+                GUI_mouseCapturedView = NULL;
+                if (callback) {
+                    callback(this);
+                    return true;
+                }
             }
             return false;
         }
@@ -553,7 +578,7 @@ void GUI_View::updateSize() {
 }
 
 void GUI_View::updateLayout() {
-    GUI_Log( "UpdateLayout %s\n", title.c_str() );
+    //GUI_Log( "UpdateLayout %s\n", title.c_str() );
     updateSize();
     
     if( this == GUI_topView ) {
@@ -844,7 +869,7 @@ void GUI_View::updateLayout() {
                 child->rectView.y = rectView.y + child->topLeft.y;
                 
                 if (child->oh == -1) {
-                    child->rectView.h = rectView.w - child->topLeft.y - (_padding[2] + child->_margin[2])* GUI_scale;
+                    child->rectView.h = rectView.h - child->topLeft.y - (_padding[2] + child->_margin[2])* GUI_scale;
                 }
                 
                 y += child->rectView.h + (child->_margin[0] + child->_margin[2]) * GUI_scale;

@@ -33,7 +33,8 @@ font(NULL)
 }
 
 void GUI_TextView::updateContent() {
-    if( title.length() ) {
+    //if( title )
+    {
         //We need to first render to a surface as that's what TTF_RenderText returns, then
         //load that surface into a texture
         SDL_Surface *surf = TTF_RenderUTF8_Blended(font, title.c_str(), cWhite);

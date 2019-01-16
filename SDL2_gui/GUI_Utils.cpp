@@ -92,8 +92,9 @@ cDarkGrey = sdl_color(0x707070ff),
 cLightGrey = sdl_color(0xe0e0e0ff),
 cCornFlower = sdl_color(0x6495edff),
 cHightLightSelected = sdl_color(0x338dfbff),
-cHightLightInteract = sdl_color(0x40404050),
-cTextSelected = sdl_color(0x9cc7e6ff); // Tooh - text selection
+cHightLightInteract = sdl_color(0x40404040),
+cTextSelected = sdl_color(0x9cc7e6ff), // Tooh - text selection
+cHightLightSelection = sdl_color(0x6495edC0);
 
 
 static GUI_LogLevel currentLogLevel = GUI_LOG_NOTICE;

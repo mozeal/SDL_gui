@@ -182,11 +182,16 @@ int main(int argc, char *argv[]) {
     radioGroup1->add( GUI_RadioButton::create( NULL, "Radio Button 4", 0, 0, 140, 0) );
     radioGroup1->add( GUI_RadioButton::create( NULL, "Radio Button 5", 0, 0, 140, 0) );
     
+    auto label5 = GUI_Label::create(column2, " ");
+    label5->setMargin(10, 0, 0, 0 );
 
-    auto list = GUI_List::create( column2, "List", 0, 0, -1, 0 );
+    auto list = GUI_List::create( column2, "List", 0, 0, -1, -1, [=](GUI_View *v) {
+        GUI_List *l = (GUI_List *)v;
+        GUI_Log( "Selected: %s\n", l->selectedItem->title.c_str() );
+        label5->setTitle(l->selectedItem->title);
+    } );
     list->setMargin( 10, 0, 0, 0 );
     list->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
-    list->setBackgroundColor(cWhite);
     
     list->addSimpleItem( "Simle List Item 1" );
     list->addSimpleItem( "Simle List Item 2" );

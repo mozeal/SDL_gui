@@ -21,7 +21,10 @@ GUI_Button::GUI_Button(GUI_View *parent, const char *title, uint16_t unicode, in
 GUI_Label(parent, title, unicode, x, y, width, height, NULL )
 {
     dragable = false;
+    clickable = true;
+    focusable = true;
     showInteract = true;
+    mouseReceive = true;
     
     setBackgroundColor(cCyan);
     callback = callbackFunction;
@@ -50,6 +53,7 @@ void GUI_Button::setEnable(bool e) {
     }
 };
 
+/*
 bool GUI_Button::eventHandler(SDL_Event*event) {
     switch (event->type) {
         case SDL_MOUSEBUTTONDOWN:
@@ -119,5 +123,5 @@ bool GUI_Button::eventHandler(SDL_Event*event) {
     
     return false;
 }
-
+*/
 

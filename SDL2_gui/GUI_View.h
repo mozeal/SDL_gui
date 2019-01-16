@@ -68,6 +68,8 @@ protected:
     GUI_Point lastMousePoint;
     
     int     ox, oy, ow, oh;
+    
+    Uint32 touchTime, touchHoldTime;
 public:
     static GUI_View *create( GUI_View *parent, const char *title, int x, int y, int width, int height,
                                 std::function<bool(SDL_Event* ev)>userEventHandler = NULL );
@@ -91,6 +93,7 @@ public:
     int focusBorder;
     bool dragable;
     bool focusable;
+    bool clickable;
     bool showInteract;
     bool mouseReceive;
     bool click_through;

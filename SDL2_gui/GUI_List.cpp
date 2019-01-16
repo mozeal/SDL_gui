@@ -18,16 +18,17 @@ GUI_ListItem::GUI_ListItem(GUI_View *parent, const char *title, int x, int y, in
                            std::function<void(GUI_View*)>callbackFunction ) :
 GUI_View( parent, title, x, y, width, height )
 {
-    setCallback( callbackFunction );
-    setBackgroundColor(cClear);
+    dragable = false;
+    clickable = true;
+    focusable = true;
+    showInteract = true;
+    mouseReceive = true;
+    
+    setBackgroundColor(cWhite);
     showInteract = true;
     
     setLayout(GUI_LAYOUT_HORIZONTAL);
     border = 0;
-    
-    this->setCallback([](GUI_View *v) {
-        GUI_Log( v->title.c_str() );
-    });
 }
 
 GUI_ListItem::~GUI_ListItem() {
@@ -37,10 +38,10 @@ GUI_ListItem::~GUI_ListItem() {
 void GUI_ListItem::setSelected( bool s ) {
     selected = s;
     if( selected ) {
-        setBackgroundColor( cBlue );
+        setBackgroundColor( cHightLightSelection );
     }
     else {
-        setBackgroundColor( cClear );
+        setBackgroundColor( cWhite );
     }
 }
 
@@ -64,7 +65,7 @@ GUI_View( parent, title, x, y, width, height )
     setCallback( callbackFunction );
  
     
-    setBackgroundColor(cWhite);
+    setBackgroundColor(sdl_color(0xf0f0f0ff));
     setLayout(GUI_LAYOUT_VERTICAL);
     border = 1;
     corner = 4;
@@ -87,6 +88,7 @@ void GUI_List::add(GUI_ListItem* child) {
             GUI_ListItem *c = *it;
             if( lit == c ) {
                 c->setSelected(true);
+                GUI_Log( "%s\n", c->title.c_str());
                 this->selectedItem = c;
                 if( this->callback ) {
                     this->callback(this);
@@ -111,7 +113,7 @@ void GUI_List::remove(GUI_ListItem* child) {
 }
 
 void GUI_List::addSimpleItem( const char *title ) {
-    GUI_ListItem *item1 = GUI_ListItem::create( NULL, "List Item 1", 0, 0, -1, 0 );
+    GUI_ListItem *item1 = GUI_ListItem::create( NULL, title, 0, 0, -1, 0 );
     item1->setPadding( 5, 10, 5, 10 );
 
     

@@ -56,6 +56,7 @@ extern SDL_Color cCornFlower;
 extern SDL_Color cHightLightSelected;
 extern SDL_Color cHightLightInteract;
 extern SDL_Color cTextSelected;
+extern SDL_Color cHightLightSelection;
 
 typedef enum GUI_LOGLEVEL_ {
     GUI_LOG_VERBOSE = 0,

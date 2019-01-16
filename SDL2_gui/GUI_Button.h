@@ -14,7 +14,7 @@
 
 class GUI_Button : public GUI_Label {
 protected:
-    Uint32 touchTime, touchHoldTime;
+
 public:
     static GUI_Button *create( GUI_View *parent, const char *title, uint16_t unicode=0, int x=0, int y=0, int width=0, int height=0,
                                 std::function<void(GUI_View*)>callbackFunction = NULL );
@@ -23,7 +23,7 @@ public:
     virtual ~GUI_Button();
     virtual void setEnable(bool e);
     
-    virtual bool eventHandler(SDL_Event*ev);
+    //virtual bool eventHandler(SDL_Event*ev);
 };
 
 
