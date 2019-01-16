@@ -266,6 +266,7 @@ void GUI_View::remove_child(GUI_View *child) {
             break;
         }
     }
+    updateLayout();
 }
 
 void GUI_View::remove_all_children() {
@@ -552,7 +553,7 @@ void GUI_View::updateSize() {
 }
 
 void GUI_View::updateLayout() {
-    GUI_Log( "UpdateLayout %s\n", title.c_str() );
+    //GUI_Log( "UpdateLayout %s\n", title.c_str() );
     updateSize();
     
     if( this == GUI_topView ) {
@@ -763,11 +764,17 @@ void GUI_View::updateLayout() {
         if( ow == 0 ) {
             if( rectView.w != w ) {
                 rectView.w = w;
+                if( parent && parent->ow == 0 ) {
+                    parent->updateLayout();
+                }
             }
         }
         if( oh == 0 ) {
             if( rectView.h != h ) {
                 rectView.h = h;
+                if( parent && parent->oh == 0 ) {
+                    parent->updateLayout();
+                }
             }
         }
     } else if (_layout == GUI_LAYOUT_VERTICAL) {
@@ -871,11 +878,17 @@ void GUI_View::updateLayout() {
         if( ow == 0 ) {
             if( rectView.w != w ) {
                 rectView.w = w;
+                if( parent && parent->ow == 0 ) {
+                    parent->updateLayout();
+                }
             }
         }
         if( oh == 0 ) {
             if( rectView.h != h ) {
                 rectView.h = h;
+                if( parent && parent->oh == 0 ) {
+                    parent->updateLayout();
+                }
             }
         }
     }

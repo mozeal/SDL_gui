@@ -35,6 +35,8 @@
 #include "GUI_Label.h"
 #include "GUI_Button.h"
 #include "GUI_CheckBox.h"
+#include "GUI_RadioButton.h"
+#include "GUI_RadioButtonGroup.h"
 #include "SDL2_gfxPrimitives.h"
 
 int GUI_Init( const char* title, int expectedWidth, int expectedHeight );

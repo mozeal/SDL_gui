@@ -21,6 +21,8 @@
 		385B9B6C21CFB1F7000E5F90 /* GUI_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 385B9B6A21CFB1F7000E5F90 /* GUI_image.cpp */; };
 		385B9B6F21CFC089000E5F90 /* GUI_ImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 385B9B6D21CFC089000E5F90 /* GUI_ImageView.cpp */; };
 		38B66C3121EE4BAB005C22C0 /* GUI_CheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38B66C2F21EE4BAB005C22C0 /* GUI_CheckBox.cpp */; };
+		38B66C4321EED3D8005C22C0 /* GUI_RadioButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38B66C4121EED3D8005C22C0 /* GUI_RadioButton.cpp */; };
+		38B66C4D21EEDD24005C22C0 /* GUI_RadioButtonGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38B66C4B21EEDD24005C22C0 /* GUI_RadioButtonGroup.cpp */; };
 		38EC050D21E9A5CE005F3A3A /* GUI_TextView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38EC050B21E9A5CE005F3A3A /* GUI_TextView.cpp */; };
 		38EC051321E9E4A4005F3A3A /* GUI_Fonts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38EC051121E9E4A4005F3A3A /* GUI_Fonts.cpp */; };
 		38EC05A921EAE48F005F3A3A /* GUI_Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38EC05A721EAE48F005F3A3A /* GUI_Label.cpp */; };
@@ -161,6 +163,10 @@
 		385B9B6E21CFC089000E5F90 /* GUI_ImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_ImageView.h; sourceTree = "<group>"; };
 		38B66C2F21EE4BAB005C22C0 /* GUI_CheckBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_CheckBox.cpp; sourceTree = "<group>"; };
 		38B66C3021EE4BAB005C22C0 /* GUI_CheckBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_CheckBox.h; sourceTree = "<group>"; };
+		38B66C4121EED3D8005C22C0 /* GUI_RadioButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_RadioButton.cpp; sourceTree = "<group>"; };
+		38B66C4221EED3D8005C22C0 /* GUI_RadioButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_RadioButton.h; sourceTree = "<group>"; };
+		38B66C4B21EEDD24005C22C0 /* GUI_RadioButtonGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_RadioButtonGroup.cpp; sourceTree = "<group>"; };
+		38B66C4C21EEDD24005C22C0 /* GUI_RadioButtonGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_RadioButtonGroup.h; sourceTree = "<group>"; };
 		38EC050B21E9A5CE005F3A3A /* GUI_TextView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_TextView.cpp; sourceTree = "<group>"; };
 		38EC050C21E9A5CE005F3A3A /* GUI_TextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_TextView.h; sourceTree = "<group>"; };
 		38EC051121E9E4A4005F3A3A /* GUI_Fonts.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Fonts.cpp; sourceTree = "<group>"; };
@@ -245,6 +251,7 @@
 		385B9A8A21CC1380000E5F90 /* SDL2_gui */ = {
 			isa = PBXGroup;
 			children = (
+				38EC05B421EAE6CC005F3A3A /* GUI_Config.h */,
 				385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */,
 				385B9A9321CC13A8000E5F90 /* SDL_gui.h */,
 				385B9AB421CCBC4C000E5F90 /* GUI_shapes.cpp */,
@@ -269,7 +276,10 @@
 				38EC062421EB996C005F3A3A /* GUI_Button.h */,
 				38B66C2F21EE4BAB005C22C0 /* GUI_CheckBox.cpp */,
 				38B66C3021EE4BAB005C22C0 /* GUI_CheckBox.h */,
-				38EC05B421EAE6CC005F3A3A /* GUI_Config.h */,
+				38B66C4121EED3D8005C22C0 /* GUI_RadioButton.cpp */,
+				38B66C4221EED3D8005C22C0 /* GUI_RadioButton.h */,
+				38B66C4B21EEDD24005C22C0 /* GUI_RadioButtonGroup.cpp */,
+				38B66C4C21EEDD24005C22C0 /* GUI_RadioButtonGroup.h */,
 			);
 			name = SDL2_gui;
 			path = ../../../SDL2_gui;
@@ -539,7 +549,9 @@
 				69CD9A151D15AED3004D8ED1 /* main.cpp in Sources */,
 				38EC05B321EAE505005F3A3A /* GUI_IconView.cpp in Sources */,
 				38EC05A921EAE48F005F3A3A /* GUI_Label.cpp in Sources */,
+				38B66C4D21EEDD24005C22C0 /* GUI_RadioButtonGroup.cpp in Sources */,
 				385B9B6F21CFC089000E5F90 /* GUI_ImageView.cpp in Sources */,
+				38B66C4321EED3D8005C22C0 /* GUI_RadioButton.cpp in Sources */,
 				385B9AB621CCBC4C000E5F90 /* GUI_shapes.cpp in Sources */,
 				38B66C3121EE4BAB005C22C0 /* GUI_CheckBox.cpp in Sources */,
 				385B9B6C21CFB1F7000E5F90 /* GUI_image.cpp in Sources */,

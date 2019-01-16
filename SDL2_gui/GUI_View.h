@@ -200,6 +200,7 @@ public:
     
     virtual void setTitle( std::string t ) {
         title = std::string(t);
+        updateContent();
     }
     
     virtual void setCallback( std::function<void(GUI_View*)>cb ) {

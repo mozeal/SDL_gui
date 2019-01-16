@@ -13,6 +13,7 @@
 #include "GUI_Button.h"
 
 class GUI_CheckBox : public GUI_Button {
+protected:
     GUI_View *checkView;
     bool checked;
     std::function<void(GUI_View*)>checkBoxCallback;

@@ -81,6 +81,6 @@ void GUI_CheckBox::drawInteract() {
     if( showInteract && getInteract() ) {
         GUI_Rect *rect = GUI_MakeRect(checkView->topLeft.x, checkView->topLeft.y, checkView->rectView.w, checkView->rectView.h);
         
-        GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, 2 * GUI_scale, cHightLightInteract);
+        GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, checkView->corner, cHightLightInteract);
     }
 }
