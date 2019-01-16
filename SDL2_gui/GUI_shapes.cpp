@@ -91,3 +91,8 @@ void GUI_FillRoundRect(SDL_Renderer * renderer, int x, int y, int w, int h, int 
 void GUI_FillRoundRect(int x, int y, int w, int h, int radius, SDL_Color c) {
     GUI_FillRoundRect(GUI_renderer, x, y, w, h, radius, c );
 }
+
+void GUI_DrawHLine( int x1, int x2, int y, SDL_Color color ) {
+    Uint8 *c = (Uint8 *)&color;
+    hlineRGBA( GUI_renderer, x1, x2, y, c[0], c[1], c[2], c[3]);
+}

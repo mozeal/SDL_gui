@@ -96,6 +96,9 @@ public:
     bool click_through;
     bool click_to_top;
     
+    int getWidth() { return rectView.w / GUI_scale; };
+    int getHeight() { return rectView.h / GUI_scale; };
+
     virtual void setBackgroundColor( SDL_Color c ) { _backgroundColor = c; };
     virtual SDL_Color getBackgroundColor() { return _backgroundColor; };
 

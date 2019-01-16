@@ -19,6 +19,7 @@ public:
     GUI_RadioButton(GUI_View *parent, const char *title, int x=0, int y=0, int width=0, int height=0,
                  std::function<void(GUI_View*)>callbackFunction = NULL);
     virtual ~GUI_RadioButton();
+    virtual void drawInteract();
 };
 
 #endif /* GUI_RadioButton_hpp */

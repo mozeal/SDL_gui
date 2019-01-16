@@ -49,7 +49,7 @@ corner(0),
 dragable(false),
 focusable(false),
 click_through(false),
-click_to_top(true),
+click_to_top(false),
 _padding{0,0,0,0},
 _margin{0,0,0,0},
 _layout(GUI_LAYOUT_ABSOLUTE),
@@ -113,12 +113,12 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             
             int x = (int)(e.x*GUI_mouseScale);
             int y = (int)(e.y*GUI_mouseScale);
-            SDL_Log( "To HitTest %s %i %i\n", title.c_str(), x, y );
+            //SDL_Log( "To HitTest %s %i %i\n", title.c_str(), x, y );
             if( hitTest(x, y, false) ) {
                 if( focusable ) {
                     setFocus();
                 }
-                GUI_Log( "Hitted %s\n", title.c_str() );
+                //GUI_Log( "Hitted %s\n", title.c_str() );
                 if( click_to_top ) {
                     if( toTop() ) {
                         BreakSiblingPropagate = true;
@@ -126,10 +126,10 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 }
                 if( dragable ) {
                     _dragging = true;
-                    SDL_Log( "Dragging %s\n", title.c_str() );
+                    //SDL_Log( "Dragging %s\n", title.c_str() );
                     if( parent ) {
                         parent->_dragging = false;
-                        SDL_Log( "Undragging %s\n", parent->title.c_str() );
+                        //SDL_Log( "Undragging %s\n", parent->title.c_str() );
                     }
                     lastMousePoint.set(x, y);
                     GUI_mouseCapturedView = this;
@@ -553,7 +553,7 @@ void GUI_View::updateSize() {
 }
 
 void GUI_View::updateLayout() {
-    //GUI_Log( "UpdateLayout %s\n", title.c_str() );
+    GUI_Log( "UpdateLayout %s\n", title.c_str() );
     updateSize();
     
     if( this == GUI_topView ) {

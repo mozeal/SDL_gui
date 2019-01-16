@@ -8,6 +8,7 @@
 
 #include "GUI_RadioButtonGroup.h"
 
+
 GUI_RadioButtonGroup *GUI_RadioButtonGroup::create( GUI_View *parent, const char *title, int x, int y, int width, int height,
                                     std::function<void(GUI_View*)>callbackFunction ) {
     return new GUI_RadioButtonGroup( parent, title, x, y, width, height, callbackFunction );
@@ -19,6 +20,7 @@ GUI_View(parent, title, x, y, width, height),
 selectedRadioButton(NULL)
 {
     setCallback( callbackFunction );
+    setBackgroundColor(cClear);
     border = 0;
 }
 

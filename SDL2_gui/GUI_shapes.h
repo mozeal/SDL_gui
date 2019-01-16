@@ -20,4 +20,6 @@ void GUI_DrawCircle(int cx, int cy, int radius, SDL_Color col);
 void GUI_DrawRoundRect(int x, int y, int w, int h, int radius, SDL_Color col);
 void GUI_FillRoundRect(int x, int y, int w, int h, int radius, SDL_Color col);
 
+void GUI_DrawHLine( int x1, int x2, int y, SDL_Color color );
+
 #endif /* GUI_shapes_hpp */

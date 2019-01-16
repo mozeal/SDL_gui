@@ -60,7 +60,7 @@ bool GUI_Button::eventHandler(SDL_Event*event) {
                 int x = (int)(e.x*GUI_mouseScale);
                 int y = (int)(e.y*GUI_mouseScale);
                 if( hitTest(x, y, false) ) {
-                    GUI_Log( "Button hit %s\n", title.c_str() );
+                    //GUI_Log( "Button hit %s\n", title.c_str() );
                     setFocus();
                     GUI_mouseCapturedView = (GUI_View *)this;
                     touchTime = SDL_GetTicks(); // time in millis
@@ -98,7 +98,7 @@ bool GUI_Button::eventHandler(SDL_Event*event) {
                 int x = (int)(e.x*GUI_mouseScale);
                 int y = (int)(e.y*GUI_mouseScale);
                 if( hitTest(x, y, false) ) {
-                    GUI_Log( "Button UP %s\n", title.c_str() );
+                    //GUI_Log( "Button UP %s\n", title.c_str() );
                     
                     if (callback) {
                         callback(this);

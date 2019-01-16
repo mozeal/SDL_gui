@@ -23,7 +23,9 @@ checked(false)
 {
     checkBoxCallback = callbackFunction;
     
-    checkView = GUI_View::create(this, "Check", 0, 0, textView->rectView.h/GUI_scale, textView->rectView.h/GUI_scale);
+    int cSize = ((int)(textView->rectView.h/GUI_scale)) & ~1;
+    
+    checkView = GUI_View::create(this, "Check", 0, 0, cSize, cSize);
     checkView->border = 1;
     checkView->toBack();
     checkView->corner = 2;

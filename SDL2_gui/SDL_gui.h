@@ -23,6 +23,8 @@
 #include <emscripten.h>
 #endif
 
+#include "SDL2_gfxPrimitives.h"
+
 #include "GUI_Config.h"
 #include "GUI_shapes.h"
 #include "GUI_Utils.h"
@@ -37,7 +39,7 @@
 #include "GUI_CheckBox.h"
 #include "GUI_RadioButton.h"
 #include "GUI_RadioButtonGroup.h"
-#include "SDL2_gfxPrimitives.h"
+#include "GUI_List.h"
 
 int GUI_Init( const char* title, int expectedWidth, int expectedHeight );
 void GUI_Run(std::function<bool(SDL_Event *ev)>handle_ev = NULL);
