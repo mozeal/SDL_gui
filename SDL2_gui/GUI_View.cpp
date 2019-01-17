@@ -227,6 +227,17 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             }
             return false;
         }
+        
+        case SDL_TEXTINPUT:
+        {
+            if( isFocus() == false ) {
+                if( lastFocusView ) {
+                    lastFocusView->eventHandler(event);
+                    return true;
+                }
+            }
+            return true;
+        }
         default:
             break;
     }

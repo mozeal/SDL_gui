@@ -27,6 +27,8 @@ public:
         updateContent();
     }
     virtual void updateContent();
+    virtual void updateSize();
+    bool forceEmptyText;
 };
 
 #endif /* GUI_TextView_hpp */

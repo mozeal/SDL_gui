@@ -17,7 +17,9 @@ GUI_ImageView *GUI_ImageView::create( GUI_View *parent, const char *title, const
 GUI_ImageView::GUI_ImageView( GUI_View *parent, const char *title, const char *filename, int x, int y, int width, int height,
                              std::function<bool(SDL_Event* ev)>userEventHandler):
 GUI_View( parent, title, x, y, width, height, userEventHandler),
-colorMod(cWhite)
+colorMod(cWhite),
+contentScrollPosnX(0),
+contentScrollPosnY(0)
 {
     if( filename ) {
         image.loadTexture(filename);
@@ -33,6 +35,8 @@ void GUI_ImageView::setColor( SDL_Color color ) {
     colorMod = color;
 }
 
+
+
 void GUI_ImageView::draw() {
     if (image._texture) {
         GUI_Rect bounds = image.bounds;
@@ -46,7 +50,7 @@ void GUI_ImageView::draw() {
             bounds.x = (rectView.w - bounds.w) / 2;
         }
         else {
-            bounds.x = _padding[3] * GUI_scale;
+            bounds.x = (_padding[3] * GUI_scale) + contentScrollPosnX;
         }
         
         if( _contentAlign & GUI_ALIGN_BOTTOM ) {

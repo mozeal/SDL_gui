@@ -27,6 +27,9 @@ GUI_IconView::~GUI_IconView() {
     
 }
 
+void GUI_IconView::updateContent() {
+}
+
 void GUI_IconView::setIcon( uint16_t unicode ) {
     icon = unicode;
     SDL_Texture *texture = createTextureFormUnicode( unicode );

@@ -167,6 +167,9 @@ public:
     virtual void setFocus();
 
     virtual void killFocus() {
+        if( lastFocusView == this ) {
+            lastFocusView = NULL;
+        }
         _focus = false;
     };
 

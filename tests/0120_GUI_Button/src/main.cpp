@@ -48,14 +48,15 @@ int main(int argc, char *argv[]) {
     
     label = GUI_Label::create(topView, "This label for visible testing");
     
-    auto button1 = GUI_Button::create(topView, "Visible", kIcon_solid_eye, 0, 0, 120, 0, [=](GUI_Button *bt) {
+    auto button1 = GUI_Button::create(topView, "Visible", kIcon_solid_eye, 0, 0, 120, 0, [=](GUI_View *v) {
+        //GUI_Button *bt = (GUI_Button *)v;
         label->setVisible(true);
         topView->updateLayout();
     } );
     button1->setBackgroundColor(cCyan);
     button1->setMargin( 10, 10, 10, 10 );
     
-    auto button2 = GUI_Button::create(topView, "Hidden", kIcon_solid_eye_slash, 0, 0, 120, 0, [=](GUI_Button *bt) {
+    auto button2 = GUI_Button::create(topView, "Hidden", kIcon_solid_eye_slash, 0, 0, 120, 0, [=](GUI_View *v) {
         label->setVisible(false);
         topView->updateLayout();
     } );
@@ -63,7 +64,7 @@ int main(int argc, char *argv[]) {
     button2->setTextColor(cWhite);
     button2->setMargin( 0, 10, 10, 10 );
     
-    auto button3 = GUI_Button::create(topView, "Toggle", kIcon_solid_exchange_alt, 0, 0, 120, 0, [=](GUI_Button *bt) {
+    auto button3 = GUI_Button::create(topView, "Toggle", kIcon_solid_exchange_alt, 0, 0, 120, 0, [=](GUI_View *v) {
         label->setVisible(!label->isVisible());
         topView->updateLayout();
     } );
@@ -72,13 +73,13 @@ int main(int argc, char *argv[]) {
     button3->setMargin( 0, 10, 10, 10 );
 
     
-    auto button4 = GUI_Button::create(topView, "Enable", kIcon_solid_thumbs_up, 0, 0, 120, 0, [=](GUI_Button *bt) {
+    auto button4 = GUI_Button::create(topView, "Enable", kIcon_solid_thumbs_up, 0, 0, 120, 0, [=](GUI_View *v) {
     } );
     button4->setBackgroundColor(cWhite);
     button4->setTextColor(cBlack);
     button4->setMargin( 10, 10, 10, 10 );
 
-    auto button5 = GUI_Button::create(topView, "Toggle", kIcon_solid_exchange_alt, 0, 0, 120, 0, [=](GUI_Button *bt) {
+    auto button5 = GUI_Button::create(topView, "Toggle", kIcon_solid_exchange_alt, 0, 0, 120, 0, [=](GUI_View *v) {
         button4->setEnable(!button4->isEnable());
         if( button4->isEnable() ) {
             button4->setTitle("Enable");

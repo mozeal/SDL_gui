@@ -64,8 +64,8 @@ GUI_View( parent, title, x, y, width, height )
 {
     setCallback( callbackFunction );
  
-    
-    setBackgroundColor(sdl_color(0xf0f0f0ff));
+    setPadding(5, 0, 5, 0);
+    setBackgroundColor(sdl_color(0xf8f8f8ff));
     setLayout(GUI_LAYOUT_VERTICAL);
     border = 1;
     corner = 4;

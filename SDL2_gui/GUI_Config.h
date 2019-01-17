@@ -15,5 +15,6 @@ const std::string GUI_UITextFontName = "Kanit-Light.ttf";
 const std::string GUI_UIIconFontName = "fa-solid-900.ttf";
 const int GUI_UITextFontSize = 16;
 const int GUI_UIIconFontSize = 16;
+const int GUI_UIDefaultHeight = 22;
 
 #endif /* GUI_Config_h */

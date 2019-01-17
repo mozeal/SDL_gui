@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
     vBlueC2->setBackgroundColor( cGreen );
     vBlueC2->dragable = true;
     vBlueC2->showInteract = true;
-    vBlueC2->mouseReceive = false;
+    vBlueC2->mouseReceive = false; // Test click through
 
     GUI_View *vCyan = GUI_View::create( topView, "Cyan", 270, 270, 320, 240 );
     vCyan->setBackgroundColor( cCyan );

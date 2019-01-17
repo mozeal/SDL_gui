@@ -40,6 +40,8 @@
 #include "GUI_RadioButton.h"
 #include "GUI_RadioButtonGroup.h"
 #include "GUI_List.h"
+#include "GUI_EditText.h"
+#include "GUI_TextUtil.h"
 
 int GUI_Init( const char* title, int expectedWidth, int expectedHeight );
 void GUI_Run(std::function<bool(SDL_Event *ev)>handle_ev = NULL);

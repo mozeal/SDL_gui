@@ -24,6 +24,8 @@ public:
     virtual void setIcon( uint16_t unicode );
     
     SDL_Texture* createTextureFormUnicode(Uint16 unicode, SDL_Rect* rect=NULL);
+    
+    virtual void updateContent();
 };
 
 /*
