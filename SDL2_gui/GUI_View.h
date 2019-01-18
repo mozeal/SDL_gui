@@ -70,6 +70,17 @@ protected:
     int     ox, oy, ow, oh;
     
     Uint32 touchTime, touchHoldTime;
+    
+    void move_topLeft(int dx, int dy);
+    void move_rectView(int dx, int dy);  // move win
+    
+    int     moveOriginX;
+    int     moveOriginY;
+    int     moveTargetX;
+    int     moveTargetY;
+    int     moveDuration;
+    int     moveTimeStart;
+    bool    isMoving;
 public:
     static GUI_View *create( GUI_View *parent, const char *title, int x, int y, int width, int height,
                                 std::function<bool(SDL_Event* ev)>userEventHandler = NULL );
@@ -137,8 +148,9 @@ public:
         
     }
     
-    void move(int dx, int dy);
-    void move_rectView(int dx, int dy);  // move win
+    virtual void update();
+    
+    virtual void move( int dx, int dy, int time=0 );
 
     virtual void clear(GUI_Rect *rect = 0);
     

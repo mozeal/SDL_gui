@@ -16,7 +16,8 @@
 #include "GUI_Config.h"
 
 const Uint32 GUI_EventID = SDL_USEREVENT;
-const Uint32 GUI_EventPaint = GUI_EventID + 1;
+const Uint32 GUI_EventUpdate = GUI_EventID + 1;
+const Uint32 GUI_EventPaint  = GUI_EventID + 2;
 const Uint32 GUI_EventUser = GUI_EventID + 300;
 
 extern SDL_Renderer *GUI_renderer;
@@ -57,6 +58,7 @@ extern SDL_Color cHightLightSelected;
 extern SDL_Color cHightLightInteract;
 extern SDL_Color cTextSelected;
 extern SDL_Color cHightLightSelection;
+extern SDL_Color cEmptyContent;
 
 typedef enum GUI_LOGLEVEL_ {
     GUI_LOG_VERBOSE = 0,

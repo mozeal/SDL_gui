@@ -21,7 +21,13 @@ GUI_App *GUI_App::create( int Orientation, std::string title, int expectedWidth,
 GUI_App::GUI_App( int Orientation, std::string title, int expectedWidth, int expectedHeight, int options ) :
 topView(NULL),
 width(0),
-height(0)
+height(0),
+topBar(NULL),
+statusBar(NULL),
+contentView(NULL),
+menuButton(NULL),
+menuView(NULL),
+isMenuShow(true)
 {
     this->title = title;
 
@@ -66,8 +72,21 @@ height(0)
     topView->setPadding(0,0,0,0);
     topView->setLayout( GUI_LAYOUT_VERTICAL );
     
+    if( (options & GUI_APP_TOP_BAR) || (options & GUI_APP_STATUS_BAR) ) {
+        options |= GUI_APP_CONTENT_VIEW;
+    }
+    
     if( options & GUI_APP_TOP_BAR ) {
-        createTopBar();
+        createTopBar(options);
+    }
+    if( options & GUI_APP_CONTENT_VIEW ) {
+        createContentView(options);
+    }
+    if( options & GUI_APP_STATUS_BAR ) {
+        createStatusBar(options);
+    }
+    if( options & GUI_APP_MENU ) {
+        createMenu(options);
     }
 }
 
@@ -82,6 +101,37 @@ void GUI_App::run() {
     GUI_Run();
 }
 
-void GUI_App::createTopBar() {
+void GUI_App::createTopBar( int options ) {
     topBar = GUI_TopBar::create( topView, title.c_str() );
+}
+
+void GUI_App::createStatusBar( int options ) {
+    statusBar = GUI_StatusBar::create( topView, title.c_str() );
+    topView->updateLayout();
+}
+
+void GUI_App::createContentView( int options ) {
+    contentView = GUI_View::create( topView, "ContentView", 0, 0, -1, -1 );
+    contentView->border = 1;
+    contentView->setBackgroundColor(cEmptyContent);
+    contentView->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
+}
+
+void GUI_App::createMenu( int options ) {
+    menuButton = GUI_Button::create(topBar, NULL, kIcon_solid_bars);
+    menuButton->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
+    menuButton->setMargin(0, 0, 0, 10 );
+    menuButton->setCallback([=](GUI_View *bt) {
+        isMenuShow = !isMenuShow;
+        if( isMenuShow ) {
+            menuView->move( GUI_AppMenuWidth, 0, GUI_AppMenuCollapseTime );
+        }
+        else {
+            menuView->move( -GUI_AppMenuWidth, 0, GUI_AppMenuCollapseTime );
+        }
+    });
+    
+    menuView = GUI_View::create(topView, "Menu", 0, GUI_AppTopBarHeight, GUI_AppMenuWidth, -1);
+    menuView->setAlign( GUI_ALIGN_ABSOLUTE );
+    menuView->setBackgroundColor(cWhite);
 }

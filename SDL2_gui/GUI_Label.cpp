@@ -33,15 +33,22 @@ textView( NULL )
         iconView->border = 0;
         iconView->setBackgroundColor( cClear );
         iconView->setColor( cBlack );
-        iconView->setMargin( 0, 3, 0, 0 );
+        if( title ) {
+            iconView->setMargin( 0, 3, 0, 0 );
+        }
+        else {
+            iconView->setMargin( 0, 0, 0, 0 );
+        }
     }
 
-    textView = GUI_TextView::create(this, title, GUI_UITextFontName.c_str(), GUI_UITextFontSize);
-    textView->setAlign( (width == 0 ? GUI_ALIGN_LEFT : GUI_ALIGN_CENTER) | (height == 0 ? GUI_ALIGN_TOP : GUI_ALIGN_VCENTER) );
-    textView->border = 0;
-    textView->setBackgroundColor( cClear );
-    textView->setColor( cBlack );
-    textView->setMargin( 0, 0, 0, 3 );
+    if( title ) {
+        textView = GUI_TextView::create(this, title, GUI_UITextFontName.c_str(), GUI_UITextFontSize);
+        textView->setAlign( (width == 0 ? GUI_ALIGN_LEFT : GUI_ALIGN_CENTER) | (height == 0 ? GUI_ALIGN_TOP : GUI_ALIGN_VCENTER) );
+        textView->border = 0;
+        textView->setBackgroundColor( cClear );
+        textView->setColor( cBlack );
+        textView->setMargin( 0, 0, 0, 3 );
+    }
 
     setLayout( GUI_LAYOUT_HORIZONTAL );
     updateLayout();

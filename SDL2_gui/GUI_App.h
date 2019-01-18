@@ -28,10 +28,17 @@
 
 class GUI_View;
 class GUI_TopBar;
+class GUI_StatusBar;
+class GUI_Button;
 
 class GUI_App {
 protected:
-    void createTopBar();
+    void createTopBar( int options );
+    void createStatusBar( int options );
+    void createContentView( int options );
+    void createMenu( int options );
+    
+    bool isMenuShow;
 public:
     static GUI_App *create( int Orientation, std::string title, int expectedWidth, int expectedHeight, int options=0 );
     GUI_App( int Orientation, std::string title, int expectedWidth, int expectedHeight, int options=0 );
@@ -43,6 +50,10 @@ public:
     GUI_View *topView;
     
     GUI_TopBar *topBar;
+    GUI_StatusBar *statusBar;
+    GUI_View *contentView;
+    GUI_Button *menuButton;
+    GUI_View *menuView;
     
     void run();
 };

@@ -235,6 +235,8 @@ static void GUI_Loop() {
         }
         handle_events(&event);
     }
+    event.type = GUI_EventUpdate;
+    handle_events(&event);
     event.type = GUI_EventPaint;
     handle_events(&event);
     

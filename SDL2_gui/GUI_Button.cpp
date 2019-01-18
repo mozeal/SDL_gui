@@ -26,13 +26,18 @@ GUI_Label(parent, title, unicode, x, y, width, height, NULL )
     showInteract = true;
     mouseReceive = true;
     
-    setBackgroundColor(cCyan);
+    setBackgroundColor(cWhite);
     callback = callbackFunction;
     
     border = 1;
     focusBorder = 8;
     corner = 4;
-    setPadding( 5, 12, 5, 12 );
+    if( title ) {
+        setPadding( 5, 12, 5, 12 );
+    }
+    else {
+        setPadding( 5, 10, 5, 10 );
+    }
     updateLayout();
 }
 

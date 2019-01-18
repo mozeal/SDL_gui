@@ -21,6 +21,8 @@ titleView(NULL)
     setCallback(callbackFunction);
     setBackgroundColor(cCornFlowerBlue);
     setLayout( GUI_LAYOUT_HORIZONTAL );
+    border = 0;
+    setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
     
     if( title ) {
         titleView = GUI_Label::create(this, title, 0, 0, 0, 0 );
