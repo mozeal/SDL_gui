@@ -25,6 +25,7 @@
 
 #include "SDL2_gfxPrimitives.h"
 
+#include "GUI_App.h"
 #include "GUI_Config.h"
 #include "GUI_shapes.h"
 #include "GUI_Utils.h"
@@ -42,6 +43,7 @@
 #include "GUI_List.h"
 #include "GUI_EditText.h"
 #include "GUI_TextUtil.h"
+#include "GUI_TopBar.h"
 
 int GUI_Init( const char* title, int expectedWidth, int expectedHeight );
 void GUI_Run(std::function<bool(SDL_Event *ev)>handle_ev = NULL);

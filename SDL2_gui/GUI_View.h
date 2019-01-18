@@ -117,7 +117,7 @@ public:
     virtual void setContentAlign( int a ) { _contentAlign = a; };
     virtual int  getContentAlign() { return _contentAlign; };
 
-    virtual void setAlign( int a ) { _align = a; };
+    virtual void setAlign( int a ) { _align = a; if( parent ) parent->updateLayout(); };
     virtual int  getAlign() { return _align; };
     
     virtual void setLayout( int l ) { _layout = l; };

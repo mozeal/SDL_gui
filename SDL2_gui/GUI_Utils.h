@@ -52,7 +52,7 @@ extern SDL_Color cMagenta;
 extern SDL_Color cYellow;
 extern SDL_Color cDarkGrey;
 extern SDL_Color cLightGrey;
-extern SDL_Color cCornFlower;
+extern SDL_Color cCornFlowerBlue;
 extern SDL_Color cHightLightSelected;
 extern SDL_Color cHightLightInteract;
 extern SDL_Color cTextSelected;
