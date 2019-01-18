@@ -27,6 +27,16 @@ int main(int argc, char *argv[]) {
     }
     topView = app->topView;
     
+    auto menu = GUI_Menu::create( app->menuView, "Menu", 0, 0, -1, 0, [=](GUI_View *v) {
+        GUI_Menu *l = (GUI_Menu *)v;
+    } );
+    menu->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
+    
+    menu->addSimpleMenu( "About app...", true );
+    menu->addSimpleMenu( "Simle List Item 2" );
+    menu->addSimpleMenu( "Simle List Item 3", true );
+    menu->addSimpleMenu( "Quit", true );
+
     app->run();
     
 

@@ -27,7 +27,7 @@ statusBar(NULL),
 contentView(NULL),
 menuButton(NULL),
 menuView(NULL),
-isMenuShow(true)
+isMenuShow(false)
 {
     this->title = title;
 
@@ -133,5 +133,11 @@ void GUI_App::createMenu( int options ) {
     
     menuView = GUI_View::create(topView, "Menu", 0, GUI_AppTopBarHeight, GUI_AppMenuWidth, -1);
     menuView->setAlign( GUI_ALIGN_ABSOLUTE );
-    menuView->setBackgroundColor(cWhite);
+    menuView->setBackgroundColor(cEmptyContent);
+    if( isMenuShow ) {
+        menuView->move( GUI_AppMenuWidth, 0, 0 );
+    }
+    else {
+        menuView->move( -GUI_AppMenuWidth, 0, 0 );
+    }
 }
