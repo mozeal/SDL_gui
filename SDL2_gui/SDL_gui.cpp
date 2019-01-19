@@ -131,7 +131,7 @@ extern void GUI_updateScaleParameters() {
     }
     SDL_Log( "Scale: %0.2f\n", GUI_scale );
     SDL_Log( "Mouse Scale: %0.2f\n", GUI_mouseScale );
-#ifdef __ANDROID__
+#if defined(__ANDROID__) 
     GUI_windowWidth = GUI_physicalWindowWidth / GUI_scale;
     GUI_windowHeight = GUI_physicalWindowHeight / GUI_scale;
     GUI_mouseScale = 1.0;
