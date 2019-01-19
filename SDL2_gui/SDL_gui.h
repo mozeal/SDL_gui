@@ -54,7 +54,7 @@ void GUI_Destroy();
 extern SDL_Renderer *GUI_renderer;
 extern SDL_Window *GUI_window;
 extern GUI_View *GUI_topView;
-extern GUI_View * GUI_mouseCapturedView;
+//extern GUI_View * GUI_mouseCapturedView;
 
 extern int GUI_physicalWindowWidth;
 extern int GUI_physicalWindowHeight;
@@ -69,7 +69,7 @@ extern void GUI_updateScaleParameters();
 
 GUI_View *GUI_createTopView(const char* t, int x, int y, int w, int h,
                             std::function<bool(SDL_Event* ev)>userEventHandler = NULL);
-
+void GUI_SetMouseCapture( GUI_View *v );
 
 
 #endif /* SDL_gui_hpp */

@@ -90,6 +90,8 @@ public:
     virtual ~GUI_View();
     
     virtual bool eventHandler(SDL_Event*ev);
+    
+    void setUserEventHandler( std::function<bool(SDL_Event* ev)>userEventHandler );
 
     std::string title;
     GUI_Point topLeft;      // relative to parent window
@@ -109,6 +111,7 @@ public:
     bool mouseReceive;
     bool click_through;
     bool click_to_top;
+    bool focus_need_input;
     
     int getWidth() { return rectView.w / GUI_scale; };
     int getHeight() { return rectView.h / GUI_scale; };
@@ -178,12 +181,7 @@ public:
     
     virtual void setFocus();
 
-    virtual void killFocus() {
-        if( lastFocusView == this ) {
-            lastFocusView = NULL;
-        }
-        _focus = false;
-    };
+    virtual void killFocus();
 
     virtual bool isEnable() {
         return _enable;

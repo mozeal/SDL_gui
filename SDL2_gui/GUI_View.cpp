@@ -22,7 +22,7 @@ extern float GUI_scale;
 extern float GUI_mouseScale;
 
 extern GUI_View *GUI_topView;
-extern GUI_View * GUI_mouseCapturedView;
+//extern GUI_View * GUI_mouseCapturedView;
 
 GUI_View *GUI_View::lastInteractView = NULL;
 GUI_View *GUI_View::lastFocusView = NULL;
@@ -65,7 +65,8 @@ _dragging(false),
 showInteract(false),
 mouseReceive(true),
 callback(nullptr),
-isMoving(false)
+isMoving(false),
+focus_need_input(false)
 {
     ox = x;
     oy = y;
@@ -82,6 +83,10 @@ isMoving(false)
 
 GUI_View::~GUI_View() {
     children.clear();
+}
+
+void GUI_View::setUserEventHandler( std::function<bool(SDL_Event* ev)>handler ) {
+    user_events_handler = handler;
 }
 
 void GUI_View::update() {
@@ -135,18 +140,78 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 BreakRecursive = true;
             }
             break;
+        case SDL_FINGERDOWN:
+        {
+            SDL_TouchFingerEvent e = event->tfinger;
+            SDL_FingerID fid = e.fingerId;
+            GUI_Log( "FINGER DOWN in view\n" );
+            
+            {
+                int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
+                int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
+
+                GUI_Log( "COORD: %i, %i\n", x, y );
+
+                
+                if( !mouseReceive ) {
+                    BreakRecursive = true;
+                    BreakSiblingPropagate = false;
+                    break;
+                }
+                ReverseRecursive = true;
+                //SDL_Log( "To HitTest %s %i %i\n", title.c_str(), x, y );
+                if( hitTest(x, y, false) ) {
+                    if( focusable ) {
+                        setFocus();
+                    }
+                    //GUI_Log( "Hitted %s\n", title.c_str() );
+                    if( click_to_top ) {
+                        if( toTop() ) {
+                            BreakSiblingPropagate = true;
+                        }
+                    }
+                    if( clickable ) {
+                        //GUI_mouseCapturedView = this;
+                        GUI_SetMouseCapture(this);
+                        touchTime = SDL_GetTicks(); // time in millis
+                        touchHoldTime = touchTime;
+                    }
+                    if( dragable ) {
+                        _dragging = true;
+                        //SDL_Log( "Dragging %s\n", title.c_str() );
+                        if( parent ) {
+                            parent->_dragging = false;
+                            //SDL_Log( "Undragging %s\n", parent->title.c_str() );
+                        }
+                        lastMousePoint.set(x, y);
+                        //GUI_mouseCapturedView = this;
+                        GUI_SetMouseCapture(this);
+                        BreakSiblingPropagate = true;
+                    }
+                    GUI_Log( "END1\n" );
+
+                }
+                else {
+                    GUI_Log( "END2\n" );
+                    return false;
+                }
+                GUI_Log( "END3\n" );
+                break;
+            }
+        }
         case SDL_MOUSEBUTTONDOWN:
         {
+            SDL_MouseButtonEvent e = event->button;
+            
+            int x = (int)(e.x*GUI_mouseScale);
+            int y = (int)(e.y*GUI_mouseScale);
+
             if( !mouseReceive ) {
                 BreakRecursive = true;
                 BreakSiblingPropagate = false;
                 break;
             }
             ReverseRecursive = true;
-            SDL_MouseButtonEvent e = event->button;
-            
-            int x = (int)(e.x*GUI_mouseScale);
-            int y = (int)(e.y*GUI_mouseScale);
             //SDL_Log( "To HitTest %s %i %i\n", title.c_str(), x, y );
             if( hitTest(x, y, false) ) {
                 if( focusable ) {
@@ -159,7 +224,8 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                     }
                 }
                 if( clickable ) {
-                    GUI_mouseCapturedView = this;
+                    //GUI_mouseCapturedView = this;
+                    GUI_SetMouseCapture(this);
                     touchTime = SDL_GetTicks(); // time in millis
                     touchHoldTime = touchTime;
                 }
@@ -171,7 +237,8 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                         //SDL_Log( "Undragging %s\n", parent->title.c_str() );
                     }
                     lastMousePoint.set(x, y);
-                    GUI_mouseCapturedView = this;
+                    //GUI_mouseCapturedView = this;
+                    GUI_SetMouseCapture(this);
                     BreakSiblingPropagate = true;
                 }
             }
@@ -180,18 +247,23 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             }
             break;
         }
-        case SDL_MOUSEMOTION:
+        case SDL_FINGERMOTION:
         {
+            SDL_TouchFingerEvent e = event->tfinger;
+            SDL_FingerID fid = e.fingerId;
+            //GUI_Log( "%i\n", fid );
+            
+            int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
+            int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
+            
             if( !mouseReceive ) {
                 BreakRecursive = true;
                 BreakSiblingPropagate = false;
                 break;
             }
-
+            
             ReverseRecursive = true;
-            SDL_MouseMotionEvent e = event->motion;
-            int x = (int)(e.x*GUI_mouseScale);
-            int y = (int)(e.y*GUI_mouseScale);
+            
             //SDL_Log( "Mouse Move %s\n", title.c_str() );
             
             if (_dragging) {
@@ -221,6 +293,76 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             }
             break;
         }
+        case SDL_MOUSEMOTION:
+        {
+            SDL_MouseMotionEvent e = event->motion;
+            
+            int x = (int)(e.x*GUI_mouseScale);
+            int y = (int)(e.y*GUI_mouseScale);
+            
+            if( !mouseReceive ) {
+                BreakRecursive = true;
+                BreakSiblingPropagate = false;
+                break;
+            }
+
+            ReverseRecursive = true;
+
+            //SDL_Log( "Mouse Move %s\n", title.c_str() );
+            
+            if (_dragging) {
+                if (parent) {
+                    if (!parent->hitTest(x, y, false)) {
+                        setInteract( false );
+                        return true;
+                    }
+                }
+                setInteract( true );
+                int dx = x - lastMousePoint.x;
+                int dy = y - lastMousePoint.y;
+                lastMousePoint.set(x, y);
+                move_topLeft(dx, dy);
+                return true;
+            }
+            if( hitTest(x, y, false) ) {
+                BreakSiblingPropagate = true;
+                setInteract( true );
+                if( parent ) {
+                    parent->setInteract( false );
+                }
+            }
+            else {
+                setInteract( false );
+                BreakRecursive = true;
+            }
+            break;
+        }
+        case SDL_FINGERUP:
+        {
+            SDL_TouchFingerEvent e = event->tfinger;
+            SDL_FingerID fid = e.fingerId;
+            //GUI_Log( "%i\n", fid );
+            //SDL_MouseButtonEvent e = event->button;
+            //int x = (int)(e.x*GUI_mouseScale);
+            //int y = (int)(e.y*GUI_mouseScale);
+            
+            if (_dragging) {
+                _dragging = false;
+                SDL_Log( "Undragging %s\n", title.c_str() );
+                //GUI_mouseCapturedView = NULL;
+                GUI_SetMouseCapture(NULL);
+                return true;
+            }
+            if( clickable ) {
+                //GUI_mouseCapturedView = NULL;
+                GUI_SetMouseCapture(NULL);
+                if (callback) {
+                    callback(this);
+                    return true;
+                }
+            }
+            return false;
+        }
         case SDL_MOUSEBUTTONUP:
         {
             if( !mouseReceive ) {
@@ -236,11 +378,13 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             if (_dragging) {
                 _dragging = false;
                 SDL_Log( "Undragging %s\n", title.c_str() );
-                GUI_mouseCapturedView = NULL;
+                //GUI_mouseCapturedView = NULL;
+                GUI_SetMouseCapture(NULL);
                 return true;
             }
             if( clickable ) {
-                GUI_mouseCapturedView = NULL;
+                //GUI_mouseCapturedView = NULL;
+                GUI_SetMouseCapture(NULL);
                 if (callback) {
                     callback(this);
                     return true;
@@ -559,11 +703,26 @@ void GUI_View::setInteract(bool i) {
 }
 
 void GUI_View::setFocus() {
+    if( lastFocusView == this )
+        return;
     if( lastFocusView != NULL && lastFocusView != this ) {
         lastFocusView->killFocus();
     }
     lastFocusView = this;
     _focus = true;
+    if( focus_need_input ) {
+        SDL_StartTextInput();
+    }
+};
+
+void GUI_View::killFocus() {
+    if( lastFocusView == this ) {
+        lastFocusView = NULL;
+        if( focus_need_input ) {
+            SDL_StopTextInput();
+        }
+    }
+    _focus = false;
 };
 
 void GUI_View::setPadding(int p0, int p1, int p2, int p3) {

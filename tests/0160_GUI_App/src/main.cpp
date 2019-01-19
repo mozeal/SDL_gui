@@ -19,6 +19,9 @@ int expectedHeight = 540;
 static GUI_App *app;
 static GUI_View *topView;
 
+static GUI_View *inputBar;
+static GUI_EditText *inputBox;
+
 int main(int argc, char *argv[]) {
     app = GUI_App::create( GUI_ORIENTATION_LANDSCAPE, "SDL-GUI App", expectedWidth, expectedHeight,
                           GUI_APP_TOP_BAR | GUI_APP_STATUS_BAR | GUI_APP_MENU );
@@ -36,6 +39,18 @@ int main(int argc, char *argv[]) {
     menu->addSimpleMenu( "Simle List Item 2" );
     menu->addSimpleMenu( "Simle List Item 3", true );
     menu->addSimpleMenu( "Quit", true );
+    
+    auto addButton = GUI_Button::create(app->topBar, NULL, kIcon_solid_plus);
+    addButton->setAlign( GUI_ALIGN_RIGHT | GUI_ALIGN_VCENTER );
+    addButton->setMargin(0, 10, 0, 0 );
+    addButton->setCallback([=](GUI_View *bt) {
+    });
+    
+    app->contentView->setLayout(GUI_LAYOUT_VERTICAL);
+    inputBar = GUI_View::create(app->contentView, "InputBar", 0, 0, -1, 0);
+    inputBar->setPadding( 5, 10, 5, 10 );
+    inputBox = GUI_EditText::create(inputBar, "", 0, 0, -1, 32);
+    inputBox->border = 0;
 
     app->run();
     

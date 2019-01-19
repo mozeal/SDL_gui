@@ -18,6 +18,7 @@ OBJECTS = $(patsubst %.cpp,%.bc,$(patsubst %.c,%.bc,$(SOURCES)))
 EMFLAGS := \
 -s USE_SDL=2 \
 -s USE_SDL_IMAGE=2 \
+-s BINARYEN_TRAP_MODE='"clamp"' \
 -s USE_FREETYPE=1 \
 -s SDL2_IMAGE_FORMATS='["png","bmp"]' \
 -s WASM=1 \
@@ -44,6 +45,7 @@ OUTFILES := \
 build/$(PROJECT).js \
 build/$(PROJECT).wasm \
 build/index.html \
+build/$(PROJECT)$(TARGETTRAIL) \
 $(OBJECTS)
 
 preset:

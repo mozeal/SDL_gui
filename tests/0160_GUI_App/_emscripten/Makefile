@@ -14,6 +14,16 @@ src/SDL2_gui/GUI_TextView.cpp \
 src/SDL2_gui/GUI_IconView.cpp \
 src/SDL2_gui/GUI_Label.cpp \
 src/SDL2_gui/GUI_Button.cpp \
+src/SDL2_gui/GUI_CheckBox.cpp \
+src/SDL2_gui/GUI_RadioButton.cpp \
+src/SDL2_gui/GUI_RadioButtonGroup.cpp \
+src/SDL2_gui/GUI_List.cpp \
+src/SDL2_gui/GUI_TextUtil.cpp \
+src/SDL2_gui/GUI_EditText.cpp \
+src/SDL2_gui/GUI_App.cpp \
+src/SDL2_gui/GUI_TopBar.cpp \
+src/SDL2_gui/GUI_StatusBar.cpp \
+src/SDL2_gui/GUI_Menu.cpp \
 src/SDL2_gfx/SDL2_gfxPrimitives.c \
 ../../../SDL2_ttf_HarfBuzz/SDL_ttf.cpp
 
@@ -26,6 +36,7 @@ EMFLAGS := \
 -s USE_SDL=2 \
 -s USE_SDL_IMAGE=2 \
 -s USE_FREETYPE=1 \
+-s BINARYEN_TRAP_MODE='"clamp"' \
 -s SDL2_IMAGE_FORMATS='["png","bmp"]' \
 -s WASM=1 \
 -s MODULARIZE=1

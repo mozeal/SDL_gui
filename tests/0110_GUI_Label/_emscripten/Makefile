@@ -9,6 +9,10 @@ src/SDL2_gui/GUI_Utils.cpp \
 src/SDL2_gui/GUI_View.cpp \
 src/SDL2_gui/GUI_image.cpp \
 src/SDL2_gui/GUI_ImageView.cpp \
+src/SDL2_gui/GUI_Fonts.cpp \
+src/SDL2_gui/GUI_TextView.cpp \
+src/SDL2_gui/GUI_IconView.cpp \
+src/SDL2_gui/GUI_Label.cpp \
 src/SDL2_gfx/SDL2_gfxPrimitives.c \
 ../../../SDL2_ttf_HarfBuzz/SDL_ttf.cpp
 

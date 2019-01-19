@@ -15,6 +15,8 @@
 #include <SDL.h>
 #include "GUI_Config.h"
 
+class GUI_View;
+
 const Uint32 GUI_EventID = SDL_USEREVENT;
 const Uint32 GUI_EventUpdate = GUI_EventID + 1;
 const Uint32 GUI_EventPaint  = GUI_EventID + 2;
@@ -77,8 +79,11 @@ void GUI_Error(const char* fn, int result);
 std::string GUI_GetCurrentPath();
 std::string GUI_GetResourcePath(const std::string &subDir = "");
 SDL_Texture* GUI_LoadTexture(const std::string &filename, SDL_Renderer *ren);
+void GUI_SetMouseCapture( GUI_View *v );
 
 extern float GUI_scale;
 extern float GUI_mouseScale;
+extern int GUI_windowWidth;
+extern int GUI_windowHeight;
 
 #endif /* GUI_Utils_hpp */

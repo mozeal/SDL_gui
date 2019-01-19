@@ -8,6 +8,10 @@
 
 #include "GUI_EditText.h"
 #include "GUI_TextUtil.h"
+#include "GUI_Utils.h"
+
+extern int GUI_windowWidth;
+extern int GUI_windowHeight;
 
 GUI_EditText *GUI_EditText::create( GUI_View *parent, const char *title, int x, int y, int width, int height,
                                           std::function<void(GUI_View*)>callbackFunction ) {
@@ -23,7 +27,8 @@ GUI_TextView(parent, title, GUI_UITextFontName.c_str(), GUI_UITextFontSize, x, y
     focusable = true;
     showInteract = false;
     mouseReceive = true;
-    
+    focus_need_input = true;
+
     forceEmptyText = true;
     
     border = 1;
@@ -112,6 +117,23 @@ bool GUI_EditText::eventHandler(SDL_Event*event) {
             
             if( callback ) {
                 callback(this);
+            }
+            break;
+        }
+        case SDL_FINGERDOWN:
+        {
+            GUI_TextView::eventHandler(event);
+            
+            SDL_MouseButtonEvent e = event->button;
+            
+            int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
+            int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
+            if( hitTest(x, y, false) ) {
+                x -= rectView.x;
+                int textX = (_padding[3] * GUI_scale) + contentScrollPosnX;
+                GUI_Log( "Hit edit %i\n", x - textX );
+                textEditIndex = GUI_GetTextIndexFromPosition(font, title, x - textX);
+                updateContent();
             }
             break;
         }
