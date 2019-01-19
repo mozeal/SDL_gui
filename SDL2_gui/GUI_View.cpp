@@ -11,6 +11,10 @@
 #include "GUI_shapes.h"
 #include <list>
 
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+#endif
+
 extern int GUI_physicalWindowWidth;
 extern int GUI_physicalWindowHeight;
 
@@ -711,6 +715,9 @@ void GUI_View::setFocus() {
     lastFocusView = this;
     _focus = true;
     if( focus_need_input ) {
+#ifdef __EMSCRIPTEN__
+        //emscripten_run_script("document.getElementById('canvas').contentEditable = true;");
+#endif
         SDL_StartTextInput();
     }
 };
