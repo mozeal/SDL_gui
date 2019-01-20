@@ -134,7 +134,7 @@ extern void GUI_updateScaleParameters() {
 #if defined(__ANDROID__) 
     GUI_windowWidth = GUI_physicalWindowWidth / GUI_scale;
     GUI_windowHeight = GUI_physicalWindowHeight / GUI_scale;
-    GUI_mouseScale = 1.0;
+    GUI_mouseScale = GUI_scale;
 #else
     if( GUI_windowWidth * GUI_scale != GUI_physicalWindowWidth ||
         GUI_windowHeight * GUI_scale != GUI_physicalWindowHeight ) {

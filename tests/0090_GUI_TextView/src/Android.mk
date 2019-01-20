@@ -22,7 +22,9 @@ LOCAL_SRC_FILES += $(SDL_GUI_ROOT)/SDL_gui.cpp \
                    $(SDL_GUI_ROOT)/GUI_image.cpp \
                    $(SDL_GUI_ROOT)/GUI_Utils.cpp \
                    $(SDL_GUI_ROOT)/GUI_View.cpp \
-                   $(SDL_GUI_ROOT)/GUI_ImageView.cpp
+                   $(SDL_GUI_ROOT)/GUI_ImageView.cpp \
+                   $(SDL_GUI_ROOT)/GUI_TextView.cpp \
+                   $(SDL_GUI_ROOT)/GUI_Fonts.cpp
 
 LOCAL_SHARED_LIBRARIES := SDL2 SDL2_image SDL2_ttf
 LOCAL_CFLAGS += -D__ANDROID__
