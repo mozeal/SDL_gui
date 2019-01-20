@@ -68,113 +68,132 @@ int main(int argc, char *argv[]) {
     auto edit = GUI_EditText::create(topView, "", 0, 0, -1, 0 );
     edit->setPadding( 10, 10, 10, 10 );
     edit->setMargin( 10, 0, 0, 0);
-    
+
+
     topView->setUserEventHandler( [=](SDL_Event* event) -> bool {
+
         switch( event->type ) {
-            case SDL_MOUSEBUTTONDOWN:
-            {
-                GUI_Log( "SDL_MOUSEBUTTONDOWN\n" );
-                SDL_MouseButtonEvent e = event->button;
-                
-                int x = (int)(e.x*GUI_mouseScale);
-                int y = (int)(e.y*GUI_mouseScale);
-                
-                std::ostringstream stringStream;
-                stringStream << "Mouse Down " << x << ", " << y;
-                std::string str = stringStream.str();
-                mouseDownLabel->setTitle(str);
-                mousePanel->updateLayout();
-                break;
-            }
-            case SDL_MOUSEMOTION:
-            {
-                GUI_Log( "SDL_MOUSEMOTION\n" );
-                SDL_MouseButtonEvent e = event->button;
-                
-                int x = (int)(e.x*GUI_mouseScale);
-                int y = (int)(e.y*GUI_mouseScale);
-                
-                std::ostringstream stringStream;
-                stringStream << "Mouse Motion " << x << ", " << y;
-                std::string str = stringStream.str();
-                mouseMotionLabel->setTitle(str);
-                mousePanel->updateLayout();
-                break;
-            }
-            case SDL_MOUSEBUTTONUP:
-            {
-                GUI_Log( "SDL_MOUSEBUTTONUP\n" );
-                SDL_MouseButtonEvent e = event->button;
-                
-                int x = (int)(e.x*GUI_mouseScale);
-                int y = (int)(e.y*GUI_mouseScale);
-                
-                std::ostringstream stringStream;
-                stringStream << "Mouse Up " << x << ", " << y;
-                std::string str = stringStream.str();
-                mouseUpLabel->setTitle(str);
-                mousePanel->updateLayout();
-                break;
-            }
-            case SDL_FINGERDOWN:
-            {
-                GUI_Log( "SDL_FINGERDOWN\n" );
-                SDL_TouchFingerEvent e = event->tfinger;
-                SDL_FingerID fid = e.fingerId;
-                
-                int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
-                int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
-                
-                int n = SDL_GetNumTouchFingers(fid);
-                
-                std::ostringstream stringStream;
-                stringStream << "Finger Down (" << n << ") " << x << ", " << y;
-                std::string str = stringStream.str();
-                touchDownLabel->setTitle(str);
-                touchPanel->updateLayout();
-                break;
-            }
-            case SDL_FINGERMOTION:
-            {
-                GUI_Log( "SDL_FINGERMOTION\n" );
-                SDL_TouchFingerEvent e = event->tfinger;
-                SDL_FingerID fid = e.fingerId;
-                
-                int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
-                int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
-                
-                int n = SDL_GetNumTouchFingers(fid);
-                
-                std::ostringstream stringStream;
-                stringStream << "Finger Motion (" << n << ") " << x << ", " << y;
-                std::string str = stringStream.str();
-                touchMotionLabel->setTitle(str);
-                touchPanel->updateLayout();
-                break;
-            }
-            case SDL_FINGERUP:
-            {
-                GUI_Log( "SDL_FINGERUP\n" );
-                SDL_TouchFingerEvent e = event->tfinger;
-                SDL_FingerID fid = e.fingerId;
-                
-                int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
-                int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
-                
-                int n = SDL_GetNumTouchFingers(fid);
-                
-                std::ostringstream stringStream;
-                stringStream << "Finger Down (" << n << ") " << x << ", " << y;
-                std::string str = stringStream.str();
-                touchUpLabel->setTitle(str);
-                touchPanel->updateLayout();
-                break;
-            }
-            default:
-                break;
-        }
+
+           case SDL_MOUSEBUTTONDOWN:
+           {
+               SDL_Log( "SDL_MOUSEBUTTONDOWN\n" );
+               SDL_MouseButtonEvent e = event->button;
+
+               int x = (int)(e.x*GUI_mouseScale);
+               int y = (int)(e.y*GUI_mouseScale);
+
+               std::ostringstream stringStream;
+               stringStream << "Mouse Down " << x << ", " << y;
+               std::string str = stringStream.str();
+               mouseDownLabel->setTitle(str);
+               mousePanel->updateLayout();
+               break;
+           }
+
+           case SDL_MOUSEMOTION:
+           {
+#ifndef __ANDROID__
+               GUI_Log( "SDL_MOUSEMOTION\n" );
+               SDL_MouseButtonEvent e = event->button;
+
+               int x = (int)(e.x*GUI_mouseScale);
+               int y = (int)(e.y*GUI_mouseScale);
+
+               std::ostringstream stringStream;
+               stringStream << "Mouse Motion " << x << ", " << y;
+               std::string str = stringStream.str();
+               mouseMotionLabel->setTitle(str);
+               mousePanel->updateLayout();
+#endif
+               break;
+           }
+
+           case SDL_MOUSEBUTTONUP:
+           {
+               SDL_Log( "SDL_MOUSEBUTTONUP\n" );
+               SDL_MouseButtonEvent e = event->button;
+
+               int x = (int)(e.x*GUI_mouseScale);
+               int y = (int)(e.y*GUI_mouseScale);
+
+               std::ostringstream stringStream;
+               stringStream << "Mouse Up " << x << ", " << y;
+               std::string str = stringStream.str();
+               mouseUpLabel->setTitle(str);
+               mousePanel->updateLayout();
+               break;
+           }
+
+           case SDL_FINGERDOWN:
+           {
+               SDL_Log( "SDL_FINGERDOWN\n" );
+
+               SDL_TouchFingerEvent e = event->tfinger;
+               SDL_FingerID fid = e.fingerId;
+
+               int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
+               int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
+
+               int n = SDL_GetNumTouchFingers(fid);
+
+               std::ostringstream stringStream;
+               stringStream << "Finger Down (" << n << ") " << x << ", " << y;
+               std::string str = stringStream.str();
+               touchDownLabel->setTitle(str);
+               touchPanel->updateLayout();
+
+               break;
+           }
+
+           case SDL_FINGERMOTION:
+           {
+#ifndef __ANDROID__
+               SDL_Log( "SDL_FINGERMOTION\n" );
+
+               SDL_TouchFingerEvent e = event->tfinger;
+
+
+               int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
+               int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
+
+
+
+               std::ostringstream stringStream;
+               stringStream << "Finger Motion " << x << ", " << y;
+               std::string str = stringStream.str();
+               SDL_Log( "%s\n", str.c_str() );
+               touchMotionLabel->setTitle(str);
+               touchPanel->updateLayout();
+#endif
+               break;
+           }
+
+           case SDL_FINGERUP:
+           {
+               SDL_Log( "SDL_FINGERUP\n" );
+               SDL_TouchFingerEvent e = event->tfinger;
+               SDL_FingerID fid = e.fingerId;
+
+               int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
+               int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
+
+               int n = SDL_GetNumTouchFingers(fid);
+
+               std::ostringstream stringStream;
+               stringStream << "Finger Down (" << n << ") " << x << ", " << y;
+               std::string str = stringStream.str();
+               touchUpLabel->setTitle(str);
+               touchPanel->updateLayout();
+               break;
+           }
+
+           default:
+               break;
+       }
+
         return false;
     });
+
 
     app->run();
     

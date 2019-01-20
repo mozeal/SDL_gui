@@ -103,8 +103,8 @@ void GUI_View::update() {
         int x = moveOriginX + ((moveTargetX-moveOriginX) * (float)moveTime / (float)moveDuration);
         int y = moveOriginY + ((moveTargetY-moveOriginY) * (float)moveTime / (float)moveDuration);
         
-        int dx = x - rectView.x;
-        int dy = y - rectView.y;
+        int dx = x - topLeft.x;
+        int dy = y - topLeft.y;
         
         move_topLeft( dx, dy );
     }
