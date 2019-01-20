@@ -31,3 +31,5 @@ xcuserdata
 obj
 bin
 gen
+
+autom4te.cache/
