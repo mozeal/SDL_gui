@@ -33,7 +33,8 @@ LFLAGS := \
 -L/usr/local/lib \
 -Wl,-rpath,/usr/local/lib \
 -Wl,--enable-new-dtags \
--lSDL2
+-lSDL2 \
+-lSDL2_image
 
 OUTFILES := \
 $(OUTDIR)/$(PROJECT) \

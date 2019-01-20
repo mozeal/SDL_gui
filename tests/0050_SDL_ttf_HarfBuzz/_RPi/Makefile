@@ -2,7 +2,8 @@ PROJECT = MyProgram
 SDL_GUI_ROOT = ../SDL2_gui
 
 SOURCES = \
-../src/main.cpp
+../src/main.cpp \
+../../../SDL2_ttf_HarfBuzz/SDL_ttf.cpp
 
 OUTDIR = build
 
@@ -26,6 +27,8 @@ CFLAGS := \
 -I/opt/vc/include \
 -I/opt/vc/include/interface/vcos/pthreads \
 -I/opt/vc/include/interface/vmcs_host/linux \
+-I../../../SDL2_ttf_HarfBuzz/external/freetype-2.4.12/include \
+-I../../../SDL2_ttf_HarfBuzz/external/harfbuzz-1.4.6 \
 -I/$(SDL_GUI_ROOT) \
 -D_REENTRANT
 
@@ -33,7 +36,11 @@ LFLAGS := \
 -L/usr/local/lib \
 -Wl,-rpath,/usr/local/lib \
 -Wl,--enable-new-dtags \
--lSDL2
+-lSDL2 \
+-lSDL2_image \
+-lSDL2_ttf \
+-lfreetype \
+-lharfbuzz
 
 OUTFILES := \
 $(OUTDIR)/$(PROJECT) \
