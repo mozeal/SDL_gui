@@ -27,6 +27,7 @@ statusBar(NULL),
 contentView(NULL),
 menuButton(NULL),
 menuView(NULL),
+menuBar(NULL),
 isMenuShow(false)
 {
     this->title = title;
@@ -79,6 +80,9 @@ isMenuShow(false)
     if( options & GUI_APP_TOP_BAR ) {
         createTopBar(options);
     }
+    if( options & GUI_APP_MENUBAR ) {
+        createMenuBar(options);
+    }
     if( options & GUI_APP_CONTENT_VIEW ) {
         createContentView(options);
     }
@@ -105,6 +109,10 @@ void GUI_App::createTopBar( int options ) {
     topBar = GUI_TopBar::create( topView, title.c_str() );
 }
 
+void GUI_App::createMenuBar( int options ) {
+    menuBar = GUI_MenuBar::create( topView, title.c_str() );
+}
+
 void GUI_App::createStatusBar( int options ) {
     statusBar = GUI_StatusBar::create( topView, title.c_str() );
     topView->updateLayout();
@@ -118,6 +126,9 @@ void GUI_App::createContentView( int options ) {
 }
 
 void GUI_App::createMenu( int options ) {
+    menuView = GUI_Menu::create(topView, "Menu", 0, GUI_AppTopBarHeight, GUI_AppMenuWidth, -1);
+    menuView->setAlign( GUI_ALIGN_ABSOLUTE );
+    
     menuButton = GUI_Button::create(topBar, NULL, kIcon_solid_bars);
     menuButton->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
     menuButton->setMargin(0, 0, 0, 10 );
@@ -130,5 +141,4 @@ void GUI_App::createMenu( int options ) {
         }
     });
     
-    menuView = GUI_Menu::create(topView, "Menu", 0, GUI_AppTopBarHeight, GUI_AppMenuWidth, -1);
 }

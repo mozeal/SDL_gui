@@ -100,7 +100,7 @@ void GUI_Menu::add(GUI_MenuItem* child) {
             GUI_MenuItem *c = *it;
             if( lit == c ) {
                 c->setSelected(true);
-                GUI_Log( "%s\n", c->title.c_str());
+                //GUI_Log( "%s\n", c->title.c_str());
                 this->selectedItem = c;
                 if( this->callback ) {
                     this->callback(this);

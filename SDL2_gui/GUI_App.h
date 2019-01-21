@@ -21,20 +21,23 @@
 #define GUI_ORIENTATION_PORTRAIT    1
 #define GUI_ORIENTATION_LANDSCAPE   2
 
-#define GUI_APP_TOP_BAR           1
+#define GUI_APP_TOP_BAR             1
 #define GUI_APP_STATUS_BAR          2
 #define GUI_APP_CONTENT_VIEW        4
 #define GUI_APP_MENU                8
+#define GUI_APP_MENUBAR             16
 
 class GUI_View;
 class GUI_TopBar;
 class GUI_StatusBar;
 class GUI_Button;
 class GUI_Menu;
+class GUI_MenuBar;
 
 class GUI_App {
 protected:
     void createTopBar( int options );
+    void createMenuBar( int options );
     void createStatusBar( int options );
     void createContentView( int options );
     void createMenu( int options );
@@ -55,6 +58,7 @@ public:
     GUI_View *contentView;
     GUI_Button *menuButton;
     GUI_Menu *menuView;
+    GUI_MenuBar *menuBar;
     
     void run();
 };

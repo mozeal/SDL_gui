@@ -15,7 +15,7 @@ GUI_TopBar *GUI_TopBar::create( GUI_View *parent, const char *title,
 
 GUI_TopBar::GUI_TopBar(GUI_View *parent, const char *title,
                        std::function<void(GUI_View*)>callbackFunction ) :
-GUI_View( parent, title, 0, 0, -1, GUI_AppTopBarHeight ),
+    GUI_View( parent, title, 0, 0, -1, GUI_AppTopBarHeight ),
 titleView(NULL)
 {
     setCallback(callbackFunction);
