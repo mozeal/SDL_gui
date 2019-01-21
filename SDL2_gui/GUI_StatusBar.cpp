@@ -23,6 +23,10 @@ GUI_View( parent, title, 0, 0, -1, GUI_AppStatusBarHeight )
     setLayout( GUI_LAYOUT_HORIZONTAL );
     border = 0;
 
+    fpsView = GUI_FPSView::create(this, 0, 0, 0, 0 );
+    fpsView->setAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT );
+    fpsView->setTextColor(cBlack);
+    fpsView->setMargin(0,10, 0, 0);
 }
 
 GUI_StatusBar::~GUI_StatusBar() {

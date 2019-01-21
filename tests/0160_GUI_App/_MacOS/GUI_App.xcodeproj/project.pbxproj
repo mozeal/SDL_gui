@@ -325,11 +325,11 @@
 			children = (
 				385B9AB821CCD379000E5F90 /* SDL2_imageFilter.c */,
 				385B9AB921CCD379000E5F90 /* SDL2_gfxPrimitives.c */,
-				385B9ABA21CCD379000E5F90 /* SDL2_framerate.h */,
 				385B9ABB21CCD379000E5F90 /* SDL2_gfxPrimitives_font.h */,
 				385B9ABC21CCD379000E5F90 /* SDL2_rotozoom.c */,
 				385B9ABD21CCD379000E5F90 /* SDL2_gfxPrimitives.h */,
 				385B9ABE21CCD379000E5F90 /* SDL2_imageFilter.h */,
+				385B9ABA21CCD379000E5F90 /* SDL2_framerate.h */,
 				385B9ABF21CCD379000E5F90 /* SDL2_framerate.c */,
 				385B9AC021CCD379000E5F90 /* SDL2_rotozoom.h */,
 			);

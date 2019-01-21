@@ -33,4 +33,8 @@ public:
     virtual void setContentAlign( int a );
 };
 
+
+
+
+
 #endif /* GUI_Label_hpp */

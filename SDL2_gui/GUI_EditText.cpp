@@ -157,7 +157,7 @@ bool GUI_EditText::eventHandler(SDL_Event*event) {
     
         default:
         {
-            GUI_TextView::eventHandler(event);
+            return GUI_TextView::eventHandler(event);
         }
     }
     return false;

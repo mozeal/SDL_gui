@@ -16,14 +16,16 @@ GUI_MenuItem *GUI_MenuItem::create( GUI_View *parent, const char *title, int x, 
 
 GUI_MenuItem::GUI_MenuItem(GUI_View *parent, const char *title, int x, int y, int width, int height,
                            std::function<void(GUI_View*)>callbackFunction ) :
-GUI_View( parent, title, x, y, width, height ),
+    GUI_View( parent, title, x, y, width, height ),
 separator(true)
 {
     dragable = false;
-    clickable = true;
+    clickable = false;
+    capture_on_click = false;
     focusable = true;
     showInteract = true;
     mouseReceive = true;
+    callback_on_mouse_up = true;
     
     setBackgroundColor(cWhite);
     
@@ -62,12 +64,23 @@ GUI_Menu *GUI_Menu::create( GUI_View *parent, const char *title, int x, int y, i
 
 GUI_Menu::GUI_Menu(GUI_View *parent, const char *title, int x, int y, int width, int height,
                    std::function<void(GUI_View*)>callbackFunction ) :
-GUI_View( parent, title, x, y, width, height )
+GUI_View( parent, title, x, y, width, height ),
+isOpen(0)
 {
+    clickable = false;
+    capture_on_click = true;
+    
     setCallback( callbackFunction );
+    
+    setAlign( GUI_ALIGN_ABSOLUTE );
     
     setBackgroundColor(cEmptyContent);
     setLayout(GUI_LAYOUT_VERTICAL);
+    
+    nClosePosnX = -width;
+    nOpenPosnX = 0;
+    
+    close(0);
 }
 
 GUI_Menu::~GUI_Menu() {
@@ -122,4 +135,73 @@ void GUI_Menu::addSimpleMenu( const char *title, bool separator ) {
     
     add( item1 );
     updateLayout();
+}
+
+void GUI_Menu::close( int duration ) {
+    isOpen = false;
+    move( -GUI_AppMenuWidth, 0, duration );
+
+    GUI_SetMouseCapture( NULL );
+    GUI_Log( "Menu close\n" );
+}
+
+void GUI_Menu::open( int duration ) {
+    isOpen = true;
+    move( GUI_AppMenuWidth, 0, duration );
+
+    GUI_SetMouseCapture( this );
+    GUI_Log( "Menu open\n" );
+}
+
+bool GUI_Menu::eventHandler(SDL_Event*event) {
+    SDL_Scancode scancode;
+   
+    switch (event->type) {
+
+        case SDL_FINGERDOWN:
+        {
+            if( isOpen ) {
+                SDL_TouchFingerEvent e = event->tfinger;
+                
+                int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
+                int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
+                if( !hitTest(x, y, false) ) {
+                    GUI_SetMouseCapture(NULL);
+                    close(GUI_AppMenuCollapseTime);
+                    return true;
+                }
+                else {
+                    return GUI_View::eventHandler(event);
+                }
+            }
+            return GUI_View::eventHandler(event);
+            break;
+        }
+        case SDL_MOUSEBUTTONDOWN:
+        {
+            if( isOpen ) {
+                SDL_MouseButtonEvent e = event->button;
+            
+                int x = (int)(e.x*GUI_mouseScale);
+                int y = (int)(e.y*GUI_mouseScale);
+                if( !hitTest(x, y, false) ) {
+                    GUI_SetMouseCapture(NULL);
+                    close(GUI_AppMenuCollapseTime);
+                    return true;
+                }
+                else {
+                    return GUI_View::eventHandler(event);
+                }
+            }
+            return GUI_View::eventHandler(event);
+            break;
+        }
+            
+        default:
+        {
+            return GUI_View::eventHandler(event);
+        }
+    }
+     
+    return false;
 }

@@ -53,6 +53,7 @@ corner(0),
 dragable(false),
 focusable(false),
 clickable(false),
+capture_on_click(false),
 click_through(false),
 click_to_top(false),
 _padding{0,0,0,0},
@@ -70,7 +71,10 @@ showInteract(false),
 mouseReceive(true),
 callback(nullptr),
 isMoving(false),
-focus_need_input(false)
+focus_need_input(false),
+isMouseCapturing(false),
+callback_on_mouse_up(false),
+callback_on_mouse_down(false)
 {
     ox = x;
     oy = y;
@@ -174,11 +178,17 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                             BreakSiblingPropagate = true;
                         }
                     }
-                    if( clickable ) {
+                    if( callback_on_mouse_down ) {
+                        if( callback ) {
+                            callback(this);
+                        }
+                    }
+                    if( clickable || capture_on_click ) {
                         //GUI_mouseCapturedView = this;
                         GUI_SetMouseCapture(this);
                         touchTime = SDL_GetTicks(); // time in millis
                         touchHoldTime = touchTime;
+                        BreakSiblingPropagate = true;
                     }
                     if( dragable ) {
                         _dragging = true;
@@ -216,8 +226,9 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 break;
             }
             ReverseRecursive = true;
-            //SDL_Log( "To HitTest %s %i %i\n", title.c_str(), x, y );
+            
             if( hitTest(x, y, false) ) {
+                //SDL_Log( "HitTest %s %i %i\n", title.c_str(), x, y );
                 if( focusable ) {
                     setFocus();
                 }
@@ -227,11 +238,17 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                         BreakSiblingPropagate = true;
                     }
                 }
-                if( clickable ) {
+                if( callback_on_mouse_down ) {
+                    if( callback ) {
+                        callback(this);
+                    }
+                }
+                if( clickable || capture_on_click ) {
                     //GUI_mouseCapturedView = this;
                     GUI_SetMouseCapture(this);
                     touchTime = SDL_GetTicks(); // time in millis
                     touchHoldTime = touchTime;
+                    BreakSiblingPropagate = true;
                 }
                 if( dragable ) {
                     _dragging = true;
@@ -344,57 +361,81 @@ bool GUI_View::eventHandler(SDL_Event*event) {
         case SDL_FINGERUP:
         {
             SDL_TouchFingerEvent e = event->tfinger;
-            SDL_FingerID fid = e.fingerId;
+            //SDL_FingerID fid = e.fingerId;
             //GUI_Log( "%i\n", fid );
             //SDL_MouseButtonEvent e = event->button;
-            //int x = (int)(e.x*GUI_mouseScale);
-            //int y = (int)(e.y*GUI_mouseScale);
+            int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
+            int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
             
-            if (_dragging) {
-                _dragging = false;
-                SDL_Log( "Undragging %s\n", title.c_str() );
-                //GUI_mouseCapturedView = NULL;
-                GUI_SetMouseCapture(NULL);
-                return true;
-            }
-            if( clickable ) {
-                //GUI_mouseCapturedView = NULL;
-                GUI_SetMouseCapture(NULL);
-                if (callback) {
-                    callback(this);
+            if( isMouseCapturing ) {
+                if (_dragging) {
+                    _dragging = false;
+                    SDL_Log( "Undragging %s\n", title.c_str() );
+                    //GUI_mouseCapturedView = NULL;
+                    GUI_SetMouseCapture(NULL);
+                    return true;
+                }
+                if( clickable ) {
+                    //GUI_mouseCapturedView = NULL;
+                    GUI_SetMouseCapture(NULL);
+                    if (callback && !callback_on_mouse_up) {
+                        callback(this);
+                    }
                     return true;
                 }
             }
-            return false;
+            if( hitTest(x, y, false) ) {
+                if( callback_on_mouse_up ) {
+                    if( callback ) {
+                        callback(this);
+                    }
+                    return true;
+                }
+                BreakSiblingPropagate = true;
+            }
+            break;
         }
         case SDL_MOUSEBUTTONUP:
         {
+            //GUI_Log( "Mouse up %s\n", title.c_str() );
             if( !mouseReceive ) {
                 BreakRecursive = true;
                 BreakSiblingPropagate = false;
                 break;
             }
 
-            //SDL_MouseButtonEvent e = event->button;
-            //int x = (int)(e.x*GUI_mouseScale);
-            //int y = (int)(e.y*GUI_mouseScale);
+            SDL_MouseButtonEvent e = event->button;
+            int x = (int)(e.x*GUI_mouseScale);
+            int y = (int)(e.y*GUI_mouseScale);
             
-            if (_dragging) {
-                _dragging = false;
-                SDL_Log( "Undragging %s\n", title.c_str() );
-                //GUI_mouseCapturedView = NULL;
-                GUI_SetMouseCapture(NULL);
-                return true;
-            }
-            if( clickable ) {
-                //GUI_mouseCapturedView = NULL;
-                GUI_SetMouseCapture(NULL);
-                if (callback) {
-                    callback(this);
+            if( isMouseCapturing ) {
+                if (_dragging) {
+                    _dragging = false;
+                    SDL_Log( "Undragging %s\n", title.c_str() );
+                    //GUI_mouseCapturedView = NULL;
+                    GUI_SetMouseCapture(NULL);
+                    return true;
+                }
+                if( clickable ) {
+                    //GUI_mouseCapturedView = NULL;
+                    GUI_SetMouseCapture(NULL);
+                    if (callback && !callback_on_mouse_up) {
+                        callback(this);
+                    }
                     return true;
                 }
             }
-            return false;
+            if( hitTest(x, y, false) ) {
+                if( callback_on_mouse_up ) {
+                    if( callback ) {
+                        callback(this);
+                    }
+                    return true;
+                }
+                BreakSiblingPropagate = true;
+            }
+
+            break;
         }
         
         case SDL_TEXTINPUT:

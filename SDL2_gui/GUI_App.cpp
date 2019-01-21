@@ -122,22 +122,13 @@ void GUI_App::createMenu( int options ) {
     menuButton->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
     menuButton->setMargin(0, 0, 0, 10 );
     menuButton->setCallback([=](GUI_View *bt) {
-        isMenuShow = !isMenuShow;
-        if( isMenuShow ) {
-            menuView->move( GUI_AppMenuWidth, 0, GUI_AppMenuCollapseTime );
+        if( menuView->isOpen ) {
+            menuView->close( GUI_AppMenuCollapseTime );
         }
         else {
-            menuView->move( -GUI_AppMenuWidth, 0, GUI_AppMenuCollapseTime );
+            menuView->open( GUI_AppMenuCollapseTime );
         }
     });
     
-    menuView = GUI_View::create(topView, "Menu", 0, GUI_AppTopBarHeight, GUI_AppMenuWidth, -1);
-    menuView->setAlign( GUI_ALIGN_ABSOLUTE );
-    menuView->setBackgroundColor(cEmptyContent);
-    if( isMenuShow ) {
-        menuView->move( GUI_AppMenuWidth, 0, 0 );
-    }
-    else {
-        menuView->move( -GUI_AppMenuWidth, 0, 0 );
-    }
+    menuView = GUI_Menu::create(topView, "Menu", 0, GUI_AppTopBarHeight, GUI_AppMenuWidth, -1);
 }

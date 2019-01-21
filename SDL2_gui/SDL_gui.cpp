@@ -24,7 +24,7 @@ static bool done = false;
 SDL_Renderer *GUI_renderer = NULL;
 SDL_Window *GUI_window = NULL;
 GUI_View *GUI_topView = NULL;
-GUI_View * GUI_mouseCapturedView = NULL;
+GUI_View * _GUI_mouseCapturedView = NULL;
 
 static std::function<bool(SDL_Event* ev)> user_handle_events = NULL;
 
@@ -253,21 +253,21 @@ static void handle_events(SDL_Event *ev) {
         if (user_handle_events(ev))
             return;
     }
-    if (GUI_mouseCapturedView) {
+    if (_GUI_mouseCapturedView) {
         switch (ev->type) {
             case SDL_FINGERDOWN:
             case SDL_MOUSEBUTTONDOWN:
-                if (GUI_mouseCapturedView->eventHandler(ev))
+                if (_GUI_mouseCapturedView->eventHandler(ev))
                     return;
                 break;
             case SDL_FINGERMOTION:
             case SDL_MOUSEMOTION:
-                if (GUI_mouseCapturedView->eventHandler(ev))
+                if (_GUI_mouseCapturedView->eventHandler(ev))
                     return;
                 break;
             case SDL_FINGERUP:
             case SDL_MOUSEBUTTONUP:
-                if (GUI_mouseCapturedView->eventHandler(ev))
+                if (_GUI_mouseCapturedView->eventHandler(ev))
                     return;
                 break;
         }
@@ -279,7 +279,25 @@ static void handle_events(SDL_Event *ev) {
 }
 
 void GUI_SetMouseCapture( GUI_View *v ) {
-    GUI_mouseCapturedView = v;
+    if( v ) {
+        if( v->isMouseCapturing )
+            return;
+    }
+    if( _GUI_mouseCapturedView ) {
+        _GUI_mouseCapturedView->isMouseCapturing = false;
+    }
+    _GUI_mouseCapturedView = v;
+    if( _GUI_mouseCapturedView ) {
+        _GUI_mouseCapturedView->isMouseCapturing = true;
+        GUI_Log( "Capture to %s\n", v->title.c_str());
+    }
+    else {
+        GUI_Log( "Kill capture\n" );
+    }
+}
+
+GUI_View * GUI_GetMouseCapture() {
+    return _GUI_mouseCapturedView;
 }
 
 GUI_View *GUI_createTopView(const char* t, int x, int y, int w, int h,

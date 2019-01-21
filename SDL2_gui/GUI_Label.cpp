@@ -124,3 +124,5 @@ void GUI_Label::setContentAlign( int a ) {
         textView->setAlign( a );
     }
 }
+
+

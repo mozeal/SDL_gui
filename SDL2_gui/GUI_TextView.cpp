@@ -69,8 +69,12 @@ void GUI_TextView::updateContent() {
     SDL_FreeSurface(surf);
     
     updateSize();
-    updateLayout();
-    
+    if( parent ) {
+        parent->updateLayout();
+    }
+    else {
+        updateLayout();
+    }
 }
 
 void GUI_TextView::updateSize() {
@@ -94,4 +98,35 @@ void GUI_TextView::setTextColor( SDL_Color c ) {
     colorMod = c;
 }
 
+GUI_FPSView *GUI_FPSView::create( GUI_View *parent, int x, int y, int width, int height ) {
+    return new GUI_FPSView( parent, x, y, width, height );
+}
 
+GUI_FPSView::GUI_FPSView(GUI_View *parent, int x, int y, int width, int height) :
+GUI_TextView( parent, NULL, GUI_UITextFontName.c_str(), GUI_UITextFontSize, x, y, width, height ),
+frame_count(0),
+timer_start(0)
+{
+    border = 0;
+    setBackgroundColor(cClear);
+}
+
+GUI_FPSView::~GUI_FPSView() {
+    
+}
+
+void GUI_FPSView::update() {
+    if( timer_start == 0 ) {
+        timer_start = SDL_GetTicks();
+        return;
+    }
+    frame_count++;
+    Uint32 duration = SDL_GetTicks() - timer_start;
+    
+    if (frame_count % 10 == 0) {
+        float fps = (float)frame_count / duration * 1000.0f;
+        char fps_text[16];
+        sprintf(fps_text, "%0.2f fps", fps);
+        setTitle(fps_text);
+    }
+}

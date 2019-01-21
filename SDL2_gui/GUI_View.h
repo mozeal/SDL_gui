@@ -107,11 +107,16 @@ public:
     bool dragable;
     bool focusable;
     bool clickable;
+    bool capture_on_click;
     bool showInteract;
     bool mouseReceive;
     bool click_through;
     bool click_to_top;
     bool focus_need_input;
+    bool callback_on_mouse_down;
+    bool callback_on_mouse_up;
+    
+    bool isMouseCapturing;
     
     int getWidth() { return rectView.w / GUI_scale; };
     int getHeight() { return rectView.h / GUI_scale; };

@@ -30,6 +30,7 @@ class GUI_View;
 class GUI_TopBar;
 class GUI_StatusBar;
 class GUI_Button;
+class GUI_Menu;
 
 class GUI_App {
 protected:
@@ -53,7 +54,7 @@ public:
     GUI_StatusBar *statusBar;
     GUI_View *contentView;
     GUI_Button *menuButton;
-    GUI_View *menuView;
+    GUI_Menu *menuView;
     
     void run();
 };

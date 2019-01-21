@@ -31,4 +31,16 @@ public:
     bool forceEmptyText;
 };
 
+class GUI_FPSView : public GUI_TextView {
+public:
+    static GUI_FPSView *create( GUI_View *parent, int x=0, int y=0, int width=0, int height=0 );
+    GUI_FPSView(GUI_View *parent, int x=0, int y=0, int width=0, int height=0);
+    virtual ~GUI_FPSView();
+    
+    virtual void update();
+    
+    int frame_count;
+    Uint32 timer_start;
+};
+
 #endif /* GUI_TextView_hpp */

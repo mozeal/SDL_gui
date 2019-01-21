@@ -22,6 +22,8 @@ public:
     GUI_StatusBar(GUI_View *parent, const char *title,
                std::function<void(GUI_View*)>callbackFunction = NULL );
     virtual ~GUI_StatusBar();
+    
+    GUI_FPSView *fpsView;
 };
 
 #endif /* GUI_StatusBar_hpp */
