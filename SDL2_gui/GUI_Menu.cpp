@@ -138,6 +138,8 @@ void GUI_Menu::addSimpleMenu( const char *title, bool separator ) {
 }
 
 void GUI_Menu::close( int duration ) {
+    if( isMoving )
+        return;
     isOpen = false;
     move( -GUI_AppMenuWidth, 0, duration );
 
@@ -146,6 +148,8 @@ void GUI_Menu::close( int duration ) {
 }
 
 void GUI_Menu::open( int duration ) {
+    if( isMoving )
+        return;
     isOpen = true;
     move( GUI_AppMenuWidth, 0, duration );
 
@@ -166,9 +170,8 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
                 int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
                 int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
                 if( !hitTest(x, y, false) ) {
-                    GUI_SetMouseCapture(NULL);
                     close(GUI_AppMenuCollapseTime);
-                    return true;
+                    return false;
                 }
                 else {
                     return GUI_View::eventHandler(event);
@@ -185,9 +188,8 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
                 int x = (int)(e.x*GUI_mouseScale);
                 int y = (int)(e.y*GUI_mouseScale);
                 if( !hitTest(x, y, false) ) {
-                    GUI_SetMouseCapture(NULL);
                     close(GUI_AppMenuCollapseTime);
-                    return true;
+                    return false;
                 }
                 else {
                     return GUI_View::eventHandler(event);

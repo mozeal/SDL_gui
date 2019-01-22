@@ -51,7 +51,16 @@ textView( NULL )
     }
 
     setLayout( GUI_LAYOUT_HORIZONTAL );
-    updateLayout();
+    updateSize();
+    
+    /*
+    if( parent ) {
+        parent->updateLayout();
+    }
+    else {
+        updateLayout();
+    }
+    */
 }
 
 GUI_Label::~GUI_Label() {
