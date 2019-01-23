@@ -26,7 +26,7 @@ void createColumn1(GUI_View *subContentView) {
     auto column1 = GUI_View::create(subContentView, "COL2", 0, 0, 240, -1);
     column1->setLayout(GUI_LAYOUT_VERTICAL);
     column1->setMargin( 0, 0, 0, 0 );
-    column1->setPadding( 5, 5, 5, 5 );
+    column1->setPadding( 0, 5, 5, 5 );
     column1->setBackgroundColor(cClear);
     column1->border = 0;
     
@@ -120,7 +120,7 @@ void createColumn2(GUI_View *subContentView) {
     horz2->setLayout( GUI_LAYOUT_HORIZONTAL );
     horz2->setMargin( 10, 0, 0, 0 );
     horz2->setPadding( 0, 0, 0, 0 );
-    horz2->setBackgroundColor(cYellow);
+    horz2->setBackgroundColor(cGrey);
     
     auto bi21 = GUI_Button::create( horz2, NULL, kIcon_solid_dollar_sign );
     bi21->setMargin( 5, 5, 5, 5 );
