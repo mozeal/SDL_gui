@@ -74,7 +74,8 @@ isMoving(false),
 focus_need_input(false),
 isMouseCapturing(false),
 callback_on_mouse_up(false),
-callback_on_mouse_down(false)
+callback_on_mouse_down(false),
+propagate_sibling_on_mouseup_outside(true)
 {
     ox = x;
     oy = y;
@@ -413,32 +414,36 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 }
             }
             if( clickable ) {
-                GUI_SetMouseCapture(NULL);
                 if( hitTest(x, y, false) ) {
+                    if( isMouseCapturing )
+                        GUI_SetMouseCapture(NULL);
                     if (callback && !callback_on_mouse_up) {
                         callback(this);
                     }
                     return true;
                 }
-                else {
-                    
-                }
-                break;
             }
             if( callback_on_mouse_up ) {
-                if( getInteract() ) {
+                 if( hitTest(x, y, false) ) {
                     if( callback ) {
                         callback(this);
                     }
                     return true;
                 }
-                else {
-                    //BreakSiblingPropagate = true;
-                }
-                break;
+            }
+            if( hitTest(x, y, false) ) {
+                BreakSiblingPropagate = true;
             }
             else {
-                //BreakSiblingPropagate = true;
+                if( isFocus() ) {
+                    killFocus();
+                }
+                if( isMouseCapturing ) {
+                    GUI_SetMouseCapture(NULL);
+                }
+                if( !propagate_sibling_on_mouseup_outside ) {
+                    BreakSiblingPropagate = true;
+                }
             }
 
             break;
@@ -736,7 +741,7 @@ bool GUI_View::toBack() {
 
 void GUI_View::setInteract(bool i) {
     if( i ) {
-        GUI_Log( "Interact %s\n", title.c_str() );
+        // GUI_Log( "Interact %s\n", title.c_str() );
         if( lastInteractView != NULL && lastInteractView != this ) {
             lastInteractView->setInteract(false);
         }
@@ -745,7 +750,7 @@ void GUI_View::setInteract(bool i) {
     }
     else {
         _interact = false;
-        GUI_Log( "DE-Interact %s\n", title.c_str() );
+        //GUI_Log( "DE-Interact %s\n", title.c_str() );
     }
 }
 

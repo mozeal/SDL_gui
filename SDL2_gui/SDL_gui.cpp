@@ -285,6 +285,9 @@ void GUI_SetMouseCapture( GUI_View *v ) {
     }
     if( _GUI_mouseCapturedView ) {
         _GUI_mouseCapturedView->isMouseCapturing = false;
+        if( !v ) {
+            GUI_Log( "Kill capture %s\n", _GUI_mouseCapturedView->title.c_str());
+        }
     }
     _GUI_mouseCapturedView = v;
     if( _GUI_mouseCapturedView ) {

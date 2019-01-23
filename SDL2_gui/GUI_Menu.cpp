@@ -22,10 +22,10 @@ separator(true)
     dragable = false;
     clickable = false;
     capture_on_click = false;
+    callback_on_mouse_up = true;
     focusable = true;
     showInteract = true;
     mouseReceive = true;
-    callback_on_mouse_up = true;
     
     setBackgroundColor(cWhite);
     

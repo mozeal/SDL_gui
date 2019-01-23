@@ -22,6 +22,18 @@ static GUI_View *topView;
 static GUI_View *inputBar;
 static GUI_EditText *inputBox;
 
+GUI_PopupView *popup = NULL;
+
+void createPopup() {
+    if( !popup ) {
+        popup = GUI_PopupView::create( topView, "Popup", 0, 0, 300, 200 );
+    }
+    else {
+        popup->show();
+    }
+    popup->Center();
+}
+
 void createColumn1(GUI_View *subContentView) {
     auto column1 = GUI_View::create(subContentView, "COL2", 0, 0, 240, -1);
     column1->setLayout(GUI_LAYOUT_VERTICAL);
@@ -132,11 +144,14 @@ void createColumn2(GUI_View *subContentView) {
     bi23->setMargin( 5, 5, 5, 5 );
     bi23->setAlign( GUI_ALIGN_CENTER | GUI_ALIGN_TOP );
 
-    auto btn = GUI_Button::create( column2, "Button 1", kIcon_solid_sun, 0, 0, 0, 0 );
+    auto btn = GUI_Button::create( column2, "Test Popup", kIcon_solid_sun, 0, 0, 0, 0 );
     btn->setMargin( 10, 0, 0, 0 );
     btn->corner = 6;
     btn->setAlign(GUI_ALIGN_TOP|GUI_ALIGN_CENTER);
-
+    btn->setCallback([=](GUI_View *v) {
+        GUI_Log( v->title.c_str() );
+        createPopup();
+    });
 }
 
 void createColumn3(GUI_View *subContentView) {

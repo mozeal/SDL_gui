@@ -21,6 +21,10 @@ GUI_CheckBox::GUI_CheckBox(GUI_View *parent, const char *title, int x, int y, in
 GUI_Button(parent, title, NULL, x, y, width, height, NULL ),
 checked(false)
 {
+    clickable = false;
+    capture_on_click = false;
+    callback_on_mouse_up = true;
+    
     checkBoxCallback = callbackFunction;
     
     int cSize = ((int)(textView->rectView.h/GUI_scale)) & ~1;

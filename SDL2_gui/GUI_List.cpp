@@ -19,7 +19,11 @@ GUI_ListItem::GUI_ListItem(GUI_View *parent, const char *title, int x, int y, in
 GUI_View( parent, title, x, y, width, height )
 {
     dragable = false;
-    clickable = true;
+    //clickable = true;
+    clickable = false;
+    capture_on_click = false;
+    callback_on_mouse_up = true;
+    
     focusable = true;
     showInteract = true;
     mouseReceive = true;

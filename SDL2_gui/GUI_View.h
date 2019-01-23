@@ -115,6 +115,7 @@ public:
     bool focus_need_input;
     bool callback_on_mouse_down;
     bool callback_on_mouse_up;
+    bool propagate_sibling_on_mouseup_outside;
     
     bool isMouseCapturing;
     
