@@ -28,7 +28,7 @@ GUI_Label(parent, title, unicode, x, y, width, height, NULL )
     callback = callbackFunction;
     
     border = 1;
-    focusBorder = 8;
+    focusBorder = 2;
     corner = 4;
     if( title ) {
         setPadding( 5, 12, 5, 12 );

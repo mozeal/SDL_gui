@@ -25,7 +25,8 @@ static GUI_EditText *inputBox;
 void createColumn1(GUI_View *subContentView) {
     auto column1 = GUI_View::create(subContentView, "COL2", 0, 0, 240, -1);
     column1->setLayout(GUI_LAYOUT_VERTICAL);
-    column1->setMargin( 0, 0, 10, 10 );
+    column1->setMargin( 0, 0, 0, 0 );
+    column1->setPadding( 5, 5, 5, 5 );
     column1->setBackgroundColor(cClear);
     column1->border = 0;
     
@@ -78,7 +79,8 @@ void createColumn1(GUI_View *subContentView) {
 void createColumn2(GUI_View *subContentView) {
     auto column2 = GUI_View::create(subContentView, "COL2", 0, 0, 200, -1);
     column2->setLayout(GUI_LAYOUT_VERTICAL);
-    column2->setMargin( 0, 0, 10, 10 );
+    column2->setMargin( 0, 0, 0, 0 );
+    column2->setPadding( 5, 5, 5, 5 );
     column2->setBackgroundColor(cClear);
     column2->border = 0;
     
@@ -86,7 +88,7 @@ void createColumn2(GUI_View *subContentView) {
     v1->setBackgroundColor(cWhite);
     v1->border = 1;
     v1->setPadding( 5, 10, 5, 10 );
-    v1->setMargin( 10, 0, 0, 0 );
+    v1->setMargin( 0, 0, 0, 0 );
     v1->corner = 4;
     v1->setLayout( GUI_LAYOUT_VERTICAL );
     
@@ -100,14 +102,14 @@ void createColumn2(GUI_View *subContentView) {
     horz1->setAlign( GUI_ALIGN_CENTER | GUI_ALIGN_TOP );
     horz1->setLayout( GUI_LAYOUT_HORIZONTAL );
     horz1->setMargin( 10, 0, 0, 0 );
-    horz1->setPadding( 5, 0, 5, 0 );
+    horz1->setPadding( 0, 0, 0, 0 );
     
     auto bi1 = GUI_Button::create( horz1, NULL, kIcon_solid_dollar_sign );
-    bi1->setMargin( 0, 5, 0, 5 );
+    bi1->setMargin( 5, 5, 5, 5 );
     auto bi2 = GUI_Button::create( horz1, NULL, kIcon_solid_yen_sign );
-    bi2->setMargin( 0, 5, 0, 5 );
+    bi2->setMargin( 5, 5, 5, 5 );
     auto bi3 = GUI_Button::create( horz1, NULL, kIcon_solid_pound_sign );
-    bi3->setMargin( 0, 5, 0, 5 );
+    bi3->setMargin( 5, 5, 5, 5 );
     
     auto img = GUI_ImageView::create(column2, "Icon", "logo.png", 0, 0, -1, -1 );
     img->setMargin( 10, 0, 0, 0 );
@@ -117,16 +119,17 @@ void createColumn2(GUI_View *subContentView) {
     horz2->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
     horz2->setLayout( GUI_LAYOUT_HORIZONTAL );
     horz2->setMargin( 10, 0, 0, 0 );
-    horz2->setPadding( 5, 0, 5, 0 );
+    horz2->setPadding( 0, 0, 0, 0 );
+    horz2->setBackgroundColor(cYellow);
     
     auto bi21 = GUI_Button::create( horz2, NULL, kIcon_solid_dollar_sign );
-    bi21->setMargin( 0, 5, 0, 5 );
+    bi21->setMargin( 5, 5, 5, 5 );
     bi21->setAlign( GUI_ALIGN_CENTER | GUI_ALIGN_TOP );
     auto bi22 = GUI_Button::create( horz2, NULL, kIcon_solid_yen_sign );
-    bi22->setMargin( 0, 5, 0, 5 );
+    bi22->setMargin( 5, 5, 5, 5 );
     bi22->setAlign( GUI_ALIGN_CENTER | GUI_ALIGN_TOP );
     auto bi23 = GUI_Button::create( horz2, NULL, kIcon_solid_pound_sign );
-    bi23->setMargin( 0, 5, 0, 5 );
+    bi23->setMargin( 5, 5, 5, 5 );
     bi23->setAlign( GUI_ALIGN_CENTER | GUI_ALIGN_TOP );
 
     auto btn = GUI_Button::create( column2, "Button 1", kIcon_solid_sun, 0, 0, 0, 0 );
@@ -139,7 +142,7 @@ void createColumn2(GUI_View *subContentView) {
 void createColumn3(GUI_View *subContentView) {
     auto column3 = GUI_View::create(subContentView, "COL2", 0, 0, -1, -1);
     column3->setLayout(GUI_LAYOUT_VERTICAL);
-    column3->setMargin( 10, 10, 10, 10 );
+    column3->setMargin( 5, 5, 5, 5 );
     column3->setBackgroundColor(cWhite);
     column3->border = 1;
     column3->corner = 4;
@@ -148,7 +151,7 @@ void createColumn3(GUI_View *subContentView) {
 void createColumn4(GUI_View *subContentView) {
     auto column4 = GUI_View::create(subContentView, "COL2", 0, 0, 0, -1);
     column4->setLayout(GUI_LAYOUT_VERTICAL);
-    column4->setMargin( 10, 10, 10, 0 );
+    column4->setMargin( 5, 5, 5, 5 );
     //column4->setPadding( 5, 5, 5, 5 );
     column4->setBackgroundColor(cWhite);
     column4->border = 1;
@@ -208,6 +211,7 @@ int main(int argc, char *argv[]) {
     auto subContentView = GUI_View::create( app->contentView, "Sub-content", 0, 0, -1, -1 );
     subContentView->setLayout(GUI_LAYOUT_HORIZONTAL );
     subContentView->border = 0;
+    subContentView->setPadding( 5, 5, 5, 5 );
     subContentView->setBackgroundColor(cLightGrey);
     
     createColumn1(subContentView);

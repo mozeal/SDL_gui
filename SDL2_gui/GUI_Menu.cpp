@@ -163,6 +163,7 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
     switch (event->type) {
 
         case SDL_FINGERDOWN:
+        case SDL_FINGERUP:
         {
             if( isOpen ) {
                 SDL_TouchFingerEvent e = event->tfinger;
@@ -178,9 +179,9 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
                 }
             }
             return GUI_View::eventHandler(event);
-            break;
         }
         case SDL_MOUSEBUTTONDOWN:
+        case SDL_MOUSEBUTTONUP:
         {
             if( isOpen ) {
                 SDL_MouseButtonEvent e = event->button;
@@ -196,7 +197,6 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
                 }
             }
             return GUI_View::eventHandler(event);
-            break;
         }
             
         default:

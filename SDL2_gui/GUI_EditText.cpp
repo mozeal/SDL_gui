@@ -33,7 +33,7 @@ GUI_TextView(parent, title, GUI_UITextFontName.c_str(), GUI_UITextFontSize, x, y
     
     border = 1;
     corner = 4;
-    focusBorder = 3;
+    focusBorder = 2;
     
     updateContent();
     
