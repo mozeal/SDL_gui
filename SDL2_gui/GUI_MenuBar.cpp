@@ -15,7 +15,8 @@ GUI_MenuBarItem *GUI_MenuBarItem::create( GUI_View *parent, const char *title, i
 
 GUI_MenuBarItem::GUI_MenuBarItem(GUI_View *parent, const char *title, int x, int y, int width, int height,
                            std::function<void(GUI_View*)>callbackFunction ) :
-    GUI_View( parent, title, x, y, width, height )
+    GUI_View( parent, title, x, y, width, height ),
+popupMenu(NULL)
 {
     dragable = false;
     clickable = false;
@@ -36,7 +37,88 @@ GUI_MenuBarItem::~GUI_MenuBarItem() {
     
 }
 
+void GUI_MenuBarItem::setPopupMenu( GUI_PopupMenu *menu ) {
+    popupMenu = menu;
+}
 
+GUI_PopupMenu *GUI_MenuBarItem::addPopupMenu( GUI_View *parentView ) {
+    setPopupMenu( GUI_PopupMenu::create(parentView, "PopupMenu1", 0, 0, 160, 0) );
+    popupMenu->hide();
+    
+    return popupMenu;
+}
+
+// -------------------------------------------------------------------------------------------
+
+
+GUI_PopupMenu *GUI_PopupMenu::create( GUI_View *parent, const char *title, int x, int y, int width, int height,
+                           std::function<void(GUI_View*)>callbackFunction ) {
+    return new GUI_PopupMenu( parent, title, x, y, width, height, callbackFunction );
+}
+
+GUI_PopupMenu::GUI_PopupMenu(GUI_View *parent, const char *title, int x, int y, int width, int height,
+                   std::function<void(GUI_View*)>callbackFunction ) :
+    GUI_PopupView( parent, title, x, y, width, height )
+{
+    // setCallback( callbackFunction );
+    dragable = false;
+    
+    setBackgroundColor(cEmptyContent);
+    setLayout(GUI_LAYOUT_VERTICAL);
+}
+
+GUI_PopupMenu::~GUI_PopupMenu() {
+    
+}
+
+void GUI_PopupMenu::add(GUI_MenuItem* child) {
+    add_child(child);
+    
+    menuItems.push_back(child);
+    child->setCallback( [=](GUI_View *v) {
+        GUI_MenuItem *lit = (GUI_MenuItem *)v;
+        for (std::vector<GUI_MenuItem *>::iterator it = menuItems.begin() ; it != menuItems.end(); ++it) {
+            GUI_MenuItem *c = *it;
+            if( lit == c ) {
+                c->setSelected(true);
+                //GUI_Log( "%s\n", c->title.c_str());
+                this->selectedItem = c;
+                if( this->callback ) {
+                    this->callback(this);
+                }
+            }
+            else {
+                c->setSelected(false);
+            }
+        }
+    });
+}
+
+void GUI_PopupMenu::remove(GUI_MenuItem* child) {
+    remove_child(child);
+    for (std::vector<GUI_MenuItem *>::iterator it = menuItems.begin() ; it != menuItems.end(); ++it) {
+        if( child == *it ) {
+            menuItems.erase( it );
+            break;
+        }
+    }
+    child->setCallback(NULL);
+}
+
+void GUI_PopupMenu::addSimpleMenu( const char *title, bool separator ) {
+    GUI_MenuItem *item1 = GUI_MenuItem::create( NULL, title, 0, 0, -1, 0 );
+    item1->setPadding( 8, 10, 8, 10 );
+    item1->separator = separator;
+    
+    GUI_Label *lb1 = GUI_Label::create( item1, title, 0, 0, -1, 0 );
+    lb1->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
+    lb1->setBackgroundColor(cClear);
+    
+    add( item1 );
+    updateLayout();
+}
+
+// --------------------------------------------------------------------------------------------
 
 GUI_MenuBar *GUI_MenuBar::create( GUI_View *parent, const char *title,
                                         std::function<void(GUI_View*)>callbackFunction) {
@@ -45,7 +127,8 @@ GUI_MenuBar *GUI_MenuBar::create( GUI_View *parent, const char *title,
 
 GUI_MenuBar::GUI_MenuBar(GUI_View *parent, const char *title,
                          std::function<void(GUI_View*)>callbackFunction ) :
-    GUI_View( parent, title, 0, 0, -1, GUI_AppTopBarHeight )
+    GUI_View( parent, title, 0, 0, -1, GUI_AppTopBarHeight ),
+selectedItem(NULL)
 {
     setLayout( GUI_LAYOUT_HORIZONTAL );
 }
@@ -62,7 +145,13 @@ void GUI_MenuBar::add(GUI_MenuBarItem* child) {
     
     menuItems.push_back(child);
     child->setCallback( [=](GUI_View *v) {
-        //GUI_MenuBarItem *lit = (GUI_MenuBarItem *)v;
+        GUI_MenuBarItem *item = (GUI_MenuBarItem *)v;
+        GUI_Log( "%s\n", item->title.c_str() );
+        if( item->getPopupMenu() ) {
+            GUI_Point posn = item->getAbsolutePosition();
+            item->getPopupMenu()->setAbsolutePosition( posn.x, posn.y + getHeight() );
+            item->getPopupMenu()->show();
+        }
     });
 }
 
@@ -77,9 +166,10 @@ void GUI_MenuBar::remove(GUI_MenuBarItem* child) {
     child->setCallback(NULL);
 }
 
-void GUI_MenuBar::addSimpleMenu( const char *title ) {
+GUI_MenuBarItem * GUI_MenuBar::addSimpleMenu( const char *title ) {
     GUI_MenuBarItem *item1 = GUI_MenuBarItem::create( NULL, title, 0, 0, 0, 0 );
     item1->setPadding( 8, 10, 8, 10 );
+    item1->setBackgroundColor(cWhite);
     
     GUI_Label *lb1 = GUI_Label::create( item1, title, 0, 0, 0, 0 );
     lb1->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
@@ -87,4 +177,26 @@ void GUI_MenuBar::addSimpleMenu( const char *title ) {
     
     add( item1 );
     updateLayout();
+    
+    return item1;
+}
+
+GUI_MenuBarItem * GUI_MenuBar::addPopupMenu( const char *title, GUI_View *parentView ) {
+    GUI_MenuBarItem *item = addSimpleMenu(title);
+    GUI_PopupMenu *popupMenu = item->addPopupMenu( parentView );
+    popupMenu->setCallback([=](GUI_View *v) {
+        GUI_PopupMenu *pm = (GUI_PopupMenu *)v;
+        GUI_MenuItem *it = pm->selectedItem;
+        it->setSelected(false);
+        selectedItem = pm->selectedItem;
+        pm->selectedItem = NULL;
+        
+        
+        pm->hide();
+        if( this->callback ) {
+            this->callback(this);
+        }
+    });
+    
+    return item;
 }

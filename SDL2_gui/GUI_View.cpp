@@ -524,6 +524,9 @@ void GUI_View::move( int dx, int dy, int time ) {
 }
 
 void GUI_View::add_child(GUI_View *child) {
+    if( child->parent ) {
+        child->parent->remove_child( child );
+    }
     child->parent = this;
     
     children.push_back(child);
@@ -535,6 +538,7 @@ void GUI_View::remove_child(GUI_View *child) {
     for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
         if( child == *it ) {
             children.erase( it );
+            child->parent = NULL;
             break;
         }
     }
@@ -1263,4 +1267,20 @@ void GUI_View::updateLayout() {
             }
         }
     }
+}
+
+void GUI_View::setAbsolutePosition( int x, int y, int duration ) {
+    int dx = x - rectView.x/GUI_scale;
+    int dy = y - rectView.y/GUI_scale;
+        
+    move( dx, dy, duration );
+}
+
+GUI_Point GUI_View::getAbsolutePosition() {
+    static GUI_Point pt;
+    
+    pt.x = rectView.x / GUI_scale;
+    pt.y = rectView.y / GUI_scale;
+    
+    return pt;
 }

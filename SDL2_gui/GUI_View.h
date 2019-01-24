@@ -160,6 +160,9 @@ public:
     virtual void update();
     
     virtual void move( int dx, int dy, int time=0 );
+    
+    virtual void setAbsolutePosition( int x, int y, int time=0 );
+    virtual GUI_Point getAbsolutePosition();
 
     virtual void clear(GUI_Rect *rect = 0);
     

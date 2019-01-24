@@ -88,9 +88,6 @@ GUI_Menu::~GUI_Menu() {
 }
 
 void GUI_Menu::add(GUI_MenuItem* child) {
-    if( child->parent ) {
-        child->parent->remove_child( child );
-    }
     add_child(child);
     
     menuItems.push_back(child);
@@ -144,7 +141,7 @@ void GUI_Menu::close( int duration ) {
     move( -GUI_AppMenuWidth, 0, duration );
 
     GUI_SetMouseCapture( NULL );
-    GUI_Log( "Menu close\n" );
+    //GUI_Log( "Menu close\n" );
 }
 
 void GUI_Menu::open( int duration ) {
@@ -154,7 +151,7 @@ void GUI_Menu::open( int duration ) {
     move( GUI_AppMenuWidth, 0, duration );
 
     GUI_SetMouseCapture( this );
-    GUI_Log( "Menu open\n" );
+    //GUI_Log( "Menu open\n" );
 }
 
 bool GUI_Menu::eventHandler(SDL_Event*event) {

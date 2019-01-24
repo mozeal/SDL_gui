@@ -185,6 +185,25 @@ void createColumn4(GUI_View *subContentView) {
     column4->updateLayout();
 }
 
+void createMenuBar() {
+    GUI_MenuBarItem * menuFile = app->menuBar->addPopupMenu( "File", topView );
+    menuFile->getPopupMenu()->addSimpleMenu( "New", true );
+    menuFile->getPopupMenu()->addSimpleMenu( "Open" );
+    menuFile->getPopupMenu()->addSimpleMenu( "Save" );
+    menuFile->getPopupMenu()->addSimpleMenu( "Save As...", true );
+    menuFile->getPopupMenu()->addSimpleMenu( "Close" );
+
+    GUI_MenuBarItem * menuEdit = app->menuBar->addPopupMenu( "Edit", topView );
+    menuEdit->getPopupMenu()->addSimpleMenu( "Undo", true );
+    menuEdit->getPopupMenu()->addSimpleMenu( "Cut" );
+    menuEdit->getPopupMenu()->addSimpleMenu( "Copy" );
+    menuEdit->getPopupMenu()->addSimpleMenu( "Paste" );
+
+    app->menuBar->addSimpleMenu( "View" );
+    app->menuBar->addSimpleMenu( "Format" );
+    app->menuBar->addSimpleMenu( "Help" );
+}
+
 int main(int argc, char *argv[]) {
     app = GUI_App::create( GUI_ORIENTATION_LANDSCAPE, "SDL-GUI App", expectedWidth, expectedHeight,
                           GUI_APP_TOP_BAR | GUI_APP_STATUS_BAR | GUI_APP_MENU | GUI_APP_MENUBAR );
@@ -193,11 +212,12 @@ int main(int argc, char *argv[]) {
     }
     topView = app->topView;
     
-    app->menuBar->addSimpleMenu( "File" );
-    app->menuBar->addSimpleMenu( "Edit" );
-    app->menuBar->addSimpleMenu( "View" );
-    app->menuBar->addSimpleMenu( "Format" );
-    app->menuBar->addSimpleMenu( "Help" );
+    createMenuBar();
+    
+    app->menuBar->setCallback( [=](GUI_View *v) {
+        GUI_MenuBar *l = (GUI_MenuBar *)v;
+        GUI_Log( "Menu selected: %s\n", l->selectedItem->title.c_str() );
+    });
 
     app->menuView->setCallback( [=](GUI_View *v) {
         GUI_Menu *l = (GUI_Menu *)v;
