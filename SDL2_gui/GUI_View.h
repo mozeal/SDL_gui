@@ -156,6 +156,8 @@ public:
     virtual bool toTop();
     virtual bool toBack();
     
+    virtual void close();
+    
     virtual void updateContent() {
         
     }

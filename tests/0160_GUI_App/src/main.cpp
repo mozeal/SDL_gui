@@ -208,7 +208,7 @@ void createMenuBar() {
     GUI_MenuBarItem * menuView = app->menuBar->addPopupMenu( "View", topView );
     menuView->getPopupMenu()->addSimpleMenu( "Message Box" );
     menuView->getPopupMenu()->addSimpleMenu( "Option Box" );
-    menuView->getPopupMenu()->addSimpleMenu( "Edit Box", true );
+    menuView->getPopupMenu()->addSimpleMenu( "Text Input Box", true );
     menuView->getPopupMenu()->addSimpleMenu( "Dialog Box" );
 
     app->menuBar->addSimpleMenu( "Format" );
@@ -221,6 +221,24 @@ void createMessageBox() {
     box->setCallback([=](GUI_View *v) {
         GUI_MessageBox *mb = (GUI_MessageBox *)v;
         GUI_Log( "MSG Box \"%s\" OK\n", mb->title.c_str());
+    });
+}
+
+void createOptionBox() {
+    auto box = GUI_OptionBox::create( topView, "Option Box", "This is option box", 0, 0, 320, 0 );
+    box->Center();
+    box->setCallback([=](GUI_View *v) {
+        GUI_OptionBox *mb = (GUI_OptionBox *)v;
+        GUI_Log( "Option Box \"%s\" %i\n", mb->title.c_str(), mb->result );
+    });
+}
+
+void createTextInputBox() {
+    auto box = GUI_TextInputBox::create( topView, "Text Input Box", "Please Enter Text:", 0, 0, 320, 0 );
+    box->Center();
+    box->setCallback([=](GUI_View *v) {
+        GUI_TextInputBox *mb = (GUI_TextInputBox *)v;
+        GUI_Log( "\"%s\" %s\n", mb->title.c_str(), mb->result.c_str() );
     });
 }
 
@@ -239,8 +257,13 @@ int main(int argc, char *argv[]) {
         GUI_Log( "Menu selected: %s\n", l->selectedItem->title.c_str() );
         std::string str = l->selectedItem->title;
         if( str == "Message Box" ) {
-            GUI_Log( "Launch MessageBox\n" );
             createMessageBox();
+        }
+        else if( str == "Option Box" ) {
+            createOptionBox();
+        }
+        else if( str == "Text Input Box" ) {
+            createTextInputBox();
         }
     });
 

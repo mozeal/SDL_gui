@@ -93,7 +93,7 @@ propagate_sibling_on_mouseup_outside(true)
 }
 
 GUI_View::~GUI_View() {
-    GUI_Log( "Kill %s\n", title.c_str() );
+    //GUI_Log( "Kill %s\n", title.c_str() );
     
     delete_all_children();
     
@@ -554,7 +554,9 @@ void GUI_View::remove_child(GUI_View *child) {
     for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
         if( child == *it ) {
             children.erase( it );
-            GUI_Log( "Remove %s\n", child->title.c_str() );
+            // GUI_Log( "Remove %s\n", child->title.c_str() );
+            if( child->isMouseCapturing )
+                GUI_SetMouseCapture( NULL );
             if( lastInteractView == child )
                 lastInteractView = NULL;
             if( lastFocusView == child )
@@ -564,6 +566,10 @@ void GUI_View::remove_child(GUI_View *child) {
         }
     }
     updateLayout();
+}
+
+void GUI_View::close() {
+    GUI_View::closeQueue.push_back(this);
 }
 
 void GUI_View::delete_all_children() {
