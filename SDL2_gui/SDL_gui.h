@@ -48,6 +48,7 @@
 #include "GUI_Menu.h"
 #include "GUI_MenuBar.h"
 #include "GUI_PopupView.h"
+#include "GUI_MessageBox.h"
 
 int GUI_Init( const char* title, int expectedWidth, int expectedHeight );
 void GUI_Run(std::function<bool(SDL_Event *ev)>handle_ev = NULL);

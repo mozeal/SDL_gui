@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "GUI_View.h"
 #include "GUI_Label.h"
+#include "GUI_TopBar.h"
 
 class GUI_PopupView : public GUI_View {
 protected:
@@ -26,6 +27,17 @@ public:
     virtual bool eventHandler(SDL_Event*ev);
     
     virtual void Center();
+};
+
+class GUI_DialogView : public GUI_PopupView {
+protected:
+    GUI_TopBar *topBar;
+    GUI_View *contentView;
+    
+public:
+    static GUI_DialogView *create( GUI_View *parent, const char *title, int x, int y, int width, int height, int options=0 );
+    GUI_DialogView(GUI_View *parent, const char *title, int x, int y, int width, int height, int options=0 );
+    virtual ~GUI_DialogView();
 };
 
 #endif /* GUI_PopupView_hpp */

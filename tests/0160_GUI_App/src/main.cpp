@@ -215,6 +215,11 @@ void createMenuBar() {
     app->menuBar->addSimpleMenu( "Help" );
 }
 
+void createMessageBox() {
+    auto box = GUI_MessageBox::create( topView, "Message Box", "This is message box", 0, 0, 320, 0 );
+    box->Center();
+}
+
 int main(int argc, char *argv[]) {
     app = GUI_App::create( GUI_ORIENTATION_LANDSCAPE, "SDL-GUI App", expectedWidth, expectedHeight,
                           GUI_APP_TOP_BAR | GUI_APP_STATUS_BAR | GUI_APP_MENU | GUI_APP_MENUBAR );
@@ -228,6 +233,11 @@ int main(int argc, char *argv[]) {
     app->menuBar->setCallback( [=](GUI_View *v) {
         GUI_MenuBar *l = (GUI_MenuBar *)v;
         GUI_Log( "Menu selected: %s\n", l->selectedItem->title.c_str() );
+        std::string str = l->selectedItem->title;
+        if( str == "Message Box" ) {
+            GUI_Log( "Launch MessageBox\n" );
+            createMessageBox();
+        }
     });
 
     app->menuView->setCallback( [=](GUI_View *v) {

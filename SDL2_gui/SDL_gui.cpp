@@ -192,6 +192,14 @@ void GUI_Error(const char* fn, int result) {
 }
 
 static void GUI_Loop() {
+    if( GUI_View::closeQueue.size() ) {
+        for (std::vector<GUI_View *>::iterator it = GUI_View::closeQueue.end()-1 ; it >= GUI_View::closeQueue.begin(); --it) {
+            GUI_View *child = *it;
+            GUI_View::closeQueue.erase(it);
+            delete(child);
+        }
+    }
+    
 #ifdef __EMSCRIPTEN__
     SDL_Rect rect = {0, 0, GUI_physicalWindowWidth, GUI_physicalWindowHeight};
     SDL_RenderSetViewport(GUI_renderer, &rect);
@@ -235,6 +243,8 @@ static void GUI_Loop() {
         }
         handle_events(&event);
     }
+
+
     event.type = GUI_EventUpdate;
     handle_events(&event);
     event.type = GUI_EventPaint;

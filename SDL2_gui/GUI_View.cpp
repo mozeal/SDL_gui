@@ -31,6 +31,8 @@ extern GUI_View *GUI_topView;
 GUI_View *GUI_View::lastInteractView = NULL;
 GUI_View *GUI_View::lastFocusView = NULL;
 
+std::vector<GUI_View *>GUI_View::closeQueue;
+
 GUI_View *GUI_View::create( GUI_View *parent, const char *title, int x, int y, int width, int height,
                                std::function<bool(SDL_Event* ev)>userEventHandler) {
     GUI_View *view = new GUI_View( parent, title, x, y, width, height, userEventHandler );
@@ -91,6 +93,11 @@ propagate_sibling_on_mouseup_outside(true)
 }
 
 GUI_View::~GUI_View() {
+    GUI_Log( "Kill %s\n", title.c_str() );
+    
+    if( parent ) {
+        parent->remove_child(this);
+    }
     children.clear();
 }
 
@@ -208,6 +215,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             int y = (int)(e.y*GUI_mouseScale);
 
             if( !mouseReceive ) {
+                GUI_Log( "Throuth %s\n", title.c_str() );
                 BreakRecursive = true;
                 BreakSiblingPropagate = false;
                 break;
@@ -215,6 +223,12 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             ReverseRecursive = true;
             
             if( hitTest(x, y, false) ) {
+                GUI_Log( "Hit %s\n", title.c_str() );
+                if( mouseReceive ) {
+                    if( parent && parent->_dragging ) {
+                        parent->_dragging = false;
+                    }
+                }
                 if( focusable ) {
                     setFocus();
                 }
@@ -235,6 +249,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                     BreakSiblingPropagate = true;
                 }
                 if( dragable ) {
+                    GUI_Log( "Drag %s\n", title.c_str() );
                     GUI_SetMouseCapture(this);
                     _dragging = true;
                     if( parent ) {

@@ -92,3 +92,29 @@ bool GUI_PopupView::eventHandler(SDL_Event*event) {
     
     return false;
 }
+
+GUI_DialogView *GUI_DialogView::create( GUI_View *parent, const char *title, int x, int y, int width, int height, int options ) {
+    return new GUI_DialogView( parent, title, x, y, width, height, options );
+}
+
+GUI_DialogView::GUI_DialogView(GUI_View *parent, const char *title, int x, int y, int width, int height, int options ) :
+    GUI_PopupView(parent, title, x, y, width, height ),
+    topBar(NULL),
+    contentView(NULL)
+{
+    setLayout(GUI_LAYOUT_VERTICAL);
+    topBar = GUI_TopBar::create(this, title );
+    topBar->mouseReceive = false;
+    
+    contentView = GUI_View::create( this, "Content", 0, 0, -1, 0 );
+    contentView->setBackgroundColor(cWhite);
+    contentView->mouseReceive = true;
+    contentView->setLayout(GUI_LAYOUT_VERTICAL);
+    contentView->setPadding( 20, 10, 10, 10 );
+    
+    this->updateLayout();
+}
+
+GUI_DialogView::~GUI_DialogView() {
+    
+}

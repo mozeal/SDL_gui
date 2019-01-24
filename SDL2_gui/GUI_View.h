@@ -81,6 +81,7 @@ protected:
     int     moveDuration;
     int     moveTimeStart;
     bool    isMoving;
+    
 public:
     static GUI_View *create( GUI_View *parent, const char *title, int x, int y, int width, int height,
                                 std::function<bool(SDL_Event* ev)>userEventHandler = NULL );
@@ -100,6 +101,8 @@ public:
     
     std::vector<GUI_View *>children;
     GUI_View *parent;
+    
+    static std::vector<GUI_View *>closeQueue;
 
     int corner;
     int border;
