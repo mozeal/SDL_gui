@@ -218,6 +218,10 @@ void createMenuBar() {
 void createMessageBox() {
     auto box = GUI_MessageBox::create( topView, "Message Box", "This is message box", 0, 0, 320, 0 );
     box->Center();
+    box->setCallback([=](GUI_View *v) {
+        GUI_MessageBox *mb = (GUI_MessageBox *)v;
+        GUI_Log( "MSG Box \"%s\" OK\n", mb->title.c_str());
+    });
 }
 
 int main(int argc, char *argv[]) {

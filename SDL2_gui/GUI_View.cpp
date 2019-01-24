@@ -95,10 +95,11 @@ propagate_sibling_on_mouseup_outside(true)
 GUI_View::~GUI_View() {
     GUI_Log( "Kill %s\n", title.c_str() );
     
+    delete_all_children();
+    
     if( parent ) {
         parent->remove_child(this);
     }
-    children.clear();
 }
 
 void GUI_View::setUserEventHandler( std::function<bool(SDL_Event* ev)>handler ) {
@@ -215,7 +216,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             int y = (int)(e.y*GUI_mouseScale);
 
             if( !mouseReceive ) {
-                GUI_Log( "Throuth %s\n", title.c_str() );
+                //GUI_Log( "Throuth %s\n", title.c_str() );
                 BreakRecursive = true;
                 BreakSiblingPropagate = false;
                 break;
@@ -223,7 +224,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             ReverseRecursive = true;
             
             if( hitTest(x, y, false) ) {
-                GUI_Log( "Hit %s\n", title.c_str() );
+                //GUI_Log( "Hit %s\n", title.c_str() );
                 if( mouseReceive ) {
                     if( parent && parent->_dragging ) {
                         parent->_dragging = false;
@@ -249,7 +250,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                     BreakSiblingPropagate = true;
                 }
                 if( dragable ) {
-                    GUI_Log( "Drag %s\n", title.c_str() );
+                    //GUI_Log( "Drag %s\n", title.c_str() );
                     GUI_SetMouseCapture(this);
                     _dragging = true;
                     if( parent ) {
@@ -553,6 +554,11 @@ void GUI_View::remove_child(GUI_View *child) {
     for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
         if( child == *it ) {
             children.erase( it );
+            GUI_Log( "Remove %s\n", child->title.c_str() );
+            if( lastInteractView == child )
+                lastInteractView = NULL;
+            if( lastFocusView == child )
+                lastFocusView = NULL;
             child->parent = NULL;
             break;
         }
@@ -560,8 +566,14 @@ void GUI_View::remove_child(GUI_View *child) {
     updateLayout();
 }
 
-void GUI_View::remove_all_children() {
-    children.clear();
+void GUI_View::delete_all_children() {
+    //children.clear();
+    while( children.size() ) {
+        GUI_View *child = children.at(0);
+        remove_child( child );
+        delete(child);
+    }
+    //children.clear();
 }
 
 

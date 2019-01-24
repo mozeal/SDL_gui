@@ -183,10 +183,6 @@ void GUI_Destroy() {
     SDL_DestroyWindow(GUI_window);
 }
 
-
-
-
-
 void GUI_Error(const char* fn, int result) {
     GUI_Log("SDL_gui ERROR: \"%s\" error: %x (%d).\n", fn, result, result);
 }
@@ -198,6 +194,7 @@ static void GUI_Loop() {
             GUI_View::closeQueue.erase(it);
             delete(child);
         }
+        GUI_View::closeQueue.clear();
     }
     
 #ifdef __EMSCRIPTEN__

@@ -151,7 +151,7 @@ public:
     
     virtual void add_child(GUI_View* child);
     virtual void remove_child(GUI_View* child);
-    virtual void remove_all_children();
+    virtual void delete_all_children();
     
     virtual bool toTop();
     virtual bool toBack();

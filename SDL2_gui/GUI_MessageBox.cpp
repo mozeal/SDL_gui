@@ -16,7 +16,7 @@ GUI_MessageBox *GUI_MessageBox::create( GUI_View *parent, const char *title, con
 
 GUI_MessageBox::GUI_MessageBox(GUI_View *parent, const char *title, const char *message, int x, int y, int width, int height,
                                std::function<void(GUI_View*)>callbackFunction ) :
-    GUI_DialogView(parent, title, x, y, width, height ) {
+    GUI_DialogView(parent, "MessageBox", x, y, width, height ) {
         setCallback( callbackFunction );
         
         auto text = GUI_Label::create( this->contentView, message );
@@ -27,6 +27,9 @@ GUI_MessageBox::GUI_MessageBox(GUI_View *parent, const char *title, const char *
         ok->setAlign(GUI_ALIGN_CENTER|GUI_ALIGN_TOP);
         ok->setMargin(10, 10, 10, 10);
         ok->setCallback([=](GUI_View *v) {
+            if( callback ) {
+                callback(this);
+            }
             GUI_View::closeQueue.push_back(this);
         });
 }

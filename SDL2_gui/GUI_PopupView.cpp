@@ -103,7 +103,7 @@ GUI_DialogView::GUI_DialogView(GUI_View *parent, const char *title, int x, int y
     contentView(NULL)
 {
     setLayout(GUI_LAYOUT_VERTICAL);
-    topBar = GUI_TopBar::create(this, title );
+    topBar = GUI_TopBar::create(this, "TitleView" );
     topBar->mouseReceive = false;
     
     contentView = GUI_View::create( this, "Content", 0, 0, -1, 0 );
