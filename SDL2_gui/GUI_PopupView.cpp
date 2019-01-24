@@ -31,18 +31,20 @@ GUI_PopupView::~GUI_PopupView() {
 }
 
 void GUI_PopupView::Center() {
+    int destX;
+    int destY;
     if( parent ) {
-        topLeft.x = (parent->rectView.w - rectView.w) / 2;
-        topLeft.y = (parent->rectView.h - rectView.h) / 2;
-        rectView.x = parent->rectView.x + topLeft.x;
-        rectView.y = parent->rectView.y + topLeft.y;
+        destX = (parent->rectView.w - rectView.w) / 2;
+        destY = (parent->rectView.h - rectView.h) / 2;
     }
     else {
-        topLeft.x = (GUI_windowWidth - rectView.w) / 2;
-        topLeft.y = (GUI_windowHeight - rectView.h) / 2;
-        rectView.x = 0 + topLeft.x;
-        rectView.y = 0 + topLeft.y;
+        destX = (GUI_windowWidth - rectView.w) / 2;
+        destY = (GUI_windowHeight - rectView.h) / 2;
     }
+    destX /= GUI_scale;
+    destY /= GUI_scale;
+    
+    move( destX - topLeft.x / GUI_scale, destY - topLeft.y / GUI_scale );
 }
 
 bool GUI_PopupView::eventHandler(SDL_Event*event) {

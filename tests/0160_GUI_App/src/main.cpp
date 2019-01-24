@@ -27,6 +27,12 @@ GUI_PopupView *popup = NULL;
 void createPopup() {
     if( !popup ) {
         popup = GUI_PopupView::create( topView, "Popup", 0, 0, 300, 200 );
+        popup->setLayout( GUI_LAYOUT_ABSOLUTE );
+        
+        GUI_Label *label = GUI_Label::create(popup, "This is movable Popup View.");
+        label->setAlign( GUI_ALIGN_CENTER | GUI_ALIGN_VCENTER );
+        
+        popup->updateLayout();
     }
     else {
         popup->show();
@@ -199,7 +205,12 @@ void createMenuBar() {
     menuEdit->getPopupMenu()->addSimpleMenu( "Copy" );
     menuEdit->getPopupMenu()->addSimpleMenu( "Paste" );
 
-    app->menuBar->addSimpleMenu( "View" );
+    GUI_MenuBarItem * menuView = app->menuBar->addPopupMenu( "View", topView );
+    menuView->getPopupMenu()->addSimpleMenu( "Message Box" );
+    menuView->getPopupMenu()->addSimpleMenu( "Option Box" );
+    menuView->getPopupMenu()->addSimpleMenu( "Edit Box", true );
+    menuView->getPopupMenu()->addSimpleMenu( "Dialog Box" );
+
     app->menuBar->addSimpleMenu( "Format" );
     app->menuBar->addSimpleMenu( "Help" );
 }
