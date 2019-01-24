@@ -17,4 +17,4 @@ GUI library for SDL2
 - Raspberry Pi
 - Linux (Build with CMake)
 
-![Alt text](/screenshot/screenshot01.png?raw=true)
+![Alt text](/screenshot/screenshot_01.png?raw=true)
