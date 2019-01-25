@@ -162,11 +162,16 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
         case SDL_FINGERDOWN:
         case SDL_FINGERUP:
         {
+            SDL_TouchFingerEvent e = event->tfinger;
+            
+            int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
+            int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
+            if( activateView ) {
+                if( activateView->hitTest(x, y, false) ) {
+                    return true;
+                }
+            }
             if( isOpen ) {
-                SDL_TouchFingerEvent e = event->tfinger;
-                
-                int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
-                int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
                 if( !hitTest(x, y, false) ) {
                     close(GUI_AppMenuCollapseTime);
                     return false;
@@ -180,11 +185,16 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
         case SDL_MOUSEBUTTONDOWN:
         case SDL_MOUSEBUTTONUP:
         {
-            if( isOpen ) {
-                SDL_MouseButtonEvent e = event->button;
+            SDL_MouseButtonEvent e = event->button;
             
-                int x = (int)(e.x*GUI_mouseScale);
-                int y = (int)(e.y*GUI_mouseScale);
+            int x = (int)(e.x*GUI_mouseScale);
+            int y = (int)(e.y*GUI_mouseScale);
+            if( activateView ) {
+                if( activateView->hitTest(x, y, false) ) {
+                    return true;
+                }
+            }
+            if( isOpen ) {
                 if( !hitTest(x, y, false) ) {
                     close(GUI_AppMenuCollapseTime);
                     return false;

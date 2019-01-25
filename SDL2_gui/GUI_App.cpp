@@ -131,8 +131,7 @@ void GUI_App::createContentView( int options ) {
 }
 
 void GUI_App::createMenu( int options ) {
-    menuView = GUI_Menu::create(topView, "Menu", 0, GUI_AppTopBarHeight, GUI_AppMenuWidth, -1);
-    menuView->setAlign( GUI_ALIGN_ABSOLUTE );
+
     
     menuButton = GUI_Button::create(topBar, NULL, kIcon_solid_bars);
     menuButton->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
@@ -146,4 +145,7 @@ void GUI_App::createMenu( int options ) {
         }
     });
     
+    menuView = GUI_Menu::create(topView, "Menu", 0, GUI_AppTopBarHeight, GUI_AppMenuWidth, -1);
+    menuView->setAlign( GUI_ALIGN_ABSOLUTE );
+    menuView->setActivateView(menuButton);
 }

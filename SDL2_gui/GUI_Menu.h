@@ -37,7 +37,7 @@ protected:
     int nClosePosnX;
     int nOpenPosnX;
     
-    
+    GUI_View    *activateView;
 public:
     static GUI_Menu *create( GUI_View *parent, const char *title, int x=0, int y=0, int width=0, int height=0,
                             std::function<void(GUI_View*)>callbackFunction = NULL );
@@ -59,6 +59,7 @@ public:
     virtual void close( int duration=0 );
     virtual void open( int duration=0 );
 
+    void setActivateView( GUI_View *v ) { activateView = v; };
 };
 
 #endif /* GUI_Menu_hpp */
