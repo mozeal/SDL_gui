@@ -35,6 +35,8 @@ class GUI_Menu;
 class GUI_MenuBar;
 
 class GUI_App {
+private:
+    static GUI_App *instance;
 protected:
     void createTopBar( int options );
     void createMenuBar( int options );
@@ -59,6 +61,8 @@ public:
     GUI_Button *menuButton;
     GUI_Menu *menuView;
     GUI_MenuBar *menuBar;
+    
+    static GUI_App *getInstance() { return instance; };
     
     void run();
 };

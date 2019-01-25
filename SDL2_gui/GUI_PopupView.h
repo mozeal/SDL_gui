@@ -16,7 +16,8 @@
 
 class GUI_PopupView : public GUI_View {
 protected:
-    bool    autoHide;
+    bool        autoHide;
+    GUI_View    *activateView;
 public:
     static GUI_PopupView *create( GUI_View *parent, const char *title, int x, int y, int width, int height,
                                  std::function<bool(SDL_Event* ev)>userEventHandler = NULL );

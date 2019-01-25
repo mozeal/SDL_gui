@@ -8,13 +8,18 @@
 
 #include "GUI_App.h"
 
+GUI_App *GUI_App::instance = NULL;
 
 GUI_App *GUI_App::create( int Orientation, std::string title, int expectedWidth, int expectedHeight, int options ) {
+    if( instance ) {
+        return instance;
+    }
     GUI_App *app = new GUI_App( Orientation, title, expectedWidth, expectedHeight, options );
     if( app->topView == NULL ) {
         delete app;
         app = NULL;
     }
+    instance = app;
     return app;
 }
 

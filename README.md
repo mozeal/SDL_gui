@@ -20,4 +20,4 @@ Stay tuned.
 - Raspberry Pi
 - Linux (Build with CMake)
 
-![Alt text](/screenshot/screenshot_01.png?raw=true)
+![Alt text](/screenshot/screenshot_02.png?raw=true)

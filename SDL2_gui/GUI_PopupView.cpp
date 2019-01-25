@@ -15,7 +15,8 @@ GUI_PopupView *GUI_PopupView::create( GUI_View *parent, const char *title, int x
 
 GUI_PopupView::GUI_PopupView(GUI_View *parent, const char *title, int x, int y, int width, int height,
                              std::function<bool(SDL_Event* ev)>userEventHandler ) :
-    GUI_View(parent, title, x, y, width, height, userEventHandler )
+    GUI_View(parent, title, x, y, width, height, userEventHandler ),
+    activateView(NULL)
 {
     mouseReceive = true;
     setInteract( true );

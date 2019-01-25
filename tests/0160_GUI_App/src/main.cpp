@@ -174,11 +174,26 @@ void createColumn3(GUI_View *subContentView) {
     panel1->setMargin( 5, 5, 5, 5 );
     panel1->border = 0;
     
+    auto lb = GUI_Label::create( panel1, "On/Off Switch:");
+    lb->setAlign(GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
+    lb->setMargin( 0, 10, 0, 0 );
+    
     auto sw = GUI_Switch::create( panel1, "Switch", 0, 0, 0, 0, [=](GUI_View *v) {
         GUI_Switch *sw = (GUI_Switch *)v;
         
         GUI_Log( "Switch: %i\n", sw->status );
     });
+    sw->setAlign(GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
+    sw->setMargin( 0, 10, 0, 0 );
+
+    auto cb = GUI_ComboBox::create( panel1, "Combo", 0, 0, -1, 0, [=](GUI_View *v) {
+        GUI_ComboBox *cb = (GUI_ComboBox *)v;
+    });
+    cb->setAlign(GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
+    cb->addSimpleItem( "Combo Box Item #1" );
+    cb->addSimpleItem( "Combo Box Item #2" );
+    cb->addSimpleItem( "Combo Box Item #3" );
+    cb->addSimpleItem( "Combo Box Item #4" );
 }
 
 void createColumn4(GUI_View *subContentView) {
