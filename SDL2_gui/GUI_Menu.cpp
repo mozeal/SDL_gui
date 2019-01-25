@@ -166,18 +166,16 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
             
             int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
             int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
-            if( activateView ) {
-                if( activateView->hitTest(x, y, false) ) {
-                    return true;
-                }
-            }
+            
             if( isOpen ) {
+                if( activateView && event->type == SDL_MOUSEBUTTONDOWN) {
+                    if( activateView->hitTest(x, y, false) ) {
+                        return true;
+                    }
+                }
                 if( !hitTest(x, y, false) ) {
                     close(GUI_AppMenuCollapseTime);
-                    return false;
-                }
-                else {
-                    return GUI_View::eventHandler(event);
+                    GUI_SetMouseCapture(NULL);
                 }
             }
             return GUI_View::eventHandler(event);
@@ -189,18 +187,16 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
             
             int x = (int)(e.x*GUI_mouseScale);
             int y = (int)(e.y*GUI_mouseScale);
-            if( activateView ) {
-                if( activateView->hitTest(x, y, false) ) {
-                    return true;
-                }
-            }
+
             if( isOpen ) {
+                if( activateView && event->type == SDL_MOUSEBUTTONDOWN) {
+                    if( activateView->hitTest(x, y, false) ) {
+                        return true;
+                    }
+                }
                 if( !hitTest(x, y, false) ) {
                     close(GUI_AppMenuCollapseTime);
-                    return false;
-                }
-                else {
-                    return GUI_View::eventHandler(event);
+                    GUI_SetMouseCapture(NULL);
                 }
             }
             return GUI_View::eventHandler(event);
