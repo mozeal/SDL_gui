@@ -44,6 +44,7 @@ void GUI_MenuBarItem::setPopupMenu( GUI_PopupMenu *menu ) {
 GUI_PopupMenu *GUI_MenuBarItem::addPopupMenu( GUI_View *parentView ) {
     setPopupMenu( GUI_PopupMenu::create(parentView, "PopupMenu1", 0, 0, 160, 0) );
     popupMenu->hide();
+    popupMenu->setActivateView(this);
     
     return popupMenu;
 }
@@ -150,7 +151,12 @@ void GUI_MenuBar::add(GUI_MenuBarItem* child) {
         if( item->getPopupMenu() ) {
             GUI_Point posn = item->getAbsolutePosition();
             item->getPopupMenu()->setAbsolutePosition( posn.x, posn.y + getHeight() );
-            item->getPopupMenu()->show();
+            if( item->getPopupMenu()->isVisible() ) {
+                item->getPopupMenu()->hide();
+            }
+            else {
+                item->getPopupMenu()->show();
+            }
         }
     });
 }
@@ -190,7 +196,6 @@ GUI_MenuBarItem * GUI_MenuBar::addPopupMenu( const char *title, GUI_View *parent
         it->setSelected(false);
         selectedItem = pm->selectedItem;
         pm->selectedItem = NULL;
-        
         
         pm->hide();
         if( this->callback ) {

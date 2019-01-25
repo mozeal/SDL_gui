@@ -28,6 +28,8 @@ public:
     virtual bool eventHandler(SDL_Event*ev);
     
     virtual void Center();
+    
+    void setActivateView( GUI_View *v ) { activateView = v; };
 };
 
 class GUI_DialogView : public GUI_PopupView {

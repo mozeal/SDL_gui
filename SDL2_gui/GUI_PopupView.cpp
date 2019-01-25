@@ -54,13 +54,21 @@ bool GUI_PopupView::eventHandler(SDL_Event*event) {
         case SDL_FINGERDOWN:
         case SDL_FINGERUP:
         {
+            SDL_TouchFingerEvent e = event->tfinger;
+            
+            int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
+            int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
+            
+            if( activateView ) {
+                if( activateView->hitTest(x, y, false) ) {
+                    return true;
+                }
+            }
             if( isVisible() ) {
-                SDL_TouchFingerEvent e = event->tfinger;
                 
-                int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
-                int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
                 if( !hitTest(x, y, false) ) {
                     if( autoHide ) {
+                        GUI_SetMouseCapture( NULL );
                         hide();
                     }
                 }
@@ -70,14 +78,21 @@ bool GUI_PopupView::eventHandler(SDL_Event*event) {
         case SDL_MOUSEBUTTONDOWN:
         case SDL_MOUSEBUTTONUP:
         {
+            SDL_MouseButtonEvent e = event->button;
             
+            int x = (int)(e.x*GUI_mouseScale);
+            int y = (int)(e.y*GUI_mouseScale);
+            
+            if( activateView ) {
+                if( activateView->hitTest(x, y, false) ) {
+                    return true;
+                }
+            }
             if( isVisible() ) {
-                SDL_MouseButtonEvent e = event->button;
-                
-                int x = (int)(e.x*GUI_mouseScale);
-                int y = (int)(e.y*GUI_mouseScale);
+
                 if( !hitTest(x, y, false) ) {
                     if( autoHide ) {
+                        GUI_SetMouseCapture( NULL );
                         hide();
                     }
                 }
