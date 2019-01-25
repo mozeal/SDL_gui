@@ -13,7 +13,7 @@
 
 #include <stdio.h>
 #include "GUI_PopupView.h"
-#include "GUI_EditText.h"
+#include "GUI_EditText.h"   	
 
 class GUI_MessageBox : public GUI_DialogView {
 protected:
