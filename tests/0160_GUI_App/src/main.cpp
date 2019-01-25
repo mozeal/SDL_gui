@@ -164,9 +164,21 @@ void createColumn3(GUI_View *subContentView) {
     auto column3 = GUI_View::create(subContentView, "COL2", 0, 0, -1, -1);
     column3->setLayout(GUI_LAYOUT_VERTICAL);
     column3->setMargin( 5, 5, 5, 5 );
+    column3->setPadding( 5, 5, 5, 5 );
     column3->setBackgroundColor(cWhite);
     column3->border = 1;
     column3->corner = 4;
+    
+    auto panel1 = GUI_View::create( column3, "Panel3", 0, 9, -1, 0 );
+    panel1->setLayout( GUI_LAYOUT_HORIZONTAL );
+    panel1->setMargin( 5, 5, 5, 5 );
+    panel1->border = 0;
+    
+    auto sw = GUI_Switch::create( panel1, "Switch", 0, 0, 0, 0, [=](GUI_View *v) {
+        GUI_Switch *sw = (GUI_Switch *)v;
+        
+        GUI_Log( "Switch: %i\n", sw->status );
+    });
 }
 
 void createColumn4(GUI_View *subContentView) {

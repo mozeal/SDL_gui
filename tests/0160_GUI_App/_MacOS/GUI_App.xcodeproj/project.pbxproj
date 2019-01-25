@@ -11,6 +11,7 @@
 		380EC5E721F630FC00759C7E /* GUI_MenuBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC5E521F630FC00759C7E /* GUI_MenuBar.cpp */; };
 		380EC60C21F84D7200759C7E /* GUI_PopupView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC60A21F84D7200759C7E /* GUI_PopupView.cpp */; };
 		380EC62221F9F5EB00759C7E /* GUI_MessageBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC62021F9F5EB00759C7E /* GUI_MessageBox.cpp */; };
+		380EC68221FAA75D00759C7E /* GUI_Switch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC68021FAA75D00759C7E /* GUI_Switch.cpp */; };
 		385B990421CBB97A000E5F90 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385B98FD21CBB95B000E5F90 /* SDL2_image.framework */; };
 		385B9A0B21CBE0B1000E5F90 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385B9A0421CBDF02000E5F90 /* SDL2_ttf.framework */; };
 		385B9A9421CC13A8000E5F90 /* SDL_gui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */; };
@@ -154,6 +155,8 @@
 		380EC60B21F84D7200759C7E /* GUI_PopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_PopupView.h; sourceTree = "<group>"; };
 		380EC62021F9F5EB00759C7E /* GUI_MessageBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_MessageBox.cpp; sourceTree = "<group>"; };
 		380EC62121F9F5EB00759C7E /* GUI_MessageBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_MessageBox.h; sourceTree = "<group>"; };
+		380EC68021FAA75D00759C7E /* GUI_Switch.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Switch.cpp; sourceTree = "<group>"; };
+		380EC68121FAA75D00759C7E /* GUI_Switch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_Switch.h; sourceTree = "<group>"; };
 		385B98F621CBB95B000E5F90 /* SDL_image.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_image.xcodeproj; path = ../../../SDL2_image/Xcode/SDL_image.xcodeproj; sourceTree = "<group>"; };
 		385B99FC21CBDF02000E5F90 /* SDL2_ttf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL2_ttf.xcodeproj; path = ../../../SDL2_ttf_HarfBuzz/Xcode/SDL2_ttf.xcodeproj; sourceTree = "<group>"; };
 		385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SDL_gui.cpp; sourceTree = "<group>"; };
@@ -330,6 +333,8 @@
 				380EC60B21F84D7200759C7E /* GUI_PopupView.h */,
 				380EC62021F9F5EB00759C7E /* GUI_MessageBox.cpp */,
 				380EC62121F9F5EB00759C7E /* GUI_MessageBox.h */,
+				380EC68021FAA75D00759C7E /* GUI_Switch.cpp */,
+				380EC68121FAA75D00759C7E /* GUI_Switch.h */,
 			);
 			name = SDL2_gui;
 			path = ../../../SDL2_gui;
@@ -622,6 +627,7 @@
 				380EC5E721F630FC00759C7E /* GUI_MenuBar.cpp in Sources */,
 				385B9AC321CCD379000E5F90 /* SDL2_rotozoom.c in Sources */,
 				385B9AC421CCD379000E5F90 /* SDL2_framerate.c in Sources */,
+				380EC68221FAA75D00759C7E /* GUI_Switch.cpp in Sources */,
 				38EC062521EB996C005F3A3A /* GUI_Button.cpp in Sources */,
 				38B66CDE21F1B069005C22C0 /* GUI_StatusBar.cpp in Sources */,
 			);

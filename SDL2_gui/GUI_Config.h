@@ -30,5 +30,7 @@ const SDL_Color cTextSelected           = { 0x9c, 0xc7, 0xe6, 0xff }; // Tooh - 
 const SDL_Color cHightLightSelection    = { 0x64, 0x95, 0xed, 0xC0 };
 const SDL_Color cEmptyContent           = { 0xF0, 0xF0, 0xF0, 0xFF }; //sdl_color(0xf0f0f0ff);
 
+const SDL_Color GUI_AppTopBarColor      = { 0x64, 0x95, 0xed, 0xff };
+
 
 #endif /* GUI_Config_h */

@@ -19,7 +19,7 @@ GUI_TopBar::GUI_TopBar(GUI_View *parent, const char *title,
 titleView(NULL)
 {
     setCallback(callbackFunction);
-    setBackgroundColor(cCornFlowerBlue);
+    setBackgroundColor(GUI_AppTopBarColor);
     setLayout( GUI_LAYOUT_HORIZONTAL );
     border = 0;
     setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
