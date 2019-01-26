@@ -178,28 +178,10 @@ void createColumn3(GUI_View *subContentView) {
     panelLeft->setLayout(GUI_LAYOUT_VERTICAL);
     panelLeft->border = 0;
     {
-        auto panelLeft1 = GUI_View::create( panelLeft, "Panel3", 0, 0, -1, 0 );
-        panelLeft1->setLayout( GUI_LAYOUT_HORIZONTAL );
-        panelLeft1->border = 0;
-        {
-            auto lb = GUI_Label::create( panelLeft1, "On/Off Switch:");
-            lb->setAlign(GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
-            lb->setMargin( 0, 10, 0, 8 );
-            
-            auto sw = GUI_Switch::create( panelLeft1, "Switch", 0, 0, 0, 0, [=](GUI_View *v) {
-                GUI_Switch *sw = (GUI_Switch *)v;
-                
-                GUI_Log( "Switch: %i\n", sw->status );
-            });
-            sw->setAlign(GUI_ALIGN_RIGHT | GUI_ALIGN_VCENTER );
-            sw->setMargin( 0, 10, 0, 0 );
-            
-        }
-        
         auto label2 = GUI_Label::create(panelLeft, "25 %", 0, 0, 0, -1, 0 );
         
         label2->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
-        label2->setMargin(20, 10, 0, 10 );
+        label2->setMargin(0, 10, 0, 10 );
         label2->setBackgroundColor(cGrey);
         label2->setPadding( 5, 10, 5, 10 );
         
@@ -220,6 +202,24 @@ void createColumn3(GUI_View *subContentView) {
     panelRight->border = 0;
     panelRight->setMargin( 0, 10, 0, 20 );
     {
+        auto panelLeft1 = GUI_View::create( panelRight, "Panel3", 0, 0, -1, 0 );
+        panelLeft1->setLayout( GUI_LAYOUT_HORIZONTAL );
+        panelLeft1->border = 0;
+        {
+            auto lb = GUI_Label::create( panelLeft1, "On/Off Switch:");
+            lb->setAlign(GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
+            lb->setMargin( 0, 0, 0, 0 );
+            
+            auto sw = GUI_Switch::create( panelLeft1, "Switch", 0, 0, 0, 0, [=](GUI_View *v) {
+                GUI_Switch *sw = (GUI_Switch *)v;
+                
+                GUI_Log( "Switch: %i\n", sw->status );
+            });
+            sw->setAlign(GUI_ALIGN_RIGHT | GUI_ALIGN_VCENTER );
+            sw->setMargin( 0, 0, 0, 0 );
+            
+        }
+        
         auto cb = GUI_ComboBox::create( panelRight, "Combo", 0, 0, -1, 0, [=](GUI_View *v) {
             GUI_ComboBox *cb = (GUI_ComboBox *)v;
         });
@@ -228,6 +228,7 @@ void createColumn3(GUI_View *subContentView) {
         cb->addSimpleItem( "Combo Box Item #2" );
         cb->addSimpleItem( "Combo Box Item #3" );
         cb->addSimpleItem( "Combo Box Item #4" );
+        cb->setMargin(10, 0, 0, 0);
     }
 
 }
