@@ -14,6 +14,7 @@
 		380EC68221FAA75D00759C7E /* GUI_Switch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC68021FAA75D00759C7E /* GUI_Switch.cpp */; };
 		380EC69021FADCC300759C7E /* GUI_ComboBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC68E21FADCC300759C7E /* GUI_ComboBox.cpp */; };
 		380EC69E21FB46AE00759C7E /* GUI_Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC69C21FB46AE00759C7E /* GUI_Slider.cpp */; };
+		380EC6B421FC1EB500759C7E /* GUI_ScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC6B221FC1EB500759C7E /* GUI_ScrollView.cpp */; };
 		385B990421CBB97A000E5F90 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385B98FD21CBB95B000E5F90 /* SDL2_image.framework */; };
 		385B9A0B21CBE0B1000E5F90 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385B9A0421CBDF02000E5F90 /* SDL2_ttf.framework */; };
 		385B9A9421CC13A8000E5F90 /* SDL_gui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */; };
@@ -163,6 +164,8 @@
 		380EC68F21FADCC300759C7E /* GUI_ComboBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_ComboBox.h; sourceTree = "<group>"; };
 		380EC69C21FB46AE00759C7E /* GUI_Slider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Slider.cpp; sourceTree = "<group>"; };
 		380EC69D21FB46AE00759C7E /* GUI_Slider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_Slider.h; sourceTree = "<group>"; };
+		380EC6B221FC1EB500759C7E /* GUI_ScrollView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_ScrollView.cpp; sourceTree = "<group>"; };
+		380EC6B321FC1EB500759C7E /* GUI_ScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_ScrollView.h; sourceTree = "<group>"; };
 		385B98F621CBB95B000E5F90 /* SDL_image.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_image.xcodeproj; path = ../../../SDL2_image/Xcode/SDL_image.xcodeproj; sourceTree = "<group>"; };
 		385B99FC21CBDF02000E5F90 /* SDL2_ttf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL2_ttf.xcodeproj; path = ../../../SDL2_ttf_HarfBuzz/Xcode/SDL2_ttf.xcodeproj; sourceTree = "<group>"; };
 		385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SDL_gui.cpp; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 				38EC051421E9E4E8005F3A3A /* GUI_Fonts.h */,
 				385B9AFB21CD07A4000E5F90 /* GUI_View.cpp */,
 				385B9AFC21CD07A4000E5F90 /* GUI_View.h */,
+				380EC6B221FC1EB500759C7E /* GUI_ScrollView.cpp */,
+				380EC6B321FC1EB500759C7E /* GUI_ScrollView.h */,
 				385B9B6A21CFB1F7000E5F90 /* GUI_image.cpp */,
 				385B9B6B21CFB1F7000E5F90 /* GUI_image.h */,
 				385B9B6D21CFC089000E5F90 /* GUI_ImageView.cpp */,
@@ -615,6 +620,7 @@
 				69CD9A151D15AED3004D8ED1 /* main.cpp in Sources */,
 				38EC05B321EAE505005F3A3A /* GUI_IconView.cpp in Sources */,
 				38EC05A921EAE48F005F3A3A /* GUI_Label.cpp in Sources */,
+				380EC6B421FC1EB500759C7E /* GUI_ScrollView.cpp in Sources */,
 				380EC69021FADCC300759C7E /* GUI_ComboBox.cpp in Sources */,
 				380EC69E21FB46AE00759C7E /* GUI_Slider.cpp in Sources */,
 				38B66C4D21EEDD24005C22C0 /* GUI_RadioButtonGroup.cpp in Sources */,
