@@ -53,10 +53,10 @@ border(1),
 focusBorder(0),
 corner(0),
 dragable(false),
+drag_limit(false),
 focusable(false),
 clickable(false),
 capture_on_click(false),
-click_through(false),
 click_to_top(false),
 _padding{0,0,0,0},
 _margin{0,0,0,0},
@@ -77,6 +77,7 @@ focus_need_input(false),
 isMouseCapturing(false),
 callback_on_mouse_up(false),
 callback_on_mouse_down(false),
+callback_on_drag(false),
 propagate_sibling_on_mouseup_outside(true)
 {
     ox = x;
@@ -334,8 +335,28 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 setInteract( true );
                 int dx = x - lastMousePoint.x;
                 int dy = y - lastMousePoint.y;
+                if( drag_limit ) {
+                    int tlX = topLeft.x + dx;
+                    int tlY = topLeft.y + dy;
+                    
+                    if( tlY < dragMinY * GUI_scale )
+                        tlY = dragMinY * GUI_scale;
+                    if( tlY > dragMaxY * GUI_scale )
+                        tlY = dragMaxY * GUI_scale;
+                    
+                    if( tlX < dragMinX * GUI_scale )
+                        tlX = dragMinX * GUI_scale;
+                    if( tlX > dragMaxX * GUI_scale )
+                        tlX = dragMaxX * GUI_scale;
+                    
+                    dy = tlY - topLeft.y;
+                    dx = tlX - topLeft.x;
+                }
                 lastMousePoint.set(x, y);
                 move_topLeft(dx, dy);
+                if( callback_on_drag && callback ) {
+                    callback( this );
+                }
                 return true;
             }
             if( hitTest(x, y, false) ) {
@@ -842,9 +863,6 @@ void GUI_View::setMargin(int p0, int p1, int p2, int p3) {
 
 GUI_View *GUI_View::hitTest(int x, int y, bool bRecursive) {
     if (!isVisible())
-        return 0;
-    
-    if (click_through)
         return 0;
     
     SDL_Point pt;

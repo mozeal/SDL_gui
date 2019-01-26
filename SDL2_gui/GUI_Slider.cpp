@@ -60,6 +60,7 @@ GUI_Slider::GUI_Slider(GUI_View *parent, const char *title, float min, float max
     maxValue = max;
     value = val;
     border = 0;
+    setLayout(GUI_LAYOUT_ABSOLUTE);
     
 
     int h = height;
@@ -75,6 +76,22 @@ GUI_Slider::GUI_Slider(GUI_View *parent, const char *title, float min, float max
     
     indicator = GUI_View::create( this, "Ind", 0, 0, h, h );
     indicator->corner = h / 2;
+    indicator->dragable = true;
+    indicator->drag_limit = true;
+    indicator->dragMinX = 0;
+    indicator->dragMaxX = width-h;
+    indicator->dragMinY = 0;
+    indicator->dragMaxY = 0;
+    indicator->callback_on_drag = true;
+    indicator->setAlign(GUI_ALIGN_ABSOLUTE);
+    indicator->setCallback([=](GUI_View *v) {
+        this->value = min + ((float)((indicator->topLeft.x/GUI_scale) * (max-min)) / (float)(indicator->dragMaxX-indicator->dragMinX));
+        if( callback ) {
+            callback(this);
+        }
+    });
+    int xx = value / (max-min) * (float)(indicator->dragMaxX-indicator->dragMinX);
+    indicator->setAbsolutePosition( getAbsolutePosition().x+xx, getAbsolutePosition().y );
 }
 
 GUI_Slider::~GUI_Slider() {

@@ -87,6 +87,7 @@ void GUI_PopupMenu::add(GUI_MenuItem* child) {
                 if( this->callback ) {
                     this->callback(this);
                 }
+                GUI_SetMouseCapture(NULL);
             }
             else {
                 c->setSelected(false);
@@ -156,6 +157,7 @@ void GUI_MenuBar::add(GUI_MenuBarItem* child) {
             }
             else {
                 item->getPopupMenu()->show();
+                GUI_SetMouseCapture(item->getPopupMenu());
             }
         }
     });

@@ -169,24 +169,58 @@ void createColumn3(GUI_View *subContentView) {
     column3->border = 1;
     column3->corner = 4;
     
-    auto panel1 = GUI_View::create( column3, "Panel3", 0, 9, -1, 0 );
+    auto panel1 = GUI_View::create( column3, "Panel3", 0, 0, -1, 0 );
     panel1->setLayout( GUI_LAYOUT_HORIZONTAL );
     panel1->setMargin( 5, 5, 5, 5 );
     panel1->border = 0;
     
-        auto lb = GUI_Label::create( panel1, "On/Off Switch:");
-        lb->setAlign(GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
-        lb->setMargin( 0, 10, 0, 0 );
-    
-        auto sw = GUI_Switch::create( panel1, "Switch", 0, 0, 0, 0, [=](GUI_View *v) {
-            GUI_Switch *sw = (GUI_Switch *)v;
+    auto panelLeft = GUI_View::create( panel1, "Left", 0, 0, 200, 0 );
+    panelLeft->setLayout(GUI_LAYOUT_VERTICAL);
+    panelLeft->border = 0;
+    {
+        auto panelLeft1 = GUI_View::create( panelLeft, "Panel3", 0, 0, -1, 0 );
+        panelLeft1->setLayout( GUI_LAYOUT_HORIZONTAL );
+        panelLeft1->border = 0;
+        {
+            auto lb = GUI_Label::create( panelLeft1, "On/Off Switch:");
+            lb->setAlign(GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
+            lb->setMargin( 0, 10, 0, 8 );
             
-            GUI_Log( "Switch: %i\n", sw->status );
+            auto sw = GUI_Switch::create( panelLeft1, "Switch", 0, 0, 0, 0, [=](GUI_View *v) {
+                GUI_Switch *sw = (GUI_Switch *)v;
+                
+                GUI_Log( "Switch: %i\n", sw->status );
+            });
+            sw->setAlign(GUI_ALIGN_RIGHT | GUI_ALIGN_VCENTER );
+            sw->setMargin( 0, 10, 0, 0 );
+            
+        }
+        
+        auto label2 = GUI_Label::create(panelLeft, "25 %", 0, 0, 0, -1, 0 );
+        
+        label2->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
+        label2->setMargin(20, 10, 0, 10 );
+        label2->setBackgroundColor(cGrey);
+        label2->setPadding( 5, 10, 5, 10 );
+        
+        auto slider = GUI_Slider::create( panelLeft, "slider", 0, 100, 25, 0, 0, 196, 0 );
+        slider->setCallback([=](GUI_View *v) {
+            GUI_Slider *sl = (GUI_Slider *)v;
+            GUI_Log( "Slider: %i\n", (int)sl->value );
+            
+            char szT[32];
+            sprintf( szT, "%i %%", (int)sl->value );
+            label2->setTitle(szT);
         });
-        sw->setAlign(GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
-        sw->setMargin( 0, 10, 0, 0 );
-
-        auto cb = GUI_ComboBox::create( panel1, "Combo", 0, 0, -1, 0, [=](GUI_View *v) {
+        slider->setMargin( 10, 2, 0, 2 );
+    }
+    
+    auto panelRight = GUI_View::create( panel1, "Left", 0, 0, -1, 0 );
+    panelRight->setLayout(GUI_LAYOUT_VERTICAL);
+    panelRight->border = 0;
+    panelRight->setMargin( 0, 10, 0, 20 );
+    {
+        auto cb = GUI_ComboBox::create( panelRight, "Combo", 0, 0, -1, 0, [=](GUI_View *v) {
             GUI_ComboBox *cb = (GUI_ComboBox *)v;
         });
         cb->setAlign(GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
@@ -194,13 +228,8 @@ void createColumn3(GUI_View *subContentView) {
         cb->addSimpleItem( "Combo Box Item #2" );
         cb->addSimpleItem( "Combo Box Item #3" );
         cb->addSimpleItem( "Combo Box Item #4" );
-    
-    auto panel2 = GUI_View::create( column3, "Panel3", 0, 9, -1, 0 );
-    panel2->setLayout( GUI_LAYOUT_HORIZONTAL );
-    panel2->setMargin( 15, 5, 5, 5 );
-    panel2->border = 0;
-    
-    auto slider = GUI_Slider::create( panel2, "slider", 0, 100, 25, 0, 0, 200, 0 );
+    }
+
 }
 
 void createColumn4(GUI_View *subContentView) {

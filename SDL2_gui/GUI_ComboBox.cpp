@@ -62,7 +62,7 @@ GUI_ComboBox::GUI_ComboBox(GUI_View *parent, const char *title, int x, int y, in
     
     updateLayout();
     
-    popup = GUI_PopupMenu::create( GUI_App::getInstance()->topView, "CBPopup", 0, 0, 200, 0 );
+    popup = GUI_PopupMenu::create( GUI_App::getInstance()->topView, "CBPopup", 0, 0, 180, 0 );
     popup->hide();
     popup->setActivateView( button );
     popup->setCallback([=](GUI_View *v) {

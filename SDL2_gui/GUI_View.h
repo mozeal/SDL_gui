@@ -82,6 +82,7 @@ protected:
     int     moveTimeStart;
     bool    isMoving;
     
+    
 public:
     static GUI_View *create( GUI_View *parent, const char *title, int x, int y, int width, int height,
                                 std::function<bool(SDL_Event* ev)>userEventHandler = NULL );
@@ -107,19 +108,25 @@ public:
     int corner;
     int border;
     int focusBorder;
-    bool dragable;
     bool focusable;
     bool clickable;
     bool capture_on_click;
     bool showInteract;
     bool mouseReceive;
-    bool click_through;
     bool click_to_top;
     bool focus_need_input;
     bool callback_on_mouse_down;
     bool callback_on_mouse_up;
+    bool callback_on_drag;
     bool propagate_sibling_on_mouseup_outside;
+    bool dragable;
+    bool drag_limit;
     
+    int dragMinX;
+    int dragMaxX;
+    int dragMinY;
+    int dragMaxY;
+
     bool isMouseCapturing;
     
     int getWidth() { return rectView.w / GUI_scale; };
