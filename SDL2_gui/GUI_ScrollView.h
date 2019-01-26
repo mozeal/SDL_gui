@@ -14,12 +14,17 @@
 
 class GUI_ScrollView: public GUI_View {
 protected:
+
 public:
     static GUI_ScrollView *create( GUI_View *parent, const char *title, int x, int y, int width, int height,
                               std::function<void(GUI_View*)>callbackFunction = NULL );
     GUI_ScrollView(GUI_View *parent, const char *title, int x, int y, int width, int height,
                std::function<void(GUI_View*)>callbackFunction = NULL );
     virtual ~GUI_ScrollView();
-}
+    
+    GUI_View *scrollContent;
+    
+    virtual void updateLayout();
+};
 
 #endif /* GUI_ScrollView_hpp */

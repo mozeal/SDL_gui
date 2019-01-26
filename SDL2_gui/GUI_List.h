@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "GUI_Button.h"
+#include "GUI_ScrollView.h"
 
 class GUI_ListItem : public GUI_View {
 protected:
@@ -31,6 +32,7 @@ public:
 class GUI_List : public GUI_View {
 protected:
     std::vector<GUI_ListItem *>listItems;
+    GUI_ScrollView *scrollView;
 public:
     static GUI_List *create( GUI_View *parent, const char *title, int x=0, int y=0, int width=0, int height=0,
                                         std::function<void(GUI_View*)>callbackFunction = NULL );

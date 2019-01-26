@@ -64,7 +64,8 @@ GUI_List *GUI_List::create( GUI_View *parent, const char *title, int x, int y, i
 
 GUI_List::GUI_List(GUI_View *parent, const char *title, int x, int y, int width, int height,
                            std::function<void(GUI_View*)>callbackFunction ) :
-GUI_View( parent, title, x, y, width, height )
+GUI_View( parent, title, x, y, width, height ),
+scrollView(NULL)
 {
     setCallback( callbackFunction );
  
@@ -73,6 +74,9 @@ GUI_View( parent, title, x, y, width, height )
     setLayout(GUI_LAYOUT_VERTICAL);
     border = 1;
     corner = 4;
+    
+    scrollView = GUI_ScrollView::create( this, "Scroll", 0, 0, -1, -1 );
+
 }
 
 GUI_List::~GUI_List() {
@@ -83,7 +87,8 @@ void GUI_List::add(GUI_ListItem* child) {
     if( child->parent ) {
         child->parent->remove_child( child );
     }
-    add_child(child);
+    scrollView->scrollContent->add_child(child);
+    child->in_scroll_bed = true;
     
     listItems.push_back(child);
     child->setCallback( [=](GUI_View *v) {
@@ -106,7 +111,8 @@ void GUI_List::add(GUI_ListItem* child) {
 }
 
 void GUI_List::remove(GUI_ListItem* child) {
-    remove_child(child);
+    scrollView->scrollContent->remove_child(child);
+    child->in_scroll_bed = false;
     for (std::vector<GUI_ListItem *>::iterator it = listItems.begin() ; it != listItems.end(); ++it) {
         if( child == *it ) {
             listItems.erase( it );

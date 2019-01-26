@@ -78,7 +78,8 @@ isMouseCapturing(false),
 callback_on_mouse_up(false),
 callback_on_mouse_down(false),
 callback_on_drag(false),
-propagate_sibling_on_mouseup_outside(true)
+propagate_sibling_on_mouseup_outside(true),
+in_scroll_bed(false)
 {
     ox = x;
     oy = y;
@@ -251,7 +252,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                     BreakSiblingPropagate = true;
                 }
                 if( dragable ) {
-                    //GUI_Log( "Drag %s\n", title.c_str() );
+                    GUI_Log( "Drag %s\n", title.c_str() );
                     GUI_SetMouseCapture(this);
                     _dragging = true;
                     if( parent ) {
@@ -284,6 +285,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             ReverseRecursive = true;
             
             if (_dragging) {
+                GUI_Log( "Draging %s\n", title.c_str() );
                 if (parent) {
                     if (!parent->hitTest(x, y, false)) {
                         setInteract( false );
@@ -298,6 +300,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 return true;
             }
             if( hitTest(x, y, false) ) {
+
                 BreakSiblingPropagate = true;
                 setInteract( true );
                 if( parent ) {
@@ -360,6 +363,17 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 return true;
             }
             if( hitTest(x, y, false) ) {
+                int dx = x - lastMousePoint.x;
+                int dy = y - lastMousePoint.y;
+                lastMousePoint.set(x, y);
+                if( in_scroll_bed && isFocus() && (abs(dx) > 3 || abs(dy) > 3)) {
+                    if( parent && parent->dragable ) {
+                        parent->_dragging = true;
+                        parent->setFocus();
+                    }
+                }
+                GUI_Log( "Mouse motion %s\n", title.c_str() );
+
                 BreakSiblingPropagate = true;
                 setInteract( true );
                 if( parent ) {
@@ -440,7 +454,15 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 BreakSiblingPropagate = false;
                 break;
             }
-            
+            if( in_scroll_bed ) {
+                if( hitTest(x, y, false) ) {
+                    if( parent && parent->dragable ) {
+                        parent->_dragging = false;
+                        parent->setFocus();
+                        GUI_SetMouseCapture(NULL);
+                    }
+                }
+            }
             if( isMouseCapturing ) {
                 if (_dragging) {
                     _dragging = false;
@@ -468,6 +490,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                     return true;
                 }
             }
+
             if( hitTest(x, y, false) ) {
                 BreakSiblingPropagate = true;
             }
@@ -820,6 +843,7 @@ void GUI_View::setFocus() {
     }
     lastFocusView = this;
     _focus = true;
+    GUI_Log( "Focus: %s\n", title.c_str() );
     if( focus_need_input ) {
 #ifdef __EMSCRIPTEN__
         //emscripten_run_script("document.getElementById('canvas').contentEditable = true;");

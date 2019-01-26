@@ -121,6 +121,7 @@ public:
     bool propagate_sibling_on_mouseup_outside;
     bool dragable;
     bool drag_limit;
+    bool in_scroll_bed;
     
     int dragMinX;
     int dragMaxX;

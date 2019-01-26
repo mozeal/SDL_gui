@@ -64,7 +64,12 @@ void createColumn1(GUI_View *subContentView) {
     list->addSimpleItem( "Simle List Item 1" );
     list->addSimpleItem( "Simle List Item 2" );
     list->addSimpleItem( "Simle List Item 3" );
-    
+    list->addSimpleItem( "Simle List Item 4" );
+    list->addSimpleItem( "Simle List Item 5" );
+    list->addSimpleItem( "Simle List Item 6" );
+    list->addSimpleItem( "Simle List Item 7" );
+
+
     auto btn = GUI_Button::create( column1, "Button 1", 0, 0, 0, -1, 0 );
     btn->setMargin( 10, 0, 0, 0 );
     btn->corner = 6;
