@@ -68,6 +68,8 @@ void createAbsoluteViews() {
     vGrey->setPadding( 5, 5, 5, 5 );
     vGrey->setLayout( GUI_LAYOUT_ABSOLUTE );
     vGrey->dragable = true;
+    vGrey->click_to_top = true;
+
     
     GUI_TextView *vRedX = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vRedX->setBackgroundColor( cRed );
@@ -149,6 +151,7 @@ void createHorizontalViews() {
     vGrey->setPadding( 5, 5, 5, 5 );
     vGrey->setLayout( GUI_LAYOUT_HORIZONTAL );
     vGrey->dragable = true;
+    vGrey->click_to_top = true;
     
     GUI_TextView *vRedX = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vRedX->setBackgroundColor( cRed );
@@ -238,6 +241,8 @@ void createVerticalViews() {
     vGrey->setPadding( 5, 5, 5, 5 );
     vGrey->setLayout( GUI_LAYOUT_VERTICAL );
     vGrey->dragable = true;
+    vGrey->click_to_top = true;
+
     
     GUI_TextView *vRedX = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vRedX->setBackgroundColor( cRed );

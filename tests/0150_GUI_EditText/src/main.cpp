@@ -197,6 +197,13 @@ int main(int argc, char *argv[]) {
     list->addSimpleItem( "Simle List Item 1" );
     list->addSimpleItem( "Simle List Item 2" );
     list->addSimpleItem( "Simle List Item 3" );
+    list->addSimpleItem( "Simle List Item 4" );
+    list->addSimpleItem( "Simle List Item 5" );
+    list->addSimpleItem( "Simle List Item 6" );
+    list->addSimpleItem( "Simle List Item 7" );
+    list->addSimpleItem( "Simle List Item 8" );
+    list->addSimpleItem( "Simle List Item 9" );
+    list->addSimpleItem( "Simle List Item 10" );
 
     
     // ---------------------------------------------------------------------------------------------------------------
