@@ -366,7 +366,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 int dx = x - lastMousePoint.x;
                 int dy = y - lastMousePoint.y;
                 lastMousePoint.set(x, y);
-                if( in_scroll_bed && isFocus() && (abs(dx) > 3 || abs(dy) > 3)) {
+                if( in_scroll_bed && isFocus() && (abs(dx) > 2 || abs(dy) > 2)) {
                     if( parent && parent->dragable ) {
                         parent->_dragging = true;
                         parent->setFocus();
