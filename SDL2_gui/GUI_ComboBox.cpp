@@ -9,6 +9,7 @@
 #include "GUI_ComboBox.h"
 #include "GUI_View.h"
 #include "GUI_App.h"
+#include "GUI_Fonts.h"
 
 GUI_ComboBox *GUI_ComboBox::create( GUI_View *parent, const char *title, int x, int y, int width, int height,
                             std::function<void(GUI_View*)>callbackFunction ) {
@@ -34,7 +35,7 @@ GUI_ComboBox::GUI_ComboBox(GUI_View *parent, const char *title, int x, int y, in
     editText->setAlign( GUI_ALIGN_TOP | GUI_ALIGN_LEFT );
     editText->border = 0;
     editText->focusBorder = 0;
-    editText->setMargin( 0, 3, 0, 0 );
+    editText->setMargin( 0, 3, 0, 5 );
     editText->mouseReceive = false;
     
 
@@ -62,7 +63,10 @@ GUI_ComboBox::GUI_ComboBox(GUI_View *parent, const char *title, int x, int y, in
     
     updateLayout();
     
-    popup = GUI_PopupMenu::create( GUI_App::getInstance()->topView, "CBPopup", 0, 0, 180, 0 );
+    TTF_Font *font = GUI_Fonts::getFont(GUI_UITextFontName, GUI_UITextFontSize);
+    int hf = (TTF_FontHeight(font)/GUI_scale) + 16;
+    
+    popup = GUI_PopupMenu::create( GUI_App::getInstance()->topView, "CBPopup", 0, 0, 180, hf*4+2 );
     popup->hide();
     popup->setActivateView( button );
     popup->setCallback([=](GUI_View *v) {

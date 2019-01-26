@@ -59,13 +59,16 @@ GUI_PopupMenu *GUI_PopupMenu::create( GUI_View *parent, const char *title, int x
 
 GUI_PopupMenu::GUI_PopupMenu(GUI_View *parent, const char *title, int x, int y, int width, int height,
                    std::function<void(GUI_View*)>callbackFunction ) :
-    GUI_PopupView( parent, title, x, y, width, height )
+    GUI_PopupView( parent, title, x, y, width, height ),
+    scrollView(NULL)
 {
     // setCallback( callbackFunction );
     dragable = false;
     
     setBackgroundColor(cEmptyContent);
     setLayout(GUI_LAYOUT_VERTICAL);
+    
+    scrollView = GUI_ScrollView::create( this, "Scroll", 0, 0, -1, -1 );
 }
 
 GUI_PopupMenu::~GUI_PopupMenu() {
@@ -73,7 +76,15 @@ GUI_PopupMenu::~GUI_PopupMenu() {
 }
 
 void GUI_PopupMenu::add(GUI_MenuItem* child) {
-    add_child(child);
+    if( child->parent ) {
+        child->parent->remove_child( child );
+    }
+    scrollView->scrollContent->add_child(child);
+    scrollView->updateLayout();
+    if( oh == 0 ) {
+        rectView.h = scrollView->scrollContent->rectView.h;
+    }
+    child->in_scroll_bed = true;
     
     menuItems.push_back(child);
     child->setCallback( [=](GUI_View *v) {
@@ -97,7 +108,8 @@ void GUI_PopupMenu::add(GUI_MenuItem* child) {
 }
 
 void GUI_PopupMenu::remove(GUI_MenuItem* child) {
-    remove_child(child);
+    scrollView->scrollContent->remove_child(child);
+    child->in_scroll_bed = false;
     for (std::vector<GUI_MenuItem *>::iterator it = menuItems.begin() ; it != menuItems.end(); ++it) {
         if( child == *it ) {
             menuItems.erase( it );

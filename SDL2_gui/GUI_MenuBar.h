@@ -16,10 +16,12 @@
 #include "GUI_Label.h"
 #include "GUI_Menu.h"
 #include "GUI_PopupView.h"
+#include "GUI_ScrollView.h"
 
 class GUI_PopupMenu : public GUI_PopupView {
 protected:
     std::vector<GUI_MenuItem *>menuItems;
+    GUI_ScrollView *scrollView;
 public:
     static GUI_PopupMenu *create( GUI_View *parent, const char *title, int x=0, int y=0, int width=0, int height=0,
                             std::function<void(GUI_View*)>callbackFunction = NULL );

@@ -16,6 +16,7 @@
 #include "GUI_PopupView.h"
 #include "GUI_Menu.h"
 #include "GUI_MenuBar.h"
+#include "GUI_ScrollView.h"
 
 class GUI_ComboBox : public GUI_View {
 protected:

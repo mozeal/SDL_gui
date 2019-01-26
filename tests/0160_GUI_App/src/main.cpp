@@ -238,6 +238,9 @@ void createColumn3(GUI_View *subContentView) {
         cb->addSimpleItem( "Combo Box Item #2" );
         cb->addSimpleItem( "Combo Box Item #3" );
         cb->addSimpleItem( "Combo Box Item #4" );
+        cb->addSimpleItem( "Combo Box Item #5" );
+        cb->addSimpleItem( "Combo Box Item #6" );
+        cb->addSimpleItem( "Combo Box Item #7" );
         cb->setMargin(10, 0, 0, 0);
     }
 

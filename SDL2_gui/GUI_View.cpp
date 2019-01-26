@@ -372,7 +372,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                         parent->setFocus();
                     }
                 }
-                GUI_Log( "Mouse motion %s\n", title.c_str() );
+                //GUI_Log( "Mouse motion %s\n", title.c_str() );
 
                 BreakSiblingPropagate = true;
                 setInteract( true );
