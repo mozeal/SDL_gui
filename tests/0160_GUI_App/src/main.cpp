@@ -178,10 +178,13 @@ void createColumn3(GUI_View *subContentView) {
     panelLeft->setLayout(GUI_LAYOUT_VERTICAL);
     panelLeft->border = 0;
     {
+        auto progress = GUI_ProgressBar::create( panelLeft, "progress", 0, 100, 25, 0, 0, -1, 0 );
+        progress->setMargin(0, 10, 0, 10 );
+        
         auto label2 = GUI_Label::create(panelLeft, "25 %", 0, 0, 0, -1, 0 );
         
         label2->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
-        label2->setMargin(0, 10, 0, 10 );
+        label2->setMargin(10, 10, 0, 10 );
         label2->setBackgroundColor(cGrey);
         label2->setPadding( 5, 10, 5, 10 );
         
@@ -193,6 +196,8 @@ void createColumn3(GUI_View *subContentView) {
             char szT[32];
             sprintf( szT, "%i %%", (int)sl->value );
             label2->setTitle(szT);
+            
+            progress->value = sl->value;
         });
         slider->setMargin( 10, 2, 0, 2 );
     }

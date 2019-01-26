@@ -8,14 +8,15 @@
 
 #include "GUI_Slider.h"
 #include "GUI_Config.h"
+#include "GUI_shapes.h"
 
-GUI_ValueBar *GUI_ValueBar::create( GUI_View *parent, const char *title, float min, float max, float val,
+GUI_ProgressBar *GUI_ProgressBar::create( GUI_View *parent, const char *title, float min, float max, float val,
                                int x, int y, int width, int height,
                                std::function<void(GUI_View*)>callbackFunction ) {
-    return new GUI_ValueBar( parent, title, min, max, val, x, y, width, height, callbackFunction );
+    return new GUI_ProgressBar( parent, title, min, max, val, x, y, width, height, callbackFunction );
 }
 
-GUI_ValueBar::GUI_ValueBar(GUI_View *parent, const char *title, float min, float max, float val,
+GUI_ProgressBar::GUI_ProgressBar(GUI_View *parent, const char *title, float min, float max, float val,
                        int x, int y, int width, int height,
                        std::function<void(GUI_View*)>callbackFunction ) :
 GUI_View(parent, title, x, y, width, height ),
@@ -37,10 +38,21 @@ valueView(NULL)
     valueView->corner = h/2;
 }
 
-GUI_ValueBar::~GUI_ValueBar() {
+GUI_ProgressBar::~GUI_ProgressBar() {
     
 }
 
+void GUI_ProgressBar::draw() {
+    int h = rectView.h;
+    int w = value / (maxValue-minValue) * (rectView.w - rectView.h);
+    GUI_FillRect(h/2, 0, w, h, GUI_AppTopBarColor);
+    if( value > minValue ) {
+        GUI_FillCircle( h/2, h/2, h/2, GUI_AppTopBarColor);
+    }
+    if( value == maxValue ) {
+        GUI_FillCircle( rectView.w-h/2, h/2, h/2, GUI_AppTopBarColor);
+    }
+}
 
 // ------------------------------------------------------------------------------------------------
 
@@ -68,7 +80,7 @@ GUI_Slider::GUI_Slider(GUI_View *parent, const char *title, float min, float max
         h = 24;
     }
     
-    valueBar = GUI_ValueBar::create(this, "value", min, max, val, 0, 0, -1, 0);
+    valueBar = GUI_ProgressBar::create(this, "value", min, max, val, 0, 0, -1, 0);
     valueBar->setMargin( 0, (h-8)/2, 0, (h-8)/2 );
     valueBar->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
 
@@ -86,6 +98,7 @@ GUI_Slider::GUI_Slider(GUI_View *parent, const char *title, float min, float max
     indicator->setAlign(GUI_ALIGN_ABSOLUTE);
     indicator->setCallback([=](GUI_View *v) {
         this->value = min + ((float)((indicator->topLeft.x/GUI_scale) * (max-min)) / (float)(indicator->dragMaxX-indicator->dragMinX));
+        valueBar->value = this->value;
         if( callback ) {
             callback(this);
         }
