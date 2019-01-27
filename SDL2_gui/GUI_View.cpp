@@ -160,7 +160,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 BreakRecursive = true;
             }
             break;
-#if defined(__IPHONEOS__) || defined(__ANDROID__)
+#if defined(__IPHONEOS__) || defined(__ANDROID__) || defined(__RPI__)
 
         case SDL_FINGERDOWN:
         {
@@ -223,7 +223,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             break;
         }
 #endif
-#if !defined(__IPHONEOS__) && !defined(__ANDROID__)
+#if !defined(__IPHONEOS__) && !defined(__ANDROID__) && !defined(__RPI__)
 
         case SDL_MOUSEBUTTONDOWN:
         {
@@ -285,7 +285,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             break;
         }
 #endif
-#if defined(__IPHONEOS__) || defined(__ANDROID__)
+#if defined(__IPHONEOS__) || defined(__ANDROID__) || defined(__RPI__)
 
 
         case SDL_FINGERMOTION:
@@ -372,7 +372,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             break;
         }
 #endif
-#if !defined(__IPHONEOS__) && !defined(__ANDROID__)
+#if !defined(__IPHONEOS__) && !defined(__ANDROID__) && !defined(__RPI__)
         case SDL_MOUSEMOTION:
         {
             SDL_MouseMotionEvent e = event->motion;
@@ -455,7 +455,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             break;
         }
 #endif
-#if defined(__IPHONEOS__) || defined(__ANDROID__)
+#if defined(__IPHONEOS__) || defined(__ANDROID__) || defined(__RPI__)
 
         case SDL_FINGERUP:
         {
@@ -522,7 +522,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             break;
         }
 #endif
-#if !defined(__IPHONEOS__) && !defined(__ANDROID__)
+#if !defined(__IPHONEOS__) && !defined(__ANDROID__) && !defined(__RPI__)
         case SDL_MOUSEBUTTONUP:
         {
 

@@ -38,7 +38,8 @@ CFLAGS := \
 -I../../../SDL2_ttf_HarfBuzz/external/harfbuzz-1.4.6 \
 -I$(SDL_GUI_ROOT) \
 -I$(SDL_GFX_ROOT) \
--D_REENTRANT
+-D_REENTRANT \
+-D__RPI__
 
 LFLAGS := \
 -L/usr/local/lib \

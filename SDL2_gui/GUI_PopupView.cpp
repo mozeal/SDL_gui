@@ -50,7 +50,7 @@ void GUI_PopupView::Center() {
 
 bool GUI_PopupView::eventHandler(SDL_Event*event) {
     switch (event->type) {
-#if defined(__IPHONEOS__) || defined(__ANDROID__)
+#if defined(__IPHONEOS__) || defined(__ANDROID__) || defined(__RPI__)
         case SDL_FINGERDOWN:
         //    GUI_Log( "FINGER DOWN/DOWN %s\n", title.c_str() );
         //case SDL_FINGERUP:
@@ -80,7 +80,7 @@ bool GUI_PopupView::eventHandler(SDL_Event*event) {
             return GUI_View::eventHandler(event);
         }
 #endif
-#if !defined(__IPHONEOS__) && !defined(__ANDROID__)
+#if !defined(__IPHONEOS__) && !defined(__ANDROID__) && !defined(__RPI__)
         case SDL_MOUSEBUTTONDOWN:
         //case SDL_MOUSEBUTTONUP:
         {

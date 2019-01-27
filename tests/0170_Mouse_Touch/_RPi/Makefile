@@ -22,12 +22,19 @@ SOURCES = \
 ../../../SDL2_gui/GUI_RadioButton.cpp \
 ../../../SDL2_gui/GUI_RadioButtonGroup.cpp \
 ../../../SDL2_gui/GUI_List.cpp \
+../../../SDL2_gui/GUI_ScrollView.cpp \
 ../../../SDL2_gui/GUI_EditText.cpp \
 ../../../SDL2_gui/GUI_TextUtil.cpp \
 ../../../SDL2_gui/GUI_App.cpp \
 ../../../SDL2_gui/GUI_TopBar.cpp \
 ../../../SDL2_gui/GUI_StatusBar.cpp \
-../../../SDL2_gui/GUI_Menu.cpp
+../../../SDL2_gui/GUI_Menu.cpp \
+../../../SDL2_gui/GUI_MenuBar.cpp \
+../../../SDL2_gui/GUI_PopupView.cpp \
+../../../SDL2_gui/GUI_MessageBox.cpp \
+../../../SDL2_gui/GUI_Switch.cpp \
+../../../SDL2_gui/GUI_ComboBox.cpp \
+../../../SDL2_gui/GUI_Slider.cpp 
 
 OUTDIR = build
 
@@ -55,7 +62,8 @@ CFLAGS := \
 -I../../../SDL2_ttf_HarfBuzz/external/harfbuzz-1.4.6 \
 -I$(SDL_GUI_ROOT) \
 -I$(SDL_GFX_ROOT) \
--D_REENTRANT
+-D_REENTRANT \
+-D__RPI__
 
 LFLAGS := \
 -L/usr/local/lib \
