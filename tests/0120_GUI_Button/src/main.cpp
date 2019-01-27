@@ -65,6 +65,7 @@ int main(int argc, char *argv[]) {
     button2->setMargin( 0, 10, 10, 10 );
     
     auto button3 = GUI_Button::create(topView, "Toggle", kIcon_solid_exchange_alt, 0, 0, 120, 0, [=](GUI_View *v) {
+        GUI_Log( "Button 3 called back\n" );
         label->setVisible(!label->isVisible());
         topView->updateLayout();
     } );
@@ -80,6 +81,7 @@ int main(int argc, char *argv[]) {
     button4->setMargin( 10, 10, 10, 10 );
 
     auto button5 = GUI_Button::create(topView, "Toggle", kIcon_solid_exchange_alt, 0, 0, 120, 0, [=](GUI_View *v) {
+        GUI_Log( "Button 5 called back\n" );
         button4->setEnable(!button4->isEnable());
         if( button4->isEnable() ) {
             button4->setTitle("Enable");

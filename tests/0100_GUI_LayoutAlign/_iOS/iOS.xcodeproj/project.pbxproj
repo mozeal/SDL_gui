@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		380C58C521C101CF0005A03F /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C58C021C101AD0005A03F /* libSDL2.a */; };
 		380C58C721C108330005A03F /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C58C621C108330005A03F /* Metal.framework */; };
+		380EC79221FD59BB00759C7E /* GUI_TextView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC78521FD59BA00759C7E /* GUI_TextView.cpp */; };
+		380EC79321FD59BB00759C7E /* GUI_Fonts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC78D21FD59BA00759C7E /* GUI_Fonts.cpp */; };
+		380EC79421FD59BB00759C7E /* GUI_IconView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC79021FD59BA00759C7E /* GUI_IconView.cpp */; };
 		3817478421E7700D00AA0910 /* SDL2_imageFilter.c in Sources */ = {isa = PBXBuildFile; fileRef = 3817477A21E7700C00AA0910 /* SDL2_imageFilter.c */; };
 		3817478521E7700D00AA0910 /* SDL2_gfxPrimitives.c in Sources */ = {isa = PBXBuildFile; fileRef = 3817477B21E7700C00AA0910 /* SDL2_gfxPrimitives.c */; };
 		3817478621E7700D00AA0910 /* SDL2_gfxPrimitives.bc in Resources */ = {isa = PBXBuildFile; fileRef = 3817477D21E7700C00AA0910 /* SDL2_gfxPrimitives.bc */; };
@@ -103,6 +106,12 @@
 /* Begin PBXFileReference section */
 		380C58B721C101AD0005A03F /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = "../../../SDL2/Xcode-iOS/SDL/SDL.xcodeproj"; sourceTree = "<group>"; };
 		380C58C621C108330005A03F /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		380EC78521FD59BA00759C7E /* GUI_TextView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_TextView.cpp; sourceTree = "<group>"; };
+		380EC78D21FD59BA00759C7E /* GUI_Fonts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Fonts.cpp; sourceTree = "<group>"; };
+		380EC78E21FD59BA00759C7E /* GUI_TextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_TextView.h; sourceTree = "<group>"; };
+		380EC78F21FD59BA00759C7E /* GUI_IconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_IconView.h; sourceTree = "<group>"; };
+		380EC79021FD59BA00759C7E /* GUI_IconView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_IconView.cpp; sourceTree = "<group>"; };
+		380EC79121FD59BA00759C7E /* GUI_Fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_Fonts.h; sourceTree = "<group>"; };
 		3817477A21E7700C00AA0910 /* SDL2_imageFilter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SDL2_imageFilter.c; sourceTree = "<group>"; };
 		3817477B21E7700C00AA0910 /* SDL2_gfxPrimitives.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SDL2_gfxPrimitives.c; sourceTree = "<group>"; };
 		3817477C21E7700C00AA0910 /* SDL2_framerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL2_framerate.h; sourceTree = "<group>"; };
@@ -218,6 +227,12 @@
 				3817479421E7701700AA0910 /* GUI_shapes.cpp */,
 				3817479521E7701700AA0910 /* GUI_image.cpp */,
 				3817479721E7701700AA0910 /* GUI_Utils.cpp */,
+				380EC78D21FD59BA00759C7E /* GUI_Fonts.cpp */,
+				380EC79121FD59BA00759C7E /* GUI_Fonts.h */,
+				380EC79021FD59BA00759C7E /* GUI_IconView.cpp */,
+				380EC78F21FD59BA00759C7E /* GUI_IconView.h */,
+				380EC78521FD59BA00759C7E /* GUI_TextView.cpp */,
+				380EC78E21FD59BA00759C7E /* GUI_TextView.h */,
 			);
 			name = SDL2_gui;
 			path = ../../../SDL2_gui;
@@ -445,10 +460,13 @@
 				381747A121E7701700AA0910 /* GUI_Utils.cpp in Sources */,
 				3817479B21E7701700AA0910 /* GUI_View.cpp in Sources */,
 				3817479F21E7701700AA0910 /* GUI_image.cpp in Sources */,
+				380EC79421FD59BB00759C7E /* GUI_IconView.cpp in Sources */,
+				380EC79221FD59BB00759C7E /* GUI_TextView.cpp in Sources */,
 				3817478721E7700D00AA0910 /* SDL2_rotozoom.c in Sources */,
 				3817479D21E7701700AA0910 /* SDL_gui.cpp in Sources */,
 				3817479A21E7701700AA0910 /* GUI_ImageView.cpp in Sources */,
 				384BBBB41BCE301900D0B592 /* main.cpp in Sources */,
+				380EC79321FD59BB00759C7E /* GUI_Fonts.cpp in Sources */,
 				3817478521E7700D00AA0910 /* SDL2_gfxPrimitives.c in Sources */,
 				3817478821E7700D00AA0910 /* SDL2_framerate.c in Sources */,
 			);

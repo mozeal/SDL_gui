@@ -108,6 +108,7 @@ public:
     int corner;
     int border;
     int focusBorder;
+    bool in_scroll_bed;
     bool focusable;
     bool clickable;
     bool capture_on_click;
@@ -121,7 +122,7 @@ public:
     bool propagate_sibling_on_mouseup_outside;
     bool dragable;
     bool drag_limit;
-    bool in_scroll_bed;
+    bool drag_outside_parent;
     
     int dragMinX;
     int dragMaxX;

@@ -77,7 +77,7 @@ GUI_Slider::GUI_Slider(GUI_View *parent, const char *title, float min, float max
 
     int h = height;
     if( h == 0 ) {
-        h = 24;
+        h = 32;
     }
     
     valueBar = GUI_ProgressBar::create(this, "value", min, max, val, 0, 0, -1, 0);
@@ -95,6 +95,7 @@ GUI_Slider::GUI_Slider(GUI_View *parent, const char *title, float min, float max
     indicator->dragMinY = 0;
     indicator->dragMaxY = 0;
     indicator->callback_on_drag = true;
+    indicator->drag_outside_parent = true;
     indicator->setAlign(GUI_ALIGN_ABSOLUTE);
     indicator->setCallback([=](GUI_View *v) {
         this->value = min + ((float)((indicator->topLeft.x/GUI_scale) * (max-min)) / (float)(indicator->dragMaxX-indicator->dragMinX));

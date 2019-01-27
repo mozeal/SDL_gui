@@ -53,7 +53,7 @@ SDL_Texture* loadTexture(const std::string &filename, SDL_Renderer *ren)
 
 int main(int argc, char *argv[]) {
     cout << "Hello, World!" << endl;
-    SDL_SetHint(SDL_HINT_ORIENTATIONS, "Portrait LandscapeLeft LandscapeRight");
+    SDL_SetHint(SDL_HINT_ORIENTATIONS, "LandscapeLeft LandscapeRight");
 
     // Init SDL
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {

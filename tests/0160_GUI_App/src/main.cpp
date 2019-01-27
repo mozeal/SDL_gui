@@ -68,6 +68,19 @@ void createColumn1(GUI_View *subContentView) {
     list->addSimpleItem( "Simle List Item 5" );
     list->addSimpleItem( "Simle List Item 6" );
     list->addSimpleItem( "Simle List Item 7" );
+    list->addSimpleItem( "Simle List Item 8" );
+    list->addSimpleItem( "Simle List Item 9" );
+    list->addSimpleItem( "Simle List Item 10" );
+    list->addSimpleItem( "Simle List Item 11" );
+    list->addSimpleItem( "Simle List Item 12" );
+    list->addSimpleItem( "Simle List Item 13" );
+    list->addSimpleItem( "Simle List Item 14" );
+    list->addSimpleItem( "Simle List Item 15" );
+    list->addSimpleItem( "Simle List Item 16" );
+    list->addSimpleItem( "Simle List Item 17" );
+    list->addSimpleItem( "Simle List Item 18" );
+    list->addSimpleItem( "Simle List Item 19" );
+    list->addSimpleItem( "Simle List Item 20" );
 
 
     auto btn = GUI_Button::create( column1, "Button 1", 0, 0, 0, -1, 0 );

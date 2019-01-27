@@ -41,6 +41,7 @@ int main(int argc, char *argv[]) {
     vRed->setBackgroundColor( cRed );
     vRed->dragable = true;
     vRed->showInteract = true;
+    vRed->click_to_top = true;
     GUI_View *vRedC1 = GUI_View::create( vRed, "Green", 40, 40, 320, 240 );
     vRedC1->setBackgroundColor( cGreen );
     vRedC1->dragable = true;
@@ -54,6 +55,7 @@ int main(int argc, char *argv[]) {
     vBlue->setBackgroundColor( cBlue );
     vBlue->dragable = true;
     vBlue->showInteract = true;
+    vBlue->click_to_top = true;
     GUI_View *vBlueC1 = GUI_View::create( vBlue, "Magenta", 100, 100, 320, 240 );
     vBlueC1->setBackgroundColor( cMagenta );
     vBlueC1->dragable = true;
@@ -67,6 +69,7 @@ int main(int argc, char *argv[]) {
     GUI_View *vCyan = GUI_View::create( topView, "Cyan", 270, 270, 320, 240 );
     vCyan->setBackgroundColor( cCyan );
     vCyan->dragable = true;
+    vCyan->click_to_top = true;
     vCyan->showInteract = true;
     GUI_View *vCyanC1 = GUI_View::create( vCyan, "Grey", -70, -70, 320, 240 );
     vCyanC1->setBackgroundColor( cGrey );

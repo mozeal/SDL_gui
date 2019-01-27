@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		380C58C521C101CF0005A03F /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C58C021C101AD0005A03F /* libSDL2.a */; };
 		380C58C721C108330005A03F /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C58C621C108330005A03F /* Metal.framework */; };
+		380EC80521FD810100759C7E /* GUI_CheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC7F721FD810000759C7E /* GUI_CheckBox.cpp */; };
+		380EC80621FD810100759C7E /* GUI_RadioButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC7F821FD810000759C7E /* GUI_RadioButton.cpp */; };
+		380EC80721FD810100759C7E /* GUI_TextView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC7F921FD810000759C7E /* GUI_TextView.cpp */; };
+		380EC80821FD810100759C7E /* GUI_IconView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC7FD21FD810100759C7E /* GUI_IconView.cpp */; };
+		380EC80921FD810100759C7E /* GUI_RadioButtonGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC7FE21FD810100759C7E /* GUI_RadioButtonGroup.cpp */; };
+		380EC80A21FD810100759C7E /* GUI_Fonts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC80021FD810100759C7E /* GUI_Fonts.cpp */; };
+		380EC80B21FD810100759C7E /* GUI_Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC80121FD810100759C7E /* GUI_Button.cpp */; };
+		380EC80C21FD810100759C7E /* GUI_List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC80321FD810100759C7E /* GUI_List.cpp */; };
+		380EC80F21FD818100759C7E /* GUI_Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC80D21FD818100759C7E /* GUI_Label.cpp */; };
+		380EC81221FD81A900759C7E /* GUI_ScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC81021FD81A900759C7E /* GUI_ScrollView.cpp */; };
 		3817478421E7700D00AA0910 /* SDL2_imageFilter.c in Sources */ = {isa = PBXBuildFile; fileRef = 3817477A21E7700C00AA0910 /* SDL2_imageFilter.c */; };
 		3817478521E7700D00AA0910 /* SDL2_gfxPrimitives.c in Sources */ = {isa = PBXBuildFile; fileRef = 3817477B21E7700C00AA0910 /* SDL2_gfxPrimitives.c */; };
 		3817478621E7700D00AA0910 /* SDL2_gfxPrimitives.bc in Resources */ = {isa = PBXBuildFile; fileRef = 3817477D21E7700C00AA0910 /* SDL2_gfxPrimitives.bc */; };
@@ -103,6 +113,26 @@
 /* Begin PBXFileReference section */
 		380C58B721C101AD0005A03F /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = "../../../SDL2/Xcode-iOS/SDL/SDL.xcodeproj"; sourceTree = "<group>"; };
 		380C58C621C108330005A03F /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		380EC7EE21FD810000759C7E /* GUI_IconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_IconView.h; sourceTree = "<group>"; };
+		380EC7F621FD810000759C7E /* GUI_RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_RadioButton.h; sourceTree = "<group>"; };
+		380EC7F721FD810000759C7E /* GUI_CheckBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_CheckBox.cpp; sourceTree = "<group>"; };
+		380EC7F821FD810000759C7E /* GUI_RadioButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_RadioButton.cpp; sourceTree = "<group>"; };
+		380EC7F921FD810000759C7E /* GUI_TextView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_TextView.cpp; sourceTree = "<group>"; };
+		380EC7FA21FD810000759C7E /* GUI_List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_List.h; sourceTree = "<group>"; };
+		380EC7FB21FD810000759C7E /* GUI_Fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_Fonts.h; sourceTree = "<group>"; };
+		380EC7FC21FD810100759C7E /* GUI_Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_Button.h; sourceTree = "<group>"; };
+		380EC7FD21FD810100759C7E /* GUI_IconView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_IconView.cpp; sourceTree = "<group>"; };
+		380EC7FE21FD810100759C7E /* GUI_RadioButtonGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_RadioButtonGroup.cpp; sourceTree = "<group>"; };
+		380EC7FF21FD810100759C7E /* GUI_CheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_CheckBox.h; sourceTree = "<group>"; };
+		380EC80021FD810100759C7E /* GUI_Fonts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Fonts.cpp; sourceTree = "<group>"; };
+		380EC80121FD810100759C7E /* GUI_Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Button.cpp; sourceTree = "<group>"; };
+		380EC80221FD810100759C7E /* GUI_TextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_TextView.h; sourceTree = "<group>"; };
+		380EC80321FD810100759C7E /* GUI_List.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_List.cpp; sourceTree = "<group>"; };
+		380EC80421FD810100759C7E /* GUI_RadioButtonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_RadioButtonGroup.h; sourceTree = "<group>"; };
+		380EC80D21FD818100759C7E /* GUI_Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Label.cpp; sourceTree = "<group>"; };
+		380EC80E21FD818100759C7E /* GUI_Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_Label.h; sourceTree = "<group>"; };
+		380EC81021FD81A900759C7E /* GUI_ScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_ScrollView.cpp; sourceTree = "<group>"; };
+		380EC81121FD81A900759C7E /* GUI_ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_ScrollView.h; sourceTree = "<group>"; };
 		3817477A21E7700C00AA0910 /* SDL2_imageFilter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SDL2_imageFilter.c; sourceTree = "<group>"; };
 		3817477B21E7700C00AA0910 /* SDL2_gfxPrimitives.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SDL2_gfxPrimitives.c; sourceTree = "<group>"; };
 		3817477C21E7700C00AA0910 /* SDL2_framerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL2_framerate.h; sourceTree = "<group>"; };
@@ -206,6 +236,26 @@
 		3817478921E7701700AA0910 /* SDL2_gui */ = {
 			isa = PBXGroup;
 			children = (
+				380EC81021FD81A900759C7E /* GUI_ScrollView.cpp */,
+				380EC81121FD81A900759C7E /* GUI_ScrollView.h */,
+				380EC80D21FD818100759C7E /* GUI_Label.cpp */,
+				380EC80E21FD818100759C7E /* GUI_Label.h */,
+				380EC80121FD810100759C7E /* GUI_Button.cpp */,
+				380EC7FC21FD810100759C7E /* GUI_Button.h */,
+				380EC7F721FD810000759C7E /* GUI_CheckBox.cpp */,
+				380EC7FF21FD810100759C7E /* GUI_CheckBox.h */,
+				380EC80021FD810100759C7E /* GUI_Fonts.cpp */,
+				380EC7FB21FD810000759C7E /* GUI_Fonts.h */,
+				380EC7FD21FD810100759C7E /* GUI_IconView.cpp */,
+				380EC7EE21FD810000759C7E /* GUI_IconView.h */,
+				380EC80321FD810100759C7E /* GUI_List.cpp */,
+				380EC7FA21FD810000759C7E /* GUI_List.h */,
+				380EC7F821FD810000759C7E /* GUI_RadioButton.cpp */,
+				380EC7F621FD810000759C7E /* GUI_RadioButton.h */,
+				380EC7FE21FD810100759C7E /* GUI_RadioButtonGroup.cpp */,
+				380EC80421FD810100759C7E /* GUI_RadioButtonGroup.h */,
+				380EC7F921FD810000759C7E /* GUI_TextView.cpp */,
+				380EC80221FD810100759C7E /* GUI_TextView.h */,
 				3817478A21E7701700AA0910 /* GUI_ImageView.cpp */,
 				3817478B21E7701700AA0910 /* GUI_View.h */,
 				3817478C21E7701700AA0910 /* GUI_View.cpp */,
@@ -440,13 +490,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				380EC80521FD810100759C7E /* GUI_CheckBox.cpp in Sources */,
 				3817478421E7700D00AA0910 /* SDL2_imageFilter.c in Sources */,
+				380EC81221FD81A900759C7E /* GUI_ScrollView.cpp in Sources */,
+				380EC80821FD810100759C7E /* GUI_IconView.cpp in Sources */,
 				3817479E21E7701700AA0910 /* GUI_shapes.cpp in Sources */,
+				380EC80621FD810100759C7E /* GUI_RadioButton.cpp in Sources */,
+				380EC80921FD810100759C7E /* GUI_RadioButtonGroup.cpp in Sources */,
 				381747A121E7701700AA0910 /* GUI_Utils.cpp in Sources */,
 				3817479B21E7701700AA0910 /* GUI_View.cpp in Sources */,
 				3817479F21E7701700AA0910 /* GUI_image.cpp in Sources */,
+				380EC80C21FD810100759C7E /* GUI_List.cpp in Sources */,
 				3817478721E7700D00AA0910 /* SDL2_rotozoom.c in Sources */,
+				380EC80A21FD810100759C7E /* GUI_Fonts.cpp in Sources */,
+				380EC80B21FD810100759C7E /* GUI_Button.cpp in Sources */,
 				3817479D21E7701700AA0910 /* SDL_gui.cpp in Sources */,
+				380EC80F21FD818100759C7E /* GUI_Label.cpp in Sources */,
+				380EC80721FD810100759C7E /* GUI_TextView.cpp in Sources */,
 				3817479A21E7701700AA0910 /* GUI_ImageView.cpp in Sources */,
 				384BBBB41BCE301900D0B592 /* main.cpp in Sources */,
 				3817478521E7700D00AA0910 /* SDL2_gfxPrimitives.c in Sources */,
