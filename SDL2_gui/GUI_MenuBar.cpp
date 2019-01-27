@@ -212,6 +212,7 @@ GUI_MenuBarItem * GUI_MenuBar::addPopupMenu( const char *title, GUI_View *parent
         pm->selectedItem = NULL;
         
         pm->hide();
+
         if( this->callback ) {
             this->callback(this);
         }

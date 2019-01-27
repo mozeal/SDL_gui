@@ -4,6 +4,7 @@ buildscript {
     maven {
       url "https://jcenter.bintray.com"
     }
+      google()
   }
   dependencies {
     classpath "com.android.tools.build:gradle:${ANDROID_GRADLE_PLUGIN_VERSION}"

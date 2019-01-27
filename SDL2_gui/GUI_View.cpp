@@ -160,11 +160,11 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 BreakRecursive = true;
             }
             break;
-#if defined(__IPHONEOS__)
+#if defined(__IPHONEOS__) || defined(__ANDROID__)
 
         case SDL_FINGERDOWN:
         {
-            GUI_Log( "Finger DOWN %s\n", title.c_str() );
+            //GUI_Log( "Finger DOWN %s\n", title.c_str() );
             SDL_TouchFingerEvent e = event->tfinger;
             SDL_FingerID fid = e.fingerId;
             
@@ -178,7 +178,8 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 break;
             }
             ReverseRecursive = true;
-            
+
+            //GUI_Log( "X,Y: %i, %i\n", x, y );
             if( hitTest(x, y, false) ) {
                 //GUI_Log( "Hit %s\n", title.c_str() );
                 if( mouseReceive ) {
@@ -206,15 +207,15 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                     BreakSiblingPropagate = true;
                 }
                 if( dragable ) {
-                    GUI_Log( "Drag %s\n", title.c_str() );
+                    //GUI_Log( "Drag %s\n", title.c_str() );
                     GUI_SetMouseCapture(this);
                     _dragging = true;
                     if( parent ) {
                         parent->_dragging = false;
                     }
-                    lastMousePoint.set(x, y);
                     BreakSiblingPropagate = true;
                 }
+                lastMousePoint.set(x, y);
             }
             else {
                 return false;
@@ -222,11 +223,11 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             break;
         }
 #endif
-#if !defined(__IPHONEOS__)
+#if !defined(__IPHONEOS__) && !defined(__ANDROID__)
 
         case SDL_MOUSEBUTTONDOWN:
         {
-            GUI_Log( "Mouse DOWN %s\n", title.c_str() );
+            //GUI_Log( "Mouse DOWN %s\n", title.c_str() );
 
             SDL_MouseButtonEvent e = event->button;
             
@@ -268,15 +269,15 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                     BreakSiblingPropagate = true;
                 }
                 if( dragable ) {
-                    GUI_Log( "Drag %s\n", title.c_str() );
+                    //GUI_Log( "Drag %s\n", title.c_str() );
                     GUI_SetMouseCapture(this);
                     _dragging = true;
                     if( parent ) {
                         parent->_dragging = false;
                     }
-                    lastMousePoint.set(x, y);
                     BreakSiblingPropagate = true;
                 }
+                lastMousePoint.set(x, y);
             }
             else {
                 return false;
@@ -284,12 +285,11 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             break;
         }
 #endif
-#if defined(__IPHONEOS__)
+#if defined(__IPHONEOS__) || defined(__ANDROID__)
+
 
         case SDL_FINGERMOTION:
         {
-            GUI_Log( "Finger MOTION %s\n", title.c_str() );
-
             SDL_TouchFingerEvent e = event->tfinger;
             SDL_FingerID fid = e.fingerId;
             //GUI_Log( "%i\n", fid );
@@ -306,6 +306,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             ReverseRecursive = true;
             
             if (_dragging) {
+                //GUI_Log( "Finger DRAGGING %s\n", title.c_str() );
                 if (parent) {
                     if (!parent->hitTest(x, y, false) && !(drag_outside_parent)) {
                         setInteract( false );
@@ -340,11 +341,18 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 return true;
             }
             if( hitTest(x, y, false) ) {
+                //GUI_Log( "Finger MOTION %s\n", title.c_str() );
+
                 int dx = x - lastMousePoint.x;
                 int dy = y - lastMousePoint.y;
                 lastMousePoint.set(x, y);
-                if( in_scroll_bed && isFocus() && (abs(dx) > 1 || abs(dy) > 1)) {
+                int dragThreshold = 2;
+#ifdef __ANDROID__
+                dragThreshold = 4;
+#endif
+                if( in_scroll_bed && isFocus() && ((dx >= 0 ? dx : -dx) > dragThreshold || (dy >= 0 ? dy : -dy) > dragThreshold)) {
                     if( parent && parent->dragable ) {
+                        //GUI_Log( "Refer DRAG to Parent %s\n", title.c_str() );
                         parent->_dragging = true;
                         parent->setFocus();
                     }
@@ -364,11 +372,9 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             break;
         }
 #endif
-#if !defined(__IPHONEOS__)
+#if !defined(__IPHONEOS__) && !defined(__ANDROID__)
         case SDL_MOUSEMOTION:
         {
-            GUI_Log( "Mouse MOTION %s\n", title.c_str() );
-
             SDL_MouseMotionEvent e = event->motion;
             
             int x = (int)(e.x*GUI_mouseScale);
@@ -383,6 +389,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             ReverseRecursive = true;
 
             if (_dragging) {
+                //GUI_Log( "Mouse DRAGGING %s\n", title.c_str() );
                 if (parent) {
                     if (!parent->hitTest(x, y, false) && !(drag_outside_parent)) {
                         setInteract( false );
@@ -417,11 +424,18 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 return true;
             }
             if( hitTest(x, y, false) ) {
+                //GUI_Log( "Mouse MOTION IN %s\n", title.c_str() );
+
                 int dx = x - lastMousePoint.x;
                 int dy = y - lastMousePoint.y;
                 lastMousePoint.set(x, y);
-                if( in_scroll_bed && isFocus() && (abs(dx) > 2 || abs(dy) > 2)) {
+                int dragThreshold = 2;
+#ifdef __ANDROID__
+                dragThreshold = 2;
+#endif
+                if( in_scroll_bed && isFocus() && ((dx >= 0 ? dx : -dx) > dragThreshold || (dy >= 0 ? dy : -dy) > dragThreshold)) {
                     if( parent && parent->dragable ) {
+                        //GUI_Log( "Refer DRAG to Parent %s\n", title.c_str() );
                         parent->_dragging = true;
                         parent->setFocus();
                     }
@@ -441,7 +455,8 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             break;
         }
 #endif
-#if defined(__IPHONEOS__)
+#if defined(__IPHONEOS__) || defined(__ANDROID__)
+
         case SDL_FINGERUP:
         {
 
@@ -466,7 +481,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             }
             
             if( hitTest(x, y, false) ) {
-                GUI_Log( "Finger UP IN %s\n", title.c_str() );
+                //GUI_Log( "Finger UP IN %s\n", title.c_str() );
                 BreakSiblingPropagate = true;
                 if( in_scroll_bed ) {
                     if( parent && parent->dragable ) {
@@ -491,7 +506,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 }
             }
             else {
-                GUI_Log( "Finger UP OUT %s\n", title.c_str() );
+                //GUI_Log( "Finger UP OUT %s\n", title.c_str() );
                 if( isFocus() ) {
                     killFocus();
                 }
@@ -501,46 +516,44 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 if( !propagate_sibling_on_mouseup_outside ) {
                     BreakSiblingPropagate = true;
                 }
+                BreakRecursive = true;
             }
             
             break;
         }
 #endif
-#if !defined(__IPHONEOS__)
+#if !defined(__IPHONEOS__) && !defined(__ANDROID__)
         case SDL_MOUSEBUTTONUP:
         {
-            GUI_Log( "Mouse UP %s\n", title.c_str() );
 
             SDL_MouseButtonEvent e = event->button;
             int x = (int)(e.x*GUI_mouseScale);
             int y = (int)(e.y*GUI_mouseScale);
             
-            //GUI_Log( "Mouse up %s\n", title.c_str() );
             if( !mouseReceive ) {
                 BreakRecursive = true;
                 BreakSiblingPropagate = false;
                 break;
             }
-            if( in_scroll_bed ) {
-                if( hitTest(x, y, false) ) {
+            if (_dragging) {
+                _dragging = false;
+                SDL_Log( "Undragging %s\n", title.c_str() );
+                //GUI_mouseCapturedView = NULL;
+                GUI_SetMouseCapture(NULL);
+                return true;
+            }
+            
+            if( hitTest(x, y, false) ) {
+                //GUI_Log( "Mouse UP IN %s\n", title.c_str() );
+                BreakSiblingPropagate = true;
+                if( in_scroll_bed ) {
                     if( parent && parent->dragable ) {
                         parent->_dragging = false;
                         parent->setFocus();
                         GUI_SetMouseCapture(NULL);
                     }
                 }
-            }
-            if( isMouseCapturing ) {
-                if (_dragging) {
-                    _dragging = false;
-                    SDL_Log( "Undragging %s\n", title.c_str() );
-                    //GUI_mouseCapturedView = NULL;
-                    GUI_SetMouseCapture(NULL);
-                    return true;
-                }
-            }
-            if( clickable ) {
-                if( hitTest(x, y, false) ) {
+                if( clickable ) {
                     if( isMouseCapturing )
                         GUI_SetMouseCapture(NULL);
                     if (callback && !callback_on_mouse_up) {
@@ -548,20 +561,15 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                     }
                     return true;
                 }
-            }
-            if( callback_on_mouse_up ) {
-                 if( hitTest(x, y, false) ) {
+                if( callback_on_mouse_up ) {
                     if( callback ) {
                         callback(this);
                     }
                     return true;
                 }
             }
-
-            if( hitTest(x, y, false) ) {
-                BreakSiblingPropagate = true;
-            }
             else {
+                //GUI_Log( "Mouse UP OUT %s\n", title.c_str() );
                 if( isFocus() ) {
                     killFocus();
                 }
@@ -571,8 +579,9 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 if( !propagate_sibling_on_mouseup_outside ) {
                     BreakSiblingPropagate = true;
                 }
+                BreakRecursive = true;
             }
-
+            
             break;
         }
 #endif
@@ -910,7 +919,7 @@ void GUI_View::setFocus() {
     }
     lastFocusView = this;
     _focus = true;
-    GUI_Log( "Focus: %s\n", title.c_str() );
+    //GUI_Log( "Focus: %s\n", title.c_str() );
     if( focus_need_input ) {
 #ifdef __EMSCRIPTEN__
         //emscripten_run_script("document.getElementById('canvas').contentEditable = true;");
@@ -953,8 +962,10 @@ void GUI_View::setMargin(int p0, int p1, int p2, int p3) {
 }
 
 GUI_View *GUI_View::hitTest(int x, int y, bool bRecursive) {
-    if (!isVisible())
+    if (!isVisible()) {
+        //GUI_Log( "Invisible %s\n", title.c_str() );
         return 0;
+    }
     
     SDL_Point pt;
     pt.x = x;
@@ -966,11 +977,11 @@ GUI_View *GUI_View::hitTest(int x, int y, bool bRecursive) {
             if( children.size() > 0 ) {
                 for (std::vector<GUI_View *>::iterator it = children.end()-1 ; it >= children.begin(); --it) {
                     GUI_View *child = *it;
-                    GUI_Log( "Hit2\n" );
+                    //GUI_Log( "Hit2\n" );
                     
                     GUI_View *wb = child->hitTest(x, y, bRecursive);
                     if (wb) {
-                        GUI_Log( "Hitted %s\n", wb->title.c_str());
+                        //GUI_Log( "Hitted %s\n", wb->title.c_str());
                         return wb;
                     }
                 }

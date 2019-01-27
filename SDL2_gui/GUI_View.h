@@ -184,9 +184,11 @@ public:
     
     virtual void show() {
         _visible = true;
+        //GUI_Log( "Show %s\n", title.c_str() );
     };
     
     virtual void hide() {
+        //GUI_Log( "Hide %s (h)\n", title.c_str() );
         _visible = false;
         if( _focus )
             killFocus();

@@ -50,10 +50,12 @@ void GUI_PopupView::Center() {
 
 bool GUI_PopupView::eventHandler(SDL_Event*event) {
     switch (event->type) {
-            
+#if defined(__IPHONEOS__) || defined(__ANDROID__)
         case SDL_FINGERDOWN:
-        case SDL_FINGERUP:
+        //    GUI_Log( "FINGER DOWN/DOWN %s\n", title.c_str() );
+        //case SDL_FINGERUP:
         {
+            //GUI_Log( "FINGER UP/DOWN %s\n", title.c_str() );
             SDL_TouchFingerEvent e = event->tfinger;
             
             int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
@@ -61,12 +63,14 @@ bool GUI_PopupView::eventHandler(SDL_Event*event) {
             
             if( activateView ) {
                 if( activateView->hitTest(x, y, false) ) {
+                    //GUI_Log( "Activator hittest %s\n", title.c_str() );
                     return true;
                 }
             }
             if( isVisible() ) {
                 
                 if( !hitTest(x, y, false) ) {
+                    //GUI_Log( "Fail hittest %s\n", title.c_str() );
                     if( autoHide ) {
                         GUI_SetMouseCapture( NULL );
                         hide();
@@ -75,8 +79,10 @@ bool GUI_PopupView::eventHandler(SDL_Event*event) {
             }
             return GUI_View::eventHandler(event);
         }
+#endif
+#if !defined(__IPHONEOS__) && !defined(__ANDROID__)
         case SDL_MOUSEBUTTONDOWN:
-        case SDL_MOUSEBUTTONUP:
+        //case SDL_MOUSEBUTTONUP:
         {
             SDL_MouseButtonEvent e = event->button;
             
@@ -99,7 +105,7 @@ bool GUI_PopupView::eventHandler(SDL_Event*event) {
             }
             return GUI_View::eventHandler(event);
         }
-            
+#endif
         default:
         {
             return GUI_View::eventHandler(event);

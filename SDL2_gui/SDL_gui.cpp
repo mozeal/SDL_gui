@@ -135,6 +135,7 @@ extern void GUI_updateScaleParameters() {
     GUI_windowWidth = GUI_physicalWindowWidth / GUI_scale;
     GUI_windowHeight = GUI_physicalWindowHeight / GUI_scale;
     GUI_mouseScale = GUI_scale;
+    //GUI_mouseScale = 1.0;
 #else
     if( GUI_windowWidth * GUI_scale != GUI_physicalWindowWidth ||
         GUI_windowHeight * GUI_scale != GUI_physicalWindowHeight ) {
@@ -293,7 +294,7 @@ void GUI_SetMouseCapture( GUI_View *v ) {
     if( _GUI_mouseCapturedView ) {
         _GUI_mouseCapturedView->isMouseCapturing = false;
         if( !v ) {
-            GUI_Log( "Kill capture %s\n", _GUI_mouseCapturedView->title.c_str());
+            //GUI_Log( "Kill capture %s\n", _GUI_mouseCapturedView->title.c_str());
         }
     }
     _GUI_mouseCapturedView = v;
@@ -302,7 +303,7 @@ void GUI_SetMouseCapture( GUI_View *v ) {
         GUI_Log( "Capture to %s\n", v->title.c_str());
     }
     else {
-        GUI_Log( "NO capture\n" );
+        // GUI_Log( "NO capture\n" );
     }
 }
 

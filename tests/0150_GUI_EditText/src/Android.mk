@@ -32,6 +32,7 @@ LOCAL_SRC_FILES += $(SDL_GUI_ROOT)/SDL_gui.cpp \
                    $(SDL_GUI_ROOT)/GUI_RadioButton.cpp \
                    $(SDL_GUI_ROOT)/GUI_RadioButtonGroup.cpp \
                    $(SDL_GUI_ROOT)/GUI_List.cpp \
+                   $(SDL_GUI_ROOT)/GUI_ScrollView.cpp \
                    $(SDL_GUI_ROOT)/GUI_EditText.cpp \
                    $(SDL_GUI_ROOT)/GUI_TextUtil.cpp
 

@@ -103,7 +103,8 @@ void GUI_Log(const char * format, ...) {
     vsprintf(buffer, format, args);
     va_end(args);
     
-    __android_log_print(ANDROID_LOG_VERBOSE, LOGNAME, buffer, 1);
+    //__android_log_print(ANDROID_LOG_VERBOSE, LOGNAME, buffer, 1);
+    SDL_Log( "%s", buffer );
 #else
     if (GUI_GetLogLevel() <= GUI_LOG_NOTICE) {
         va_list args;

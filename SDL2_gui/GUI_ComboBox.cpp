@@ -49,6 +49,7 @@ GUI_ComboBox::GUI_ComboBox(GUI_View *parent, const char *title, int x, int y, in
         GUI_Button *bt = (GUI_Button *)v;
         
         if( this->popup->isVisible() ) {
+            //GUI_Log( "Hide popup by button\n" );
             this->popup->hide();
         }
         else {
@@ -74,6 +75,7 @@ GUI_ComboBox::GUI_ComboBox(GUI_View *parent, const char *title, int x, int y, in
         GUI_MenuItem *it = pm->selectedItem;
         
         selectedItem = pm->selectedItem;
+
         pm->hide();
         GUI_SetMouseCapture(NULL);
         

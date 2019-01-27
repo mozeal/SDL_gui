@@ -32,12 +32,19 @@ LOCAL_SRC_FILES += $(SDL_GUI_ROOT)/SDL_gui.cpp \
                    $(SDL_GUI_ROOT)/GUI_RadioButton.cpp \
                    $(SDL_GUI_ROOT)/GUI_RadioButtonGroup.cpp \
                    $(SDL_GUI_ROOT)/GUI_List.cpp \
+                   $(SDL_GUI_ROOT)/GUI_ScrollView.cpp \
                    $(SDL_GUI_ROOT)/GUI_EditText.cpp \
                    $(SDL_GUI_ROOT)/GUI_TextUtil.cpp \
                    $(SDL_GUI_ROOT)/GUI_App.cpp \
                    $(SDL_GUI_ROOT)/GUI_TopBar.cpp \
                    $(SDL_GUI_ROOT)/GUI_StatusBar.cpp \
-                   $(SDL_GUI_ROOT)/GUI_Menu.cpp
+                   $(SDL_GUI_ROOT)/GUI_Menu.cpp \
+                   $(SDL_GUI_ROOT)/GUI_MenuBar.cpp \
+                   $(SDL_GUI_ROOT)/GUI_PopupView.cpp \
+                   $(SDL_GUI_ROOT)/GUI_MessageBox.cpp \
+                   $(SDL_GUI_ROOT)/GUI_Switch.cpp \
+                   $(SDL_GUI_ROOT)/GUI_ComboBox.cpp \
+                   $(SDL_GUI_ROOT)/GUI_Slider.cpp
 
 LOCAL_SHARED_LIBRARIES := SDL2 SDL2_image SDL2_ttf
 LOCAL_CFLAGS += -D__ANDROID__
