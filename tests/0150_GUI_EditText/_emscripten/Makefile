@@ -18,6 +18,7 @@ src/SDL2_gui/GUI_CheckBox.cpp \
 src/SDL2_gui/GUI_RadioButton.cpp \
 src/SDL2_gui/GUI_RadioButtonGroup.cpp \
 src/SDL2_gui/GUI_List.cpp \
+src/SDL2_gui/GUI_ScrollView.cpp \
 src/SDL2_gui/GUI_EditText.cpp \
 src/SDL2_gui/GUI_TextUtil.cpp \
 src/SDL2_gfx/SDL2_gfxPrimitives.c \

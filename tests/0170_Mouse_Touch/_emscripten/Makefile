@@ -18,12 +18,19 @@ src/SDL2_gui/GUI_CheckBox.cpp \
 src/SDL2_gui/GUI_RadioButton.cpp \
 src/SDL2_gui/GUI_RadioButtonGroup.cpp \
 src/SDL2_gui/GUI_List.cpp \
+src/SDL2_gui/GUI_ScrollView.cpp \
 src/SDL2_gui/GUI_TextUtil.cpp \
 src/SDL2_gui/GUI_EditText.cpp \
 src/SDL2_gui/GUI_App.cpp \
 src/SDL2_gui/GUI_TopBar.cpp \
 src/SDL2_gui/GUI_StatusBar.cpp \
 src/SDL2_gui/GUI_Menu.cpp \
+src/SDL2_gui/GUI_MenuBar.cpp \
+src/SDL2_gui/GUI_PopupView.cpp \
+src/SDL2_gui/GUI_MessageBox.cpp \
+src/SDL2_gui/GUI_Switch.cpp \
+src/SDL2_gui/GUI_ComboBox.cpp \
+src/SDL2_gui/GUI_Slider.cpp \
 src/SDL2_gfx/SDL2_gfxPrimitives.c \
 ../../../SDL2_ttf_HarfBuzz/SDL_ttf.cpp
 
