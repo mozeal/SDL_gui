@@ -46,6 +46,12 @@ void GUI_DrawRect(int x, int y, int w, int h, SDL_Color col) {
 }
 
 SDL_Texture *getDrawTexture( int radius ) {
+#if defined(__WIN32__) || defined(__MACOSX__) || defined(__IPHONEOS__) || defined(__ANDROID__)
+    return NULL;
+#else
+    
+    // Only __EMSCRIPTEN__ and __RPI__
+    
     if( radius <= 1 || radius >= 24 )
         return NULL;
     if( drawCircle[radius] ) {
@@ -66,9 +72,16 @@ SDL_Texture *getDrawTexture( int radius ) {
     SDL_SetRenderTarget(GUI_renderer, NULL);
 
     return drawCircle[radius];
+#endif
 }
 
 SDL_Texture *getFillTexture( int radius ) {
+#if defined(__WIN32__) || defined(__MACOSX__) || defined(__IPHONEOS__) || defined(__ANDROID__)
+    return NULL;
+#else
+    
+    // Only __EMSCRIPTEN__ and __RPI__
+    
     if( radius <= 1 || radius >= 24 )
         return NULL;
     if( fillCircle[radius] ) {
@@ -89,6 +102,7 @@ SDL_Texture *getFillTexture( int radius ) {
     if( result )
         return NULL;
     return fillCircle[radius];
+#endif
 }
 
 void GUI_FillCircle(SDL_Renderer * renderer, int cx, int cy, int radius, SDL_Color col) {
