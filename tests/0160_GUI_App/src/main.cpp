@@ -46,7 +46,7 @@ void createColumn1(GUI_View *subContentView) {
     column1->setMargin( 0, 0, 0, 0 );
     column1->setPadding( 0, 5, 5, 5 );
     column1->setBackgroundColor(cClear);
-    column1->border = 0;
+    column1->setBorder( 0 );
     
     auto label1 = GUI_Label::create(column1, "Label 1");
     label1->setMargin(10, 0, 0, 0 );
@@ -85,7 +85,7 @@ void createColumn1(GUI_View *subContentView) {
 
     auto btn = GUI_Button::create( column1, "Button 1", 0, 0, 0, -1, 0 );
     btn->setMargin( 10, 0, 0, 0 );
-    btn->corner = 6;
+    btn->setCorner( 6 );
     
     auto label2 = GUI_Label::create(column1, "Label 2", 0, 0, 0, -1, 0 );
     
@@ -99,8 +99,8 @@ void createColumn1(GUI_View *subContentView) {
         GUI_Log( "Selected: %s\n", l->selectedRadioButton->title.c_str() );
         label2->setTitle(l->selectedRadioButton->title);
     });
-    rbg->border = 1;
-    rbg->corner = 3;
+    rbg->setBorder( 1 );
+    rbg->setCorner( 3 );
     rbg->setPadding( 5, 10, 5, 10 );
     rbg->setMargin( 10, 0, 0, 0 );
     rbg->setBackgroundColor(cWhite);
@@ -118,14 +118,14 @@ void createColumn2(GUI_View *subContentView) {
     column2->setMargin( 0, 0, 0, 0 );
     column2->setPadding( 5, 5, 5, 5 );
     column2->setBackgroundColor(cClear);
-    column2->border = 0;
+    column2->setBorder( 0 );
     
     auto v1 = GUI_View::create(column2, "V1", 0, 0, -1, 0 );
     v1->setBackgroundColor(cWhite);
-    v1->border = 1;
+    v1->setBorder( 1 );
     v1->setPadding( 5, 10, 5, 10 );
     v1->setMargin( 0, 0, 0, 0 );
-    v1->corner = 4;
+    v1->setCorner( 4 );
     v1->setLayout( GUI_LAYOUT_VERTICAL );
     
     auto cb1 = GUI_CheckBox::create(v1, "Check Box 1", 0, 0, -1, 0 );
@@ -170,7 +170,7 @@ void createColumn2(GUI_View *subContentView) {
 
     auto btn = GUI_Button::create( column2, "Test Popup", kIcon_solid_sun, 0, 0, 0, 0 );
     btn->setMargin( 10, 0, 0, 0 );
-    btn->corner = 6;
+    btn->setCorner( 6 );
     btn->setAlign(GUI_ALIGN_TOP|GUI_ALIGN_CENTER);
     btn->setCallback([=](GUI_View *v) {
         GUI_Log( v->title.c_str() );
@@ -184,17 +184,17 @@ void createColumn3(GUI_View *subContentView) {
     column3->setMargin( 5, 5, 5, 5 );
     column3->setPadding( 5, 5, 5, 5 );
     column3->setBackgroundColor(cWhite);
-    column3->border = 1;
-    column3->corner = 4;
+    column3->setBorder( 1 );
+    column3->setCorner( 4 );
     
     auto panel1 = GUI_View::create( column3, "Panel3", 0, 0, -1, 0 );
     panel1->setLayout( GUI_LAYOUT_HORIZONTAL );
     panel1->setMargin( 5, 5, 5, 5 );
-    panel1->border = 0;
+    panel1->setBorder( 0 );
     
     auto panelLeft = GUI_View::create( panel1, "Left", 0, 0, 200, 0 );
     panelLeft->setLayout(GUI_LAYOUT_VERTICAL);
-    panelLeft->border = 0;
+    panelLeft->setBorder( 0 );
     {
         auto progress = GUI_ProgressBar::create( panelLeft, "progress", 0, 100, 25, 0, 0, -1, 0 );
         progress->setMargin(0, 10, 0, 10 );
@@ -222,12 +222,12 @@ void createColumn3(GUI_View *subContentView) {
     
     auto panelRight = GUI_View::create( panel1, "Left", 0, 0, -1, 0 );
     panelRight->setLayout(GUI_LAYOUT_VERTICAL);
-    panelRight->border = 0;
+    panelRight->setBorder( 0 );
     panelRight->setMargin( 0, 10, 0, 20 );
     {
         auto panelLeft1 = GUI_View::create( panelRight, "Panel3", 0, 0, -1, 0 );
         panelLeft1->setLayout( GUI_LAYOUT_HORIZONTAL );
-        panelLeft1->border = 0;
+        panelLeft1->setBorder( 0 );
         {
             auto lb = GUI_Label::create( panelLeft1, "On/Off Switch:");
             lb->setAlign(GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
@@ -265,8 +265,8 @@ void createColumn4(GUI_View *subContentView) {
     column4->setMargin( 5, 5, 5, 5 );
     //column4->setPadding( 5, 5, 5, 5 );
     column4->setBackgroundColor(cWhite);
-    column4->border = 1;
-    column4->corner = 4;
+    column4->setBorder( 1 );
+    column4->setCorner( 4 );
     
     auto bi21 = GUI_Button::create( column4, NULL, kIcon_solid_dollar_sign );
     bi21->setMargin( 5, 5, 5, 5 );
@@ -379,11 +379,11 @@ int main(int argc, char *argv[]) {
     inputBar = GUI_View::create(app->contentView, "InputBar", 0, 0, -1, 0);
     inputBar->setPadding( 5, 10, 5, 10 );
     inputBox = GUI_EditText::create(inputBar, "", 0, 0, -1, 32);
-    inputBox->border = 1;
+    inputBox->setBorder( 1 );
     
     auto subContentView = GUI_View::create( app->contentView, "Sub-content", 0, 0, -1, -1 );
     subContentView->setLayout(GUI_LAYOUT_HORIZONTAL );
-    subContentView->border = 0;
+    subContentView->setBorder( 0 );
     subContentView->setPadding( 5, 5, 5, 5 );
     subContentView->setBackgroundColor(cLightGrey);
     

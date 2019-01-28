@@ -20,7 +20,7 @@ iconView( NULL ),
 textView( NULL )
 {
     _backgroundColor = cWhite;
-    border = 0;
+    setBorder( 0 );
     dragable = false;
     mouseReceive = false;
     setLayout( GUI_LAYOUT_HORIZONTAL );
@@ -30,7 +30,7 @@ textView( NULL )
     if( unicode != 0 ) {
         iconView = GUI_IconView::create(this, unicode, GUI_UIIconFontName.c_str(), GUI_UIIconFontSize);
         iconView->setAlign( (width == 0 ? GUI_ALIGN_LEFT : GUI_ALIGN_CENTER) | (height == 0 ? GUI_ALIGN_TOP : GUI_ALIGN_VCENTER) );
-        iconView->border = 0;
+        iconView->setBorder( 0 );
         iconView->setBackgroundColor( cClear );
         iconView->setColor( cBlack );
         if( title ) {
@@ -44,7 +44,7 @@ textView( NULL )
     if( title ) {
         textView = GUI_TextView::create(this, title, GUI_UITextFontName.c_str(), GUI_UITextFontSize);
         textView->setAlign( (width == 0 ? GUI_ALIGN_LEFT : GUI_ALIGN_CENTER) | (height == 0 ? GUI_ALIGN_TOP : GUI_ALIGN_VCENTER) );
-        textView->border = 0;
+        textView->setBorder( 0 );
         textView->setBackgroundColor( cClear );
         textView->setColor( cBlack );
         textView->setMargin( 0, 0, 0, 3 );

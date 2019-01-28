@@ -30,12 +30,12 @@ valueView(NULL)
     if( h == 0 ) {
         h = 8;
     }
-    corner = h/2;
+    setCorner( h/2 );
     setBackgroundColor(cGrey);
     
     valueView = GUI_View::create(this, "value", 0, 0, 0, h);
     valueView->setBackgroundColor( GUI_AppTopBarColor );
-    valueView->corner = h/2;
+    valueView->setCorner( h/2 );
 }
 
 GUI_ProgressBar::~GUI_ProgressBar() {
@@ -71,7 +71,7 @@ GUI_Slider::GUI_Slider(GUI_View *parent, const char *title, float min, float max
     minValue = min;
     maxValue = max;
     value = val;
-    border = 0;
+    setBorder( 0 );
     setLayout(GUI_LAYOUT_ABSOLUTE);
     
 
@@ -87,7 +87,7 @@ GUI_Slider::GUI_Slider(GUI_View *parent, const char *title, float min, float max
     
     
     indicator = GUI_View::create( this, "Ind", 0, 0, h, h );
-    indicator->corner = h / 2;
+    indicator->setCorner( h / 2 );
     indicator->dragable = true;
     indicator->drag_limit = true;
     indicator->dragMinX = 0;

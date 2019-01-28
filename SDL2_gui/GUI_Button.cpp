@@ -27,9 +27,9 @@ GUI_Label(parent, title, unicode, x, y, width, height, NULL )
     setBackgroundColor(cWhite);
     callback = callbackFunction;
     
-    border = 1;
+    setBorder( 1 );
     focusBorder = 2;
-    corner = 4;
+    setCorner( 4 );
     if( title ) {
         setPadding( 5, 12, 5, 12 );
     }

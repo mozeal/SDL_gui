@@ -66,6 +66,11 @@ void GUI_DrawRoundRect(SDL_Renderer * renderer, int x, int y, int w, int h, int 
         radius = w / 2;
     if ((radius * 2) > h)
         radius = h / 2;
+    
+    if( radius <= 2 ) {
+        return GUI_DrawRect( renderer, x, y, w, h, col );
+    }
+    
     int result = roundedRectangleRGBA(renderer, x, y, x + w - 1, y + h - 1, radius, col.r, col.g, col.b, col.a);
     
     if (result)
@@ -81,6 +86,10 @@ void GUI_FillRoundRect(SDL_Renderer * renderer, int x, int y, int w, int h, int 
         radius = w / 2;
     if ((radius * 2) > h)
         radius = h / 2;
+    
+    if( radius <= 2 ) {
+        return GUI_FillRect( renderer, x, y, w, h, col );
+    }
     
     int result = roundedBoxRGBA(renderer, x, y, x + w - 1, y + h - 1, radius, col.r, col.g, col.b, col.a);
     

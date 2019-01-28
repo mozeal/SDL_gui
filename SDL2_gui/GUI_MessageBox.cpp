@@ -59,7 +59,7 @@ result(0)
     
     auto btns = GUI_View::create( this->contentView, "btns", 0, 0, -1, 0 );
     btns->setLayout( GUI_LAYOUT_HORIZONTAL );
-    btns->border = 0;
+    btns->setBorder( 0 );
     
     auto yes = GUI_Button::create( btns, "Yes", 0, 0, 0, 70, 0 );
     yes->setAlign(GUI_ALIGN_CENTER|GUI_ALIGN_TOP);
@@ -116,7 +116,7 @@ GUI_DialogView(parent, title, x, y, width, height )
     
     auto ins = GUI_View::create( this->contentView, "btns", 0, 0, -1, 0 );
     ins->setLayout( GUI_LAYOUT_VERTICAL );
-    ins->border = 0;
+    ins->setBorder( 0 );
     
     auto lb = GUI_Label::create( ins, message, 0, 0, -1, 0 );
     lb->setAlign(GUI_ALIGN_LEFT|GUI_ALIGN_TOP);
@@ -131,7 +131,7 @@ GUI_DialogView(parent, title, x, y, width, height )
     
     auto btns = GUI_View::create( this->contentView, "btns", 0, 0, -1, 0 );
     btns->setLayout( GUI_LAYOUT_HORIZONTAL );
-    btns->border = 0;
+    btns->setBorder( 0 );
     
     auto ok = GUI_Button::create( btns, "OK", 0, 0, 0, 80, 0 );
     ok->setAlign(GUI_ALIGN_CENTER|GUI_ALIGN_TOP);

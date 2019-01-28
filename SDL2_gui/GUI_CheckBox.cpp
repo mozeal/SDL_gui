@@ -30,16 +30,16 @@ checked(false)
     int cSize = ((int)(textView->rectView.h/GUI_scale)) & ~1;
     
     checkView = GUI_View::create(this, "Check", 0, 0, cSize, cSize);
-    checkView->border = 1;
+    checkView->setBorder( 1 );
     checkView->toBack();
-    checkView->corner = 2;
+    checkView->setCorner( 2 );
     checkView->setBackgroundColor(cClear);
     checkView->setMargin( 0, 6, 0, 0);
     checkView->setLayout(GUI_LAYOUT_ABSOLUTE);
     
     iconView = GUI_IconView::create(checkView, kIcon_solid_check, GUI_UIIconFontName.c_str(), GUI_UIIconFontSize, 0, 0, 0, 0);
     iconView->setAlign( GUI_ALIGN_CENTER | GUI_ALIGN_VCENTER);
-    iconView->border = 0;
+    iconView->setBorder( 0 );
     iconView->setBackgroundColor( cClear );
     iconView->setColor( cBlack );
     iconView->setVisible(checked);
@@ -47,7 +47,7 @@ checked(false)
     
     setContentAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
     setBackgroundColor( cClear );
-    border = 0;
+    setBorder( 0 );
     setPadding( 5, 0, 5, 0 );
     updateLayout();
     
@@ -87,6 +87,6 @@ void GUI_CheckBox::drawInteract() {
     if( showInteract && getInteract() ) {
         GUI_Rect *rect = GUI_MakeRect(checkView->topLeft.x, checkView->topLeft.y, checkView->rectView.w, checkView->rectView.h);
         
-        GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, checkView->corner, cHightLightInteract);
+        GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, checkView->getCorner(), cHightLightInteract);
     }
 }

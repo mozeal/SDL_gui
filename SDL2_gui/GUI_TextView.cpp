@@ -107,7 +107,7 @@ GUI_TextView( parent, NULL, GUI_UITextFontName.c_str(), GUI_UITextFontSize, x, y
 frame_count(0),
 timer_start(0)
 {
-    border = 0;
+    setBorder( 0 );
     setBackgroundColor(cClear);
 }
 

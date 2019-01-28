@@ -32,7 +32,7 @@ GUI_View( parent, title, x, y, width, height )
     showInteract = true;
     
     setLayout(GUI_LAYOUT_HORIZONTAL);
-    border = 0;
+    setBorder( 0 );
 }
 
 GUI_ListItem::~GUI_ListItem() {
@@ -72,8 +72,8 @@ scrollView(NULL)
     setPadding(5, 0, 5, 0);
     setBackgroundColor(cEmptyContent);
     setLayout(GUI_LAYOUT_VERTICAL);
-    border = 1;
-    corner = 4;
+    setBorder( 1 );
+    setCorner( 4 );
     
     scrollView = GUI_ScrollView::create( this, "Scroll", 0, 0, -1, -1 );
 

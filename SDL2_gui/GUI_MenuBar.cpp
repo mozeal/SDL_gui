@@ -30,7 +30,7 @@ popupMenu(NULL)
     setAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT );
     
     setLayout(GUI_LAYOUT_HORIZONTAL);
-    border = 0;
+    setBorder( 0 );
 }
 
 GUI_MenuBarItem::~GUI_MenuBarItem() {

@@ -57,6 +57,10 @@ protected:
     int     _layout;
     int     _align;
     int     _contentAlign;
+    
+    int     _corner;
+    int     _border;
+
 
     int     _padding[4];
     int     _margin[4];
@@ -105,8 +109,6 @@ public:
     
     static std::vector<GUI_View *>closeQueue;
 
-    int corner;
-    int border;
     int focusBorder;
     bool in_scroll_bed;
     bool focusable;
@@ -203,6 +205,11 @@ public:
         if( _focus )
             killFocus();
     };
+    
+    virtual void setCorner( int c );
+    virtual void setBorder( int b );
+    virtual int getCorner() { return _corner; };
+    virtual int getBorder() { return _border; };
     
     virtual void setFocus();
 

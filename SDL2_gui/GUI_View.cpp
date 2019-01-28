@@ -49,9 +49,7 @@ rectClip(0,0,0,0),
 _backgroundColor(cWhite),
 _borderColor(cBlack),
 _textColor(cBlack),
-border(1),
 focusBorder(0),
-corner(0),
 dragable(false),
 drag_limit(false),
 focusable(false),
@@ -86,6 +84,9 @@ in_scroll_bed(false)
     oy = y;
     ow = w;
     oh = h;
+    
+    setBorder(1);
+    setCorner(0);
     
     if (t) {
         title = std::string(t);
@@ -793,8 +794,8 @@ void GUI_View::drawInteract() {
     if( showInteract && getInteract() ) {
         GUI_Rect *rect = GUI_MakeRect(0, 0, rectView.w, rectView.h);
         
-        if (corner != 0) {
-            GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, corner * GUI_scale, cHightLightInteract);
+        if (getCorner() != 0) {
+            GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, getCorner() * GUI_scale, cHightLightInteract);
         } else {
             GUI_FillRect(rect->x, rect->y, rect->w, rect->h, cHightLightInteract);
         }
@@ -803,6 +804,8 @@ void GUI_View::drawInteract() {
 
 void GUI_View::postdraw() {
     drawInteract();
+    int border = getBorder();
+    int corner = getCorner();
     
     if (border > 0) {
         GUI_Rect r = GUI_Rect(border, border, rectView.w - (2 * border), rectView.h - (2 * border));
@@ -837,6 +840,7 @@ void GUI_View::clear(GUI_Rect *rect) {
         rect = GUI_MakeRect(0, 0, rectView.w, rectView.h);
     
     if (_backgroundColor.a != 0) {
+        int corner = getCorner();
         if (corner != 0) {
             GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, corner * GUI_scale, _backgroundColor);
         } else {
@@ -859,6 +863,7 @@ void GUI_View::drawFocus() {
         color.r &= 0x7F;
         color.g &= 0x7F;
         color.b &= 0x7F;
+        int corner = getCorner();
         if (corner != 0) {
             GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, ((corner) * GUI_scale)+focusBorder*GUI_scale, color);
         } else {
@@ -1436,4 +1441,12 @@ GUI_Point GUI_View::getAbsolutePosition() {
     pt.y = rectView.y / GUI_scale;
     
     return pt;
+}
+
+void GUI_View::setCorner( int c ) {
+    _corner = c;
+}
+
+void GUI_View::setBorder( int b ) {
+    _border = b;
 }

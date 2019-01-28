@@ -21,7 +21,7 @@ selectedRadioButton(NULL)
 {
     setCallback( callbackFunction );
     setBackgroundColor(cClear);
-    border = 0;
+    setBorder( 0 );
 }
 
 GUI_RadioButtonGroup::~GUI_RadioButtonGroup() {

@@ -21,7 +21,7 @@ titleView(NULL)
     setCallback(callbackFunction);
     setBackgroundColor(GUI_AppTopBarColor);
     setLayout( GUI_LAYOUT_HORIZONTAL );
-    border = 0;
+    setBorder( 0 );
     setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
     
     if( title ) {

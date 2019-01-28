@@ -21,7 +21,7 @@ GUI_CheckBox(parent, title, x, y, width, height, callbackFunction )
 {
     iconView->setIcon(kIcon_solid_circle);
     int cSize = ((int)(textView->rectView.h)) & ~1;
-    checkView->corner = cSize / 2;
+    checkView->setCorner( cSize / 2 );
 }
 
 GUI_RadioButton::~GUI_RadioButton() {

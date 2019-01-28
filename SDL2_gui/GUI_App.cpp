@@ -125,7 +125,7 @@ void GUI_App::createStatusBar( int options ) {
 
 void GUI_App::createContentView( int options ) {
     contentView = GUI_View::create( topView, "ContentView", 0, 0, -1, -1 );
-    contentView->border = 1;
+    contentView->setBorder( 1 );
     contentView->setBackgroundColor(cEmptyContent);
     contentView->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
 }

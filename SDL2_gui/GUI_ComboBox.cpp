@@ -27,13 +27,13 @@ GUI_ComboBox::GUI_ComboBox(GUI_View *parent, const char *title, int x, int y, in
 {
     cb_callback = callbackFunction;
     
-    corner = 3;
+    setCorner( 3 );
     
     setLayout( GUI_LAYOUT_HORIZONTAL );
     
     editText = GUI_EditText::create( this, " ", 0, 0, -1, 0 );
     editText->setAlign( GUI_ALIGN_TOP | GUI_ALIGN_LEFT );
-    editText->border = 0;
+    editText->setBorder( 0 );
     editText->focusBorder = 0;
     editText->setMargin( 0, 3, 0, 5 );
     editText->mouseReceive = false;
@@ -43,7 +43,7 @@ GUI_ComboBox::GUI_ComboBox(GUI_View *parent, const char *title, int x, int y, in
     button = GUI_Button::create( this, NULL, kIcon_solid_caret_down, 0, 0, editText->getHeight()-4, editText->getHeight()-4 );
     button->setAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT );
     button->setMargin( 2, 2, 2, 2 );
-    button->border = 0;
+    button->setBorder( 0 );
     button->focusBorder = 0;
     button->setCallback([=](GUI_View *v) {
         GUI_Button *bt = (GUI_Button *)v;

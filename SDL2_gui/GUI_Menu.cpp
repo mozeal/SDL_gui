@@ -30,7 +30,7 @@ separator(true)
     setBackgroundColor(cWhite);
     
     setLayout(GUI_LAYOUT_HORIZONTAL);
-    border = 0;
+    setBorder( 0 );
 }
 
 GUI_MenuItem::~GUI_MenuItem() {

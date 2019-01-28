@@ -26,7 +26,7 @@ GUI_Switch::GUI_Switch(GUI_View *parent, const char *title, int x, int y, int wi
     mouseReceive = true;
     setBackgroundColor( GUI_AppTopBarColor );
     
-    border = 0;
+    setBorder( 0 );
     
     int w = width;
     int h = width;
@@ -36,15 +36,15 @@ GUI_Switch::GUI_Switch(GUI_View *parent, const char *title, int x, int y, int wi
     }
     
     indicator = GUI_View::create( this, "Ind", 0, 0, w, h );
-    indicator->corner = h / 2;
+    indicator->setCorner( h / 2 );
     
     auto cover = GUI_View::create( this, "cover", 0, 0, w*1.8, h );
     cover->setBackgroundColor( cClear );
-    cover->border = 1;
-    cover->corner = h / 2;
+    cover->setBorder( 1 );
+    cover->setCorner( h / 2 );
     cover->mouseReceive = false;
     
-    corner = h/2;
+    setCorner( h/2 );
     
     setCallback([=](GUI_View *v) {
         GUI_Switch *sw = (GUI_Switch *)v;

@@ -19,7 +19,7 @@ GUI_View( parent, title, x, y, width, height ),
 scrollContent(NULL)
 {
     setLayout(GUI_LAYOUT_ABSOLUTE);
-    border = 0;
+    setBorder( 0 );
     
     scrollContent = GUI_View::create(this, "ScrollContent", 0, 0, -1, 0);
     scrollContent->setLayout(GUI_LAYOUT_VERTICAL);
@@ -30,7 +30,7 @@ scrollContent(NULL)
     scrollContent->dragMaxX = 0;
     scrollContent->dragMinY = 0-(scrollContent->getHeight()-getHeight());
     scrollContent->dragMaxY = 0;
-    scrollContent->border = 0;
+    scrollContent->setBorder( 0 );
 
 }
 
