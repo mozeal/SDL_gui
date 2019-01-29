@@ -28,7 +28,7 @@ forceEmptyText(false)
         fn = fontname;
     }
     else {
-        fn = GUI_UITextFontName;
+        fn = GUI_GetUITextFontName();
     }
     int fs = fontsize;
     if( fs == 0 ) {
@@ -103,7 +103,7 @@ GUI_FPSView *GUI_FPSView::create( GUI_View *parent, int x, int y, int width, int
 }
 
 GUI_FPSView::GUI_FPSView(GUI_View *parent, int x, int y, int width, int height) :
-GUI_TextView( parent, NULL, GUI_UITextFontName.c_str(), GUI_UITextFontSize, x, y, width, height ),
+GUI_TextView( parent, NULL, GUI_GetUITextFontName().c_str(), GUI_UITextFontSize, x, y, width, height ),
 frame_count(0),
 timer_start(0)
 {

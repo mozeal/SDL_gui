@@ -22,6 +22,7 @@ public:
     GUI_TopBar(GUI_View *parent, const char *title,
                  std::function<void(GUI_View*)>callbackFunction = NULL );
     virtual ~GUI_TopBar();
+    GUI_View *contentView;
 };
 
 #endif /* GUI_TopBar_hpp */

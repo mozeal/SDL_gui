@@ -64,7 +64,7 @@ GUI_ComboBox::GUI_ComboBox(GUI_View *parent, const char *title, int x, int y, in
     
     updateLayout();
     
-    TTF_Font *font = GUI_Fonts::getFont(GUI_UITextFontName, GUI_UITextFontSize);
+    TTF_Font *font = GUI_Fonts::getFont(GUI_GetUITextFontName(), GUI_UITextFontSize);
     int hf = (TTF_FontHeight(font)/GUI_scale) + 16;
     
     popup = GUI_PopupMenu::create( GUI_App::getInstance()->topView, "CBPopup", 0, 0, 180, hf*4+2 );

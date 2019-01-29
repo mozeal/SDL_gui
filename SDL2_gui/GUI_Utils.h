@@ -84,4 +84,6 @@ extern float GUI_mouseScale;
 extern int GUI_windowWidth;
 extern int GUI_windowHeight;
 
+extern "C" int getiOSStatusBarHeight();
+
 #endif /* GUI_Utils_hpp */

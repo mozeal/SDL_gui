@@ -52,7 +52,11 @@ int GUI_Init( const char* title, int expectedWidth, int expectedHeight ) {
     // ::SDL_WINDOW_RESIZABLE,     ::SDL_WINDOW_MAXIMIZED,
     // ::SDL_WINDOW_MINIMIZED,     ::SDL_WINDOW_INPUT_GRABBED,
     // ::SDL_WINDOW_ALLOW_HIGHDPI.
-#if defined(__IPHONEOS__) || defined(__ANDROID__) || defined(__EMSCRIPTEN__)
+#if defined(__IPHONEOS__)
+    int style = SDL_WINDOW_OPENGL|SDL_WINDOW_ALLOW_HIGHDPI;
+    int cx = 0;
+    int cy = 0;
+#elif defined(__ANDROID__) || defined(__EMSCRIPTEN__)
     int style = SDL_WINDOW_OPENGL|SDL_WINDOW_ALLOW_HIGHDPI|SDL_WINDOW_BORDERLESS;
     int cx = 0;
     int cy = 0;

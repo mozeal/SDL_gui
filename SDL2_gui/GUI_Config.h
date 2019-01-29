@@ -12,15 +12,16 @@
 #include <string>
 #include <SDL.h>
 
-const std::string GUI_UITextFontName = "Kanit-Light.ttf";
 const std::string GUI_UIIconFontName = "fa-solid-900.ttf";
-const int GUI_UITextFontSize = 15;
-const int GUI_UIIconFontSize = 15;
+const int GUI_UITextFontSize = 18;
+const int GUI_UIIconFontSize = 18;
 const int GUI_UIDefaultHeight = 22;
 const int GUI_AppTopBarHeight = 40;
 const int GUI_AppStatusBarHeight = 32;
 const int GUI_AppMenuWidth = 200;
 const int GUI_AppMenuCollapseTime = 120;
+
+std::string GUI_GetUITextFontName();
 
 SDL_Color sdl_color(Uint32 c);
 

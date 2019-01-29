@@ -42,7 +42,7 @@ textView( NULL )
     }
 
     if( title ) {
-        textView = GUI_TextView::create(this, title, GUI_UITextFontName.c_str(), GUI_UITextFontSize);
+        textView = GUI_TextView::create(this, title, GUI_GetUITextFontName().c_str(), GUI_UITextFontSize);
         textView->setAlign( (width == 0 ? GUI_ALIGN_LEFT : GUI_ALIGN_CENTER) | (height == 0 ? GUI_ALIGN_TOP : GUI_ALIGN_VCENTER) );
         textView->setBorder( 0 );
         textView->setBackgroundColor( cClear );

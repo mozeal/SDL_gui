@@ -133,9 +133,13 @@ void GUI_App::createContentView( int options ) {
 void GUI_App::createMenu( int options ) {
 
     
-    menuButton = GUI_Button::create(topBar, NULL, kIcon_solid_bars);
+    menuButton = GUI_Button::create(topBar->contentView, NULL, kIcon_solid_bars);
     menuButton->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
     menuButton->setMargin(0, 0, 0, 10 );
+    menuButton->setBackgroundColor( cClear );
+    menuButton->setTextColor( cWhite );
+    menuButton->setBorder( 0 );
+    menuButton->showInteract = false;
     menuButton->setCallback([=](GUI_View *bt) {
         if( menuView->isOpen ) {
             menuView->close( GUI_AppMenuCollapseTime );
@@ -145,7 +149,12 @@ void GUI_App::createMenu( int options ) {
         }
     });
     
-    menuView = GUI_Menu::create(topView, "Menu", 0, GUI_AppTopBarHeight, GUI_AppMenuWidth, -1);
+    int y = GUI_AppTopBarHeight;
+#if defined( __IPHONEOS__ )
+    y += getiOSStatusBarHeight();
+#endif
+    
+    menuView = GUI_Menu::create(topView, "Menu", 0, y, GUI_AppMenuWidth, -1);
     menuView->setAlign( GUI_ALIGN_ABSOLUTE );
     menuView->setActivateView(menuButton);
 }
