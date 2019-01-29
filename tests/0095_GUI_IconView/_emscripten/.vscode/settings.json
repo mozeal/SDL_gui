@@ -1,8 +1,0 @@
-{
-    "taskButtons.buttons": [
-        {
-            "task": "build",
-            "buttonLabel": "Build"
-        }
-    ]
-}
