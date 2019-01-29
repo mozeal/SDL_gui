@@ -629,6 +629,11 @@ void GUI_View::move_topLeft(int dx, int dy) {
     rectView.x += dx;
     rectView.y += dy;
     
+    if( _align & GUI_ALIGN_ABSOLUTE ) {
+        //ox = topLeft.x;
+        //oy = topLeft.y;
+    }
+    
     for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
         GUI_View *child = *it;
         child->move_rectView(dx, dy);

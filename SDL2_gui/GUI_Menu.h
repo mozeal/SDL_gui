@@ -34,9 +34,6 @@ class GUI_Menu : public GUI_View {
 protected:
     std::vector<GUI_MenuItem *>menuItems;
     
-    int nClosePosnX;
-    int nOpenPosnX;
-    
     GUI_View    *activateView;
 public:
     static GUI_Menu *create( GUI_View *parent, const char *title, int x=0, int y=0, int width=0, int height=0,
@@ -58,6 +55,8 @@ public:
     
     virtual void close( int duration=0 );
     virtual void open( int duration=0 );
+    
+    virtual void predraw();
 
     void setActivateView( GUI_View *v ) { activateView = v; };
 };

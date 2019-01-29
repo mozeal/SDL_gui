@@ -26,6 +26,7 @@ separator(true)
     focusable = true;
     showInteract = true;
     mouseReceive = true;
+    focusBorder = 0;
     
     setBackgroundColor(cWhite);
     
@@ -65,7 +66,7 @@ GUI_Menu *GUI_Menu::create( GUI_View *parent, const char *title, int x, int y, i
 GUI_Menu::GUI_Menu(GUI_View *parent, const char *title, int x, int y, int width, int height,
                    std::function<void(GUI_View*)>callbackFunction ) :
 GUI_View( parent, title, x, y, width, height ),
-isOpen(0)
+isOpen(1)
 {
     clickable = false;
     capture_on_click = true;
@@ -77,8 +78,8 @@ isOpen(0)
     setBackgroundColor(cEmptyContent);
     setLayout(GUI_LAYOUT_VERTICAL);
     
-    nClosePosnX = -width;
-    nOpenPosnX = 0;
+    //nClosePosnX = -width;
+    //nOpenPosnX = 0;
     
     close(0);
 }
@@ -152,6 +153,10 @@ void GUI_Menu::open( int duration ) {
 
     GUI_SetMouseCapture( this );
     //GUI_Log( "Menu open\n" );
+}
+
+void GUI_Menu::predraw() {
+    GUI_View::predraw();
 }
 
 bool GUI_Menu::eventHandler(SDL_Event*event) {
