@@ -1135,8 +1135,9 @@ void GUI_View::updateLayout() {
                 continue;
             
             if (child->_align & GUI_ALIGN_ABSOLUTE) {
-                child->topLeft.x = child->ox * GUI_scale;
-                child->topLeft.y = child->oy * GUI_scale;
+                //child->topLeft.x = child->ox * GUI_scale;
+                //child->topLeft.y = child->oy * GUI_scale;
+                child->rectView.x = rectView.x + child->topLeft.x;
                 child->rectView.y = rectView.y + child->topLeft.y;
                 
                 if (child->oh == -1) {
@@ -1289,8 +1290,9 @@ void GUI_View::updateLayout() {
                 continue;
             
             if (child->_align & GUI_ALIGN_ABSOLUTE) {
-                child->topLeft.x = child->ox * GUI_scale;
-                child->topLeft.y = child->oy * GUI_scale;
+                //child->topLeft.x = child->ox * GUI_scale;
+                //child->topLeft.y = child->oy * GUI_scale;
+                child->rectView.x = rectView.x + child->topLeft.x;
                 child->rectView.y = rectView.y + child->topLeft.y;
                 
                 if (child->oh == -1) {
@@ -1455,3 +1457,14 @@ void GUI_View::setCorner( int c ) {
 void GUI_View::setBorder( int b ) {
     _border = b;
 }
+
+void GUI_View::setAlign( int a ) {
+    _align = a;
+    if( a & GUI_ALIGN_ABSOLUTE ) {
+        topLeft.x = ox * GUI_scale;
+        topLeft.y = oy * GUI_scale;
+    }
+
+    if( parent )
+        parent->updateLayout();
+};

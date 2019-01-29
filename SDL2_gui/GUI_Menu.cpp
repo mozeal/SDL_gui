@@ -81,7 +81,9 @@ isOpen(1)
     //nClosePosnX = -width;
     //nOpenPosnX = 0;
     
-    close(0);
+    //close(0);
+    if( parent )
+        parent->updateLayout();
 }
 
 GUI_Menu::~GUI_Menu() {
@@ -143,6 +145,7 @@ void GUI_Menu::close( int duration ) {
 
     GUI_SetMouseCapture( NULL );
     //GUI_Log( "Menu close\n" );
+    
 }
 
 void GUI_Menu::open( int duration ) {
@@ -157,6 +160,7 @@ void GUI_Menu::open( int duration ) {
 
 void GUI_Menu::predraw() {
     GUI_View::predraw();
+    //GUI_Log( "TopLeft: %i, %i\n", topLeft.x, topLeft.y );
 }
 
 bool GUI_Menu::eventHandler(SDL_Event*event) {
@@ -173,7 +177,7 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
             int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
             
             if( isOpen ) {
-                if( activateView && event->type == SDL_MOUSEBUTTONDOWN) {
+                if( activateView && event->type == SDL_FINGERDOWN) {
                     if( activateView->hitTest(x, y, false) ) {
                         return true;
                     }
@@ -202,6 +206,7 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
                 if( !hitTest(x, y, false) ) {
                     close(GUI_AppMenuCollapseTime);
                     GUI_SetMouseCapture(NULL);
+                    return true;
                 }
             }
             return GUI_View::eventHandler(event);

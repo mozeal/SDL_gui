@@ -131,24 +131,6 @@ void GUI_App::createContentView( int options ) {
 }
 
 void GUI_App::createMenu( int options ) {
-
-    
-    menuButton = GUI_Button::create(topBar->contentView, NULL, kIcon_solid_bars);
-    menuButton->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
-    menuButton->setMargin(0, 0, 0, 10 );
-    menuButton->setBackgroundColor( cClear );
-    menuButton->setTextColor( cWhite );
-    menuButton->setBorder( 0 );
-    menuButton->showInteract = false;
-    menuButton->setCallback([=](GUI_View *bt) {
-        if( menuView->isOpen ) {
-            menuView->close( GUI_AppMenuCollapseTime );
-        }
-        else {
-            menuView->open( GUI_AppMenuCollapseTime );
-        }
-    });
-    
     int y = GUI_AppTopBarHeight;
 #if defined( __IPHONEOS__ )
     y += getiOSStatusBarHeight();
@@ -158,4 +140,24 @@ void GUI_App::createMenu( int options ) {
     menuView->setAlign( GUI_ALIGN_ABSOLUTE );
     menuView->setActivateView(menuButton);
     menuView->setBackgroundColor(cDarkGrey);
+    
+    menuView->close();
+    
+    menuButton = GUI_Button::create(topBar->contentView, NULL, kIcon_solid_bars);
+    menuButton->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
+    menuButton->setMargin(0, 0, 0, 10 );
+    menuButton->setBackgroundColor( cClear );
+    menuButton->setTextColor( cWhite );
+    menuButton->setBorder( 0 );
+    menuButton->showInteract = false;
+    menuButton->setCallback([=](GUI_View *bt) {
+        if( this->menuView->isOpen ) {
+            this->menuView->close( GUI_AppMenuCollapseTime );
+        }
+        else {
+            this->menuView->open( GUI_AppMenuCollapseTime );
+        }
+    });
+    
+    menuView->setActivateView(menuButton);
 }
