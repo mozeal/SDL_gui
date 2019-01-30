@@ -20,6 +20,8 @@ class GUI_View;
 const Uint32 GUI_EventID = SDL_USEREVENT;
 const Uint32 GUI_EventUpdate = GUI_EventID + 1;
 const Uint32 GUI_EventPaint  = GUI_EventID + 2;
+const Uint32 GUI_WindowResized  = GUI_EventID + 3;
+const Uint32 GUI_FontChanged  = GUI_EventID + 4;
 const Uint32 GUI_EventUser = GUI_EventID + 300;
 
 extern SDL_Renderer *GUI_renderer;

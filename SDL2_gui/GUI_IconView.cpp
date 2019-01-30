@@ -7,7 +7,7 @@
 //
 
 #include "GUI_IconView.h"
-
+#include "GUI_Fonts.h"
 
 GUI_IconView *GUI_IconView::create( GUI_View *parent, uint16_t unicode, const char *fontname, int fontsize, int x, int y, int width, int height,
                                    std::function<bool(SDL_Event* ev)>userEventHandler ) {
@@ -59,4 +59,33 @@ SDL_Texture* GUI_IconView::createTextureFormUnicode(Uint16 unicode, SDL_Rect* re
     }
     
     return NULL;
+}
+
+bool GUI_IconView::eventHandler(SDL_Event*event) {
+    switch (event->type) {
+        case GUI_FontChanged:
+        {
+            std::string fn;
+            
+            fn = _fontName;
+            
+            int fs = _fontSize;
+            if( fs == 0 ) {
+                fs = GUI_GetUIIconFontSize();
+            }
+            
+            std::string fontPath = std::string("data/")+fn;
+            font = GUI_Fonts::getFont(fn, fs);
+            
+            updateContent();
+            updateSize();
+            
+            break;
+        }
+        default:
+        {
+            return GUI_ImageView::eventHandler(event);
+        }
+    }
+    return false;
 }

@@ -22,6 +22,9 @@ forceEmptyText(false)
 {
     mouseReceive = false;
     
+    _fontName = fontname;
+    _fontSize = fontsize;
+    
     std::string fn;
     
     if( fontname ) {
@@ -32,11 +35,11 @@ forceEmptyText(false)
     }
     int fs = fontsize;
     if( fs == 0 ) {
-        fs = GUI_UIIconFontSize;
+        fs = GUI_GetUIIconFontSize();
     }
 
     std::string fontPath = std::string("data/")+fn;
-    font = GUI_Fonts::getFont(fn, fontsize);
+    font = GUI_Fonts::getFont(fn, fs);
     
     if (!font) {
         GUI_Log("font-spec %s not found\n", fontPath.c_str());
@@ -98,12 +101,41 @@ void GUI_TextView::setTextColor( SDL_Color c ) {
     colorMod = c;
 }
 
+bool GUI_TextView::eventHandler(SDL_Event*event) {
+    switch (event->type) {
+        case GUI_FontChanged:
+        {
+            std::string fn;
+            
+            fn = _fontName;
+            
+            int fs = _fontSize;
+            if( fs == 0 ) {
+                fs = GUI_GetUIIconFontSize();
+            }
+            
+            std::string fontPath = std::string("data/")+fn;
+            font = GUI_Fonts::getFont(fn, fs);
+            
+            updateContent();
+            updateSize();
+            
+            break;
+        }
+        default:
+        {
+            return GUI_ImageView::eventHandler(event);
+        }
+    }
+    return false;
+}
+
 GUI_FPSView *GUI_FPSView::create( GUI_View *parent, int x, int y, int width, int height ) {
     return new GUI_FPSView( parent, x, y, width, height );
 }
 
 GUI_FPSView::GUI_FPSView(GUI_View *parent, int x, int y, int width, int height) :
-GUI_TextView( parent, NULL, GUI_GetUITextFontName().c_str(), GUI_UITextFontSize, x, y, width, height ),
+GUI_TextView( parent, NULL, GUI_GetUITextFontName().c_str(), GUI_GetUITextFontSize(), x, y, width, height ),
 frame_count(0),
 timer_start(0)
 {
@@ -130,3 +162,5 @@ void GUI_FPSView::update() {
         setTitle(fps_text);
     }
 }
+
+

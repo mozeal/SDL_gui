@@ -22,6 +22,7 @@ public:
     ~GUI_Fonts();
     
     static TTF_Font *getFont( std::string fontName, int fontSize );
+    static void clear();
 };
 
 #endif /* GUI_Fonts_hpp */

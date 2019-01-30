@@ -78,5 +78,15 @@ GUI_View *GUI_createTopView(const char* t, int x, int y, int w, int h,
 void GUI_SetMouseCapture( GUI_View *v );
 GUI_View * GUI_GetMouseCapture();
 
+typedef struct __GUI_USER_MESSAGE {
+    Uint32 message_id;
+    Uint32 parameter1;
+    Sint32 parameter2;
+    void *extra_parameter1;
+    void *extra_parameter2;
+} GUI_UserMessage;
+
+bool GUI_PostMessage(Uint32 msg, int param1, int param2, void *extra1, void *extra2);
+
 
 #endif /* SDL_gui_hpp */

@@ -39,3 +39,14 @@ TTF_Font *GUI_Fonts::getFont( std::string fontName, int fontSize ) {
     
     return font;
 }
+
+void GUI_Fonts::clear() {
+    std::map<std::string, TTF_Font *>::iterator it;
+    
+    for ( it = font_map.begin(); it != font_map.end(); it++ )
+    {
+        TTF_Font *font = it->second;   // string's value
+        TTF_CloseFont( font );
+    }
+    font_map.clear();
+}

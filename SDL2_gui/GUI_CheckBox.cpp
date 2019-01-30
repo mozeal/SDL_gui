@@ -37,7 +37,7 @@ checked(false)
     checkView->setMargin( 0, 6, 0, 0);
     checkView->setLayout(GUI_LAYOUT_ABSOLUTE);
     
-    iconView = GUI_IconView::create(checkView, kIcon_solid_check, GUI_UIIconFontName.c_str(), GUI_UIIconFontSize, 0, 0, 0, 0);
+    iconView = GUI_IconView::create(checkView, kIcon_solid_check, GUI_GetUIIconFontName().c_str(), GUI_GetUIIconFontSize(), 0, 0, 0, 0);
     iconView->setAlign( GUI_ALIGN_CENTER | GUI_ALIGN_VCENTER);
     iconView->setBorder( 0 );
     iconView->setBackgroundColor( cClear );

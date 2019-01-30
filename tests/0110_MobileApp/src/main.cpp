@@ -13,8 +13,13 @@
 using namespace std;
 
 char title[] = "SDL_gui App";
+#ifdef __ANDROID__
+int expectedWidth = 360;
+int expectedHeight = 600;
+#else
 int expectedWidth = 480;
 int expectedHeight = 800;
+#endif
 
 static GUI_App *app;
 static GUI_View *topView;

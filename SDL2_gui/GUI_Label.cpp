@@ -28,7 +28,7 @@ textView( NULL )
     setPadding( 0, 0, 0, 0 );
     
     if( unicode != 0 ) {
-        iconView = GUI_IconView::create(this, unicode, GUI_UIIconFontName.c_str(), GUI_UIIconFontSize);
+        iconView = GUI_IconView::create(this, unicode, GUI_GetUIIconFontName().c_str(), GUI_GetUIIconFontSize());
         iconView->setAlign( (width == 0 ? GUI_ALIGN_LEFT : GUI_ALIGN_CENTER) | (height == 0 ? GUI_ALIGN_TOP : GUI_ALIGN_VCENTER) );
         iconView->setBorder( 0 );
         iconView->setBackgroundColor( cClear );
@@ -42,7 +42,7 @@ textView( NULL )
     }
 
     if( title ) {
-        textView = GUI_TextView::create(this, title, GUI_GetUITextFontName().c_str(), GUI_UITextFontSize);
+        textView = GUI_TextView::create(this, title, GUI_GetUITextFontName().c_str(), GUI_GetUITextFontSize());
         textView->setAlign( (width == 0 ? GUI_ALIGN_LEFT : GUI_ALIGN_CENTER) | (height == 0 ? GUI_ALIGN_TOP : GUI_ALIGN_VCENTER) );
         textView->setBorder( 0 );
         textView->setBackgroundColor( cClear );

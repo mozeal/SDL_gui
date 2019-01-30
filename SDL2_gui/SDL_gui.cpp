@@ -36,6 +36,8 @@ static float frameCount = 0;
 static void GUI_Loop();
 static void handle_events(SDL_Event *ev);
 
+static std::vector<GUI_UserMessage> user_message_queue;
+
 int GUI_Init( const char* title, int expectedWidth, int expectedHeight ) {
     // Get Sccreen size
     SDL_DisplayMode dm;
@@ -56,7 +58,11 @@ int GUI_Init( const char* title, int expectedWidth, int expectedHeight ) {
     int style = SDL_WINDOW_OPENGL|SDL_WINDOW_ALLOW_HIGHDPI;
     int cx = 0;
     int cy = 0;
-#elif defined(__ANDROID__) || defined(__EMSCRIPTEN__)
+#elif defined(__ANDROID__)
+    int style = SDL_WINDOW_OPENGL|SDL_WINDOW_ALLOW_HIGHDPI;
+    int cx = 0;
+    int cy = 0;
+#elif defined(__EMSCRIPTEN__)
     int style = SDL_WINDOW_OPENGL|SDL_WINDOW_ALLOW_HIGHDPI|SDL_WINDOW_BORDERLESS;
     int cx = 0;
     int cy = 0;
@@ -217,6 +223,21 @@ static void GUI_Loop() {
     SDL_RenderClear(GUI_renderer);
 #endif
     
+    if (user_message_queue.size() > 0) {
+        GUI_UserMessage user_msg = user_message_queue.front();
+        
+        SDL_UserEvent user_event;
+        user_event.type = user_msg.message_id;
+        user_event.windowID = user_msg.parameter1;
+        user_event.code = user_msg.parameter2;
+        user_event.data1 = user_msg.extra_parameter1;
+        user_event.data2 = user_msg.extra_parameter2;
+        
+        handle_events((SDL_Event *)&user_event);
+        
+        user_message_queue.erase(user_message_queue.begin());
+    }
+    
     frameCount++;
     
     SDL_Event event;
@@ -230,12 +251,21 @@ static void GUI_Loop() {
                 switch (event.window.event)
                 {
                     case SDL_WINDOWEVENT_RESIZED:
+                        GUI_Log( "Event: Window Resized: %i, %i\n", event.window.data1, event.window.data2 );
                     case SDL_WINDOWEVENT_SIZE_CHANGED:
-                        SDL_Log( "Event: Window Resized: %i, %i\n", event.window.data1, event.window.data2 );
+                        GUI_Log( "Event: Window size changed: %i, %i\n", event.window.data1, event.window.data2 );
+#ifdef __ANDROID__
+                        int ww = GUI_windowWidth;
+                        int wh = GUI_windowHeight;
+#endif
                         GUI_windowWidth = event.window.data1;
                         GUI_windowHeight = event.window.data2;
 
                         GUI_updateScaleParameters();
+
+                        GUI_Fonts::clear();
+                        GUI_PostMessage( GUI_FontChanged, 0, 0, NULL, NULL );
+                        
                         if( GUI_topView ) {
                             GUI_topView->updateLayout();
                         }
@@ -344,4 +374,15 @@ GUI_View *GUI_createTopView(const char* t, int x, int y, int w, int h,
     return GUI_topView;
 }
 
-
+bool GUI_PostMessage(Uint32 msg, int param1, int param2, void *extra1, void *extra2) {
+    GUI_UserMessage *user_msg = new GUI_UserMessage();
+    user_msg->message_id = msg;
+    user_msg->parameter1 = param1;
+    user_msg->parameter2 = param2;
+    user_msg->extra_parameter1 = extra1;
+    user_msg->extra_parameter2 = extra2;
+    
+    user_message_queue.push_back(*user_msg);
+    
+    return true;
+}

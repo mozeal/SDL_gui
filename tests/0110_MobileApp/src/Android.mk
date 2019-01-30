@@ -18,6 +18,7 @@ LOCAL_SRC_FILES += $(SDL_GFX_ROOT)/SDL2_gfxPrimitives.c \
                    $(SDL_GFX_ROOT)/SDL2_imageFilter.c
 
 LOCAL_SRC_FILES += $(SDL_GUI_ROOT)/SDL_gui.cpp \
+                   $(SDL_GUI_ROOT)/GUI_Config.cpp \
                    $(SDL_GUI_ROOT)/GUI_shapes.cpp \
                    $(SDL_GUI_ROOT)/GUI_image.cpp \
                    $(SDL_GUI_ROOT)/GUI_Utils.cpp \

@@ -15,6 +15,8 @@
 class GUI_TextView : public GUI_ImageView {
 protected:
     TTF_Font *font;
+    std::string _fontName;
+    int _fontSize;
 public:
     static GUI_TextView *create( GUI_View *parent, const char *title, const char *fontname, int fontsize, int x=0, int y=0, int width=0, int height=0,
                                  std::function<bool(SDL_Event* ev)>userEventHandler = NULL );
@@ -29,6 +31,8 @@ public:
     virtual void updateContent();
     virtual void updateSize();
     bool forceEmptyText;
+    
+    virtual bool eventHandler(SDL_Event*event);
 };
 
 class GUI_FPSView : public GUI_TextView {

@@ -26,6 +26,9 @@ public:
     SDL_Texture* createTextureFormUnicode(Uint16 unicode, SDL_Rect* rect=NULL);
     
     virtual void updateContent();
+    
+    
+    virtual bool eventHandler(SDL_Event*event);
 };
 
 /*

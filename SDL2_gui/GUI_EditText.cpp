@@ -20,7 +20,7 @@ GUI_EditText *GUI_EditText::create( GUI_View *parent, const char *title, int x, 
 
 GUI_EditText::GUI_EditText(GUI_View *parent, const char *title, int x, int y, int width, int height,
                            std::function<void(GUI_View*)>callbackFunction ) :
-GUI_TextView(parent, title, GUI_GetUITextFontName().c_str(), GUI_UITextFontSize, x, y, width, height, NULL )
+GUI_TextView(parent, title, GUI_GetUITextFontName().c_str(), GUI_GetUITextFontSize(), x, y, width, height, NULL )
 {
     dragable = false;
     clickable = true;
