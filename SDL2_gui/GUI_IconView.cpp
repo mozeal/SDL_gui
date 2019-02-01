@@ -28,11 +28,7 @@ GUI_IconView::~GUI_IconView() {
 }
 
 void GUI_IconView::updateContent() {
-}
-
-void GUI_IconView::setIcon( uint16_t unicode ) {
-    icon = unicode;
-    SDL_Texture *texture = createTextureFormUnicode( unicode );
+    SDL_Texture *texture = createTextureFormUnicode( icon );
     if (texture == NULL){
         GUI_Log("Could not create icon texture\n");
         return;
@@ -40,7 +36,17 @@ void GUI_IconView::setIcon( uint16_t unicode ) {
     image.setTexture(texture);
     
     updateSize();
-    updateLayout();
+    if( parent ) {
+        parent->updateLayout();
+    }
+    else {
+        updateLayout();
+    }
+}
+
+void GUI_IconView::setIcon( uint16_t unicode ) {
+    icon = unicode;
+    updateContent();
 }
 
 SDL_Texture* GUI_IconView::createTextureFormUnicode(Uint16 unicode, SDL_Rect* rect) {

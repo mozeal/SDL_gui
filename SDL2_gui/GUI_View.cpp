@@ -136,6 +136,20 @@ bool GUI_View::eventHandler(SDL_Event*event) {
     bool BreakSiblingPropagate = false;
     bool BreakRecursive = false;
     switch( event->type ) {
+        case GUI_UpdateSize:
+            topLeft.x = ox * GUI_scale;
+            topLeft.y = oy * GUI_scale;
+            rectView.x = ox * GUI_scale;
+            rectView.y = oy * GUI_scale;
+            rectView.w = ow == -1 ? ow : ow * GUI_scale;
+            rectView.h = oh == -1 ? oh : oh * GUI_scale;
+            if( parent ) {
+                parent->updateLayout();
+            }
+            else {
+                updateLayout();
+            }
+            break;
         case GUI_EventUpdate:
             update();
             break;

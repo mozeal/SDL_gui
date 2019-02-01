@@ -266,6 +266,8 @@ static void GUI_Loop() {
                         GUI_Fonts::clear();
                         GUI_PostMessage( GUI_FontChanged, 0, 0, NULL, NULL );
                         
+                        GUI_PostMessage( GUI_UpdateSize, 0, 0, NULL, NULL );
+                        
                         if( GUI_topView ) {
                             GUI_topView->updateLayout();
                         }
