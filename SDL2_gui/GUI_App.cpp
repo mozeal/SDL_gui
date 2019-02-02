@@ -127,7 +127,7 @@ void GUI_App::createStatusBar( int options ) {
 void GUI_App::createContentView( int options ) {
     contentView = GUI_View::create( topView, "ContentView", 0, 0, -1, -1 );
     contentView->setBorder( 0 );
-    contentView->setBackgroundColor(cEmptyContent);
+    contentView->setBackgroundColor(cWhite);
     contentView->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
     contentView->setSaftyMarginFlag( 2 | 4 | 8 );
 }
@@ -141,7 +141,7 @@ void GUI_App::createMenu( int options ) {
     menuView = GUI_Menu::create(topView, "Menu", 0, y, GUI_AppMenuWidth, -1);
     menuView->setAlign( GUI_ALIGN_ABSOLUTE );
     menuView->setActivateView(menuButton);
-    menuView->setBackgroundColor(cDarkGrey);
+    menuView->setBackgroundColor(cEmptyContent);
     
     menuView->close();
     

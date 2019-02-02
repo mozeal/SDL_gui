@@ -148,7 +148,11 @@ void GUI_Menu::open( int duration ) {
     if( isMoving )
         return;
     isOpen = true;
+#ifdef __IPHONEOS__
     moveTo( getContentSaftyMargin()[3], getAbsolutePosition().y, duration );
+#else
+    moveTo( 0, getAbsolutePosition().y, duration );
+#endif
 
     GUI_SetMouseCapture( this );
     //GUI_Log( "Menu open\n" );
