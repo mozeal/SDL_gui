@@ -133,10 +133,7 @@ void GUI_App::createContentView( int options ) {
 }
 
 void GUI_App::createMenu( int options ) {
-    int y = GUI_AppTopBarHeight;
-#if defined( __IPHONEOS__ )
-    y += getiOSStatusBarHeight();
-#endif
+    int y = GUI_AppTopBarHeight+GUI_GetStatusBarHeight();
     
     menuView = GUI_Menu::create(topView, "Menu", 0, y, GUI_AppMenuWidth, -1);
     menuView->setAlign( GUI_ALIGN_ABSOLUTE );

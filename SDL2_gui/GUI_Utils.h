@@ -81,17 +81,20 @@ std::string GUI_GetResourcePath(const std::string &subDir = "");
 SDL_Texture* GUI_LoadTexture(const std::string &filename, SDL_Renderer *ren);
 void GUI_SetMouseCapture( GUI_View *v );
 GUI_View * GUI_GetMouseCapture();
+int GUI_GetStatusBarHeight();
 
 extern float GUI_scale;
 extern float GUI_mouseScale;
 extern int GUI_windowWidth;
 extern int GUI_windowHeight;
 
+#ifdef __IPHONEOS__
 extern "C" int getiOSStatusBarHeight();
 extern "C" bool isIPAD();
 extern "C" char *getDeviceModel();
 extern "C" char *getOrientation();
 extern "C" bool hasNotch();
 extern "C" int *getContentSaftyMargin();
+#endif
 
 #endif /* GUI_Utils_hpp */

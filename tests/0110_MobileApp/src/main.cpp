@@ -25,7 +25,13 @@ static GUI_App *app;
 static GUI_View *topView;
 
 int main(int argc, char *argv[]) {
-    app = GUI_App::create( GUI_ORIENTATION_PORTRAIT | GUI_ORIENTATION_LANDSCAPE, "SDL-GUI App", expectedWidth, expectedHeight,
+#ifdef __ANDROID__
+    int orientation = GUI_ORIENTATION_PORTRAIT;
+#else
+    int orientation = GUI_ORIENTATION_PORTRAIT | GUI_ORIENTATION_LANDSCAPE;
+#endif
+    
+    app = GUI_App::create( orientation, "SDL-GUI App", expectedWidth, expectedHeight,
                           GUI_APP_TOP_BAR | GUI_APP_MENU );
     if( app == NULL ) {
         exit( 1 );

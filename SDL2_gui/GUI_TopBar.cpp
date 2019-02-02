@@ -15,15 +15,11 @@ GUI_TopBar *GUI_TopBar::create( GUI_View *parent, const char *title,
 
 GUI_TopBar::GUI_TopBar(GUI_View *parent, const char *title,
                        std::function<void(GUI_View*)>callbackFunction ) :
-#if defined(__IPHONEOS__)
-    GUI_View( parent, title, 0, 0, -1, GUI_AppTopBarHeight+getiOSStatusBarHeight() ),
-#else
-    GUI_View( parent, title, 0, 0, -1, GUI_AppTopBarHeight ),
-#endif
+    GUI_View( parent, title, 0, 0, -1, GUI_AppTopBarHeight+GUI_GetStatusBarHeight() ),
 titleView(NULL)
 {
 #if defined(__IPHONEOS__)
-    setPadding( getiOSStatusBarHeight()/GUI_scale, 0, 0, 0 );
+    setPadding( GUI_GetStatusBarHeight()/GUI_scale, 0, 0, 0 );
 #endif
     setCallback(callbackFunction);
     setBackgroundColor(GUI_AppTopBarColor);
@@ -52,9 +48,7 @@ bool GUI_TopBar::eventHandler(SDL_Event*event) {
     switch (event->type) {
         case GUI_UpdateSize:
         {
-#if defined(__IPHONEOS__)
-            oh = GUI_AppTopBarHeight+getiOSStatusBarHeight();
-#endif
+            oh = GUI_AppTopBarHeight+GUI_GetStatusBarHeight();
             return GUI_View::eventHandler(event);
         }
         default:

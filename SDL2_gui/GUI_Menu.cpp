@@ -169,10 +169,9 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
     switch (event->type) {
         case GUI_UpdateSize:
         {
-            oy = GUI_AppTopBarHeight;
+            oy = GUI_AppTopBarHeight + GUI_GetStatusBarHeight();
             ox = 0;
 #ifdef __IPHONEOS__
-            oy += getiOSStatusBarHeight();
             ox = getContentSaftyMargin()[3];
 #endif
             open();

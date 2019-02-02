@@ -38,6 +38,8 @@ static void handle_events(SDL_Event *ev);
 
 static std::vector<GUI_UserMessage> user_message_queue;
 
+static int statusBarHeight = 0;
+
 int GUI_Init( const char* title, int expectedWidth, int expectedHeight ) {
     // Get Sccreen size
     SDL_DisplayMode dm;
@@ -257,12 +259,15 @@ static void GUI_Loop() {
                     case SDL_WINDOWEVENT_SIZE_CHANGED:
                         GUI_Log( "Event: Window size changed: %i, %i\n", event.window.data1, event.window.data2 );
 #ifdef __ANDROID__
-                        int ww = GUI_windowWidth;
-                        int wh = GUI_windowHeight;
+                        int ww = GUI_physicalWindowWidth;
+                        int hh = GUI_physicalWindowHeight;
 #endif
                         GUI_windowWidth = event.window.data1;
                         GUI_windowHeight = event.window.data2;
-
+#ifdef __ANDROID__
+                        statusBarHeight = ((GUI_windowHeight - hh) / GUI_scale) - GUI_AppTopBarHeight;
+                        GUI_Log( "Status Bar Height %i (%i-%i)\n", statusBarHeight, GUI_windowHeight, hh );
+#endif
                         GUI_updateScaleParameters();
 
                         GUI_Fonts::clear();
@@ -389,4 +394,11 @@ bool GUI_PostMessage(Uint32 msg, int param1, int param2, void *extra1, void *ext
     user_message_queue.push_back(*user_msg);
     
     return true;
+}
+
+int GUI_GetStatusBarHeight() {
+#if defined(__IPHONEOS__)
+    return getiOSStatusBarHeight();
+#endif
+    return statusBarHeight;
 }
