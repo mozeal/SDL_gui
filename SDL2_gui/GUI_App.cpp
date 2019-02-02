@@ -112,6 +112,7 @@ void GUI_App::run() {
 
 void GUI_App::createTopBar( int options ) {
     topBar = GUI_TopBar::create( topView, title.c_str() );
+    topBar->setSaftyPaddingFlag( 2 | 8 );
 }
 
 void GUI_App::createMenuBar( int options ) {
@@ -125,9 +126,10 @@ void GUI_App::createStatusBar( int options ) {
 
 void GUI_App::createContentView( int options ) {
     contentView = GUI_View::create( topView, "ContentView", 0, 0, -1, -1 );
-    contentView->setBorder( 1 );
+    contentView->setBorder( 0 );
     contentView->setBackgroundColor(cEmptyContent);
     contentView->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_TOP );
+    contentView->setSaftyMarginFlag( 2 | 4 | 8 );
 }
 
 void GUI_App::createMenu( int options ) {
@@ -145,7 +147,7 @@ void GUI_App::createMenu( int options ) {
     
     menuButton = GUI_Button::create(topBar->contentView, NULL, kIcon_solid_bars);
     menuButton->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
-    menuButton->setMargin(0, 0, 0, 10 );
+    menuButton->setMargin(0, 0, 0, 5 );
     menuButton->setBackgroundColor( cClear );
     menuButton->setTextColor( cWhite );
     menuButton->setBorder( 0 );

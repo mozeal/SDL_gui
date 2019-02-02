@@ -25,7 +25,7 @@ static GUI_App *app;
 static GUI_View *topView;
 
 int main(int argc, char *argv[]) {
-    app = GUI_App::create( GUI_ORIENTATION_PORTRAIT, "SDL-GUI App", expectedWidth, expectedHeight,
+    app = GUI_App::create( GUI_ORIENTATION_PORTRAIT | GUI_ORIENTATION_LANDSCAPE, "SDL-GUI App", expectedWidth, expectedHeight,
                           GUI_APP_TOP_BAR | GUI_APP_MENU );
     if( app == NULL ) {
         exit( 1 );
@@ -42,6 +42,20 @@ int main(int argc, char *argv[]) {
     app->menuView->addSimpleMenu( "Simle List Item 2" );
     app->menuView->addSimpleMenu( "Simle List Item 3", true );
     app->menuView->addSimpleMenu( "Quit" );
+    
+    app->contentView->setPadding( 10, 10, 10, 10 );
+    app->contentView->setLayout( GUI_LAYOUT_VERTICAL );
+    
+    std::string platform = SDL_GetPlatform();
+   
+#ifdef __IPHONEOS__
+    GUI_Label * platformLabel = GUI_Label::create(app->contentView, platform.c_str());
+    GUI_Label * deviceLabel = GUI_Label::create(app->contentView, getDeviceModel() );
+    GUI_Label * orientationLabel = GUI_Label::create(app->contentView, getOrientation() );
+    GUI_Label * notchLabel = GUI_Label::create(app->contentView, hasNotch() ? "Has notch" : "No notch" );
+#else
+    GUI_Label *platformLabel = GUI_Label::create(app->contentView, platform.c_str());
+#endif
 
     app->run();
     

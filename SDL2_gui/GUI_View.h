@@ -64,7 +64,9 @@ protected:
 
     int     _padding[4];
     int     _margin[4];
-    
+    int     _saftyMarginFlag;
+    int     _saftyPaddingFlag;
+
     SDL_Color _backgroundColor;
     SDL_Color _textColor;
     SDL_Color _borderColor;
@@ -85,7 +87,6 @@ protected:
     int     moveDuration;
     int     moveTimeStart;
     bool    isMoving;
-    
     
 public:
     static GUI_View *create( GUI_View *parent, const char *title, int x, int y, int width, int height,
@@ -176,7 +177,13 @@ public:
     virtual void update();
     
     virtual void move( int dx, int dy, int time=0 );
+    virtual void moveTo( int x, int y, int time=0 );
     
+    virtual void setSaftyMarginFlag( int flag );
+    virtual void setSaftyMargin();;
+    virtual void setSaftyPaddingFlag( int flag );
+    virtual void setSaftyPadding();;
+
     virtual void setAbsolutePosition( int x, int y, int time=0 );
     virtual GUI_Point getAbsolutePosition();
 

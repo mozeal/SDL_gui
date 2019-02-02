@@ -23,6 +23,8 @@ public:
                  std::function<void(GUI_View*)>callbackFunction = NULL );
     virtual ~GUI_TopBar();
     GUI_View *contentView;
+    
+    virtual bool eventHandler(SDL_Event*ev);
 };
 
 #endif /* GUI_TopBar_hpp */

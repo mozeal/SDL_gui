@@ -47,3 +47,21 @@ titleView(NULL)
 GUI_TopBar::~GUI_TopBar() {
     
 }
+
+bool GUI_TopBar::eventHandler(SDL_Event*event) {
+    switch (event->type) {
+        case GUI_UpdateSize:
+        {
+#if defined(__IPHONEOS__)
+            oh = GUI_AppTopBarHeight+getiOSStatusBarHeight();
+#endif
+            return GUI_View::eventHandler(event);
+        }
+        default:
+        {
+            return GUI_View::eventHandler(event);
+        }
+    }
+    
+    return false;
+}

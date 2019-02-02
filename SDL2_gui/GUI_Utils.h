@@ -88,5 +88,10 @@ extern int GUI_windowWidth;
 extern int GUI_windowHeight;
 
 extern "C" int getiOSStatusBarHeight();
+extern "C" bool isIPAD();
+extern "C" char *getDeviceModel();
+extern "C" char *getOrientation();
+extern "C" bool hasNotch();
+extern "C" int *getContentSaftyMargin();
 
 #endif /* GUI_Utils_hpp */

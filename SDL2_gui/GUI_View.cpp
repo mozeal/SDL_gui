@@ -78,7 +78,9 @@ callback_on_mouse_down(false),
 callback_on_drag(false),
 propagate_sibling_on_mouseup_outside(true),
 drag_outside_parent(false),
-in_scroll_bed(false)
+in_scroll_bed(false),
+_saftyMarginFlag(0),
+_saftyPaddingFlag(0)
 {
     ox = x;
     oy = y;
@@ -145,6 +147,10 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             rectView.y = oy * GUI_scale;
             rectView.w = ow == -1 ? ow : ow * GUI_scale;
             rectView.h = oh == -1 ? oh : oh * GUI_scale;
+            
+            setSaftyPadding();
+            setSaftyMargin();
+            
             if( parent ) {
                 parent->updateLayout();
             }
@@ -683,6 +689,13 @@ void GUI_View::move( int dx, int dy, int time ) {
         moveTimeStart = SDL_GetTicks();
         isMoving = true;
     }
+}
+
+void GUI_View::moveTo( int x, int y, int time ) {
+    int dx = x - rectView.x / GUI_scale;
+    int dy = y - rectView.y / GUI_scale;
+    
+    move( dx, dy, time );
 }
 
 void GUI_View::add_child(GUI_View *child) {
@@ -1488,3 +1501,55 @@ void GUI_View::setAlign( int a ) {
     if( parent )
         parent->updateLayout();
 };
+
+void GUI_View::setSaftyMarginFlag( int flag ) {
+    _saftyMarginFlag = flag;
+    setSaftyMargin();
+}
+
+void GUI_View::setSaftyPaddingFlag( int flag ) {
+    _saftyPaddingFlag = flag;
+    setSaftyPadding();
+}
+
+void GUI_View::setSaftyMargin() {
+#ifdef __IPHONEOS__
+    int *saftyMargins = getContentSaftyMargin();
+#else
+    int saftyMargins[4] = { 0, 0, 0, 0 };
+#endif
+
+    if( _saftyMarginFlag ) {
+        if( _saftyMarginFlag & 1 ) { _margin[0] = saftyMargins[0]; }
+        if( _saftyMarginFlag & 2 ) { _margin[1] = saftyMargins[1]; }
+        if( _saftyMarginFlag & 4 ) { _margin[2] = saftyMargins[2]; }
+        if( _saftyMarginFlag & 8 ) { _margin[3] = saftyMargins[3]; }
+
+        if (parent) {
+            parent->updateLayout();
+            updateLayout();
+        }
+        this->updateLayout();
+    }
+}
+
+void GUI_View::setSaftyPadding() {
+#ifdef __IPHONEOS__
+    int *saftyPaddings = getContentSaftyMargin();
+#else
+    int saftyPaddings[4] = { 0, 0, 0, 0 };
+#endif
+    
+    if( _saftyPaddingFlag ) {
+        if( _saftyPaddingFlag & 1 ) { _padding[0] = saftyPaddings[0]; }
+        if( _saftyPaddingFlag & 2 ) { _padding[1] = saftyPaddings[1]; }
+        if( _saftyPaddingFlag & 4 ) { _padding[2] = saftyPaddings[2]; }
+        if( _saftyPaddingFlag & 8 ) { _padding[3] = saftyPaddings[3]; }
+        
+        if (parent) {
+            parent->updateLayout();
+            updateLayout();
+        }
+        this->updateLayout();
+    }
+}

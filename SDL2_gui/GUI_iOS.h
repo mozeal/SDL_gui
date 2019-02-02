@@ -11,3 +11,10 @@
 @interface GUI_iOS : NSObject
 
 @end
+
+extern "C" bool isIPAD();
+extern "C" int getiOSStatusBarHeight();
+extern "C" char *getOrientation();
+extern "C" bool hasNotch();
+extern "C" int *getContentSaftyMargin();
+

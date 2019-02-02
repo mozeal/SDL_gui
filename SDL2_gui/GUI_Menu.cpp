@@ -78,10 +78,6 @@ isOpen(1)
     setBackgroundColor(cEmptyContent);
     setLayout(GUI_LAYOUT_VERTICAL);
     
-    //nClosePosnX = -width;
-    //nOpenPosnX = 0;
-    
-    //close(0);
     if( parent )
         parent->updateLayout();
 }
@@ -141,7 +137,7 @@ void GUI_Menu::close( int duration ) {
     if( isMoving )
         return;
     isOpen = false;
-    move( -GUI_AppMenuWidth, 0, duration );
+    moveTo( -GUI_AppMenuWidth, getAbsolutePosition().y, duration );
 
     GUI_SetMouseCapture( NULL );
     //GUI_Log( "Menu close\n" );
@@ -152,7 +148,7 @@ void GUI_Menu::open( int duration ) {
     if( isMoving )
         return;
     isOpen = true;
-    move( GUI_AppMenuWidth, 0, duration );
+    moveTo( getContentSaftyMargin()[3], getAbsolutePosition().y, duration );
 
     GUI_SetMouseCapture( this );
     //GUI_Log( "Menu open\n" );
@@ -169,6 +165,12 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
     switch (event->type) {
         case GUI_UpdateSize:
         {
+            oy = GUI_AppTopBarHeight;
+            ox = 0;
+#ifdef __IPHONEOS__
+            oy += getiOSStatusBarHeight();
+            ox = getContentSaftyMargin()[3];
+#endif
             open();
             bool ret = GUI_View::eventHandler(event);
             close();
