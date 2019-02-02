@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
     app->menuView->addSimpleMenu( "About app...", true );
     app->menuView->addSimpleMenu( "Simle List Item 2" );
     app->menuView->addSimpleMenu( "Simle List Item 3", true );
-    app->menuView->addSimpleMenu( "Quit", true );
+    app->menuView->addSimpleMenu( "Quit" );
 
     app->run();
     

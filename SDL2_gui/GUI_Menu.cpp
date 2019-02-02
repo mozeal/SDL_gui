@@ -167,7 +167,14 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
     SDL_Scancode scancode;
    
     switch (event->type) {
-
+        case GUI_UpdateSize:
+        {
+            open();
+            bool ret = GUI_View::eventHandler(event);
+            close();
+            return ret;
+            break;
+        }
         case SDL_FINGERDOWN:
         case SDL_FINGERUP:
         {

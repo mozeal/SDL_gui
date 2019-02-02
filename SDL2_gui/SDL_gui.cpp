@@ -233,6 +233,7 @@ static void GUI_Loop() {
         user_event.data1 = user_msg.extra_parameter1;
         user_event.data2 = user_msg.extra_parameter2;
         
+        GUI_Log( "Dispatch: %i\n", user_event.type );
         handle_events((SDL_Event *)&user_event);
         
         user_message_queue.erase(user_message_queue.begin());
@@ -251,7 +252,8 @@ static void GUI_Loop() {
                 switch (event.window.event)
                 {
                     case SDL_WINDOWEVENT_RESIZED:
-                        GUI_Log( "Event: Window Resized: %i, %i\n", event.window.data1, event.window.data2 );
+                        //GUI_Log( "Event: Window Resized: %i, %i\n", event.window.data1, event.window.data2 );
+                        break;
                     case SDL_WINDOWEVENT_SIZE_CHANGED:
                         GUI_Log( "Event: Window size changed: %i, %i\n", event.window.data1, event.window.data2 );
 #ifdef __ANDROID__

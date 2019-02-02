@@ -132,11 +132,13 @@ bool GUI_View::eventHandler(SDL_Event*event) {
         if (user_events_handler(event))
             return true;;
     }
+    bool needAfterUpdateLayout = false;
     bool ReverseRecursive = false;
     bool BreakSiblingPropagate = false;
     bool BreakRecursive = false;
     switch( event->type ) {
         case GUI_UpdateSize:
+            GUI_Log( "UpdateSize: %s\n", title.c_str() );
             topLeft.x = ox * GUI_scale;
             topLeft.y = oy * GUI_scale;
             rectView.x = ox * GUI_scale;
@@ -149,6 +151,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             else {
                 updateLayout();
             }
+            needAfterUpdateLayout = true;
             break;
         case GUI_EventUpdate:
             update();
@@ -630,6 +633,9 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 if( child->eventHandler(event) )
                     return true;
             }
+        }
+        if( needAfterUpdateLayout ) {
+            updateLayout();
         }
     }
 
