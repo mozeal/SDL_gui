@@ -1346,7 +1346,7 @@ public class SDLActivity extends Activity implements View.OnSystemUiVisibilityCh
             Handler handler = getWindow().getDecorView().getHandler();
             if (handler != null) {
                 handler.removeCallbacks(rehideSystemUi); // Prevent a hide loop.
-                handler.postDelayed(rehideSystemUi, 2000);
+                handler.postDelayed(rehideSystemUi, 500);
             }
 
         }

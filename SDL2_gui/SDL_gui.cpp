@@ -122,19 +122,30 @@ int GUI_Init( const char* title, int expectedWidth, int expectedHeight ) {
     return 0;
 }
 
-extern void GUI_updateScaleParameters() {
+void GUI_updateScaleParameters() {
     SDL_GL_GetDrawableSize(GUI_window, &GUI_physicalWindowWidth, &GUI_physicalWindowHeight);
     SDL_Log( "Drawable: %i %i\n", GUI_physicalWindowWidth, GUI_physicalWindowHeight );
-    
+
+    int scalex = 1;
+    int scaley = 1;
 #ifdef __ANDROID__
     SDL_Log( "Expected: %i %i\n", GUI_expectedWidth, GUI_expectedHeight );
     // Android always get fullscreen with no retina
-    int scalex = GUI_physicalWindowWidth / GUI_expectedWidth;
-    int scaley = GUI_physicalWindowHeight / GUI_expectedHeight;
+
+    if( ((GUI_physicalWindowWidth > GUI_physicalWindowHeight) && (GUI_expectedWidth < GUI_expectedHeight)) ||
+            ((GUI_physicalWindowWidth < GUI_physicalWindowHeight) && (GUI_expectedWidth > GUI_expectedHeight)) ) {
+        int t = GUI_expectedWidth;
+        GUI_expectedWidth = GUI_expectedHeight;
+        GUI_expectedHeight = t;
+    }
+    SDL_Log( "Expected: %i %i\n", GUI_expectedWidth, GUI_expectedHeight );
+    scalex = GUI_physicalWindowWidth / GUI_expectedWidth;
+    scaley = GUI_physicalWindowHeight / GUI_expectedHeight;
+
     SDL_Log( "Calc scale: %i %i\n", scalex, scaley );
 #else
-    int scalex = GUI_physicalWindowWidth / GUI_windowWidth;
-    int scaley = GUI_physicalWindowHeight / GUI_windowHeight;
+    scalex = GUI_physicalWindowWidth / GUI_windowWidth;
+    scaley = GUI_physicalWindowHeight / GUI_windowHeight;
 #endif
     
     GUI_scale = (float)((scalex < scaley) ? scaley : scalex);
@@ -265,8 +276,16 @@ static void GUI_Loop() {
                         GUI_windowWidth = event.window.data1;
                         GUI_windowHeight = event.window.data2;
 #ifdef __ANDROID__
-                        statusBarHeight = ((GUI_windowHeight - hh) / GUI_scale) - GUI_AppTopBarHeight;
-                        GUI_Log( "Status Bar Height %i (%i-%i)\n", statusBarHeight, GUI_windowHeight, hh );
+                        if( ((GUI_windowWidth > GUI_windowHeight) && (ww < hh)) ||
+                                ((GUI_windowWidth < GUI_windowHeight) && (ww > hh))) {
+                            int t = ww;
+                            ww = hh;
+                            hh = t;
+                        }
+                        if( statusBarHeight == 0 ) {
+                            statusBarHeight = (GUI_windowHeight-hh) > 0 ? 20 : 0;
+                            GUI_Log( "Status Bar Height %i (%i-%i)\n", statusBarHeight, GUI_windowHeight, hh );
+                        }
 #endif
                         GUI_updateScaleParameters();
 

@@ -26,7 +26,7 @@ static GUI_View *topView;
 
 int main(int argc, char *argv[]) {
 #ifdef __ANDROID__
-    int orientation = GUI_ORIENTATION_PORTRAIT;
+    int orientation = 0; //GUI_ORIENTATION_PORTRAIT | GUI_ORIENTATION_LANDSCAPE;
 #else
     int orientation = GUI_ORIENTATION_PORTRAIT | GUI_ORIENTATION_LANDSCAPE;
 #endif
