@@ -67,6 +67,16 @@ GUI_Label::~GUI_Label() {
     
 }
 
+GUI_Label *GUI_Label::fromPrintf( GUI_View *parent, const char * format, ...) {
+    char buffer[512];
+    va_list args;
+    va_start(args, format);
+    vsprintf(buffer, format, args);
+    va_end(args);
+
+    return create( parent, buffer );
+}
+
 void GUI_Label::setTitle( std::string t ) {
     title = std::string(t);
     if( textView ) {

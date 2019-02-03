@@ -1553,3 +1553,13 @@ void GUI_View::setSaftyPadding() {
         this->updateLayout();
     }
 }
+
+void GUI_View::printf( const char * format, ...) {
+    char buffer[512];
+    va_list args;
+    va_start(args, format);
+    vsprintf(buffer, format, args);
+    va_end(args);
+
+    setTitle( std::string(buffer) );
+}

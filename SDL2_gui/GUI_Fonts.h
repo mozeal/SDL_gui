@@ -15,6 +15,8 @@
 #include <SDL_ttf.h>
 
 class GUI_Fonts {
+protected:
+
 public:
     static std::map<std::string, TTF_Font *> font_map;
     

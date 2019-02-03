@@ -57,6 +57,8 @@ int GUI_Init( const char* title, int expectedWidth, int expectedHeight );
 void GUI_Run(std::function<bool(SDL_Event *ev)>handle_ev = NULL);
 void GUI_Destroy();
 
+extern std::function<void( int width, int height )>GUI_onWindowSizeChange;
+
 extern SDL_Renderer *GUI_renderer;
 extern SDL_Window *GUI_window;
 extern GUI_View *GUI_topView;

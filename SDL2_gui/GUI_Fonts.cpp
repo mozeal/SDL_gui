@@ -12,7 +12,6 @@
 std::map<std::string, TTF_Font *> GUI_Fonts::font_map;
 
 GUI_Fonts::GUI_Fonts() {
-    
 }
 
 GUI_Fonts::~GUI_Fonts() {

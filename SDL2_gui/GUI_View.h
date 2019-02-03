@@ -133,6 +133,8 @@ public:
     int dragMaxY;
 
     bool isMouseCapturing;
+
+    virtual void printf( const char * format, ...);
     
     int getWidth() { return rectView.w / GUI_scale; };
     int getHeight() { return rectView.h / GUI_scale; };

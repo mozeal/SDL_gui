@@ -21,6 +21,7 @@ protected:
 public:
     static GUI_Label *create( GUI_View *parent, const char *title, uint16_t unicode=0, int x=0, int y=0, int width=0, int height=0,
                                 std::function<bool(SDL_Event* ev)>userEventHandler = NULL );
+    static GUI_Label *fromPrintf( GUI_View *parent, const char * format, ...);
     GUI_Label(GUI_View *parent, const char *title, uint16_t unicode=0, int x=0, int y=0, int width=0, int height=0,
                  std::function<bool(SDL_Event* ev)>userEventHandler = NULL);
     virtual ~GUI_Label();

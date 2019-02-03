@@ -141,6 +141,7 @@ timer_start(0)
 {
     setBorder( 0 );
     setBackgroundColor(cClear);
+    setTextColor(cBlack);
 }
 
 GUI_FPSView::~GUI_FPSView() {

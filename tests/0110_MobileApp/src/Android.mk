@@ -49,7 +49,7 @@ LOCAL_SRC_FILES += $(SDL_GUI_ROOT)/SDL_gui.cpp \
 
 LOCAL_SHARED_LIBRARIES := SDL2 SDL2_image SDL2_ttf
 LOCAL_CFLAGS += -D__ANDROID__
-LOCAL_CPPFLAGS += -fexceptions -std=c++11
+LOCAL_CPPFLAGS += -fexceptions -std=c++14
 LOCAL_LDLIBS := -lGLESv1_CM -lGLESv2 -llog -landroid
 
 include $(BUILD_SHARED_LIBRARY)

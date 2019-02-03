@@ -133,9 +133,9 @@ void GUI_App::createContentView( int options ) {
 }
 
 void GUI_App::createMenu( int options ) {
-    int y = GUI_AppTopBarHeight+GUI_GetStatusBarHeight();
+    int y = GUI_GetAppTopBarHeight()+GUI_GetStatusBarHeight();
     
-    menuView = GUI_Menu::create(topView, "Menu", 0, y, GUI_AppMenuWidth, -1);
+    menuView = GUI_Menu::create(topView, "Menu", 0, y, GUI_GetAppMenuWidth(), -1);
     menuView->setAlign( GUI_ALIGN_ABSOLUTE );
     menuView->setActivateView(menuButton);
     menuView->setBackgroundColor(cEmptyContent);

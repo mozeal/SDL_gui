@@ -25,7 +25,6 @@ GUI_View( parent, title, 0, 0, -1, GUI_AppStatusBarHeight )
 
     fpsView = GUI_FPSView::create(this, 0, 0, 0, 0 );
     fpsView->setAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT );
-    fpsView->setTextColor(cBlack);
     fpsView->setMargin(0,10, 0, 0);
 }
 

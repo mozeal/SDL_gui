@@ -26,6 +26,8 @@ SDL_Window *GUI_window = NULL;
 GUI_View *GUI_topView = NULL;
 GUI_View * _GUI_mouseCapturedView = NULL;
 
+std::function<void( int width, int height )>GUI_onWindowSizeChange = NULL;
+
 static std::function<bool(SDL_Event* ev)> user_handle_events = NULL;
 
 const long MILLESECONDS_PER_FRAME = 1000/60;
@@ -148,13 +150,16 @@ void GUI_updateScaleParameters() {
     scaley = GUI_physicalWindowHeight / GUI_windowHeight;
 #endif
     
-    GUI_scale = (float)((scalex < scaley) ? scaley : scalex);
+    GUI_scale = (float)((scalex < scaley) ? scalex : scaley);
     if (GUI_scale < 1.0f) {
         GUI_scale = 1.0f;
     }
     SDL_Log( "Scale: %0.2f\n", GUI_scale );
     SDL_Log( "Mouse Scale: %0.2f\n", GUI_mouseScale );
-#if defined(__ANDROID__) 
+#if defined(__ANDROID__)
+    if( GUI_scale < 2 ) {
+        //GUI_scale = 2;
+    }
     GUI_windowWidth = GUI_physicalWindowWidth / GUI_scale;
     GUI_windowHeight = GUI_physicalWindowHeight / GUI_scale;
     GUI_mouseScale = GUI_scale;
@@ -168,7 +173,7 @@ void GUI_updateScaleParameters() {
     }
     GUI_mouseScale = GUI_scale;
 #endif
-    SDL_Log("virtual: %d %d\n", GUI_windowWidth, GUI_windowHeight);
+    SDL_Log("Virtual: %d %d\n", GUI_windowWidth, GUI_windowHeight);
 }
 
 void GUI_Run(std::function<bool(SDL_Event* ev)> user_handle_ev) {
@@ -289,13 +294,18 @@ static void GUI_Loop() {
 #endif
                         GUI_updateScaleParameters();
 
-                        GUI_Fonts::clear();
+                        //GUI_Fonts::clear();
                         GUI_PostMessage( GUI_FontChanged, 0, 0, NULL, NULL );
                         
                         GUI_PostMessage( GUI_UpdateSize, 0, 0, NULL, NULL );
-                        
+
+                        GUI_Log( "Virtual changed: %i, %i\n", GUI_windowWidth, GUI_physicalWindowHeight );
                         if( GUI_topView ) {
                             GUI_topView->updateLayout();
+                        }
+
+                        if( GUI_onWindowSizeChange ) {
+                            GUI_onWindowSizeChange( GUI_physicalWindowWidth, GUI_physicalWindowHeight );
                         }
                         break;
                 }

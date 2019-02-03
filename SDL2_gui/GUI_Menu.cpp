@@ -137,7 +137,7 @@ void GUI_Menu::close( int duration ) {
     if( isMoving )
         return;
     isOpen = false;
-    moveTo( -GUI_AppMenuWidth, getAbsolutePosition().y, duration );
+    moveTo( 0-GUI_GetAppMenuWidth(), getAbsolutePosition().y, duration );
 
     GUI_SetMouseCapture( NULL );
     //GUI_Log( "Menu close\n" );
@@ -169,7 +169,7 @@ bool GUI_Menu::eventHandler(SDL_Event*event) {
     switch (event->type) {
         case GUI_UpdateSize:
         {
-            oy = GUI_AppTopBarHeight + GUI_GetStatusBarHeight();
+            oy = GUI_GetAppTopBarHeight() + GUI_GetStatusBarHeight();
             ox = 0;
 #ifdef __IPHONEOS__
             ox = getContentSaftyMargin()[3];

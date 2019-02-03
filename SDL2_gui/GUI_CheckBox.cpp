@@ -18,7 +18,7 @@ GUI_CheckBox *GUI_CheckBox::create( GUI_View *parent, const char *title, int x, 
 
 GUI_CheckBox::GUI_CheckBox(GUI_View *parent, const char *title, int x, int y, int width, int height,
                            std::function<void(GUI_View*)>callbackFunction) :
-GUI_Button(parent, title, NULL, x, y, width, height, NULL ),
+GUI_Button(parent, title, 0, x, y, width, height, NULL ),
 checked(false)
 {
     clickable = false;
