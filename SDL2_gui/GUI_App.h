@@ -46,7 +46,7 @@ protected:
     
     bool isMenuShow;
 public:
-    static GUI_App *create( int Orientation, std::string title, int expectedWidth, int expectedHeight, int options=0 );
+    static GUI_App *create( std::string title, int expectedWidth=0, int expectedHeight=0, int Orientation=0, int options=0 );
     GUI_App( int Orientation, std::string title, int expectedWidth, int expectedHeight, int options=0 );
     virtual ~GUI_App();
     

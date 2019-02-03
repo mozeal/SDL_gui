@@ -10,7 +10,38 @@
 
 GUI_App *GUI_App::instance = NULL;
 
-GUI_App *GUI_App::create( int Orientation, std::string title, int expectedWidth, int expectedHeight, int options ) {
+#if defined( __ANDROID__ )
+static int _expectedWidth = 360;
+static int _expectedHeight = 640;
+#elif defined( __MACOSX__ )
+static int _expectedWidth = 1024;
+static int _expectedHeight = 768;
+#else
+static int _expectedWidth = 480;
+static int _expectedHeight = 800;
+#endif
+
+GUI_App *GUI_App::create( std::string title, int expectedWidth, int expectedHeight, int Orientation, int options ) {
+#ifdef __ANDROID__
+    int _orientation = 0; //GUI_ORIENTATION_PORTRAIT | GUI_ORIENTATION_LANDSCAPE;
+    if( SDL_IsTablet() ) {
+        GUI_Log( "Android: is Tablet\n" );
+        _expectedWidth = 480;
+        _expectedHeight = 800;
+    }
+    else {
+        GUI_Log( "Android: is Phone\n" );
+    }
+#else
+    int _orientation = GUI_ORIENTATION_PORTRAIT | GUI_ORIENTATION_LANDSCAPE;
+#endif
+    if( expectedWidth == 0 )
+        expectedWidth = _expectedWidth;
+    if( expectedHeight == 0 )
+        expectedHeight = _expectedHeight;
+    if( Orientation == 0 )
+        Orientation = _orientation;
+    
     if( instance ) {
         return instance;
     }

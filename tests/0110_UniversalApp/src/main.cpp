@@ -13,34 +13,13 @@
 using namespace std;
 
 char title[] = "SDL_gui App";
-#ifdef __ANDROID__
-int expectedWidth = 360;
-int expectedHeight = 640;
-#else
-int expectedWidth = 480;
-int expectedHeight = 800;
-#endif
+
 
 static GUI_App *app;
 static GUI_View *topView;
 
 int main(int argc, char *argv[]) {
-#ifdef __ANDROID__
-    int orientation = 0; //GUI_ORIENTATION_PORTRAIT | GUI_ORIENTATION_LANDSCAPE;
-    if( SDL_IsTablet() ) {
-        GUI_Log( "Android: is Tablet\n" );
-        expectedWidth = 480;
-        expectedHeight = 800;
-    }
-    else {
-        GUI_Log( "Android: is Phone\n" );
-    }
-#else
-    int orientation = GUI_ORIENTATION_PORTRAIT | GUI_ORIENTATION_LANDSCAPE;
-#endif
-    
-    app = GUI_App::create( orientation, "SDL-GUI App", expectedWidth, expectedHeight,
-                          GUI_APP_TOP_BAR | GUI_APP_MENU );
+    app = GUI_App::create( "SDL-GUI App", 0, 0, 0, GUI_APP_TOP_BAR | GUI_APP_MENU );
     if( app == NULL ) {
         exit( 1 );
     }

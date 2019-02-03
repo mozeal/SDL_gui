@@ -31,7 +31,7 @@ int GUI_GetUITextFontSize() {
         hh = GUI_physicalWindowWidth;
     }
     if( ww < 1024 || hh < 1920 ) {
-        if( !SDL_IsTablet() )
+        if( !SDL_IsTablet() && GUI_scale < 2 )
             return GUI_UITextFontSize * 1.8;
     }
 
@@ -59,7 +59,7 @@ int GUI_GetUIIconFontSize() {
         hh = GUI_physicalWindowWidth;
     }
     if( ww < 1024 || hh < 1920 ) {
-        if( !SDL_IsTablet() )
+        if( !SDL_IsTablet() && GUI_scale < 2 )
             return GUI_UIIconFontSize * 1.8;
     }
 
@@ -83,7 +83,7 @@ int GUI_GetAppTopBarHeight() {
         hh = GUI_physicalWindowWidth;
     }
     if( ww < 1024 || hh < 1920 ) {
-        if( !SDL_IsTablet() )
+        if( !SDL_IsTablet() && GUI_scale < 2 )
             return GUI_AppTopBarHeight * 1.8;
     }
     return GUI_AppTopBarHeight;
@@ -101,7 +101,7 @@ int GUI_GetAppMenuWidth() {
         hh = GUI_physicalWindowWidth;
     }
     if( ww < 1024 || hh < 1920 ) {
-        if( !SDL_IsTablet() )
+        if( !SDL_IsTablet() && GUI_scale < 2 ) 
             return GUI_AppMenuWidth * 1.8;
     }
     return GUI_AppMenuWidth;
