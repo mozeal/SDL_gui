@@ -19,7 +19,7 @@ static GUI_App *app;
 static GUI_View *topView;
 
 int main(int argc, char *argv[]) {
-    app = GUI_App::create( "SDL-GUI App", 0, 0, 0, GUI_APP_TOP_BAR | GUI_APP_MENU );
+    app = GUI_App::create( "SDL-GUI App", 0, 0, 0, GUI_APP_TOP_BAR | GUI_APP_MENU | GUI_APP_STATUS_BAR );
     if( app == NULL ) {
         exit( 1 );
     }

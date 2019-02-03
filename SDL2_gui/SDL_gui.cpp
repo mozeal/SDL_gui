@@ -67,7 +67,7 @@ int GUI_Init( const char* title, int expectedWidth, int expectedHeight ) {
     int cx = 0;
     int cy = 0;
 #elif defined(__EMSCRIPTEN__)
-    int style = SDL_WINDOW_OPENGL|SDL_WINDOW_ALLOW_HIGHDPI|SDL_WINDOW_BORDERLESS;
+    int style = SDL_WINDOW_OPENGL|SDL_WINDOW_ALLOW_HIGHDPI|SDL_WINDOW_BORDERLESS|SDL_WINDOW_RESIZABLE;
     int cx = 0;
     int cy = 0;
 #else

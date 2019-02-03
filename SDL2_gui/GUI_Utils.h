@@ -97,4 +97,8 @@ extern "C" bool hasNotch();
 extern "C" int *getContentSaftyMargin();
 #endif
 
+#ifdef __EMSCRIPTEN__
+inline bool SDL_IsTablet() { return true; };
+#endif
+
 #endif /* GUI_Utils_hpp */

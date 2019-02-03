@@ -22,7 +22,7 @@ static int _expectedHeight = 800;
 #endif
 
 GUI_App *GUI_App::create( std::string title, int expectedWidth, int expectedHeight, int Orientation, int options ) {
-#ifdef __ANDROID__
+#if defined( __ANDROID__ )
     int _orientation = 0; //GUI_ORIENTATION_PORTRAIT | GUI_ORIENTATION_LANDSCAPE;
     if( SDL_IsTablet() ) {
         GUI_Log( "Android: is Tablet\n" );
@@ -32,6 +32,10 @@ GUI_App *GUI_App::create( std::string title, int expectedWidth, int expectedHeig
     else {
         GUI_Log( "Android: is Phone\n" );
     }
+#elif defined( __EMSCRIPTEN__ )
+    _expectedWidth = -1;
+    _expectedHeight = -1;
+    int _orientation = 0;
 #else
     int _orientation = GUI_ORIENTATION_PORTRAIT | GUI_ORIENTATION_LANDSCAPE;
 #endif
@@ -97,6 +101,20 @@ isMenuShow(false)
         IMG_Quit();
         SDL_Quit();
         return;
+    }
+
+    SDL_DisplayMode dm;
+
+    if (SDL_GetDesktopDisplayMode(0, &dm) != 0) {
+        SDL_Log("SDL_GetDesktopDisplayMode failed: %s", SDL_GetError());
+        dm.w = 0;
+        dm.h = 0;
+    }
+    if( expectedWidth == -1 ) {
+        expectedWidth = dm.w;
+    }
+    if( expectedHeight == -1 ) {
+        expectedHeight = dm.h;
     }
     
     GUI_Init( (options & GUI_APP_TOP_BAR) ? "" : title.c_str(), expectedWidth, expectedHeight );
