@@ -50,7 +50,7 @@ int GUI_Init( const char* title, int expectedWidth, int expectedHeight ) {
         SDL_Log("SDL_GetDesktopDisplayMode failed: %s", SDL_GetError());
         exit(1);
     }
-    SDL_Log("Display: %d %d\n", dm.w, dm.h);
+    SDL_Log("Display (DM): %d %d\n", dm.w, dm.h);
     
     //Now create a window with title "SDL" at 0, 0 on the screen with w:800 h:600 and show it
     // ::SDL_WINDOW_FULLSCREEN,    ::SDL_WINDOW_OPENGL,
@@ -130,7 +130,7 @@ void GUI_updateScaleParameters() {
 
     int scalex = 1;
     int scaley = 1;
-#ifdef __ANDROID__
+#if defined( __ANDROID__ ) 
     SDL_Log( "Expected: %i %i\n", GUI_expectedWidth, GUI_expectedHeight );
     // Android always get fullscreen with no retina
 
@@ -145,18 +145,46 @@ void GUI_updateScaleParameters() {
     scaley = GUI_physicalWindowHeight / GUI_expectedHeight;
 
     SDL_Log( "Calc scale: %i %i\n", scalex, scaley );
+    GUI_scale = (float)((scalex < scaley) ? scalex : scaley);
+ #elif defined( __EMSCRIPTEN__ )   
+    scalex = GUI_physicalWindowWidth / GUI_windowWidth;
+    scaley = GUI_physicalWindowHeight / GUI_windowHeight;
+    GUI_scale = (float)((scalex < scaley) ? scalex : scaley);
+
+    if( GUI_physicalWindowWidth < GUI_physicalWindowHeight ) {
+        GUI_expectedWidth = 360;
+        GUI_expectedHeight = 600;
+        SDL_Log( "**** Expected: %i %i\n", GUI_expectedWidth, GUI_expectedHeight );
+        // Android always get fullscreen with no retina
+
+        if( ((GUI_physicalWindowWidth > GUI_physicalWindowHeight) && (GUI_expectedWidth < GUI_expectedHeight)) ||
+                ((GUI_physicalWindowWidth < GUI_physicalWindowHeight) && (GUI_expectedWidth > GUI_expectedHeight)) ) {
+            int t = GUI_expectedWidth;
+            GUI_expectedWidth = GUI_expectedHeight;
+            GUI_expectedHeight = t;
+        }
+        SDL_Log( "**** Expected: %i %i\n", GUI_expectedWidth, GUI_expectedHeight );
+        scalex = GUI_physicalWindowWidth / GUI_expectedWidth;
+        scaley = GUI_physicalWindowHeight / GUI_expectedHeight;
+
+        SDL_Log( "Calc scale: %i %i\n", scalex, scaley );
+        GUI_scale = (float)((scalex < scaley) ? scaley : scalex); /// uSe max
+  
+    }
+
+
 #else
     scalex = GUI_physicalWindowWidth / GUI_windowWidth;
     scaley = GUI_physicalWindowHeight / GUI_windowHeight;
-#endif
-    
     GUI_scale = (float)((scalex < scaley) ? scalex : scaley);
+ #endif
+    
     if (GUI_scale < 1.0f) {
         GUI_scale = 1.0f;
     }
     SDL_Log( "Scale: %0.2f\n", GUI_scale );
     SDL_Log( "Mouse Scale: %0.2f\n", GUI_mouseScale );
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) 
     if( GUI_scale < 2 ) {
         //GUI_scale = 2;
     }
@@ -164,6 +192,14 @@ void GUI_updateScaleParameters() {
     GUI_windowHeight = GUI_physicalWindowHeight / GUI_scale;
     GUI_mouseScale = GUI_scale;
     //GUI_mouseScale = 1.0;
+#elif defined( __EMSCRIPTEN__ )
+    if( GUI_windowWidth * GUI_scale != GUI_physicalWindowWidth ||
+        GUI_windowHeight * GUI_scale != GUI_physicalWindowHeight ) {
+        
+        GUI_windowWidth = GUI_physicalWindowWidth / GUI_scale;
+        GUI_windowHeight = GUI_physicalWindowHeight / GUI_scale;
+    }
+    GUI_mouseScale = GUI_scale;
 #else
     if( GUI_windowWidth * GUI_scale != GUI_physicalWindowWidth ||
         GUI_windowHeight * GUI_scale != GUI_physicalWindowHeight ) {

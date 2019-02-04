@@ -140,7 +140,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
     bool BreakRecursive = false;
     switch( event->type ) {
         case GUI_UpdateSize:
-            GUI_Log( "UpdateSize: %s\n", title.c_str() );
+            //GUI_Log( "UpdateSize: %s\n", title.c_str() );
             topLeft.x = ox * GUI_scale;
             topLeft.y = oy * GUI_scale;
             rectView.x = ox * GUI_scale;
