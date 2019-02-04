@@ -86,7 +86,7 @@ int GUI_Init( const char* title, int expectedWidth, int expectedHeight ) {
     HICON hicon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON1));
 	SDL_SysWMinfo info = {0};
 	SDL_VERSION(&info.version);
-	SDL_GetWindowWMInfo(window, &info);
+	SDL_GetWindowWMInfo(GUI_window, &info);
 	HWND hwnd = info.info.win.window;
 	SendMessage(hwnd, WM_SETICON, ICON_SMALL, (LPARAM)hicon);
 	SendMessage(hwnd, WM_SETICON, ICON_BIG, (LPARAM)hicon);

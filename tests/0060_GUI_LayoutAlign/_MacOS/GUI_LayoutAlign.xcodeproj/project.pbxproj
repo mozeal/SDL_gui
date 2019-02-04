@@ -20,6 +20,7 @@
 		385B9B0021CD08CB000E5F90 /* GUI_Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 385B9AFE21CD08CB000E5F90 /* GUI_Utils.cpp */; };
 		385B9B6C21CFB1F7000E5F90 /* GUI_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 385B9B6A21CFB1F7000E5F90 /* GUI_image.cpp */; };
 		385B9B6F21CFC089000E5F90 /* GUI_ImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 385B9B6D21CFC089000E5F90 /* GUI_ImageView.cpp */; };
+		38CAB0EB22084E2C00732323 /* GUI_Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38CAB0E222084E2C00732323 /* GUI_Config.cpp */; };
 		38EC050D21E9A5CE005F3A3A /* GUI_TextView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38EC050B21E9A5CE005F3A3A /* GUI_TextView.cpp */; };
 		38EC051321E9E4A4005F3A3A /* GUI_Fonts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38EC051121E9E4A4005F3A3A /* GUI_Fonts.cpp */; };
 		69CD9A151D15AED3004D8ED1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69EF23731D13E239009B1FD6 /* main.cpp */; };
@@ -155,6 +156,8 @@
 		385B9B6B21CFB1F7000E5F90 /* GUI_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_image.h; sourceTree = "<group>"; };
 		385B9B6D21CFC089000E5F90 /* GUI_ImageView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_ImageView.cpp; sourceTree = "<group>"; };
 		385B9B6E21CFC089000E5F90 /* GUI_ImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_ImageView.h; sourceTree = "<group>"; };
+		38CAB0E222084E2C00732323 /* GUI_Config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Config.cpp; sourceTree = "<group>"; };
+		38CAB0EA22084E2C00732323 /* GUI_Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_Config.h; sourceTree = "<group>"; };
 		38EC050B21E9A5CE005F3A3A /* GUI_TextView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_TextView.cpp; sourceTree = "<group>"; };
 		38EC050C21E9A5CE005F3A3A /* GUI_TextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_TextView.h; sourceTree = "<group>"; };
 		38EC051121E9E4A4005F3A3A /* GUI_Fonts.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Fonts.cpp; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 		385B9A8A21CC1380000E5F90 /* SDL2_gui */ = {
 			isa = PBXGroup;
 			children = (
+				38CAB0E222084E2C00732323 /* GUI_Config.cpp */,
+				38CAB0EA22084E2C00732323 /* GUI_Config.h */,
 				385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */,
 				385B9A9321CC13A8000E5F90 /* SDL_gui.h */,
 				385B9AB421CCBC4C000E5F90 /* GUI_shapes.cpp */,
@@ -514,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				385B9AC121CCD379000E5F90 /* SDL2_imageFilter.c in Sources */,
+				38CAB0EB22084E2C00732323 /* GUI_Config.cpp in Sources */,
 				69CD9A151D15AED3004D8ED1 /* main.cpp in Sources */,
 				385B9B6F21CFC089000E5F90 /* GUI_ImageView.cpp in Sources */,
 				385B9AB621CCBC4C000E5F90 /* GUI_shapes.cpp in Sources */,
