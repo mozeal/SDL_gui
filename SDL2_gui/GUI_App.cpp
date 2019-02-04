@@ -13,7 +13,13 @@ GUI_App *GUI_App::instance = NULL;
 #if defined( __ANDROID__ )
 static int _expectedWidth = 360;
 static int _expectedHeight = 600;
+#elif defined( __IPHONEOS__ )
+static int _expectedWidth = 360;
+static int _expectedHeight = 600;
 #elif defined( __MACOSX__ )
+static int _expectedWidth = 1024;
+static int _expectedHeight = 768;
+#elif defined( __WIN32__ )
 static int _expectedWidth = 1024;
 static int _expectedHeight = 768;
 #elif defined( __EMSCRIPTEN__ )

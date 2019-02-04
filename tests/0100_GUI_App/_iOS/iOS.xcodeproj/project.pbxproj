@@ -56,6 +56,8 @@
 		38CA5CD11BCCAFEB0099BC3B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CA5CC81BCCAFEB0099BC3B /* OpenGLES.framework */; };
 		38CA5CD21BCCAFEB0099BC3B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CA5CC91BCCAFEB0099BC3B /* QuartzCore.framework */; };
 		38CA5CD31BCCAFEB0099BC3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CA5CCA1BCCAFEB0099BC3B /* UIKit.framework */; };
+		38CAB18F220888DE00732323 /* GUI_Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38CAB187220888DE00732323 /* GUI_Config.cpp */; };
+		38CAB1922208893000732323 /* GUI_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 38CAB1912208893000732323 /* GUI_iOS.mm */; };
 		38DBC0991CCDFC320016B1F4 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38DBC0981CCDFC320016B1F4 /* CoreImage.framework */; };
 		38DBC09B1CCDFC420016B1F4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38DBC09A1CCDFC420016B1F4 /* ImageIO.framework */; };
 		38DBC09D1CCDFC650016B1F4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38DBC09C1CCDFC650016B1F4 /* MobileCoreServices.framework */; };
@@ -207,6 +209,9 @@
 		38CA5CC81BCCAFEB0099BC3B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		38CA5CC91BCCAFEB0099BC3B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		38CA5CCA1BCCAFEB0099BC3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		38CAB187220888DE00732323 /* GUI_Config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Config.cpp; sourceTree = "<group>"; };
+		38CAB1902208893000732323 /* GUI_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_iOS.h; sourceTree = "<group>"; };
+		38CAB1912208893000732323 /* GUI_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GUI_iOS.mm; sourceTree = "<group>"; };
 		38DBC0981CCDFC320016B1F4 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		38DBC09A1CCDFC420016B1F4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		38DBC09C1CCDFC650016B1F4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -270,6 +275,8 @@
 		3817478921E7701700AA0910 /* SDL2_gui */ = {
 			isa = PBXGroup;
 			children = (
+				38B66D1D21F2C116005C22C0 /* GUI_Config.h */,
+				38CAB187220888DE00732323 /* GUI_Config.cpp */,
 				380EC85B21FD832C00759C7E /* GUI_ComboBox.cpp */,
 				380EC85421FD832B00759C7E /* GUI_ComboBox.h */,
 				380EC85021FD832B00759C7E /* GUI_MenuBar.cpp */,
@@ -308,7 +315,6 @@
 				38B66D1621F2C115005C22C0 /* GUI_Button.h */,
 				38B66D1821F2C116005C22C0 /* GUI_CheckBox.cpp */,
 				38B66D1A21F2C116005C22C0 /* GUI_CheckBox.h */,
-				38B66D1D21F2C116005C22C0 /* GUI_Config.h */,
 				38B66D2021F2C116005C22C0 /* GUI_EditText.cpp */,
 				38B66D1B21F2C116005C22C0 /* GUI_EditText.h */,
 				38B66D1721F2C116005C22C0 /* GUI_Fonts.cpp */,
@@ -327,6 +333,8 @@
 				3817479421E7701700AA0910 /* GUI_shapes.cpp */,
 				3817479521E7701700AA0910 /* GUI_image.cpp */,
 				3817479721E7701700AA0910 /* GUI_Utils.cpp */,
+				38CAB1902208893000732323 /* GUI_iOS.h */,
+				38CAB1912208893000732323 /* GUI_iOS.mm */,
 			);
 			name = SDL2_gui;
 			path = ../../../SDL2_gui;
@@ -553,6 +561,7 @@
 				38B66D3B21F2C127005C22C0 /* GUI_RadioButtonGroup.cpp in Sources */,
 				38B66D2521F2C116005C22C0 /* GUI_App.cpp in Sources */,
 				3817479E21E7701700AA0910 /* GUI_shapes.cpp in Sources */,
+				38CAB1922208893000732323 /* GUI_iOS.mm in Sources */,
 				38B66D2421F2C116005C22C0 /* GUI_IconView.cpp in Sources */,
 				381747A121E7701700AA0910 /* GUI_Utils.cpp in Sources */,
 				38B66D3E21F2C127005C22C0 /* GUI_RadioButton.cpp in Sources */,
@@ -561,6 +570,7 @@
 				38B66D4121F2C127005C22C0 /* GUI_StatusBar.cpp in Sources */,
 				38B66D2121F2C116005C22C0 /* GUI_Fonts.cpp in Sources */,
 				3817479F21E7701700AA0910 /* GUI_image.cpp in Sources */,
+				38CAB18F220888DE00732323 /* GUI_Config.cpp in Sources */,
 				38B66D3D21F2C127005C22C0 /* GUI_TopBar.cpp in Sources */,
 				380EC85E21FD832C00759C7E /* GUI_PopupView.cpp in Sources */,
 				3817478721E7700D00AA0910 /* SDL2_rotozoom.c in Sources */,

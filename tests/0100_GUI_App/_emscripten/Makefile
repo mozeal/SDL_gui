@@ -4,6 +4,7 @@ EMSCRIPTEN_HOME = ~/emsdk
 SOURCES = \
 src/main.cpp \
 src/SDL2_gui/SDL_gui.cpp \
+src/SDL2_gui/GUI_Config.cpp \
 src/SDL2_gui/GUI_shapes.cpp \
 src/SDL2_gui/GUI_Utils.cpp \
 src/SDL2_gui/GUI_Fonts.cpp \
