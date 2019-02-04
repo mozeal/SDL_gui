@@ -21,3 +21,5 @@ Stay tuned.
 - Linux (Build with CMake)
 
 ![Alt text](/screenshot/screenshot_02.png?raw=true)
+
+![Alt text](/screenshot/SDL_gui.png?raw=true)
