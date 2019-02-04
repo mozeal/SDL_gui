@@ -25,7 +25,7 @@ static GUI_View *inputBar;
 static GUI_EditText *inputBox;
 
 int main(int argc, char *argv[]) {
-    app = GUI_App::create( GUI_ORIENTATION_LANDSCAPE, "Mouse & Finger Test", expectedWidth, expectedHeight,
+    app = GUI_App::create( "Mouse & Finger Test", expectedWidth, expectedHeight, GUI_ORIENTATION_LANDSCAPE,
                           0 );
     if( app == NULL ) {
         exit( 1 );
@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
     auto mousePanel = GUI_View::create(topView, "Mouse", 0, 0, -1, 0 );
     mousePanel->setLayout( GUI_LAYOUT_HORIZONTAL );
     mousePanel->setPadding( 5, 5, 5, 5 );
-    mousePanel->corner = 4;
+    mousePanel->setCorner( 4 );
 
     auto mouseDownLabel = GUI_Label::create( mousePanel, "", 0, 0, 0, 200, 0 );
     mouseDownLabel->setMargin( 5, 5, 5, 5 );
@@ -53,7 +53,7 @@ int main(int argc, char *argv[]) {
     touchPanel->setLayout( GUI_LAYOUT_HORIZONTAL );
     touchPanel->setPadding( 5, 5, 5, 5 );
     touchPanel->setMargin( 10, 0, 0, 0);
-    touchPanel->corner = 4;
+    touchPanel->setCorner( 4 );
     
     auto touchDownLabel = GUI_Label::create( touchPanel, "", 0, 0, 0, 200, 0 );
     touchDownLabel->setMargin( 5, 5, 5, 5 );

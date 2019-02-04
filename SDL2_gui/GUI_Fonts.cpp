@@ -19,7 +19,7 @@ GUI_Fonts::~GUI_Fonts() {
 }
 
 TTF_Font *GUI_Fonts::getFont( std::string fontName, int fontSize ) {
-    std::string font_id = fontName + std::to_string(fontSize);
+    std::string font_id = fontName + std::to_string(fontSize * GUI_scale);
     
     if(font_map.find(font_id) != font_map.end())
         return font_map[font_id];

@@ -30,10 +30,12 @@ int GUI_GetUITextFontSize() {
         ww = GUI_physicalWindowHeight;
         hh = GUI_physicalWindowWidth;
     }
+#if defined(__ANDROID__)
     if( ww < 1024 || hh < 1920 ) {
         if( !SDL_IsTablet() && GUI_scale < 2 )
             return GUI_UITextFontSize * 1.8;
     }
+#endif
 
     if( GUI_scale >= 3 ) {
         return 18;
@@ -58,10 +60,12 @@ int GUI_GetUIIconFontSize() {
         ww = GUI_physicalWindowHeight;
         hh = GUI_physicalWindowWidth;
     }
+#if defined(__ANDROID__)
     if( ww < 1024 || hh < 1920 ) {
         if( !SDL_IsTablet() && GUI_scale < 2 )
             return GUI_UIIconFontSize * 1.8;
     }
+#endif
 
     if( GUI_scale >= 3 ) {
         return 18;
@@ -82,10 +86,12 @@ int GUI_GetAppTopBarHeight() {
         ww = GUI_physicalWindowHeight;
         hh = GUI_physicalWindowWidth;
     }
+#if defined(__ANDROID__)
     if( ww < 1024 || hh < 1920 ) {
         if( !SDL_IsTablet() && GUI_scale < 2 )
             return GUI_AppTopBarHeight * 1.8;
     }
+#endif
     return GUI_AppTopBarHeight;
 }
 
@@ -100,9 +106,11 @@ int GUI_GetAppMenuWidth() {
         ww = GUI_physicalWindowHeight;
         hh = GUI_physicalWindowWidth;
     }
+#if defined(__ANDROID__)
     if( ww < 1024 || hh < 1920 ) {
         if( !SDL_IsTablet() && GUI_scale < 2 ) 
             return GUI_AppMenuWidth * 1.8;
     }
+#endif
     return GUI_AppMenuWidth;
 }

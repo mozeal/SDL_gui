@@ -333,7 +333,7 @@ void createTextInputBox() {
 }
 
 int main(int argc, char *argv[]) {
-    app = GUI_App::create( GUI_ORIENTATION_LANDSCAPE, "SDL-GUI App", expectedWidth, expectedHeight,
+    app = GUI_App::create( "SDL-GUI App", expectedWidth, expectedHeight, GUI_ORIENTATION_LANDSCAPE, 
                           GUI_APP_TOP_BAR | GUI_APP_STATUS_BAR | GUI_APP_MENU | GUI_APP_MENUBAR );
     if( app == NULL ) {
         exit( 1 );

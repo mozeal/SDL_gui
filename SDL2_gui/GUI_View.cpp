@@ -170,8 +170,8 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 SDL_Rect rView;
                 SDL_RenderGetViewport(GUI_renderer, &rView);
                 SDL_RenderGetClipRect(GUI_renderer, &rClip);
-                for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
-                    GUI_View *child = *it;
+                for (int it = 0 ; it < children.size(); ++it) {
+                    GUI_View *child = children[it];
                     if( child->eventHandler(event) )
                         return true;
                 }
@@ -626,16 +626,16 @@ bool GUI_View::eventHandler(SDL_Event*event) {
         if( ReverseRecursive ) {
             //GUI_Log( "Reverse traverse\n" );
             if( children.size() > 0 ) {
-                for (std::vector<GUI_View *>::iterator it = children.end()-1; it >= children.begin(); --it) {
-                    GUI_View *child = *it;
+                for (int n = (int)children.size()-1; n >= 0; --n) {
+                    GUI_View *child = children[n];
                     if( child->eventHandler(event) )
                         return true;
                 }
             }
         }
         else {
-            for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
-                GUI_View *child = *it;
+            for (int it = 0 ; it < children.size(); ++it) {
+                GUI_View *child = children[it];
                 if( child->eventHandler(event) )
                     return true;
             }
@@ -660,8 +660,8 @@ void GUI_View::move_topLeft(int dx, int dy) {
         //oy = topLeft.y;
     }
     
-    for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
-        GUI_View *child = *it;
+    for (int it = 0 ; it < children.size(); ++it) {
+        GUI_View *child = children[it];
         child->move_rectView(dx, dy);
     }
 }
@@ -670,8 +670,8 @@ void GUI_View::move_rectView(int dx, int dy) {
     rectView.x += dx;
     rectView.y += dy;
     
-    for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
-        GUI_View *child = *it;
+    for (int it = 0 ; it < children.size(); ++it) {
+        GUI_View *child = children[it];
         child->move_rectView(dx, dy);
     }
 }
@@ -710,9 +710,9 @@ void GUI_View::add_child(GUI_View *child) {
 }
 
 void GUI_View::remove_child(GUI_View *child) {
-    for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
-        if( child == *it ) {
-            children.erase( it );
+    for (int it = 0 ; it < children.size(); ++it) {
+        if( child == children[it] ) {
+            children.erase(children.begin()+ it );
             // GUI_Log( "Remove %s\n", child->title.c_str() );
             if( child->isMouseCapturing )
                 GUI_SetMouseCapture( NULL );
@@ -914,9 +914,9 @@ bool GUI_View::toTop() {
     if( !parent )
         return false;
     
-    for (std::vector<GUI_View *>::iterator it = parent->children.begin() ; it < parent->children.end(); ++it) {
-        if( this == *it ) {
-            parent->children.erase( it );
+    for (int it = 0 ; it < parent->children.size(); ++it) {
+        if( this == parent->children[it] ) {
+            parent->children.erase(parent->children.begin() + it );
             parent->children.push_back(this);
             return true;
         }
@@ -928,9 +928,9 @@ bool GUI_View::toBack() {
     if( !parent )
         return false;
     
-    for (std::vector<GUI_View *>::iterator it = parent->children.begin() ; it < parent->children.end(); ++it) {
-        if( this == *it ) {
-            parent->children.erase( it );
+    for (int it = 0 ; it < parent->children.size(); ++it) {
+        if( this == parent->children[it] ) {
+            parent->children.erase(parent->children.begin()+ it );
             parent->children.insert(parent->children.begin(), this);
             return true;
         }
@@ -1018,8 +1018,8 @@ GUI_View *GUI_View::hitTest(int x, int y, bool bRecursive) {
         // GUI_Log( "Hit in %s\n", title.c_str() );
         if (bRecursive) {
             if( children.size() > 0 ) {
-                for (std::vector<GUI_View *>::iterator it = children.end()-1 ; it >= children.begin(); --it) {
-                    GUI_View *child = *it;
+                for (int it = children.size()-1 ; it >= 0; --it) {
+                    GUI_View *child = children[it];
                     //GUI_Log( "Hit2\n" );
                     
                     GUI_View *wb = child->hitTest(x, y, bRecursive);
@@ -1161,8 +1161,8 @@ void GUI_View::updateLayout() {
         int w = 0;
         int h = 0;
         
-        for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
-            GUI_View *child = *it;
+        for (int it = 0 ; it < children.size(); ++it) {
+            GUI_View *child = children[it];
             
             if (child->isVisible() == false)
                 continue;
@@ -1183,8 +1183,8 @@ void GUI_View::updateLayout() {
                 child->topLeft.x = (rectView.w - child->rectView.w) / 2;
                 child->rectView.x = rectView.x + child->topLeft.x;
                 
-                for (std::vector<GUI_View *>::iterator iit = it-1; iit >= children.begin(); --iit) {
-                    GUI_View *cc = *iit;
+                for (int iit = it-1; iit >= 0; --iit) {
+                    GUI_View *cc = children[iit];
                     
                     if (cc->isVisible() == false)
                         continue;
@@ -1201,8 +1201,8 @@ void GUI_View::updateLayout() {
                 child->topLeft.x = (rectView.w - child->rectView.w) - ((child->_margin[1] + _padding[1]) * GUI_scale);
                 child->rectView.x = rectView.x + child->topLeft.x;
                 
-                for (std::vector<GUI_View *>::iterator iit = it-1; iit >= children.begin(); --iit) {
-                    GUI_View *cc = *iit;
+                for (int iit = it-1; iit >= 0; --iit) {
+                    GUI_View *cc = children[iit];
                     
                     if (cc->isVisible() == false)
                         continue;
@@ -1231,8 +1231,8 @@ void GUI_View::updateLayout() {
                     child->rectView.w = rectView.w - child->topLeft.x - (_padding[1] + child->_margin[1])* GUI_scale;
                 }
                 else {
-                    for (std::vector<GUI_View *>::iterator iit = it-1; iit >= children.begin(); --iit) {
-                        GUI_View *cc = *iit;
+                    for (int iit = it-1; iit >= 0; --iit) {
+                        GUI_View *cc = children[iit];
                         
                         if (cc->isVisible() == false)
                             continue;
@@ -1247,8 +1247,8 @@ void GUI_View::updateLayout() {
                                 cc->updateLayout();
                                 cc->ow = -1;
                                 x -= cur_width;
-                                for (std::vector<GUI_View *>::iterator iiit = iit+1; iiit < it; iiit++) {
-                                    GUI_View *ccc = *iiit;
+                                for (int iiit = iit+1; iiit < it; iiit++) {
+                                    GUI_View *ccc = children[iiit];
                                     ccc->topLeft.x -= cur_width;
                                     ccc->rectView.x = rectView.x + ccc->topLeft.x;
                                     ccc->updateLayout();
@@ -1316,8 +1316,8 @@ void GUI_View::updateLayout() {
         int w = 0;
         int h = 0;
         
-        for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
-            GUI_View *child = *it;
+        for (int it = 0 ; it < children.size(); ++it) {
+            GUI_View *child = children[it];
             
             if (child->isVisible() == false)
                 continue;
@@ -1338,8 +1338,8 @@ void GUI_View::updateLayout() {
                 child->topLeft.y = (rectView.h - child->rectView.h) / 2;
                 child->rectView.y = rectView.y + child->topLeft.y;
                 
-                for (std::vector<GUI_View *>::iterator iit = it-1; iit >= children.begin(); --iit) {
-                    GUI_View *cc = *iit;
+                for (int iit = it-1; iit >= 0; --iit) {
+                    GUI_View *cc = children[iit];
                     
                     if (cc->isVisible() == false)
                         continue;
@@ -1356,8 +1356,8 @@ void GUI_View::updateLayout() {
                 child->topLeft.y = (rectView.h - child->rectView.h) - ((child->_margin[2] + _padding[2]) * GUI_scale);
                 child->rectView.y = rectView.y + child->topLeft.y;
                 
-                for (std::vector<GUI_View *>::iterator iit = it-1; iit >= children.begin(); --iit) {
-                    GUI_View *cc = *iit;
+                for (int iit = it-1; iit >= 0; --iit) {
+                    GUI_View *cc = children[iit];
                     
                     if (cc->isVisible() == false)
                         continue;
@@ -1386,8 +1386,8 @@ void GUI_View::updateLayout() {
                     child->rectView.h = rectView.h - child->topLeft.y - (_padding[2] + child->_margin[2])* GUI_scale;
                 }
                 else {
-                    for (std::vector<GUI_View *>::iterator iit = it-1; iit >= children.begin(); --iit) {
-                        GUI_View *cc = *iit;
+                    for (int iit = it-1; iit >= 0; --iit) {
+                        GUI_View *cc = children[iit];
                         
                         if (cc->isVisible() == false)
                             continue;
@@ -1402,8 +1402,8 @@ void GUI_View::updateLayout() {
                                 cc->updateLayout();
                                 cc->oh = -1;
                                 y -= cur_height;
-                                for (std::vector<GUI_View *>::iterator iiit = iit+1; iiit < it; iiit++) {
-                                    GUI_View *ccc = *iiit;
+                                for (int iiit = iit+1; iiit < it; iiit++) {
+                                    GUI_View *ccc = children[iiit];
                                     ccc->topLeft.y -= cur_height;
                                     ccc->rectView.y = rectView.y + ccc->topLeft.y;
                                     ccc->updateLayout();

@@ -34,6 +34,7 @@
 		38B66CD721F19350005C22C0 /* GUI_TopBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38B66CD521F19350005C22C0 /* GUI_TopBar.cpp */; };
 		38B66CDE21F1B069005C22C0 /* GUI_StatusBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38B66CDC21F1B069005C22C0 /* GUI_StatusBar.cpp */; };
 		38B66CEF21F21D0F005C22C0 /* GUI_Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38B66CED21F21D0F005C22C0 /* GUI_Menu.cpp */; };
+		38CAB1212208637400732323 /* GUI_Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38CAB1192208637400732323 /* GUI_Config.cpp */; };
 		38EC050D21E9A5CE005F3A3A /* GUI_TextView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38EC050B21E9A5CE005F3A3A /* GUI_TextView.cpp */; };
 		38EC051321E9E4A4005F3A3A /* GUI_Fonts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38EC051121E9E4A4005F3A3A /* GUI_Fonts.cpp */; };
 		38EC05A921EAE48F005F3A3A /* GUI_Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38EC05A721EAE48F005F3A3A /* GUI_Label.cpp */; };
@@ -200,6 +201,7 @@
 		38B66CDD21F1B069005C22C0 /* GUI_StatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_StatusBar.h; sourceTree = "<group>"; };
 		38B66CED21F21D0F005C22C0 /* GUI_Menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Menu.cpp; sourceTree = "<group>"; };
 		38B66CEE21F21D0F005C22C0 /* GUI_Menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_Menu.h; sourceTree = "<group>"; };
+		38CAB1192208637400732323 /* GUI_Config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Config.cpp; sourceTree = "<group>"; };
 		38EC050B21E9A5CE005F3A3A /* GUI_TextView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_TextView.cpp; sourceTree = "<group>"; };
 		38EC050C21E9A5CE005F3A3A /* GUI_TextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_TextView.h; sourceTree = "<group>"; };
 		38EC051121E9E4A4005F3A3A /* GUI_Fonts.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Fonts.cpp; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				38EC05B421EAE6CC005F3A3A /* GUI_Config.h */,
+				38CAB1192208637400732323 /* GUI_Config.cpp */,
 				385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */,
 				385B9A9321CC13A8000E5F90 /* SDL_gui.h */,
 				385B9AB421CCBC4C000E5F90 /* GUI_shapes.cpp */,
@@ -621,6 +624,7 @@
 				385B9AC221CCD379000E5F90 /* SDL2_gfxPrimitives.c in Sources */,
 				385B9AFD21CD07A4000E5F90 /* GUI_View.cpp in Sources */,
 				38B66CCD21F184A0005C22C0 /* GUI_App.cpp in Sources */,
+				38CAB1212208637400732323 /* GUI_Config.cpp in Sources */,
 				38B66CBB21F05E75005C22C0 /* GUI_EditText.cpp in Sources */,
 				385B9B0021CD08CB000E5F90 /* GUI_Utils.cpp in Sources */,
 				385B9A9421CC13A8000E5F90 /* SDL_gui.cpp in Sources */,
