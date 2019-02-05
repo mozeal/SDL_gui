@@ -1,7 +1,7 @@
 # SDL_gui
 GUI library for SDL2
 
-## This is work in progress!
+## ***** This is work in progress! *****
 Stay tuned.
 
 ## Features
