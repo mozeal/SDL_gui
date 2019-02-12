@@ -2,7 +2,6 @@
 #include <iostream>
 #if defined(WIN32)
 #include "..\_VisualC\WinApp\WinApp\resource.h"
-#include <SDL_syswm.h>
 #endif
 #include "SDL_gui.h"
 
@@ -12,7 +11,7 @@
 
 using namespace std;
 
-char title[] = "SDL_gui App";
+char title[] = "0040_GUI_shapes";
 
 int expectedWidth = 960;
 int expectedHeight = 540;
@@ -42,7 +41,12 @@ int main(int argc, char *argv[]) {
     // Create Window
     SDL_Log("request: %d %d\n", expectedWidth, expectedHeight);
 
-    GUI_Init("GUI_View", expectedWidth, expectedHeight);
+    GUI_Init(title, expectedWidth, expectedHeight);
+
+#if defined(WIN32)
+    GUI_SetWindowIcon(IDI_ICON1);
+#endif
+
     GUI_Run(
         [](SDL_Event *ev)  -> bool {
             switch( ev->type ) {

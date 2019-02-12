@@ -20,7 +20,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL2_image", "..\..\..\..\S
 		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68} = {81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL2_ttf", "\\Mac\Home\__Projects\SDL_gui\SDL2_ttf\VisualC\SDL_ttf.vcxproj", "{DDDBD07D-DC76-4AF6-8D02-3E2DEB6EE255}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL2_ttf", "..\..\..\..\SDL2_ttf\VisualC\SDL_ttf.vcxproj", "{DDDBD07D-DC76-4AF6-8D02-3E2DEB6EE255}"
 	ProjectSection(ProjectDependencies) = postProject
 		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68} = {81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}
 	EndProjectSection

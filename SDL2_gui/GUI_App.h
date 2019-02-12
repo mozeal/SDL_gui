@@ -12,10 +12,6 @@
 #include <stdio.h>
 #include <iostream>
 #include <SDL.h>
-#if defined(WIN32)
-#include "resource.h"
-#include <SDL_syswm.h>
-#endif
 #include "SDL_gui.h"
 
 #define GUI_ORIENTATION_PORTRAIT    1

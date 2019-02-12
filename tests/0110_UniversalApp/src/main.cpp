@@ -2,7 +2,6 @@
 #include <iostream>
 #if defined(WIN32)
 #include "..\_VisualC\WinApp\WinApp\resource.h"
-#include <SDL_syswm.h>
 #endif
 #include "SDL_gui.h"
 
@@ -12,17 +11,22 @@
 
 using namespace std;
 
-char title[] = "SDL_gui App";
+char title[] = "0110_UniversalApp";
 
 
 static GUI_App *app;
 static GUI_View *topView;
 
 int main(int argc, char *argv[]) {
-    app = GUI_App::create( "SDL-GUI App", 0, 0, 0, GUI_APP_TOP_BAR | GUI_APP_MENU | GUI_APP_STATUS_BAR );
+    app = GUI_App::create( title, 0, 0, 0, GUI_APP_TOP_BAR | GUI_APP_MENU | GUI_APP_STATUS_BAR );
     if( app == NULL ) {
         exit( 1 );
     }
+
+#if defined(WIN32)
+    GUI_SetWindowIcon(IDI_ICON1);
+#endif
+
     topView = app->topView;
 
     app->menuView->setCallback( [=](GUI_View *v) {

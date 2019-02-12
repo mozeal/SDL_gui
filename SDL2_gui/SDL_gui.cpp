@@ -82,16 +82,6 @@ int GUI_Init( const char* title, int expectedWidth, int expectedHeight ) {
         exit(1);
     }
 
-#if defined(WIN32)
-    HICON hicon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON1));
-	SDL_SysWMinfo info = {0};
-	SDL_VERSION(&info.version);
-	SDL_GetWindowWMInfo(GUI_window, &info);
-	HWND hwnd = info.info.win.window;
-	SendMessage(hwnd, WM_SETICON, ICON_SMALL, (LPARAM)hicon);
-	SendMessage(hwnd, WM_SETICON, ICON_BIG, (LPARAM)hicon);
-#endif
-
     //Create a renderer that will draw to the window, -1 specifies that we want to load whichever
     //video driver supports the flags we're passing
     //Flags: SDL_RENDERER_ACCELERATED: We want to use hardware accelerated rendering
@@ -467,3 +457,17 @@ int GUI_GetStatusBarHeight() {
 #endif
     return statusBarHeight;
 }
+
+#if defined(WIN32)
+void GUI_SetWindowIcon(int icon_id) {
+    if (GUI_window) {
+        HICON hicon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(icon_id));
+        SDL_SysWMinfo info = {0};
+        SDL_VERSION(&info.version);
+        SDL_GetWindowWMInfo(GUI_window, &info);
+        HWND hwnd = info.info.win.window;
+        SendMessage(hwnd, WM_SETICON, ICON_SMALL, (LPARAM)hicon);
+        SendMessage(hwnd, WM_SETICON, ICON_BIG, (LPARAM)hicon);
+    }
+}
+#endif
