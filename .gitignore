@@ -11,25 +11,81 @@
 # Compiled Dynamic libraries
 *.so
 *.dylib
-# *.dll
+#*.dll
 
 # Fortran module files
 *.mod
+*.smod
 
 # Compiled Static libraries
 *.lai
 *.la
 *.a
-*.lib
+#*.lib
 
 # Executables
 *.exe
 *.out
 *.app
 
-xcuserdata
-obj
-bin
-gen
+# Xcode
+.DS_Store
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
+xcuserdata/
+xcshareddata/
+profile/
+*.moved-aside
+DerivedData/
+.idea/
+CMakeFiles/
+*.xcuser*
 
+# Visual Studio
+Release/
+Debug/
+Win32/
+.vs/
+#x64/
+#x86/
+v14/
+v15/
+v16/
+v17/
+v18/
+v19/
+*.sdf
+*.suo
+*.VC.db
+*.VC.VC.opendb
+*.aps
+*.ipch
+
+# Android
+bin/
+gen/
+obj/
+assets/
+jni/
+armeabi-v7a/
+*.Po
+*.Plo
+
+# Emscripten
+*.bc
+
+# Linux
+_cmake/
 autom4te.cache/
+
+# Inno Setup
+Output/

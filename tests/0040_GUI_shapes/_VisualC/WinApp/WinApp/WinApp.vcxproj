@@ -22,7 +22,7 @@
     <ProjectGuid>{5A8388DC-38BA-434D-B422-EE86B37F817B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>WinApp</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -71,19 +71,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>$(SolutionDir)..\..\..\..\..\SDL_gui\libs\boost\lib\vs\$(Platform);$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(Platform);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>$(SolutionDir)..\..\..\..\..\SDL_gui\libs\boost\lib\vs\$(Platform);$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(Platform);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <LibraryPath>$(SolutionDir)..\..\..\..\..\SDL_gui\libs\boost\lib\vs\$(Platform);$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(Platform);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <LibraryPath>$(SolutionDir)..\..\..\..\..\SDL_gui\libs\boost\lib\vs\$(Platform);$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(Platform);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -91,13 +91,13 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\SDL2_gui\libs\boost\include;$(SolutionDir)..\..\..\..\SDL2_gui;$(SolutionDir)..\..\..\..\SDL2\include;$(SolutionDir)..\..\..\..\SDL2_image;$(SolutionDir)..\..\..\..\SDL2_net;$(SolutionDir)..\..\..\..\SDL2_ttf;$(SolutionDir)..\..\..\..\SDL2_gfx;$(SolutionDir)WinApp</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DLL;POCO_STATIC;ZLIB_WINAPI;_CRT_NON_CONFORMING_SWPRINTFS;NOMINMAX;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;DEBUG;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\SDL2_gui\;$(SolutionDir)..\..\..\..\SDL2\include;$(SolutionDir)..\..\..\..\SDL2_image;$(SolutionDir)..\..\..\..\SDL2_ttf_HarfBuzz;$(SolutionDir)..\..\..\..\SDL2_ttf_HarfBuzz\VisualC\external\include\harfbuzz;$(SolutionDir)..\..\..\..\SDL2_gfx</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(SolutionDir)$(Platform)\$(Configuration)\SDL2.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2main.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2_image.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2_ttf.lib;winmm.lib;version.lib;Imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)$(Platform)\$(Configuration)\SDL2.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2main.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2_image.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
     <PreBuildEvent>
@@ -119,13 +119,13 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\SDL2_gui\libs\boost\include;$(SolutionDir)..\..\..\..\SDL2_gui;$(SolutionDir)..\..\..\..\SDL2\include;$(SolutionDir)..\..\..\..\SDL2_image;$(SolutionDir)..\..\..\..\SDL2_net;$(SolutionDir)..\..\..\..\SDL2_ttf;$(SolutionDir)..\..\..\..\SDL2_gfx;$(SolutionDir)WinApp</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DLL;POCO_STATIC;ZLIB_WINAPI;_CRT_NON_CONFORMING_SWPRINTFS;NOMINMAX;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;DEBUG;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\SDL2_gui\;$(SolutionDir)..\..\..\..\SDL2\include;$(SolutionDir)..\..\..\..\SDL2_image;$(SolutionDir)..\..\..\..\SDL2_ttf_HarfBuzz;$(SolutionDir)..\..\..\..\SDL2_ttf_HarfBuzz\VisualC\external\include\harfbuzz;$(SolutionDir)..\..\..\..\SDL2_gfx</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(SolutionDir)$(Platform)\$(Configuration)\SDL2.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2_image.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2main.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2_ttf.lib;winmm.lib;version.lib;Imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)$(Platform)\$(Configuration)\SDL2.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2main.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2_image.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>xcopy "$(SolutionDir)..\..\data" "$(TargetDir)data" /s /e /i /d /k /y</Command>
@@ -148,14 +148,15 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\..\SDL_gui\libs\boost\include;$(SolutionDir)..\..\..\..\..\SDL_gui\SDL_gui;$(SolutionDir)..\..\..\..\..\SDL\include;$(SolutionDir)..\..\..\..\..\SDL_image;$(SolutionDir)..\..\..\..\..\SDL_net;$(SolutionDir)..\..\..\..\..\SDL_ttf</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DLL;POCO_STATIC;ZLIB_WINAPI;_CRT_NON_CONFORMING_SWPRINTFS;NOMINMAX;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\SDL2_gui\;$(SolutionDir)..\..\..\..\SDL2\include;$(SolutionDir)..\..\..\..\SDL2_image;$(SolutionDir)..\..\..\..\SDL2_ttf_HarfBuzz;$(SolutionDir)..\..\..\..\SDL2_ttf_HarfBuzz\VisualC\external\include\harfbuzz;$(SolutionDir)..\..\..\..\SDL2_gfx</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)$(Platform)\$(Configuration)\SDL2.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2main.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2_image.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>xcopy "$(SolutionDir)..\..\data" "$(TargetDir)data" /s /e /i /d /k /y</Command>
@@ -178,14 +179,15 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\..\SDL_gui\libs\boost\include;$(SolutionDir)..\..\..\..\..\SDL_gui\SDL_gui;$(SolutionDir)..\..\..\..\..\SDL\include;$(SolutionDir)..\..\..\..\..\SDL_image;$(SolutionDir)..\..\..\..\..\SDL_net;$(SolutionDir)..\..\..\..\..\SDL_ttf</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DLL;POCO_STATIC;ZLIB_WINAPI;_CRT_NON_CONFORMING_SWPRINTFS;NOMINMAX;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\..\SDL2_gui\;$(SolutionDir)..\..\..\..\SDL2\include;$(SolutionDir)..\..\..\..\SDL2_image;$(SolutionDir)..\..\..\..\SDL2_ttf_HarfBuzz;$(SolutionDir)..\..\..\..\SDL2_ttf_HarfBuzz\VisualC\external\include\harfbuzz;$(SolutionDir)..\..\..\..\SDL2_gfx</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)$(Platform)\$(Configuration)\SDL2.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2main.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2_image.lib;$(SolutionDir)$(Platform)\$(Configuration)\SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>xcopy "$(SolutionDir)..\..\data" "$(TargetDir)data" /s /e /i /d /k /y</Command>

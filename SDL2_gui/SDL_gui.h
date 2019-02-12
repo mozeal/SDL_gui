@@ -14,8 +14,8 @@
 #include <SDL_ttf.h>
 #include <stdio.h>
 #include <iostream>
+
 #if defined(WIN32)
-#include "resource.h"
 #include <SDL_syswm.h>
 #endif
 
@@ -90,5 +90,8 @@ typedef struct __GUI_USER_MESSAGE {
 
 bool GUI_PostMessage(Uint32 msg, int param1, int param2, void *extra1, void *extra2);
 
+#if defined(WIN32)
+void GUI_SetWindowIcon(int icon_id);
+#endif
 
 #endif /* SDL_gui_hpp */

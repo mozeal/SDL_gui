@@ -133,7 +133,7 @@ int main(int argc, char *argv[]) {
 #endif
     int cx = (dm.w - expectedWidth) / 2;
     int cy = (dm.h - expectedHeight) / 2;
-    window = SDL_CreateWindow("0010_ClearScreen", cx, cy, expectedWidth, expectedHeight, style);
+    window = SDL_CreateWindow("0030_SDL_ttf_HarfBuzz", cx, cy, expectedWidth, expectedHeight, style);
 
     if (window == NULL) {
         printf("SDL_CreateRenderer Error\n");
