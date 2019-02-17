@@ -54,9 +54,10 @@ void GUI_TextView::updateContent() {
     //load that surface into a texture
     SDL_Surface *surf;
     
-    if( title.length() > 0 )
-        surf = TTF_RenderUTF8_Blended(font, title.c_str(), cWhite);
-    else
+    if (title.length() > 0) {
+        std::string str = title.substr(textSelectionScrollIndex);
+        surf = TTF_RenderUTF8_Blended(font, str.c_str(), cWhite);
+    }  else
         surf = TTF_RenderUTF8_Blended(font, " ", cWhite);
     if (surf == NULL){
         GUI_Log("Could not create text surface\n");

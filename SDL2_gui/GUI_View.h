@@ -44,6 +44,7 @@ protected:
     
     static GUI_View *lastInteractView;
     static GUI_View *lastFocusView;
+    static GUI_View *lastEditTextView;
 
     bool    _visible;
     bool    _enable;
@@ -133,6 +134,14 @@ public:
     int dragMaxY;
 
     bool isMouseCapturing;
+
+    int textSelectionScrollIndex;
+    int textSelectionStartIndex;
+    int textSelectionEndIndex;
+    int textSelectionFontSize;
+    bool textSelectionIsSelected();
+    void textSelectionGetSelectedIndex(int* startIndex, int* endIndex);
+    virtual void textSelectionCancel();
 
     virtual void printf( const char * format, ...);
     

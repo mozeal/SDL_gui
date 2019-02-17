@@ -25,6 +25,7 @@ SDL_Renderer *GUI_renderer = NULL;
 SDL_Window *GUI_window = NULL;
 GUI_View *GUI_topView = NULL;
 GUI_View * _GUI_mouseCapturedView = NULL;
+GUI_EditText *GUI_lastEditTextView = NULL;
 
 std::function<void( int width, int height )>GUI_onWindowSizeChange = NULL;
 

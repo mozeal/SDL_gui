@@ -80,7 +80,10 @@ propagate_sibling_on_mouseup_outside(true),
 drag_outside_parent(false),
 in_scroll_bed(false),
 _saftyMarginFlag(0),
-_saftyPaddingFlag(0)
+_saftyPaddingFlag(0),
+textSelectionScrollIndex(0),
+textSelectionStartIndex(0),
+textSelectionEndIndex(0)
 {
     ox = x;
     oy = y;
@@ -611,7 +614,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
 #endif
         case SDL_TEXTINPUT:
         {
-            if( isFocus() == false ) {
+            if( !isFocus() ) {
                 if( lastFocusView ) {
                     lastFocusView->eventHandler(event);
                     return true;
@@ -1562,4 +1565,24 @@ void GUI_View::printf( const char * format, ...) {
     va_end(args);
 
     setTitle( std::string(buffer) );
+}
+
+bool GUI_View::textSelectionIsSelected() {
+    return (textSelectionStartIndex != textSelectionEndIndex);
+}
+
+void GUI_View::textSelectionGetSelectedIndex(int* startIndex, int* endIndex) {
+    *startIndex = textSelectionStartIndex;
+    *endIndex = textSelectionEndIndex;
+
+    if (*endIndex < *startIndex) {
+        *startIndex = textSelectionEndIndex;
+        *endIndex = textSelectionStartIndex;
+    }
+}
+
+void GUI_View::textSelectionCancel() {
+    textSelectionScrollIndex = 0;
+    textSelectionStartIndex = 0;
+    textSelectionEndIndex = textSelectionStartIndex;
 }

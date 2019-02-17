@@ -63,6 +63,7 @@ extern SDL_Renderer *GUI_renderer;
 extern SDL_Window *GUI_window;
 extern GUI_View *GUI_topView;
 //extern GUI_View * GUI_mouseCapturedView;
+extern GUI_EditText *GUI_lastEditTextView;
 
 extern int GUI_physicalWindowWidth;
 extern int GUI_physicalWindowHeight;
