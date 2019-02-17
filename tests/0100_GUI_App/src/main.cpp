@@ -22,6 +22,7 @@ static GUI_View *inputBar;
 static GUI_EditText *inputBox;
 
 GUI_PopupView *popup = NULL;
+extern GUI_EditText *GUI_lastEditTextView;
 
 void createPopup() {
     if( !popup ) {
@@ -293,6 +294,8 @@ void createMenuBar() {
     menuEdit->getPopupMenu()->addSimpleMenu( "Cut" );
     menuEdit->getPopupMenu()->addSimpleMenu( "Copy" );
     menuEdit->getPopupMenu()->addSimpleMenu( "Paste" );
+    menuEdit->getPopupMenu()->addSimpleMenu( "Delete", true );
+    menuEdit->getPopupMenu()->addSimpleMenu( "Select All" );
 
     GUI_MenuBarItem * menuView = app->menuBar->addPopupMenu( "View", topView );
     menuView->getPopupMenu()->addSimpleMenu( "Message Box" );
@@ -359,6 +362,31 @@ int main(int argc, char *argv[]) {
         else if( str == "Text Input Box" ) {
             createTextInputBox();
         }
+        else if (str == "Cut") {
+            if (GUI_lastEditTextView) {
+                GUI_lastEditTextView->textSelectionCut();
+            }
+        }
+        else if (str == "Copy") {
+            if (GUI_lastEditTextView) {
+                GUI_lastEditTextView->textSelectionCopy();
+            }
+        }
+        else if (str == "Paste") {
+            if (GUI_lastEditTextView) {
+                GUI_lastEditTextView->textSelectionPaste();
+            }
+        }
+        else if (str == "Delete") {
+            if (GUI_lastEditTextView) {
+                GUI_lastEditTextView->textSelectionDelete();
+            }
+        }
+        else if (str == "Select All") {
+            if (GUI_lastEditTextView) {
+                GUI_lastEditTextView->textSelectionSelectAll();
+            }
+        }
     });
 
     app->menuView->setCallback( [=](GUI_View *v) {
@@ -384,7 +412,11 @@ int main(int argc, char *argv[]) {
     inputBar->setPadding( 5, 10, 5, 10 );
     inputBox = GUI_EditText::create(inputBar, "", 0, 0, -1, 32);
     inputBox->setBorder( 1 );
-    
+
+#if defined(WIN32)
+    inputBox->setContextualMenu(IDR_MENU1, ID_MENU1_CUT, ID_MENU1_COPY, ID_MENU1_PASTE, ID_MENU1_DELETE, ID_MENU1_SELECT_ALL);
+#endif
+
     auto subContentView = GUI_View::create( app->contentView, "Sub-content", 0, 0, -1, -1 );
     subContentView->setLayout(GUI_LAYOUT_HORIZONTAL );
     subContentView->setBorder( 0 );
