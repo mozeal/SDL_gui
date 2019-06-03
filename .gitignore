@@ -89,3 +89,5 @@ autom4te.cache/
 
 # Inno Setup
 Output/
+
+Jimmy_SDL_gui_app/
