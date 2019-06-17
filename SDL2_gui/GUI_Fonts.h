@@ -12,17 +12,17 @@
 #include <stdio.h>
 #include <string>
 #include <map>
-#include <SDL_ttf.h>
+#include <SDL2/SDL_ttf.h>
 
 class GUI_Fonts {
 protected:
 
 public:
     static std::map<std::string, TTF_Font *> font_map;
-    
+
     GUI_Fonts();
     ~GUI_Fonts();
-    
+
     static TTF_Font *getFont( std::string fontName, int fontSize );
     static void clear();
 };

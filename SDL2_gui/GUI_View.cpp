@@ -89,10 +89,10 @@ textSelectionEndIndex(0)
     oy = y;
     ow = w;
     oh = h;
-    
+
     setBorder(1);
     setCorner(0);
-    
+
     if (t) {
         title = std::string(t);
     }
@@ -103,9 +103,9 @@ textSelectionEndIndex(0)
 
 GUI_View::~GUI_View() {
     //GUI_Log( "Kill %s\n", title.c_str() );
-    
+
     delete_all_children();
-    
+
     if( parent ) {
         parent->remove_child(this);
     }
@@ -124,10 +124,10 @@ void GUI_View::update() {
         }
         int x = moveOriginX + ((moveTargetX-moveOriginX) * (float)moveTime / (float)moveDuration);
         int y = moveOriginY + ((moveTargetY-moveOriginY) * (float)moveTime / (float)moveDuration);
-        
+
         int dx = x - topLeft.x;
         int dy = y - topLeft.y;
-        
+
         move_topLeft( dx, dy );
     }
 }
@@ -150,10 +150,10 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             rectView.y = oy * GUI_scale;
             rectView.w = ow == -1 ? ow : ow * GUI_scale;
             rectView.h = oh == -1 ? oh : oh * GUI_scale;
-            
+
             setSaftyPadding();
             setSaftyMargin();
-            
+
             if( parent ) {
                 parent->updateLayout();
             }
@@ -194,7 +194,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             //GUI_Log( "Finger DOWN %s\n", title.c_str() );
             SDL_TouchFingerEvent e = event->tfinger;
             SDL_FingerID fid = e.fingerId;
-            
+
             int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
             int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
 
@@ -257,7 +257,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             //GUI_Log( "Mouse DOWN %s\n", title.c_str() );
 
             SDL_MouseButtonEvent e = event->button;
-            
+
             int x = (int)(e.x*GUI_mouseScale);
             int y = (int)(e.y*GUI_mouseScale);
 
@@ -268,7 +268,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 break;
             }
             ReverseRecursive = true;
-            
+
             if( hitTest(x, y, false) ) {
                 //GUI_Log( "Hit %s\n", title.c_str() );
                 if( mouseReceive ) {
@@ -320,18 +320,18 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             SDL_TouchFingerEvent e = event->tfinger;
             SDL_FingerID fid = e.fingerId;
             //GUI_Log( "%i\n", fid );
-            
+
             int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
             int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
-            
+
             if( !mouseReceive ) {
                 BreakRecursive = true;
                 BreakSiblingPropagate = false;
                 break;
             }
-            
+
             ReverseRecursive = true;
-            
+
             if (_dragging) {
                 //GUI_Log( "Finger DRAGGING %s\n", title.c_str() );
                 if (parent) {
@@ -346,17 +346,17 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 if( drag_limit ) {
                     int tlX = topLeft.x + dx;
                     int tlY = topLeft.y + dy;
-                    
+
                     if( tlY < dragMinY * GUI_scale )
                         tlY = dragMinY * GUI_scale;
                     if( tlY > dragMaxY * GUI_scale )
                         tlY = dragMaxY * GUI_scale;
-                    
+
                     if( tlX < dragMinX * GUI_scale )
                         tlX = dragMinX * GUI_scale;
                     if( tlX > dragMaxX * GUI_scale )
                         tlX = dragMaxX * GUI_scale;
-                    
+
                     dy = tlY - topLeft.y;
                     dx = tlX - topLeft.x;
                 }
@@ -385,7 +385,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                     }
                 }
                 //GUI_Log( "Mouse motion %s\n", title.c_str() );
-                
+
                 BreakSiblingPropagate = true;
                 setInteract( true );
                 if( parent ) {
@@ -403,10 +403,10 @@ bool GUI_View::eventHandler(SDL_Event*event) {
         case SDL_MOUSEMOTION:
         {
             SDL_MouseMotionEvent e = event->motion;
-            
+
             int x = (int)(e.x*GUI_mouseScale);
             int y = (int)(e.y*GUI_mouseScale);
-            
+
             if( !mouseReceive ) {
                 BreakRecursive = true;
                 BreakSiblingPropagate = false;
@@ -429,17 +429,17 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 if( drag_limit ) {
                     int tlX = topLeft.x + dx;
                     int tlY = topLeft.y + dy;
-                    
+
                     if( tlY < dragMinY * GUI_scale )
                         tlY = dragMinY * GUI_scale;
                     if( tlY > dragMaxY * GUI_scale )
                         tlY = dragMaxY * GUI_scale;
-                    
+
                     if( tlX < dragMinX * GUI_scale )
                         tlX = dragMinX * GUI_scale;
                     if( tlX > dragMaxX * GUI_scale )
                         tlX = dragMaxX * GUI_scale;
-                    
+
                     dy = tlY - topLeft.y;
                     dx = tlX - topLeft.x;
                 }
@@ -493,7 +493,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             //SDL_MouseButtonEvent e = event->button;
             int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
             int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
-            
+
             if( !mouseReceive ) {
                 BreakRecursive = true;
                 BreakSiblingPropagate = false;
@@ -506,7 +506,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 GUI_SetMouseCapture(NULL);
                 return true;
             }
-            
+
             if( hitTest(x, y, false) ) {
                 //GUI_Log( "Finger UP IN %s\n", title.c_str() );
                 BreakSiblingPropagate = true;
@@ -545,7 +545,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 }
                 BreakRecursive = true;
             }
-            
+
             break;
         }
 #endif
@@ -556,7 +556,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
             SDL_MouseButtonEvent e = event->button;
             int x = (int)(e.x*GUI_mouseScale);
             int y = (int)(e.y*GUI_mouseScale);
-            
+
             if( !mouseReceive ) {
                 BreakRecursive = true;
                 BreakSiblingPropagate = false;
@@ -569,7 +569,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 GUI_SetMouseCapture(NULL);
                 return true;
             }
-            
+
             if( hitTest(x, y, false) ) {
                 //GUI_Log( "Mouse UP IN %s\n", title.c_str() );
                 BreakSiblingPropagate = true;
@@ -608,7 +608,7 @@ bool GUI_View::eventHandler(SDL_Event*event) {
                 }
                 BreakRecursive = true;
             }
-            
+
             break;
         }
 #endif
@@ -654,15 +654,15 @@ bool GUI_View::eventHandler(SDL_Event*event) {
 void GUI_View::move_topLeft(int dx, int dy) {
     topLeft.x += dx;
     topLeft.y += dy;
-    
+
     rectView.x += dx;
     rectView.y += dy;
-    
+
     if( _align & GUI_ALIGN_ABSOLUTE ) {
         //ox = topLeft.x;
         //oy = topLeft.y;
     }
-    
+
     for (int it = 0 ; it < children.size(); ++it) {
         GUI_View *child = children[it];
         child->move_rectView(dx, dy);
@@ -672,7 +672,7 @@ void GUI_View::move_topLeft(int dx, int dy) {
 void GUI_View::move_rectView(int dx, int dy) {
     rectView.x += dx;
     rectView.y += dy;
-    
+
     for (int it = 0 ; it < children.size(); ++it) {
         GUI_View *child = children[it];
         child->move_rectView(dx, dy);
@@ -697,7 +697,7 @@ void GUI_View::move( int dx, int dy, int time ) {
 void GUI_View::moveTo( int x, int y, int time ) {
     int dx = x - rectView.x / GUI_scale;
     int dy = y - rectView.y / GUI_scale;
-    
+
     move( dx, dy, time );
 }
 
@@ -706,9 +706,9 @@ void GUI_View::add_child(GUI_View *child) {
         child->parent->remove_child( child );
     }
     child->parent = this;
-    
+
     children.push_back(child);
-    
+
     updateLayout();
 }
 
@@ -752,13 +752,13 @@ void GUI_View::predraw() {
     int f = 0;
     if( isFocus() && focusBorder > 0 ) {
         f = focusBorder * GUI_scale;
-        
+
         if (parent) {
             GUI_Rect parent_clip = GUI_Rect(parent->rectClip);
             parent_clip.x -= topLeft.x;
             parent_clip.y -= topLeft.y;
             SDL_IntersectRect(GUI_MakeRect(0, 0, rectView.w+(f*2), rectView.h+(f*2)), &parent_clip, &rectClip);
-            
+
             // Bug of SDL
             if (rectClip.w < 0)
                 rectClip.w = 0;
@@ -767,16 +767,16 @@ void GUI_View::predraw() {
         } else {
             rectClip = GUI_Rect(0, 0, rectView.w, rectView.h);
         }
-        
+
 #ifdef __EMSCRIPTENx__
         SDL_RenderSetViewport(GUI_renderer, GUI_MakeRect(rectView.x, GUI_windowHeight*GUI_scale - rectView.y - rectView.h, rectView.w, rectView.h));
 #else
         SDL_RenderSetViewport(GUI_renderer, GUI_MakeRect(rectView.x-f, rectView.y-f, rectView.w+(f*2), rectView.h+(f*2)));
 #endif
-        
+
 #ifdef __EMSCRIPTENx__
         float magic_y = GUI_windowHeight*GUI_scale - rectView.y - rectView.h;
-        
+
         SDL_RenderSetClipRect(GUI_renderer, GUI_MakeRect(rectView.x + rectClip.x,
                                                          0 - magic_y + rectClip.y,
                                                          rectClip.w,
@@ -789,13 +789,13 @@ void GUI_View::predraw() {
 #endif
         drawFocus();
     }
-    
+
     if (parent) {
         GUI_Rect parent_clip = GUI_Rect(parent->rectClip);
         parent_clip.x -= topLeft.x;
         parent_clip.y -= topLeft.y;
         SDL_IntersectRect(GUI_MakeRect(0, 0, rectView.w, rectView.h), &parent_clip, &rectClip);
-        
+
         // Bug of SDL
         if (rectClip.w < 0)
             rectClip.w = 0;
@@ -813,7 +813,7 @@ void GUI_View::predraw() {
 
 #ifdef __EMSCRIPTENx__
     float magic_y = GUI_windowHeight*GUI_scale - rectView.y - rectView.h;
-    
+
     SDL_RenderSetClipRect(GUI_renderer, GUI_MakeRect(rectView.x + rectClip.x,
                                                      0 - magic_y + rectClip.y,
                                                      rectClip.w,
@@ -834,7 +834,7 @@ void GUI_View::draw() {
 void GUI_View::drawInteract() {
     if( showInteract && getInteract() ) {
         GUI_Rect *rect = GUI_MakeRect(0, 0, rectView.w, rectView.h);
-        
+
         if (getCorner() != 0) {
             GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, getCorner() * GUI_scale, cHightLightInteract);
         } else {
@@ -847,21 +847,21 @@ void GUI_View::postdraw() {
     drawInteract();
     int border = getBorder();
     int corner = getCorner();
-    
+
     if (border > 0) {
         GUI_Rect r = GUI_Rect(border, border, rectView.w - (2 * border), rectView.h - (2 * border));
-        
+
         if (corner) {
             GUI_DrawRoundRect(0, 0, rectView.w, rectView.h, corner * GUI_scale, _borderColor);
         } else {
             GUI_DrawRect(0, 0, rectView.w, rectView.h, _borderColor);
         }
-        
+
         SDL_IntersectRect(&r, &rectClip, &rectClip);
-        
+
 #ifdef __EMSCRIPTENx__
         float magic_y = GUI_windowHeight*GUI_scale - rectView.y - rectView.h;
-        
+
         SDL_RenderSetClipRect(GUI_renderer, GUI_MakeRect(rectView.x + rectClip.x,
                                                          0 - magic_y + rectClip.y,
                                                          rectClip.w,
@@ -879,14 +879,37 @@ void GUI_View::postdraw() {
 void GUI_View::clear(GUI_Rect *rect) {
     if (!rect)
         rect = GUI_MakeRect(0, 0, rectView.w, rectView.h);
-    
-    if (_backgroundColor.a != 0) {
-        int corner = getCorner();
-        if (corner != 0) {
-            GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, corner * GUI_scale, _backgroundColor);
-        } else {
+
+    int corner(getCorner());
+    if(mBackgroundMode == eSolidColor)
+    {
+        if(_backgroundColor.a == 0)
+            return;
+        if(!corner)
             GUI_FillRect(rect->x, rect->y, rect->w, rect->h, _backgroundColor);
-        }
+        else
+            GUI_FillRoundRect(rect->x, rect->y, rect->w, rect->h, corner * GUI_scale, _backgroundColor);
+    }
+    else if(mBackgroundMode & eHorizontalLinearGradient)
+    {
+        if(!corner)
+            GUI_FillRectWithGradientHorizontal(rect, _backgroundGradientColor1, _backgroundGradientColor2);
+        else
+            GUI_FillRectWithGradientHorizontal(rect, _backgroundGradientColor1, _backgroundGradientColor2, corner * GUI_scale);
+    }
+    else if(mBackgroundMode & eVerticalLinearGradient)
+    {
+        if(!corner)
+            GUI_FillRectWithGradientVertical(rect, _backgroundGradientColor1, _backgroundGradientColor2);
+        else
+            GUI_FillRectWithGradientVertical(rect, _backgroundGradientColor1, _backgroundGradientColor2, corner * GUI_scale);
+    }
+    else if(mBackgroundMode & eTexture)
+    {
+        if(!corner)
+            GUI_FillRectWithTexture(rect, _backgroundTexture);
+        else
+            GUI_FillRectWithTexture(rect, _backgroundTexture, corner * GUI_scale);
     }
 }
 
@@ -895,9 +918,9 @@ void GUI_View::drawFocus() {
         return;
     if (focusBorder <= 0 )
         return;
-    
+
     GUI_Rect *rect = GUI_MakeRect(0, 0, rectView.w+(focusBorder*GUI_scale*2), rectView.h+(focusBorder*GUI_scale*2));
-    
+
     if (_backgroundColor.a != 0) {
         SDL_Color color = _backgroundColor;
         color.a = 96;
@@ -916,7 +939,7 @@ void GUI_View::drawFocus() {
 bool GUI_View::toTop() {
     if( !parent )
         return false;
-    
+
     for (int it = 0 ; it < parent->children.size(); ++it) {
         if( this == parent->children[it] ) {
             parent->children.erase(parent->children.begin() + it );
@@ -930,7 +953,7 @@ bool GUI_View::toTop() {
 bool GUI_View::toBack() {
     if( !parent )
         return false;
-    
+
     for (int it = 0 ; it < parent->children.size(); ++it) {
         if( this == parent->children[it] ) {
             parent->children.erase(parent->children.begin()+ it );
@@ -989,7 +1012,7 @@ void GUI_View::setPadding(int p0, int p1, int p2, int p3) {
     _padding[1] = p1;
     _padding[2] = p2;
     _padding[3] = p3;
-    
+
     updateSize();
     this->updateLayout();
 }
@@ -999,7 +1022,7 @@ void GUI_View::setMargin(int p0, int p1, int p2, int p3) {
     _margin[1] = p1;
     _margin[2] = p2;
     _margin[3] = p3;
-    
+
     if (parent) {
         parent->updateLayout();
         updateLayout();
@@ -1012,11 +1035,11 @@ GUI_View *GUI_View::hitTest(int x, int y, bool bRecursive) {
         //GUI_Log( "Invisible %s\n", title.c_str() );
         return 0;
     }
-    
+
     SDL_Point pt;
     pt.x = x;
     pt.y = y;
-    
+
     if (SDL_PointInRect(&pt, &rectView)) {
         // GUI_Log( "Hit in %s\n", title.c_str() );
         if (bRecursive) {
@@ -1024,7 +1047,7 @@ GUI_View *GUI_View::hitTest(int x, int y, bool bRecursive) {
                 for (int it = children.size()-1 ; it >= 0; --it) {
                     GUI_View *child = children[it];
                     //GUI_Log( "Hit2\n" );
-                    
+
                     GUI_View *wb = child->hitTest(x, y, bRecursive);
                     if (wb) {
                         //GUI_Log( "Hitted %s\n", wb->title.c_str());
@@ -1044,17 +1067,17 @@ void GUI_View::updateSize() {
 void GUI_View::updateLayout() {
     //GUI_Log( "UpdateLayout %s\n", title.c_str() );
     updateSize();
-    
+
     if( this == GUI_topView ) {
         if (ox == 0)
             rectView.x = _margin[3] * GUI_scale;
-        
+
         if (oy == 0)
             rectView.y = _margin[0] * GUI_scale;
-        
+
         if (ow == -1)
             rectView.w = (GUI_windowWidth - _margin[1]) * GUI_scale - rectView.x;
-        
+
         if (oh == -1)
             rectView.h = (GUI_windowHeight - _margin[0]) * GUI_scale - rectView.y;
     }
@@ -1062,10 +1085,10 @@ void GUI_View::updateLayout() {
         bool sz_changed = false;
         for (std::vector<GUI_View *>::iterator it = children.begin() ; it != children.end(); ++it) {
             GUI_View *child = *it;
-            
+
             if (child->isVisible() == false)
                 continue;
-            
+
             if (child->_align & GUI_ALIGN_RIGHT) {
                 child->topLeft.x = rectView.w - child->rectView.w - (child->_margin[1] + _padding[1]) * GUI_scale;
                 child->rectView.x = rectView.x + child->topLeft.x;
@@ -1083,23 +1106,23 @@ void GUI_View::updateLayout() {
                         child->topLeft.x = child->ox * GUI_scale;
                     }
                 }
-                
+
                 child->rectView.x = rectView.x + child->topLeft.x;
-                
+
                 if (child->ow == -1) {
                     child->rectView.w = rectView.w - child->topLeft.x - (child->_margin[1] + _padding[1]) * GUI_scale;
                 }
             }
-            
+
             if (ow == 0) {
                 int wwx = (child->rectView.w + (_padding[1] + _padding[3] + child->_margin[1] + child->_margin[3])*GUI_scale); // + (border * 2);
-                
+
                 if (wwx != rectView.w) {
                     rectView.w = wwx;
                     sz_changed = true;
                 }
             }
-            
+
             if (child->_align & GUI_ALIGN_BOTTOM) {
                 child->topLeft.y = rectView.h - child->rectView.h - (child->_margin[2] + _padding[2]) * GUI_scale;
                 child->rectView.y = rectView.y + child->topLeft.y;
@@ -1117,23 +1140,23 @@ void GUI_View::updateLayout() {
                         child->topLeft.y = child->oy * GUI_scale;
                     }
                 }
-                
+
                 child->rectView.y = rectView.y + child->topLeft.y;
-                
+
                 if (child->oh == -1) {
                     child->rectView.h = rectView.h - child->topLeft.y - (child->_margin[2] + _padding[2]) * GUI_scale;
                 }
             }
-            
+
             if (oh == 0) {
                 int hhx = (child->rectView.h + (_padding[0] + _padding[2] + child->_margin[0] + child->_margin[2])*GUI_scale); // + (border * 2);
-                
+
                 if (hhx != rectView.h) {
                     rectView.h = hhx;
                     sz_changed = true;
                 }
             }
-            
+
             if (ow == 0 || oh == 0) {
                 if (sz_changed) {
                     int oww = ow;
@@ -1141,41 +1164,41 @@ void GUI_View::updateLayout() {
                     ow = rectView.w;
                     oh = rectView.h;
                     //updateSubLayout();
-                    
+
                     if (_align & (GUI_ALIGN_CENTER | GUI_ALIGN_RIGHT | GUI_ALIGN_BOTTOM | GUI_ALIGN_VCENTER)) {
                         if (parent) {
                             parent->updateLayout();
                         }
                     }
-                    
+
                     ow = oww;
                     oh = ohh;
                 }
             }
-            
+
             child->updateLayout();
         }
     }
     if (_layout == GUI_LAYOUT_HORIZONTAL) {
         int x = 0;
-        
+
         x += _padding[3] * GUI_scale;
-        
+
         int w = 0;
         int h = 0;
-        
+
         for (int it = 0 ; it < children.size(); ++it) {
             GUI_View *child = children[it];
-            
+
             if (child->isVisible() == false)
                 continue;
-            
+
             if (child->_align & GUI_ALIGN_ABSOLUTE) {
                 //child->topLeft.x = child->ox * GUI_scale;
                 //child->topLeft.y = child->oy * GUI_scale;
                 child->rectView.x = rectView.x + child->topLeft.x;
                 child->rectView.y = rectView.y + child->topLeft.y;
-                
+
                 if (child->oh == -1) {
                     child->rectView.h = rectView.h - (_padding[2] + child->_margin[2] + _padding[0] + child->_margin[0]) * GUI_scale;
                 }
@@ -1185,13 +1208,13 @@ void GUI_View::updateLayout() {
             } else if (child->_align & GUI_ALIGN_CENTER) {
                 child->topLeft.x = (rectView.w - child->rectView.w) / 2;
                 child->rectView.x = rectView.x + child->topLeft.x;
-                
+
                 for (int iit = it-1; iit >= 0; --iit) {
                     GUI_View *cc = children[iit];
-                    
+
                     if (cc->isVisible() == false)
                         continue;
-                    
+
                     if (cc->_align & GUI_ALIGN_CENTER) {
                         cc->topLeft.x -= child->rectView.w / 2 + ((child->_margin[3] + cc->_margin[1]) * GUI_scale) / 2;
                         cc->rectView.x = rectView.x + cc->topLeft.x;
@@ -1203,17 +1226,17 @@ void GUI_View::updateLayout() {
             } else if (child->_align & GUI_ALIGN_RIGHT) {
                 child->topLeft.x = (rectView.w - child->rectView.w) - ((child->_margin[1] + _padding[1]) * GUI_scale);
                 child->rectView.x = rectView.x + child->topLeft.x;
-                
+
                 for (int iit = it-1; iit >= 0; --iit) {
                     GUI_View *cc = children[iit];
-                    
+
                     if (cc->isVisible() == false)
                         continue;
-                    
+
                     if (cc->_align & GUI_ALIGN_RIGHT) {
                         cc->topLeft.x -= child->rectView.w + (child->_margin[1] + child->_margin[3]) * GUI_scale;
                         cc->rectView.x = rectView.x + cc->topLeft.x;
-                        
+
                         cc->updateLayout();
                     } else if (cc->_align & GUI_ALIGN_CENTER) {
                     } else {
@@ -1229,17 +1252,17 @@ void GUI_View::updateLayout() {
             } else {
                 child->topLeft.x = x + child->_margin[3] * GUI_scale;
                 child->rectView.x = rectView.x + child->topLeft.x;
-                
+
                 if (child->ow == -1) {
                     child->rectView.w = rectView.w - child->topLeft.x - (_padding[1] + child->_margin[1])* GUI_scale;
                 }
                 else {
                     for (int iit = it-1; iit >= 0; --iit) {
                         GUI_View *cc = children[iit];
-                        
+
                         if (cc->isVisible() == false)
                             continue;
-                        
+
                         if (cc->_align & GUI_ALIGN_RIGHT) {
                         } else if (cc->_align & GUI_ALIGN_CENTER) {
                         } else {
@@ -1265,17 +1288,17 @@ void GUI_View::updateLayout() {
                         }
                     }
                 }
-                
+
                 x += child->rectView.w + (child->_margin[1] + child->_margin[3]) * GUI_scale;
             }
-            
+
             w += child->rectView.w + (child->_margin[3] + child->_margin[1]) * GUI_scale;
-            
+
             int hh = child->rectView.h + (child->_margin[0] + child->_margin[2]) * GUI_scale;
             if( hh > h ) {
                 h = hh;
             }
-            
+
             if (child->_align & GUI_ALIGN_ABSOLUTE) {
             } else if (child->_align & GUI_ALIGN_BOTTOM) {
                 child->topLeft.y = rectView.h - child->rectView.h - (_padding[2] + child->_margin[2])*GUI_scale;
@@ -1286,7 +1309,7 @@ void GUI_View::updateLayout() {
             } else {
                 child->topLeft.y = (_padding[0] + child->_margin[0]) * GUI_scale;
                 child->rectView.y = rectView.y + child->topLeft.y;
-                
+
                 if (child->oh == -1) {
                     child->rectView.h = rectView.h - (_padding[0] + child->_margin[0] + _padding[2] + child->_margin[2]) * GUI_scale;
                 }
@@ -1313,24 +1336,24 @@ void GUI_View::updateLayout() {
         }
     } else if (_layout == GUI_LAYOUT_VERTICAL) {
         int y = 0;
-        
+
         y += _padding[0] * GUI_scale;
-        
+
         int w = 0;
         int h = 0;
-        
+
         for (int it = 0 ; it < children.size(); ++it) {
             GUI_View *child = children[it];
-            
+
             if (child->isVisible() == false)
                 continue;
-            
+
             if (child->_align & GUI_ALIGN_ABSOLUTE) {
                 //child->topLeft.x = child->ox * GUI_scale;
                 //child->topLeft.y = child->oy * GUI_scale;
                 child->rectView.x = rectView.x + child->topLeft.x;
                 child->rectView.y = rectView.y + child->topLeft.y;
-                
+
                 if (child->oh == -1) {
                     child->rectView.h = rectView.h - (_padding[2] + child->_margin[2] + _padding[0] + child->_margin[0]) * GUI_scale;
                 }
@@ -1340,13 +1363,13 @@ void GUI_View::updateLayout() {
             } else if (child->_align & GUI_ALIGN_VCENTER) {
                 child->topLeft.y = (rectView.h - child->rectView.h) / 2;
                 child->rectView.y = rectView.y + child->topLeft.y;
-                
+
                 for (int iit = it-1; iit >= 0; --iit) {
                     GUI_View *cc = children[iit];
-                    
+
                     if (cc->isVisible() == false)
                         continue;
-                    
+
                     if (cc->_align & GUI_ALIGN_VCENTER) {
                         cc->topLeft.y -= child->rectView.h / 2 + ((child->_margin[0] + cc->_margin[2]) * GUI_scale) / 2;
                         cc->rectView.y = rectView.y + cc->topLeft.y;
@@ -1358,17 +1381,17 @@ void GUI_View::updateLayout() {
             } else if (child->_align & GUI_ALIGN_BOTTOM) {
                 child->topLeft.y = (rectView.h - child->rectView.h) - ((child->_margin[2] + _padding[2]) * GUI_scale);
                 child->rectView.y = rectView.y + child->topLeft.y;
-                
+
                 for (int iit = it-1; iit >= 0; --iit) {
                     GUI_View *cc = children[iit];
-                    
+
                     if (cc->isVisible() == false)
                         continue;
-                    
+
                     if (cc->_align & GUI_ALIGN_BOTTOM) {
                         cc->topLeft.y -= child->rectView.h + (child->_margin[0] + child->_margin[2]) * GUI_scale;
                         cc->rectView.y = rectView.y + cc->topLeft.y;
-                        
+
                         cc->updateLayout();
                     } else if (cc->_align & GUI_ALIGN_VCENTER) {
                     } else {
@@ -1384,17 +1407,17 @@ void GUI_View::updateLayout() {
             } else {
                 child->topLeft.y = y + child->_margin[0] * GUI_scale;
                 child->rectView.y = rectView.y + child->topLeft.y;
-                
+
                 if (child->oh == -1) {
                     child->rectView.h = rectView.h - child->topLeft.y - (_padding[2] + child->_margin[2])* GUI_scale;
                 }
                 else {
                     for (int iit = it-1; iit >= 0; --iit) {
                         GUI_View *cc = children[iit];
-                        
+
                         if (cc->isVisible() == false)
                             continue;
-                        
+
                         if (cc->_align & GUI_ALIGN_BOTTOM) {
                         } else if (cc->_align & GUI_ALIGN_VCENTER) {
                         } else {
@@ -1420,7 +1443,7 @@ void GUI_View::updateLayout() {
                         }
                     }
                 }
-                
+
                 y += child->rectView.h + (child->_margin[0] + child->_margin[2]) * GUI_scale;
             }
 
@@ -1430,7 +1453,7 @@ void GUI_View::updateLayout() {
             if( ww > w ) {
                 w = ww;
             }
-            
+
             if (child->_align & GUI_ALIGN_ABSOLUTE) {
 
             } else if (child->_align & GUI_ALIGN_RIGHT) {
@@ -1442,7 +1465,7 @@ void GUI_View::updateLayout() {
             } else {
                 child->topLeft.x = (_padding[3] + child->_margin[3]) * GUI_scale;
                 child->rectView.x = rectView.x + child->topLeft.x;
-                
+
                 if (child->ow == -1) {
                     child->rectView.w = rectView.w - (_padding[1] + child->_margin[1] + _padding[3] + child->_margin[3]) * GUI_scale;
                 }
@@ -1473,16 +1496,16 @@ void GUI_View::updateLayout() {
 void GUI_View::setAbsolutePosition( int x, int y, int duration ) {
     int dx = x - rectView.x/GUI_scale;
     int dy = y - rectView.y/GUI_scale;
-        
+
     move( dx, dy, duration );
 }
 
 GUI_Point GUI_View::getAbsolutePosition() {
     static GUI_Point pt;
-    
+
     pt.x = rectView.x / GUI_scale;
     pt.y = rectView.y / GUI_scale;
-    
+
     return pt;
 }
 
@@ -1542,13 +1565,13 @@ void GUI_View::setSaftyPadding() {
 #else
     int saftyPaddings[4] = { 0, 0, 0, 0 };
 #endif
-    
+
     if( _saftyPaddingFlag ) {
         if( _saftyPaddingFlag & 1 ) { _padding[0] = saftyPaddings[0]; }
         if( _saftyPaddingFlag & 2 ) { _padding[1] = saftyPaddings[1]; }
         if( _saftyPaddingFlag & 4 ) { _padding[2] = saftyPaddings[2]; }
         if( _saftyPaddingFlag & 8 ) { _padding[3] = saftyPaddings[3]; }
-        
+
         if (parent) {
             parent->updateLayout();
             updateLayout();

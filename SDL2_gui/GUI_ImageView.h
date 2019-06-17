@@ -13,8 +13,8 @@
 #include <stdio.h>
 #include <functional>
 #include <vector>
-#include <SDL.h>
-#include <SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include "GUI_View.h"
 #include "GUI_Utils.h"
 #include "GUI_image.h"
@@ -23,7 +23,7 @@ class GUI_ImageView : public GUI_View {
 protected:
     GUI_image image;
     SDL_Color colorMod;
-    
+
     int contentScrollPosnX;
     int contentScrollPosnY;
 public:
@@ -32,10 +32,10 @@ public:
     GUI_ImageView(GUI_View *parent, const char *title, const char *filename=NULL, int x=0, int y=0, int width=0, int height=0,
                   std::function<bool(SDL_Event* ev)>userEventHandler = NULL);
     virtual ~GUI_ImageView();
-    
+
     void setColor( SDL_Color color );
     virtual void updateSize();
-    
+
     virtual void draw();
 };
 

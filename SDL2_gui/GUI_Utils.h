@@ -12,7 +12,7 @@
 #include <string>
 #include <stdio.h>
 #include <functional>
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include "GUI_Config.h"
 
 class GUI_View;
@@ -99,6 +99,23 @@ extern "C" int *getContentSaftyMargin();
 
 #ifdef __EMSCRIPTEN__
 inline bool SDL_IsTablet() { return true; };
+#endif
+
+SDL_Color GUI_TranslateColor(Uint32 int_color);
+
+enum ScreenShotType
+{
+    ePng,
+    eJpg,
+    eRaw
+};
+
+void GUI_MakeRendererScreenshot(SDL_Renderer* renderer, std::string fileName, ScreenShotType type = ePng);
+
+#if defined(WIN32) || defined(_WIN32)
+#define PATH_SEPARATOR "\\"
+#else
+#define PATH_SEPARATOR "/"
 #endif
 
 #endif /* GUI_Utils_hpp */

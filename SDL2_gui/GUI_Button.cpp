@@ -23,10 +23,10 @@ GUI_Label(parent, title, unicode, x, y, width, height, NULL )
     focusable = true;
     showInteract = true;
     mouseReceive = true;
-    
+
     setBackgroundColor(cWhite);
     callback = callbackFunction;
-    
+
     setBorder( 1 );
     focusBorder = 2;
     setCorner( 4 );
@@ -40,18 +40,18 @@ GUI_Label(parent, title, unicode, x, y, width, height, NULL )
 }
 
 GUI_Button::~GUI_Button() {
-    
+
 }
 
 void GUI_Button::setEnable(bool e) {
     _enable = e;
     if( _enable ) {
-        textView->setTextColor(cBlack);
-        iconView->setTextColor(cBlack);
+        if(textView) textView->setTextColor(cBlack);
+        if(iconView) iconView->setTextColor(cBlack);
         setBorderColor(cBlack);
     } else {
-        textView->setTextColor(cGrey);
-        iconView->setTextColor(cGrey);
+        if(textView) textView->setTextColor(cGrey);
+        if(iconView) iconView->setTextColor(cGrey);
         setBorderColor(cGrey);
     }
 };

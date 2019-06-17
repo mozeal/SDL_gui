@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include <string>
-#include <SDL_ttf.h>
+#include <SDL2/SDL_ttf.h>
 
 int GUI_GetPreviousUTF8Index( std::string str, int index );
 int GUI_GetPreviousMainUTF8Index( std::string str, int index );
