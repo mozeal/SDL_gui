@@ -10,26 +10,6 @@
 
 GUI_App *GUI_App::instance = NULL;
 
-#if defined( __ANDROID__ )
-static int _expectedWidth = 360;
-static int _expectedHeight = 600;
-#elif defined( __IPHONEOS__ )
-static int _expectedWidth = 360;
-static int _expectedHeight = 600;
-#elif defined( __MACOSX__ )
-static int _expectedWidth = 1024;
-static int _expectedHeight = 768;
-#elif defined( __WIN32__ )
-static int _expectedWidth = 1024;
-static int _expectedHeight = 768;
-#elif defined( __EMSCRIPTEN__ )
-static int _expectedWidth = 360;
-static int _expectedHeight = 600;
-#else
-static int _expectedWidth = 480;
-static int _expectedHeight = 800;
-#endif
-
 GUI_App *GUI_App::create( std::string title, int expectedWidth, int expectedHeight, int Orientation, int options ) {
 #if defined( __ANDROID__ )
     int _orientation = 0; //GUI_ORIENTATION_PORTRAIT | GUI_ORIENTATION_LANDSCAPE;
@@ -54,7 +34,7 @@ GUI_App *GUI_App::create( std::string title, int expectedWidth, int expectedHeig
         expectedHeight = _expectedHeight;
     if( Orientation == 0 )
         Orientation = _orientation;
-    
+
     if( instance ) {
         return instance;
     }
@@ -92,19 +72,19 @@ isMenuShow(false)
         orn = orn + "LandscapeLeft LandscapeRight";
     }
     SDL_SetHint(SDL_HINT_ORIENTATIONS, orn.c_str());
-    
+
     // Init SDL
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         SDL_LogError( SDL_LOG_CATEGORY_SYSTEM, "SDL Init failed\n" );
         return;
     }
-    
+
     if (IMG_Init(0) != 0) {
         SDL_LogError( SDL_LOG_CATEGORY_SYSTEM, "SDL_image Init failed\n" );
         SDL_Quit();
         return;
     }
-    
+
     if (TTF_Init() != 0) {
         SDL_LogError( SDL_LOG_CATEGORY_SYSTEM, "SDL_ttf Init failed\n" );
         IMG_Quit();
@@ -125,21 +105,21 @@ isMenuShow(false)
     if( expectedHeight == -1 ) {
         expectedHeight = dm.h;
     }
-    
+
     GUI_Init( (options & GUI_APP_TOP_BAR) ? "" : title.c_str(), expectedWidth, expectedHeight );
-    
+
     width = GUI_windowWidth;
     height = GUI_windowHeight;
-    
+
     topView = GUI_createTopView("TopView", 0, 0, -1, -1);
     topView->setMargin(0, 0, 0, 0);
     topView->setPadding(0,0,0,0);
     topView->setLayout( GUI_LAYOUT_VERTICAL );
-    
+
     if( (options & GUI_APP_TOP_BAR) || (options & GUI_APP_STATUS_BAR) ) {
         options |= GUI_APP_CONTENT_VIEW;
     }
-    
+
     if( options & GUI_APP_TOP_BAR ) {
         createTopBar(options);
     }
@@ -192,16 +172,33 @@ void GUI_App::createContentView( int options ) {
 
 void GUI_App::createMenu( int options ) {
     int y = GUI_GetAppTopBarHeight()+GUI_GetStatusBarHeight();
-    
-    menuView = GUI_Menu::create(topView, "Menu", 0, y, GUI_GetAppMenuWidth(), -1);
+
+    MenuAnimationMode mode(eFromLeft);
+    if(options & GUI_APP_MENU_RIGHT)
+        mode = eFromRight;
+    else if(options & GUI_APP_MENU_LEFT_TOP)
+        mode = eFromTop;
+    else if(options & GUI_APP_MENU_LEFT_BOTTOM)
+        mode = eFromBottom;
+    else if(options & GUI_APP_MENU_RIGHT_TOP)
+        mode = eFromTop;
+    else if(options & GUI_APP_MENU_RIGHT_BOTTOM)
+        mode = eFromBottom;
+
+    menuView = GUI_Menu::create(topView, "Menu", 0, y, GUI_GetAppMenuWidth(), -1, nullptr, mode);
     menuView->setAlign( GUI_ALIGN_ABSOLUTE );
     menuView->setActivateView(menuButton);
     menuView->setBackgroundColor(cEmptyContent);
-    
+
     menuView->close();
-    
+
     menuButton = GUI_Button::create(topBar->contentView, NULL, kIcon_solid_bars);
-    menuButton->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
+    int align(GUI_ALIGN_VCENTER);
+    if((options & GUI_APP_MENU_LEFT) || (options & GUI_APP_MENU_LEFT_TOP) || (options & GUI_APP_MENU_LEFT_BOTTOM))
+        align |= GUI_ALIGN_LEFT;
+    else
+        align |= GUI_ALIGN_RIGHT;
+    menuButton->setAlign(align);
     menuButton->setMargin(0, 0, 0, 5 );
     menuButton->setBackgroundColor( cClear );
     menuButton->setTextColor( cWhite );
@@ -215,6 +212,6 @@ void GUI_App::createMenu( int options ) {
             this->menuView->open( GUI_AppMenuCollapseTime );
         }
     });
-    
+
     menuView->setActivateView(menuButton);
 }

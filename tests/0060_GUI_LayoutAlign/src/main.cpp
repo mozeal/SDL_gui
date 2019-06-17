@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
         SDL_LogError( SDL_LOG_CATEGORY_ERROR, "Hello, World!\n" );
         exit(1);
     }
-    
+
     if (TTF_Init() != 0) {
         GUI_Log("TTF_Init failed.");
         SDL_Quit();
@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
     // Create Window
     SDL_Log("request: %d %d\n", expectedWidth, expectedHeight);
     GUI_Init(title, expectedWidth, expectedHeight );
-    
+
 #if defined(WIN32)
     GUI_SetWindowIcon(IDI_ICON1);
 #endif
@@ -50,9 +50,9 @@ int main(int argc, char *argv[]) {
     topView->setMargin(10, 10, 10, 10);
     topView->setPadding(5, 5, 5, 5);
 
-    createAbsoluteViews();
+//    createAbsoluteViews();
     createHorizontalViews();
-    createVerticalViews();
+//    createVerticalViews();
 
     GUI_Run();
     GUI_Destroy();
@@ -73,15 +73,15 @@ void createAbsoluteViews() {
     vGrey->dragable = true;
     vGrey->click_to_top = true;
 
-    
-    GUI_TextView *vRedX = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
+
+    GUI_TextView *vRedX = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 100, 100 );
     vRedX->setBackgroundColor( cRed );
     vRedX->dragable = true;
     vRedX->setAlign( GUI_ALIGN_TOP | GUI_ALIGN_LEFT );
     vRedX->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_LEFT );
     vRedX->setMargin( 5, 5, 5, 5 );
     vRedX->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vGreenX = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vGreenX->setBackgroundColor( cGreen );
     vGreenX->dragable = true;
@@ -89,7 +89,7 @@ void createAbsoluteViews() {
     vGreenX->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_CENTER );
     vGreenX->setMargin( 5, 5, 5, 5 );
     vGreenX->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vBlueX = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vBlueX->setBackgroundColor( cBlue );
     vBlueX->dragable = true;
@@ -97,7 +97,7 @@ void createAbsoluteViews() {
     vBlueX->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_RIGHT );
     vBlueX->setMargin( 5, 5, 5, 5 );
     vBlueX->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vRedX2 = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vRedX2->setBackgroundColor( cRed );
     vRedX2->dragable = true;
@@ -105,7 +105,7 @@ void createAbsoluteViews() {
     vRedX2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT );
     vRedX2->setMargin( 5, 5, 5, 5 );
     vRedX2->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vGreenX2 = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vGreenX2->setBackgroundColor( cGreen );
     vGreenX2->dragable = true;
@@ -113,7 +113,7 @@ void createAbsoluteViews() {
     vGreenX2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER );
     vGreenX2->setMargin( 5, 5, 5, 5 );
     vGreenX2->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vBlueX2 = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vBlueX2->setBackgroundColor( cBlue );
     vBlueX2->dragable = true;
@@ -121,7 +121,7 @@ void createAbsoluteViews() {
     vBlueX2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT );
     vBlueX2->setMargin( 5, 5, 5, 5 );
     vBlueX2->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vRedX3 = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vRedX3->setBackgroundColor( cRed );
     vRedX3->dragable = true;
@@ -129,7 +129,7 @@ void createAbsoluteViews() {
     vRedX3->setContentAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_LEFT );
     vRedX3->setMargin( 5, 5, 5, 5 );
     vRedX3->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vGreenX3 = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vGreenX3->setBackgroundColor( cGreen );
     vGreenX3->dragable = true;
@@ -137,7 +137,7 @@ void createAbsoluteViews() {
     vGreenX3->setContentAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_CENTER );
     vGreenX3->setMargin( 5, 5, 5, 5 );
     vGreenX3->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vBlueX3 = GUI_TextView::create( vGrey, "ไก่กี่ปีเป่าปี่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vBlueX3->setBackgroundColor( cBlue );
     vBlueX3->dragable = true;
@@ -155,7 +155,7 @@ void createHorizontalViews() {
     vGrey->setLayout( GUI_LAYOUT_HORIZONTAL );
     vGrey->dragable = true;
     vGrey->click_to_top = true;
-    
+
     GUI_TextView *vRedX = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vRedX->setBackgroundColor( cRed );
     vRedX->dragable = true;
@@ -163,7 +163,7 @@ void createHorizontalViews() {
     vRedX->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_LEFT );
     vRedX->setMargin( 5, 5, 5, 5 );
     vRedX->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vGreenX = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vGreenX->setBackgroundColor( cGreen );
     vGreenX->dragable = true;
@@ -171,7 +171,7 @@ void createHorizontalViews() {
     vGreenX->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_CENTER );
     vGreenX->setMargin( 5, 5, 5, 5 );
     vGreenX->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vBlueX = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vBlueX->setBackgroundColor( cBlue );
     vBlueX->dragable = true;
@@ -179,7 +179,7 @@ void createHorizontalViews() {
     vBlueX->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_RIGHT );
     vBlueX->setMargin( 5, 5, 5, 5 );
     vBlueX->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vRedX2 = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vRedX2->setBackgroundColor( cRed );
     vRedX2->dragable = true;
@@ -187,7 +187,7 @@ void createHorizontalViews() {
     vRedX2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT );
     vRedX2->setMargin( 5, 5, 5, 5 );
     vRedX2->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vGreenX2 = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vGreenX2->setBackgroundColor( cGreen );
     vGreenX2->dragable = true;
@@ -195,7 +195,7 @@ void createHorizontalViews() {
     vGreenX2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER );
     vGreenX2->setMargin( 5, 5, 5, 5 );
     vGreenX2->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vGreenX2s = GUI_TextView::create( vGrey, "ไก่กา", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vGreenX2s->setBackgroundColor( cGreen );
     vGreenX2s->dragable = true;
@@ -203,7 +203,7 @@ void createHorizontalViews() {
     vGreenX2s->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER );
     vGreenX2s->setMargin( 5, 5, 5, 5 );
     vGreenX2s->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vBlueX2 = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vBlueX2->setBackgroundColor( cBlue );
     vBlueX2->dragable = true;
@@ -211,7 +211,7 @@ void createHorizontalViews() {
     vBlueX2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT );
     vBlueX2->setMargin( 5, 5, 5, 5 );
     vBlueX2->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vRedX3 = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vRedX3->setBackgroundColor( cRed );
     vRedX3->dragable = true;
@@ -219,7 +219,7 @@ void createHorizontalViews() {
     vRedX3->setContentAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_LEFT );
     vRedX3->setMargin( 5, 5, 5, 5 );
     vRedX3->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vGreenX3 = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vGreenX3->setBackgroundColor( cGreen );
     vGreenX3->dragable = true;
@@ -227,7 +227,7 @@ void createHorizontalViews() {
     vGreenX3->setContentAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_CENTER );
     vGreenX3->setMargin( 5, 5, 5, 5 );
     vGreenX3->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vBlueX3 = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vBlueX3->setBackgroundColor( cBlue );
     vBlueX3->dragable = true;
@@ -246,7 +246,7 @@ void createVerticalViews() {
     vGrey->dragable = true;
     vGrey->click_to_top = true;
 
-    
+
     GUI_TextView *vRedX = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vRedX->setBackgroundColor( cRed );
     vRedX->dragable = true;
@@ -254,7 +254,7 @@ void createVerticalViews() {
     vRedX->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_LEFT );
     vRedX->setMargin( 5, 5, 5, 5 );
     vRedX->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vGreenX = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vGreenX->setBackgroundColor( cGreen );
     vGreenX->dragable = true;
@@ -262,7 +262,7 @@ void createVerticalViews() {
     vGreenX->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_CENTER );
     vGreenX->setMargin( 5, 5, 5, 5 );
     vGreenX->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vBlueX = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vBlueX->setBackgroundColor( cBlue );
     vBlueX->dragable = true;
@@ -270,7 +270,7 @@ void createVerticalViews() {
     vBlueX->setContentAlign( GUI_ALIGN_TOP | GUI_ALIGN_RIGHT );
     vBlueX->setMargin( 5, 5, 5, 5 );
     vBlueX->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vRedX2 = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vRedX2->setBackgroundColor( cRed );
     vRedX2->dragable = true;
@@ -278,7 +278,7 @@ void createVerticalViews() {
     vRedX2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_LEFT );
     vRedX2->setMargin( 5, 5, 5, 5 );
     vRedX2->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vGreenX2 = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vGreenX2->setBackgroundColor( cGreen );
     vGreenX2->dragable = true;
@@ -286,7 +286,7 @@ void createVerticalViews() {
     vGreenX2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER );
     vGreenX2->setMargin( 5, 5, 5, 5 );
     vGreenX2->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vGreenX2s = GUI_TextView::create( vGrey, "ไก่กา", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vGreenX2s->setBackgroundColor( cGreen );
     vGreenX2s->dragable = true;
@@ -294,7 +294,7 @@ void createVerticalViews() {
     vGreenX2s->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_CENTER );
     vGreenX2s->setMargin( 5, 5, 5, 5 );
     vGreenX2s->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vBlueX2 = GUI_TextView::create( vGrey, "ไก่กา", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vBlueX2->setBackgroundColor( cBlue );
     vBlueX2->dragable = true;
@@ -302,7 +302,7 @@ void createVerticalViews() {
     vBlueX2->setContentAlign( GUI_ALIGN_VCENTER | GUI_ALIGN_RIGHT );
     vBlueX2->setMargin( 5, 5, 5, 5 );
     vBlueX2->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vRedX3 = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vRedX3->setBackgroundColor( cRed );
     vRedX3->dragable = true;
@@ -310,7 +310,7 @@ void createVerticalViews() {
     vRedX3->setContentAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_LEFT );
     vRedX3->setMargin( 5, 5, 5, 5 );
     vRedX3->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vGreenX3 = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vGreenX3->setBackgroundColor( cGreen );
     vGreenX3->dragable = true;
@@ -318,7 +318,7 @@ void createVerticalViews() {
     vGreenX3->setContentAlign( GUI_ALIGN_BOTTOM | GUI_ALIGN_CENTER );
     vGreenX3->setMargin( 5, 5, 5, 5 );
     vGreenX3->setPadding( 5, 5, 5, 5 );
-    
+
     GUI_TextView *vBlueX3 = GUI_TextView::create( vGrey, "ไก่", "Kanit-Light.ttf", 16, 0, 0, 0, 0 );
     vBlueX3->setBackgroundColor( cBlue );
     vBlueX3->dragable = true;

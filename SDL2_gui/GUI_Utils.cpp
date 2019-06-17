@@ -6,7 +6,7 @@
 //  Copyright © 2561 Jimmy Software Co., Ltd. All rights reserved.
 //
 
-#include <SDL_image.h>
+#include <SDL2/SDL_image.h>
 #include <stdio.h>  /* defines FILENAME_MAX */
 #ifdef _WIN32
     #include <direct.h>  // for _chdir(), _getcwd()
@@ -27,6 +27,7 @@
 #endif
 #include <fstream>
 #include <iostream>
+#include <vector>
 #include "GUI_Utils.h"
 
 #define LOGNAME "SDL_gui"
@@ -102,7 +103,7 @@ void GUI_Log(const char * format, ...) {
     va_start(args, format);
     vsprintf(buffer, format, args);
     va_end(args);
-    
+
     //__android_log_print(ANDROID_LOG_VERBOSE, LOGNAME, buffer, 1);
     SDL_Log( "%s", buffer );
 #else
@@ -127,11 +128,11 @@ GUI_LogLevel GUI_GetLogLevel() {
 
 std::string GUI_GetCurrentPath() {
     char cCurrentPath[FILENAME_MAX];
-    
+
     if (!GetCurrentDir(cCurrentPath, sizeof(cCurrentPath))) {
         return NULL;
     }
-    
+
     return std::string(cCurrentPath);
 }
 
@@ -142,15 +143,15 @@ std::string GUI_GetResourcePath(const std::string &subDir) {
     const char PATH_SEP = '/';
 #endif
     static std::string baseRes;
-    
+
     baseRes = "";
 #if defined (__ANDROID__) || (__MACOSX__)
     baseRes = baseRes + "data" + PATH_SEP;
 #else
-    
+
     if (baseRes.empty()) {
         char *basePath = SDL_GetBasePath();
-        
+
         if (basePath) {
             baseRes = basePath;
             SDL_free(basePath);
@@ -158,7 +159,7 @@ std::string GUI_GetResourcePath(const std::string &subDir) {
             std::cerr << "Error getting resource path: " << SDL_GetError() << std::endl;
             return "";
         }
-        
+
         //We replace the last bin/ with res/ to get the the resource path
         size_t pos = baseRes.rfind("bin");
         baseRes = baseRes.substr(0, pos) + "data" + PATH_SEP;
@@ -169,19 +170,61 @@ std::string GUI_GetResourcePath(const std::string &subDir) {
 
 SDL_Texture* GUI_LoadTexture(const std::string &filename, SDL_Renderer *ren) {
     std::string imagePath;
-    
+
     if (filename[0] != '/')
         imagePath = GUI_GetResourcePath() + filename;
     else
         imagePath = "" + filename;
-    
+
     SDL_Texture *tex = IMG_LoadTexture(ren, imagePath.c_str());
-    
+
     if (tex == NULL) {
         GUI_Log("Load image %s failed.", filename.c_str());
-        imagePath = GUI_GetCurrentPath() + "\\data\\" + filename;
+        imagePath = GUI_GetCurrentPath() + PATH_SEPARATOR "data" + PATH_SEPARATOR + filename;
         tex = IMG_LoadTexture(ren, imagePath.c_str());
     }
-    
+
     return tex;
+}
+
+SDL_Color GUI_TranslateColor(Uint32 int_color) //Change from an "int color" to an SDL_Color
+{
+    #if SDL_BYTEORDER == SDL_BIG_ENDIAN
+        SDL_Color color={(unsigned char)((int_color & 0x00ff0000) >> 16), (unsigned char)((int_color & 0x0000ff00) >> 8), (unsigned char)(int_color & 0x000000ff), 0};
+    #else
+        SDL_Color color={(unsigned char)(int_color & 0x000000ff), (unsigned char)((int_color & 0x0000ff00) >> 8), (unsigned char)((int_color & 0x00ff0000) >> 16), 0};
+    #endif
+    return color;
+}
+
+void GUI_MakeRendererScreenshot(SDL_Renderer* renderer, std::string fileName, ScreenShotType type)
+{
+    int w(0), h(0);
+    int result(0);
+    result = SDL_GetRendererOutputSize(renderer, &w, &h);
+    if(result) SDL_LogError(0, SDL_GetError());
+
+    SDL_Surface* surface = SDL_CreateRGBSurface(0, w, h, 32, 0, 0, 0, 0);
+    SDL_RenderReadPixels(GUI_renderer, NULL, surface->format->format, surface->pixels, surface->pitch);
+    switch(type)
+    {
+    case ePng:
+        IMG_SavePNG(surface, fileName.c_str());
+        break;
+    case eJpg:
+        IMG_SaveJPG(surface, fileName.c_str(), 100);
+        break;
+    case eRaw:
+        std::vector<char> lVector;
+        lVector.resize(surface->pitch * h);
+        for(int i(0); i < surface->pitch * h; ++i)
+            lVector[i] = ((char*) surface->pixels)[i];
+        std::fstream s(fileName, s.binary | s.trunc | s.in | s.out);
+        if(!s.is_open())
+            SDL_LogError( 0, "Open file failed");
+        s.write(lVector.data(), lVector.size());
+        break;
+    }
+
+    SDL_FreeSurface(surface);
 }

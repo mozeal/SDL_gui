@@ -12,7 +12,7 @@
 #include <string>
 #include <stdio.h>
 #include <functional>
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include "GUI_Utils.h"
 
 class GUI_image {

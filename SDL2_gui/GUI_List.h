@@ -22,10 +22,10 @@ public:
     GUI_ListItem(GUI_View *parent, const char *title, int x=0, int y=0, int width=0, int height=0,
              std::function<void(GUI_View*)>callbackFunction = NULL );
     virtual ~GUI_ListItem();
-    
+
     virtual void setSelected( bool c );
     virtual bool isSelected() { return selected; };
-    
+
     virtual void postdraw();
 };
 
@@ -39,15 +39,15 @@ public:
     GUI_List(GUI_View *parent, const char *title, int x=0, int y=0, int width=0, int height=0,
                          std::function<void(GUI_View*)>callbackFunction = NULL );
     virtual ~GUI_List();
-    
+
     virtual void add(GUI_ListItem* child);
     virtual void remove(GUI_ListItem* child);
-    
+
     virtual void addSimpleItem( const char *title );
-    
+
     bool multiSelect;
-    
-    GUI_ListItem *selectedItem;
+
+    GUI_ListItem *selectedItem = nullptr;
     std::vector<GUI_ListItem *>selectedItems;
 };
 #endif /* GUI_List_hpp */
