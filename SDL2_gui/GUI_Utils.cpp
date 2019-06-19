@@ -6,7 +6,13 @@
 //  Copyright © 2561 Jimmy Software Co., Ltd. All rights reserved.
 //
 
+#ifdef __MACOSX__
+#include <SDL_ttf.h>
+#include <SDL_image.h>
+#else
+#include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL_image.h>
+#endif
 #include <stdio.h>  /* defines FILENAME_MAX */
 #ifdef _WIN32
     #include <direct.h>  // for _chdir(), _getcwd()

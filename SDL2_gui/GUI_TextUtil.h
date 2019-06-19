@@ -11,7 +11,13 @@
 
 #include <stdio.h>
 #include <string>
+#ifdef __MACOSX__
+#include <SDL_ttf.h>
+#include <SDL_image.h>
+#else
 #include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_image.h>
+#endif
 
 int GUI_GetPreviousUTF8Index( std::string str, int index );
 int GUI_GetPreviousMainUTF8Index( std::string str, int index );

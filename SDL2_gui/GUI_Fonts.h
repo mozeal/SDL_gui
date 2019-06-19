@@ -12,7 +12,13 @@
 #include <stdio.h>
 #include <string>
 #include <map>
+#ifdef __MACOSX__
+#include <SDL_ttf.h>
+#include <SDL_image.h>
+#else
 #include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_image.h>
+#endif
 
 class GUI_Fonts {
 protected:

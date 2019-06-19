@@ -14,7 +14,13 @@
 #include <functional>
 #include <vector>
 #include <SDL2/SDL.h>
+#ifdef __MACOSX__
+#include <SDL_ttf.h>
+#include <SDL_image.h>
+#else
+#include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL_image.h>
+#endif
 #include "GUI_View.h"
 #include "GUI_Utils.h"
 #include "GUI_image.h"
