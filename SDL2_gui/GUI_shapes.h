@@ -10,7 +10,7 @@
 #define GUI_shapes_hpp
 
 #include <stdio.h>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include "GUI_Utils.h"
 
 void GUI_FillRect(int x, int y, int w, int h, SDL_Color col);

@@ -30,6 +30,8 @@ separator(true)
     focusBorder = 0;
 
     setBackgroundColor(cWhite);
+	label = NULL;
+	labelTextColor = cBlack;
 
     setLayout(GUI_LAYOUT_HORIZONTAL);
     setBorder( 0 );
@@ -56,6 +58,24 @@ void GUI_MenuItem::postdraw() {
         GUI_DrawHLine( 0, rectView.w, rectView.h-1, cBlack );
     }
 }
+
+void GUI_MenuItem::enable() {
+	GUI_View::enable();
+	label->setTextColor(labelTextColor);
+};
+
+void GUI_MenuItem::disable() {
+	GUI_View::disable();
+	label->setTextColor(cGrey);
+};
+
+void GUI_MenuItem::setEnable(bool e) {
+	if (e) {
+		enable();
+	} else {
+		disable();
+	}
+};
 
 // ------------------------------------------------------------------------------------------------
 

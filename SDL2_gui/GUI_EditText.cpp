@@ -15,20 +15,24 @@ extern int GUI_windowHeight;
 
 extern GUI_EditText *GUI_lastEditTextView;
 extern SDL_Window *GUI_window;
+extern GUI_View *GUI_topView;
+
 #if defined(WIN32)
 #include <SDL_syswm.h>
 
-HMENU textSelectionContextualMenu = NULL;
-UINT textSelectionContextualMenuCut = 0;
-UINT textSelectionContextualMenuCopy = 0;
-UINT textSelectionContextualMenuPaste = 0;
-UINT textSelectionContextualMenuDelete = 0;
-UINT textSelectionContextualMenuSelectAll = 0;
+HMENU g_hContextualMenu = NULL;
+UINT g_nContextualMenuCut = 0;
+UINT g_nContextualMenuCopy = 0;
+UINT g_nContextualMenuPaste = 0;
+UINT g_nContextualMenuDelete = 0;
+UINT g_nContextualMenuSelectAll = 0;
 #endif
 
-GUI_EditText *GUI_EditText::create( GUI_View *parent, const char *title, int x, int y, int width, int height,
-                                          std::function<void(GUI_View*)>callbackFunction ) {
-    return new GUI_EditText( parent, title, x, y, width, height, callbackFunction );
+GUI_PopupMenu* contextualMenu = NULL;
+
+GUI_EditText *GUI_EditText::create(GUI_View *parent, const char *title, int x, int y, int width, int height,
+	std::function<void(GUI_View*)>callbackFunction) {
+	return new GUI_EditText(parent, title, x, y, width, height, callbackFunction);
 }
 
 GUI_EditText::GUI_EditText(GUI_View *parent, const char *title, int x, int y, int width, int height,
@@ -64,10 +68,12 @@ GUI_TextView(parent, title, GUI_GetUITextFontName().c_str(), GUI_GetUITextFontSi
     textSelectionIsMouseDown = false;
     textSelectionMousePoint.x = 0;
     textSelectionMousePoint.y = 0;
+	touchTime = 0.0f;
+
+	createContextualMenu();
 }
 
 GUI_EditText::~GUI_EditText() {
-    
 }
 
 void GUI_EditText::draw() {
@@ -121,10 +127,18 @@ bool GUI_EditText::eventHandler(SDL_Event*event) {
                 return false;
             }
 
-            if (this->isEnable() == false) {
-                textSelectionCancel();
-                return false;
-            }
+			if (!isFocus()) {
+				return false;
+			}
+
+			if (!isVisible()) {
+				return false;
+			}
+
+			if (!isEnable()) {
+				textSelectionCancel();
+				return false;
+			}
 
             bool isCtrlPressed = event->key.keysym.mod & CUSTOM_KMOD_CTRL;
 
@@ -265,10 +279,14 @@ bool GUI_EditText::eventHandler(SDL_Event*event) {
                 return false;
             }
 
-            if (this->isEnable() == false) {
-                textSelectionCancel();
-                return false;
-            }
+			if (!isVisible()) {
+				return false;
+			}
+
+			if (!isEnable()) {
+				textSelectionCancel();
+				return false;
+			}
 
             scancode = event->key.keysym.scancode;
 
@@ -291,14 +309,18 @@ bool GUI_EditText::eventHandler(SDL_Event*event) {
                 return false;
             }
 
-            if (this->isEnable() == false) {
-                textSelectionCancel();
-                return false;
-            }
+			if (!isFocus()) {
+				return false;
+			}
 
-            if (!isFocus()) {
-                return false;
-            }
+			if (!isVisible()) {
+				return false;
+			}
+
+			if (!isEnable()) {
+				textSelectionCancel();
+				return false;
+			}
 
             if (textSelectionIsSelected()) {
                 textSelectionDelete();
@@ -318,52 +340,49 @@ bool GUI_EditText::eventHandler(SDL_Event*event) {
             return true;
         }
 
-        /*case SDL_FINGERDOWN:
-        {
-            GUI_TextView::eventHandler(event);
-            
-            SDL_MouseButtonEvent e = event->button;
-            
-            int x = (int)(e.x*GUI_windowWidth*GUI_mouseScale);
-            int y = (int)(e.y*GUI_windowHeight*GUI_mouseScale);
-            if( hitTest(x, y, false) ) {
-                x -= rectView.x;
-                int textX = (_padding[3] * GUI_scale) + contentScrollPosnX;
-                GUI_Log( "Hit edit %i\n", x - textX );
-                textEditIndex = GUI_GetTextIndexFromPosition(font, title, x - textX);
-                updateContent();
-            }
-            break;
-        }*/
-
         case SDL_MOUSEBUTTONDOWN:
         {
-            GUI_TextView::eventHandler(event);
+			if (!isVisible()) {
+				return false;
+			}
+
+			touchTime = (float)SDL_GetTicks();
+
+			if (!isEnable()) {
+				textSelectionCancel();
+				return false;
+			}
+			
+			GUI_TextView::eventHandler(event);
             SDL_MouseButtonEvent e = event->button;
             int x = (int)(e.x*GUI_mouseScale);
             int y = (int)(e.y*GUI_mouseScale);
             
-            if (hitTest(x, y, false)) {
-                if (e.button == SDL_BUTTON_LEFT) {
-                    setFocus();
-                    textSelectionIsMouseDown = true;
-                    textSelectionSetCaretPosition(x, y);
-                } else if (e.button == SDL_BUTTON_RIGHT) {
-                    setFocus();
-
-                    SDL_Rect rect;
-                    if (textSelectionGetRect(&rect)) {
-                        rect.x += rectView.x;
-                        rect.y += rectView.y;
-                        SDL_Point pt{x, y};
-
-                        if (!SDL_PointInRect(&pt, &rect)) {
-                            textSelectionCancel();
-                            textSelectionSetCaretPosition(x, y);
-                        }
-                    }
-                }
-            } else {
+			textSelectionIsShiftPressed = false;
+			
+			if (hitTest(x, y, false)) {
+				bool setCaret = false;
+				
+				if (e.button == SDL_BUTTON_LEFT) {
+					if (_focus) {
+						textSelectionCancel();
+						SDL_StartTextInput();
+						setCaret = true;
+					} else {
+						setFocus();
+						setCaret = true;
+					}
+				} else if (e.button == SDL_BUTTON_RIGHT) {
+					if (!_focus) {
+						setFocus();
+						setCaret = true;
+					}
+				}
+			
+				if (setCaret) {
+					textSelectionSetCaretPosition(x, y);
+				}
+			} else {
                 killFocus();
                 return false;
             }
@@ -377,13 +396,26 @@ bool GUI_EditText::eventHandler(SDL_Event*event) {
                 return false;
             }
 
-            SDL_MouseButtonEvent e = event->button;
+			if (!isFocus()) {
+				return false;
+			}
+
+			if (!isVisible()) {
+				return false;
+			}
+
+			if (!isEnable()) {
+				textSelectionCancel();
+				return false;
+			}
+			
+			SDL_MouseButtonEvent e = event->button;
             int x = (int)(e.x * GUI_mouseScale);
             int y = (int)(e.y * GUI_mouseScale);
 
             if (e.button == SDL_BUTTON_LEFT) {
                 if (isFocus() && textSelectionIsMouseDown && textSelectionMousePoint.x != x) {
-                    textSelectionMousePoint.x = x;
+					textSelectionMousePoint.x = x;
                     textSelectionMousePoint.y = y;
                     textSelectionMouseMove();
                     return true;
@@ -399,73 +431,107 @@ bool GUI_EditText::eventHandler(SDL_Event*event) {
                 return false;
             }
 
-            SDL_MouseButtonEvent e = event->button;
+			if (!isFocus()) {
+				return false;
+			}
+
+			if (!isVisible()) {
+				return false;
+			}
+
+			if (!isEnable()) {
+				textSelectionCancel();
+				return false;
+			}
+			
+			SDL_MouseButtonEvent e = event->button;
             int x = (int)(e.x * GUI_mouseScale);
             int y = (int)(e.y * GUI_mouseScale);
 
-            if (e.button == SDL_BUTTON_LEFT) {
-                textSelectionIsMouseDown = false;
-            } else if (e.button == SDL_BUTTON_RIGHT) {
-#if defined(WIN32)
-                if (textSelectionContextualMenu && hitTest(x, y, false) && isFocus()) {
-                    UINT canCutCopy = textSelectionIsSelected() ? MF_ENABLED : MF_GRAYED;
-                    UINT canPaste = textSelectionIsValidClipboardText() ? MF_ENABLED : MF_GRAYED;
-                    UINT canDelete = textSelectionIsSelected() ? MF_ENABLED : MF_GRAYED;
+			if (e.button == SDL_BUTTON_LEFT || e.button == SDL_BUTTON_RIGHT) {
+				if (isFocus()) {
+					if (e.button == SDL_BUTTON_RIGHT && !textSelectionIsSelected()) {
+						textSelectionSetCaretPosition(x, y);
+					}
 
-                    int startIndex = 0;
-                    int endIndex = 0;
-                    textSelectionGetSelectedIndex(&startIndex, &endIndex);
-                    UINT canSelectAll = (title.length() > 0 && !(startIndex == 0 && endIndex == title.length())) ? MF_ENABLED : MF_GRAYED;
+					textSelectionIsMouseDown = false;
+					if (textSelectionIsSelected() || e.button == SDL_BUTTON_RIGHT || (float)SDL_GetTicks() - touchTime >= 500.0f) {
+						if (contextualMenu) {
+							x = (x / GUI_scale) + 1;
+							y = (y / GUI_scale) + 1;
 
-                    EnableMenuItem(textSelectionContextualMenu, textSelectionContextualMenuCut, canCutCopy);
-                    EnableMenuItem(textSelectionContextualMenu, textSelectionContextualMenuCopy, canCutCopy);
-                    EnableMenuItem(textSelectionContextualMenu, textSelectionContextualMenuPaste, canPaste);
-                    EnableMenuItem(textSelectionContextualMenu, textSelectionContextualMenuDelete, canDelete);
-                    EnableMenuItem(textSelectionContextualMenu, textSelectionContextualMenuSelectAll, canSelectAll);
+							int left = (rectView.x / GUI_scale) + _padding[0];
+							int right = left + (rectView.w / GUI_scale) - 1 - _padding[2];
+							int top = (rectView.y / GUI_scale) + _padding[1];
+							int bottom = top + (rectView.h / GUI_scale) - 1 - _padding[3];
 
-                    SDL_SysWMinfo info = {0};
-                    SDL_VERSION(&info.version);
-                    SDL_GetWindowWMInfo(GUI_window, &info);
-                    HWND hwnd = info.info.win.window;
-                    POINT point = {0};
-                    GetCursorPos(&point);
-                    TrackPopupMenu(GetSubMenu(textSelectionContextualMenu, 0), TPM_RIGHTBUTTON, point.x, point.y, 0, hwnd, NULL);
-                    return true;
-                }
-#endif
-            }
+							if (x < left) {
+								x = left;
+							} else if (x > right) {
+								int different = x - right;
+								x -= different;
+							}
 
-            break;
+							if (y < top) {
+								y = top;
+							} else if (y > bottom) {
+								int different = y - bottom;
+								y -= different;
+							}
+
+							right = x + (contextualMenu->rectView.w / GUI_scale) - 1;
+							bottom = y + (contextualMenu->rectView.h / GUI_scale) - 1;
+
+							int windowLeft = (GUI_topView->rectView.x / GUI_scale) + GUI_topView->_padding[0];
+							int windowRight = windowLeft + (GUI_topView->rectView.w / GUI_scale) - 1 - GUI_topView->_padding[1];
+							int windowTop = (GUI_topView->rectView.y / GUI_scale) + GUI_topView->_padding[0];
+							int windowBottom = windowTop + (GUI_topView->rectView.h / GUI_scale) - 1 - GUI_topView->_padding[1];
+
+							if (x < windowLeft) {
+								x = windowLeft;
+							} else if (right > windowRight) {
+								int different = right - windowRight;
+								x -= different;
+							}
+
+							if (y < windowTop) {
+								y = windowTop;
+							} else if (bottom > windowBottom) {
+								int different = bottom - windowBottom;
+								y -= different;
+							}
+
+							contextualMenu->setAbsolutePosition(x, y);
+
+							for (std::vector<GUI_MenuItem *>::iterator it = contextualMenu->menuItems.begin(); it != contextualMenu->menuItems.end(); ++it) {
+								GUI_MenuItem *c = *it;
+								if (c->title == "Undo") {
+									c->setEnable(true);
+								} else if (c->title == "Cut") {
+									c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canCut() : false);
+								} else if (c->title == "Copy") {
+									c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canCopy() : false);
+								} else if (c->title == "Paste") {
+									c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canPaste() : false);
+								} else if (c->title == "Delete") {
+									c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canDelete() : false);
+								} else if (c->title == "Select All") {
+									c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canSelectAll() : false);
+								}
+							}
+
+							contextualMenu->show();
+							GUI_SetMouseCapture(contextualMenu);
+						}
+					}
+					return false;
+				} else {
+					textSelectionCancel();
+				}
+			}
+
+			break;
         }
-
-#if defined(WIN32)
-        case SDL_SYSWMEVENT:
-            if (GUI_lastEditTextView != this) {
-                return false;
-            }
-
-            if (event->syswm.msg->msg.win.msg == WM_COMMAND) {
-                if (textSelectionContextualMenu) {
-                    DWORD menuId = LOWORD(event->syswm.msg->msg.win.wParam);
-
-                    if (menuId == textSelectionContextualMenuCut) {
-                        textSelectionCut();
-                    } else if (menuId == textSelectionContextualMenuCopy) {
-                        textSelectionCopy();
-                    } else if (menuId == textSelectionContextualMenuPaste) {
-                        textSelectionPaste();
-                    } else if (menuId == textSelectionContextualMenuDelete) {
-                        textSelectionDelete();
-                    } else if (menuId == textSelectionContextualMenuSelectAll) {
-                        textSelectionSelectAll();
-                    }
-
-                    return false;
-                }
-            }
-            break;
-#endif
-
 
         default:
         {
@@ -836,6 +902,7 @@ bool GUI_EditText::textSelectionGetRect(SDL_Rect* rect) {
 }
 
 void GUI_EditText::textSelectionSetCaretPosition(int x, int y) {
+    textSelectionIsMouseDown = true;
     textEditIndex = textSelectionGetIndexAtScreenPosition(x);
     textSelectionStartIndex = textEditIndex;
     textSelectionEndIndex = textSelectionStartIndex;
@@ -843,17 +910,60 @@ void GUI_EditText::textSelectionSetCaretPosition(int x, int y) {
     textSelectionMousePoint.y = y;
 }
 
-#if defined(WIN32)
-void GUI_EditText::setContextualMenu(UINT menu, UINT menuCut, UINT menuCopy, UINT menuPaste, UINT menuDelete, UINT menuSelectAll) {
-    if (textSelectionContextualMenu == NULL) {
-        SDL_EventState(SDL_SYSWMEVENT, SDL_ENABLE);
-
-        textSelectionContextualMenu = LoadMenu(GetModuleHandle(NULL), MAKEINTRESOURCE(menu));
-        textSelectionContextualMenuCut = menuCut;
-        textSelectionContextualMenuCopy = menuCopy;
-        textSelectionContextualMenuPaste = menuPaste;
-        textSelectionContextualMenuDelete = menuDelete;
-        textSelectionContextualMenuSelectAll = menuSelectAll;
-    }
+bool GUI_EditText::canCut() {
+	return textSelectionIsSelected();
 }
-#endif
+
+bool GUI_EditText::canCopy() {
+	return textSelectionIsSelected();
+}
+
+bool GUI_EditText::canPaste() {
+	return textSelectionIsValidClipboardText();
+}
+
+bool GUI_EditText::canDelete() {
+	return textSelectionIsSelected();
+}
+
+bool GUI_EditText::canSelectAll() {
+	int startIndex = 0;
+	int endIndex = 0;
+	textSelectionGetSelectedIndex(&startIndex, &endIndex);
+	return (title.length() > 0 && !(startIndex == 0 && endIndex == title.length()));
+}
+
+void GUI_EditText::createContextualMenu() {
+	if (contextualMenu == NULL && GUI_topView) {
+		contextualMenu = GUI_PopupMenu::create(GUI_topView, "contextualMenu", 0, 0, 160, 0);
+		contextualMenu->hide();
+		contextualMenu->addSimpleMenu("Cut");
+		contextualMenu->addSimpleMenu("Copy");
+		contextualMenu->addSimpleMenu("Paste");
+		contextualMenu->addSimpleMenu("Delete", true);
+		contextualMenu->addSimpleMenu("Select All");
+
+		contextualMenu->setCallback([=](GUI_View *v) {
+			if (GUI_lastEditTextView) {
+				GUI_PopupMenu *pm = (GUI_PopupMenu *)v;
+				GUI_MenuItem *it = pm->selectedItem;
+				it->setSelected(false);
+				GUI_MenuItem* selectedItem = pm->selectedItem;
+				pm->selectedItem = NULL;
+				pm->hide();
+
+				if (selectedItem->title == "Cut") {
+					GUI_lastEditTextView->textSelectionCut();
+				} else if (selectedItem->title == "Copy") {
+					GUI_lastEditTextView->textSelectionCopy();
+				} else if (selectedItem->title == "Paste") {
+					GUI_lastEditTextView->textSelectionPaste();
+				} else if (selectedItem->title == "Delete") {
+					GUI_lastEditTextView->textSelectionDelete();
+				} else if (selectedItem->title == "Select All") {
+					GUI_lastEditTextView->textSelectionSelectAll();
+				}
+			}
+		});
+	}
+}

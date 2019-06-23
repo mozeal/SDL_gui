@@ -14,13 +14,13 @@
 #include <functional>
 #include <vector>
 #include <list>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #ifdef __MACOSX__
 #include <SDL_ttf.h>
 #include <SDL_image.h>
 #else
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_image.h>
+#include <SDL_ttf.h>
+#include <SDL_image.h>
 #endif
 #include "GUI_Utils.h"
 
@@ -54,7 +54,6 @@ protected:
 
     bool    _visible;
     bool    _enable;
-    bool    _focus;
     bool    _interact;
     bool    _selected;
 
@@ -69,12 +68,14 @@ protected:
     int     _border;
 
 
-    int     _padding[4];
     int     _margin[4];
     int     _saftyMarginFlag;
     int     _saftyPaddingFlag;
 public:
-    enum eBackgroundMode
+    bool    _focus;
+	std::function<void(GUI_View*)>user_callback;
+	
+	enum eBackgroundMode
     {
         eSolidColor = 1,
         eHorizontalLinearGradient = 2,
@@ -131,6 +132,7 @@ public:
 
     static std::vector<GUI_View *>closeQueue;
 
+    int _padding[4];
     int focusBorder;
     bool in_scroll_bed;
     bool focusable;
@@ -266,8 +268,12 @@ public:
     };
 
     virtual void setEnable(bool e) {
-        _enable = e;
-    };
+		if (e) {
+			enable();
+		} else {
+			disable();
+		}
+	};
 
     virtual bool isVisible() {
         return _visible;
@@ -300,7 +306,14 @@ public:
         updateContent();
     }
 
-    virtual void setCallback( std::function<void(GUI_View*)>cb ) {
+	virtual void setUserCallback(std::function<void(GUI_View*)>ucb) {
+		user_callback = ucb;
+	}
+	virtual std::function<void(GUI_View*)> getUserCallback() {
+		return user_callback;
+	}
+	
+	virtual void setCallback( std::function<void(GUI_View*)>cb ) {
         callback = cb;
     }
     virtual std::function<void(GUI_View*)> getCallback()

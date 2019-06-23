@@ -9,14 +9,9 @@
 #ifndef SDL_gui_hpp
 #define SDL_gui_hpp
 
-#include <SDL2/SDL.h>
-#ifdef __MACOSX__
+#include <SDL.h>
 #include <SDL_ttf.h>
 #include <SDL_image.h>
-#else
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_image.h>
-#endif
 #include <stdio.h>
 #include <iostream>
 

@@ -244,12 +244,18 @@ void GUI_Error(const char* fn, int result) {
 }
 
 static void GUI_Loop() {
-    if( GUI_View::closeQueue.size() ) {
+	int n = (int)GUI_View::closeQueue.size();
+    if (n > 0) {
         for (std::vector<GUI_View *>::iterator it = GUI_View::closeQueue.end()-1 ; it >= GUI_View::closeQueue.begin(); --it) {
             GUI_View *child = *it;
             GUI_View::closeQueue.erase(it);
             delete(child);
-        }
+            child = NULL;
+
+			if (n == 1) {
+				break;
+			}
+		}
         GUI_View::closeQueue.clear();
     }
     

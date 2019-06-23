@@ -20,7 +20,6 @@
 
 class GUI_PopupMenu : public GUI_PopupView {
 protected:
-    std::vector<GUI_MenuItem *>menuItems;
     GUI_ScrollView *scrollView;
 public:
     static GUI_PopupMenu *create( GUI_View *parent, const char *title, int x=0, int y=0, int width=0, int height=0,
@@ -35,6 +34,7 @@ public:
     virtual void addSimpleMenu( const char *title, bool separator=false );
     
     GUI_MenuItem *selectedItem;
+	std::vector<GUI_MenuItem *>menuItems;
 };
 
 class GUI_MenuBarItem : public GUI_View {
@@ -67,7 +67,7 @@ public:
     virtual void remove(GUI_MenuBarItem* child);
     
     GUI_MenuBarItem * addSimpleMenu( const char *title );
-    GUI_MenuBarItem * addPopupMenu( const char *title, GUI_View *parentView );
+    GUI_MenuBarItem * addPopupMenu( const char *title, GUI_View *parentView, std::function<void(GUI_View*)>ucb = NULL);
     GUI_MenuItem *selectedItem;
 };
 

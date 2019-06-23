@@ -91,7 +91,7 @@ void GUI_PopupMenu::add(GUI_MenuItem* child) {
         GUI_MenuItem *lit = (GUI_MenuItem *)v;
         for (std::vector<GUI_MenuItem *>::iterator it = menuItems.begin() ; it != menuItems.end(); ++it) {
             GUI_MenuItem *c = *it;
-            if( lit == c ) {
+            if( lit == c && c->isEnable()) {
                 c->setSelected(true);
                 //GUI_Log( "%s\n", c->title.c_str());
                 this->selectedItem = c;
@@ -124,9 +124,11 @@ void GUI_PopupMenu::addSimpleMenu( const char *title, bool separator ) {
     item1->setPadding( 8, 10, 8, 10 );
     item1->separator = separator;
     
-    GUI_Label *lb1 = GUI_Label::create( item1, title, 0, 0, -1, 0 );
-    lb1->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
-    lb1->setBackgroundColor(cClear);
+    item1->label = GUI_Label::create( item1, title, 0, 0, -1, 0 );
+	item1->label->setAlign( GUI_ALIGN_LEFT | GUI_ALIGN_VCENTER );
+	item1->label->setBackgroundColor(cClear);
+	item1->labelTextColor = cBlack;
+	item1->label->setTextColor(item1->labelTextColor);
     
     add( item1 );
     updateLayout();
@@ -168,7 +170,11 @@ void GUI_MenuBar::add(GUI_MenuBarItem* child) {
                 item->getPopupMenu()->hide();
             }
             else {
-                item->getPopupMenu()->show();
+				if (item->user_callback) {
+					item->user_callback(item->getPopupMenu());
+				}
+
+				item->getPopupMenu()->show();
                 GUI_SetMouseCapture(item->getPopupMenu());
             }
         }
@@ -201,9 +207,10 @@ GUI_MenuBarItem * GUI_MenuBar::addSimpleMenu( const char *title ) {
     return item1;
 }
 
-GUI_MenuBarItem * GUI_MenuBar::addPopupMenu( const char *title, GUI_View *parentView ) {
+GUI_MenuBarItem * GUI_MenuBar::addPopupMenu( const char *title, GUI_View *parentView, std::function<void(GUI_View*)>ucb) {
     GUI_MenuBarItem *item = addSimpleMenu(title);
     GUI_PopupMenu *popupMenu = item->addPopupMenu( parentView );
+	item->user_callback = ucb;
     popupMenu->setCallback([=](GUI_View *v) {
         GUI_PopupMenu *pm = (GUI_PopupMenu *)v;
         GUI_MenuItem *it = pm->selectedItem;
