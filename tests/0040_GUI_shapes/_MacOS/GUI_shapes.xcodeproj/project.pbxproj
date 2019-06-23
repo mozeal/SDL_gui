@@ -254,8 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				69EF26601D13EAFB009B1FD6 /* data */,
-				69EF234F1D13DFC7009B1FD6 /* GUI_shapes */,
 				69EF23791D13E26A009B1FD6 /* Frameworks */,
+				69EF234F1D13DFC7009B1FD6 /* GUI_shapes */,
 				69EF234E1D13DFC7009B1FD6 /* Products */,
 				69EF236B1D13E239009B1FD6 /* src */,
 			);
@@ -646,7 +646,7 @@
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.GUIshapes;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
@@ -673,7 +673,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.GUIshapes;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDL_GFX_ROOT = ../../../SDL2_gfx;

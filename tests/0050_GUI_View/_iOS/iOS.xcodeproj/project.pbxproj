@@ -129,7 +129,7 @@
 		385B991B21CBBF60000E5F90 /* SDL_image.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_image.xcodeproj; path = "../../../SDL2_image/Xcode-iOS/SDL_image.xcodeproj"; sourceTree = "<group>"; };
 		385B9A1A21CBE345000E5F90 /* SDL_ttf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_ttf.xcodeproj; path = "../../../SDL2_ttf_HarfBuzz/Xcode-iOS/SDL_ttf.xcodeproj"; sourceTree = "<group>"; };
 		38C6AF771C882C9700388748 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../data; sourceTree = "<group>"; };
-		38CA5C9C1BCCAF2B0099BC3B /* SDL_ttf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDL_ttf.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		38CA5C9C1BCCAF2B0099BC3B /* GUI_View.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GUI_View.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38CA5CAB1BCCAF2B0099BC3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38CA5CAE1BCCAF2B0099BC3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38CA5CB01BCCAF2B0099BC3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 		38CA5C9D1BCCAF2B0099BC3B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				38CA5C9C1BCCAF2B0099BC3B /* SDL_ttf.app */,
+				38CA5C9C1BCCAF2B0099BC3B /* GUI_View.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,9 +315,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		38CA5C9B1BCCAF2B0099BC3B /* iOS */ = {
+		38CA5C9B1BCCAF2B0099BC3B /* GUI_View */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "iOS" */;
+			buildConfigurationList = 38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "GUI_View" */;
 			buildPhases = (
 				38CA5C981BCCAF2B0099BC3B /* Sources */,
 				38CA5C991BCCAF2B0099BC3B /* Frameworks */,
@@ -330,9 +330,9 @@
 				385B992B21CBBF6F000E5F90 /* PBXTargetDependency */,
 				380C58C421C101C70005A03F /* PBXTargetDependency */,
 			);
-			name = iOS;
+			name = GUI_View;
 			productName = iOS;
-			productReference = 38CA5C9C1BCCAF2B0099BC3B /* SDL_ttf.app */;
+			productReference = 38CA5C9C1BCCAF2B0099BC3B /* GUI_View.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -378,7 +378,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				38CA5C9B1BCCAF2B0099BC3B /* iOS */,
+				38CA5C9B1BCCAF2B0099BC3B /* GUI_View */,
 			);
 		};
 /* End PBXProject section */
@@ -611,8 +611,8 @@
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jimmysoftware.$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = SDL_ttf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.GUIView;
+				PRODUCT_NAME = GUI_View;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = JimmyDev2019;
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
@@ -641,8 +641,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jimmysoftware.$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = SDL_ttf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.GUIView;
+				PRODUCT_NAME = GUI_View;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = JimmyDist2019;
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
@@ -665,7 +665,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "iOS" */ = {
+		38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "GUI_View" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				38CA5CB41BCCAF2B0099BC3B /* Debug */,

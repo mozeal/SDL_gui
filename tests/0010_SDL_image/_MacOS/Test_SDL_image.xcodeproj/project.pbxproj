@@ -155,10 +155,10 @@
 			isa = PBXGroup;
 			children = (
 				69EF26601D13EAFB009B1FD6 /* data */,
-				69EF234F1D13DFC7009B1FD6 /* Test_SDL_image */,
 				69EF23791D13E26A009B1FD6 /* Frameworks */,
 				69EF234E1D13DFC7009B1FD6 /* Products */,
 				69EF236B1D13E239009B1FD6 /* src */,
+				69EF234F1D13DFC7009B1FD6 /* Test_SDL_image */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,9 +217,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		69EF234C1D13DFC7009B1FD6 /* TestSDLimage */ = {
+		69EF234C1D13DFC7009B1FD6 /* SDL_image */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "TestSDLimage" */;
+			buildConfigurationList = 69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "SDL_image" */;
 			buildPhases = (
 				69EF23491D13DFC7009B1FD6 /* Sources */,
 				69EF234A1D13DFC7009B1FD6 /* Frameworks */,
@@ -232,7 +232,7 @@
 				385B990321CBB970000E5F90 /* PBXTargetDependency */,
 				380C58B021C100CA0005A03F /* PBXTargetDependency */,
 			);
-			name = TestSDLimage;
+			name = SDL_image;
 			productName = ClearScreen;
 			productReference = 69EF234D1D13DFC7009B1FD6 /* Test_SDL_image.app */;
 			productType = "com.apple.product-type.application";
@@ -275,7 +275,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				69EF234C1D13DFC7009B1FD6 /* TestSDLimage */,
+				69EF234C1D13DFC7009B1FD6 /* SDL_image */,
 			);
 		};
 /* End PBXProject section */
@@ -503,7 +503,7 @@
 				INFOPLIST_FILE = "$(PROJECT_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.SDLimage;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDL_IMAGE_ROOT = ../../../SDL2_image;
@@ -526,7 +526,7 @@
 				HEADER_SEARCH_PATHS = $GUI_CORE_INCLUDES;
 				INFOPLIST_FILE = "$(PROJECT_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.SDLimage;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDL_IMAGE_ROOT = ../../../SDL2_image;
@@ -547,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "TestSDLimage" */ = {
+		69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "SDL_image" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69EF235F1D13DFC7009B1FD6 /* Debug */,

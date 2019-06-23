@@ -216,9 +216,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		38CA5C9B1BCCAF2B0099BC3B /* iOS */ = {
+		38CA5C9B1BCCAF2B0099BC3B /* SDL_image */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "iOS" */;
+			buildConfigurationList = 38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "SDL_image" */;
 			buildPhases = (
 				38CA5C981BCCAF2B0099BC3B /* Sources */,
 				38CA5C991BCCAF2B0099BC3B /* Frameworks */,
@@ -230,7 +230,7 @@
 				385B992B21CBBF6F000E5F90 /* PBXTargetDependency */,
 				380C58C421C101C70005A03F /* PBXTargetDependency */,
 			);
-			name = iOS;
+			name = SDL_image;
 			productName = iOS;
 			productReference = 38CA5C9C1BCCAF2B0099BC3B /* SDL_image.app */;
 			productType = "com.apple.product-type.application";
@@ -274,7 +274,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				38CA5C9B1BCCAF2B0099BC3B /* iOS */,
+				38CA5C9B1BCCAF2B0099BC3B /* SDL_image */,
 			);
 		};
 /* End PBXProject section */
@@ -482,7 +482,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jimmysoftware.$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.SDLimage;
 				PRODUCT_NAME = SDL_image;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = JimmyDev2019;
@@ -507,7 +507,7 @@
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jimmysoftware.$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.SDLimage;
 				PRODUCT_NAME = SDL_image;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = JimmyDist2019;
@@ -528,7 +528,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "iOS" */ = {
+		38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "SDL_image" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				38CA5CB41BCCAF2B0099BC3B /* Debug */,

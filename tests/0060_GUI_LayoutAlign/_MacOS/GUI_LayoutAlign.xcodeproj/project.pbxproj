@@ -237,22 +237,22 @@
 			children = (
 				38CAB0E222084E2C00732323 /* GUI_Config.cpp */,
 				38CAB0EA22084E2C00732323 /* GUI_Config.h */,
-				385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */,
-				385B9A9321CC13A8000E5F90 /* SDL_gui.h */,
-				385B9AB421CCBC4C000E5F90 /* GUI_shapes.cpp */,
-				385B9AB521CCBC4C000E5F90 /* GUI_shapes.h */,
-				385B9AFB21CD07A4000E5F90 /* GUI_View.cpp */,
-				385B9AFC21CD07A4000E5F90 /* GUI_View.h */,
-				385B9AFE21CD08CB000E5F90 /* GUI_Utils.cpp */,
-				385B9AFF21CD08CB000E5F90 /* GUI_Utils.h */,
+				38EC051121E9E4A4005F3A3A /* GUI_Fonts.cpp */,
+				38EC051421E9E4E8005F3A3A /* GUI_Fonts.h */,
 				385B9B6A21CFB1F7000E5F90 /* GUI_image.cpp */,
 				385B9B6B21CFB1F7000E5F90 /* GUI_image.h */,
 				385B9B6D21CFC089000E5F90 /* GUI_ImageView.cpp */,
 				385B9B6E21CFC089000E5F90 /* GUI_ImageView.h */,
+				385B9AB421CCBC4C000E5F90 /* GUI_shapes.cpp */,
+				385B9AB521CCBC4C000E5F90 /* GUI_shapes.h */,
 				38EC050B21E9A5CE005F3A3A /* GUI_TextView.cpp */,
 				38EC050C21E9A5CE005F3A3A /* GUI_TextView.h */,
-				38EC051121E9E4A4005F3A3A /* GUI_Fonts.cpp */,
-				38EC051421E9E4E8005F3A3A /* GUI_Fonts.h */,
+				385B9AFE21CD08CB000E5F90 /* GUI_Utils.cpp */,
+				385B9AFF21CD08CB000E5F90 /* GUI_Utils.h */,
+				385B9AFB21CD07A4000E5F90 /* GUI_View.cpp */,
+				385B9AFC21CD07A4000E5F90 /* GUI_View.h */,
+				385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */,
+				385B9A9321CC13A8000E5F90 /* SDL_gui.h */,
 			);
 			name = SDL2_gui;
 			path = ../../../SDL2_gui;
@@ -261,14 +261,14 @@
 		385B9AB721CCD379000E5F90 /* SDL2_gfx */ = {
 			isa = PBXGroup;
 			children = (
-				385B9AB821CCD379000E5F90 /* SDL2_imageFilter.c */,
-				385B9AB921CCD379000E5F90 /* SDL2_gfxPrimitives.c */,
+				385B9ABF21CCD379000E5F90 /* SDL2_framerate.c */,
 				385B9ABA21CCD379000E5F90 /* SDL2_framerate.h */,
 				385B9ABB21CCD379000E5F90 /* SDL2_gfxPrimitives_font.h */,
-				385B9ABC21CCD379000E5F90 /* SDL2_rotozoom.c */,
+				385B9AB921CCD379000E5F90 /* SDL2_gfxPrimitives.c */,
 				385B9ABD21CCD379000E5F90 /* SDL2_gfxPrimitives.h */,
+				385B9AB821CCD379000E5F90 /* SDL2_imageFilter.c */,
 				385B9ABE21CCD379000E5F90 /* SDL2_imageFilter.h */,
-				385B9ABF21CCD379000E5F90 /* SDL2_framerate.c */,
+				385B9ABC21CCD379000E5F90 /* SDL2_rotozoom.c */,
 				385B9AC021CCD379000E5F90 /* SDL2_rotozoom.h */,
 			);
 			name = SDL2_gfx;
@@ -279,8 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				69EF26601D13EAFB009B1FD6 /* data */,
-				69EF234F1D13DFC7009B1FD6 /* GUI_LayoutAlign */,
 				69EF23791D13E26A009B1FD6 /* Frameworks */,
+				69EF234F1D13DFC7009B1FD6 /* GUI_LayoutAlign */,
 				69EF234E1D13DFC7009B1FD6 /* Products */,
 				69EF236B1D13E239009B1FD6 /* src */,
 			);
@@ -676,7 +676,7 @@
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.GUILayoutAlign;
 				PRODUCT_NAME = GUI_LayoutAlign;
 				PROVISIONING_PROFILE = "";
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
@@ -703,7 +703,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.GUILayoutAlign;
 				PRODUCT_NAME = GUI_LayoutAlign;
 				PROVISIONING_PROFILE = "";
 				SDL_GFX_ROOT = ../../../SDL2_gfx;

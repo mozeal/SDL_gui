@@ -23,7 +23,6 @@
 		380EC84021FD824800759C7E /* GUI_List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 380EC83E21FD824800759C7E /* GUI_List.cpp */; };
 		3817478421E7700D00AA0910 /* SDL2_imageFilter.c in Sources */ = {isa = PBXBuildFile; fileRef = 3817477A21E7700C00AA0910 /* SDL2_imageFilter.c */; };
 		3817478521E7700D00AA0910 /* SDL2_gfxPrimitives.c in Sources */ = {isa = PBXBuildFile; fileRef = 3817477B21E7700C00AA0910 /* SDL2_gfxPrimitives.c */; };
-		3817478621E7700D00AA0910 /* SDL2_gfxPrimitives.bc in Resources */ = {isa = PBXBuildFile; fileRef = 3817477D21E7700C00AA0910 /* SDL2_gfxPrimitives.bc */; };
 		3817478721E7700D00AA0910 /* SDL2_rotozoom.c in Sources */ = {isa = PBXBuildFile; fileRef = 3817477F21E7700C00AA0910 /* SDL2_rotozoom.c */; };
 		3817478821E7700D00AA0910 /* SDL2_framerate.c in Sources */ = {isa = PBXBuildFile; fileRef = 3817478221E7700C00AA0910 /* SDL2_framerate.c */; };
 		3817479A21E7701700AA0910 /* GUI_ImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3817478A21E7701700AA0910 /* GUI_ImageView.cpp */; };
@@ -142,7 +141,6 @@
 		3817477A21E7700C00AA0910 /* SDL2_imageFilter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SDL2_imageFilter.c; sourceTree = "<group>"; };
 		3817477B21E7700C00AA0910 /* SDL2_gfxPrimitives.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SDL2_gfxPrimitives.c; sourceTree = "<group>"; };
 		3817477C21E7700C00AA0910 /* SDL2_framerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL2_framerate.h; sourceTree = "<group>"; };
-		3817477D21E7700C00AA0910 /* SDL2_gfxPrimitives.bc */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDL2_gfxPrimitives.bc; sourceTree = "<group>"; };
 		3817477E21E7700C00AA0910 /* SDL2_gfxPrimitives_font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL2_gfxPrimitives_font.h; sourceTree = "<group>"; };
 		3817477F21E7700C00AA0910 /* SDL2_rotozoom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SDL2_rotozoom.c; sourceTree = "<group>"; };
 		3817478021E7700C00AA0910 /* SDL2_gfxPrimitives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL2_gfxPrimitives.h; sourceTree = "<group>"; };
@@ -165,7 +163,7 @@
 		385B991B21CBBF60000E5F90 /* SDL_image.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_image.xcodeproj; path = "../../../SDL2_image/Xcode-iOS/SDL_image.xcodeproj"; sourceTree = "<group>"; };
 		385B9A1A21CBE345000E5F90 /* SDL_ttf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_ttf.xcodeproj; path = "../../../SDL2_ttf_HarfBuzz/Xcode-iOS/SDL_ttf.xcodeproj"; sourceTree = "<group>"; };
 		38C6AF771C882C9700388748 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../data; sourceTree = "<group>"; };
-		38CA5C9C1BCCAF2B0099BC3B /* SDL_ttf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDL_ttf.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		38CA5C9C1BCCAF2B0099BC3B /* BasicControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38CA5CAB1BCCAF2B0099BC3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38CA5CAE1BCCAF2B0099BC3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38CA5CB01BCCAF2B0099BC3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -224,15 +222,14 @@
 		3817477921E7700C00AA0910 /* SDL2_gfx */ = {
 			isa = PBXGroup;
 			children = (
-				3817477A21E7700C00AA0910 /* SDL2_imageFilter.c */,
-				3817477B21E7700C00AA0910 /* SDL2_gfxPrimitives.c */,
-				3817477C21E7700C00AA0910 /* SDL2_framerate.h */,
-				3817477D21E7700C00AA0910 /* SDL2_gfxPrimitives.bc */,
-				3817477E21E7700C00AA0910 /* SDL2_gfxPrimitives_font.h */,
-				3817477F21E7700C00AA0910 /* SDL2_rotozoom.c */,
-				3817478021E7700C00AA0910 /* SDL2_gfxPrimitives.h */,
-				3817478121E7700C00AA0910 /* SDL2_imageFilter.h */,
 				3817478221E7700C00AA0910 /* SDL2_framerate.c */,
+				3817477C21E7700C00AA0910 /* SDL2_framerate.h */,
+				3817477E21E7700C00AA0910 /* SDL2_gfxPrimitives_font.h */,
+				3817477B21E7700C00AA0910 /* SDL2_gfxPrimitives.c */,
+				3817478021E7700C00AA0910 /* SDL2_gfxPrimitives.h */,
+				3817477A21E7700C00AA0910 /* SDL2_imageFilter.c */,
+				3817478121E7700C00AA0910 /* SDL2_imageFilter.h */,
+				3817477F21E7700C00AA0910 /* SDL2_rotozoom.c */,
 				3817478321E7700C00AA0910 /* SDL2_rotozoom.h */,
 			);
 			name = SDL2_gfx;
@@ -242,8 +239,6 @@
 		3817478921E7701700AA0910 /* SDL2_gui */ = {
 			isa = PBXGroup;
 			children = (
-				380EC83E21FD824800759C7E /* GUI_List.cpp */,
-				380EC83F21FD824800759C7E /* GUI_List.h */,
 				380EC83021FD821500759C7E /* GUI_Button.cpp */,
 				380EC82521FD821500759C7E /* GUI_Button.h */,
 				380EC82221FD821500759C7E /* GUI_CheckBox.cpp */,
@@ -254,30 +249,32 @@
 				380EC82621FD821500759C7E /* GUI_Fonts.h */,
 				380EC82721FD821500759C7E /* GUI_IconView.cpp */,
 				380EC81621FD821400759C7E /* GUI_IconView.h */,
+				3817479521E7701700AA0910 /* GUI_image.cpp */,
+				3817479321E7701700AA0910 /* GUI_image.h */,
+				3817478A21E7701700AA0910 /* GUI_ImageView.cpp */,
+				3817479021E7701700AA0910 /* GUI_ImageView.h */,
 				380EC82021FD821400759C7E /* GUI_Label.cpp */,
 				380EC82121FD821400759C7E /* GUI_Label.h */,
+				380EC83E21FD824800759C7E /* GUI_List.cpp */,
+				380EC83F21FD824800759C7E /* GUI_List.h */,
 				380EC82321FD821500759C7E /* GUI_RadioButton.cpp */,
 				380EC81F21FD821400759C7E /* GUI_RadioButton.h */,
 				380EC82821FD821500759C7E /* GUI_RadioButtonGroup.cpp */,
 				380EC83221FD821500759C7E /* GUI_RadioButtonGroup.h */,
 				380EC82F21FD821500759C7E /* GUI_ScrollView.cpp */,
 				380EC82421FD821500759C7E /* GUI_ScrollView.h */,
+				3817479421E7701700AA0910 /* GUI_shapes.cpp */,
+				3817479221E7701700AA0910 /* GUI_shapes.h */,
 				380EC82921FD821500759C7E /* GUI_TextUtil.cpp */,
 				380EC82A21FD821500759C7E /* GUI_TextUtil.h */,
 				380EC82B21FD821500759C7E /* GUI_TextView.cpp */,
 				380EC83121FD821500759C7E /* GUI_TextView.h */,
-				3817478A21E7701700AA0910 /* GUI_ImageView.cpp */,
-				3817478B21E7701700AA0910 /* GUI_View.h */,
-				3817478C21E7701700AA0910 /* GUI_View.cpp */,
-				3817478D21E7701700AA0910 /* GUI_Utils.h */,
-				3817478F21E7701700AA0910 /* SDL_gui.cpp */,
-				3817479021E7701700AA0910 /* GUI_ImageView.h */,
-				3817479121E7701700AA0910 /* SDL_gui.h */,
-				3817479221E7701700AA0910 /* GUI_shapes.h */,
-				3817479321E7701700AA0910 /* GUI_image.h */,
-				3817479421E7701700AA0910 /* GUI_shapes.cpp */,
-				3817479521E7701700AA0910 /* GUI_image.cpp */,
 				3817479721E7701700AA0910 /* GUI_Utils.cpp */,
+				3817478D21E7701700AA0910 /* GUI_Utils.h */,
+				3817478C21E7701700AA0910 /* GUI_View.cpp */,
+				3817478B21E7701700AA0910 /* GUI_View.h */,
+				3817478F21E7701700AA0910 /* SDL_gui.cpp */,
+				3817479121E7701700AA0910 /* SDL_gui.h */,
 			);
 			name = SDL2_gui;
 			path = ../../../SDL2_gui;
@@ -314,7 +311,7 @@
 		38CA5C9D1BCCAF2B0099BC3B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				38CA5C9C1BCCAF2B0099BC3B /* SDL_ttf.app */,
+				38CA5C9C1BCCAF2B0099BC3B /* BasicControl.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -375,9 +372,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		38CA5C9B1BCCAF2B0099BC3B /* iOS */ = {
+		38CA5C9B1BCCAF2B0099BC3B /* BasicControl */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "iOS" */;
+			buildConfigurationList = 38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "BasicControl" */;
 			buildPhases = (
 				38CA5C981BCCAF2B0099BC3B /* Sources */,
 				38CA5C991BCCAF2B0099BC3B /* Frameworks */,
@@ -390,9 +387,9 @@
 				385B992B21CBBF6F000E5F90 /* PBXTargetDependency */,
 				380C58C421C101C70005A03F /* PBXTargetDependency */,
 			);
-			name = iOS;
+			name = BasicControl;
 			productName = iOS;
-			productReference = 38CA5C9C1BCCAF2B0099BC3B /* SDL_ttf.app */;
+			productReference = 38CA5C9C1BCCAF2B0099BC3B /* BasicControl.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -438,7 +435,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				38CA5C9B1BCCAF2B0099BC3B /* iOS */,
+				38CA5C9B1BCCAF2B0099BC3B /* BasicControl */,
 			);
 		};
 /* End PBXProject section */
@@ -487,7 +484,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				38CA5CAF1BCCAF2B0099BC3B /* LaunchScreen.storyboard in Resources */,
-				3817478621E7700D00AA0910 /* SDL2_gfxPrimitives.bc in Resources */,
 				38C6AF781C882C9700388748 /* data in Resources */,
 				38CA5CAC1BCCAF2B0099BC3B /* Assets.xcassets in Resources */,
 			);
@@ -683,8 +679,8 @@
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jimmysoftware.$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = SDL_ttf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.BasicControl;
+				PRODUCT_NAME = BasicControl;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = JimmyDev2019;
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
@@ -713,8 +709,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jimmysoftware.$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = SDL_ttf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.BasicControl;
+				PRODUCT_NAME = BasicControl;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = JimmyDist2019;
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
@@ -737,7 +733,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "iOS" */ = {
+		38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "BasicControl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				38CA5CB41BCCAF2B0099BC3B /* Debug */,
