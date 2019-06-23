@@ -225,7 +225,7 @@
 		38EC05B421EAE6CC005F3A3A /* GUI_Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_Config.h; sourceTree = "<group>"; };
 		38EC062321EB996C005F3A3A /* GUI_Button.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Button.cpp; sourceTree = "<group>"; };
 		38EC062421EB996C005F3A3A /* GUI_Button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_Button.h; sourceTree = "<group>"; };
-		69EF234D1D13DFC7009B1FD6 /* GUI_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GUI_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69EF234D1D13DFC7009B1FD6 /* UniversalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69EF23561D13DFC7009B1FD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69EF235B1D13DFC7009B1FD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69EF23731D13E239009B1FD6 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -298,66 +298,66 @@
 		385B9A8A21CC1380000E5F90 /* SDL2_gui */ = {
 			isa = PBXGroup;
 			children = (
-				38EC05B421EAE6CC005F3A3A /* GUI_Config.h */,
-				380EC9072200B87800759C7E /* GUI_Config.cpp */,
-				385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */,
-				385B9A9321CC13A8000E5F90 /* SDL_gui.h */,
-				385B9AB421CCBC4C000E5F90 /* GUI_shapes.cpp */,
-				385B9AB521CCBC4C000E5F90 /* GUI_shapes.h */,
-				385B9AFE21CD08CB000E5F90 /* GUI_Utils.cpp */,
-				385B9AFF21CD08CB000E5F90 /* GUI_Utils.h */,
-				38EC051121E9E4A4005F3A3A /* GUI_Fonts.cpp */,
-				38EC051421E9E4E8005F3A3A /* GUI_Fonts.h */,
-				385B9AFB21CD07A4000E5F90 /* GUI_View.cpp */,
-				385B9AFC21CD07A4000E5F90 /* GUI_View.h */,
-				380EC6B221FC1EB500759C7E /* GUI_ScrollView.cpp */,
-				380EC6B321FC1EB500759C7E /* GUI_ScrollView.h */,
-				385B9B6A21CFB1F7000E5F90 /* GUI_image.cpp */,
-				385B9B6B21CFB1F7000E5F90 /* GUI_image.h */,
-				385B9B6D21CFC089000E5F90 /* GUI_ImageView.cpp */,
-				385B9B6E21CFC089000E5F90 /* GUI_ImageView.h */,
-				38EC050B21E9A5CE005F3A3A /* GUI_TextView.cpp */,
-				38EC050C21E9A5CE005F3A3A /* GUI_TextView.h */,
-				38EC05B121EAE505005F3A3A /* GUI_IconView.cpp */,
-				38EC05B221EAE505005F3A3A /* GUI_IconView.h */,
-				38EC05A721EAE48F005F3A3A /* GUI_Label.cpp */,
-				38EC05A821EAE48F005F3A3A /* GUI_Label.h */,
+				38B66CCB21F184A0005C22C0 /* GUI_App.cpp */,
+				38B66CCC21F184A0005C22C0 /* GUI_App.h */,
 				38EC062321EB996C005F3A3A /* GUI_Button.cpp */,
 				38EC062421EB996C005F3A3A /* GUI_Button.h */,
 				38B66C2F21EE4BAB005C22C0 /* GUI_CheckBox.cpp */,
 				38B66C3021EE4BAB005C22C0 /* GUI_CheckBox.h */,
-				38B66C4121EED3D8005C22C0 /* GUI_RadioButton.cpp */,
-				38B66C4221EED3D8005C22C0 /* GUI_RadioButton.h */,
-				38B66C4B21EEDD24005C22C0 /* GUI_RadioButtonGroup.cpp */,
-				38B66C4C21EEDD24005C22C0 /* GUI_RadioButtonGroup.h */,
-				38B66C5221EF4F20005C22C0 /* GUI_List.cpp */,
-				38B66C5321EF4F20005C22C0 /* GUI_List.h */,
-				38B66CBC21F09ABC005C22C0 /* GUI_TextUtil.cpp */,
-				38B66CBD21F09ABC005C22C0 /* GUI_TextUtil.h */,
+				380EC68E21FADCC300759C7E /* GUI_ComboBox.cpp */,
+				380EC68F21FADCC300759C7E /* GUI_ComboBox.h */,
+				380EC9072200B87800759C7E /* GUI_Config.cpp */,
+				38EC05B421EAE6CC005F3A3A /* GUI_Config.h */,
 				38B66CB921F05E75005C22C0 /* GUI_EditText.cpp */,
 				38B66CBA21F05E75005C22C0 /* GUI_EditText.h */,
-				38B66CCB21F184A0005C22C0 /* GUI_App.cpp */,
-				38B66CCC21F184A0005C22C0 /* GUI_App.h */,
-				38B66CD521F19350005C22C0 /* GUI_TopBar.cpp */,
-				38B66CD621F19350005C22C0 /* GUI_TopBar.h */,
-				38B66CDC21F1B069005C22C0 /* GUI_StatusBar.cpp */,
-				38B66CDD21F1B069005C22C0 /* GUI_StatusBar.h */,
+				38EC051121E9E4A4005F3A3A /* GUI_Fonts.cpp */,
+				38EC051421E9E4E8005F3A3A /* GUI_Fonts.h */,
+				38EC05B121EAE505005F3A3A /* GUI_IconView.cpp */,
+				38EC05B221EAE505005F3A3A /* GUI_IconView.h */,
+				385B9B6A21CFB1F7000E5F90 /* GUI_image.cpp */,
+				385B9B6B21CFB1F7000E5F90 /* GUI_image.h */,
+				385B9B6D21CFC089000E5F90 /* GUI_ImageView.cpp */,
+				385B9B6E21CFC089000E5F90 /* GUI_ImageView.h */,
+				38EC05A721EAE48F005F3A3A /* GUI_Label.cpp */,
+				38EC05A821EAE48F005F3A3A /* GUI_Label.h */,
+				38B66C5221EF4F20005C22C0 /* GUI_List.cpp */,
+				38B66C5321EF4F20005C22C0 /* GUI_List.h */,
 				38B66CED21F21D0F005C22C0 /* GUI_Menu.cpp */,
 				38B66CEE21F21D0F005C22C0 /* GUI_Menu.h */,
 				380EC5E521F630FC00759C7E /* GUI_MenuBar.cpp */,
 				380EC5E621F630FC00759C7E /* GUI_MenuBar.h */,
-				380EC60A21F84D7200759C7E /* GUI_PopupView.cpp */,
-				380EC60B21F84D7200759C7E /* GUI_PopupView.h */,
 				380EC62021F9F5EB00759C7E /* GUI_MessageBox.cpp */,
 				380EC62121F9F5EB00759C7E /* GUI_MessageBox.h */,
-				380EC68021FAA75D00759C7E /* GUI_Switch.cpp */,
-				380EC68121FAA75D00759C7E /* GUI_Switch.h */,
-				380EC68E21FADCC300759C7E /* GUI_ComboBox.cpp */,
-				380EC68F21FADCC300759C7E /* GUI_ComboBox.h */,
-				380EC69C21FB46AE00759C7E /* GUI_Slider.cpp */,
-				380EC69D21FB46AE00759C7E /* GUI_Slider.h */,
+				380EC60A21F84D7200759C7E /* GUI_PopupView.cpp */,
+				380EC60B21F84D7200759C7E /* GUI_PopupView.h */,
 				38CAB1B22208BBC600732323 /* GUI_Preference.cpp */,
 				38CAB1B32208BBC600732323 /* GUI_Preference.h */,
+				38B66C4121EED3D8005C22C0 /* GUI_RadioButton.cpp */,
+				38B66C4221EED3D8005C22C0 /* GUI_RadioButton.h */,
+				38B66C4B21EEDD24005C22C0 /* GUI_RadioButtonGroup.cpp */,
+				38B66C4C21EEDD24005C22C0 /* GUI_RadioButtonGroup.h */,
+				380EC6B221FC1EB500759C7E /* GUI_ScrollView.cpp */,
+				380EC6B321FC1EB500759C7E /* GUI_ScrollView.h */,
+				385B9AB421CCBC4C000E5F90 /* GUI_shapes.cpp */,
+				385B9AB521CCBC4C000E5F90 /* GUI_shapes.h */,
+				380EC69C21FB46AE00759C7E /* GUI_Slider.cpp */,
+				380EC69D21FB46AE00759C7E /* GUI_Slider.h */,
+				38B66CDC21F1B069005C22C0 /* GUI_StatusBar.cpp */,
+				38B66CDD21F1B069005C22C0 /* GUI_StatusBar.h */,
+				380EC68021FAA75D00759C7E /* GUI_Switch.cpp */,
+				380EC68121FAA75D00759C7E /* GUI_Switch.h */,
+				38B66CBC21F09ABC005C22C0 /* GUI_TextUtil.cpp */,
+				38B66CBD21F09ABC005C22C0 /* GUI_TextUtil.h */,
+				38EC050B21E9A5CE005F3A3A /* GUI_TextView.cpp */,
+				38EC050C21E9A5CE005F3A3A /* GUI_TextView.h */,
+				38B66CD521F19350005C22C0 /* GUI_TopBar.cpp */,
+				38B66CD621F19350005C22C0 /* GUI_TopBar.h */,
+				385B9AFE21CD08CB000E5F90 /* GUI_Utils.cpp */,
+				385B9AFF21CD08CB000E5F90 /* GUI_Utils.h */,
+				385B9AFB21CD07A4000E5F90 /* GUI_View.cpp */,
+				385B9AFC21CD07A4000E5F90 /* GUI_View.h */,
+				385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */,
+				385B9A9321CC13A8000E5F90 /* SDL_gui.h */,
 			);
 			name = SDL2_gui;
 			path = ../../../SDL2_gui;
@@ -366,14 +366,14 @@
 		385B9AB721CCD379000E5F90 /* SDL2_gfx */ = {
 			isa = PBXGroup;
 			children = (
-				385B9AB821CCD379000E5F90 /* SDL2_imageFilter.c */,
-				385B9AB921CCD379000E5F90 /* SDL2_gfxPrimitives.c */,
-				385B9ABB21CCD379000E5F90 /* SDL2_gfxPrimitives_font.h */,
-				385B9ABC21CCD379000E5F90 /* SDL2_rotozoom.c */,
-				385B9ABD21CCD379000E5F90 /* SDL2_gfxPrimitives.h */,
-				385B9ABE21CCD379000E5F90 /* SDL2_imageFilter.h */,
-				385B9ABA21CCD379000E5F90 /* SDL2_framerate.h */,
 				385B9ABF21CCD379000E5F90 /* SDL2_framerate.c */,
+				385B9ABA21CCD379000E5F90 /* SDL2_framerate.h */,
+				385B9ABB21CCD379000E5F90 /* SDL2_gfxPrimitives_font.h */,
+				385B9AB921CCD379000E5F90 /* SDL2_gfxPrimitives.c */,
+				385B9ABD21CCD379000E5F90 /* SDL2_gfxPrimitives.h */,
+				385B9AB821CCD379000E5F90 /* SDL2_imageFilter.c */,
+				385B9ABE21CCD379000E5F90 /* SDL2_imageFilter.h */,
+				385B9ABC21CCD379000E5F90 /* SDL2_rotozoom.c */,
 				385B9AC021CCD379000E5F90 /* SDL2_rotozoom.h */,
 			);
 			name = SDL2_gfx;
@@ -384,8 +384,8 @@
 			isa = PBXGroup;
 			children = (
 				69EF26601D13EAFB009B1FD6 /* data */,
-				69EF234F1D13DFC7009B1FD6 /* GUI_App */,
 				69EF23791D13E26A009B1FD6 /* Frameworks */,
+				69EF234F1D13DFC7009B1FD6 /* GUI_App */,
 				69EF234E1D13DFC7009B1FD6 /* Products */,
 				69EF236B1D13E239009B1FD6 /* src */,
 			);
@@ -394,7 +394,7 @@
 		69EF234E1D13DFC7009B1FD6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				69EF234D1D13DFC7009B1FD6 /* GUI_App.app */,
+				69EF234D1D13DFC7009B1FD6 /* UniversalApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -449,9 +449,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		69EF234C1D13DFC7009B1FD6 /* GUI_App */ = {
+		69EF234C1D13DFC7009B1FD6 /* UniversalApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "GUI_App" */;
+			buildConfigurationList = 69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "UniversalApp" */;
 			buildPhases = (
 				69EF23491D13DFC7009B1FD6 /* Sources */,
 				69EF234A1D13DFC7009B1FD6 /* Frameworks */,
@@ -465,9 +465,9 @@
 				385B990321CBB970000E5F90 /* PBXTargetDependency */,
 				380C58B021C100CA0005A03F /* PBXTargetDependency */,
 			);
-			name = GUI_App;
+			name = UniversalApp;
 			productName = ClearScreen;
-			productReference = 69EF234D1D13DFC7009B1FD6 /* GUI_App.app */;
+			productReference = 69EF234D1D13DFC7009B1FD6 /* UniversalApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -512,7 +512,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				69EF234C1D13DFC7009B1FD6 /* GUI_App */,
+				69EF234C1D13DFC7009B1FD6 /* UniversalApp */,
 			);
 		};
 /* End PBXProject section */
@@ -802,8 +802,8 @@
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
-				PRODUCT_NAME = GUI_App;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.UniversalApp;
+				PRODUCT_NAME = UniversalApp;
 				PROVISIONING_PROFILE = "";
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
 				SDL_IMAGE_ROOT = ../../../SDL2_image;
@@ -829,8 +829,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
-				PRODUCT_NAME = GUI_App;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.UniversalApp;
+				PRODUCT_NAME = UniversalApp;
 				PROVISIONING_PROFILE = "";
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
 				SDL_IMAGE_ROOT = ../../../SDL2_image;
@@ -852,7 +852,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "GUI_App" */ = {
+		69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "UniversalApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69EF235F1D13DFC7009B1FD6 /* Debug */,

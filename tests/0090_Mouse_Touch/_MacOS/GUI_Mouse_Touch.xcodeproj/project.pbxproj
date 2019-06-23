@@ -778,7 +778,7 @@
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.GUIMouseTouch;
 				PRODUCT_NAME = GUI_Mouse_Touch;
 				PROVISIONING_PROFILE = "";
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
@@ -805,7 +805,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.GUIMouseTouch;
 				PRODUCT_NAME = GUI_Mouse_Touch;
 				PROVISIONING_PROFILE = "";
 				SDL_GFX_ROOT = ../../../SDL2_gfx;

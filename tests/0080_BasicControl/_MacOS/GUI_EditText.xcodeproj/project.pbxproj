@@ -33,6 +33,17 @@
 		38EC05A921EAE48F005F3A3A /* GUI_Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38EC05A721EAE48F005F3A3A /* GUI_Label.cpp */; };
 		38EC05B321EAE505005F3A3A /* GUI_IconView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38EC05B121EAE505005F3A3A /* GUI_IconView.cpp */; };
 		38EC062521EB996C005F3A3A /* GUI_Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38EC062321EB996C005F3A3A /* GUI_Button.cpp */; };
+		69C7866B22BFB83A00F1EEF3 /* GUI_App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69C7865322BFB83A00F1EEF3 /* GUI_App.cpp */; };
+		69C7866C22BFB83A00F1EEF3 /* GUI_ComboBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69C7865522BFB83A00F1EEF3 /* GUI_ComboBox.cpp */; };
+		69C7866E22BFB83A00F1EEF3 /* GUI_Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69C7865922BFB83A00F1EEF3 /* GUI_Menu.cpp */; };
+		69C7866F22BFB83A00F1EEF3 /* GUI_MenuBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69C7865B22BFB83A00F1EEF3 /* GUI_MenuBar.cpp */; };
+		69C7867022BFB83A00F1EEF3 /* GUI_MessageBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69C7865D22BFB83A00F1EEF3 /* GUI_MessageBox.cpp */; };
+		69C7867122BFB83A00F1EEF3 /* GUI_PopupView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69C7865F22BFB83A00F1EEF3 /* GUI_PopupView.cpp */; };
+		69C7867222BFB83A00F1EEF3 /* GUI_Preference.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69C7866122BFB83A00F1EEF3 /* GUI_Preference.cpp */; };
+		69C7867322BFB83A00F1EEF3 /* GUI_Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69C7866322BFB83A00F1EEF3 /* GUI_Slider.cpp */; };
+		69C7867422BFB83A00F1EEF3 /* GUI_StatusBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69C7866522BFB83A00F1EEF3 /* GUI_StatusBar.cpp */; };
+		69C7867522BFB83A00F1EEF3 /* GUI_Switch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69C7866722BFB83A00F1EEF3 /* GUI_Switch.cpp */; };
+		69C7867622BFB83A00F1EEF3 /* GUI_TopBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69C7866922BFB83A00F1EEF3 /* GUI_TopBar.cpp */; };
 		69CD9A151D15AED3004D8ED1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69EF23731D13E239009B1FD6 /* main.cpp */; };
 		69CD9A161D15B20E004D8ED1 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 69EF26601D13EAFB009B1FD6 /* data */; };
 		69EF23571D13DFC7009B1FD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69EF23561D13DFC7009B1FD6 /* Assets.xcassets */; };
@@ -192,7 +203,29 @@
 		38EC05B421EAE6CC005F3A3A /* GUI_Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_Config.h; sourceTree = "<group>"; };
 		38EC062321EB996C005F3A3A /* GUI_Button.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Button.cpp; sourceTree = "<group>"; };
 		38EC062421EB996C005F3A3A /* GUI_Button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUI_Button.h; sourceTree = "<group>"; };
-		69EF234D1D13DFC7009B1FD6 /* GUI_EditText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GUI_EditText.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69C7865322BFB83A00F1EEF3 /* GUI_App.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_App.cpp; sourceTree = "<group>"; };
+		69C7865422BFB83A00F1EEF3 /* GUI_App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_App.h; sourceTree = "<group>"; };
+		69C7865522BFB83A00F1EEF3 /* GUI_ComboBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_ComboBox.cpp; sourceTree = "<group>"; };
+		69C7865622BFB83A00F1EEF3 /* GUI_ComboBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_ComboBox.h; sourceTree = "<group>"; };
+		69C7865922BFB83A00F1EEF3 /* GUI_Menu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Menu.cpp; sourceTree = "<group>"; };
+		69C7865A22BFB83A00F1EEF3 /* GUI_Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_Menu.h; sourceTree = "<group>"; };
+		69C7865B22BFB83A00F1EEF3 /* GUI_MenuBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_MenuBar.cpp; sourceTree = "<group>"; };
+		69C7865C22BFB83A00F1EEF3 /* GUI_MenuBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_MenuBar.h; sourceTree = "<group>"; };
+		69C7865D22BFB83A00F1EEF3 /* GUI_MessageBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_MessageBox.cpp; sourceTree = "<group>"; };
+		69C7865E22BFB83A00F1EEF3 /* GUI_MessageBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_MessageBox.h; sourceTree = "<group>"; };
+		69C7865F22BFB83A00F1EEF3 /* GUI_PopupView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_PopupView.cpp; sourceTree = "<group>"; };
+		69C7866022BFB83A00F1EEF3 /* GUI_PopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_PopupView.h; sourceTree = "<group>"; };
+		69C7866122BFB83A00F1EEF3 /* GUI_Preference.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Preference.cpp; sourceTree = "<group>"; };
+		69C7866222BFB83A00F1EEF3 /* GUI_Preference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_Preference.h; sourceTree = "<group>"; };
+		69C7866322BFB83A00F1EEF3 /* GUI_Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Slider.cpp; sourceTree = "<group>"; };
+		69C7866422BFB83A00F1EEF3 /* GUI_Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_Slider.h; sourceTree = "<group>"; };
+		69C7866522BFB83A00F1EEF3 /* GUI_StatusBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_StatusBar.cpp; sourceTree = "<group>"; };
+		69C7866622BFB83A00F1EEF3 /* GUI_StatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_StatusBar.h; sourceTree = "<group>"; };
+		69C7866722BFB83A00F1EEF3 /* GUI_Switch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_Switch.cpp; sourceTree = "<group>"; };
+		69C7866822BFB83A00F1EEF3 /* GUI_Switch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_Switch.h; sourceTree = "<group>"; };
+		69C7866922BFB83A00F1EEF3 /* GUI_TopBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_TopBar.cpp; sourceTree = "<group>"; };
+		69C7866A22BFB83A00F1EEF3 /* GUI_TopBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_TopBar.h; sourceTree = "<group>"; };
+		69EF234D1D13DFC7009B1FD6 /* BasicControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69EF23561D13DFC7009B1FD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69EF235B1D13DFC7009B1FD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69EF23731D13E239009B1FD6 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -265,44 +298,66 @@
 		385B9A8A21CC1380000E5F90 /* SDL2_gui */ = {
 			isa = PBXGroup;
 			children = (
-				38CAB10C22085FDB00732323 /* GUI_Config.cpp */,
-				38EC05B421EAE6CC005F3A3A /* GUI_Config.h */,
-				385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */,
-				385B9A9321CC13A8000E5F90 /* SDL_gui.h */,
-				385B9AB421CCBC4C000E5F90 /* GUI_shapes.cpp */,
-				385B9AB521CCBC4C000E5F90 /* GUI_shapes.h */,
-				385B9AFB21CD07A4000E5F90 /* GUI_View.cpp */,
-				385B9AFC21CD07A4000E5F90 /* GUI_View.h */,
-				385B9AFE21CD08CB000E5F90 /* GUI_Utils.cpp */,
-				385B9AFF21CD08CB000E5F90 /* GUI_Utils.h */,
-				385B9B6A21CFB1F7000E5F90 /* GUI_image.cpp */,
-				385B9B6B21CFB1F7000E5F90 /* GUI_image.h */,
-				385B9B6D21CFC089000E5F90 /* GUI_ImageView.cpp */,
-				385B9B6E21CFC089000E5F90 /* GUI_ImageView.h */,
-				38EC050B21E9A5CE005F3A3A /* GUI_TextView.cpp */,
-				38EC050C21E9A5CE005F3A3A /* GUI_TextView.h */,
-				38EC051121E9E4A4005F3A3A /* GUI_Fonts.cpp */,
-				38EC051421E9E4E8005F3A3A /* GUI_Fonts.h */,
-				38EC05B121EAE505005F3A3A /* GUI_IconView.cpp */,
-				38EC05B221EAE505005F3A3A /* GUI_IconView.h */,
-				38EC05A721EAE48F005F3A3A /* GUI_Label.cpp */,
-				38EC05A821EAE48F005F3A3A /* GUI_Label.h */,
+				69C7865322BFB83A00F1EEF3 /* GUI_App.cpp */,
+				69C7865422BFB83A00F1EEF3 /* GUI_App.h */,
 				38EC062321EB996C005F3A3A /* GUI_Button.cpp */,
 				38EC062421EB996C005F3A3A /* GUI_Button.h */,
 				38B66C2F21EE4BAB005C22C0 /* GUI_CheckBox.cpp */,
 				38B66C3021EE4BAB005C22C0 /* GUI_CheckBox.h */,
+				69C7865522BFB83A00F1EEF3 /* GUI_ComboBox.cpp */,
+				69C7865622BFB83A00F1EEF3 /* GUI_ComboBox.h */,
+				38CAB10C22085FDB00732323 /* GUI_Config.cpp */,
+				38EC05B421EAE6CC005F3A3A /* GUI_Config.h */,
+				38B66CB921F05E75005C22C0 /* GUI_EditText.cpp */,
+				38B66CBA21F05E75005C22C0 /* GUI_EditText.h */,
+				38EC051121E9E4A4005F3A3A /* GUI_Fonts.cpp */,
+				38EC051421E9E4E8005F3A3A /* GUI_Fonts.h */,
+				38EC05B121EAE505005F3A3A /* GUI_IconView.cpp */,
+				38EC05B221EAE505005F3A3A /* GUI_IconView.h */,
+				385B9B6A21CFB1F7000E5F90 /* GUI_image.cpp */,
+				385B9B6B21CFB1F7000E5F90 /* GUI_image.h */,
+				385B9B6D21CFC089000E5F90 /* GUI_ImageView.cpp */,
+				385B9B6E21CFC089000E5F90 /* GUI_ImageView.h */,
+				38EC05A721EAE48F005F3A3A /* GUI_Label.cpp */,
+				38EC05A821EAE48F005F3A3A /* GUI_Label.h */,
+				38B66C5221EF4F20005C22C0 /* GUI_List.cpp */,
+				38B66C5321EF4F20005C22C0 /* GUI_List.h */,
+				69C7865922BFB83A00F1EEF3 /* GUI_Menu.cpp */,
+				69C7865A22BFB83A00F1EEF3 /* GUI_Menu.h */,
+				69C7865B22BFB83A00F1EEF3 /* GUI_MenuBar.cpp */,
+				69C7865C22BFB83A00F1EEF3 /* GUI_MenuBar.h */,
+				69C7865D22BFB83A00F1EEF3 /* GUI_MessageBox.cpp */,
+				69C7865E22BFB83A00F1EEF3 /* GUI_MessageBox.h */,
+				69C7865F22BFB83A00F1EEF3 /* GUI_PopupView.cpp */,
+				69C7866022BFB83A00F1EEF3 /* GUI_PopupView.h */,
+				69C7866122BFB83A00F1EEF3 /* GUI_Preference.cpp */,
+				69C7866222BFB83A00F1EEF3 /* GUI_Preference.h */,
 				38B66C4121EED3D8005C22C0 /* GUI_RadioButton.cpp */,
 				38B66C4221EED3D8005C22C0 /* GUI_RadioButton.h */,
 				38B66C4B21EEDD24005C22C0 /* GUI_RadioButtonGroup.cpp */,
 				38B66C4C21EEDD24005C22C0 /* GUI_RadioButtonGroup.h */,
-				38B66C5221EF4F20005C22C0 /* GUI_List.cpp */,
-				38B66C5321EF4F20005C22C0 /* GUI_List.h */,
 				380EC70D21FCF5C900759C7E /* GUI_ScrollView.cpp */,
 				380EC71521FCF5C900759C7E /* GUI_ScrollView.h */,
+				385B9AB421CCBC4C000E5F90 /* GUI_shapes.cpp */,
+				385B9AB521CCBC4C000E5F90 /* GUI_shapes.h */,
+				69C7866322BFB83A00F1EEF3 /* GUI_Slider.cpp */,
+				69C7866422BFB83A00F1EEF3 /* GUI_Slider.h */,
+				69C7866522BFB83A00F1EEF3 /* GUI_StatusBar.cpp */,
+				69C7866622BFB83A00F1EEF3 /* GUI_StatusBar.h */,
+				69C7866722BFB83A00F1EEF3 /* GUI_Switch.cpp */,
+				69C7866822BFB83A00F1EEF3 /* GUI_Switch.h */,
 				38B66CBC21F09ABC005C22C0 /* GUI_TextUtil.cpp */,
 				38B66CBD21F09ABC005C22C0 /* GUI_TextUtil.h */,
-				38B66CB921F05E75005C22C0 /* GUI_EditText.cpp */,
-				38B66CBA21F05E75005C22C0 /* GUI_EditText.h */,
+				38EC050B21E9A5CE005F3A3A /* GUI_TextView.cpp */,
+				38EC050C21E9A5CE005F3A3A /* GUI_TextView.h */,
+				69C7866922BFB83A00F1EEF3 /* GUI_TopBar.cpp */,
+				69C7866A22BFB83A00F1EEF3 /* GUI_TopBar.h */,
+				385B9AFE21CD08CB000E5F90 /* GUI_Utils.cpp */,
+				385B9AFF21CD08CB000E5F90 /* GUI_Utils.h */,
+				385B9AFB21CD07A4000E5F90 /* GUI_View.cpp */,
+				385B9AFC21CD07A4000E5F90 /* GUI_View.h */,
+				385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */,
+				385B9A9321CC13A8000E5F90 /* SDL_gui.h */,
 			);
 			name = SDL2_gui;
 			path = ../../../SDL2_gui;
@@ -311,14 +366,14 @@
 		385B9AB721CCD379000E5F90 /* SDL2_gfx */ = {
 			isa = PBXGroup;
 			children = (
-				385B9AB821CCD379000E5F90 /* SDL2_imageFilter.c */,
-				385B9AB921CCD379000E5F90 /* SDL2_gfxPrimitives.c */,
+				385B9ABF21CCD379000E5F90 /* SDL2_framerate.c */,
 				385B9ABA21CCD379000E5F90 /* SDL2_framerate.h */,
 				385B9ABB21CCD379000E5F90 /* SDL2_gfxPrimitives_font.h */,
-				385B9ABC21CCD379000E5F90 /* SDL2_rotozoom.c */,
+				385B9AB921CCD379000E5F90 /* SDL2_gfxPrimitives.c */,
 				385B9ABD21CCD379000E5F90 /* SDL2_gfxPrimitives.h */,
+				385B9AB821CCD379000E5F90 /* SDL2_imageFilter.c */,
 				385B9ABE21CCD379000E5F90 /* SDL2_imageFilter.h */,
-				385B9ABF21CCD379000E5F90 /* SDL2_framerate.c */,
+				385B9ABC21CCD379000E5F90 /* SDL2_rotozoom.c */,
 				385B9AC021CCD379000E5F90 /* SDL2_rotozoom.h */,
 			);
 			name = SDL2_gfx;
@@ -329,8 +384,8 @@
 			isa = PBXGroup;
 			children = (
 				69EF26601D13EAFB009B1FD6 /* data */,
-				69EF234F1D13DFC7009B1FD6 /* GUI_EditText */,
 				69EF23791D13E26A009B1FD6 /* Frameworks */,
+				69EF234F1D13DFC7009B1FD6 /* GUI_EditText */,
 				69EF234E1D13DFC7009B1FD6 /* Products */,
 				69EF236B1D13E239009B1FD6 /* src */,
 			);
@@ -339,7 +394,7 @@
 		69EF234E1D13DFC7009B1FD6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				69EF234D1D13DFC7009B1FD6 /* GUI_EditText.app */,
+				69EF234D1D13DFC7009B1FD6 /* BasicControl.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -394,9 +449,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		69EF234C1D13DFC7009B1FD6 /* GUI_EditText */ = {
+		69EF234C1D13DFC7009B1FD6 /* BasicControl */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "GUI_EditText" */;
+			buildConfigurationList = 69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "BasicControl" */;
 			buildPhases = (
 				69EF23491D13DFC7009B1FD6 /* Sources */,
 				69EF234A1D13DFC7009B1FD6 /* Frameworks */,
@@ -410,9 +465,9 @@
 				385B990321CBB970000E5F90 /* PBXTargetDependency */,
 				380C58B021C100CA0005A03F /* PBXTargetDependency */,
 			);
-			name = GUI_EditText;
+			name = BasicControl;
 			productName = ClearScreen;
-			productReference = 69EF234D1D13DFC7009B1FD6 /* GUI_EditText.app */;
+			productReference = 69EF234D1D13DFC7009B1FD6 /* BasicControl.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -457,7 +512,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				69EF234C1D13DFC7009B1FD6 /* GUI_EditText */,
+				69EF234C1D13DFC7009B1FD6 /* BasicControl */,
 			);
 		};
 /* End PBXProject section */
@@ -568,17 +623,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69C7866C22BFB83A00F1EEF3 /* GUI_ComboBox.cpp in Sources */,
 				385B9AC121CCD379000E5F90 /* SDL2_imageFilter.c in Sources */,
 				38CAB11422085FDB00732323 /* GUI_Config.cpp in Sources */,
 				69CD9A151D15AED3004D8ED1 /* main.cpp in Sources */,
 				38EC05B321EAE505005F3A3A /* GUI_IconView.cpp in Sources */,
 				38EC05A921EAE48F005F3A3A /* GUI_Label.cpp in Sources */,
+				69C7867222BFB83A00F1EEF3 /* GUI_Preference.cpp in Sources */,
+				69C7867122BFB83A00F1EEF3 /* GUI_PopupView.cpp in Sources */,
 				38B66C4D21EEDD24005C22C0 /* GUI_RadioButtonGroup.cpp in Sources */,
 				385B9B6F21CFC089000E5F90 /* GUI_ImageView.cpp in Sources */,
 				38B66CBE21F09ABC005C22C0 /* GUI_TextUtil.cpp in Sources */,
+				69C7867322BFB83A00F1EEF3 /* GUI_Slider.cpp in Sources */,
 				38B66C4321EED3D8005C22C0 /* GUI_RadioButton.cpp in Sources */,
 				385B9AB621CCBC4C000E5F90 /* GUI_shapes.cpp in Sources */,
 				38B66C3121EE4BAB005C22C0 /* GUI_CheckBox.cpp in Sources */,
+				69C7867422BFB83A00F1EEF3 /* GUI_StatusBar.cpp in Sources */,
+				69C7866F22BFB83A00F1EEF3 /* GUI_MenuBar.cpp in Sources */,
 				38B66C5421EF4F20005C22C0 /* GUI_List.cpp in Sources */,
 				385B9B6C21CFB1F7000E5F90 /* GUI_image.cpp in Sources */,
 				38EC050D21E9A5CE005F3A3A /* GUI_TextView.cpp in Sources */,
@@ -586,12 +647,17 @@
 				385B9AFD21CD07A4000E5F90 /* GUI_View.cpp in Sources */,
 				38B66CBB21F05E75005C22C0 /* GUI_EditText.cpp in Sources */,
 				385B9B0021CD08CB000E5F90 /* GUI_Utils.cpp in Sources */,
+				69C7867022BFB83A00F1EEF3 /* GUI_MessageBox.cpp in Sources */,
+				69C7866B22BFB83A00F1EEF3 /* GUI_App.cpp in Sources */,
+				69C7867522BFB83A00F1EEF3 /* GUI_Switch.cpp in Sources */,
 				385B9A9421CC13A8000E5F90 /* SDL_gui.cpp in Sources */,
+				69C7866E22BFB83A00F1EEF3 /* GUI_Menu.cpp in Sources */,
 				380EC71621FCF5C900759C7E /* GUI_ScrollView.cpp in Sources */,
 				38EC051321E9E4A4005F3A3A /* GUI_Fonts.cpp in Sources */,
 				385B9AC321CCD379000E5F90 /* SDL2_rotozoom.c in Sources */,
 				385B9AC421CCD379000E5F90 /* SDL2_framerate.c in Sources */,
 				38EC062521EB996C005F3A3A /* GUI_Button.cpp in Sources */,
+				69C7867622BFB83A00F1EEF3 /* GUI_TopBar.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,8 +802,8 @@
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
-				PRODUCT_NAME = GUI_EditText;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.BasicControl;
+				PRODUCT_NAME = BasicControl;
 				PROVISIONING_PROFILE = "";
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
 				SDL_IMAGE_ROOT = ../../../SDL2_image;
@@ -763,8 +829,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
-				PRODUCT_NAME = GUI_EditText;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.BasicControl;
+				PRODUCT_NAME = BasicControl;
 				PROVISIONING_PROFILE = "";
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
 				SDL_IMAGE_ROOT = ../../../SDL2_image;
@@ -786,7 +852,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "GUI_EditText" */ = {
+		69EF235E1D13DFC7009B1FD6 /* Build configuration list for PBXNativeTarget "BasicControl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69EF235F1D13DFC7009B1FD6 /* Debug */,

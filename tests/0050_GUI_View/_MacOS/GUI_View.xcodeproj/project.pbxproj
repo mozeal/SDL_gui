@@ -220,14 +220,14 @@
 		385B9A8A21CC1380000E5F90 /* SDL2_gui */ = {
 			isa = PBXGroup;
 			children = (
-				385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */,
-				385B9A9321CC13A8000E5F90 /* SDL_gui.h */,
 				385B9AB421CCBC4C000E5F90 /* GUI_shapes.cpp */,
 				385B9AB521CCBC4C000E5F90 /* GUI_shapes.h */,
-				385B9AFB21CD07A4000E5F90 /* GUI_View.cpp */,
-				385B9AFC21CD07A4000E5F90 /* GUI_View.h */,
 				385B9AFE21CD08CB000E5F90 /* GUI_Utils.cpp */,
 				385B9AFF21CD08CB000E5F90 /* GUI_Utils.h */,
+				385B9AFB21CD07A4000E5F90 /* GUI_View.cpp */,
+				385B9AFC21CD07A4000E5F90 /* GUI_View.h */,
+				385B9A9221CC13A8000E5F90 /* SDL_gui.cpp */,
+				385B9A9321CC13A8000E5F90 /* SDL_gui.h */,
 			);
 			name = SDL2_gui;
 			path = ../../../SDL2_gui;
@@ -236,14 +236,14 @@
 		385B9AB721CCD379000E5F90 /* SDL2_gfx */ = {
 			isa = PBXGroup;
 			children = (
-				385B9AB821CCD379000E5F90 /* SDL2_imageFilter.c */,
-				385B9AB921CCD379000E5F90 /* SDL2_gfxPrimitives.c */,
+				385B9ABF21CCD379000E5F90 /* SDL2_framerate.c */,
 				385B9ABA21CCD379000E5F90 /* SDL2_framerate.h */,
 				385B9ABB21CCD379000E5F90 /* SDL2_gfxPrimitives_font.h */,
-				385B9ABC21CCD379000E5F90 /* SDL2_rotozoom.c */,
+				385B9AB921CCD379000E5F90 /* SDL2_gfxPrimitives.c */,
 				385B9ABD21CCD379000E5F90 /* SDL2_gfxPrimitives.h */,
+				385B9AB821CCD379000E5F90 /* SDL2_imageFilter.c */,
 				385B9ABE21CCD379000E5F90 /* SDL2_imageFilter.h */,
-				385B9ABF21CCD379000E5F90 /* SDL2_framerate.c */,
+				385B9ABC21CCD379000E5F90 /* SDL2_rotozoom.c */,
 				385B9AC021CCD379000E5F90 /* SDL2_rotozoom.h */,
 			);
 			name = SDL2_gfx;
@@ -254,8 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				69EF26601D13EAFB009B1FD6 /* data */,
-				69EF234F1D13DFC7009B1FD6 /* GUI_View */,
 				69EF23791D13E26A009B1FD6 /* Frameworks */,
+				69EF234F1D13DFC7009B1FD6 /* GUI_View */,
 				69EF234E1D13DFC7009B1FD6 /* Products */,
 				69EF236B1D13E239009B1FD6 /* src */,
 			);
@@ -646,7 +646,7 @@
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.GUIView;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
@@ -673,7 +673,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.TestSDLimage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.GUIView;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDL_GFX_ROOT = ../../../SDL2_gfx;

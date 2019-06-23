@@ -196,7 +196,7 @@
 		38B66D3721F2C127005C22C0 /* GUI_StatusBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GUI_StatusBar.cpp; sourceTree = "<group>"; };
 		38B66D3821F2C127005C22C0 /* GUI_List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUI_List.h; sourceTree = "<group>"; };
 		38C6AF771C882C9700388748 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../data; sourceTree = "<group>"; };
-		38CA5C9C1BCCAF2B0099BC3B /* SDL_ttf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDL_ttf.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		38CA5C9C1BCCAF2B0099BC3B /* GUI_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GUI_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38CA5CAB1BCCAF2B0099BC3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38CA5CAE1BCCAF2B0099BC3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38CA5CB01BCCAF2B0099BC3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -258,14 +258,14 @@
 		3817477921E7700C00AA0910 /* SDL2_gfx */ = {
 			isa = PBXGroup;
 			children = (
-				3817477A21E7700C00AA0910 /* SDL2_imageFilter.c */,
-				3817477B21E7700C00AA0910 /* SDL2_gfxPrimitives.c */,
+				3817478221E7700C00AA0910 /* SDL2_framerate.c */,
 				3817477C21E7700C00AA0910 /* SDL2_framerate.h */,
 				3817477E21E7700C00AA0910 /* SDL2_gfxPrimitives_font.h */,
-				3817477F21E7700C00AA0910 /* SDL2_rotozoom.c */,
+				3817477B21E7700C00AA0910 /* SDL2_gfxPrimitives.c */,
 				3817478021E7700C00AA0910 /* SDL2_gfxPrimitives.h */,
+				3817477A21E7700C00AA0910 /* SDL2_imageFilter.c */,
 				3817478121E7700C00AA0910 /* SDL2_imageFilter.h */,
-				3817478221E7700C00AA0910 /* SDL2_framerate.c */,
+				3817477F21E7700C00AA0910 /* SDL2_rotozoom.c */,
 				3817478321E7700C00AA0910 /* SDL2_rotozoom.h */,
 			);
 			name = SDL2_gfx;
@@ -275,66 +275,66 @@
 		3817478921E7701700AA0910 /* SDL2_gui */ = {
 			isa = PBXGroup;
 			children = (
-				38B66D1D21F2C116005C22C0 /* GUI_Config.h */,
-				38CAB187220888DE00732323 /* GUI_Config.cpp */,
-				380EC85B21FD832C00759C7E /* GUI_ComboBox.cpp */,
-				380EC85421FD832B00759C7E /* GUI_ComboBox.h */,
-				380EC85021FD832B00759C7E /* GUI_MenuBar.cpp */,
-				380EC84721FD832B00759C7E /* GUI_MenuBar.h */,
-				380EC85A21FD832B00759C7E /* GUI_MessageBox.cpp */,
-				380EC84F21FD832B00759C7E /* GUI_MessageBox.h */,
-				380EC85621FD832B00759C7E /* GUI_PopupView.cpp */,
-				380EC85721FD832B00759C7E /* GUI_PopupView.h */,
-				380EC85521FD832B00759C7E /* GUI_ScrollView.cpp */,
-				380EC85221FD832B00759C7E /* GUI_ScrollView.h */,
-				380EC85921FD832B00759C7E /* GUI_Slider.cpp */,
-				380EC85321FD832B00759C7E /* GUI_Slider.h */,
-				380EC85821FD832B00759C7E /* GUI_Switch.cpp */,
-				380EC85121FD832B00759C7E /* GUI_Switch.h */,
-				38B66D2921F2C126005C22C0 /* GUI_Label.cpp */,
-				38B66D2C21F2C127005C22C0 /* GUI_Label.h */,
-				38B66D2821F2C126005C22C0 /* GUI_List.cpp */,
-				38B66D3821F2C127005C22C0 /* GUI_List.h */,
-				38B66D2F21F2C127005C22C0 /* GUI_Menu.cpp */,
-				38B66D3521F2C127005C22C0 /* GUI_Menu.h */,
-				38B66D3121F2C127005C22C0 /* GUI_RadioButton.cpp */,
-				38B66D3621F2C127005C22C0 /* GUI_RadioButton.h */,
-				38B66D2A21F2C126005C22C0 /* GUI_RadioButtonGroup.cpp */,
-				38B66D3421F2C127005C22C0 /* GUI_RadioButtonGroup.h */,
-				38B66D3721F2C127005C22C0 /* GUI_StatusBar.cpp */,
-				38B66D2E21F2C127005C22C0 /* GUI_StatusBar.h */,
-				38B66D3221F2C127005C22C0 /* GUI_TextUtil.cpp */,
-				38B66D2D21F2C127005C22C0 /* GUI_TextUtil.h */,
-				38B66D3321F2C127005C22C0 /* GUI_TextView.cpp */,
-				38B66D2B21F2C127005C22C0 /* GUI_TextView.h */,
-				38B66D3021F2C127005C22C0 /* GUI_TopBar.cpp */,
-				38B66D2721F2C126005C22C0 /* GUI_TopBar.h */,
 				38B66D1F21F2C116005C22C0 /* GUI_App.cpp */,
 				38B66D1E21F2C116005C22C0 /* GUI_App.h */,
 				38B66D1921F2C116005C22C0 /* GUI_Button.cpp */,
 				38B66D1621F2C115005C22C0 /* GUI_Button.h */,
 				38B66D1821F2C116005C22C0 /* GUI_CheckBox.cpp */,
 				38B66D1A21F2C116005C22C0 /* GUI_CheckBox.h */,
+				380EC85B21FD832C00759C7E /* GUI_ComboBox.cpp */,
+				380EC85421FD832B00759C7E /* GUI_ComboBox.h */,
+				38CAB187220888DE00732323 /* GUI_Config.cpp */,
+				38B66D1D21F2C116005C22C0 /* GUI_Config.h */,
 				38B66D2021F2C116005C22C0 /* GUI_EditText.cpp */,
 				38B66D1B21F2C116005C22C0 /* GUI_EditText.h */,
 				38B66D1721F2C116005C22C0 /* GUI_Fonts.cpp */,
 				38B66D1521F2C115005C22C0 /* GUI_Fonts.h */,
 				38B66D1C21F2C116005C22C0 /* GUI_IconView.cpp */,
 				38B66D0D21F2C115005C22C0 /* GUI_IconView.h */,
-				3817478A21E7701700AA0910 /* GUI_ImageView.cpp */,
-				3817478B21E7701700AA0910 /* GUI_View.h */,
-				3817478C21E7701700AA0910 /* GUI_View.cpp */,
-				3817478D21E7701700AA0910 /* GUI_Utils.h */,
-				3817478F21E7701700AA0910 /* SDL_gui.cpp */,
-				3817479021E7701700AA0910 /* GUI_ImageView.h */,
-				3817479121E7701700AA0910 /* SDL_gui.h */,
-				3817479221E7701700AA0910 /* GUI_shapes.h */,
-				3817479321E7701700AA0910 /* GUI_image.h */,
-				3817479421E7701700AA0910 /* GUI_shapes.cpp */,
 				3817479521E7701700AA0910 /* GUI_image.cpp */,
-				3817479721E7701700AA0910 /* GUI_Utils.cpp */,
+				3817479321E7701700AA0910 /* GUI_image.h */,
+				3817478A21E7701700AA0910 /* GUI_ImageView.cpp */,
+				3817479021E7701700AA0910 /* GUI_ImageView.h */,
 				38CAB1902208893000732323 /* GUI_iOS.h */,
 				38CAB1912208893000732323 /* GUI_iOS.mm */,
+				38B66D2921F2C126005C22C0 /* GUI_Label.cpp */,
+				38B66D2C21F2C127005C22C0 /* GUI_Label.h */,
+				38B66D2821F2C126005C22C0 /* GUI_List.cpp */,
+				38B66D3821F2C127005C22C0 /* GUI_List.h */,
+				38B66D2F21F2C127005C22C0 /* GUI_Menu.cpp */,
+				38B66D3521F2C127005C22C0 /* GUI_Menu.h */,
+				380EC85021FD832B00759C7E /* GUI_MenuBar.cpp */,
+				380EC84721FD832B00759C7E /* GUI_MenuBar.h */,
+				380EC85A21FD832B00759C7E /* GUI_MessageBox.cpp */,
+				380EC84F21FD832B00759C7E /* GUI_MessageBox.h */,
+				380EC85621FD832B00759C7E /* GUI_PopupView.cpp */,
+				380EC85721FD832B00759C7E /* GUI_PopupView.h */,
+				38B66D3121F2C127005C22C0 /* GUI_RadioButton.cpp */,
+				38B66D3621F2C127005C22C0 /* GUI_RadioButton.h */,
+				38B66D2A21F2C126005C22C0 /* GUI_RadioButtonGroup.cpp */,
+				38B66D3421F2C127005C22C0 /* GUI_RadioButtonGroup.h */,
+				380EC85521FD832B00759C7E /* GUI_ScrollView.cpp */,
+				380EC85221FD832B00759C7E /* GUI_ScrollView.h */,
+				3817479421E7701700AA0910 /* GUI_shapes.cpp */,
+				3817479221E7701700AA0910 /* GUI_shapes.h */,
+				380EC85921FD832B00759C7E /* GUI_Slider.cpp */,
+				380EC85321FD832B00759C7E /* GUI_Slider.h */,
+				38B66D3721F2C127005C22C0 /* GUI_StatusBar.cpp */,
+				38B66D2E21F2C127005C22C0 /* GUI_StatusBar.h */,
+				380EC85821FD832B00759C7E /* GUI_Switch.cpp */,
+				380EC85121FD832B00759C7E /* GUI_Switch.h */,
+				38B66D3221F2C127005C22C0 /* GUI_TextUtil.cpp */,
+				38B66D2D21F2C127005C22C0 /* GUI_TextUtil.h */,
+				38B66D3321F2C127005C22C0 /* GUI_TextView.cpp */,
+				38B66D2B21F2C127005C22C0 /* GUI_TextView.h */,
+				38B66D3021F2C127005C22C0 /* GUI_TopBar.cpp */,
+				38B66D2721F2C126005C22C0 /* GUI_TopBar.h */,
+				3817479721E7701700AA0910 /* GUI_Utils.cpp */,
+				3817478D21E7701700AA0910 /* GUI_Utils.h */,
+				3817478C21E7701700AA0910 /* GUI_View.cpp */,
+				3817478B21E7701700AA0910 /* GUI_View.h */,
+				3817478F21E7701700AA0910 /* SDL_gui.cpp */,
+				3817479121E7701700AA0910 /* SDL_gui.h */,
 			);
 			name = SDL2_gui;
 			path = ../../../SDL2_gui;
@@ -371,7 +371,7 @@
 		38CA5C9D1BCCAF2B0099BC3B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				38CA5C9C1BCCAF2B0099BC3B /* SDL_ttf.app */,
+				38CA5C9C1BCCAF2B0099BC3B /* GUI_App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -421,8 +421,8 @@
 		38CA5D0B1BCCD2210099BC3B /* src */ = {
 			isa = PBXGroup;
 			children = (
-				3817478921E7701700AA0910 /* SDL2_gui */,
 				3817477921E7700C00AA0910 /* SDL2_gfx */,
+				3817478921E7701700AA0910 /* SDL2_gui */,
 				384BBBB31BCE301900D0B592 /* main.cpp */,
 			);
 			name = src;
@@ -432,9 +432,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		38CA5C9B1BCCAF2B0099BC3B /* iOS */ = {
+		38CA5C9B1BCCAF2B0099BC3B /* GUI_App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "iOS" */;
+			buildConfigurationList = 38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "GUI_App" */;
 			buildPhases = (
 				38CA5C981BCCAF2B0099BC3B /* Sources */,
 				38CA5C991BCCAF2B0099BC3B /* Frameworks */,
@@ -447,9 +447,9 @@
 				385B992B21CBBF6F000E5F90 /* PBXTargetDependency */,
 				380C58C421C101C70005A03F /* PBXTargetDependency */,
 			);
-			name = iOS;
+			name = GUI_App;
 			productName = iOS;
-			productReference = 38CA5C9C1BCCAF2B0099BC3B /* SDL_ttf.app */;
+			productReference = 38CA5C9C1BCCAF2B0099BC3B /* GUI_App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -495,7 +495,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				38CA5C9B1BCCAF2B0099BC3B /* iOS */,
+				38CA5C9B1BCCAF2B0099BC3B /* GUI_App */,
 			);
 		};
 /* End PBXProject section */
@@ -751,8 +751,8 @@
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jimmysoftware.$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = SDL_ttf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.GUIApp;
+				PRODUCT_NAME = GUI_App;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = JimmyDev2019;
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
@@ -781,8 +781,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIB_FREETYPE_ROOT = "$(SDL_TTF_ROOT)/external/freetype-2.4.12";
 				LIB_HARFBUZZ_ROOT = "$(SDL_TTF_ROOT)/external/harfbuzz-1.4.6";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jimmysoftware.$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = SDL_ttf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmysoftware.GUIApp;
+				PRODUCT_NAME = GUI_App;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = JimmyDist2019;
 				SDL_GFX_ROOT = ../../../SDL2_gfx;
@@ -805,7 +805,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "iOS" */ = {
+		38CA5CB31BCCAF2B0099BC3B /* Build configuration list for PBXNativeTarget "GUI_App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				38CA5CB41BCCAF2B0099BC3B /* Debug */,
