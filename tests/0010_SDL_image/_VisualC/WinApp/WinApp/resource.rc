@@ -63,6 +63,18 @@ END
 //
 // Menu
 //
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "Menu 1"
+    BEGIN
+        MENUITEM "Cut\tCtrl+X", ID_MENU1_CUT
+        MENUITEM "Copy\tCtrl+C", ID_MENU1_COPY
+        MENUITEM "Paste\tCtrl+V", ID_MENU1_PASTE
+        MENUITEM "Delete\tDelete", ID_MENU1_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "Select All\tCtrl+A", ID_MENU1_SELECT_ALL
+    END
+END
 
 
 /////////////////////////////////////////////////////////////////////////////

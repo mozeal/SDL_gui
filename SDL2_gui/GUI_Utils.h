@@ -12,7 +12,7 @@
 #include <string>
 #include <stdio.h>
 #include <functional>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include "GUI_Config.h"
 
 class GUI_View;

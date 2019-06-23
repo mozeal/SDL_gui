@@ -10,7 +10,7 @@
 #define GUI_Config_h
 
 #include <string>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 
 //const std::string GUI_UIIconFontName = "fa-solid-900.ttf";
 

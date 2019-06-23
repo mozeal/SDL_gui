@@ -8,7 +8,7 @@
 
 #include "SDL_gui.h"
 #include "GUI_shapes.h"
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include <fstream>
 
 static SDL_Texture *drawCircle[24] = { NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL };

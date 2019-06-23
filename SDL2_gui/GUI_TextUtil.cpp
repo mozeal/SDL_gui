@@ -9,13 +9,8 @@
 #include "GUI_TextUtil.h"
 #include <string>
 #include "GUI_Utils.h"
-#ifdef __MACOSX__
 #include <SDL_ttf.h>
 #include <SDL_image.h>
-#else
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_image.h>
-#endif
 /*
 
  Each byte starts with a few bits that tell you whether it's a single byte code-point, a multi-byte code point, or a continuation of a multi-byte code point. Like this:

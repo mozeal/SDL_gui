@@ -289,13 +289,32 @@ void createMenuBar() {
     menuFile->getPopupMenu()->addSimpleMenu( "Save As...", true );
     menuFile->getPopupMenu()->addSimpleMenu( "Close" );
 
-    GUI_MenuBarItem * menuEdit = app->menuBar->addPopupMenu( "Edit", topView );
+	GUI_MenuBarItem * menuEdit = app->menuBar->addPopupMenu("Edit", topView);
     menuEdit->getPopupMenu()->addSimpleMenu( "Undo", true );
     menuEdit->getPopupMenu()->addSimpleMenu( "Cut" );
     menuEdit->getPopupMenu()->addSimpleMenu( "Copy" );
     menuEdit->getPopupMenu()->addSimpleMenu( "Paste" );
     menuEdit->getPopupMenu()->addSimpleMenu( "Delete", true );
     menuEdit->getPopupMenu()->addSimpleMenu( "Select All" );
+	menuEdit->setUserCallback([=](GUI_View *v) {
+		GUI_PopupMenu *lit = (GUI_PopupMenu *)v;
+		for (std::vector<GUI_MenuItem *>::iterator it = lit->menuItems.begin(); it != lit->menuItems.end(); ++it) {
+			GUI_MenuItem *c = *it;
+			if (c->title == "Undo") {
+				c->setEnable(true);
+			} else if (c->title == "Cut") {
+				c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canCut() : false);
+			} else if (c->title == "Copy") {
+				c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canCopy() : false);
+			} else if (c->title == "Paste") {
+				c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canPaste() : false);
+			} else if (c->title == "Delete") {
+				c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canDelete() : false);
+			} else if (c->title == "Select All") {
+				c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canSelectAll() : false);
+			}
+		}
+	});
 
     GUI_MenuBarItem * menuView = app->menuBar->addPopupMenu( "View", topView );
     menuView->getPopupMenu()->addSimpleMenu( "Message Box" );
@@ -342,10 +361,10 @@ int main(int argc, char *argv[]) {
     }
 
 #if defined(WIN32)
-    GUI_SetWindowIcon(IDI_ICON1);
+	GUI_SetWindowIcon(IDI_ICON1);
 #endif
-
-    topView = app->topView;
+	
+	topView = app->topView;
     
     createMenuBar();
     
@@ -412,10 +431,6 @@ int main(int argc, char *argv[]) {
     inputBar->setPadding( 5, 10, 5, 10 );
     inputBox = GUI_EditText::create(inputBar, "", 0, 0, -1, 32);
     inputBox->setBorder( 1 );
-
-#if defined(WIN32)
-    inputBox->setContextualMenu(IDR_MENU1, ID_MENU1_CUT, ID_MENU1_COPY, ID_MENU1_PASTE, ID_MENU1_DELETE, ID_MENU1_SELECT_ALL);
-#endif
 
     auto subContentView = GUI_View::create( app->contentView, "Sub-content", 0, 0, -1, -1 );
     subContentView->setLayout(GUI_LAYOUT_HORIZONTAL );

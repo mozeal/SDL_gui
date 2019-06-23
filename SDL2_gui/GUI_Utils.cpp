@@ -6,13 +6,8 @@
 //  Copyright © 2561 Jimmy Software Co., Ltd. All rights reserved.
 //
 
-#ifdef __MACOSX__
 #include <SDL_ttf.h>
 #include <SDL_image.h>
-#else
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_image.h>
-#endif
 #include <stdio.h>  /* defines FILENAME_MAX */
 #ifdef _WIN32
     #include <direct.h>  // for _chdir(), _getcwd()
@@ -225,7 +220,7 @@ void GUI_MakeRendererScreenshot(SDL_Renderer* renderer, std::string fileName, Sc
         lVector.resize(surface->pitch * h);
         for(int i(0); i < surface->pitch * h; ++i)
             lVector[i] = ((char*) surface->pixels)[i];
-        std::fstream s(fileName, s.binary | s.trunc | s.in | s.out);
+        std::fstream s(fileName, std::fstream::ios_base::binary | std::fstream::ios_base::trunc | std::fstream::ios_base::in | std::fstream::ios_base::out);
         if(!s.is_open())
             SDL_LogError( 0, "Open file failed");
         s.write(lVector.data(), lVector.size());

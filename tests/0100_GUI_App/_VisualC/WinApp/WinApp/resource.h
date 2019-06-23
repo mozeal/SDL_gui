@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by Remote.rc
+// Used by resource.rc
 //
 #define IDI_ICON1                       101
 #define IDR_MENU1                       102

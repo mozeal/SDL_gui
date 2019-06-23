@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "GUI_TextView.h"
+#include "GUI_MenuBar.h"
 
 #if defined(__MACOSX__)
 #define CUSTOM_KMOD_CTRL (KMOD_LGUI|KMOD_RGUI)
@@ -29,9 +30,9 @@ protected:
     virtual void draw();
     int textEditIndex;
 public:
-    static GUI_EditText *create( GUI_View *parent, const char *title, int x=0, int y=0, int width=0, int height=0,
-                                std::function<void(GUI_View*)>callbackFunction = NULL );
-    GUI_EditText(GUI_View *parent, const char *title, int x=0, int y=0, int width=0, int height=0,
+	static GUI_EditText *create(GUI_View *parent, const char *title, int x = 0, int y = 0, int width = 0, int height = 0,
+		                        std::function<void(GUI_View*)>callbackFunction = NULL);
+	GUI_EditText(GUI_View *parent, const char *title, int x=0, int y=0, int width=0, int height=0,
                  std::function<void(GUI_View*)>callbackFunction = NULL );
     virtual ~GUI_EditText();
     
@@ -65,10 +66,13 @@ public:
     bool textSelectionGetRect(SDL_Rect* rect);
     void textSelectionSetCaretPosition(int x, int y);
     void setFocus();
-
-#if defined(WIN32)
-    void setContextualMenu(UINT menu = 0, UINT menuCut = 0, UINT menuCopy = 0, UINT menuPaste = 0, UINT menuDelete = 0, UINT menuSelectAll = 0);
-#endif
+	bool canCut();
+	bool canCopy();
+	bool canPaste();
+	bool canDelete();
+	bool canSelectAll();
+	void createContextualMenu();
+	float touchTime;
 };
 
 #endif /* GUI_EditText_hpp */

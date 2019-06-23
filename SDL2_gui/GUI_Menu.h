@@ -28,6 +28,12 @@ public:
     virtual void postdraw();
 
     bool separator;
+
+	virtual void enable();
+	virtual void disable();
+	virtual void setEnable(bool e);
+	SDL_Color labelTextColor;
+	GUI_Label* label;
 };
 
 enum MenuAnimationMode

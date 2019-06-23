@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include <iostream>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include "SDL_gui.h"
 
 #define GUI_ORIENTATION_PORTRAIT    1
