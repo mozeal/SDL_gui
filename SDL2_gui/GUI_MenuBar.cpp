@@ -119,7 +119,7 @@ void GUI_PopupMenu::remove(GUI_MenuItem* child) {
     child->setCallback(NULL);
 }
 
-void GUI_PopupMenu::addSimpleMenu( const char *title, bool separator ) {
+GUI_MenuItem* GUI_PopupMenu::addSimpleMenu( const char *title, bool separator ) {
     GUI_MenuItem *item1 = GUI_MenuItem::create( NULL, title, 0, 0, -1, 0 );
     item1->setPadding( 8, 10, 8, 10 );
     item1->separator = separator;
@@ -132,6 +132,8 @@ void GUI_PopupMenu::addSimpleMenu( const char *title, bool separator ) {
     
     add( item1 );
     updateLayout();
+
+    return item1;
 }
 
 // --------------------------------------------------------------------------------------------

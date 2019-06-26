@@ -185,6 +185,9 @@ public:
 #define kIcon_window_minimize           0xf2d1u
 #define kIcon_window_restore            0xf2d2u
 */
+
+#define kIcon_chevron_right                                 0xf054u
+
 #define kIcon_solid_ad                                      0xf641u
 #define kIcon_solid_address_book                            0xf2b9u
 #define kIcon_solid_address_card                            0xf2bbu

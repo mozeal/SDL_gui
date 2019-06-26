@@ -8,6 +8,7 @@
 
 #include "GUI_Menu.h"
 #include "GUI_shapes.h"
+#include "GUI_Fonts.h"
 #include <iterator>
 
 GUI_MenuItem *GUI_MenuItem::create( GUI_View *parent, const char *title, int x, int y, int width, int height,
@@ -35,6 +36,10 @@ separator(true)
 
     setLayout(GUI_LAYOUT_HORIZONTAL);
     setBorder( 0 );
+
+    submenu = NULL;
+    selectedItem = NULL;
+    iconView = NULL;
 }
 
 GUI_MenuItem::~GUI_MenuItem() {
@@ -76,6 +81,31 @@ void GUI_MenuItem::setEnable(bool e) {
 		disable();
 	}
 };
+
+void GUI_MenuItem::setSubmenu(GUI_View* view) {
+    submenu = view;
+
+    if (submenu) {
+        submenu->hide();
+
+        if (iconView == NULL) {
+            iconView = GUI_IconView::create(this, kIcon_chevron_right, GUI_GetUIIconFontName().c_str(), GUI_GetUIIconFontSize(), 0, 0, 0, 0);
+            iconView->setAlign(GUI_ALIGN_RIGHT | GUI_ALIGN_VCENTER);
+            iconView->setBorder(0);
+            iconView->setBackgroundColor(cClear);
+            iconView->setColor(cBlack);
+            iconView->setVisible(true);
+        }
+    } else {
+        if (iconView) {
+            iconView->setVisible(false);
+        }
+    }
+}
+
+GUI_View* GUI_MenuItem::getSubmenu() {
+    return submenu;
+}
 
 // ------------------------------------------------------------------------------------------------
 

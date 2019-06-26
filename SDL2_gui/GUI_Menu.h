@@ -15,6 +15,9 @@
 class GUI_MenuItem : public GUI_View {
 protected:
     bool selected;
+    GUI_View* submenu;
+    GUI_IconView* iconView;
+
 public:
     static GUI_MenuItem *create( GUI_View *parent, const char *title, int x=0, int y=0, int width=0, int height=0,
                                 std::function<void(GUI_View*)>callbackFunction = NULL );
@@ -34,6 +37,10 @@ public:
 	virtual void setEnable(bool e);
 	SDL_Color labelTextColor;
 	GUI_Label* label;
+
+    GUI_View* selectedItem;
+    void setSubmenu(GUI_View* view);
+    GUI_View* getSubmenu();
 };
 
 enum MenuAnimationMode

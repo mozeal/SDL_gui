@@ -31,7 +31,7 @@ public:
     virtual void add(GUI_MenuItem* child);
     virtual void remove(GUI_MenuItem* child);
     
-    virtual void addSimpleMenu( const char *title, bool separator=false );
+    virtual GUI_MenuItem* addSimpleMenu( const char *title, bool separator=false );
     
     GUI_MenuItem *selectedItem;
 	std::vector<GUI_MenuItem *>menuItems;
