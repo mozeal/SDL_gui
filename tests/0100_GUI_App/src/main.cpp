@@ -281,6 +281,15 @@ void createColumn4(GUI_View *subContentView) {
     column4->updateLayout();
 }
 
+void createFindMessageBox(string msg) {
+    auto box = GUI_MessageBox::create( topView, "Find", msg.c_str(), 0, 0, 320, 0 );
+    box->Center();
+    box->setCallback([=](GUI_View *v) {
+        GUI_MessageBox *mb = (GUI_MessageBox *)v;
+        GUI_Log( "Find MSG Box \"%s\" OK\n", mb->title.c_str());
+    });
+}
+
 void createMenuBar() {
     GUI_MenuBarItem * menuFile = app->menuBar->addPopupMenu( "File", topView );
     menuFile->getPopupMenu()->addSimpleMenu( "New", true );
@@ -290,31 +299,73 @@ void createMenuBar() {
     menuFile->getPopupMenu()->addSimpleMenu( "Close" );
 
 	GUI_MenuBarItem * menuEdit = app->menuBar->addPopupMenu("Edit", topView);
-    menuEdit->getPopupMenu()->addSimpleMenu( "Undo", true );
-    menuEdit->getPopupMenu()->addSimpleMenu( "Cut" );
-    menuEdit->getPopupMenu()->addSimpleMenu( "Copy" );
-    menuEdit->getPopupMenu()->addSimpleMenu( "Paste" );
-    menuEdit->getPopupMenu()->addSimpleMenu( "Delete", true );
-    menuEdit->getPopupMenu()->addSimpleMenu( "Select All" );
-	menuEdit->setUserCallback([=](GUI_View *v) {
-		GUI_PopupMenu *lit = (GUI_PopupMenu *)v;
-		for (std::vector<GUI_MenuItem *>::iterator it = lit->menuItems.begin(); it != lit->menuItems.end(); ++it) {
-			GUI_MenuItem *c = *it;
-			if (c->title == "Undo") {
-				c->setEnable(true);
-			} else if (c->title == "Cut") {
-				c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canCut() : false);
-			} else if (c->title == "Copy") {
-				c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canCopy() : false);
-			} else if (c->title == "Paste") {
-				c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canPaste() : false);
-			} else if (c->title == "Delete") {
-				c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canDelete() : false);
-			} else if (c->title == "Select All") {
-				c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canSelectAll() : false);
-			}
-		}
-	});
+    menuEdit->setUserCallback([=](GUI_View* v) {
+        GUI_PopupMenu* lit = (GUI_PopupMenu* )v;
+        for (std::vector<GUI_MenuItem*>::iterator it = lit->menuItems.begin(); it != lit->menuItems.end(); ++it) {
+            GUI_MenuItem* c = *it;
+            if (c->title == "Undo") {
+                c->setEnable(true);
+            } else if (c->title == "Cut") {
+                c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canCut() : false);
+            } else if (c->title == "Copy") {
+                c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canCopy() : false);
+            } else if (c->title == "Paste") {
+                c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canPaste() : false);
+            } else if (c->title == "Delete") {
+                c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canDelete() : false);
+            } else if (c->title == "Select All") {
+                c->setEnable(GUI_lastEditTextView ? GUI_lastEditTextView->canSelectAll() : false);
+            }
+        }
+    });
+    GUI_PopupMenu* popupMenuEdit = menuEdit->getPopupMenu();
+    popupMenuEdit->addSimpleMenu( "Undo", true );
+    popupMenuEdit->addSimpleMenu( "Cut" );
+    popupMenuEdit->addSimpleMenu( "Copy" );
+    popupMenuEdit->addSimpleMenu( "Paste" );
+    popupMenuEdit->addSimpleMenu( "Delete", true );
+    popupMenuEdit->addSimpleMenu( "Select All", true );
+
+    GUI_MenuItem* simpleMenuFind = popupMenuEdit->addSimpleMenu( "Find" );
+    GUI_PopupMenu* submenuFind = GUI_PopupMenu::create(topView, "submenuFind", 0, 0, 160, 0);
+    submenuFind->addSimpleMenu("Find...");
+    submenuFind->addSimpleMenu("Find and Replace...");
+    submenuFind->addSimpleMenu("Find Next");
+    submenuFind->addSimpleMenu("Find Previous");
+    submenuFind->setCallback([=](GUI_View* v) {
+        GUI_PopupMenu *pm = (GUI_PopupMenu *)v;
+        GUI_MenuItem *it = pm->selectedItem;
+        it->setSelected(false);
+        simpleMenuFind->selectedItem = pm->selectedItem;
+        pm->selectedItem = NULL;
+
+        pm->hide();
+        popupMenuEdit->hide();
+
+        std::string str = simpleMenuFind->selectedItem->title;
+        createFindMessageBox(str);
+    });
+    simpleMenuFind->setSubmenu(submenuFind);
+    simpleMenuFind->setCallback([=](GUI_View* v) {
+        GUI_MenuItem* menuItem = (GUI_MenuItem*)v;
+        GUI_PopupMenu* submenu = (GUI_PopupMenu*)menuItem->getSubmenu();
+
+        if (submenu) {
+            GUI_Point posn = menuItem->getAbsolutePosition();
+            submenu->setAbsolutePosition(posn.x + menuItem->getWidth() - 3, posn.y + 2);
+
+            if (submenu->isVisible()) {
+                submenu->hide();
+            } else {
+                if (menuItem->user_callback) {
+                    menuItem->user_callback(submenu);
+                }
+
+                submenu->show();
+                GUI_SetMouseCapture(submenu);
+            }
+        }
+    });
 
     GUI_MenuBarItem * menuView = app->menuBar->addPopupMenu( "View", topView );
     menuView->getPopupMenu()->addSimpleMenu( "Message Box" );
