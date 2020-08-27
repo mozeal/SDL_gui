@@ -1,0 +1,33 @@
+# Copyright 2019 Google LLC
+#
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+declare_args() {
+  skia_enable_gui = true
+}
+
+import("../../gn/skia.gni")
+
+config("public_config") {
+  if (skia_enable_gui) {
+    include_dirs = [ "include" ]
+  }
+}
+
+static_library("skgui") {
+  if (skia_enable_gui) {
+    import("skgui.gni")
+    public_configs = [ ":public_config" ]
+    include_dirs = [ "include" ]
+    deps = [
+      "../..:skia",
+      "../../third_party/libsdl",
+    ]
+    sources = skia_gui_sources
+    configs += [ "../../:skia_private" ]
+    if (skia_enable_tools) {
+      configs += [ "../../:our_vulkan_headers" ]
+    }
+  }
+}
