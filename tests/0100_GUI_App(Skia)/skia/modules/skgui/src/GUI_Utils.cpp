@@ -260,6 +260,8 @@ void GUI_SetClipRect(GUI_Rect rect){
     SkCanvas * canvas = GUI_App::getInstance()->getCanvas();
     canvas->restoreToCount(0);
     canvas->save();
+    canvas->resetMatrix();
+    canvas->translate(__viewport.x, __viewport.y);
     canvas->clipRect(rect.toSkRect(), SkClipOp::kIntersect);
     __cliprect.set(rect.x, rect.y, rect.w, rect.h);
 }
