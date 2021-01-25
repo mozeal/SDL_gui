@@ -1,0 +1,46 @@
+# Copyright 2019 Google LLC
+#
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# Things are easiest for everyone if these source paths are absolute.
+_src = get_path_info("src", "abspath")
+_include = get_path_info("include", "abspath")
+
+skia_gui_sources = [
+  "$_include/GUI_App.h",
+  "$_src/GUI_App.cpp",
+  "$_src/GUI_Button.cpp",
+  "$_src/GUI_CheckBox.cpp",
+  "$_src/GUI_ComboBox.cpp",
+  "$_src/GUI_Config.cpp",
+  "$_src/GUI_EditText.cpp",
+  "$_src/GUI_Fonts.cpp",
+  "$_src/GUI_IconView.cpp",
+  "$_src/GUI_Image.cpp",
+  "$_src/GUI_ImageView.cpp",
+  "$_src/GUI_Label.cpp",
+  "$_src/GUI_List.cpp",
+  "$_src/GUI_Menu.cpp",
+  "$_src/GUI_MenuBar.cpp",
+  "$_src/GUI_MessageBox.cpp",
+  "$_src/GUI_PopupView.cpp",
+  "$_src/GUI_Preference.cpp",
+  "$_src/GUI_RadioButton.cpp",
+  "$_src/GUI_RadioButtonGroup.cpp",
+  "$_src/GUI_ScrollView.cpp",
+  "$_include/GUI_shapes.h",
+  "$_src/GUI_shapes.cpp",
+  "$_src/GUI_Slider.cpp",
+  "$_src/GUI_StatusBar.cpp",
+  "$_src/GUI_Switch.cpp",
+  "$_src/GUI_TextUtil.cpp",
+  "$_src/GUI_TextView.cpp",
+  "$_src/GUI_TopBar.cpp",
+  "$_include/GUI_Utils.h",
+  "$_src/GUI_Utils.cpp",
+  "$_include/GUI_View.h",
+  "$_src/GUI_View.cpp",
+  "$_include/skgui.h",
+  "$_src/skgui.cpp",
+]
