@@ -23,7 +23,7 @@ OUTDIR = build
 
 $(OUTDIR)/:
 	mkdir -p build
-#	ln -s ../../data build/data
+	ln -s ../../data build/data 2>/dev/null || echo "Ignoring error"
 
 OBJECTS = $(patsubst %.cpp,%local.o,$(patsubst %.c,%local.o,$(SOURCES)))
 
